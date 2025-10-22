@@ -471,6 +471,15 @@ function showError(message) {
 }
 
 function getCookie(name) {
+    // Essayer d'abord de récupérer depuis le meta tag
+    if (name === 'csrftoken') {
+        const metaTag = document.querySelector('meta[name="csrf-token"]');
+        if (metaTag) {
+            return metaTag.getAttribute('content');
+        }
+    }
+    
+    // Sinon, essayer depuis le cookie
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
         const cookies = document.cookie.split(';');
