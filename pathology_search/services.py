@@ -37,12 +37,20 @@ class PathologySearchService:
         Returns:
             Liste des meilleurs résultats avec scores de similarité
         """
+        import os
         folder_path = Path(self.embeddings_folder)
+        
+        # Debug: afficher les informations
+        print(f"🔍 DEBUG: embeddings_folder configuré = {self.embeddings_folder}")
+        print(f"🔍 DEBUG: folder_path = {folder_path}")
+        print(f"🔍 DEBUG: folder_path absolu = {folder_path.absolute()}")
+        print(f"🔍 DEBUG: folder_path existe? = {folder_path.exists()}")
+        print(f"🔍 DEBUG: répertoire courant = {os.getcwd()}")
         
         if not folder_path.exists():
             return {
                 'success': False,
-                'error': f"Le dossier d'embeddings n'existe pas: {self.embeddings_folder}",
+                'error': f"Le dossier d'embeddings n'existe pas: {self.embeddings_folder} (chemin absolu: {folder_path.absolute()})",
                 'results': []
             }
         
