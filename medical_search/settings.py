@@ -38,6 +38,18 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.herokuapp.com',
 ]
 
+# Configuration de sécurité pour Heroku (HTTPS)
+if not DEBUG:
+    # Indiquer à Django qu'il est derrière un proxy HTTPS (Heroku)
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    
+    # Cookies sécurisés en production
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    
+    # Redirection HTTPS
+    SECURE_SSL_REDIRECT = False  # Heroku gère déjà le HTTPS
+
 
 # Application definition
 
