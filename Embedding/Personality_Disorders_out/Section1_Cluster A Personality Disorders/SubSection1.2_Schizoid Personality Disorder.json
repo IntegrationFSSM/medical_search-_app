@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.2_Schizoid Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.2_Schizoid Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/Schizoid_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1.2_Schizoid Personality Disorder.txt",
+    "file_stem": "SubSection1.2_Schizoid Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section1_Cluster A Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.2_Schizoid Personality Disorder.txt",
+    "parsed_name": "SubSection1.2 Schizoid Personality Disorder",
+    "location": "Personality_Disorders_out > Section1_Cluster A Personality Disorders > SubSection1.2_Schizoid Personality Disorder"
+  },
+  "total_word_count": 1441,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Schizoid Personality Disorder Diagnostic Criteria A. A pervasive pattern of detachment from social relationships and a restricted range of expression of emotions in interpersonal settings, beginning b..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 541,
+      "text_preview": "social ostracism from the host society. Sex- and Gender-Related Diagnostic Issues While some research suggests that schizoid personality disorder may be more common in men, other research suggests tha..."
+    }
+  ]
+}

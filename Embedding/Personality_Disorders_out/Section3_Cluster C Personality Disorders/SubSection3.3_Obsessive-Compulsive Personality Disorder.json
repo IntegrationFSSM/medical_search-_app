@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/Obsessive_Compulsive_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+    "file_stem": "SubSection3.3_Obsessive-Compulsive Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section3_Cluster C Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+    "parsed_name": "SubSection3.3 Obsessive Compulsive Personality Disorder",
+    "location": "Personality_Disorders_out > Section3_Cluster C Personality Disorders > SubSection3.3_Obsessive-Compulsive Personality Disorder"
+  },
+  "total_word_count": 2264,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Obsessive-Compulsive Personality Disorder F60.5 Diagnostic Criteria A pervasive pattern of preoccupation with orderliness, perfectionism, and mental and interpersonal control, at the expense of flexib..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "5). Often these individuals will admit to being \u201cpack rats.\u201d They regard discarding objects as wasteful because \u201cyou never know when you might need something.\u201d The clutter may also result from an accu..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 464,
+      "text_preview": "presence of true obsessions and compulsions in OCD. When criteria for both obsessive-compulsive personality disorder and OCD are met, both diagnoses should be recorded. A diagnosis of hoarding disorde..."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Use Disorder.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other_Hallucinogen_Use_Disorder.html",
+  "hierarchy": {
+    "file_name": "Other Hallucinogen Use Disorder.txt",
+    "file_stem": "Other Hallucinogen Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Hallucinogen-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Use Disorder.txt",
+    "parsed_name": "Other Hallucinogen Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Other Hallucinogen Use Disorder"
+  },
+  "total_word_count": 2010,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Other Hallucinogen Use Disorder Diagnostic Criteria A. A problematic pattern of hallucinogen (other than phencyclidine) use leading to clinically significant impairment or distress, as manifested by a..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "been reported to have both autonomic and psychological effects. MDMA/ecstasy as a hallucinogen may have distinctive effects attributable to both its hallucinogenic and its stimulant properties. Ecstas..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 210,
+      "text_preview": "hallucinogen use disorder describes a problematic pattern of hallucinogen use that involves impaired control over hallucinogen use, social impairment attributable to hallucinogen use, risky hallucinog..."
+    }
+  ]
+}

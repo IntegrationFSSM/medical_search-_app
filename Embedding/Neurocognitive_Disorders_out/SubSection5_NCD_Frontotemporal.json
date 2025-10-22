@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection5_NCD_Frontotemporal.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection5_NCD_Frontotemporal.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Frontotemporal.html",
+  "hierarchy": {
+    "file_name": "SubSection5_NCD_Frontotemporal.txt",
+    "file_stem": "SubSection5_NCD_Frontotemporal",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection5_NCD_Frontotemporal.txt",
+    "parsed_name": "SubSection5 NCD Frontotemporal",
+    "location": "Neurocognitive_Disorders_out > SubSection5_NCD_Frontotemporal"
+  },
+  "total_word_count": 1759,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major or Mild Frontotemporal Neurocognitive Disorder Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. The disturbance has insidious onset and gradual progressi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 859,
+      "text_preview": "with major or mild frontotemporal NCD have a family history of early-onset NCD, and approximately 10% show an autosomal dominant inheritance pattern. A number of genetic factors have been identified, ..."
+    }
+  ]
+}

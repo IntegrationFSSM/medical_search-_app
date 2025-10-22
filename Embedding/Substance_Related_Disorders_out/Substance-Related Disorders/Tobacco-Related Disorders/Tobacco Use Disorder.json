@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Tobacco Use Disorder.txt",
+    "file_stem": "Tobacco Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Tobacco-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Use Disorder.txt",
+    "parsed_name": "Tobacco Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Tobacco-Related Disorders > Tobacco Use Disorder"
+  },
+  "total_word_count": 2305,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Tobacco Use Disorder Diagnostic Criteria A. A problematic pattern of tobacco use leading to clinically significant impairment or distress, as manifested by at least two of the following, occurring wit..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "with tobacco use disorder use tobacco to relieve or to avoid withdrawal symptoms (e.g., after being in a situation where use is restricted). Many individuals with tobacco use disorder have tobacco-rel..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 505,
+      "text_preview": "2014. This ratio is generally consistent across various income and educational levels. The ratio diminishes in older age groups as fewer men are smoking as age increases. The literature from several U..."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection2_Major_Depressive_Disorder.txt",
+  "relative_path": "Depressive_Disorders_out/SubSection2_Major_Depressive_Disorder.txt",
+  "html_page": "Depressive_Disorders_out/Major_Depressive_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Major_Depressive_Disorder.txt",
+    "file_stem": "SubSection2_Major_Depressive_Disorder",
+    "folders": [
+      "Depressive_Disorders_out"
+    ],
+    "full_path": "Depressive_Disorders_out/SubSection2_Major_Depressive_Disorder.txt",
+    "parsed_name": "SubSection2 Major Depressive Disorder",
+    "location": "Depressive_Disorders_out > SubSection2_Major_Depressive_Disorder"
+  },
+  "total_word_count": 5380,
+  "num_chunks": 6,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    6,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major Depressive Disorder Diagnostic Criteria A. Five (or more) of the following symptoms have been present during the same 2 week period and represent a change from previous functioning; at least one..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "2-week period, drawn from a list that includes changes in appetite or weight, sleep, and psychomotor activity; decreased energy; feelings of worthlessness or guilt; difficulty thinking, concentrating,..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "a result of the depression is very common and, unless delusional, is not considered sufficient to meet this criterion. Many individuals report impaired ability to think, concentrate, or make even mino..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "eight- to ninefold across global geographic regions. In the United States, prevalence increased from 2005 to 2015, with steeper rates of increase for youth compared with older groups. After stratifica..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 1000,
+      "text_preview": "the background of another disorder often follow a more refractory course. Substance use, anxiety, and borderline personality disorders are among the most common of these, and the presenting depressive..."
+    },
+    {
+      "chunk_id": 5,
+      "word_count": 880,
+      "text_preview": "may be best considered other specified bipolar and related disorder because of the clinical significance of the subthreshold hypomanic symptoms, or the presentation may be best considered a case of ma..."
+    }
+  ]
+}

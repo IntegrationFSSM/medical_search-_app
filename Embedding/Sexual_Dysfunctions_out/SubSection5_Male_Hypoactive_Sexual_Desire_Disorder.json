@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection5_Male_Hypoactive_Sexual_Desire_Disorder.txt",
+  "relative_path": "Sexual_Dysfunctions_out/SubSection5_Male_Hypoactive_Sexual_Desire_Disorder.txt",
+  "html_page": "Sexual_Dysfunctions_out/Male_Hypoactive_Sexual_Desire_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection5_Male_Hypoactive_Sexual_Desire_Disorder.txt",
+    "file_stem": "SubSection5_Male_Hypoactive_Sexual_Desire_Disorder",
+    "folders": [
+      "Sexual_Dysfunctions_out"
+    ],
+    "full_path": "Sexual_Dysfunctions_out/SubSection5_Male_Hypoactive_Sexual_Desire_Disorder.txt",
+    "parsed_name": "SubSection5 Male Hypoactive Sexual Desire Disorder",
+    "location": "Sexual_Dysfunctions_out > SubSection5_Male_Hypoactive_Sexual_Desire_Disorder"
+  },
+  "total_word_count": 1728,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Male Hypoactive Sexual Desire Disorder Diagnostic Criteria A. Persistently or recurrently deficient (or absent) sexual/erotic thoughts or fantasies and desire for sexual activity. The judgment of defi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 828,
+      "text_preview": "18.5% at age 50 years. Like women, men identify a variety of triggers for their sexual desire, and they describe a wide range of reasons that they choose to engage in sexual activity. Although erotic ..."
+    }
+  ]
+}

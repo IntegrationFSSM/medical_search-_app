@@ -1,0 +1,106 @@
+{% extends 'pathology_search/base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-gray-900 mb-8">
+        <i class="fas fa-info-circle text-purple-600 mr-2"></i>
+        À Propos
+    </h1>
+    
+    <div class="bg-white rounded-lg shadow-md p-8 mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            <i class="fas fa-microscope mr-2"></i>
+            Système de Recherche de Pathologies
+        </h2>
+        <p class="text-gray-700 mb-4">
+            Cette application utilise l'intelligence artificielle et les embeddings OpenAI pour identifier 
+            des pathologies médicales basées sur des descriptions cliniques ou des questions.
+        </p>
+        <p class="text-gray-700">
+            Le système analyse votre requête et la compare à une base de données de pathologies 
+            pour trouver les correspondances les plus pertinentes.
+        </p>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-md p-8 mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            <i class="fas fa-cogs mr-2"></i>
+            Comment ça fonctionne
+        </h2>
+        <div class="space-y-4">
+            <div class="flex items-start">
+                <div class="bg-purple-100 text-purple-700 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3 flex-shrink-0">
+                    1
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800">Embedding de la requête</h3>
+                    <p class="text-gray-600">Votre description clinique est convertie en vecteur numérique via l'API OpenAI</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="bg-purple-100 text-purple-700 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3 flex-shrink-0">
+                    2
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800">Calcul de similarité</h3>
+                    <p class="text-gray-600">Le système compare votre requête avec les embeddings pré-calculés des pathologies</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="bg-purple-100 text-purple-700 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3 flex-shrink-0">
+                    3
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800">Classement des résultats</h3>
+                    <p class="text-gray-600">Les pathologies sont classées par score de similarité cosinus</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="bg-purple-100 text-purple-700 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3 flex-shrink-0">
+                    4
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800">Présentation des résultats</h3>
+                    <p class="text-gray-600">Affichage des meilleures correspondances avec extraits pertinents</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-md p-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            <i class="fas fa-lightbulb mr-2"></i>
+            Conseils d'utilisation
+        </h2>
+        <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                <span>Décrivez les symptômes et comportements de manière détaillée</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                <span>Incluez l'âge, le contexte et la durée des symptômes si pertinent</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                <span>Utilisez un langage médical ou clinique pour de meilleurs résultats</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                <span>Examinez les extraits pertinents pour confirmer le diagnostic</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="mt-6 text-center">
+        <a href="{% url 'pathology_search:index' %}" class="inline-block gradient-bg text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition duration-200">
+            <i class="fas fa-search mr-2"></i>
+            Commencer une recherche
+        </a>
+    </div>
+</div>
+{% endblock %}
+

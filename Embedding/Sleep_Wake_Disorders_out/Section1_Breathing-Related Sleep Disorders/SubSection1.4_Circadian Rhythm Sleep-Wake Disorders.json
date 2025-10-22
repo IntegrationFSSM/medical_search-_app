@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Circadian_Rhythm_Sleep_Wake_Disorders.html",
+  "hierarchy": {
+    "file_name": "SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+    "file_stem": "SubSection1.4_Circadian Rhythm Sleep-Wake Disorders",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Section1_Breathing-Related Sleep Disorders"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+    "parsed_name": "SubSection1.4 Circadian Rhythm Sleep Wake Disorders",
+    "location": "Sleep_Wake_Disorders_out > Section1_Breathing-Related Sleep Disorders > SubSection1.4_Circadian Rhythm Sleep-Wake Disorders"
+  },
+  "total_word_count": 319,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 319,
+      "text_preview": "Circadian Rhythm Sleep-Wake Disorders Diagnostic Criteria A. A persistent or recurrent pattern of sleep disruption that is primarily due to an alteration of the circadian system or to a misalignment b..."
+    }
+  ]
+}

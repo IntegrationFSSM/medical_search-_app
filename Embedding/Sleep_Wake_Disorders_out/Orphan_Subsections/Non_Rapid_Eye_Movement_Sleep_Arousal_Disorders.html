@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Troubles de l'Éveil en Sommeil Non-REM – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation des Troubles de l'Éveil en Sommeil Non-REM – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Épisodes récurrents d'éveil incomplet du sommeil</legend>
+  <p class="subtitle">Épisodes récurrents d'éveil incomplet du sommeil, survenant habituellement durant le premier tiers de l'épisode de sommeil principal, accompagnés de l'un des éléments suivants</p>
+  <div class="warning-box">
+    ⚠️ Sélectionner le type : Somnambulisme (1) OU Terreurs nocturnes (2)
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="Épisodes récurrents d'éveil incomplet du sommeil"/> Épisodes récurrents d'éveil incomplet du sommeil</label>
+  <label><input type="checkbox" name="critereA" value="Survenant habituellement durant premier tiers de l'épisode de sommeil principal"/> Survenant habituellement durant le premier tiers de l'épisode de sommeil principal</label>
+  
+  <p style="margin-top: 15px;"><strong>Type 1 : Somnambulisme</strong></p>
+  <label><input type="checkbox" name="type1" value="Épisodes répétés de se lever du lit durant sommeil et marcher"/> Épisodes répétés de se lever du lit durant le sommeil et marcher</label>
+  <label><input type="checkbox" name="type1" value="Durant somnambulisme: visage vide et regard fixe"/> Durant le somnambulisme : visage vide et regard fixe</label>
+  <label><input type="checkbox" name="type1" value="Durant somnambulisme: relativement non réactif aux efforts des autres pour communiquer"/> Durant le somnambulisme : relativement non réactif aux efforts des autres pour communiquer</label>
+  <label><input type="checkbox" name="type1" value="Durant somnambulisme: peut être réveillé seulement avec grande difficulté"/> Durant le somnambulisme : peut être réveillé seulement avec grande difficulté</label>
+  
+  <p style="margin-top: 15px;"><strong>Type 2 : Terreurs nocturnes</strong></p>
+  <label><input type="checkbox" name="type2" value="Épisodes récurrents d'éveils de terreur abrupte du sommeil, commençant habituellement par cri de panique"/> Épisodes récurrents d'éveils de terreur abrupte du sommeil, commençant habituellement par un cri de panique</label>
+  <label><input type="checkbox" name="type2" value="Peur intense et signes d'activation autonome (mydriase, tachycardie, respiration rapide, sudation) durant chaque épisode"/> Peur intense et signes d'activation autonome (mydriase, tachycardie, respiration rapide, sudation) durant chaque épisode</label>
+  <label><input type="checkbox" name="type2" value="Non-réactivité relative aux efforts des autres pour réconforter individu durant épisodes"/> Non-réactivité relative aux efforts des autres pour réconforter l'individu durant les épisodes</label>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Imagerie de rêve absente ou minimale</legend>
+  <p class="subtitle">Aucune ou peu (ex: seulement une scène visuelle unique) d'imagerie de rêve est rappelée</p>
+  <label><input type="checkbox" name="critereB" value="Aucune ou peu d'imagerie de rêve rappelée (ex: seulement scène visuelle unique)"/> Aucune ou peu (ex: seulement une scène visuelle unique) d'imagerie de rêve est rappelée</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Amnésie pour les épisodes</legend>
+  <p class="subtitle">Amnésie pour les épisodes est présente</p>
+  <label><input type="checkbox" name="critereC" value="Amnésie pour les épisodes présente"/> Amnésie pour les épisodes est présente</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Détresse ou altération cliniquement significative</legend>
+  <p class="subtitle">Les épisodes causent une détresse ou altération cliniquement significative dans le fonctionnement</p>
+  <label><input type="checkbox" name="critereD" value="Épisodes causent détresse ou altération cliniquement significative dans fonctionnement social, professionnel ou autres domaines importants"/> Les épisodes causent une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Non attribuable à substance</legend>
+  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance</p>
+  <label><input type="checkbox" name="critereE" value="Perturbation non attribuable aux effets physiologiques d'une substance (drogue, médicament)"/> La perturbation n'est pas attribuable aux effets physiologiques d'une substance (ex: drogue, médicament)</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Troubles coexistants n'expliquent pas les épisodes</legend>
+  <p class="subtitle">Les troubles mentaux et conditions médicales coexistants n'expliquent pas les épisodes de somnambulisme ou terreurs nocturnes</p>
+  <label><input type="checkbox" name="critereF" value="Troubles mentaux et conditions médicales coexistants n'expliquent pas épisodes de somnambulisme ou terreurs nocturnes"/> Les troubles mentaux et conditions médicales coexistants n'expliquent pas les épisodes de somnambulisme ou terreurs nocturnes</label>
+  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécifier le type et les spécificateurs</legend>
+  
+  <p style="margin-top: 10px;"><strong>Type :</strong></p>
+  <label><input type="radio" name="type" value="Type somnambulisme"/> <strong>F51.3 Type somnambulisme</strong></label>
+  <label><input type="radio" name="type" value="Type terreurs nocturnes"/> <strong>F51.4 Type terreurs nocturnes</strong></label>
+  
+  <div id="somnambulismeSpec" class="hidden">
+    <p style="margin-top: 15px;"><strong>Spécificateurs pour somnambulisme :</strong></p>
+    <label><input type="checkbox" name="specSomn" value="Avec alimentation liée au sommeil"/> Avec alimentation liée au sommeil</label>
+    <label><input type="checkbox" name="specSomn" value="Avec comportement sexuel lié au sommeil (sexsomnie)"/> Avec comportement sexuel lié au sommeil (sexsomnie)</label>
+  </div>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],type1:[],type2:[],critereB:"",critereC:"",critereD:"",critereE:"",critereF:"",type:"",specSomn:[]};
+
+function validerCritereA(){
+  const ca=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  const t1=Array.from(document.querySelectorAll("input[name='type1']:checked")).map(e=>e.value);
+  const t2=Array.from(document.querySelectorAll("input[name='type2']:checked")).map(e=>e.value);
+  
+  if(ca.length>0&&(t1.length>0||t2.length>0)){
+    choix.critereA=ca;
+    choix.type1=t1;
+    choix.type2=t2;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez les éléments généraux ET au moins un type (somnambulisme OU terreurs nocturnes)", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=document.querySelector("input[name='critereB']:checked");
+  if(c){
+    choix.critereB=c.value;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else alert("Cochez l'option du critère B");
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function validerCritereD(){
+  const c=document.querySelector("input[name='critereD']:checked");
+  if(c){
+    choix.critereD=c.value;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else alert("Cochez l'option du critère D");
+}
+
+function validerCritereE(){
+  const c=document.querySelector("input[name='critereE']:checked");
+  if(c){
+    choix.critereE=c.value;
+    document.getElementById("critereF").classList.remove("hidden");
+  }else alert("Cochez l'option du critère E");
+}
+
+function validerCritereF(){
+  const c=document.querySelector("input[name='critereF']:checked");
+  if(c){
+    choix.critereF=c.value;
+    document.getElementById("specificateurs").classList.remove("hidden");
+    // Afficher spécificateurs somnambulisme si type1 sélectionné
+    if(choix.type1.length>0){
+      document.getElementById("somnambulismeSpec").classList.remove("hidden");
+    }
+  }else alert("Cochez l'option du critère F");
+}
+
+function afficherResume(){
+  const t=document.querySelector("input[name='type']:checked");
+  if(t){
+    choix.type=t.value;
+    choix.specSomn=Array.from(document.querySelectorAll("input[name='specSomn']:checked")).map(e=>e.value);
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le type", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  let code="";
+  if(choix.type.includes("somnambulisme"))code="F51.3";
+  else if(choix.type.includes("terreurs"))code="F51.4";
+  
+  let diag=code+" Trouble de l'Éveil en Sommeil Non-REM, "+choix.type.toLowerCase();
+  if(choix.specSomn.length>0){
+    diag+=", "+choix.specSomn.join(", ").toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Épisodes récurrents d'éveil incomplet (premier tiers sommeil)</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  if(choix.type1.length>0){
+    h+="<li><strong>Type Somnambulisme :</strong></li>";
+    choix.type1.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  }
+  if(choix.type2.length>0){
+    h+="<li><strong>Type Terreurs nocturnes :</strong></li>";
+    choix.type2.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  }
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Imagerie de rêve absente ou minimale</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
+  
+  h+="<h4>Critère C – Amnésie pour les épisodes</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Critère D – Détresse ou altération cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
+  
+  h+="<h4>Critère E – Non attribuable à substance</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
+  
+  h+="<h4>Critère F – Troubles coexistants n'expliquent pas les épisodes</h4><ul class='choix-list'><li>✓ "+choix.critereF+"</li></ul>";
+  
+  h+="<h4>Type et spécificateurs</h4><ul class='choix-list'>";
+  h+="<li>✓ "+choix.type+"</li>";
+  if(choix.specSomn.length>0){
+    choix.specSomn.forEach(s=>h+="<li>✓ "+s+"</li>");
+  }
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Éveils incomplets du sommeil durant premier tiers de l'épisode de sommeil principal.";
+  h+="<br/><br/><strong>Critère A :</strong> Épisodes récurrents d'éveil incomplet, habituellement durant premier tiers sommeil principal + l'un des types suivants:";
+  h+="<br/><strong>Type 1 - Somnambulisme :</strong>";
+  h+="<br/>• Épisodes répétés de se lever du lit durant sommeil et marcher";
+  h+="<br/>• Visage vide et regard fixe";
+  h+="<br/>• Relativement non réactif aux efforts de communication";
+  h+="<br/>• Peut être réveillé seulement avec grande difficulté";
+  h+="<br/><strong>Type 2 - Terreurs nocturnes :</strong>";
+  h+="<br/>• Éveils de terreur abrupte, commençant par cri de panique";
+  h+="<br/>• Peur intense + signes activation autonome (mydriase, tachycardie, respiration rapide, sudation)";
+  h+="<br/>• Non-réactivité relative aux efforts de réconfort";
+  h+="<br/><br/><strong>Critère B :</strong> Aucune ou peu d'imagerie de rêve rappelée (ex: seulement scène visuelle unique).";
+  h+="<br/><br/><strong>Critère C :</strong> Amnésie pour les épisodes présente.";
+  h+="<br/><br/><strong>Critère D :</strong> Détresse ou altération cliniquement significative.";
+  h+="<br/><br/><strong>Critère E :</strong> Non attribuable à substance (drogue, médicament).";
+  h+="<br/><br/><strong>Critère F :</strong> Troubles mentaux/conditions médicales coexistants n'expliquent pas les épisodes.";
+  h+="<br/><br/><strong>Types :</strong>";
+  h+="<br/>• <strong>F51.3 Type somnambulisme</strong>";
+  h+="<br/>• <strong>F51.4 Type terreurs nocturnes</strong>";
+  h+="<br/><br/><strong>Spécificateurs pour somnambulisme :</strong>";
+  h+="<br/>• Avec alimentation liée au sommeil";
+  h+="<br/>• Avec comportement sexuel lié au sommeil (sexsomnie)";
+  h+="<br/><br/><strong>Caractéristiques clés :</strong>";
+  h+="<br/>• Surviennent durant sommeil non-REM (sommeil lent profond)";
+  h+="<br/>• Premier tiers de la nuit";
+  h+="<br/>• Amnésie pour l'épisode";
+  h+="<br/>• Peu ou pas d'imagerie de rêve";
+  h+="<br/>• Différent des cauchemars (qui surviennent en REM, avec mémoire et orientation rapide)";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

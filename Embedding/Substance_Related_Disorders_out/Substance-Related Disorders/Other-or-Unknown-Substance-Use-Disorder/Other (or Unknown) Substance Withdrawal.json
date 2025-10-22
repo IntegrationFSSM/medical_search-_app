@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Withdrawal.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Withdrawal.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Withdrawal.html",
+  "hierarchy": {
+    "file_name": "Other (or Unknown) Substance Withdrawal.txt",
+    "file_stem": "Other (or Unknown) Substance Withdrawal",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Other-or-Unknown-Substance-Use-Disorder"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Withdrawal.txt",
+    "parsed_name": "Other (or Unknown) Substance Withdrawal",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Other-or-Unknown-Substance-Use-Disorder > Other (or Unknown) Substance Withdrawal"
+  },
+  "total_word_count": 901,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 901,
+      "text_preview": "Other (or Unknown) Substance Withdrawal\n Diagnostic Criteria\n A. Cessation of (or reduction in) use of a substance that has been heavy and\n prolonged.\n B. The development of a substance-specific syndr..."
+    }
+  ]
+}

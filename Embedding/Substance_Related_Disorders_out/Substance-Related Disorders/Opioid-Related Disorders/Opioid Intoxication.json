@@ -1,0 +1,53 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Intoxication.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid_Intoxication.html",
+  "hierarchy": {
+    "file_name": "Opioid Intoxication.txt",
+    "file_stem": "Opioid Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Opioid-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Intoxication.txt",
+    "parsed_name": "Opioid Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Opioid-Related Disorders > Opioid Intoxication"
+  },
+  "total_word_count": 3792,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Opioid Use Disorder Diagnostic Criteria A. A problematic pattern of opioid use leading to clinically significant impairment or distress, as manifested by at least two of the following, occurring withi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "cough suppressants. Heroin is one of the most commonly misused drugs of this class and is usually taken by injection, although it can be smoked or \u201csnorted,\u201d especially when very pure heroin is availa..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "Vietnam War; over 90% had long-term abstinence from opioids after returning to the United States, although many subsequently experienced problems with alcohol, amphetamines, or suicidal thoughts or be..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "and individuals switch to injecting in veins in the legs, neck, or groin. When these veins become unusable, individuals often inject directly into their subcutaneous tissue (\u201cskin-popping\u201d), resulting..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 192,
+      "text_preview": "are less common in prescription opioid use disorder. Research with nationally representative samples of the U.S. population has found that opioid use disorder is often associated with other substance ..."
+    }
+  ]
+}

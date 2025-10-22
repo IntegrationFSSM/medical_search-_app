@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.2_Stereotypic_Movement_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.2_Stereotypic_Movement_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Stereotypic_Movement_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection6.2_Stereotypic_Movement_Disorder.txt",
+    "file_stem": "SubSection6.2_Stereotypic_Movement_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section6_Motor_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.2_Stereotypic_Movement_Disorder.txt",
+    "parsed_name": "SubSection6.2 Stereotypic Movement Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section6_Motor_Disorders > SubSection6.2_Stereotypic_Movement_Disorder"
+  },
+  "total_word_count": 1926,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Stereotypic Movement Disorder Diagnostic Criteria A. Repetitive, seemingly driven, and apparently purposeless motor behavior (e.g., hand shaking or waving, body rocking, head banging, self-biting, hit..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "between 24 and 35 months, and 8% at 36 months or older. In most typically developing children, the severity and frequency of stereotyped movements diminish over time. Onset of complex motor stereotypi..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 126,
+      "text_preview": "stereotypies. F95.2 F95.1 condition, neurodevelopmental disorder, or environmental factor, record stereotypic movement disorder associated with (name of condition, disorder, or factor) (e.g., stereoty..."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection5_Panic_Disorder.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection5_Panic_Disorder.txt",
+  "html_page": "Anxiety_Disorders_out/panic-disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection5_Panic_Disorder.txt",
+    "file_stem": "SubSection5_Panic_Disorder",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection5_Panic_Disorder.txt",
+    "parsed_name": "SubSection5 Panic Disorder",
+    "location": "Anxiety_Disorders_out > SubSection5_Panic_Disorder"
+  },
+  "total_word_count": 3818,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Panic Disorder Diagnostic Criteria A. Recurrent unexpected panic attacks. A panic attack is an abrupt surge of intense fear or intense discomfort that reaches a peak within minutes, and during which t..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "panic disorder (e.g., panic attacks involving more symptoms). The maladaptive changes in behavior represent attempts to minimize or avoid panic attacks or their consequences. Examples include avoiding..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "in adolescents, much as they do in adults, and be attuned to this possibility when encountering adolescents presenting with episodes of intense fear or distress. Risk and Prognostic Factors Temperamen..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "than in those without it. There is considerable interest in the relationship between panic disorder and sensitivity to these panic-provoking agents. While none of the data suggest diagnostic utility, ..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 218,
+      "text_preview": "disorders (and especially agoraphobia), major depressive disorder, bipolar I and bipolar II disorder, and possibly mild alcohol use disorder. While panic disorder occasionally has an earlier age at on..."
+    }
+  ]
+}

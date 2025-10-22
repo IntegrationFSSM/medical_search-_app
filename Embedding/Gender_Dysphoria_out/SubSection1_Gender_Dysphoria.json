@@ -1,0 +1,56 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Gender_Dysphoria_out/SubSection1_Gender_Dysphoria.txt",
+  "relative_path": "Gender_Dysphoria_out/SubSection1_Gender_Dysphoria.txt",
+  "html_page": "Gender_Dysphoria_out/Gender_Dysphoria.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Gender_Dysphoria.txt",
+    "file_stem": "SubSection1_Gender_Dysphoria",
+    "folders": [
+      "Gender_Dysphoria_out"
+    ],
+    "full_path": "Gender_Dysphoria_out/SubSection1_Gender_Dysphoria.txt",
+    "parsed_name": "SubSection1 Gender Dysphoria",
+    "location": "Gender_Dysphoria_out > SubSection1_Gender_Dysphoria"
+  },
+  "total_word_count": 4609,
+  "num_chunks": 6,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    6,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Gender Dysphoria Diagnostic Criteria Gender Dysphoria in Children A. A marked incongruence between one\u2019s experienced/expressed gender and assigned gender, of at least 6 months\u2019 duration, as manifested..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "interest in stereotypically feminine toys (e.g., dolls) or activities (e.g., feminine dress-up or role-play). Occasionally, they refuse to urinate in a sitting position. Some may express a desire to h..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "birth. Because many adults with gender dysphoria do not seek care at specialty treatment programs, prevalence rates are likely underestimates. Prevalence estimates based on surveys of self-reporting g..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "of childhood gender dysphoria. Parents of individuals with gender dysphoria of pubertal/postpubertal-onset often report surprise, as they saw no signs of gender dysphoria during childhood. Individuals..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 1000,
+      "text_preview": "shift to a greater number of individuals assigned female at birth in adolescents and young adults than individuals assigned male at birth. In adults, estimates generally suggest more individuals assig..."
+    },
+    {
+      "chunk_id": 5,
+      "word_count": 109,
+      "text_preview": "gender dysphoria. However, some males seek genital surgery for either aesthetic reasons or to remove psychological effects of androgens without changing male identity; in these cases, the criteria for..."
+    }
+  ]
+}

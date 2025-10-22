@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Orphan_Subsections/Non_Rapid_Eye_Movement_Sleep_Arousal_Disorders.html",
+  "hierarchy": {
+    "file_name": "Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+    "file_stem": "Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Orphan_Subsections"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+    "parsed_name": "Orphan04 Non Rapid Eye Movement Sleep Arousal Disorders",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders"
+  },
+  "total_word_count": 2779,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Non\u2013Rapid Eye Movement Sleep Arousal Disorders Diagnostic Criteria A. Recurrent episodes of incomplete awakening from sleep, usually occurring during the first third of the major sleep episode, accomp..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "ability to avoid or stop eating. During these episodes, inappropriate foods or even nonfood items (i.e., candy wrappers, small food boxes, or even small toys) may be ingested. Individuals with sleep-r..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 979,
+      "text_preview": "overlap in findings with persons who do not sleepwalk is great enough to preclude use of this indicator in establishing a diagnosis. Unlike arousals from REM sleep associated with nightmares, in which..."
+    }
+  ]
+}

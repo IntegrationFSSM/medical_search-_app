@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Intoxication.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine_Intoxication.html",
+  "hierarchy": {
+    "file_name": "Phencyclidine Intoxication.txt",
+    "file_stem": "Phencyclidine Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Hallucinogen-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Intoxication.txt",
+    "parsed_name": "Phencyclidine Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Phencyclidine Intoxication"
+  },
+  "total_word_count": 651,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 651,
+      "text_preview": " Phencyclidine Intoxication\n Diagnostic Criteria\n A. Recent use of phencyclidine (or a pharmacologically similar substance).\n B. Clinically significant problematic behavioral changes (e.g., belligeren..."
+    }
+  ]
+}

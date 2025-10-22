@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Sevrage de l'Alcool – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Sevrage de l'Alcool – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Cessation ou réduction de l'usage d'alcool</legend>
+  <p class="subtitle">Cessation de (ou réduction dans) l'usage d'alcool qui a été lourd et prolongé</p>
+  <label><input type="checkbox" name="critereA" value="Cessation ou réduction dans usage d'alcool qui a été lourd et prolongé"/> Cessation de (ou réduction dans) l'usage d'alcool qui a été lourd et prolongé</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Signes ou symptômes de sevrage</legend>
+  <p class="subtitle">Deux (ou plus) des éléments suivants, se développant dans les quelques heures à quelques jours après la cessation de (ou réduction dans) l'usage d'alcool décrit dans le critère A</p>
+  <div class="warning-box">
+    ⚠️ Au moins 2 des 8 signes/symptômes doivent être présents
+  </div>
+  
+  <label><input type="checkbox" name="critereB" value="1. Hyperactivité autonome (sudation ou fréquence cardiaque >100 bpm)"/> <strong>1.</strong> Hyperactivité autonome (ex: sudation ou fréquence cardiaque supérieure à 100 bpm)</label>
+  
+  <label><input type="checkbox" name="critereB" value="2. Tremblement des mains augmenté"/> <strong>2.</strong> Tremblement des mains augmenté</label>
+  
+  <label><input type="checkbox" name="critereB" value="3. Insomnie"/> <strong>3.</strong> Insomnie</label>
+  
+  <label><input type="checkbox" name="critereB" value="4. Nausée ou vomissement"/> <strong>4.</strong> Nausée ou vomissement</label>
+  
+  <label><input type="checkbox" name="critereB" value="5. Hallucinations ou illusions visuelles, tactiles ou auditives transitoires"/> <strong>5.</strong> Hallucinations ou illusions visuelles, tactiles ou auditives transitoires</label>
+  
+  <label><input type="checkbox" name="critereB" value="6. Agitation psychomotrice"/> <strong>6.</strong> Agitation psychomotrice</label>
+  
+  <label><input type="checkbox" name="critereB" value="7. Anxiété"/> <strong>7.</strong> Anxiété</label>
+  
+  <label><input type="checkbox" name="critereB" value="8. Crises tonico-cloniques généralisées"/> <strong>8.</strong> Crises tonico-cloniques généralisées</label>
+  
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Détresse ou altération cliniquement significative</legend>
+  <p class="subtitle">Les signes ou symptômes du critère B causent une détresse ou altération cliniquement significative dans le fonctionnement</p>
+  <label><input type="checkbox" name="critereC" value="Signes ou symptômes causent détresse ou altération cliniquement significative dans fonctionnement social, professionnel ou autres domaines importants"/> Les signes ou symptômes causent une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Non attribuable à autre condition</legend>
+  <p class="subtitle">Les signes ou symptômes ne sont pas attribuables à une autre condition médicale et ne sont pas mieux expliqués par un autre trouble mental</p>
+  <label><input type="checkbox" name="critereD" value="Signes ou symptômes non attribuables à autre condition médicale"/> Les signes ou symptômes ne sont pas attribuables à une autre condition médicale</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliqués par autre trouble mental, incluant intoxication ou sevrage d'autre substance"/> Ne sont pas mieux expliqués par un autre trouble mental, incluant intoxication ou sevrage d'une autre substance</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs et comorbidité</legend>
+  
+  <p style="margin-top: 10px;"><strong>Perturbations perceptuelles :</strong></p>
+  <label><input type="checkbox" name="perceptuel" value="Avec perturbations perceptuelles"/> <strong>Avec perturbations perceptuelles :</strong> Ce spécificateur s'applique dans l'instance rare où des hallucinations (habituellement visuelles ou tactiles) surviennent avec test de réalité intact, ou des illusions auditives, visuelles ou tactiles surviennent en l'absence de delirium</label>
+  
+  <div class="note-box">
+    <strong>Note :</strong> Quand des hallucinations surviennent en l'absence de delirium (c.-à-d. dans un sensorium clair), un diagnostic de trouble psychotique induit par substance/médicament devrait être considéré.
+  </div>
+  
+  <p style="margin-top: 15px;"><strong>Trouble d'usage d'alcool comorbide :</strong></p>
+  <div class="warning-box">
+    ⚠️ Le code ICD-10-CM dépend de la comorbidité ET des perturbations perceptuelles
+  </div>
+  <label><input type="radio" name="comorbidite" value="Sans trouble d'usage d'alcool"/> <strong>Sans trouble d'usage d'alcool comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'alcool léger"/> <strong>Avec trouble d'usage d'alcool léger comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'alcool modéré"/> <strong>Avec trouble d'usage d'alcool modéré comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'alcool sévère"/> <strong>Avec trouble d'usage d'alcool sévère comorbide</strong></label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB:[],critereC:"",critereD:[],perceptuel:"",comorbidite:""};
+
+const codes={
+  "Sans trouble d'usage d'alcool":{sans:"F10.930",avec:"F10.932"},
+  "Avec trouble d'usage d'alcool léger":{sans:"F10.130",avec:"F10.132"},
+  "Avec trouble d'usage d'alcool modéré":{sans:"F10.230",avec:"F10.232"},
+  "Avec trouble d'usage d'alcool sévère":{sans:"F10.230",avec:"F10.232"}
+};
+
+function validerCritereA(){
+  const c=document.querySelector("input[name='critereA']:checked");
+  if(c){
+    choix.critereA=c.value;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Cochez l'option du critère A");
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>=2){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else alert("Au moins 2 des 8 signes/symptômes doivent être cochés (actuellement: "+c.length+"/8)");
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function validerCritereD(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereD=c;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const co=document.querySelector("input[name='comorbidite']:checked");
+  const pe=document.querySelector("input[name='perceptuel']:checked");
+  if(co){
+    choix.comorbidite=co.value;
+    choix.perceptuel=pe?pe.value:"";
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la comorbidité", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const avecPerceptuel=choix.perceptuel!=="";
+  const code=avecPerceptuel?codes[choix.comorbidite].avec:codes[choix.comorbidite].sans;
+  
+  let diag=code+" Sevrage de l'Alcool";
+  if(avecPerceptuel)diag+=", avec perturbations perceptuelles";
+  if(choix.comorbidite!=="Sans trouble d'usage d'alcool"){
+    diag+=", "+choix.comorbidite.toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Cessation ou réduction de l'usage d'alcool</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  
+  h+="<h4>Critère B – Signes ou symptômes de sevrage (≥2/8)</h4>";
+  h+="<p><strong>Nombre de signes/symptômes: "+choix.critereB.length+"/8</strong></p>";
+  h+="<ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Détresse ou altération cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Critère D – Non attribuable à autre condition</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Spécificateurs et comorbidité</h4><ul class='choix-list'>";
+  if(choix.perceptuel)h+="<li>✓ "+choix.perceptuel+"</li>";
+  else h+="<li>✓ Sans perturbations perceptuelles</li>";
+  h+="<li>✓ Comorbidité: "+choix.comorbidite+"</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Sevrage de l'alcool suite à cessation/réduction d'usage lourd et prolongé.";
+  h+="<br/><br/><strong>Critère A :</strong> Cessation de (ou réduction dans) usage d'alcool qui a été lourd et prolongé.";
+  h+="<br/><br/><strong>Critère B :</strong> ≥2 des signes/symptômes suivants, se développant dans quelques heures à quelques jours après cessation/réduction:";
+  h+="<br/>1. Hyperactivité autonome (sudation ou FC >100 bpm)";
+  h+="<br/>2. Tremblement des mains augmenté";
+  h+="<br/>3. Insomnie";
+  h+="<br/>4. Nausée ou vomissement";
+  h+="<br/>5. Hallucinations ou illusions visuelles, tactiles ou auditives transitoires";
+  h+="<br/>6. Agitation psychomotrice";
+  h+="<br/>7. Anxiété";
+  h+="<br/>8. Crises tonico-cloniques généralisées";
+  h+="<br/><br/><strong>Critère C :</strong> Signes/symptômes causent détresse ou altération cliniquement significative.";
+  h+="<br/><br/><strong>Critère D :</strong> Non attribuables à autre condition médicale et non mieux expliqués par autre trouble mental (incluant intoxication/sevrage autre substance).";
+  h+="<br/><br/><strong>Spécificateur - Avec perturbations perceptuelles :</strong>";
+  h+="<br/>S'applique dans instance rare où:";
+  h+="<br/>• Hallucinations (habituellement visuelles ou tactiles) surviennent avec test de réalité intact";
+  h+="<br/>• OU illusions auditives, visuelles ou tactiles surviennent en absence de delirium";
+  h+="<br/><br/><strong>Note importante :</strong> Quand hallucinations surviennent en absence de delirium (sensorium clair), considérer diagnostic de trouble psychotique induit par substance/médicament.";
+  h+="<br/><br/><strong>Codage ICD-10-CM (dépend de comorbidité ET perturbations perceptuelles) :</strong>";
+  h+="<br/><br/><strong>SANS perturbations perceptuelles :</strong>";
+  h+="<br/>• F10.930 : Sans trouble d'usage d'alcool comorbide";
+  h+="<br/>• F10.130 : Avec trouble d'usage d'alcool léger comorbide";
+  h+="<br/>• F10.230 : Avec trouble d'usage d'alcool modéré ou sévère comorbide";
+  h+="<br/><br/><strong>AVEC perturbations perceptuelles :</strong>";
+  h+="<br/>• F10.932 : Sans trouble d'usage d'alcool comorbide";
+  h+="<br/>• F10.132 : Avec trouble d'usage d'alcool léger comorbide";
+  h+="<br/>• F10.232 : Avec trouble d'usage d'alcool modéré ou sévère comorbide";
+  h+="<br/><br/><strong>Temporalité :</strong>";
+  h+="<br/>• Développement: Quelques heures à quelques jours après cessation/réduction";
+  h+="<br/>• Usage préalable: Lourd et prolongé";
+  h+="<br/><br/><strong>Signes physiques typiques :</strong>";
+  h+="<br/>• Hyperactivité autonome (sudation, tachycardie)";
+  h+="<br/>• Tremblement des mains";
+  h+="<br/>• Nausée/vomissement";
+  h+="<br/>• Crises (sévère)";
+  h+="<br/><br/><strong>Signes psychologiques typiques :</strong>";
+  h+="<br/>• Anxiété";
+  h+="<br/>• Insomnie";
+  h+="<br/>• Agitation psychomotrice";
+  h+="<br/>• Hallucinations/illusions (si perturbations perceptuelles)";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

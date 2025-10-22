@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection12_NCD_Parkinson.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection12_NCD_Parkinson.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Parkinson.html",
+  "hierarchy": {
+    "file_name": "SubSection12_NCD_Parkinson.txt",
+    "file_stem": "SubSection12_NCD_Parkinson",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection12_NCD_Parkinson.txt",
+    "parsed_name": "SubSection12 NCD Parkinson",
+    "location": "Neurocognitive_Disorders_out > SubSection12_NCD_Parkinson"
+  },
+  "total_word_count": 1553,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Parkinson\u2019s Disease Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. The disturbance occurs in the setting of esta..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 653,
+      "text_preview": "lateral sclerosis. An association has been found with processing and eating fadang made with cycad seeds. Diagnostic Markers Neuropsychological testing, with a focus on tests that are not affected by ..."
+    }
+  ]
+}

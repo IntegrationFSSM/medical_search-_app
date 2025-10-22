@@ -1,0 +1,38 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Withdrawal.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Withdrawal.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol_Withdrawal.html",
+  "hierarchy": {
+    "file_name": "Alcohol Withdrawal.txt",
+    "file_stem": "Alcohol Withdrawal",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Alcohol-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Withdrawal.txt",
+    "parsed_name": "Alcohol Withdrawal",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Alcohol-Related Disorders > Alcohol Withdrawal"
+  },
+  "total_word_count": 1175,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Alcohol Withdrawal Diagnostic Criteria A. Cessation of (or reduction in) alcohol use that has been heavy and prolonged. B. Two (or more) of the following, developing within several hours to a few days..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 275,
+      "text_preview": "per day) for multiple days. However, there are large inter-individual differences, with enhanced risks for individuals with concurrent medical conditions, those with family histories of alcohol withdr..."
+    }
+  ]
+}

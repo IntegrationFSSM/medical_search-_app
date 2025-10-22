@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+  "relative_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+  "html_page": "Somatic_Symptom_and_Related_Disorders_out/Psychological_Factors_Affecting_Other_Medical_Conditions.html",
+  "hierarchy": {
+    "file_name": "SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+    "file_stem": "SubSection4_Psychological Factors Affecting Other Medical Conditions",
+    "folders": [
+      "Somatic_Symptom_and_Related_Disorders_out"
+    ],
+    "full_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+    "parsed_name": "SubSection4 Psychological Factors Affecting Other Medical Conditions",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection4_Psychological Factors Affecting Other Medical Conditions"
+  },
+  "total_word_count": 1297,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Psychological Factors Affecting Other Medical Conditions Diagnostic Criteria A. A medical symptom or condition (other than a mental disorder) is present. B. Psychological or behavioral factors adverse..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 397,
+      "text_preview": "an individual with angina that is precipitated whenever he becomes enraged would be diagnosed as having psychological factors affecting other medical conditions, whereas an individual with angina who ..."
+    }
+  ]
+}

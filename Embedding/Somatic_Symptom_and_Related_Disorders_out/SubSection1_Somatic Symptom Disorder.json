@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection1_Somatic Symptom Disorder.txt",
+  "relative_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection1_Somatic Symptom Disorder.txt",
+  "html_page": "Somatic_Symptom_and_Related_Disorders_out/Somatic_Symptom_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Somatic Symptom Disorder.txt",
+    "file_stem": "SubSection1_Somatic Symptom Disorder",
+    "folders": [
+      "Somatic_Symptom_and_Related_Disorders_out"
+    ],
+    "full_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection1_Somatic Symptom Disorder.txt",
+    "parsed_name": "SubSection1 Somatic Symptom Disorder",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection1_Somatic Symptom Disorder"
+  },
+  "total_word_count": 3125,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Somatic Symptom Disorder Diagnostic Criteria A. One or more somatic symptoms that are distressing or result in significant disruption of daily life. B. Excessive thoughts, feelings, or behaviors relat..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "disorder, individuals with somatic symptom disorder typically present to general medical health services rather than mental health services. The suggestion of referral to a mental health specialist ma..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "distress\u201d because somatic symptoms may have special meanings and shape patient-clinician interactions in the particular cultural contexts. For example, sensations of heaviness, complaints of \u201cgas,\u201d to..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 425,
+      "text_preview": "appropriate to consider illness anxiety disorder. In functional neurological symptom Functional neurological symptom disorder (conversion disorder). disorder, the presenting symptom is loss of functio..."
+    }
+  ]
+}

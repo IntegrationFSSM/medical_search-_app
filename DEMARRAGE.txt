@@ -1,0 +1,114 @@
+================================================================================
+APPLICATION DJANGO - RECHERCHE DE PATHOLOGIES MEDICALES
+================================================================================
+
+✅ PROJET COMPLETEMENT INSTALLE ET PRET A L'EMPLOI !
+
+================================================================================
+DEMARRAGE RAPIDE (3 ETAPES)
+================================================================================
+
+ETAPE 1 : Verifier la configuration
+------------------------------------
+Le fichier .env est deja configure avec votre cle API OpenAI.
+
+IMPORTANT : Modifiez le chemin EMBEDDINGS_FOLDER dans .env si necessaire :
+- Ouvrez le fichier .env
+- Ligne 7 : EMBEDDINGS_FOLDER=votre/chemin/vers/embeddings
+- Sauvegardez
+
+ETAPE 2 : Lancer l'application
+-------------------------------
+METHODE SIMPLE :
+  Double-cliquez sur : start.bat
+
+OU METHODE MANUELLE :
+  1. Ouvrez PowerShell/CMD dans ce dossier
+  2. Tapez : venv\Scripts\activate
+  3. Tapez : python manage.py runserver
+
+ETAPE 3 : Acceder a l'application
+----------------------------------
+  Ouvrez votre navigateur : http://127.0.0.1:8000/
+
+================================================================================
+TESTER L'APPLICATION
+================================================================================
+
+Requete de test (copiez-collez dans l'interface) :
+
+Un enfant de 7 ans sans maladie medicale continue de passer les selles
+dans des endroits inappropries malgre avoir ete entraine a la proprete
+depuis 3 ans.
+
+Parametres recommandes :
+- Nombre de resultats : 5
+- Methode d'agregation : Maximum
+
+================================================================================
+DOCUMENTATION
+================================================================================
+
+README.md                    - Documentation complete du projet
+GUIDE_UTILISATION.md         - Guide detaille d'utilisation
+INSTALLATION_RAPIDE.md       - Instructions d'installation
+PROJET_COMPLET.md           - Synthese complete du projet
+
+================================================================================
+STRUCTURE DU PROJET
+================================================================================
+
+medical_search_app/
+├── start.bat                # Script de demarrage Windows
+├── .env                     # Configuration (cle API configuree)
+├── requirements.txt         # Dependances Python
+│
+├── medical_search/          # Configuration Django
+│   └── settings.py          # Parametres (OpenAI configure)
+│
+└── pathology_search/        # Application principale
+    ├── services.py          # Service de recherche d'embeddings
+    ├── views.py             # Vues Django
+    └── templates/           # Interface utilisateur moderne
+
+================================================================================
+EN CAS DE PROBLEME
+================================================================================
+
+Erreur "No module named..."
+  → pip install -r requirements.txt
+
+Erreur "EMBEDDINGS_FOLDER not found"
+  → Modifiez le chemin dans .env
+
+Port 8000 deja utilise
+  → python manage.py runserver 8001
+
+Autres problemes
+  → Consultez GUIDE_UTILISATION.md section "Resolution de Problemes"
+
+================================================================================
+FONCTIONNALITES
+================================================================================
+
+✅ Interface moderne et responsive
+✅ Recherche par description clinique
+✅ Embeddings OpenAI (text-embedding-ada-002)
+✅ Scores de confiance avec codes couleur
+✅ Extraits pertinents affiches
+✅ 3 methodes d'agregation disponibles
+✅ Configuration flexible via .env
+
+================================================================================
+PRET A DEMARRER !
+================================================================================
+
+Pour commencer maintenant :
+1. Double-cliquez sur start.bat
+2. Attendez que le serveur demarre
+3. Ouvrez http://127.0.0.1:8000/
+4. Testez avec la requete d'exemple ci-dessus
+
+Bonne recherche ! 🏥
+================================================================================
+

@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.2_Borderline Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.2_Borderline Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/Borderline_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.2_Borderline Personality Disorder.txt",
+    "file_stem": "SubSection2.2_Borderline Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section2_Cluster B Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.2_Borderline Personality Disorder.txt",
+    "parsed_name": "SubSection2.2 Borderline Personality Disorder",
+    "location": "Personality_Disorders_out > Section2_Cluster B Personality Disorders > SubSection2.2_Borderline Personality Disorder"
+  },
+  "total_word_count": 2615,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Borderline Personality Disorder Diagnostic Criteria A pervasive pattern of instability of interpersonal relationships, self-image, and affects, and marked impulsivity, beginning by early adulthood and..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "despair and is rarely relieved by periods of well-being or satisfaction. These episodes may reflect the individual\u2019s extreme reactivity to interpersonal stresses. Individuals with borderline personali..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 815,
+      "text_preview": "traits that suggest the presence of borderline personality disorder (e.g., number of sexual partners, shifting between relationships, substance use) must be evaluated in light of cultural norms to mak..."
+    }
+  ]
+}

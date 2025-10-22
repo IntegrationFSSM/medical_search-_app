@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection2_Rumination_Disorder.txt",
+  "relative_path": "Feeding_Eating_Disorders_out/SubSection2_Rumination_Disorder.txt",
+  "html_page": "Feeding_Eating_Disorders_out/Rumination_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Rumination_Disorder.txt",
+    "file_stem": "SubSection2_Rumination_Disorder",
+    "folders": [
+      "Feeding_Eating_Disorders_out"
+    ],
+    "full_path": "Feeding_Eating_Disorders_out/SubSection2_Rumination_Disorder.txt",
+    "parsed_name": "SubSection2 Rumination Disorder",
+    "location": "Feeding_Eating_Disorders_out > SubSection2_Rumination_Disorder"
+  },
+  "total_word_count": 927,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 927,
+      "text_preview": "Diagnostic Criteria\n Rumination Disorder\n A. Repeated regurgitation of food over a period of at least 1 month. Regurgitated\n food may be re-chewed, re-swallowed, or spit out.\n B. The repeated regurgit..."
+    }
+  ]
+}

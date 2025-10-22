@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection3_Conduct Disorder.txt",
+  "relative_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection3_Conduct Disorder.txt",
+  "html_page": "Disruptive, Impulse-Control, and Conduct disorders_out/Conduct_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Conduct Disorder.txt",
+    "file_stem": "SubSection3_Conduct Disorder",
+    "folders": [
+      "Disruptive, Impulse-Control, and Conduct disorders_out"
+    ],
+    "full_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection3_Conduct Disorder.txt",
+    "parsed_name": "SubSection3 Conduct Disorder",
+    "location": "Disruptive, Impulse-Control, and Conduct disorders_out > SubSection3_Conduct Disorder"
+  },
+  "total_word_count": 3567,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Conduct Disorder Diagnostic Criteria A. A repetitive and persistent pattern of behavior in which the basic rights of others or major age-appropriate societal norms or rules are violated, as manifested..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "adolescent-onset type. Many children with this subtype also have concurrent attention deficit/hyperactivity disorder (ADHD) or other neurodevelopmental difficulties. Individuals with childhood-onset t..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "In the United States, the lifetime prevalence was found to be 12.0% among men and 7.1% among women. The prevalence of conduct disorder in largely Western samples appears to be fairly consistent across..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 867,
+      "text_preview": "girls and women exhibit relational aggression (behavior that harms social relationships of others), girls and women exhibit considerably less physical aggression than do boys and men. Association With..."
+    }
+  ]
+}

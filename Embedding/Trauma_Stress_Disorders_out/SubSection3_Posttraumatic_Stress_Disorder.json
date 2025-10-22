@@ -1,0 +1,66 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection3_Posttraumatic_Stress_Disorder.txt",
+  "relative_path": "Trauma_Stress_Disorders_out/SubSection3_Posttraumatic_Stress_Disorder.txt",
+  "html_page": "Trauma_Stress_Disorders_out/Posttraumatic_Stress_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Posttraumatic_Stress_Disorder.txt",
+    "file_stem": "SubSection3_Posttraumatic_Stress_Disorder",
+    "folders": [
+      "Trauma_Stress_Disorders_out"
+    ],
+    "full_path": "Trauma_Stress_Disorders_out/SubSection3_Posttraumatic_Stress_Disorder.txt",
+    "parsed_name": "SubSection3 Posttraumatic Stress Disorder",
+    "location": "Trauma_Stress_Disorders_out > SubSection3_Posttraumatic_Stress_Disorder"
+  },
+  "total_word_count": 6758,
+  "num_chunks": 8,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    8,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Posttraumatic Stress Disorder Diagnostic Criteria Posttraumatic Stress Disorder in Individuals Older Than 6 Years Note: The following criteria apply to adults, adolescents, and children older than 6 y..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "sexual violence in one (or more) of the following ways: 1. Directly experiencing the traumatic event(s). 2. Witnessing, in person, the event(s) as it occurred to others, especially primary caregivers...."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "being taken hostage, terrorist attack, torture, incarceration as a prisoner of war, natural or human-made disasters, and severe motor vehicle accidents. Sexual trauma includes, but is not limited to, ..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "a hurricane, seeing someone who resembles one\u2019s perpetrator). The triggering cue could also be a physical sensation (e.g., dizziness for survivors of head trauma, rapid heartbeat for a previously trau..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 1000,
+      "text_preview": "world around them). This can be indicated by using the \u201cwith dissociative symptoms\u201d specifier. Associated Features Developmental regression, such as loss of language in young children, may occur. Audi..."
+    },
+    {
+      "chunk_id": 5,
+      "word_count": 1000,
+      "text_preview": "and adolescents can interfere with peer relationships and school behavior. Reckless behavior may lead to accidental injury to self or others, thrill seeking, or high-risk behaviors. In older individua..."
+    },
+    {
+      "chunk_id": 6,
+      "word_count": 1000,
+      "text_preview": "self. In many populations around the world, there are cultural concepts of distress that resemble PTSD and are characterized by diverse manifestations of psychological distress attributed to frighteni..."
+    },
+    {
+      "chunk_id": 7,
+      "word_count": 458,
+      "text_preview": "of PTSD, rather than a personality disorder, in which such difficulties would be expected independently of any traumatic exposure. 313 Dissociative disorders. Dissociative amnesia, dissociative identi..."
+    }
+  ]
+}

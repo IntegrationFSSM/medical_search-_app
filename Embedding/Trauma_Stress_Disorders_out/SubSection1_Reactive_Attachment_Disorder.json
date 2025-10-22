@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection1_Reactive_Attachment_Disorder.txt",
+  "relative_path": "Trauma_Stress_Disorders_out/SubSection1_Reactive_Attachment_Disorder.txt",
+  "html_page": "Trauma_Stress_Disorders_out/Reactive_Attachment_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Reactive_Attachment_Disorder.txt",
+    "file_stem": "SubSection1_Reactive_Attachment_Disorder",
+    "folders": [
+      "Trauma_Stress_Disorders_out"
+    ],
+    "full_path": "Trauma_Stress_Disorders_out/SubSection1_Reactive_Attachment_Disorder.txt",
+    "parsed_name": "SubSection1 Reactive Attachment Disorder",
+    "location": "Trauma_Stress_Disorders_out > SubSection1_Reactive_Attachment_Disorder"
+  },
+  "total_word_count": 1502,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Reactive Attachment Disorder Diagnostic Criteria A. A consistent pattern of inhibited, emotionally withdrawn behavior toward adult caregivers, manifested by both of the following: 1. The child rarely ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 602,
+      "text_preview": "been studied. Symptoms of reactive attachment disorder may be more common in situations where attachment figures have experienced extensive trauma, such as war-zone settings; attachment styles may als..."
+    }
+  ]
+}

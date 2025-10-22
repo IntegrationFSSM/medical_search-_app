@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection7_NCD_Vascular.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection7_NCD_Vascular.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Vascular.html",
+  "hierarchy": {
+    "file_name": "SubSection7_NCD_Vascular.txt",
+    "file_stem": "SubSection7_NCD_Vascular",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection7_NCD_Vascular.txt",
+    "parsed_name": "SubSection7 NCD Vascular",
+    "location": "Neurocognitive_Disorders_out > SubSection7_NCD_Vascular"
+  },
+  "total_word_count": 1997,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major or Mild Vascular Neurocognitive Disorder Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. The clinical features are consistent with a vascular etiology, ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "relate the vascular lesions to the cognitive syndrome. The neurocognitive symptoms must not be better explained by another medical condition or mental disorder. For example, prominent memory deficit e..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 197,
+      "text_preview": "are not typical of vascular etiology. Other medical conditions. A diagnosis of major or mild vascular NCD is not made if other diseases (e.g., brain tumor, multiple sclerosis, encephalitis, toxic or m..."
+    }
+  ]
+}

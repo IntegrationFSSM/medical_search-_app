@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection6_Schizoaffective_Disorder.txt",
+  "relative_path": "Schizophrenia_Spectrum_out/SubSection6_Schizoaffective_Disorder.txt",
+  "html_page": "Schizophrenia_Spectrum_out/Schizoaffective_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection6_Schizoaffective_Disorder.txt",
+    "file_stem": "SubSection6_Schizoaffective_Disorder",
+    "folders": [
+      "Schizophrenia_Spectrum_out"
+    ],
+    "full_path": "Schizophrenia_Spectrum_out/SubSection6_Schizoaffective_Disorder.txt",
+    "parsed_name": "SubSection6 Schizoaffective Disorder",
+    "location": "Schizophrenia_Spectrum_out > SubSection6_Schizoaffective_Disorder"
+  },
+  "total_word_count": 2387,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Schizoaffective Disorder Diagnostic Criteria A. An uninterrupted period of illness during which there is a major mood episode (major depressive or manic) concurrent with Criterion A of schizophrenia. ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "to the five symptom domain areas identified in the diagnostic criteria, the assessment of cognition, depression, and mania symptom domains is vital for making critically important distinctions between..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 587,
+      "text_preview": "Diagnostic Issues Cultural and socioeconomic factors must be considered, particularly when the individual and the clinician do not share the same cultural and economic background. Ideas that appear to..."
+    }
+  ]
+}

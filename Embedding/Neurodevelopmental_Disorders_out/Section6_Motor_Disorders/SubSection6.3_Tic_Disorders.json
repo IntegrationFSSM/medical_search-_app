@@ -1,0 +1,47 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.3_Tic_Disorders.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.3_Tic_Disorders.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Tic_Disorders.html",
+  "hierarchy": {
+    "file_name": "SubSection6.3_Tic_Disorders.txt",
+    "file_stem": "SubSection6.3_Tic_Disorders",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section6_Motor_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.3_Tic_Disorders.txt",
+    "parsed_name": "SubSection6.3 Tic Disorders",
+    "location": "Neurodevelopmental_Disorders_out > Section6_Motor_Disorders > SubSection6.3_Tic_Disorders"
+  },
+  "total_word_count": 2883,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Tic Disorders Diagnostic Criteria Note: A tic is a sudden, rapid, recurrent, nonrhythmic motor movement or vocalization. Tourette\u2019s Disorder A. Both multiple motor and one or more vocal tics have been..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "wane in severity, and some individuals may have tic-free intervals of weeks to months; however, an individual who has had tics of greater than 1 year\u2019s duration since first tic onset would be consider..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "is increasingly evident that the immune system and neuroinflammation play important roles in the pathobiology of tics in at least a subset of affected individuals (e.g., those with Sydenham's chorea)...."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 183,
+      "text_preview": "Functional disorders should also be considered when an individual presents with \u201ctic attacks\u201d that can go on for extended periods of time lasting from 15 minutes to several hours. Comorbidity Many med..."
+    }
+  ]
+}

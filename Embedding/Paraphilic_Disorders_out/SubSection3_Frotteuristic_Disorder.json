@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection3_Frotteuristic_Disorder.txt",
+  "relative_path": "Paraphilic_Disorders_out/SubSection3_Frotteuristic_Disorder.txt",
+  "html_page": "Paraphilic_Disorders_out/Frotteuristic_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Frotteuristic_Disorder.txt",
+    "file_stem": "SubSection3_Frotteuristic_Disorder",
+    "folders": [
+      "Paraphilic_Disorders_out"
+    ],
+    "full_path": "Paraphilic_Disorders_out/SubSection3_Frotteuristic_Disorder.txt",
+    "parsed_name": "SubSection3 Frotteuristic Disorder",
+    "location": "Paraphilic_Disorders_out > SubSection3_Frotteuristic_Disorder"
+  },
+  "total_word_count": 1163,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Frotteuristic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and intense sexual arousal from touching or rubbing against a nonconsenting person, as manifested by fantasi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 263,
+      "text_preview": "with a nonconsenting person (e.g., rubbing his genitals against a passenger on a crowded subway car) or unless there is accompanying clinically significant distress or impairment in social, occupation..."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection5_Factitious Disorder.txt",
+  "relative_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection5_Factitious Disorder.txt",
+  "html_page": "Somatic_Symptom_and_Related_Disorders_out/Factitious_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection5_Factitious Disorder.txt",
+    "file_stem": "SubSection5_Factitious Disorder",
+    "folders": [
+      "Somatic_Symptom_and_Related_Disorders_out"
+    ],
+    "full_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection5_Factitious Disorder.txt",
+    "parsed_name": "SubSection5 Factitious Disorder",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection5_Factitious Disorder"
+  },
+  "total_word_count": 1333,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Factitious Disorder Diagnostic Criteria Factitious Disorder Imposed on Self A. Falsification of physical or psychological signs or symptoms, or induction of injury or disease, associated with identifi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 433,
+      "text_preview": "other dependent. In individuals with recurrent episodes of falsification of signs and symptoms of illness and/or induction of injury, this pattern of successive deceptive contact with medical personne..."
+    }
+  ]
+}

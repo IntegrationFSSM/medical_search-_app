@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection3_Persistent_Depressive_Disorder.txt",
+  "relative_path": "Depressive_Disorders_out/SubSection3_Persistent_Depressive_Disorder.txt",
+  "html_page": "Depressive_Disorders_out/Persistent_Depressive_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Persistent_Depressive_Disorder.txt",
+    "file_stem": "SubSection3_Persistent_Depressive_Disorder",
+    "folders": [
+      "Depressive_Disorders_out"
+    ],
+    "full_path": "Depressive_Disorders_out/SubSection3_Persistent_Depressive_Disorder.txt",
+    "parsed_name": "SubSection3 Persistent Depressive Disorder",
+    "location": "Depressive_Disorders_out > SubSection3_Persistent_Depressive_Disorder"
+  },
+  "total_word_count": 2065,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Persistent Depressive Disorder Diagnostic Criteria This disorder represents a consolidation of DSM-IV-defined chronic major depressive disorder and dysthymic disorder. A. Depressed mood for most of th..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "in the context of persistent depressive disorder than they are in a nonchronic major depressive episode. 195 Risk and Prognostic Factors Temperamental. Factors predictive of poorer long-term outcome i..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 265,
+      "text_preview": "symptoms occur only during the course of the psychotic disorder (including residual phases). Persistent depressive disorder must be distinguished from a depressive or bipolar and related disorder due ..."
+    }
+  ]
+}

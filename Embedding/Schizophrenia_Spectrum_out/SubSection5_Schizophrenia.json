@@ -1,0 +1,51 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection5_Schizophrenia.txt",
+  "relative_path": "Schizophrenia_Spectrum_out/SubSection5_Schizophrenia.txt",
+  "html_page": "Schizophrenia_Spectrum_out/Schizophrenia.html",
+  "hierarchy": {
+    "file_name": "SubSection5_Schizophrenia.txt",
+    "file_stem": "SubSection5_Schizophrenia",
+    "folders": [
+      "Schizophrenia_Spectrum_out"
+    ],
+    "full_path": "Schizophrenia_Spectrum_out/SubSection5_Schizophrenia.txt",
+    "parsed_name": "SubSection5 Schizophrenia",
+    "location": "Schizophrenia_Spectrum_out > SubSection5_Schizophrenia"
+  },
+  "total_word_count": 4261,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Schizophrenia Diagnostic Criteria A. Two (or more) of the following, each present for a significant portion of time during a 1-month period (or less if successfully treated). At least one of these mus..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "the social dysfunction described under Criterion B. There is also strong evidence for a relationship between cognitive impairment (see the section \u201cAssociated Features\u201d for this disorder) and function..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "which was based on a range of definitions of schizophrenia, found no difference in prevalence between the sexes. Development and Course The requisite psychotic features of the schizophrenia diagnosis ..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "diagnosed with schizophrenia have no family history of psychosis. Liability is conferred by a spectrum of risk alleles, common and rare, with each allele contributing only a small fraction to the tota..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 661,
+      "text_preview": "outside of their family. Differential Diagnosis Major depressive or bipolar disorder with psychotic or catatonic features. The distinction between schizophrenia and major depressive or bipolar disorde..."
+    }
+  ]
+}

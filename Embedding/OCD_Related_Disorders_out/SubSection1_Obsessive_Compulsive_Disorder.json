@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection1_Obsessive_Compulsive_Disorder.txt",
+  "relative_path": "OCD_Related_Disorders_out/SubSection1_Obsessive_Compulsive_Disorder.txt",
+  "html_page": "OCD_Related_Disorders_out/Obsessive_Compulsive_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Obsessive_Compulsive_Disorder.txt",
+    "file_stem": "SubSection1_Obsessive_Compulsive_Disorder",
+    "folders": [
+      "OCD_Related_Disorders_out"
+    ],
+    "full_path": "OCD_Related_Disorders_out/SubSection1_Obsessive_Compulsive_Disorder.txt",
+    "parsed_name": "SubSection1 Obsessive Compulsive Disorder",
+    "location": "OCD_Related_Disorders_out > SubSection1_Obsessive_Compulsive_Disorder"
+  },
+  "total_word_count": 3592,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Obsessive-Compulsive Disorder Diagnostic Criteria A. Presence of obsessions, compulsions, or both: Obsessions are defined by (1) and (2): 1. Recurrent and persistent thoughts, urges, or images that ar..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "and counting compulsions); forbidden or taboo thoughts (e.g., aggressive, sexual, or religious obsessions and related compulsions); and harm (e.g., fears of harm to self or others and checking compuls..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "concordance rate of 0.57 for monozygotic vs. 0.22 for dizygotic twins). Twin studies suggest that additive genetic effects account for ~40% of the variance in obsessive-compulsive symptoms. Dysfunctio..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 892,
+      "text_preview": "that is odd, irrational, or of a seemingly magical nature; moreover, compulsions are usually present and usually linked to the obsessions. Like individuals with OCD, individuals with specific phobia c..."
+    }
+  ]
+}

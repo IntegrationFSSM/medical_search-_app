@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection3_Specific_Phobia.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection3_Specific_Phobia.txt",
+  "html_page": "Anxiety_Disorders_out/specific-phobia.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Specific_Phobia.txt",
+    "file_stem": "SubSection3_Specific_Phobia",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection3_Specific_Phobia.txt",
+    "parsed_name": "SubSection3 Specific Phobia",
+    "location": "Anxiety_Disorders_out > SubSection3_Specific_Phobia"
+  },
+  "total_word_count": 2932,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Specific Phobia Diagnostic Criteria A. Marked fear or anxiety about a specific object or situation (e.g., flying, heights, animals, receiving an injection, seeing blood). Note: In children, the fear o..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "instances, avoidance behaviors or ongoing refusal to engage in activities that would involve exposure to the phobic object or situation (e.g., repeated refusal to accept offers for work-related travel..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "a risk factor for major neurocognitive disorder. Although most specific phobias develop in childhood and adolescence, it is possible for a specific phobia to develop at any age, often as the result of..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 232,
+      "text_preview": "harming others), and if other diagnostic criteria for obsessive-compulsive disorder are met, then obsessive-compulsive disorder should be diagnosed. Trauma- and stressor-related disorders. Eating diso..."
+    }
+  ]
+}

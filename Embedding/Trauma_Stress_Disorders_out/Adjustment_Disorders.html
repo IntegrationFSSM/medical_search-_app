@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Troubles de l'Adaptation – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation des Troubles de l'Adaptation – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Développement de symptômes en réponse à un facteur de stress</legend>
+  <p class="subtitle">Le développement de symptômes émotionnels ou comportementaux en réponse à un (ou des) facteur(s) de stress identifiable(s) survenant dans les 3 mois suivant le début du (des) facteur(s) de stress</p>
+  <label><input type="checkbox" name="critereA" value="Développement de symptômes émotionnels ou comportementaux"/> Développement de symptômes émotionnels ou comportementaux</label>
+  <label><input type="checkbox" name="critereA" value="En réponse à un (ou des) facteur(s) de stress identifiable(s)"/> En réponse à un (ou des) facteur(s) de stress identifiable(s)</label>
+  <label><input type="checkbox" name="critereA" value="Survenant dans les 3 mois suivant le début du (des) facteur(s) de stress"/> Survenant dans les 3 mois suivant le début du (des) facteur(s) de stress</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Signification clinique</legend>
+  <p class="subtitle">Ces symptômes ou comportements sont cliniquement significatifs, comme en témoigne un (ou les deux) des éléments suivants</p>
+  <label><input type="checkbox" name="critereB" value="1. Détresse marquée disproportionnée par rapport à sévérité ou intensité du facteur de stress (contexte externe et facteurs culturels pris en compte)"/> <strong>1.</strong> Détresse marquée qui est disproportionnée par rapport à la sévérité ou intensité du facteur de stress, en tenant compte du contexte externe et des facteurs culturels qui pourraient influencer la sévérité des symptômes et la présentation</label>
+  <label><input type="checkbox" name="critereB" value="2. Altération significative du fonctionnement social, professionnel ou autres domaines importants"/> <strong>2.</strong> Altération significative du fonctionnement social, professionnel ou autres domaines importants</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Non attribuable à autre trouble mental</legend>
+  <p class="subtitle">La perturbation liée au stress ne remplit pas les critères d'un autre trouble mental et n'est pas simplement une exacerbation d'un trouble mental préexistant</p>
+  <label><input type="checkbox" name="critereC" value="Perturbation liée au stress ne remplit pas critères d'un autre trouble mental"/> La perturbation liée au stress ne remplit pas les critères d'un autre trouble mental</label>
+  <label><input type="checkbox" name="critereC" value="N'est pas simplement une exacerbation d'un trouble mental préexistant"/> N'est pas simplement une exacerbation d'un trouble mental préexistant</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Non attribuable au deuil normal ou trouble du deuil prolongé</legend>
+  <p class="subtitle">Les symptômes ne représentent pas un deuil normal et ne sont pas mieux expliqués par un trouble du deuil prolongé</p>
+  <label><input type="checkbox" name="critereD" value="Symptômes ne représentent pas un deuil normal"/> Les symptômes ne représentent pas un deuil normal</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliqués par trouble du deuil prolongé"/> Ne sont pas mieux expliqués par un trouble du deuil prolongé</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Résolution après cessation du facteur de stress</legend>
+  <p class="subtitle">Une fois que le facteur de stress ou ses conséquences ont cessé, les symptômes ne persistent pas plus de 6 mois supplémentaires</p>
+  <label><input type="checkbox" name="critereE" value="Une fois facteur de stress ou ses conséquences cessés, symptômes ne persistent pas plus de 6 mois supplémentaires"/> Une fois que le facteur de stress ou ses conséquences ont cessé, les symptômes ne persistent pas plus de 6 mois supplémentaires</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs</legend>
+  
+  <p style="margin-top: 10px;"><strong>Sous-type (selon symptômes prédominants) :</strong></p>
+  <div class="warning-box">
+    ⚠️ Le code ICD-10-CM dépend du sous-type
+  </div>
+  <label><input type="radio" name="soustype" value="Avec humeur dépressive"/> <strong>F43.21 Avec humeur dépressive :</strong> Humeur basse, pleurs ou sentiments de désespoir sont prédominants</label>
+  <label><input type="radio" name="soustype" value="Avec anxiété"/> <strong>F43.22 Avec anxiété :</strong> Nervosité, inquiétude, agitation ou anxiété de séparation est prédominante</label>
+  <label><input type="radio" name="soustype" value="Avec anxiété et humeur dépressive mixtes"/> <strong>F43.23 Avec anxiété et humeur dépressive mixtes :</strong> Une combinaison de dépression et d'anxiété est prédominante</label>
+  <label><input type="radio" name="soustype" value="Avec perturbation des conduites"/> <strong>F43.24 Avec perturbation des conduites :</strong> Perturbation des conduites est prédominante</label>
+  <label><input type="radio" name="soustype" value="Avec perturbation mixte des émotions et des conduites"/> <strong>F43.25 Avec perturbation mixte des émotions et des conduites :</strong> Symptômes émotionnels (ex: dépression, anxiété) ET perturbation des conduites sont prédominants</label>
+  <label><input type="radio" name="soustype" value="Non spécifié"/> <strong>F43.20 Non spécifié :</strong> Pour réactions inadaptées non classifiables comme un des sous-types spécifiques</label>
+  
+  <p style="margin-top: 15px;"><strong>Durée :</strong></p>
+  <label><input type="radio" name="duree" value="Aigu"/> <strong>Aigu :</strong> Persistance des symptômes pendant moins de 6 mois</label>
+  <label><input type="radio" name="duree" value="Persistant (chronique)"/> <strong>Persistant (chronique) :</strong> Persistance des symptômes pendant 6 mois ou plus (en réponse à un facteur de stress chronique ou à un facteur de stress ayant des conséquences durables)</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],critereC:[],critereD:[],critereE:"",soustype:"",duree:""};
+
+const codes={
+  "Avec humeur dépressive":"F43.21",
+  "Avec anxiété":"F43.22",
+  "Avec anxiété et humeur dépressive mixtes":"F43.23",
+  "Avec perturbation des conduites":"F43.24",
+  "Avec perturbation mixte des émotions et des conduites":"F43.25",
+  "Non spécifié":"F43.20"
+};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereC=c;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereD(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereD=c;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereE(){
+  const c=document.querySelector("input[name='critereE']:checked");
+  if(c){
+    choix.critereE=c.value;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else alert("Cochez l'option du critère E");
+}
+
+function afficherResume(){
+  const st=document.querySelector("input[name='soustype']:checked");
+  const du=document.querySelector("input[name='duree']:checked");
+  if(st&&du){
+    choix.soustype=st.value;
+    choix.duree=du.value;
+    genererResume();
+  }else{
+    if(!st)Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le sous-type", confirmButtonColor: "#667eea"});
+    else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la durée", confirmButtonColor: "#667eea"});
+  }
+}
+
+function genererResume(){
+  const code=codes[choix.soustype];
+  let diag=code+" Trouble de l'Adaptation "+choix.soustype.toLowerCase()+", "+choix.duree.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Développement de symptômes en réponse à facteur de stress</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Signification clinique</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Non attribuable à autre trouble mental</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère D – Non attribuable au deuil normal ou trouble du deuil prolongé</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère E – Résolution après cessation du facteur de stress</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
+  
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
+  h+="<li>✓ Sous-type: "+choix.soustype+"</li>";
+  h+="<li>✓ Durée: "+choix.duree+"</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Trouble de l'adaptation avec développement de symptômes émotionnels/comportementaux en réponse à facteur de stress identifiable.";
+  h+="<br/><br/><strong>Critère A :</strong> Développement de symptômes émotionnels/comportementaux en réponse à facteur(s) de stress identifiable(s) dans les 3 mois.";
+  h+="<br/><br/><strong>Critère B :</strong> Symptômes cliniquement significatifs (≥1):";
+  h+="<br/>1. Détresse marquée disproportionnée (contexte et culture pris en compte)";
+  h+="<br/>2. Altération significative du fonctionnement";
+  h+="<br/><br/><strong>Critère C :</strong> Ne remplit pas critères d'autre trouble mental et n'est pas exacerbation de trouble préexistant.";
+  h+="<br/><br/><strong>Critère D :</strong> Ne représente pas deuil normal et non mieux expliqué par trouble du deuil prolongé.";
+  h+="<br/><br/><strong>Critère E :</strong> Symptômes ne persistent pas >6 mois après cessation du facteur de stress/conséquences.";
+  h+="<br/><br/><strong>Codage ICD-10-CM (selon sous-type) :</strong>";
+  h+="<br/>• <strong>F43.21</strong> Avec humeur dépressive";
+  h+="<br/>• <strong>F43.22</strong> Avec anxiété";
+  h+="<br/>• <strong>F43.23</strong> Avec anxiété et humeur dépressive mixtes";
+  h+="<br/>• <strong>F43.24</strong> Avec perturbation des conduites";
+  h+="<br/>• <strong>F43.25</strong> Avec perturbation mixte des émotions et des conduites";
+  h+="<br/>• <strong>F43.20</strong> Non spécifié";
+  h+="<br/><br/><strong>Spécificateurs de durée :</strong>";
+  h+="<br/>• <strong>Aigu:</strong> Symptômes <6 mois";
+  h+="<br/>• <strong>Persistant (chronique):</strong> Symptômes ≥6 mois";
+  h+="<br/><br/><strong>Note importante sur durée :</strong>";
+  h+="<br/>Par définition, trouble de l'adaptation doit se résoudre dans les 6 mois suivant cessation du facteur de stress/conséquences.";
+  h+="<br/><br/>Le spécificateur 'persistant' s'applique quand:";
+  h+="<br/>• Durée >6 mois en réponse à facteur de stress CHRONIQUE";
+  h+="<br/>• OU facteur de stress ayant conséquences DURABLES";
+  h+="<br/><br/><strong>Exemples de facteurs de stress :</strong>";
+  h+="<br/>• <strong>Uniques:</strong> Perte d'emploi, divorce, déménagement, maladie";
+  h+="<br/>• <strong>Chroniques:</strong> Maladie chronique invalidante, pauvreté persistante";
+  h+="<br/>• <strong>Conséquences durables:</strong> Difficultés financières/émotionnelles suite à divorce";
+  h+="<br/><br/><strong>Différence avec autres troubles :</strong>";
+  h+="<br/>• <strong>vs Dépression majeure:</strong> Symptômes moins sévères, liés au facteur de stress";
+  h+="<br/>• <strong>vs TSPT:</strong> Facteur de stress non nécessairement traumatique";
+  h+="<br/>• <strong>vs Deuil normal:</strong> Réaction disproportionnée ou altération fonctionnelle";
+  h+="<br/>• <strong>vs Trouble du deuil prolongé:</strong> Non spécifique au deuil";
+  h+="<br/><br/><strong>Sous-types détaillés :</strong>";
+  h+="<br/><br/><strong>F43.21 Avec humeur dépressive:</strong>";
+  h+="<br/>• Humeur basse, pleurs, désespoir prédominants";
+  h+="<br/>• Symptômes dépressifs mais ne remplit pas critères dépression majeure";
+  h+="<br/><br/><strong>F43.22 Avec anxiété:</strong>";
+  h+="<br/>• Nervosité, inquiétude, agitation prédominante";
+  h+="<br/>• Peut inclure anxiété de séparation (enfants)";
+  h+="<br/><br/><strong>F43.23 Avec anxiété et humeur dépressive mixtes:</strong>";
+  h+="<br/>• Combinaison dépression ET anxiété";
+  h+="<br/>• Sous-type le plus fréquent";
+  h+="<br/><br/><strong>F43.24 Avec perturbation des conduites:</strong>";
+  h+="<br/>• Violation des droits d'autrui ou normes sociales";
+  h+="<br/>• Ex: vandalisme, conduite imprudente, bagarres, manquements scolaires";
+  h+="<br/><br/><strong>F43.25 Avec perturbation mixte des émotions et des conduites:</strong>";
+  h+="<br/>• Symptômes émotionnels (dépression/anxiété) ET perturbation conduites";
+  h+="<br/><br/><strong>F43.20 Non spécifié:</strong>";
+  h+="<br/>• Réactions inadaptées non classifiables";
+  h+="<br/>• Ex: plaintes somatiques, retrait social";
+  h+="<br/><br/><strong>Traitement :</strong>";
+  h+="<br/>• Psychothérapie (TCC, thérapie de soutien)";
+  h+="<br/>• Gestion du stress";
+  h+="<br/>• Résolution de problèmes";
+  h+="<br/>• Médicaments si nécessaire (court terme)";
+  h+="<br/>• Support social";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

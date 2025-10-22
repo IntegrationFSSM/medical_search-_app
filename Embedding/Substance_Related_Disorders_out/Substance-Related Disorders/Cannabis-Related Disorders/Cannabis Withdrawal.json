@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Withdrawal.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Withdrawal.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis_Withdrawal.html",
+  "hierarchy": {
+    "file_name": "Cannabis Withdrawal.txt",
+    "file_stem": "Cannabis Withdrawal",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Cannabis-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Withdrawal.txt",
+    "parsed_name": "Cannabis Withdrawal",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Cannabis-Related Disorders > Cannabis Withdrawal"
+  },
+  "total_word_count": 866,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 866,
+      "text_preview": " Cannabis Withdrawal\nDiagnostic Criteria\n A. Cessation of cannabis use that has been heavy and prolonged (i.e., usually daily\n or almost daily use over a period of at least a few months).\n B. Three (o..."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection9_Substance_Medication_Induced_Anxiety_Disorder.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection9_Substance_Medication_Induced_Anxiety_Disorder.txt",
+  "html_page": "Anxiety_Disorders_out/substance-induced-anxiety.html",
+  "hierarchy": {
+    "file_name": "SubSection9_Substance_Medication_Induced_Anxiety_Disorder.txt",
+    "file_stem": "SubSection9_Substance_Medication_Induced_Anxiety_Disorder",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection9_Substance_Medication_Induced_Anxiety_Disorder.txt",
+    "parsed_name": "SubSection9 Substance Medication Induced Anxiety Disorder",
+    "location": "Anxiety_Disorders_out > SubSection9_Substance_Medication_Induced_Anxiety_Disorder"
+  },
+  "total_word_count": 1701,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Substance/Medication-Induced Anxiety Disorder Diagnostic Criteria A. Panic attacks or anxiety is predominant in the clinical picture. B. There is evidence from the history, physical examination, or la..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 801,
+      "text_preview": "panic or anxiety symptoms must have developed during or soon after substance intoxication or withdrawal or after exposure to or withdrawal from a medication, and the substances or medications must be ..."
+    }
+  ]
+}

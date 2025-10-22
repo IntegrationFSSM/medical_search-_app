@@ -1,0 +1,56 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection2_Bipolar_II_Disorder.txt",
+  "relative_path": "Bipolar_and_Related_Disorders_out/SubSection2_Bipolar_II_Disorder.txt",
+  "html_page": "Bipolar_and_Related_Disorders_out/Bipolar_II_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Bipolar_II_Disorder.txt",
+    "file_stem": "SubSection2_Bipolar_II_Disorder",
+    "folders": [
+      "Bipolar_and_Related_Disorders_out"
+    ],
+    "full_path": "Bipolar_and_Related_Disorders_out/SubSection2_Bipolar_II_Disorder.txt",
+    "parsed_name": "SubSection2 Bipolar II Disorder",
+    "location": "Bipolar_and_Related_Disorders_out > SubSection2_Bipolar_II_Disorder"
+  },
+  "total_word_count": 4811,
+  "num_chunks": 6,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    6,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Bipolar II Disorder Diagnostic Criteria For a diagnosis of bipolar II disorder, it is necessary to meet the following criteria for a current or past hypomanic episode and the following criteria for a ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "or the unpredictability caused by frequent alternation between periods of depression and hypomania causes clinically significant distress or impairment in social, occupational, or other important area..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "significant impairment. Instead, the impairment results from the major depressive episodes or from a persistent pattern of unpredictable mood changes and fluctuating, unreliable interpersonal or occup..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "altered mood). Nonepisodic irritability in youth is associated with an elevated risk for anxiety disorders and major depressive disorder, but not bipolar disorder, in adulthood. Persistently irritable..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 1000,
+      "text_preview": "tests. Cognitive impairments associated with bipolar II disorder may contribute to vocational difficulties. Prolonged unemployment in individuals with bipolar disorder is associated with more episodes..."
+    },
+    {
+      "chunk_id": 5,
+      "word_count": 311,
+      "text_preview": "comorbid anxiety disorder does not differ between bipolar I and bipolar II disorders but is associated with a worse course of illness. Children and adolescents with bipolar II disorder have a higher r..."
+    }
+  ]
+}

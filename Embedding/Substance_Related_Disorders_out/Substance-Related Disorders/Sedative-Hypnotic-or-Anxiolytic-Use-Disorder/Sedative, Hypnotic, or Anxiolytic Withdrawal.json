@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+    "file_stem": "Sedative, Hypnotic, or Anxiolytic Withdrawal",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Sedative-Hypnotic-or-Anxiolytic-Use-Disorder"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+    "parsed_name": "Sedative, Hypnotic, or Anxiolytic Withdrawal",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Sedative-Hypnotic-or-Anxiolytic-Use-Disorder > Sedative, Hypnotic, or Anxiolytic Withdrawal"
+  },
+  "total_word_count": 1365,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Withdrawal Diagnostic Criteria A. Cessation of (or reduction in) sedative, hypnotic, or anxiolytic use that has been prolonged. B. Two (or more) of the following, dev..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 465,
+      "text_preview": "of diazepam (or its equivalent in other benzodiazepines) when taken daily for several months. Doses of approximately 40 mg of diazepam (or its equivalent) daily are more likely to produce clinically r..."
+    }
+  ]
+}

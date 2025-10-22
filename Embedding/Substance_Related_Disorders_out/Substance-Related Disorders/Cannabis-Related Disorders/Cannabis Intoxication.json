@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Intoxication.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis_Intoxication.html",
+  "hierarchy": {
+    "file_name": "Cannabis Intoxication.txt",
+    "file_stem": "Cannabis Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Cannabis-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Intoxication.txt",
+    "parsed_name": "Cannabis Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Cannabis-Related Disorders > Cannabis Intoxication"
+  },
+  "total_word_count": 835,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 835,
+      "text_preview": "Cannabis Intoxication\n Diagnostic Criteria\n A. Recent use of cannabis.\n B. Clinically significant problematic behavioral or psychological changes (e.g.,\n impaired motor coordination, euphoria, anxiety..."
+    }
+  ]
+}

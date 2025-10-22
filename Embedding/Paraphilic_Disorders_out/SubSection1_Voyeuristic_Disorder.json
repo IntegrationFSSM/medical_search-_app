@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection1_Voyeuristic_Disorder.txt",
+  "relative_path": "Paraphilic_Disorders_out/SubSection1_Voyeuristic_Disorder.txt",
+  "html_page": "Paraphilic_Disorders_out/Voyeuristic_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Voyeuristic_Disorder.txt",
+    "file_stem": "SubSection1_Voyeuristic_Disorder",
+    "folders": [
+      "Paraphilic_Disorders_out"
+    ],
+    "full_path": "Paraphilic_Disorders_out/SubSection1_Voyeuristic_Disorder.txt",
+    "parsed_name": "SubSection1 Voyeuristic Disorder",
+    "location": "Paraphilic_Disorders_out > SubSection1_Voyeuristic_Disorder"
+  },
+  "total_word_count": 1314,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Voyeuristic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and intense sexual arousal from observing an unsuspecting person who is naked, in the process of disrobing, or..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 414,
+      "text_preview": "as psychiatric morbidity, hypersexuality, and sexual impulsivity. Thus, the severity and course may vary over time. As with other sexual preferences, advancing age may be associated with decreasing vo..."
+    }
+  ]
+}

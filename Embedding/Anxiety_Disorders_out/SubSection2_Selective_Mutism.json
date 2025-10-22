@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection2_Selective_Mutism.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection2_Selective_Mutism.txt",
+  "html_page": "Anxiety_Disorders_out/selective-mutism.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Selective_Mutism.txt",
+    "file_stem": "SubSection2_Selective_Mutism",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection2_Selective_Mutism.txt",
+    "parsed_name": "SubSection2 Selective Mutism",
+    "location": "Anxiety_Disorders_out > SubSection2_Selective_Mutism"
+  },
+  "total_word_count": 1205,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Selective Mutism F94.0 A. Consistent failure to speak in specific social situations in which there is an expectation for speaking (e.g., at school) despite speaking in other situations. B. The disturb..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 305,
+      "text_preview": "mutism may serve as a compensatory strategy to decrease anxious arousal in social encounters. Differential Diagnosis Silent period in immigrant children learning a second language. Selective mutism mu..."
+    }
+  ]
+}

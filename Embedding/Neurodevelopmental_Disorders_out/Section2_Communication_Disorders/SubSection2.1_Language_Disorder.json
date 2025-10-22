@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.1_Language_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.1_Language_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Language_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.1_Language_Disorder.txt",
+    "file_stem": "SubSection2.1_Language_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section2_Communication_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.1_Language_Disorder.txt",
+    "parsed_name": "SubSection2.1 Language Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.1_Language_Disorder"
+  },
+  "total_word_count": 1341,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Language Disorder Diagnostic Criteria A. Persistent difficulties in the acquisition and use of language across modalities (i.e., spoken, written, sign language, or other) due to deficits in comprehens..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 441,
+      "text_preview": "disorder needs to be distinguished from normal developmental variations, and this distinction may be difficult to make before age 4 years. Regional, social, or cultural/ethnic variations of language (..."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Intoxication.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other_Hallucinogen_Intoxication.html",
+  "hierarchy": {
+    "file_name": "Other Hallucinogen Intoxication.txt",
+    "file_stem": "Other Hallucinogen Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Hallucinogen-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Intoxication.txt",
+    "parsed_name": "Other Hallucinogen Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Other Hallucinogen Intoxication"
+  },
+  "total_word_count": 813,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 813,
+      "text_preview": "Other Hallucinogen Intoxication\nDiagnostic Criteria\n A. Recent use of a hallucinogen (other than phencyclidine).\n B. Clinically significant problematic behavioral or psychological changes (e.g.,\n mark..."
+    }
+  ]
+}

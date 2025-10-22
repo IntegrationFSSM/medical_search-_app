@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Intoxication à l'Alcool – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de l'Intoxication à l'Alcool – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Ingestion récente d'alcool</legend>
+  <p class="subtitle">Ingestion récente d'alcool</p>
+  <label><input type="checkbox" name="critereA" value="Ingestion récente d'alcool"/> Ingestion récente d'alcool</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Changements comportementaux ou psychologiques problématiques</legend>
+  <p class="subtitle">Changements comportementaux ou psychologiques problématiques cliniquement significatifs qui se sont développés durant, ou peu après, l'ingestion d'alcool</p>
+  <label><input type="checkbox" name="critereB" value="Changements comportementaux ou psychologiques problématiques cliniquement significatifs"/> Changements comportementaux ou psychologiques problématiques cliniquement significatifs</label>
+  <label><input type="checkbox" name="critereB" value="Développés durant, ou peu après, ingestion d'alcool"/> Développés durant, ou peu après, l'ingestion d'alcool</label>
+  
+  <p style="margin-top: 10px;"><strong>Exemples de changements :</strong></p>
+  <label><input type="checkbox" name="exempleB" value="Comportement sexuel inapproprié"/> Comportement sexuel inapproprié</label>
+  <label><input type="checkbox" name="exempleB" value="Comportement agressif"/> Comportement agressif</label>
+  <label><input type="checkbox" name="exempleB" value="Labilité de l'humeur"/> Labilité de l'humeur</label>
+  <label><input type="checkbox" name="exempleB" value="Jugement altéré"/> Jugement altéré</label>
+  
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Signes ou symptômes physiques</legend>
+  <p class="subtitle">Un (ou plus) des signes ou symptômes suivants se développant durant, ou peu après, l'usage d'alcool</p>
+  <div class="warning-box">
+    ⚠️ Au moins 1 des 6 signes/symptômes doit être présent
+  </div>
+  
+  <label><input type="checkbox" name="critereC" value="1. Parole indistincte"/> <strong>1.</strong> Parole indistincte</label>
+  <label><input type="checkbox" name="critereC" value="2. Incoordination"/> <strong>2.</strong> Incoordination</label>
+  <label><input type="checkbox" name="critereC" value="3. Démarche instable"/> <strong>3.</strong> Démarche instable</label>
+  <label><input type="checkbox" name="critereC" value="4. Nystagmus"/> <strong>4.</strong> Nystagmus</label>
+  <label><input type="checkbox" name="critereC" value="5. Altération de l'attention ou de la mémoire"/> <strong>5.</strong> Altération de l'attention ou de la mémoire</label>
+  <label><input type="checkbox" name="critereC" value="6. Stupeur ou coma"/> <strong>6.</strong> Stupeur ou coma</label>
+  
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Non attribuable à autre condition</legend>
+  <p class="subtitle">Les signes ou symptômes ne sont pas attribuables à une autre condition médicale et ne sont pas mieux expliqués par un autre trouble mental</p>
+  <label><input type="checkbox" name="critereD" value="Signes ou symptômes non attribuables à autre condition médicale"/> Les signes ou symptômes ne sont pas attribuables à une autre condition médicale</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliqués par autre trouble mental, incluant intoxication avec autre substance"/> Ne sont pas mieux expliqués par un autre trouble mental, incluant intoxication avec une autre substance</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite" class="hidden">
+  <legend>Trouble d'usage d'alcool comorbide</legend>
+  <div class="warning-box">
+    ⚠️ Le code ICD-10-CM dépend de la présence et de la sévérité d'un trouble d'usage d'alcool comorbide
+  </div>
+  <p style="margin-top: 10px;"><strong>Sélectionner la comorbidité :</strong></p>
+  <label><input type="radio" name="comorbidite" value="Sans trouble d'usage d'alcool"/> <strong>Sans trouble d'usage d'alcool comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'alcool léger"/> <strong>Avec trouble d'usage d'alcool léger comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'alcool modéré"/> <strong>Avec trouble d'usage d'alcool modéré comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'alcool sévère"/> <strong>Avec trouble d'usage d'alcool sévère comorbide</strong></label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB:[],exempleB:[],critereC:[],critereD:[],comorbidite:""};
+
+const codes={
+  "Sans trouble d'usage d'alcool":"F10.920",
+  "Avec trouble d'usage d'alcool léger":"F10.120",
+  "Avec trouble d'usage d'alcool modéré":"F10.220",
+  "Avec trouble d'usage d'alcool sévère":"F10.220"
+};
+
+function validerCritereA(){
+  const c=document.querySelector("input[name='critereA']:checked");
+  if(c){
+    choix.critereA=c.value;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Cochez l'option du critère A");
+}
+
+function validerCritereB(){
+  const cb=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  const ex=Array.from(document.querySelectorAll("input[name='exempleB']:checked")).map(e=>e.value);
+  if(cb.length>0){
+    choix.critereB=cb;
+    choix.exempleB=ex;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereC=c;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins 1 des 6 signes/symptômes du critère C", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereD(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereD=c;
+    document.getElementById("comorbidite").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const co=document.querySelector("input[name='comorbidite']:checked");
+  if(co){
+    choix.comorbidite=co.value;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la comorbidité", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code=codes[choix.comorbidite];
+  let diag=code+" Intoxication à l'Alcool";
+  if(choix.comorbidite!=="Sans trouble d'usage d'alcool"){
+    diag+=", "+choix.comorbidite.toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Ingestion récente d'alcool</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  
+  h+="<h4>Critère B – Changements comportementaux/psychologiques problématiques</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  if(choix.exempleB.length>0){
+    h+="<li><strong>Exemples observés :</strong></li>";
+    choix.exempleB.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  }
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Signes ou symptômes physiques (≥1/6)</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère D – Non attribuable à autre condition</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Comorbidité</h4><ul class='choix-list'><li>✓ "+choix.comorbidite+"</li></ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Intoxication à l'alcool avec changements comportementaux/psychologiques et signes physiques.";
+  h+="<br/><br/><strong>Critère A :</strong> Ingestion récente d'alcool.";
+  h+="<br/><br/><strong>Critère B :</strong> Changements comportementaux ou psychologiques problématiques cliniquement significatifs développés durant/peu après ingestion d'alcool.";
+  h+="<br/>Exemples: Comportement sexuel ou agressif inapproprié, labilité de l'humeur, jugement altéré.";
+  h+="<br/><br/><strong>Critère C :</strong> ≥1 des signes/symptômes suivants durant/peu après usage d'alcool:";
+  h+="<br/>1. Parole indistincte";
+  h+="<br/>2. Incoordination";
+  h+="<br/>3. Démarche instable";
+  h+="<br/>4. Nystagmus";
+  h+="<br/>5. Altération attention ou mémoire";
+  h+="<br/>6. Stupeur ou coma";
+  h+="<br/><br/><strong>Critère D :</strong> Signes/symptômes non attribuables à autre condition médicale et non mieux expliqués par autre trouble mental (incluant intoxication avec autre substance).";
+  h+="<br/><br/><strong>Codage ICD-10-CM (dépend de comorbidité) :</strong>";
+  h+="<br/>• <strong>F10.920</strong> : Sans trouble d'usage d'alcool comorbide";
+  h+="<br/>• <strong>F10.120</strong> : Avec trouble d'usage d'alcool léger comorbide";
+  h+="<br/>• <strong>F10.220</strong> : Avec trouble d'usage d'alcool modéré ou sévère comorbide";
+  h+="<br/><br/><strong>Caractéristiques clés :</strong>";
+  h+="<br/>• Ingestion récente d'alcool";
+  h+="<br/>• Changements comportementaux/psychologiques problématiques";
+  h+="<br/>• Signes physiques objectifs (parole, coordination, démarche, etc.)";
+  h+="<br/>• Développement durant ou peu après ingestion";
+  h+="<br/>• Non attribuable à autre cause";
+  h+="<br/><br/><strong>Signes physiques typiques :</strong>";
+  h+="<br/>• Parole indistincte (dysarthrie)";
+  h+="<br/>• Incoordination motrice";
+  h+="<br/>• Démarche instable (ataxie)";
+  h+="<br/>• Nystagmus (mouvements oculaires involontaires)";
+  h+="<br/>• Altération cognitive (attention, mémoire)";
+  h+="<br/>• Stupeur ou coma (intoxication sévère)";
+  h+="<br/><br/><strong>Changements comportementaux typiques :</strong>";
+  h+="<br/>• Désinhibition (comportement sexuel/agressif inapproprié)";
+  h+="<br/>• Labilité émotionnelle";
+  h+="<br/>• Jugement altéré";
+  h+="<br/>• Prise de risques accrue";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

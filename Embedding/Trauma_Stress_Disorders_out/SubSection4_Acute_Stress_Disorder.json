@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection4_Acute_Stress_Disorder.txt",
+  "relative_path": "Trauma_Stress_Disorders_out/SubSection4_Acute_Stress_Disorder.txt",
+  "html_page": "Trauma_Stress_Disorders_out/Acute_Stress_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection4_Acute_Stress_Disorder.txt",
+    "file_stem": "SubSection4_Acute_Stress_Disorder",
+    "folders": [
+      "Trauma_Stress_Disorders_out"
+    ],
+    "full_path": "Trauma_Stress_Disorders_out/SubSection4_Acute_Stress_Disorder.txt",
+    "parsed_name": "SubSection4 Acute Stress Disorder",
+    "location": "Trauma_Stress_Disorders_out > SubSection4_Acute_Stress_Disorder"
+  },
+  "total_word_count": 2938,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Acute Stress Disorder Diagnostic Criteria A. Exposure to actual or threatened death, serious injury, or sexual violence in one (or more) of the following ways: 1. Directly experiencing the traumatic e..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "use, to avoid internal reminders) (Criterion B8), and to avoid activities, conversations, objects, situations, or people who arouse recollections of it (Criterion B9). It is very common for individual..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "even excessively bright positive affect, in young children who are traumatized. Although children may avoid reminders of the trauma, they sometimes become preoccupied with reminders (e.g., a young chi..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 238,
+      "text_preview": "hallucinations, and other perceptual disturbances that may occur in schizophrenia, other psychotic disorders, depressive or bipolar disorder with psychotic features, a delirium, substance/medication-i..."
+    }
+  ]
+}

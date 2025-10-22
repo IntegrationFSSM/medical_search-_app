@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen Persisting Perception Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen Persisting Perception Disorder.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html",
+  "hierarchy": {
+    "file_name": "Hallucinogen Persisting Perception Disorder.txt",
+    "file_stem": "Hallucinogen Persisting Perception Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Hallucinogen-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen Persisting Perception Disorder.txt",
+    "parsed_name": "Hallucinogen Persisting Perception Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Hallucinogen Persisting Perception Disorder"
+  },
+  "total_word_count": 671,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 671,
+      "text_preview": "Hallucinogen Persisting Perception Disorder\n Diagnostic Criteria\n A. Following cessation of use of a hallucinogen, the reexperiencing of one or more\n of the perceptual symptoms that were experienced w..."
+    }
+  ]
+}

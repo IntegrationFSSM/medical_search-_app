@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.4_Social_Communication_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.4_Social_Communication_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Social_Communication_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.4_Social_Communication_Disorder.txt",
+    "file_stem": "SubSection2.4_Social_Communication_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section2_Communication_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.4_Social_Communication_Disorder.txt",
+    "parsed_name": "SubSection2.4 Social Communication Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.4_Social_Communication_Disorder"
+  },
+  "total_word_count": 911,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 911,
+      "text_preview": "Social (Pragmatic) Communication Disorder\nDiagnostic Criteria\nA. Persistent difficulties in the social use of verbal and nonverbal communication as\nmanifested by all of the following:\n1. Deficits in u..."
+    }
+  ]
+}

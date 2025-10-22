@@ -1,0 +1,52 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Stimulant Use Disorder.txt",
+    "file_stem": "Stimulant Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Stimulant-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Use Disorder.txt",
+    "parsed_name": "Stimulant Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Stimulant-Related Disorders > Stimulant Use Disorder"
+  },
+  "total_word_count": 3828,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Stimulant Use Disorder Diagnostic Criteria A. A pattern of amphetamine-type substance, cocaine, or other stimulant use leading to clinically significant impairment or distress, as manifested by at lea..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "that increases activity in the brain and can temporarily elevate alertness, mood, and awareness. Stimulants covered in this chapter include amphetamine and prescription stimulants with similar effects..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "Natives. Among U.S. adults, 6.6% (annual average) used prescription stimulants overall; 4.5% used without misuse, 1.9% misused without use disorders, and 0.2% had use disorders. While non Hispanic Whi..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "cocaine use disorder and higher levels of progesterone have lower stress-induced and cue-induced cocaine craving and lower cue-induced changes in blood pressure than females with cocaine use disorder ..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 228,
+      "text_preview": "disorders occur frequently in individuals with stimulant use disorder. In such cases, a diagnosis of stimulant intoxication, stimulant withdrawal, or a stimulant-induced mental disorder should be give..."
+    }
+  ]
+}

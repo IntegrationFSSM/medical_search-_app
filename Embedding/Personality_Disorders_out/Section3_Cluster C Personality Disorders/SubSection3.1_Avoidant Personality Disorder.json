@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.1_Avoidant Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.1_Avoidant Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/Avoidant_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3.1_Avoidant Personality Disorder.txt",
+    "file_stem": "SubSection3.1_Avoidant Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section3_Cluster C Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.1_Avoidant Personality Disorder.txt",
+    "parsed_name": "SubSection3.1 Avoidant Personality Disorder",
+    "location": "Personality_Disorders_out > Section3_Cluster C Personality Disorders > SubSection3.1_Avoidant Personality Disorder"
+  },
+  "total_word_count": 1773,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Avoidant Personality Disorder Diagnostic Criteria A pervasive pattern of social inhibition, feelings of inadequacy, and hypersensitivity to negative evaluation, beginning by early adulthood and presen..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 873,
+      "text_preview": "A review of six epidemiological studies (four in the United States) found a median prevalence of 2.1%. Development and Course The avoidant behavior often starts in infancy or childhood with shyness, i..."
+    }
+  ]
+}

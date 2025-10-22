@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection10_Anxiety_Due_to_Medical_Condition.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection10_Anxiety_Due_to_Medical_Condition.txt",
+  "html_page": "Anxiety_Disorders_out/anxiety-disorder-medical.html",
+  "hierarchy": {
+    "file_name": "SubSection10_Anxiety_Due_to_Medical_Condition.txt",
+    "file_stem": "SubSection10_Anxiety_Due_to_Medical_Condition",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection10_Anxiety_Due_to_Medical_Condition.txt",
+    "parsed_name": "SubSection10 Anxiety Due to Medical Condition",
+    "location": "Anxiety_Disorders_out > SubSection10_Anxiety_Due_to_Medical_Condition"
+  },
+  "total_word_count": 1392,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Anxiety Disorder Due to Another Medical Condition Diagnostic Criteria A. Panic attacks or anxiety is predominant in the clinical picture. B. There is evidence from the history, physical examination, o..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 492,
+      "text_preview": "medications or to the medical illness itself. When a diagnosis of substance-induced anxiety is being made in relation to recreational or nonprescribed drugs, it may be useful to obtain a urine or bloo..."
+    }
+  ]
+}

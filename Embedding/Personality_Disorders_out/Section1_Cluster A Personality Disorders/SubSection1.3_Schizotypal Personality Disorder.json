@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.3_Schizotypal Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.3_Schizotypal Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/Schizotypal_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1.3_Schizotypal Personality Disorder.txt",
+    "file_stem": "SubSection1.3_Schizotypal Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section1_Cluster A Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.3_Schizotypal Personality Disorder.txt",
+    "parsed_name": "SubSection1.3 Schizotypal Personality Disorder",
+    "location": "Personality_Disorders_out > Section1_Cluster A Personality Disorders > SubSection1.3_Schizotypal Personality Disorder"
+  },
+  "total_word_count": 1901,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Schizotypal Personality Disorder Diagnostic Criteria A. A pervasive pattern of social and interpersonal deficits marked by acute discomfort with, and reduced capacity for, close relationships as well ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "studies (three in the United States) found a median prevalence of 0.6%. Genetic and physiological. Other mental disorders with psychotic symptoms. Development and Course Schizotypal personality disord..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 101,
+      "text_preview": "disorders, so that making such distinctions is not always feasible. Schizotypal features during F60.2 adolescence may be reflective of transient emotional turmoil rather than an enduring personality d..."
+    }
+  ]
+}

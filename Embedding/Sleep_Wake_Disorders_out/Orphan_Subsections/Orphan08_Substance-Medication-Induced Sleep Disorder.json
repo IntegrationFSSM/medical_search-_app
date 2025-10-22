@@ -1,0 +1,47 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan08_Substance-Medication-Induced Sleep Disorder.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan08_Substance-Medication-Induced Sleep Disorder.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Orphan_Subsections/Substance_Medication_Induced_Sleep_Disorder.html",
+  "hierarchy": {
+    "file_name": "Orphan08_Substance-Medication-Induced Sleep Disorder.txt",
+    "file_stem": "Orphan08_Substance-Medication-Induced Sleep Disorder",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Orphan_Subsections"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan08_Substance-Medication-Induced Sleep Disorder.txt",
+    "parsed_name": "Orphan08 Substance Medication Induced Sleep Disorder",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan08_Substance-Medication-Induced Sleep Disorder"
+  },
+  "total_word_count": 3429,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Substance/Medication-Induced Sleep Disorder Diagnostic Criteria A. A prominent and severe disturbance in sleep. B. There is evidence from the history, physical examination, or laboratory findings of b..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "case of insomnia occurring during withdrawal in a man with a severe lorazepam use disorder, the diagnosis is F13.282 severe lorazepam use disorder with lorazepam-induced sleep disorder, with onset dur..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "the sleep-inducing and slow wave sleep\u2013enhancing effects develops. Upon withdrawal, sleep difficulties and unpleasant dreams have been reported lasting for several weeks. Polysomnographic studies demo..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 729,
+      "text_preview": "to the stage of use and whether it is in the context of intake/intoxication, chronic use, or withdrawal following discontinuation of the substance. All-night polysomnography can help define the severi..."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection3_Hoarding_Disorder.txt",
+  "relative_path": "OCD_Related_Disorders_out/SubSection3_Hoarding_Disorder.txt",
+  "html_page": "OCD_Related_Disorders_out/Hoarding_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Hoarding_Disorder.txt",
+    "file_stem": "SubSection3_Hoarding_Disorder",
+    "folders": [
+      "OCD_Related_Disorders_out"
+    ],
+    "full_path": "OCD_Related_Disorders_out/SubSection3_Hoarding_Disorder.txt",
+    "parsed_name": "SubSection3 Hoarding Disorder",
+    "location": "OCD_Related_Disorders_out > SubSection3_Hoarding_Disorder"
+  },
+  "total_word_count": 2285,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Hoarding Disorder Diagnostic Criteria A. Persistent difficulty discarding or parting with possessions, regardless of their actual value. B. This difficulty is due to a perceived need to save the items..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "for self and others (Criterion D). In some cases, particularly when there is poor insight, the individual may not report distress, and the 279 impairment may be apparent only to those around the indiv..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 485,
+      "text_preview": "discard anything. Neurodevelopmental disorders. Hoarding disorder is not diagnosed if the accumulation of objects is judged to be a direct consequence of a neurodevelopmental disorder, such as autism ..."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection2_Body_Dysmorphic_Disorder.txt",
+  "relative_path": "OCD_Related_Disorders_out/SubSection2_Body_Dysmorphic_Disorder.txt",
+  "html_page": "OCD_Related_Disorders_out/Body_Dysmorphic_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Body_Dysmorphic_Disorder.txt",
+    "file_stem": "SubSection2_Body_Dysmorphic_Disorder",
+    "folders": [
+      "OCD_Related_Disorders_out"
+    ],
+    "full_path": "OCD_Related_Disorders_out/SubSection2_Body_Dysmorphic_Disorder.txt",
+    "parsed_name": "SubSection2 Body Dysmorphic Disorder",
+    "location": "OCD_Related_Disorders_out > SubSection2_Body_Dysmorphic_Disorder"
+  },
+  "total_word_count": 3,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 3,
+      "text_preview": "body dysmorphic disorder,"
+    }
+  ]
+}

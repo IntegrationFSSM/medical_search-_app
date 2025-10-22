@@ -1,0 +1,43 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Use Disorder.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Use_Disorder.html",
+  "hierarchy": {
+    "file_name": "Other (or Unknown) Substance Use Disorder.txt",
+    "file_stem": "Other (or Unknown) Substance Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Other-or-Unknown-Substance-Use-Disorder"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Use Disorder.txt",
+    "parsed_name": "Other (or Unknown) Substance Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Other-or-Unknown-Substance-Use-Disorder > Other (or Unknown) Substance Use Disorder"
+  },
+  "total_word_count": 1969,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Other (or Unknown) Substance Use Disorder Diagnostic Criteria A. A problematic pattern of use of an intoxicating substance not able to be classified within the alcohol; caffeine; cannabis; hallucinoge..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "unknown) substance category. Unknown substance\u2013related disorders are associated with unidentified substances, such as intoxications in which the individual cannot identify the ingested drug, or substa..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 169,
+      "text_preview": "impaired control over the use of the substance, social impairment attributable to use of the substance, risky use of the substance (e.g., continued use despite medical complications), and pharmacologi..."
+    }
+  ]
+}

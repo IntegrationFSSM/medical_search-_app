@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.1_Antisocial Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.1_Antisocial Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/Antisocial_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.1_Antisocial Personality Disorder.txt",
+    "file_stem": "SubSection2.1_Antisocial Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section2_Cluster B Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.1_Antisocial Personality Disorder.txt",
+    "parsed_name": "SubSection2.1 Antisocial Personality Disorder",
+    "location": "Personality_Disorders_out > Section2_Cluster B Personality Disorders > SubSection2.1_Antisocial Personality Disorder"
+  },
+  "total_word_count": 2385,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Antisocial Personality Disorder Diagnostic Criteria A. A pervasive pattern of disregard for and violation of the rights of others, occurring since age 15 years, as indicated by three (or more) of the ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "glib, superficial charm and can be quite voluble and verbally facile (e.g., using technical terms or jargon that might impress someone who is unfamiliar with the topic). Lack of 750 empathy, inflated ..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 585,
+      "text_preview": "years and is given only if there is evidence of conduct disorder before age 15 years. For individuals older than 18 years, a diagnosis of conduct disorder is given only if the criteria for antisocial ..."
+    }
+  ]
+}

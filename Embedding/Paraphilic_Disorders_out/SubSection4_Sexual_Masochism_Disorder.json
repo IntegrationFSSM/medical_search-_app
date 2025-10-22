@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection4_Sexual_Masochism_Disorder.txt",
+  "relative_path": "Paraphilic_Disorders_out/SubSection4_Sexual_Masochism_Disorder.txt",
+  "html_page": "Paraphilic_Disorders_out/Sexual_Masochism_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection4_Sexual_Masochism_Disorder.txt",
+    "file_stem": "SubSection4_Sexual_Masochism_Disorder",
+    "folders": [
+      "Paraphilic_Disorders_out"
+    ],
+    "full_path": "Paraphilic_Disorders_out/SubSection4_Sexual_Masochism_Disorder.txt",
+    "parsed_name": "SubSection4 Sexual Masochism Disorder",
+    "location": "Paraphilic_Disorders_out > SubSection4_Sexual_Masochism_Disorder"
+  },
+  "total_word_count": 876,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 876,
+      "text_preview": "Sexual Masochism Disorder\n Diagnostic Criteria\n A. Over a period of at least 6 months, recurrent and intense sexual arousal from the\n act of being humiliated, beaten, bound, or otherwise made to suffe..."
+    }
+  ]
+}

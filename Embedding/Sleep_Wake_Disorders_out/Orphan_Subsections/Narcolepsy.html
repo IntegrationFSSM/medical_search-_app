@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Narcolepsie – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de la Narcolepsie – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Périodes récurrentes de besoin irrépressible de dormir</legend>
+  <p class="subtitle">Périodes récurrentes d'un besoin irrépressible de dormir, de s'endormir ou de faire des siestes survenant dans la même journée</p>
+  <div class="warning-box">
+    ⚠️ Fréquence : ≥3 fois/semaine ET Durée : ≥3 mois
+  </div>
+  <label><input type="checkbox" name="critereA" value="Périodes récurrentes de besoin irrépressible de dormir, s'endormir ou faire siestes dans même journée"/> Périodes récurrentes d'un besoin irrépressible de dormir, de s'endormir ou de faire des siestes survenant dans la même journée</label>
+  <label><input type="checkbox" name="critereA" value="Survenant au moins 3 fois par semaine"/> Survenant au moins 3 fois par semaine</label>
+  <label><input type="checkbox" name="critereA" value="Durant les 3 derniers mois"/> Durant les 3 derniers mois</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Présence d'au moins un des éléments suivants</legend>
+  <p class="subtitle">Au moins un des trois éléments suivants doit être présent</p>
+  <div class="warning-box">
+    ⚠️ Au moins 1 des 3 éléments requis (détermine le sous-type)
+  </div>
+  
+  <p style="margin-top: 10px;"><strong>1. Épisodes de cataplexie (au moins quelques fois par mois) :</strong></p>
+  <label><input type="checkbox" name="critereB1" value="a. Chez individus avec maladie de longue date: épisodes brefs (secondes à minutes) de perte bilatérale soudaine du tonus musculaire avec conscience maintenue, précipités par rire ou plaisanterie"/> <strong>a.</strong> Chez individus avec maladie de longue date: épisodes brefs (secondes à minutes) de perte bilatérale soudaine du tonus musculaire avec conscience maintenue, précipités par rire ou plaisanterie</label>
+  
+  <label><input type="checkbox" name="critereB1" value="b. Chez enfants ou individus dans 6 mois du début: grimaces spontanées ou épisodes d'ouverture de mâchoire avec protrusion de langue ou hypotonie globale, sans déclencheurs émotionnels évidents"/> <strong>b.</strong> Chez enfants ou individus dans les 6 mois du début: grimaces spontanées ou épisodes d'ouverture de mâchoire avec protrusion de langue ou hypotonie globale, sans déclencheurs émotionnels évidents</label>
+  
+  <p style="margin-top: 10px;"><strong>2. Déficience en hypocrétine :</strong></p>
+  <label><input type="checkbox" name="critereB2" value="Déficience en hypocrétine mesurée par immunoréactivité hypocrétine-1 LCR (≤1/3 des valeurs sujets sains ou ≤110 pg/mL)"/> Déficience en hypocrétine mesurée par immunoréactivité hypocrétine-1 du LCR (≤1/3 des valeurs obtenues chez sujets sains avec même test, ou ≤110 pg/mL). Niveaux bas de LCR hypocrétine-1 ne doivent pas être observés dans contexte de lésion cérébrale aiguë, inflammation ou infection</label>
+  
+  <p style="margin-top: 10px;"><strong>3. Polysomnographie nocturne ou test de latence de sommeil multiple :</strong></p>
+  <label><input type="checkbox" name="critereB3" value="Polysomnographie nocturne montrant latence sommeil REM ≤15 minutes"/> Polysomnographie nocturne montrant latence sommeil REM ≤15 minutes</label>
+  <label><input type="checkbox" name="critereB3" value="OU test latence sommeil multiple montrant latence sommeil moyenne ≤8 minutes et 2 périodes REM début sommeil ou plus"/> OU test de latence de sommeil multiple montrant latence sommeil moyenne ≤8 minutes et 2 périodes REM début sommeil ou plus</label>
+  
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Sous-types -->
+<fieldset id="soustypes" class="hidden">
+  <legend>Spécifier le sous-type</legend>
+  <p class="subtitle">Le sous-type est déterminé par les critères B remplis</p>
+  <div class="warning-box">
+    ⚠️ Le code ICD-10-CM dépend du sous-type
+  </div>
+  
+  <label><input type="radio" name="soustype" value="Narcolepsie avec cataplexie ou déficience en hypocrétine (type 1)"/> <strong>G47.411 Narcolepsie avec cataplexie ou déficience en hypocrétine (type 1) :</strong> Critère B1 (cataplexie) OU Critère B2 (hypocrétine-1 LCR basse) est rempli</label>
+  
+  <label><input type="radio" name="soustype" value="Narcolepsie sans cataplexie et soit sans déficience en hypocrétine soit hypocrétine non mesurée (type 2)"/> <strong>G47.419 Narcolepsie sans cataplexie et soit sans déficience en hypocrétine soit hypocrétine non mesurée (type 2) :</strong> Critère B3 (polysomnographie/test latence sommeil positif) est rempli, mais Critère B1 n'est pas rempli (pas de cataplexie) et Critère B2 n'est pas rempli (hypocrétine-1 LCR non basse ou non mesurée)</label>
+  
+  <label><input type="radio" name="soustype" value="Narcolepsie avec cataplexie ou déficience en hypocrétine due à condition médicale"/> <strong>G47.421 Narcolepsie avec cataplexie ou déficience en hypocrétine due à condition médicale</strong></label>
+  
+  <label><input type="radio" name="soustype" value="Narcolepsie sans cataplexie et sans déficience en hypocrétine due à condition médicale"/> <strong>G47.429 Narcolepsie sans cataplexie et sans déficience en hypocrétine due à condition médicale</strong></label>
+  
+  <div class="note-box">
+    <strong>Note de codage :</strong> Pour les sous-types dus à condition médicale, coder d'abord la condition médicale sous-jacente (ex: G71.11 dystrophie myotonique; G47.429 narcolepsie sans cataplexie et sans déficience en hypocrétine due à dystrophie myotonique).
+  </div>
+  
+  <button type="button" onclick="validerSoustype()">✔️ Valider le sous-type</button>
+</fieldset>
+
+<!-- Sévérité -->
+<fieldset id="severite" class="hidden">
+  <legend>Spécifier la sévérité actuelle</legend>
+  <p class="subtitle">Basée sur besoin de siestes, perturbation du sommeil et fréquence de cataplexie</p>
+  
+  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> Besoin de siestes seulement 1-2 fois/jour. Perturbation du sommeil, si présente, est légère. Cataplexie, si présente, est peu fréquente (<1 fois/semaine)</label>
+  
+  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> Besoin de siestes multiples quotidiennement. Sommeil peut être modérément perturbé. Cataplexie, si présente, survient quotidiennement ou tous les quelques jours</label>
+  
+  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> Somnolence presque constante et, souvent, sommeil nocturne hautement perturbé (peut inclure mouvements corporels excessifs et rêves vifs). Cataplexie, si présente, est résistante aux médicaments, avec attaques multiples quotidiennes</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB1:[],critereB2:[],critereB3:[],soustype:"",severite:""};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const b1=Array.from(document.querySelectorAll("input[name='critereB1']:checked")).map(e=>e.value);
+  const b2=Array.from(document.querySelectorAll("input[name='critereB2']:checked")).map(e=>e.value);
+  const b3=Array.from(document.querySelectorAll("input[name='critereB3']:checked")).map(e=>e.value);
+  
+  if(b1.length>0||b2.length>0||b3.length>0){
+    choix.critereB1=b1;
+    choix.critereB2=b2;
+    choix.critereB3=b3;
+    document.getElementById("soustypes").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Au moins 1 des 3 éléments du critère B doit être coché", confirmButtonColor: "#667eea"});
+}
+
+function validerSoustype(){
+  const s=document.querySelector("input[name='soustype']:checked");
+  if(s){
+    choix.soustype=s.value;
+    document.getElementById("severite").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un sous-type", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const s=document.querySelector("input[name='severite']:checked");
+  if(s){
+    choix.severite=s.value;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la sévérité", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  let code="";
+  if(choix.soustype.includes("type 1")||choix.soustype.includes("G47.411"))code="G47.411";
+  else if(choix.soustype.includes("type 2")||choix.soustype.includes("G47.419"))code="G47.419";
+  else if(choix.soustype.includes("G47.421"))code="G47.421";
+  else if(choix.soustype.includes("G47.429"))code="G47.429";
+  
+  let diag=code+" Narcolepsie, "+choix.soustype.toLowerCase()+", sévérité "+choix.severite.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Périodes récurrentes besoin irrépressible de dormir (≥3/semaine, ≥3 mois)</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Au moins 1 des 3 éléments suivants</h4><ul class='choix-list'>";
+  if(choix.critereB1.length>0){
+    h+="<li><strong>B1. Cataplexie :</strong></li>";
+    choix.critereB1.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  }
+  if(choix.critereB2.length>0){
+    h+="<li><strong>B2. Déficience en hypocrétine :</strong></li>";
+    choix.critereB2.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  }
+  if(choix.critereB3.length>0){
+    h+="<li><strong>B3. Polysomnographie/Test latence sommeil :</strong></li>";
+    choix.critereB3.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  }
+  h+="</ul>";
+  
+  h+="<h4>Sous-type</h4><ul class='choix-list'><li>✓ "+choix.soustype+"</li></ul>";
+  
+  h+="<h4>Sévérité actuelle</h4><ul class='choix-list'><li>✓ "+choix.severite+"</li></ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Périodes récurrentes de besoin irrépressible de dormir, s'endormir ou faire siestes.";
+  h+="<br/><br/><strong>Critère A :</strong> Périodes récurrentes de besoin irrépressible de dormir/s'endormir/faire siestes dans même journée. Survenant ≥3 fois/semaine durant les 3 derniers mois.";
+  h+="<br/><br/><strong>Critère B (au moins 1 des 3) :</strong>";
+  h+="<br/><strong>B1. Cataplexie</strong> (au moins quelques fois/mois):";
+  h+="<br/>• a. Maladie longue date: épisodes brefs de perte bilatérale soudaine tonus musculaire avec conscience maintenue, précipités par rire/plaisanterie";
+  h+="<br/>• b. Enfants/individus <6 mois début: grimaces spontanées, ouverture mâchoire avec protrusion langue, hypotonie globale, sans déclencheurs émotionnels";
+  h+="<br/><strong>B2. Déficience hypocrétine</strong>: LCR hypocrétine-1 ≤1/3 valeurs sujets sains ou ≤110 pg/mL (pas dans contexte lésion aiguë/inflammation/infection)";
+  h+="<br/><strong>B3. Polysomnographie/MSLT</strong>: Latence REM ≤15 min (polysomnographie) OU latence sommeil moyenne ≤8 min + ≥2 périodes REM début sommeil (MSLT)";
+  h+="<br/><br/><strong>Sous-types :</strong>";
+  h+="<br/>• <strong>G47.411 Type 1 (avec cataplexie/déficience hypocrétine)</strong>: B1 OU B2 rempli";
+  h+="<br/>• <strong>G47.419 Type 2 (sans cataplexie, sans/hypocrétine non mesurée)</strong>: B3 rempli, B1 non rempli, B2 non rempli";
+  h+="<br/>• <strong>G47.421 Avec cataplexie/déficience hypocrétine due à condition médicale</strong>";
+  h+="<br/>• <strong>G47.429 Sans cataplexie/déficience hypocrétine due à condition médicale</strong>";
+  h+="<br/><br/><strong>Note codage (conditions médicales)</strong>: Coder d'abord condition médicale sous-jacente, puis code narcolepsie.";
+  h+="<br/><br/><strong>Sévérité :</strong>";
+  h+="<br/>• Léger: Siestes 1-2/jour, sommeil légèrement perturbé, cataplexie <1/semaine";
+  h+="<br/>• Modéré: Siestes multiples quotidiennes, sommeil modérément perturbé, cataplexie quotidienne/tous les quelques jours";
+  h+="<br/>• Sévère: Somnolence presque constante, sommeil nocturne hautement perturbé, cataplexie résistante médicaments avec attaques multiples/jour";
+  h+="<br/><br/><strong>Note importante :</strong> Cataplexie peut émerger années après début somnolence. Diagnostic peut évoluer de Type 2 vers Type 1.";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

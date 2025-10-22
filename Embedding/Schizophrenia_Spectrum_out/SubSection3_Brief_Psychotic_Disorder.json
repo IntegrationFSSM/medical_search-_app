@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection3_Brief_Psychotic_Disorder.txt",
+  "relative_path": "Schizophrenia_Spectrum_out/SubSection3_Brief_Psychotic_Disorder.txt",
+  "html_page": "Schizophrenia_Spectrum_out/Brief_Psychotic_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Brief_Psychotic_Disorder.txt",
+    "file_stem": "SubSection3_Brief_Psychotic_Disorder",
+    "folders": [
+      "Schizophrenia_Spectrum_out"
+    ],
+    "full_path": "Schizophrenia_Spectrum_out/SubSection3_Brief_Psychotic_Disorder.txt",
+    "parsed_name": "SubSection3 Brief Psychotic Disorder",
+    "location": "Schizophrenia_Spectrum_out > SubSection3_Brief_Psychotic_Disorder"
+  },
+  "total_word_count": 1278,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Brief Psychotic Disorder Diagnostic Criteria A. Presence of one (or more) of the following symptoms. At least one of these must be (1), (2), or (3): 1. Delusions. 2. Hallucinations. 3. Disorganized sp..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 378,
+      "text_preview": "the direct physiological consequence of a specific medical condition (e.g., Cushing\u2019s syndrome, brain tumor) (see \u201cPsychotic Disorder Due to Another Medical Condition\u201d later in this chapter). Substanc..."
+    }
+  ]
+}

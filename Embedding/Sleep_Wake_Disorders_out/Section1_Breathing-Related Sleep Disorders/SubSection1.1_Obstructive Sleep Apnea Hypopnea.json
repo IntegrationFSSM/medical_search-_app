@@ -1,0 +1,47 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Obstructive_Sleep_Apnea_Hypopnea.html",
+  "hierarchy": {
+    "file_name": "SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+    "file_stem": "SubSection1.1_Obstructive Sleep Apnea Hypopnea",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Section1_Breathing-Related Sleep Disorders"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+    "parsed_name": "SubSection1.1 Obstructive Sleep Apnea Hypopnea",
+    "location": "Sleep_Wake_Disorders_out > Section1_Breathing-Related Sleep Disorders > SubSection1.1_Obstructive Sleep Apnea Hypopnea"
+  },
+  "total_word_count": 3198,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Obstructive Sleep Apnea Hypopnea Diagnostic Criteria A. Either (1) or (2): 1. Evidence by polysomnography of at least five obstructive apneas or hypopneas per hour of sleep and either of the following..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "this disorder. In the United States, 13% of men and 6% of women have polysomnographic evidence of 15 or more obstructive apneas or hypopneas per hour of sleep, and 14% of men and 5% of women have more..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "a strong genetic basis, as evidenced by the significant familial aggregation of the apnea hypopnea index. The prevalence of obstructive sleep apnea hypopnea is approximately twice as high among the fi..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 498,
+      "text_preview": "or oxygen desaturation indicative of obstructive apnea. Nevertheless, nocturnal asthma and obstructive sleep apnea can coexist, and this can make it difficult to determine the relative contributions o..."
+    }
+  ]
+}

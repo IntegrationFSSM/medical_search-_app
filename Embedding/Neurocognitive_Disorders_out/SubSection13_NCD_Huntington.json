@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection13_NCD_Huntington.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection13_NCD_Huntington.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Huntington.html",
+  "hierarchy": {
+    "file_name": "SubSection13_NCD_Huntington.txt",
+    "file_stem": "SubSection13_NCD_Huntington",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection13_NCD_Huntington.txt",
+    "parsed_name": "SubSection13 NCD Huntington",
+    "location": "Neurocognitive_Disorders_out > SubSection13_NCD_Huntington"
+  },
+  "total_word_count": 1385,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Huntington\u2019s Disease Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. There is insidious onset and gradual progres..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 485,
+      "text_preview": "have been observed in brain imaging but remain research measures. Association With Suicidal Thoughts or Behavior In Huntington\u2019s disease, an elevated suicide risk compared with the general population ..."
+    }
+  ]
+}

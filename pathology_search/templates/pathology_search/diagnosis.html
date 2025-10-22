@@ -1,0 +1,256 @@
+{% extends "pathology_search/base.html" %}
+
+{% block title %}Plan de Traitement - {{ pathology_name }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .diagnosis-container {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .diagnosis-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .diagnosis-header {
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .diagnosis-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+    }
+    
+    .diagnosis-text {
+        line-height: 1.8;
+        color: #374151;
+        white-space: pre-wrap;
+    }
+    
+    .confidence-badge {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+    
+    .confidence-high {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+    }
+    
+    .confidence-medium {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+    }
+    
+    .confidence-low {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+    }
+    
+    .form-data-item {
+        background: white;
+        padding: 0.75rem 1rem;
+        margin: 0.5rem 0;
+        border-radius: 8px;
+        border-left: 3px solid #667eea;
+        font-size: 0.9rem;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .diagnosis-card {
+        animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .print-button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transition: all 0.3s ease;
+    }
+    
+    .print-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    @media print {
+        .print-button, nav, footer {
+            display: none;
+        }
+        
+        .diagnosis-container {
+            box-shadow: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="diagnosis-container mx-auto max-w-5xl">
+    <div class="diagnosis-card">
+        <!-- Header -->
+        <div class="diagnosis-header">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                        <i class="fas fa-pills text-purple-600 mr-3"></i>
+                        Plan de Traitement Médical
+                    </h1>
+                    <h2 class="text-2xl text-gray-600 font-semibold">{{ pathology_name }}</h2>
+                </div>
+                <div class="text-right">
+                    {% if confidence >= 75 %}
+                        <span class="confidence-badge confidence-high">
+                            <i class="fas fa-check-circle mr-1"></i> Haute Confiance: {{ confidence|floatformat:1 }}%
+                        </span>
+                    {% elif confidence >= 60 %}
+                        <span class="confidence-badge confidence-medium">
+                            <i class="fas fa-exclamation-circle mr-1"></i> Confiance Modérée: {{ confidence|floatformat:1 }}%
+                        </span>
+                    {% else %}
+                        <span class="confidence-badge confidence-low">
+                            <i class="fas fa-info-circle mr-1"></i> Faible Confiance: {{ confidence|floatformat:1 }}%
+                        </span>
+                    {% endif %}
+                    <p class="text-sm text-gray-500 mt-2">
+                        <i class="far fa-clock mr-1"></i> {{ timestamp }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plan de Traitement -->
+        {% if success %}
+        <div class="diagnosis-section">
+            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                <i class="fas fa-prescription text-purple-600 mr-2"></i>
+                Plan de Traitement Complet
+            </h3>
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg mb-4 border-l-4 border-purple-500">
+                <p class="text-sm font-semibold text-purple-800">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Ce plan inclut : Médicaments recommandés, Dosages précis, Étapes thérapeutiques, et Conseils pratiques
+                </p>
+            </div>
+            <div class="diagnosis-text" style="white-space: pre-wrap; line-height: 1.8; font-size: 15px;">{{ diagnosis }}</div>
+        </div>
+        {% else %}
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+            <div class="flex items-start">
+                <i class="fas fa-exclamation-triangle text-red-600 text-2xl mr-3 mt-1"></i>
+                <div>
+                    <h3 class="text-lg font-bold text-red-800 mb-2">Erreur lors de la génération du plan de traitement</h3>
+                    <p class="text-red-700 mb-2">L'IA n'a pas pu générer le plan de traitement pour cette pathologie.</p>
+                    <p class="text-sm text-red-600">Veuillez vérifier que tous les critères ont été correctement remplis et réessayer.</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Données du Formulaire -->
+        <div class="diagnosis-section">
+            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                <i class="fas fa-clipboard-check text-purple-600 mr-2"></i>
+                Critères Diagnostiques Validés
+            </h3>
+            {% if form_data %}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {% for key, value in form_data.items %}
+                        <div class="form-data-item">
+                            <p class="font-semibold text-gray-700 mb-1">{{ key }}</p>
+                            {% if value is iterable and value is not string %}
+                                <ul class="text-gray-600 text-sm">
+                                    {% for item in value %}
+                                        <li class="ml-4">✓ {{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p class="text-gray-600 text-sm">{{ value }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-gray-500 italic">Aucune donnée de formulaire disponible.</p>
+            {% endif %}
+        </div>
+
+        <!-- Informations de Recherche -->
+        <div class="diagnosis-section bg-purple-50 border-purple-200">
+            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                <i class="fas fa-search text-purple-600 mr-2"></i>
+                Résultat de la Recherche
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-3 rounded-lg">
+                    <p class="text-sm text-gray-500">Fichier Source</p>
+                    <p class="font-semibold text-gray-800">{{ result.file_name }}</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg">
+                    <p class="text-sm text-gray-500">Similarité</p>
+                    <p class="font-semibold text-gray-800">{{ result.similarity|floatformat:4 }}</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg">
+                    <p class="text-sm text-gray-500">Localisation</p>
+                    <p class="font-semibold text-gray-800">{{ result.location }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+            <a href="{% url 'pathology_search:index' %}" 
+               class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center">
+                <i class="fas fa-home mr-2"></i>
+                Retour à l'accueil
+            </a>
+            
+            <button onclick="window.print()" 
+                    class="print-button text-white font-bold py-3 px-6 rounded-lg flex items-center">
+                <i class="fas fa-print mr-2"></i>
+                Imprimer le Plan de Traitement
+            </button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Animation au chargement
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Plan de Traitement Généré !',
+            html: '<p class="text-gray-600">Le <strong>plan de traitement médical</strong> a été généré avec succès par l\'IA.</p><p class="text-sm text-gray-500 mt-2">💊 Médicaments, dosages et étapes thérapeutiques inclus</p>',
+            timer: 2500,
+            timerProgressBar: true,
+            showConfirmButton: false
+        });
+    });
+</script>
+{% endblock %}
+

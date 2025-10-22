@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.4_Narcissistic Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.4_Narcissistic Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/Narcissistic_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.4_Narcissistic Personality Disorder.txt",
+    "file_stem": "SubSection2.4_Narcissistic Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section2_Cluster B Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.4_Narcissistic Personality Disorder.txt",
+    "parsed_name": "SubSection2.4 Narcissistic Personality Disorder",
+    "location": "Personality_Disorders_out > Section2_Cluster B Personality Disorders > SubSection2.4_Narcissistic Personality Disorder"
+  },
+  "total_word_count": 2168,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Narcissistic Personality Disorder F60.81 Diagnostic Criteria A pervasive pattern of grandiosity (in fantasy or behavior), need for admiration, and lack of empathy, beginning by early adulthood and pre..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "recognized, the needs, desires, or feelings of others are likely to be viewed disparagingly as signs of weakness or vulnerability. Those who relate to individuals with narcissistic personality disorde..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 368,
+      "text_preview": "tendency to be tough-minded, glib, superficial, exploitative, and unempathic. However, narcissistic personality disorder does not necessarily include characteristics of impulsive aggressivity and dece..."
+    }
+  ]
+}

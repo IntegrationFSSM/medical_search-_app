@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection4_Substance_Medication_Induced_Bipolar.txt",
+  "relative_path": "Bipolar_and_Related_Disorders_out/SubSection4_Substance_Medication_Induced_Bipolar.txt",
+  "html_page": "Bipolar_and_Related_Disorders_out/Substance_Medication_Induced_Bipolar.html",
+  "hierarchy": {
+    "file_name": "SubSection4_Substance_Medication_Induced_Bipolar.txt",
+    "file_stem": "SubSection4_Substance_Medication_Induced_Bipolar",
+    "folders": [
+      "Bipolar_and_Related_Disorders_out"
+    ],
+    "full_path": "Bipolar_and_Related_Disorders_out/SubSection4_Substance_Medication_Induced_Bipolar.txt",
+    "parsed_name": "SubSection4 Substance Medication Induced Bipolar",
+    "location": "Bipolar_and_Related_Disorders_out > SubSection4_Substance_Medication_Induced_Bipolar"
+  },
+  "total_word_count": 1950,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Substance/Medication-Induced Bipolar and Related Disorder Diagnostic Criteria A. A prominent and persistent disturbance in mood that predominates in the clinical picture and is characterized by abnorm..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "related disorder is a prominent and persistent disturbance in mood that predominates in the clinical picture and is characterized by abnormally elevated, expansive, or irritable mood and abnormally in..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 150,
+      "text_preview": "energy may occur in substance intoxication (e.g., stimulant intoxication) or substance withdrawal (e.g., cannabis withdrawal). The diagnosis of the substance-specific intoxication or substance-specifi..."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection9_Catatonia_Associated_With_Another_Mental_Disorder.txt",
+  "relative_path": "Schizophrenia_Spectrum_out/SubSection9_Catatonia_Associated_With_Another_Mental_Disorder.txt",
+  "html_page": "Schizophrenia_Spectrum_out/Catatonia_Associated_With_Another_Mental_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection9_Catatonia_Associated_With_Another_Mental_Disorder.txt",
+    "file_stem": "SubSection9_Catatonia_Associated_With_Another_Mental_Disorder",
+    "folders": [
+      "Schizophrenia_Spectrum_out"
+    ],
+    "full_path": "Schizophrenia_Spectrum_out/SubSection9_Catatonia_Associated_With_Another_Mental_Disorder.txt",
+    "parsed_name": "SubSection9 Catatonia Associated With Another Mental Disorder",
+    "location": "Schizophrenia_Spectrum_out > SubSection9_Catatonia_Associated_With_Another_Mental_Disorder"
+  },
+  "total_word_count": 419,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 419,
+      "text_preview": " Catatonia Associated With Another Mental Disorder\n (Catatonia Specifier)\n F06.1\n A. The clinical picture is dominated by three (or more) of the following symptoms:\n 1. Stupor (i.e., no psychomotor ac..."
+    }
+  ]
+}

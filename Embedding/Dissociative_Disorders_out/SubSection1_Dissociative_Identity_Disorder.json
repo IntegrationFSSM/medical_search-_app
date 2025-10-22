@@ -1,0 +1,51 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Dissociative_Disorders_out/SubSection1_Dissociative_Identity_Disorder.txt",
+  "relative_path": "Dissociative_Disorders_out/SubSection1_Dissociative_Identity_Disorder.txt",
+  "html_page": "Dissociative_Disorders_out/Dissociative_Identity_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Dissociative_Identity_Disorder.txt",
+    "file_stem": "SubSection1_Dissociative_Identity_Disorder",
+    "folders": [
+      "Dissociative_Disorders_out"
+    ],
+    "full_path": "Dissociative_Disorders_out/SubSection1_Dissociative_Identity_Disorder.txt",
+    "parsed_name": "SubSection1 Dissociative Identity Disorder",
+    "location": "Dissociative_Disorders_out > SubSection1_Dissociative_Identity_Disorder"
+  },
+  "total_word_count": 3749,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Dissociative Identity Disorder Diagnostic Criteria A. Disruption of identity characterized by two or more distinct personality states, which may be described in some cultures as an experience of posse..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "cannot remember his or her own name, or may fail to recognize spouse, children, or close friends). Minimization or rationalization of amnesia is common. Possession-form identities in dissociative iden..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "dysfunctional family dynamics (e.g., overcontrolling parenting, insecure attachment, emotional abuse) in the absence of clear neglect or sexual or physical abuse. Genetic and physiological. Twin studi..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "are associated with activation of specific identity states. Elevated or depressed mood may be experienced as loculated in specific identities, through overlap/interference phenomena. Usually, the indi..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 149,
+      "text_preview": "their symptoms, deny the diagnosis, underreport their symptoms, and display minimization and avoidance of their trauma history. Individuals who feign the symptoms of dissociative identity disorder usu..."
+    }
+  ]
+}

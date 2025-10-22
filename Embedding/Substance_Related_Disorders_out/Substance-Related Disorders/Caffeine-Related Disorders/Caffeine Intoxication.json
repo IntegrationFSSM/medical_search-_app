@@ -1,0 +1,38 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine Intoxication.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine_Intoxication.html",
+  "hierarchy": {
+    "file_name": "Caffeine Intoxication.txt",
+    "file_stem": "Caffeine Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Caffeine-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine Intoxication.txt",
+    "parsed_name": "Caffeine Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Caffeine-Related Disorders > Caffeine Intoxication"
+  },
+  "total_word_count": 1082,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Caffeine Intoxication Diagnostic Criteria A. Recent consumption of caffeine (typically a high dose well in excess of 250 mg). B. Five (or more) of the following signs or symptoms developing during, or..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 182,
+      "text_preview": "of caffeine intoxication. Caffeine-induced mental disorders. F15.93 The temporal relationship of the symptoms to increased caffeine use or to abstinence from caffeine helps to establish the diagnosis...."
+    }
+  ]
+}

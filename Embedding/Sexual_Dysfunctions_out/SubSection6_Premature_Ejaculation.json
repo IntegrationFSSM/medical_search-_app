@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection6_Premature_Ejaculation.txt",
+  "relative_path": "Sexual_Dysfunctions_out/SubSection6_Premature_Ejaculation.txt",
+  "html_page": "Sexual_Dysfunctions_out/Premature_Ejaculation.html",
+  "hierarchy": {
+    "file_name": "SubSection6_Premature_Ejaculation.txt",
+    "file_stem": "SubSection6_Premature_Ejaculation",
+    "folders": [
+      "Sexual_Dysfunctions_out"
+    ],
+    "full_path": "Sexual_Dysfunctions_out/SubSection6_Premature_Ejaculation.txt",
+    "parsed_name": "SubSection6 Premature Ejaculation",
+    "location": "Sexual_Dysfunctions_out > SubSection6_Premature_Ejaculation"
+  },
+  "total_word_count": 1296,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Premature (Early) Ejaculation Diagnostic Criteria A. A persistent or recurrent pattern of ejaculation occurring during partnered sexual activity within approximately 1 minute following vaginal penetra..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 396,
+      "text_preview": "premarital sexual experience. Sex- and Gender-Related Diagnostic Issues Premature (early) ejaculation is a sexual dysfunction in men. Men and their sexual partners may differ in their perception of wh..."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/SubSection5.1_Specific_Learning_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/SubSection5.1_Specific_Learning_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/Specific_Learning_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection5.1_Specific_Learning_Disorder.txt",
+    "file_stem": "SubSection5.1_Specific_Learning_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section5_Specific_Learning_Disorder"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/SubSection5.1_Specific_Learning_Disorder.txt",
+    "parsed_name": "SubSection5.1 Specific Learning Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section5_Specific_Learning_Disorder > SubSection5.1_Specific_Learning_Disorder"
+  },
+  "total_word_count": 5056,
+  "num_chunks": 6,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    6,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Specific Learning Disorder Specific Learning Disorder Diagnostic Criteria A. Difficulties learning and using academic skills, as indicated by the presence of at least one of the following symptoms tha..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "origin includes an interaction of genetic, epigenetic, and environmental factors, which affect the brain\u2019s ability to perceive or process verbal or nonverbal information efficiently and accurately. On..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "individual\u2019s community context. Third, the learning difficulty cannot be attributed to neurological (e.g., pediatric stroke) or motor disorders or to vision or hearing disorders, which are often assoc..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "among preschool-age children include a lack of interest in playing games with language sounds (e.g., repetition, rhyming), and they may have trouble learning nursery rhymes. Preschool children with sp..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 1000,
+      "text_preview": "environmental factors. There is high heritability for both reading ability and reading disability in alphabetic and nonalphabetic languages, including high heritability for most manifestations of lear..."
+    },
+    {
+      "chunk_id": 5,
+      "word_count": 556,
+      "text_preview": "predict better mental health outcomes. Differential Diagnosis Specific learning disorder is distinguished from normal variations in academic attainment attributable to external factors (e.g., lack of ..."
+    }
+  ]
+}

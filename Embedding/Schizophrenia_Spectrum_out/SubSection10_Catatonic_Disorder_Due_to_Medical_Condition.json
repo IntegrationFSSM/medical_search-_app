@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection10_Catatonic_Disorder_Due_to_Medical_Condition.txt",
+  "relative_path": "Schizophrenia_Spectrum_out/SubSection10_Catatonic_Disorder_Due_to_Medical_Condition.txt",
+  "html_page": "Schizophrenia_Spectrum_out/Catatonic_Disorder_Due_to_Medical_Condition.html",
+  "hierarchy": {
+    "file_name": "SubSection10_Catatonic_Disorder_Due_to_Medical_Condition.txt",
+    "file_stem": "SubSection10_Catatonic_Disorder_Due_to_Medical_Condition",
+    "folders": [
+      "Schizophrenia_Spectrum_out"
+    ],
+    "full_path": "Schizophrenia_Spectrum_out/SubSection10_Catatonic_Disorder_Due_to_Medical_Condition.txt",
+    "parsed_name": "SubSection10 Catatonic Disorder Due to Medical Condition",
+    "location": "Schizophrenia_Spectrum_out > SubSection10_Catatonic_Disorder_Due_to_Medical_Condition"
+  },
+  "total_word_count": 567,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 567,
+      "text_preview": "Catatonic Disorder Due to Another Medical Condition\n Diagnostic Criteria\n A. The clinical picture is dominated by three (or more) of the following symptoms:\n 1. Stupor (i.e., no psychomotor activity; ..."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection1_Pica.txt",
+  "relative_path": "Feeding_Eating_Disorders_out/SubSection1_Pica.txt",
+  "html_page": "Feeding_Eating_Disorders_out/Pica.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Pica.txt",
+    "file_stem": "SubSection1_Pica",
+    "folders": [
+      "Feeding_Eating_Disorders_out"
+    ],
+    "full_path": "Feeding_Eating_Disorders_out/SubSection1_Pica.txt",
+    "parsed_name": "SubSection1 Pica",
+    "location": "Feeding_Eating_Disorders_out > SubSection1_Pica"
+  },
+  "total_word_count": 1077,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Pica Diagnostic Criteria A. Persistent eating of nonnutritive, nonfood substances over a period of at least 1 month. B. The eating of nonnutritive, nonfood substances is inappropriate to the developme..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 177,
+      "text_preview": "weight control, anorexia nervosa should be the primary diagnosis. Factitious disorder. Some individuals with factitious disorder may intentionally ingest foreign objects as part of the pattern of fals..."
+    }
+  ]
+}

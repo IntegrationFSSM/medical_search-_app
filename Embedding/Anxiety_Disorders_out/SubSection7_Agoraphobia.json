@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection7_Agoraphobia.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection7_Agoraphobia.txt",
+  "html_page": "Anxiety_Disorders_out/agoraphobia.html",
+  "hierarchy": {
+    "file_name": "SubSection7_Agoraphobia.txt",
+    "file_stem": "SubSection7_Agoraphobia",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection7_Agoraphobia.txt",
+    "parsed_name": "SubSection7 Agoraphobia",
+    "location": "Anxiety_Disorders_out > SubSection7_Agoraphobia"
+  },
+  "total_word_count": 2499,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Agoraphobia Diagnostic Criteria A. Marked fear or anxiety about two (or more) of the following five situations: 1. Using public transportation (e.g., automobiles, buses, trains, ships, planes). 2. Bei..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "contexts (e.g., it is socioculturally appropriate for orthodox Muslim women in certain parts of the world to avoid leaving the house alone, and thus such avoidance would not be considered indicative o..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 699,
+      "text_preview": "Diagnostic Issues Women have different patterns of comorbid disorders than men. Consistent with gender differences in the prevalence of mental disorders, men have higher rates of comorbid substance us..."
+    }
+  ]
+}

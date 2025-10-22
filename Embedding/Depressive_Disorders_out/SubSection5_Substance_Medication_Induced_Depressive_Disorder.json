@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+  "relative_path": "Depressive_Disorders_out/SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+  "html_page": "Depressive_Disorders_out/Substance_Medication_Induced_Depressive_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+    "file_stem": "SubSection5_Substance_Medication_Induced_Depressive_Disorder",
+    "folders": [
+      "Depressive_Disorders_out"
+    ],
+    "full_path": "Depressive_Disorders_out/SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+    "parsed_name": "SubSection5 Substance Medication Induced Depressive Disorder",
+    "location": "Depressive_Disorders_out > SubSection5_Substance_Medication_Induced_Depressive_Disorder"
+  },
+  "total_word_count": 2634,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Substance/Medication-Induced Depressive Disorder Diagnostic Criteria A. A prominent and persistent disturbance in mood that predominates in the clinical picture and is characterized by depressed mood ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "in all, or almost all, activities (Criterion A) that is due to the direct physiological effects of a substance (e.g., a drug of abuse, a medication, or a toxin exposure) (Criterion B). In order to mee..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 834,
+      "text_preview": "symptoms with use of a prescribed medication, but most reports on this topic involve retrospective series of individuals entering treatment, or participants in large cross-sectional studies. More stud..."
+    }
+  ]
+}

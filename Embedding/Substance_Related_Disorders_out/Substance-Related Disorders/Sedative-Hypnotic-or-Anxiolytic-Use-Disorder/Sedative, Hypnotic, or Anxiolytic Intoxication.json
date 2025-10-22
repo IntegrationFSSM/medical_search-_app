@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Sedative, Hypnotic, or Anxiolytic Intoxication.txt",
+    "file_stem": "Sedative, Hypnotic, or Anxiolytic Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Sedative-Hypnotic-or-Anxiolytic-Use-Disorder"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Intoxication.txt",
+    "parsed_name": "Sedative, Hypnotic, or Anxiolytic Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Sedative-Hypnotic-or-Anxiolytic-Use-Disorder > Sedative, Hypnotic, or Anxiolytic Intoxication"
+  },
+  "total_word_count": 856,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 856,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Intoxication\n Diagnostic Criteria\n A. Recent use of a sedative, hypnotic, or anxiolytic.\n B. Clinically significant maladaptive behavioral or psychological changes (e..."
+    }
+  ]
+}

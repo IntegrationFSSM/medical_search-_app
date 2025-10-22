@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble de Stress Aigu – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+    .category-box {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      padding: 10px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble de Stress Aigu – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Exposition à un événement traumatique</legend>
+  <p class="subtitle">Exposition à la mort réelle ou menacée, blessure grave ou violence sexuelle d'une (ou plus) des façons suivantes</p>
+  
+  <label><input type="checkbox" name="critereA" value="1. Expérience directe de l'événement traumatique"/> <strong>1.</strong> Expérience directe de l'événement(s) traumatique(s)</label>
+  
+  <label><input type="checkbox" name="critereA" value="2. Témoin en personne de l'événement survenant à d'autres"/> <strong>2.</strong> Témoin, en personne, de l'événement(s) survenant à d'autres</label>
+  
+  <label><input type="checkbox" name="critereA" value="3. Apprendre que l'événement est survenu à un membre de la famille proche ou ami proche (événement violent ou accidentel)"/> <strong>3.</strong> Apprendre que l'événement(s) est survenu à un membre de la famille proche ou ami proche<br/>
+  <em style="color:#666;">Note: En cas de mort réelle ou menacée d'un membre de la famille ou ami, l'événement doit avoir été violent ou accidentel</em></label>
+  
+  <label><input type="checkbox" name="critereA" value="4. Exposition répétée ou extrême à des détails aversifs de l'événement traumatique (ex: premiers répondants, policiers)"/> <strong>4.</strong> Exposition répétée ou extrême à des détails aversifs de l'événement(s) traumatique(s) (ex: premiers répondants collectant restes humains, policiers exposés à détails d'abus d'enfants)<br/>
+  <em style="color:#666;">Note: Ne s'applique pas à exposition via médias électroniques, télévision, films ou images, sauf si exposition liée au travail</em></label>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Symptômes (5 catégories)</legend>
+  <p class="subtitle">Présence de neuf (ou plus) des symptômes suivants parmi les cinq catégories (intrusion, humeur négative, dissociation, évitement, activation), commençant ou s'aggravant après l'événement traumatique</p>
+  <div class="warning-box">
+    ⚠️ Au moins 9 des 14 symptômes doivent être présents (toutes catégories confondues)
+  </div>
+  
+  <div class="category-box">📌 SYMPTÔMES D'INTRUSION (4 symptômes)</div>
+  
+  <label><input type="checkbox" name="critereB" value="INTRUSION 1. Souvenirs récurrents, involontaires et intrusifs pénibles de l'événement traumatique"/> <strong>1.</strong> Souvenirs récurrents, involontaires et intrusifs pénibles de l'événement(s) traumatique(s)<br/>
+  <em style="color:#666;">Note: Chez enfants, jeu répétitif peut survenir avec thèmes de l'événement</em></label>
+  
+  <label><input type="checkbox" name="critereB" value="INTRUSION 2. Rêves pénibles récurrents dont contenu et/ou affect liés à l'événement"/> <strong>2.</strong> Rêves pénibles récurrents dont le contenu et/ou l'affect sont liés à l'événement(s)<br/>
+  <em style="color:#666;">Note: Chez enfants, rêves effrayants sans contenu reconnaissable</em></label>
+  
+  <label><input type="checkbox" name="critereB" value="INTRUSION 3. Réactions dissociatives (flashbacks) où individu sent ou agit comme si événement se reproduisait"/> <strong>3.</strong> Réactions dissociatives (ex: flashbacks) où l'individu sent ou agit comme si l'événement(s) traumatique(s) se reproduisait<br/>
+  <em style="color:#666;">Note: Chez enfants, reconstitution spécifique au trauma peut survenir dans jeu</em></label>
+  
+  <label><input type="checkbox" name="critereB" value="INTRUSION 4. Détresse psychologique intense ou réactions physiologiques marquées en réponse à indices rappelant l'événement"/> <strong>4.</strong> Détresse psychologique intense ou prolongée ou réactions physiologiques marquées en réponse à indices internes ou externes symbolisant ou ressemblant à un aspect de l'événement(s) traumatique(s)</label>
+  
+  <div class="category-box">📌 HUMEUR NÉGATIVE (1 symptôme)</div>
+  
+  <label><input type="checkbox" name="critereB" value="HUMEUR 5. Incapacité persistante à éprouver émotions positives (bonheur, satisfaction, sentiments affectueux)"/> <strong>5.</strong> Incapacité persistante à éprouver des émotions positives (ex: incapacité à éprouver bonheur, satisfaction ou sentiments affectueux)</label>
+  
+  <div class="category-box">📌 SYMPTÔMES DISSOCIATIFS (2 symptômes)</div>
+  
+  <label><input type="checkbox" name="critereB" value="DISSOCIATION 6. Sens altéré de la réalité de son environnement ou de soi-même (se voir d'une autre perspective, être dans un état second, temps ralenti)"/> <strong>6.</strong> Sens altéré de la réalité de son environnement ou de soi-même (ex: se voir d'une autre perspective, être dans un état second, temps ralenti)</label>
+  
+  <label><input type="checkbox" name="critereB" value="DISSOCIATION 7. Incapacité à se souvenir d'un aspect important de l'événement traumatique (amnésie dissociative)"/> <strong>7.</strong> Incapacité à se souvenir d'un aspect important de l'événement(s) traumatique(s) (typiquement due à amnésie dissociative et non à autres facteurs comme traumatisme crânien, alcool ou drogues)</label>
+  
+  <div class="category-box">📌 SYMPTÔMES D'ÉVITEMENT (2 symptômes)</div>
+  
+  <label><input type="checkbox" name="critereB" value="ÉVITEMENT 8. Efforts pour éviter souvenirs, pensées ou sentiments pénibles associés à l'événement traumatique"/> <strong>8.</strong> Efforts pour éviter les souvenirs, pensées ou sentiments pénibles à propos de ou étroitement associés à l'événement(s) traumatique(s)</label>
+  
+  <label><input type="checkbox" name="critereB" value="ÉVITEMENT 9. Efforts pour éviter rappels externes (personnes, lieux, conversations, activités, objets, situations) suscitant souvenirs pénibles"/> <strong>9.</strong> Efforts pour éviter les rappels externes (personnes, lieux, conversations, activités, objets, situations) qui suscitent des souvenirs, pensées ou sentiments pénibles à propos de ou étroitement associés à l'événement(s) traumatique(s)</label>
+  
+  <div class="category-box">📌 SYMPTÔMES D'ACTIVATION (5 symptômes)</div>
+  
+  <label><input type="checkbox" name="critereB" value="ACTIVATION 10. Perturbation du sommeil (difficulté à s'endormir ou rester endormi, sommeil agité)"/> <strong>10.</strong> Perturbation du sommeil (ex: difficulté à s'endormir ou rester endormi, sommeil agité)</label>
+  
+  <label><input type="checkbox" name="critereB" value="ACTIVATION 11. Comportement irritable et accès de colère (avec peu ou pas de provocation), typiquement exprimés comme agression verbale ou physique"/> <strong>11.</strong> Comportement irritable et accès de colère (avec peu ou pas de provocation), typiquement exprimés comme agression verbale ou physique envers personnes ou objets</label>
+  
+  <label><input type="checkbox" name="critereB" value="ACTIVATION 12. Hypervigilance"/> <strong>12.</strong> Hypervigilance</label>
+  
+  <label><input type="checkbox" name="critereB" value="ACTIVATION 13. Problèmes de concentration"/> <strong>13.</strong> Problèmes de concentration</label>
+  
+  <label><input type="checkbox" name="critereB" value="ACTIVATION 14. Réponse de sursaut exagérée"/> <strong>14.</strong> Réponse de sursaut exagérée</label>
+  
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Durée</legend>
+  <p class="subtitle">Durée de la perturbation (symptômes du critère B) est de 3 jours à 1 mois après exposition au trauma</p>
+  <div class="note-box">
+    <strong>Note :</strong> Les symptômes commencent typiquement immédiatement après le trauma, mais la persistance pendant au moins 3 jours et jusqu'à 1 mois est nécessaire pour remplir les critères du trouble.
+  </div>
+  <label><input type="checkbox" name="critereC" value="Durée de la perturbation est de 3 jours à 1 mois après exposition au trauma"/> Durée de la perturbation est de 3 jours à 1 mois après exposition au trauma</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Détresse ou altération cliniquement significative</legend>
+  <p class="subtitle">La perturbation cause une détresse ou altération cliniquement significative dans le fonctionnement</p>
+  <label><input type="checkbox" name="critereD" value="Perturbation cause détresse ou altération cliniquement significative dans fonctionnement social, professionnel ou autres domaines importants"/> La perturbation cause une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Non attribuable à substance ou autre condition</legend>
+  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou autre condition médicale et n'est pas mieux expliquée par un trouble psychotique bref</p>
+  <label><input type="checkbox" name="critereE" value="Perturbation non attribuable aux effets physiologiques d'une substance (médicament, alcool) ou autre condition médicale (traumatisme crânien léger)"/> La perturbation n'est pas attribuable aux effets physiologiques d'une substance (ex: médicament, alcool) ou autre condition médicale (ex: traumatisme crânien léger)</label>
+  <label><input type="checkbox" name="critereE" value="Non mieux expliquée par trouble psychotique bref"/> N'est pas mieux expliquée par un trouble psychotique bref</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],critereC:"",critereD:"",critereE:[]};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>=9){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else alert("Au moins 9 des 14 symptômes doivent être cochés (actuellement: "+c.length+"/14)");
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function validerCritereD(){
+  const c=document.querySelector("input[name='critereD']:checked");
+  if(c){
+    choix.critereD=c.value;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else alert("Cochez l'option du critère D");
+}
+
+function afficherResume(){
+  const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereE=c;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère E", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code="F43.0";
+  const nbSymptomes=choix.critereB.length;
+  
+  // Compter par catégorie
+  const intrusion=choix.critereB.filter(s=>s.startsWith("INTRUSION")).length;
+  const humeur=choix.critereB.filter(s=>s.startsWith("HUMEUR")).length;
+  const dissociation=choix.critereB.filter(s=>s.startsWith("DISSOCIATION")).length;
+  const evitement=choix.critereB.filter(s=>s.startsWith("ÉVITEMENT")).length;
+  const activation=choix.critereB.filter(s=>s.startsWith("ACTIVATION")).length;
+  
+  let diag=code+" Trouble de Stress Aigu ("+nbSymptomes+" symptômes: "+intrusion+" intrusion, "+humeur+" humeur, "+dissociation+" dissociation, "+evitement+" évitement, "+activation+" activation)";
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Exposition à événement traumatique</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Symptômes (≥9/14 parmi 5 catégories)</h4>";
+  h+="<p><strong>Total: "+nbSymptomes+"/14 symptômes</strong></p>";
+  h+="<p><strong>Par catégorie:</strong> Intrusion: "+intrusion+"/4 | Humeur: "+humeur+"/1 | Dissociation: "+dissociation+"/2 | Évitement: "+evitement+"/2 | Activation: "+activation+"/5</p>";
+  h+="<ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s.replace(/^[A-ZÉÀÂ]+ \d+\. /,"")+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Durée (3 jours à 1 mois)</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Critère D – Détresse ou altération cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
+  
+  h+="<h4>Critère E – Non attribuable à substance ou autre condition</h4><ul class='choix-list'>";
+  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Trouble de stress aigu suite à exposition à événement traumatique avec symptômes durant 3 jours à 1 mois.";
+  h+="<br/><br/><strong>Critère A :</strong> Exposition à mort réelle/menacée, blessure grave ou violence sexuelle par:";
+  h+="<br/>1. Expérience directe";
+  h+="<br/>2. Témoin en personne";
+  h+="<br/>3. Apprendre événement survenu à proche (violent/accidentel)";
+  h+="<br/>4. Exposition répétée/extrême à détails aversifs (travail)";
+  h+="<br/><br/><strong>Critère B :</strong> ≥9 symptômes parmi 5 catégories:";
+  h+="<br/><br/><strong>INTRUSION (4 symptômes):</strong>";
+  h+="<br/>1. Souvenirs intrusifs pénibles";
+  h+="<br/>2. Rêves pénibles récurrents";
+  h+="<br/>3. Réactions dissociatives (flashbacks)";
+  h+="<br/>4. Détresse psychologique/réactions physiologiques à indices";
+  h+="<br/><br/><strong>HUMEUR NÉGATIVE (1 symptôme):</strong>";
+  h+="<br/>5. Incapacité à éprouver émotions positives";
+  h+="<br/><br/><strong>DISSOCIATION (2 symptômes):</strong>";
+  h+="<br/>6. Sens altéré de la réalité";
+  h+="<br/>7. Amnésie dissociative";
+  h+="<br/><br/><strong>ÉVITEMENT (2 symptômes):</strong>";
+  h+="<br/>8. Évitement souvenirs/pensées/sentiments";
+  h+="<br/>9. Évitement rappels externes";
+  h+="<br/><br/><strong>ACTIVATION (5 symptômes):</strong>";
+  h+="<br/>10. Perturbation sommeil";
+  h+="<br/>11. Irritabilité/colère";
+  h+="<br/>12. Hypervigilance";
+  h+="<br/>13. Problèmes concentration";
+  h+="<br/>14. Sursaut exagéré";
+  h+="<br/><br/><strong>Critère C :</strong> Durée 3 jours à 1 mois après trauma.";
+  h+="<br/><br/><strong>Critère D :</strong> Détresse ou altération cliniquement significative.";
+  h+="<br/><br/><strong>Critère E :</strong> Non attribuable à substance/condition médicale et non mieux expliqué par trouble psychotique bref.";
+  h+="<br/><br/><strong>Codage ICD-10-CM :</strong>";
+  h+="<br/>• <strong>F43.0</strong> : Trouble de Stress Aigu";
+  h+="<br/><br/><strong>Temporalité :</strong>";
+  h+="<br/>• Début: Typiquement immédiatement après trauma";
+  h+="<br/>• Durée minimale: 3 jours";
+  h+="<br/>• Durée maximale: 1 mois";
+  h+="<br/>• Si >1 mois: Considérer TSPT (Trouble de Stress Post-Traumatique)";
+  h+="<br/><br/><strong>Différence avec TSPT :</strong>";
+  h+="<br/>• <strong>Stress Aigu:</strong> 3 jours à 1 mois";
+  h+="<br/>• <strong>TSPT:</strong> >1 mois";
+  h+="<br/>• Stress aigu peut évoluer vers TSPT";
+  h+="<br/><br/><strong>Symptômes dissociatifs :</strong>";
+  h+="<br/>• Sens altéré de la réalité (déréalisation/dépersonnalisation)";
+  h+="<br/>• Amnésie dissociative";
+  h+="<br/>• Caractéristique distinctive du stress aigu";
+  h+="<br/><br/><strong>Traitement :</strong>";
+  h+="<br/>• Intervention précoce cruciale";
+  h+="<br/>• Thérapie cognitivo-comportementale centrée sur trauma";
+  h+="<br/>• Support psychosocial";
+  h+="<br/>• Médicaments si nécessaire (anxiolytiques court terme)";
+  h+="<br/>• Prévention évolution vers TSPT";
+  h+="<br/><br/><strong>Facteurs de risque :</strong>";
+  h+="<br/>• Sévérité du trauma";
+  h+="<br/>• Traumas antérieurs";
+  h+="<br/>• Troubles mentaux préexistants";
+  h+="<br/>• Faible support social";
+  h+="<br/>• Stratégies d'adaptation inadaptées";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

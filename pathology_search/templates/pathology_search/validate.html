@@ -1,0 +1,258 @@
+{% extends 'pathology_search/base.html' %}
+
+{% block content %}
+<div class="mb-6">
+    <a href="{% url 'pathology_search:index' %}" class="text-purple-600 hover:text-purple-800 font-medium">
+        <i class="fas fa-arrow-left mr-2"></i>Nouvelle recherche
+    </a>
+</div>
+
+<!-- Progress Indicator -->
+<div class="bg-white rounded-lg shadow-md p-6 mb-6">
+    <div class="flex items-center justify-between mb-4">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800">
+                <i class="fas fa-clipboard-check mr-2 text-purple-600"></i>
+                Validation des Résultats
+            </h2>
+            <p class="text-gray-600 mt-1">Requête: <span class="font-semibold">{{ query }}</span></p>
+        </div>
+        <div class="text-right">
+            <p class="text-sm text-gray-600">Résultat</p>
+            <p class="text-3xl font-bold text-purple-600">{{ current_index|add:1 }} / {{ total_results }}</p>
+        </div>
+    </div>
+    
+    <!-- Progress Bar -->
+    <div class="w-full bg-gray-200 rounded-full h-3">
+        {% widthratio current_index|add:1 total_results 100 as progress_width %}
+        <div class="bg-gradient-to-r from-purple-500 to-blue-500 h-3 rounded-full transition-all duration-500" 
+             style="width: {{ progress_width }}%">
+        </div>
+    </div>
+    <div class="flex justify-between mt-2 text-xs text-gray-500">
+        {% for i in "12345"|make_list %}
+            <span class="{% if forloop.counter0 == current_index %}font-bold text-purple-600{% endif %}">
+                {% if forloop.counter0 < total_results %}#{{ forloop.counter }}{% endif %}
+            </span>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Result Card -->
+<div class="bg-white rounded-lg shadow-lg p-6 mb-6 border-l-4 {% if result.similarity >= 0.75 %}border-green-500{% elif result.similarity >= 0.60 %}border-yellow-500{% else %}border-red-500{% endif %}">
+    <div class="flex items-center justify-between mb-4">
+        <div>
+            <h3 class="text-2xl font-bold text-gray-800">
+                {{ pathology_name }}
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+                <i class="fas fa-map-marker-alt mr-1"></i>
+                {{ result.location }}
+            </p>
+        </div>
+        <div class="text-right">
+            {% if result.similarity >= 0.75 %}
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-green-100 text-green-800">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Forte correspondance
+                </span>
+            {% elif result.similarity >= 0.60 %}
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-yellow-100 text-yellow-800">
+                    <i class="fas fa-exclamation-circle mr-2"></i>
+                    Correspondance modérée
+                </span>
+            {% else %}
+                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-red-100 text-red-800">
+                    <i class="fas fa-times-circle mr-2"></i>
+                    Correspondance faible
+                </span>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Similarity Score -->
+    <div class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+            <span class="text-sm font-medium text-gray-700">Score de similarité</span>
+            {% widthratio result.similarity 1 100 as similarity_percent %}
+            <span class="text-2xl font-bold text-purple-600">{{ similarity_percent }}%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-4">
+            <div class="h-4 rounded-full {% if result.similarity >= 0.75 %}bg-green-500{% elif result.similarity >= 0.60 %}bg-yellow-500{% else %}bg-red-500{% endif %}" 
+                 style="width: {{ similarity_percent }}%">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HTML Content Iframe Full Screen -->
+{% if result.html_page %}
+<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+    <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold flex items-center">
+                <i class="fas fa-file-medical-alt mr-2"></i>
+                Page Complète de la Pathologie - {{ pathology_name }}
+            </h3>
+            {% if not is_last %}
+            <button 
+                onclick="skipResult()"
+                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center"
+            >
+                <i class="fas fa-forward mr-2"></i>
+                Passer au suivant
+            </button>
+            {% endif %}
+        </div>
+    </div>
+    <div class="bg-gray-50">
+        <iframe 
+            src="{% url 'pathology_search:view_pathology' result.html_page %}?mode=validation"
+            class="w-full border-0 bg-white"
+            style="height: 85vh; min-height: 600px;"
+            id="pathologyIframe"
+        ></iframe>
+    </div>
+    <div class="bg-purple-50 border-t-4 border-purple-600 p-4">
+        <p class="text-center text-gray-700">
+            <i class="fas fa-info-circle mr-2 text-purple-600"></i>
+            <strong>Remplissez le formulaire ci-dessus et cliquez sur "VALIDE" ou "NON VALIDE" à la fin</strong>
+        </p>
+    </div>
+</div>
+{% endif %}
+
+<!-- Success Modal -->
+<div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md mx-4 shadow-2xl transform transition-all">
+        <div class="text-center">
+            <div class="mb-4">
+                <i class="fas fa-check-circle text-6xl text-green-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Pathologie Validée !</h3>
+            <p class="text-gray-600 mb-6" id="validatedPathology"></p>
+            <button 
+                onclick="window.location.href='{% url 'pathology_search:index' %}'"
+                class="gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
+            >
+                <i class="fas fa-search mr-2"></i>
+                Nouvelle Recherche
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Completed Modal -->
+<div id="completedModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md mx-4 shadow-2xl transform transition-all">
+        <div class="text-center">
+            <div class="mb-4">
+                <i class="fas fa-info-circle text-6xl text-blue-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Tous les résultats examinés</h3>
+            <p class="text-gray-600 mb-6">Vous avez parcouru tous les résultats disponibles.</p>
+            <button 
+                onclick="window.location.href='{% url 'pathology_search:index' %}'"
+                class="gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
+            >
+                <i class="fas fa-search mr-2"></i>
+                Nouvelle Recherche
+            </button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const currentIndex = {{ current_index }};
+
+// Écouter les messages de l'iframe (quand l'utilisateur clique sur VALIDE ou NON VALIDE dans le formulaire)
+window.addEventListener('message', function(event) {
+    // Vérifier que le message vient bien de notre iframe
+    if (event.data.source === 'pathology') {
+        if (event.data.action === 'validate') {
+            console.log('✅ Utilisateur a cliqué sur VALIDE dans le formulaire');
+            validateResult();
+        } else if (event.data.action === 'not_validate') {
+            console.log('❌ Utilisateur a cliqué sur NON VALIDE dans le formulaire');
+            skipResult();
+        }
+    }
+});
+
+async function validateResult() {
+    try {
+        const response = await fetch('{% url "pathology_search:validate_action" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({
+                action: 'validate',
+                current_index: currentIndex
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success && data.action === 'validated') {
+            // Afficher le modal de succès
+            document.getElementById('validatedPathology').textContent = data.message;
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+    } catch (error) {
+        alert('Erreur: ' + error.message);
+    }
+}
+
+async function skipResult() {
+    try {
+        const response = await fetch('{% url "pathology_search:validate_action" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({
+                action: 'skip',
+                current_index: currentIndex
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            if (data.action === 'next') {
+                // Aller au résultat suivant
+                window.location.href = '{% url "pathology_search:validate_results" %}?index=' + data.next_index;
+            } else if (data.action === 'completed') {
+                // Afficher le modal de fin
+                document.getElementById('completedModal').classList.remove('hidden');
+            }
+        }
+    } catch (error) {
+        alert('Erreur: ' + error.message);
+    }
+}
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+{% endblock %}
+

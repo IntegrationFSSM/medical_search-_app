@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection9_NCD_Substance_Medication.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection9_NCD_Substance_Medication.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Substance_Medication.html",
+  "hierarchy": {
+    "file_name": "SubSection9_NCD_Substance_Medication.txt",
+    "file_stem": "SubSection9_NCD_Substance_Medication",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection9_NCD_Substance_Medication.txt",
+    "parsed_name": "SubSection9 NCD Substance Medication",
+    "location": "Neurocognitive_Disorders_out > SubSection9_NCD_Substance_Medication"
+  },
+  "total_word_count": 528,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 528,
+      "text_preview": "Substance/Medication-Induced Major or Mild\nNeurocognitive Disorder.\u201d For unspecified mild neurocognitive disorder, code R41.9.\nSpecify (behavioral disturbance cannot be coded but should still be recor..."
+    }
+  ]
+}

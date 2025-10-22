@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection2_Intermittent Explosive Disorder.txt",
+  "relative_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection2_Intermittent Explosive Disorder.txt",
+  "html_page": "Disruptive, Impulse-Control, and Conduct disorders_out/Intermittent_Explosive_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Intermittent Explosive Disorder.txt",
+    "file_stem": "SubSection2_Intermittent Explosive Disorder",
+    "folders": [
+      "Disruptive, Impulse-Control, and Conduct disorders_out"
+    ],
+    "full_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection2_Intermittent Explosive Disorder.txt",
+    "parsed_name": "SubSection2 Intermittent Explosive Disorder",
+    "location": "Disruptive, Impulse-Control, and Conduct disorders_out > SubSection2_Intermittent Explosive Disorder"
+  },
+  "total_word_count": 1899,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Intermittent Explosive Disorder Diagnostic Criteria A. Recurrent behavioral outbursts representing a failure to control aggressive impulses as manifested by either of the following: 1. Verbal aggressi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 999,
+      "text_preview": "older than 50 years, and individuals with a high school education or less. In some studies, the prevalence of intermittent explosive disorder is greater in men and boys than in women and girls; other ..."
+    }
+  ]
+}

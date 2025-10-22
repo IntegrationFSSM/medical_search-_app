@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.3_Histrionic Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.3_Histrionic Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/Histrionic_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.3_Histrionic Personality Disorder.txt",
+    "file_stem": "SubSection2.3_Histrionic Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section2_Cluster B Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.3_Histrionic Personality Disorder.txt",
+    "parsed_name": "SubSection2.3 Histrionic Personality Disorder",
+    "location": "Personality_Disorders_out > Section2_Cluster B Personality Disorders > SubSection2.3_Histrionic Personality Disorder"
+  },
+  "total_word_count": 1584,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Histrionic Personality Disorder Diagnostic Criteria A pervasive pattern of excessive emotionality and attention seeking, beginning by early adulthood and present in a variety of contexts, as indicated..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 684,
+      "text_preview": "their interest may lag quickly. Longer-term relationships may be neglected to make way for the excitement of new relationships. Prevalence The estimated prevalence of histrionic personality disorder b..."
+    }
+  ]
+}

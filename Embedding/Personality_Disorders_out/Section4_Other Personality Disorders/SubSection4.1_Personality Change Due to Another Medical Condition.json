@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section4_Other Personality Disorders/SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+  "relative_path": "Personality_Disorders_out/Section4_Other Personality Disorders/SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+  "html_page": "Personality_Disorders_out/Section4_Other Personality Disorders/Personality_Change_Due_to_Another_Medical_Condition.html",
+  "hierarchy": {
+    "file_name": "SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+    "file_stem": "SubSection4.1_Personality Change Due to Another Medical Condition",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section4_Other Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section4_Other Personality Disorders/SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+    "parsed_name": "SubSection4.1 Personality Change Due to Another Medical Condition",
+    "location": "Personality_Disorders_out > Section4_Other Personality Disorders > SubSection4.1_Personality Change Due to Another Medical Condition"
+  },
+  "total_word_count": 1120,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Personality Change Due to Another Medical Condition Diagnostic Criteria A. A persistent personality disturbance that represents a change from the individual\u2019s previous characteristic personality patte..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 220,
+      "text_preview": "if the personality change is judged to be a physiological consequence of the pathological process causing the neurocognitive disorder and if the personality change is a prominent part of the clinical ..."
+    }
+  ]
+}

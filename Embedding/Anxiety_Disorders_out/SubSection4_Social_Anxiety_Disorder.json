@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection4_Social_Anxiety_Disorder.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection4_Social_Anxiety_Disorder.txt",
+  "html_page": "Anxiety_Disorders_out/social-anxiety-disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection4_Social_Anxiety_Disorder.txt",
+    "file_stem": "SubSection4_Social_Anxiety_Disorder",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection4_Social_Anxiety_Disorder.txt",
+    "parsed_name": "SubSection4 Social Anxiety Disorder",
+    "location": "Anxiety_Disorders_out > SubSection4_Social_Anxiety_Disorder"
+  },
+  "total_word_count": 3460,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Social Anxiety Disorder Diagnostic Criteria A. Marked fear or anxiety about one or more social situations in which the individual is exposed to possible scrutiny by others. Examples include social int..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "threshold helps distinguish the disorder from transient social fears that are common, particularly among children and in the community. The fear, anxiety, and avoidance must interfere significantly wi..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "inhibition, are strongly genetically influenced. The genetic influence is subject to gene-environment interaction; that is, children with high behavioral inhibition are more susceptible to environment..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 760,
+      "text_preview": "in social settings when their attachment figure is present or when they are at home, whereas those with social anxiety disorder may be uncomfortable when social situations occur at home or in the pres..."
+    }
+  ]
+}

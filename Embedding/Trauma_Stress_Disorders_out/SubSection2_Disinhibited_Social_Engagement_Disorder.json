@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection2_Disinhibited_Social_Engagement_Disorder.txt",
+  "relative_path": "Trauma_Stress_Disorders_out/SubSection2_Disinhibited_Social_Engagement_Disorder.txt",
+  "html_page": "Trauma_Stress_Disorders_out/Disinhibited_Social_Engagement_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Disinhibited_Social_Engagement_Disorder.txt",
+    "file_stem": "SubSection2_Disinhibited_Social_Engagement_Disorder",
+    "folders": [
+      "Trauma_Stress_Disorders_out"
+    ],
+    "full_path": "Trauma_Stress_Disorders_out/SubSection2_Disinhibited_Social_Engagement_Disorder.txt",
+    "parsed_name": "SubSection2 Disinhibited Social Engagement Disorder",
+    "location": "Trauma_Stress_Disorders_out > SubSection2_Disinhibited_Social_Engagement_Disorder"
+  },
+  "total_word_count": 1204,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Disinhibited Social Engagement Disorder Diagnostic Criteria A. A pattern of behavior in which a child actively approaches and interacts with unfamiliar adults and exhibits at least two of the followin..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 304,
+      "text_preview": "majority of severely neglected children do not develop the disorder. The disorder has not been identified in children who experience social neglect only after age 2 years. Prognosis is only modestly a..."
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Factice – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Factice – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Sélection du type -->
+<fieldset id="selectionType">
+  <legend>Sélectionner le type de trouble factice</legend>
+  <div class="warning-box">
+    ⚠️ Sélectionner le type approprié
+  </div>
+  <label><input type="radio" name="typeFactice" value="Imposé à soi-même"/> <strong>Trouble Factice Imposé à Soi-même</strong></label>
+  <label><input type="radio" name="typeFactice" value="Imposé à autrui"/> <strong>Trouble Factice Imposé à Autrui</strong> (Précédemment Trouble Factice par Procuration)</label>
+  <button type="button" onclick="validerType()">✔️ Valider le type</button>
+</fieldset>
+
+<!-- Critères pour Imposé à Soi-même -->
+<fieldset id="criteresSelf" class="hidden">
+  <legend>Critères diagnostiques - Trouble Factice Imposé à Soi-même</legend>
+  
+  <p style="margin-top: 10px;"><strong>Critère A – Falsification ou induction</strong></p>
+  <label><input type="checkbox" name="critereA_self" value="Falsification de signes ou symptômes physiques ou psychologiques"/> Falsification de signes ou symptômes physiques ou psychologiques</label>
+  <label><input type="checkbox" name="critereA_self" value="OU induction de blessure ou maladie"/> OU induction de blessure ou maladie</label>
+  <label><input type="checkbox" name="critereA_self" value="Associée à tromperie identifiée"/> Associée à tromperie identifiée</label>
+  
+  <p style="margin-top: 10px;"><strong>Critère B – Présentation de soi comme malade</strong></p>
+  <label><input type="checkbox" name="critereB_self" value="Individu se présente aux autres comme malade, altéré ou blessé"/> L'individu se présente lui-même/elle-même aux autres comme malade, altéré ou blessé</label>
+  
+  <p style="margin-top: 10px;"><strong>Critère C – Comportement trompeur sans récompenses externes évidentes</strong></p>
+  <label><input type="checkbox" name="critereC_self" value="Comportement trompeur évident même en absence de récompenses externes évidentes"/> Le comportement trompeur est évident même en l'absence de récompenses externes évidentes</label>
+  
+  <p style="margin-top: 10px;"><strong>Critère D – Non mieux expliqué par autre trouble mental</strong></p>
+  <label><input type="checkbox" name="critereD_self" value="Comportement non mieux expliqué par autre trouble mental (trouble délirant, autre trouble psychotique)"/> Le comportement n'est pas mieux expliqué par un autre trouble mental, tel que trouble délirant ou autre trouble psychotique</label>
+  
+  <button type="button" onclick="validerCriteresSelf()">✔️ Valider les critères</button>
+</fieldset>
+
+<!-- Critères pour Imposé à Autrui -->
+<fieldset id="criteresOther" class="hidden">
+  <legend>Critères diagnostiques - Trouble Factice Imposé à Autrui</legend>
+  
+  <p style="margin-top: 10px;"><strong>Critère A – Falsification ou induction chez autrui</strong></p>
+  <label><input type="checkbox" name="critereA_other" value="Falsification de signes ou symptômes physiques ou psychologiques chez autrui"/> Falsification de signes ou symptômes physiques ou psychologiques chez autrui</label>
+  <label><input type="checkbox" name="critereA_other" value="OU induction de blessure ou maladie chez autrui"/> OU induction de blessure ou maladie chez autrui</label>
+  <label><input type="checkbox" name="critereA_other" value="Associée à tromperie identifiée"/> Associée à tromperie identifiée</label>
+  
+  <p style="margin-top: 10px;"><strong>Critère B – Présentation d'autrui comme malade</strong></p>
+  <label><input type="checkbox" name="critereB_other" value="Individu présente autre individu (victime) aux autres comme malade, altéré ou blessé"/> L'individu présente un autre individu (victime) aux autres comme malade, altéré ou blessé</label>
+  
+  <p style="margin-top: 10px;"><strong>Critère C – Comportement trompeur sans récompenses externes évidentes</strong></p>
+  <label><input type="checkbox" name="critereC_other" value="Comportement trompeur évident même en absence de récompenses externes évidentes"/> Le comportement trompeur est évident même en l'absence de récompenses externes évidentes</label>
+  
+  <p style="margin-top: 10px;"><strong>Critère D – Non mieux expliqué par autre trouble mental</strong></p>
+  <label><input type="checkbox" name="critereD_other" value="Comportement non mieux expliqué par autre trouble mental (trouble délirant, autre trouble psychotique)"/> Le comportement n'est pas mieux expliqué par un autre trouble mental, tel que trouble délirant ou autre trouble psychotique</label>
+  
+  <div class="note-box">
+    <strong>Note :</strong> Le perpétrateur, pas la victime, reçoit ce diagnostic.
+  </div>
+  
+  <button type="button" onclick="validerCriteresOther()">✔️ Valider les critères</button>
+</fieldset>
+
+<!-- Évolution -->
+<fieldset id="evolution" class="hidden">
+  <legend>Spécifier l'évolution</legend>
+  <label><input type="radio" name="evolution" value="Épisode unique"/> <strong>Épisode unique</strong></label>
+  <label><input type="radio" name="evolution" value="Épisodes récurrents"/> <strong>Épisodes récurrents</strong> (deux événements ou plus de falsification de maladie et/ou induction de blessure)</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={typeFactice:"",critereA_self:[],critereB_self:"",critereC_self:"",critereD_self:"",critereA_other:[],critereB_other:"",critereC_other:"",critereD_other:"",evolution:""};
+
+function validerType(){
+  const t=document.querySelector("input[name='typeFactice']:checked");
+  if(t){
+    choix.typeFactice=t.value;
+    if(choix.typeFactice==="Imposé à soi-même"){
+      document.getElementById("criteresSelf").classList.remove("hidden");
+    }else{
+      document.getElementById("criteresOther").classList.remove("hidden");
+    }
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un type de trouble factice", confirmButtonColor: "#667eea"});
+}
+
+function validerCriteresSelf(){
+  const a=Array.from(document.querySelectorAll("input[name='critereA_self']:checked")).map(e=>e.value);
+  const b=document.querySelector("input[name='critereB_self']:checked");
+  const c=document.querySelector("input[name='critereC_self']:checked");
+  const d=document.querySelector("input[name='critereD_self']:checked");
+  
+  if(a.length>0&&b&&c&&d){
+    choix.critereA_self=a;
+    choix.critereB_self=b.value;
+    choix.critereC_self=c.value;
+    choix.critereD_self=d.value;
+    document.getElementById("evolution").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez tous les critères requis", confirmButtonColor: "#667eea"});
+}
+
+function validerCriteresOther(){
+  const a=Array.from(document.querySelectorAll("input[name='critereA_other']:checked")).map(e=>e.value);
+  const b=document.querySelector("input[name='critereB_other']:checked");
+  const c=document.querySelector("input[name='critereC_other']:checked");
+  const d=document.querySelector("input[name='critereD_other']:checked");
+  
+  if(a.length>0&&b&&c&&d){
+    choix.critereA_other=a;
+    choix.critereB_other=b.value;
+    choix.critereC_other=c.value;
+    choix.critereD_other=d.value;
+    document.getElementById("evolution").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez tous les critères requis", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const e=document.querySelector("input[name='evolution']:checked");
+  if(e){
+    choix.evolution=e.value;
+    genererResume();
+  }else alert("Sélectionnez l'évolution");
+}
+
+function genererResume(){
+  const code="F68.10";
+  let diag=code+" Trouble Factice ";
+  if(choix.typeFactice==="Imposé à soi-même"){
+    diag+="Imposé à Soi-même, "+choix.evolution.toLowerCase();
+  }else{
+    diag+="Imposé à Autrui, "+choix.evolution.toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Type de trouble factice</h4><ul class='choix-list'><li>✓ "+choix.typeFactice+"</li></ul>";
+  
+  if(choix.typeFactice==="Imposé à soi-même"){
+    h+="<h4>Critère A – Falsification ou induction</h4><ul class='choix-list'>";
+    choix.critereA_self.forEach(s=>h+="<li>✓ "+s+"</li>");
+    h+="</ul>";
+    h+="<h4>Critère B – Présentation de soi comme malade</h4><ul class='choix-list'><li>✓ "+choix.critereB_self+"</li></ul>";
+    h+="<h4>Critère C – Comportement trompeur sans récompenses externes</h4><ul class='choix-list'><li>✓ "+choix.critereC_self+"</li></ul>";
+    h+="<h4>Critère D – Non mieux expliqué par autre trouble mental</h4><ul class='choix-list'><li>✓ "+choix.critereD_self+"</li></ul>";
+  }else{
+    h+="<h4>Critère A – Falsification ou induction chez autrui</h4><ul class='choix-list'>";
+    choix.critereA_other.forEach(s=>h+="<li>✓ "+s+"</li>");
+    h+="</ul>";
+    h+="<h4>Critère B – Présentation d'autrui comme malade</h4><ul class='choix-list'><li>✓ "+choix.critereB_other+"</li></ul>";
+    h+="<h4>Critère C – Comportement trompeur sans récompenses externes</h4><ul class='choix-list'><li>✓ "+choix.critereC_other+"</li></ul>";
+    h+="<h4>Critère D – Non mieux expliqué par autre trouble mental</h4><ul class='choix-list'><li>✓ "+choix.critereD_other+"</li></ul>";
+  }
+  
+  h+="<h4>Évolution</h4><ul class='choix-list'><li>✓ "+choix.evolution+"</li></ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Falsification ou induction de signes/symptômes avec tromperie identifiée.";
+  
+  if(choix.typeFactice==="Imposé à soi-même"){
+    h+="<br/><br/><strong>Trouble Factice Imposé à Soi-même :</strong>";
+    h+="<br/><strong>Critère A :</strong> Falsification de signes/symptômes physiques ou psychologiques OU induction de blessure/maladie, associée à tromperie identifiée.";
+    h+="<br/><strong>Critère B :</strong> Individu se présente aux autres comme malade, altéré ou blessé.";
+    h+="<br/><strong>Critère C :</strong> Comportement trompeur évident même en absence de récompenses externes évidentes.";
+    h+="<br/><strong>Critère D :</strong> Non mieux expliqué par autre trouble mental (trouble délirant, autre trouble psychotique).";
+  }else{
+    h+="<br/><br/><strong>Trouble Factice Imposé à Autrui (Précédemment par Procuration) :</strong>";
+    h+="<br/><strong>Critère A :</strong> Falsification de signes/symptômes physiques ou psychologiques chez autrui OU induction de blessure/maladie chez autrui, associée à tromperie identifiée.";
+    h+="<br/><strong>Critère B :</strong> Individu présente autre individu (victime) aux autres comme malade, altéré ou blessé.";
+    h+="<br/><strong>Critère C :</strong> Comportement trompeur évident même en absence de récompenses externes évidentes.";
+    h+="<br/><strong>Critère D :</strong> Non mieux expliqué par autre trouble mental (trouble délirant, autre trouble psychotique).";
+    h+="<br/><br/><strong>Note importante :</strong> Le perpétrateur, pas la victime, reçoit ce diagnostic.";
+    h+="<br/><br/><strong>Diagnostic pour la victime :</strong> La victime peut recevoir un diagnostic d'abus (ex: T74.12X).";
+    h+="<br/><br/><strong>Diagnostic double possible :</strong> Si un individu avec trouble factice imposé à autrui a aussi représenté de manière trompeuse sa propre maladie/blessure, les deux diagnostics (imposé à soi-même ET à autrui) peuvent être posés.";
+  }
+  
+  h+="<br/><br/><strong>Évolution :</strong>";
+  h+="<br/>• Épisode unique";
+  h+="<br/>• Épisodes récurrents: ≥2 événements de falsification de maladie et/ou induction de blessure";
+  h+="<br/><br/><strong>Caractéristiques clés :</strong>";
+  h+="<br/>• Tromperie identifiée (intentionnelle)";
+  h+="<br/>• Absence de récompenses externes évidentes (différent de simulation)";
+  h+="<br/>• Falsification OU induction";
+  h+="<br/>• Présentation comme malade/altéré/blessé";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

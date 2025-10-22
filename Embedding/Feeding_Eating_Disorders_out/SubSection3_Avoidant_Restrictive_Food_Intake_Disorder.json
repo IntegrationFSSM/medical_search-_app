@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+  "relative_path": "Feeding_Eating_Disorders_out/SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+  "html_page": "Feeding_Eating_Disorders_out/Avoidant_Restrictive_Food_Intake_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+    "file_stem": "SubSection3_Avoidant_Restrictive_Food_Intake_Disorder",
+    "folders": [
+      "Feeding_Eating_Disorders_out"
+    ],
+    "full_path": "Feeding_Eating_Disorders_out/SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+    "parsed_name": "SubSection3 Avoidant Restrictive Food Intake Disorder",
+    "location": "Feeding_Eating_Disorders_out > SubSection3_Avoidant_Restrictive_Food_Intake_Disorder"
+  },
+  "total_word_count": 2659,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Avoidant/Restrictive Food Intake Disorder Diagnostic Criteria A. An eating or feeding disturbance (e.g., apparent lack of interest in eating or food; avoidance based on the sensory characteristics of ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "life but may persist into adulthood. Avoidance related to aversive consequences can arise at any age. The scant literature regarding long-term outcomes suggests that food avoidance or restriction base..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 859,
+      "text_preview": "in the level of impairment that would be required for a diagnosis of avoidant/restrictive food intake disorder. Avoidant/restrictive food intake disorder should be diagnosed concurrently only if all c..."
+    }
+  ]
+}

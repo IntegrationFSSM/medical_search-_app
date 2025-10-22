@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.3_Sleep-Related Hypoventilation.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.3_Sleep-Related Hypoventilation.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Sleep_Related_Hypoventilation.html",
+  "hierarchy": {
+    "file_name": "SubSection1.3_Sleep-Related Hypoventilation.txt",
+    "file_stem": "SubSection1.3_Sleep-Related Hypoventilation",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Section1_Breathing-Related Sleep Disorders"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.3_Sleep-Related Hypoventilation.txt",
+    "parsed_name": "SubSection1.3 Sleep Related Hypoventilation",
+    "location": "Sleep_Wake_Disorders_out > Section1_Breathing-Related Sleep Disorders > SubSection1.3_Sleep-Related Hypoventilation"
+  },
+  "total_word_count": 1762,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Sleep-Related Hypoventilation Diagnostic Criteria A. Polysomnograpy demonstrates episodes of decreased respiration associated with elevated CO2 levels. (Note: In the absence of objective measurement o..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 862,
+      "text_preview": "such as amyotrophic lateral sclerosis, spinal cord injury, diaphragmatic paralysis, myasthenia gravis, Lambert-Eaton syndrome, toxic or metabolic myopathies, postpolio syndrome, and Charcot-Marie-Toot..."
+    }
+  ]
+}

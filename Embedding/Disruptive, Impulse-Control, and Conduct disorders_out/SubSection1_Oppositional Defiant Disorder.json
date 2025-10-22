@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection1_Oppositional Defiant Disorder.txt",
+  "relative_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection1_Oppositional Defiant Disorder.txt",
+  "html_page": "Disruptive, Impulse-Control, and Conduct disorders_out/Oppositional_Defiant_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Oppositional Defiant Disorder.txt",
+    "file_stem": "SubSection1_Oppositional Defiant Disorder",
+    "folders": [
+      "Disruptive, Impulse-Control, and Conduct disorders_out"
+    ],
+    "full_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection1_Oppositional Defiant Disorder.txt",
+    "parsed_name": "SubSection1 Oppositional Defiant Disorder",
+    "location": "Disruptive, Impulse-Control, and Conduct disorders_out > SubSection1_Oppositional Defiant Disorder"
+  },
+  "total_word_count": 2410,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Oppositional Defiant Disorder Diagnostic Criteria A. A pattern of angry/irritable mood, argumentative/defiant behavior, or vindictiveness lasting at least 6 months as evidenced by at least four sympto..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "if there was some combination of both. Whether or not the clinician can separate the relative contributions of potential causal factors should not influence whether the diagnosis is made. In the event..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 610,
+      "text_preview": "even greater levels of impairment than conduct disorder. Furthermore, oppositional defiant disorder includes problems of emotion dysregulation (i.e., angry and irritable mood) that are not included in..."
+    }
+  ]
+}

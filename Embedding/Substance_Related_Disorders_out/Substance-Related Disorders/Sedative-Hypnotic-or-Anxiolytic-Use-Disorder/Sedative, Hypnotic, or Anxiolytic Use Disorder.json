@@ -1,0 +1,47 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+    "file_stem": "Sedative, Hypnotic, or Anxiolytic Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Sedative-Hypnotic-or-Anxiolytic-Use-Disorder"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+    "parsed_name": "Sedative, Hypnotic, or Anxiolytic Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Sedative-Hypnotic-or-Anxiolytic-Use-Disorder > Sedative, Hypnotic, or Anxiolytic Use Disorder"
+  },
+  "total_word_count": 3494,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Use Disorder Diagnostic Criteria A. A problematic pattern of sedative, hypnotic, or anxiolytic use leading to clinically significant impairment or distress, as manife..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "glutethimide, methaqualone, propofol). This class of substances includes most prescription sleeping medications and most prescription antianxiety medications. Nonbenzodiazepine antianxiety agents (e.g..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "(e.g., at parties) can lead to daily use and high levels of tolerance. Once this occurs, an increasing level of interpersonal difficulties can be expected, as well as increasingly severe episodes of c..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 794,
+      "text_preview": "like alcohol, may potentially contribute to overly aggressive behavior and arguments or fights, with subsequent interpersonal and legal problems. Physical examination is likely to reveal evidence of a..."
+    }
+  ]
+}

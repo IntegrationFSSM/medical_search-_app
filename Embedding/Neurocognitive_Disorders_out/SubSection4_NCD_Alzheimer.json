@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection4_NCD_Alzheimer.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection4_NCD_Alzheimer.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Alzheimer.html",
+  "hierarchy": {
+    "file_name": "SubSection4_NCD_Alzheimer.txt",
+    "file_stem": "SubSection4_NCD_Alzheimer",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection4_NCD_Alzheimer.txt",
+    "parsed_name": "SubSection4 NCD Alzheimer",
+    "location": "Neurocognitive_Disorders_out > SubSection4_NCD_Alzheimer"
+  },
+  "total_word_count": 2980,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Alzheimer\u2019s Disease Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. There is insidious onset and gradual progress..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "due to multiple etiologies. Associated Features For individuals with NCD due to Alzheimer's disease, symptoms extend beyond cognitive deficits to include neuropsychiatric symptoms such as agitation, a..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "this association has not been consistently found across all ethnic and racialized groups. For example, some studies have identified a unique mutation in the Gly206Ala presenilin 1 gene among individua..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 280,
+      "text_preview": "pathology is present alone or in combination with vascular pathologies. It should be noted that white matter change alone does not constitute enough evidence of cerebrovascular disease to propose a mi..."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection3_Cyclothymic_Disorder.txt",
+  "relative_path": "Bipolar_and_Related_Disorders_out/SubSection3_Cyclothymic_Disorder.txt",
+  "html_page": "Bipolar_and_Related_Disorders_out/Cyclothymic_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Cyclothymic_Disorder.txt",
+    "file_stem": "SubSection3_Cyclothymic_Disorder",
+    "folders": [
+      "Bipolar_and_Related_Disorders_out"
+    ],
+    "full_path": "Bipolar_and_Related_Disorders_out/SubSection3_Cyclothymic_Disorder.txt",
+    "parsed_name": "SubSection3 Cyclothymic Disorder",
+    "location": "Bipolar_and_Related_Disorders_out > SubSection3_Cyclothymic_Disorder"
+  },
+  "total_word_count": 1226,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Cyclothymic Disorder Diagnostic Criteria A. For at least 2 years (at least 1 year in children and adolescents) there have been numerous periods with hypomanic symptoms that do not meet criteria for a ..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 326,
+      "text_preview": "are coded. For example, this would be the case if the mood symptoms are considered to be the psychological (not the physiological) consequence of having a chronic medical condition, or if there is no ..."
+    }
+  ]
+}

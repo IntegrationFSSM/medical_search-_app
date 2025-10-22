@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection8_Transvestic_Disorder.txt",
+  "relative_path": "Paraphilic_Disorders_out/SubSection8_Transvestic_Disorder.txt",
+  "html_page": "Paraphilic_Disorders_out/Transvestic_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection8_Transvestic_Disorder.txt",
+    "file_stem": "SubSection8_Transvestic_Disorder",
+    "folders": [
+      "Paraphilic_Disorders_out"
+    ],
+    "full_path": "Paraphilic_Disorders_out/SubSection8_Transvestic_Disorder.txt",
+    "parsed_name": "SubSection8 Transvestic Disorder",
+    "location": "Paraphilic_Disorders_out > SubSection8_Transvestic_Disorder"
+  },
+  "total_word_count": 1201,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Transvestic Disorder A. Over a period of at least 6 months, recurrent and intense sexual arousal from cross-dressing, as manifested by fantasies, urges, or behaviors. B. The fantasies, sexual urges, o..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 301,
+      "text_preview": "of transvestism are less likely to present with transvestic disorder than with gender dysphoria. Functional Consequences of Transvestic Disorder Engaging in transvestic behaviors can interfere with, o..."
+    }
+  ]
+}

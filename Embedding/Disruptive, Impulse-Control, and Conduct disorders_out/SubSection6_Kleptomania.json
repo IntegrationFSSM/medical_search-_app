@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection6_Kleptomania.txt",
+  "relative_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection6_Kleptomania.txt",
+  "html_page": "Disruptive, Impulse-Control, and Conduct disorders_out/Kleptomania.html",
+  "hierarchy": {
+    "file_name": "SubSection6_Kleptomania.txt",
+    "file_stem": "SubSection6_Kleptomania",
+    "folders": [
+      "Disruptive, Impulse-Control, and Conduct disorders_out"
+    ],
+    "full_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection6_Kleptomania.txt",
+    "parsed_name": "SubSection6 Kleptomania",
+    "location": "Disruptive, Impulse-Control, and Conduct disorders_out > SubSection6_Kleptomania"
+  },
+  "total_word_count": 734,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 734,
+      "text_preview": " Diagnostic Criteria\n Kleptomania\n A. Recurrent failure to resist impulses to steal objects that are not needed for\n personal use or for their monetary value.\n B. Increasing sense of tension immediate..."
+    }
+  ]
+}

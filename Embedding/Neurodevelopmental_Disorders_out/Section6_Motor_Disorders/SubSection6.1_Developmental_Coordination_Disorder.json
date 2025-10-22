@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.1_Developmental_Coordination_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.1_Developmental_Coordination_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Developmental_Coordination_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection6.1_Developmental_Coordination_Disorder.txt",
+    "file_stem": "SubSection6.1_Developmental_Coordination_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section6_Motor_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.1_Developmental_Coordination_Disorder.txt",
+    "parsed_name": "SubSection6.1 Developmental Coordination Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section6_Motor_Disorders > SubSection6.1_Developmental_Coordination_Disorder"
+  },
+  "total_word_count": 1615,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Developmental Coordination Disorder Diagnostic Criteria A. The acquisition and execution of coordinated motor skills is substantially below that expected given the individual\u2019s chronological age and o..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 715,
+      "text_preview": "performance in the workplace. Co-occurrence with other disorders (see the section \u201cComorbidity\u201d for this disorder) has an additional impact on presentation, course, and outcome. Risk and Prognostic Fa..."
+    }
+  ]
+}

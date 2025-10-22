@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant Intoxication.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant_Intoxication.html",
+  "hierarchy": {
+    "file_name": "Inhalant Intoxication.txt",
+    "file_stem": "Inhalant Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Inhalant-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant Intoxication.txt",
+    "parsed_name": "Inhalant Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Inhalant-Related Disorders > Inhalant Intoxication"
+  },
+  "total_word_count": 894,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 894,
+      "text_preview": "Inhalant Intoxication\n Diagnostic Criteria\n A. Recent intended or unintended short-term, high-dose exposure to inhalant\n substances, including volatile hydrocarbons such as toluene or gasoline.\n B. Cl..."
+    }
+  ]
+}

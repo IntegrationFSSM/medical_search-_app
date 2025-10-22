@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+  "relative_path": "Schizophrenia_Spectrum_out/SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+  "html_page": "Schizophrenia_Spectrum_out/Psychotic_Disorder_Due_to_Another_Medical_Condition.html",
+  "hierarchy": {
+    "file_name": "SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+    "file_stem": "SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition",
+    "folders": [
+      "Schizophrenia_Spectrum_out"
+    ],
+    "full_path": "Schizophrenia_Spectrum_out/SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+    "parsed_name": "SubSection8 Psychotic Disorder Due to Another Medical Condition",
+    "location": "Schizophrenia_Spectrum_out > SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition"
+  },
+  "total_word_count": 1873,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Psychotic Disorder Due to Another Medical Condition Diagnostic Criteria A. Prominent hallucinations or delusions. B. There is evidence from the history, physical examination, or laboratory findings th..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 973,
+      "text_preview": "age groups in Finland. Rates of psychosis also vary according to the underlying medical condition; conditions most commonly associated with psychosis include untreated endocrine and metabolic disorder..."
+    }
+  ]
+}

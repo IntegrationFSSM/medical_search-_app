@@ -1,0 +1,33 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Intoxication.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Intoxication.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Intoxication.html",
+  "hierarchy": {
+    "file_name": "Other (or Unknown) Substance Intoxication.txt",
+    "file_stem": "Other (or Unknown) Substance Intoxication",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Other-or-Unknown-Substance-Use-Disorder"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Intoxication.txt",
+    "parsed_name": "Other (or Unknown) Substance Intoxication",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Other-or-Unknown-Substance-Use-Disorder > Other (or Unknown) Substance Intoxication"
+  },
+  "total_word_count": 998,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 998,
+      "text_preview": "Other (or Unknown) Substance Intoxication\n Diagnostic Criteria\n A. The development of a reversible substance-specific syndrome attributable to\n recent ingestion of (or exposure to) a substance that is..."
+    }
+  ]
+}

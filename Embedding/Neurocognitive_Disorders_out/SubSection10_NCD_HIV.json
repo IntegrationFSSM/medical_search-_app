@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection10_NCD_HIV.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection10_NCD_HIV.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_HIV.html",
+  "hierarchy": {
+    "file_name": "SubSection10_NCD_HIV.txt",
+    "file_stem": "SubSection10_NCD_HIV",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection10_NCD_HIV.txt",
+    "parsed_name": "SubSection10 NCD HIV",
+    "location": "Neurocognitive_Disorders_out > SubSection10_NCD_HIV"
+  },
+  "total_word_count": 2035,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to HIV Infection Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. There is documented infection with human immunodefi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "to HIV, individuals may have neurocognitive impairment when the HIV infection is asymptomatic; the Centers for Disease Control and Prevention classifies the underlying HIV infection in three stages: a..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 235,
+      "text_preview": "such preexisting or comorbid conditions. Among older adults, onset of neurocognitive decline related to cerebrovascular disease or primary neurodegeneration (e.g., major or mild NCD due to Alzheimer\u2019s..."
+    }
+  ]
+}

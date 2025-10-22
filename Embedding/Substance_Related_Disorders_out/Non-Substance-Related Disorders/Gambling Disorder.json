@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Non-Substance-Related Disorders/Gambling Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Non-Substance-Related Disorders/Gambling Disorder.txt",
+  "html_page": "Substance_Related_Disorders_out/Non-Substance-Related Disorders/Gambling_Disorder.html",
+  "hierarchy": {
+    "file_name": "Gambling Disorder.txt",
+    "file_stem": "Gambling Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Non-Substance-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Non-Substance-Related Disorders/Gambling Disorder.txt",
+    "parsed_name": "Gambling Disorder",
+    "location": "Substance_Related_Disorders_out > Non-Substance-Related Disorders > Gambling Disorder"
+  },
+  "total_word_count": 2576,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Gambling Disorder Diagnostic Criteria A. Persistent and recurrent problematic gambling behavior leading to clinically significant impairment or distress, as indicated by the individual exhibiting four..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "12-month prevalence of DSM-5 gambling disorder varies among ethnoracial groups in the United States: it is 0.52% in African Americans, 0.25% in Latinx, and 0.23% in non-Latinx Whites. Development and ..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 776,
+      "text_preview": "may be less likely than other groups to endorse being preoccupied with gambling (Criterion A4), while African Americans and Latinx may be more likely to endorse repeated unsuccessful efforts to contro..."
+    }
+  ]
+}

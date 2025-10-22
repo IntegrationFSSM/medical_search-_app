@@ -1,0 +1,38 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Use Disorder.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine_Use_Disorder.html",
+  "hierarchy": {
+    "file_name": "Phencyclidine Use Disorder.txt",
+    "file_stem": "Phencyclidine Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Hallucinogen-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Use Disorder.txt",
+    "parsed_name": "Phencyclidine Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Phencyclidine Use Disorder"
+  },
+  "total_word_count": 1419,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Phencyclidine Use Disorder Diagnostic Criteria A. A pattern of phencyclidine (or a pharmacologically similar substance) use leading to clinically significant impairment or distress, as manifested by a..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 519,
+      "text_preview": "symptoms, analgesia, nystagmus, risk of hypertension/hypotension and shock, euphoria, visual/auditory hallucinations, derealization, and unusual thought content. Violent behavior can also occur with p..."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan05_Nightmare Disorder.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan05_Nightmare Disorder.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Orphan_Subsections/Nightmare_Disorder.html",
+  "hierarchy": {
+    "file_name": "Orphan05_Nightmare Disorder.txt",
+    "file_stem": "Orphan05_Nightmare Disorder",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Orphan_Subsections"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan05_Nightmare Disorder.txt",
+    "parsed_name": "Orphan05 Nightmare Disorder",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan05_Nightmare Disorder"
+  },
+  "total_word_count": 1937,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Nightmare Disorder Diagnostic Criteria A. Repeated occurrences of extended, extremely dysphoric, and well-remembered dreams that usually involve efforts to avoid threats to survival, security, or phys..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "not necessarily trauma. Twin studies have identified genetic effects on the disposition to nightmares and their co-occurrence with other nocturnal behaviors (e.g., sleeptalking). Adaptive parental bed..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 137,
+      "text_preview": "independent clinical attention, a diagnosis of substance/medication-induced sleep disorder should be considered. Comorbidity Nightmares may be comorbid with several medical conditions, including coron..."
+    }
+  ]
+}

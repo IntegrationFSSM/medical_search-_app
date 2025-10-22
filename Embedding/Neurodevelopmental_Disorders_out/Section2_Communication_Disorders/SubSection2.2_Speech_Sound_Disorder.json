@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.2_Speech_Sound_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.2_Speech_Sound_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Speech_Sound_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.2_Speech_Sound_Disorder.txt",
+    "file_stem": "SubSection2.2_Speech_Sound_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section2_Communication_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.2_Speech_Sound_Disorder.txt",
+    "parsed_name": "SubSection2.2 Speech Sound Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.2_Speech_Sound_Disorder"
+  },
+  "total_word_count": 901,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 901,
+      "text_preview": "Speech Sound Disorder\nDiagnostic Criteria\nA. Persistent difficulty with speech sound production that interferes with speech\nintelligibility or prevents verbal communication of messages.\nB. The disturb..."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan03_Narcolepsy.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan03_Narcolepsy.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Orphan_Subsections/Narcolepsy.html",
+  "hierarchy": {
+    "file_name": "Orphan03_Narcolepsy.txt",
+    "file_stem": "Orphan03_Narcolepsy",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Orphan_Subsections"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan03_Narcolepsy.txt",
+    "parsed_name": "Orphan03 Narcolepsy",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan03_Narcolepsy"
+  },
+  "total_word_count": 3924,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Narcolepsy Diagnostic Criteria A. Recurrent periods of an irrepressible need to sleep, lapsing into sleep, or napping occurring within the same day. These must have been occurring at least three times..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "minutes) naps. NT1 generally manifests with cataplexy, typically brief episodes (seconds up to 2 minutes) of sudden, bilateral loss of muscle tone precipitated by emotions. A range of positive emotion..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "around 15\u201325 years. Onset can be abrupt or progressive, with cataplexy developing over years. It has been reported that children presenting with abrupt onset of NT1 symptoms have the highest disease s..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "uninterpretable when the individual is severely ill with a concurrent 427 infection or head trauma or is comatose. CSF cytology, protein, and glucose are within normal range even when sampled within w..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 324,
+      "text_preview": "develops over several seconds, but individuals with cataplexy do not have presyncopal symptoms of dizziness, tunnel vision, and auditory changes. In young children, cataplexy can be misdiagnosed as ch..."
+    }
+  ]
+}

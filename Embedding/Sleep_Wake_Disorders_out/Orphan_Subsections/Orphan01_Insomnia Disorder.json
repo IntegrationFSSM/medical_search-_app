@@ -1,0 +1,52 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan01_Insomnia Disorder.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan01_Insomnia Disorder.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Orphan_Subsections/Insomnia_Disorder.html",
+  "hierarchy": {
+    "file_name": "Orphan01_Insomnia Disorder.txt",
+    "file_stem": "Orphan01_Insomnia Disorder",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Orphan_Subsections"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan01_Insomnia Disorder.txt",
+    "parsed_name": "Orphan01 Insomnia Disorder",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan01_Insomnia Disorder"
+  },
+  "total_word_count": 4177,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Insomnia Disorder Diagnostic Criteria A. A predominant complaint of dissatisfaction with sleep quantity or quality, associated with one (or more) of the following symptoms: 1. Difficulty initiating sl..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "a role. Nonrestorative sleep, a complaint of poor sleep quality that does not leave the individual rested upon awakening despite adequate duration, is a common sleep complaint usually occurring in ass..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "and psychiatric populations are significantly higher than those in the general population, 413 especially among individuals with mood, anxiety, and substance use disorders. Forty to fifty percent of i..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "relatives (most commonly, the mother) with a history of insomnia. Heritability may be highest for insomnia disorder without comorbidities. The prevalence of insomnia is higher among monozygotic twins ..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 577,
+      "text_preview": "report sleep-onset insomnia only when they try to sleep at socially normal times, but they do not report difficulty falling asleep or staying asleep when their bed and rising times are delayed and coi..."
+    }
+  ]
+}

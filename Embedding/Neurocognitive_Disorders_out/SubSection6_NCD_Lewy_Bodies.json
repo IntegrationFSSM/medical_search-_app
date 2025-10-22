@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection6_NCD_Lewy_Bodies.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection6_NCD_Lewy_Bodies.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Lewy_Bodies.html",
+  "hierarchy": {
+    "file_name": "SubSection6_NCD_Lewy_Bodies.txt",
+    "file_stem": "SubSection6_NCD_Lewy_Bodies",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection6_NCD_Lewy_Bodies.txt",
+    "parsed_name": "SubSection6 NCD Lewy Bodies",
+    "location": "Neurocognitive_Disorders_out > SubSection6_NCD_Lewy_Bodies"
+  },
+  "total_word_count": 1647,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Major or Mild Neurocognitive Disorder With Lewy Bodies Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. The disorder has an insidious onset and gradual progres..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 747,
+      "text_preview": "and motor symptoms emerge. In NCDLB, the cognitive decline is manifested early in the course of illness (see the section \u201cDifferential Diagnosis\u201d for this disorder). Onset of symptoms is typically obs..."
+    }
+  ]
+}

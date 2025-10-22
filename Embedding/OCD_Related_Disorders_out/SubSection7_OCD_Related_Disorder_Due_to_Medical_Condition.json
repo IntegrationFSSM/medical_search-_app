@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection7_OCD_Related_Disorder_Due_to_Medical_Condition.txt",
+  "relative_path": "OCD_Related_Disorders_out/SubSection7_OCD_Related_Disorder_Due_to_Medical_Condition.txt",
+  "html_page": "OCD_Related_Disorders_out/OCD_Related_Disorder_Due_to_Medical_Condition.html",
+  "hierarchy": {
+    "file_name": "SubSection7_OCD_Related_Disorder_Due_to_Medical_Condition.txt",
+    "file_stem": "SubSection7_OCD_Related_Disorder_Due_to_Medical_Condition",
+    "folders": [
+      "OCD_Related_Disorders_out"
+    ],
+    "full_path": "OCD_Related_Disorders_out/SubSection7_OCD_Related_Disorder_Due_to_Medical_Condition.txt",
+    "parsed_name": "SubSection7 OCD Related Disorder Due to Medical Condition",
+    "location": "OCD_Related_Disorders_out > SubSection7_OCD_Related_Disorder_Due_to_Medical_Condition"
+  },
+  "total_word_count": 1281,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Obsessive-Compulsive and Related Disorder Due to Another Medical Condition Diagnostic Criteria A. Obsessions, compulsions, preoccupations with appearance, hoarding, skin picking, hair pulling, other b..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 381,
+      "text_preview": "293 Mixed presentation of symptoms (e.g., mood and obsessive-compulsive and related symptoms) judged to be due to another medical condition. Substance/medication-induced obsessive-compulsive and relat..."
+    }
+  ]
+}

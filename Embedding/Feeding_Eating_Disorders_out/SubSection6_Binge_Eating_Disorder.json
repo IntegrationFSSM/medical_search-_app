@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection6_Binge_Eating_Disorder.txt",
+  "relative_path": "Feeding_Eating_Disorders_out/SubSection6_Binge_Eating_Disorder.txt",
+  "html_page": "Feeding_Eating_Disorders_out/Binge_Eating_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection6_Binge_Eating_Disorder.txt",
+    "file_stem": "SubSection6_Binge_Eating_Disorder",
+    "folders": [
+      "Feeding_Eating_Disorders_out"
+    ],
+    "full_path": "Feeding_Eating_Disorders_out/SubSection6_Binge_Eating_Disorder.txt",
+    "parsed_name": "SubSection6 Binge Eating Disorder",
+    "location": "Feeding_Eating_Disorders_out > SubSection6_Binge_Eating_Disorder"
+  },
+  "total_word_count": 1825,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Binge-Eating Disorder Diagnostic Criteria A. Recurrent episodes of binge eating. An episode of binge eating is characterized by both of the following: 1. Eating, in a discrete period of time (e.g., wi..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 925,
+      "text_preview": "eating behavior and have greater functional impairment, lower quality of life, more subjective distress, and greater psychiatric comorbidity. Prevalence According to two U.S. epidemiological studies c..."
+    }
+  ]
+}

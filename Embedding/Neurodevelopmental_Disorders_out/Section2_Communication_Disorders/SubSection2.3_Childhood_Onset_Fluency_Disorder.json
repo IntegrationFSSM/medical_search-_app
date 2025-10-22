@@ -1,0 +1,37 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Childhood_Onset_Fluency_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+    "file_stem": "SubSection2.3_Childhood_Onset_Fluency_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section2_Communication_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+    "parsed_name": "SubSection2.3 Childhood Onset Fluency Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.3_Childhood_Onset_Fluency_Disorder"
+  },
+  "total_word_count": 1059,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Childhood-Onset Fluency Disorder (Stuttering) Diagnostic Criteria A. Disturbances in the normal fluency and time patterning of speech that are inappropriate for the individual\u2019s age and language skill..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 159,
+      "text_preview": "dysfluencies resulting from attempts to learn a new language and dysfluencies that indicate a fluency disorder, which typically appear in both languages. Stuttering may occur as a side effect of medic..."
+    }
+  ]
+}

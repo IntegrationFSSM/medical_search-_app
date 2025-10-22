@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Withdrawal.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Stimulant Withdrawal.txt",
+    "file_stem": "Stimulant Withdrawal",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Stimulant-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Withdrawal.txt",
+    "parsed_name": "Stimulant Withdrawal",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Stimulant-Related Disorders > Stimulant Withdrawal"
+  },
+  "total_word_count": 591,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 591,
+      "text_preview": "Stimulant Withdrawal\n Diagnostic Criteria\n A. Cessation of (or reduction in) prolonged amphetamine-type substance, cocaine,\n or other stimulant use.\n B. Dysphoric mood and two (or more) of the followi..."
+    }
+  ]
+}

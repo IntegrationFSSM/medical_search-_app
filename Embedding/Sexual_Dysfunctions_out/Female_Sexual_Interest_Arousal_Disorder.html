@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble de l'Intérêt Sexuel/Excitation Sexuelle Féminin – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble de l'Intérêt Sexuel/Excitation Sexuelle Féminin – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Manque ou réduction significative de l'intérêt/excitation sexuelle</legend>
+  <p class="subtitle">Manque ou réduction significative de l'intérêt/excitation sexuelle, manifesté par au moins trois des éléments suivants</p>
+  <div class="warning-box">
+    ⚠️ Au moins 3 des 6 manifestations suivantes sont requises
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="1. Intérêt absent/réduit pour activité sexuelle"/> <strong>1.</strong> Intérêt absent/réduit pour l'activité sexuelle</label>
+  
+  <label><input type="checkbox" name="critereA" value="2. Pensées ou fantasmes sexuels/érotiques absents/réduits"/> <strong>2.</strong> Pensées ou fantasmes sexuels/érotiques absents/réduits</label>
+  
+  <label><input type="checkbox" name="critereA" value="3. Aucune/réduction initiation activité sexuelle, et typiquement non réceptive aux tentatives du partenaire d'initier"/> <strong>3.</strong> Aucune/réduction de l'initiation de l'activité sexuelle, et typiquement non réceptive aux tentatives du partenaire d'initier</label>
+  
+  <label><input type="checkbox" name="critereA" value="4. Excitation/plaisir sexuel absent/réduit durant activité sexuelle lors de 75%-100% des rencontres sexuelles"/> <strong>4.</strong> Excitation/plaisir sexuel absent/réduit durant l'activité sexuelle lors de presque toutes ou toutes (approximativement 75%-100%) les rencontres sexuelles (dans contextes situationnels identifiés ou, si généralisé, dans tous les contextes)</label>
+  
+  <label><input type="checkbox" name="critereA" value="5. Intérêt/excitation sexuelle absent/réduit en réponse à indices sexuels/érotiques internes ou externes"/> <strong>5.</strong> Intérêt/excitation sexuelle absent/réduit en réponse à tous indices sexuels/érotiques internes ou externes (ex: écrits, verbaux, visuels)</label>
+  
+  <label><input type="checkbox" name="critereA" value="6. Sensations génitales ou non génitales absentes/réduites durant activité sexuelle lors de 75%-100% des rencontres sexuelles"/> <strong>6.</strong> Sensations génitales ou non génitales absentes/réduites durant l'activité sexuelle lors de presque toutes ou toutes (approximativement 75%-100%) les rencontres sexuelles (dans contextes situationnels identifiés ou, si généralisé, dans tous les contextes)</label>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Durée</legend>
+  <p class="subtitle">Les symptômes du critère A ont persisté pour une durée minimale d'approximativement 6 mois</p>
+  <div class="warning-box">
+    ⚠️ Durée minimale : Approximativement 6 mois
+  </div>
+  <label><input type="checkbox" name="critereB" value="Symptômes ont persisté approximativement 6 mois ou plus"/> Les symptômes ont persisté pour une durée minimale d'approximativement 6 mois</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Détresse cliniquement significative</legend>
+  <p class="subtitle">Les symptômes du critère A causent une détresse cliniquement significative chez l'individu</p>
+  <label><input type="checkbox" name="critereC" value="Symptômes causent détresse cliniquement significative"/> Les symptômes causent une détresse cliniquement significative chez l'individu</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Exclusion d'autres causes</legend>
+  <p class="subtitle">La dysfonction sexuelle n'est pas mieux expliquée par d'autres facteurs</p>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliqué par trouble mental non sexuel"/> Non mieux expliqué par un trouble mental non sexuel</label>
+  <label><input type="checkbox" name="critereD" value="Non conséquence de détresse relationnelle sévère (violence partenaire) ou autres facteurs de stress significatifs"/> Non conséquence de détresse relationnelle sévère (ex: violence du partenaire) ou autres facteurs de stress significatifs</label>
+  <label><input type="checkbox" name="critereD" value="Non attribuable aux effets d'une substance/médicament"/> Non attribuable aux effets d'une substance/médicament</label>
+  <label><input type="checkbox" name="critereD" value="Non attribuable à une autre condition médicale"/> Non attribuable à une autre condition médicale</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs</legend>
+  
+  <p style="margin-top: 10px;"><strong>Début :</strong></p>
+  <label><input type="radio" name="debut" value="Depuis toujours"/> <strong>Depuis toujours :</strong> La perturbation est présente depuis que l'individu est devenu sexuellement actif</label>
+  <label><input type="radio" name="debut" value="Acquis"/> <strong>Acquis :</strong> La perturbation a commencé après une période de fonctionnement sexuel relativement normal</label>
+  
+  <p style="margin-top: 15px;"><strong>Contexte :</strong></p>
+  <label><input type="radio" name="contexte" value="Généralisé"/> <strong>Généralisé :</strong> Non limité à certains types de stimulation, situations ou partenaires</label>
+  <label><input type="radio" name="contexte" value="Situationnel"/> <strong>Situationnel :</strong> Survient uniquement avec certains types de stimulation, situations ou partenaires</label>
+  
+  <p style="margin-top: 15px;"><strong>Sévérité actuelle :</strong></p>
+  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> Évidence de détresse légère concernant les symptômes du critère A</label>
+  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> Évidence de détresse modérée concernant les symptômes du critère A</label>
+  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> Évidence de détresse sévère ou extrême concernant les symptômes du critère A</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:"",critereC:"",critereD:[],debut:"",contexte:"",severite:""};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>=3){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Au moins 3 des 6 manifestations sont requises (actuellement: "+c.length+")");
+}
+
+function validerCritereB(){
+  const c=document.querySelector("input[name='critereB']:checked");
+  if(c){
+    choix.critereB=c.value;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else alert("Cochez l'option du critère B");
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function validerCritereD(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereD=c;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const d=document.querySelector("input[name='debut']:checked");
+  const co=document.querySelector("input[name='contexte']:checked");
+  const s=document.querySelector("input[name='severite']:checked");
+  if(d&&co&&s){
+    choix.debut=d.value;
+    choix.contexte=co.value;
+    choix.severite=s.value;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le début, le contexte et la sévérité", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code="F52.22";
+  let diag=code+" Trouble de l'Intérêt Sexuel/Excitation Sexuelle Féminin, "+choix.debut.toLowerCase()+", "+choix.contexte.toLowerCase()+", sévérité "+choix.severite.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Manque/réduction intérêt/excitation sexuelle ("+choix.critereA.length+"/6, minimum 3 requis)</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Durée (≥6 mois)</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
+  
+  h+="<h4>Critère C – Détresse cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Critère D – Exclusion d'autres causes</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
+  h+="<li>✓ Début: "+choix.debut+"</li>";
+  h+="<li>✓ Contexte: "+choix.contexte+"</li>";
+  h+="<li>✓ Sévérité: "+choix.severite+"</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Manque ou réduction significative de l'intérêt/excitation sexuelle, manifesté par au moins 3 des 6 manifestations.";
+  h+="<br/><br/><strong>Critère A - Manifestations (≥3/6 requises) :</strong>";
+  h+="<br/>1. Intérêt absent/réduit pour activité sexuelle";
+  h+="<br/>2. Pensées ou fantasmes sexuels/érotiques absents/réduits";
+  h+="<br/>3. Aucune/réduction initiation activité sexuelle, typiquement non réceptive aux tentatives du partenaire";
+  h+="<br/>4. Excitation/plaisir sexuel absent/réduit durant activité sexuelle (75%-100% des rencontres)";
+  h+="<br/>5. Intérêt/excitation absent/réduit en réponse à indices sexuels/érotiques internes ou externes";
+  h+="<br/>6. Sensations génitales ou non génitales absentes/réduites durant activité sexuelle (75%-100% des rencontres)";
+  h+="<br/><br/><strong>Critère B :</strong> Durée minimale d'approximativement 6 mois.";
+  h+="<br/><br/><strong>Critère C :</strong> Détresse cliniquement significative.";
+  h+="<br/><br/><strong>Critère D :</strong> Non mieux expliqué par trouble mental non sexuel, détresse relationnelle sévère (ex: violence du partenaire), substance/médicament ou condition médicale.";
+  h+="<br/><br/><strong>Spécificateurs de début :</strong>";
+  h+="<br/>• Depuis toujours: Présent depuis que l'individu est devenu sexuellement actif";
+  h+="<br/>• Acquis: Commencé après période de fonctionnement normal";
+  h+="<br/><br/><strong>Spécificateurs de contexte :</strong>";
+  h+="<br/>• Généralisé: Non limité à certains types de stimulation, situations ou partenaires";
+  h+="<br/>• Situationnel: Uniquement avec certains types de stimulation, situations ou partenaires";
+  h+="<br/><br/><strong>Sévérité actuelle :</strong>";
+  h+="<br/>• Léger: Détresse légère";
+  h+="<br/>• Modéré: Détresse modérée";
+  h+="<br/>• Sévère: Détresse sévère ou extrême";
+  h+="<br/><br/><strong>Note :</strong> Ce trouble combine intérêt sexuel ET excitation sexuelle en un seul diagnostic pour les femmes.";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

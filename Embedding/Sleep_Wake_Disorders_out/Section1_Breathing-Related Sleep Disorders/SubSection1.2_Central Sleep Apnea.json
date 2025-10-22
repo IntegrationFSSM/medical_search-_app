@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.2_Central Sleep Apnea.txt",
+  "relative_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.2_Central Sleep Apnea.txt",
+  "html_page": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Central_Sleep_Apnea.html",
+  "hierarchy": {
+    "file_name": "SubSection1.2_Central Sleep Apnea.txt",
+    "file_stem": "SubSection1.2_Central Sleep Apnea",
+    "folders": [
+      "Sleep_Wake_Disorders_out",
+      "Section1_Breathing-Related Sleep Disorders"
+    ],
+    "full_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.2_Central Sleep Apnea.txt",
+    "parsed_name": "SubSection1.2 Central Sleep Apnea",
+    "location": "Sleep_Wake_Disorders_out > Section1_Breathing-Related Sleep Disorders > SubSection1.2_Central Sleep Apnea"
+  },
+  "total_word_count": 2086,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Central Sleep Apnea Diagnostic Criteria A. Evidence by polysomnography of five or more central apneas per hour of sleep. B. The disorder is not better explained by another current sleep disorder. Spec..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "be present. Prevalence The prevalence of idiopathic central sleep apnea is unknown but thought to be rare. The prevalence of Cheyne-Stokes breathing is high in individuals with depressed cardiac ventr..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 286,
+      "text_preview": "methadone. Individuals taking these medications have a breathing-related sleep disorder that could contribute to sleep disturbances and symptoms such as sleepiness, 439 confusion, and depression. Whil..."
+    }
+  ]
+}

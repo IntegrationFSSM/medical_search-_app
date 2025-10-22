@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection2_Illness Anxiety Disorder.txt",
+  "relative_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection2_Illness Anxiety Disorder.txt",
+  "html_page": "Somatic_Symptom_and_Related_Disorders_out/Illness_Anxiety_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Illness Anxiety Disorder.txt",
+    "file_stem": "SubSection2_Illness Anxiety Disorder",
+    "folders": [
+      "Somatic_Symptom_and_Related_Disorders_out"
+    ],
+    "full_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection2_Illness Anxiety Disorder.txt",
+    "parsed_name": "SubSection2 Illness Anxiety Disorder",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection2_Illness Anxiety Disorder"
+  },
+  "total_word_count": 1830,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Illness Anxiety Disorder Diagnostic Criteria A. Preoccupation with having or acquiring a serious illness. B. Somatic symptoms are not present or, if present, are only mild in intensity. If another med..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 930,
+      "text_preview": "about one-fifth of individuals reported illness anxiety. The prevalence of the disorder is similar in men and women. Development and Course The development and course of illness anxiety disorder are u..."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Use Disorder.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis_Use_Disorder.html",
+  "hierarchy": {
+    "file_name": "Cannabis Use Disorder.txt",
+    "file_stem": "Cannabis Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Cannabis-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Use Disorder.txt",
+    "parsed_name": "Cannabis Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Cannabis-Related Disorders > Cannabis Use Disorder"
+  },
+  "total_word_count": 3969,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Cannabis Use Disorder Diagnostic Criteria A. A problematic pattern of cannabis use leading to clinically significant impairment or distress, as manifested by at least two of the following, occurring w..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "plant material, 30%\u201340% in hashish, and 50% 55% in hash oil. During the past two decades, the potency of seized illegal plant cannabis has steadily increased, and legal cannabis products may have even..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "lowest in Western Sub-Saharan Africa and highest in North America. According to age, the prevalence of cannabis use disorder in the United States is highest among individuals ages 18\u201329 years (6.9%) a..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "includes cannabis use disorder. Culture-Related Diagnostic Issues The acceptability of cannabis for medical and recreational use has varied widely over time and across cultural contexts. Currently, ca..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 369,
+      "text_preview": "(e.g., opioids or cocaine). Among adults seeking treatment for a cannabis use disorder, many (63%) report problematic use of secondary or tertiary substances, including alcohol, cocaine, methamphetami..."
+    }
+  ]
+}

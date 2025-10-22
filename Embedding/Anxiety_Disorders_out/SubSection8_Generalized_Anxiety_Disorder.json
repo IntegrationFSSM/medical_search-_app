@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection8_Generalized_Anxiety_Disorder.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection8_Generalized_Anxiety_Disorder.txt",
+  "html_page": "Anxiety_Disorders_out/generalized-anxiety-disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection8_Generalized_Anxiety_Disorder.txt",
+    "file_stem": "SubSection8_Generalized_Anxiety_Disorder",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection8_Generalized_Anxiety_Disorder.txt",
+    "parsed_name": "SubSection8 Generalized Anxiety Disorder",
+    "location": "Anxiety_Disorders_out > SubSection8_Generalized_Anxiety_Disorder"
+  },
+  "total_word_count": 2280,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Generalized Anxiety Disorder Diagnostic Criteria A. Excessive anxiety and worry (apprehensive expectation), occurring more days than not for at least 6 months, about a number of events or activities (..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "age at onset is spread over a very broad range and tends to be older in lower-income countries worldwide. The symptoms of excessive worry and anxiety may occur early in life but are then manifested as..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 480,
+      "text_preview": "that occurs only in the context of heavy coffee consumption would be diagnosed as caffeine-induced anxiety disorder. Social anxiety disorder. Individuals with social anxiety disorder often have antici..."
+    }
+  ]
+}

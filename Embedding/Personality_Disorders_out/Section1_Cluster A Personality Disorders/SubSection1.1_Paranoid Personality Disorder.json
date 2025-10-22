@@ -1,0 +1,42 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.1_Paranoid Personality Disorder.txt",
+  "relative_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.1_Paranoid Personality Disorder.txt",
+  "html_page": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/Paranoid_Personality_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1.1_Paranoid Personality Disorder.txt",
+    "file_stem": "SubSection1.1_Paranoid Personality Disorder",
+    "folders": [
+      "Personality_Disorders_out",
+      "Section1_Cluster A Personality Disorders"
+    ],
+    "full_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.1_Paranoid Personality Disorder.txt",
+    "parsed_name": "SubSection1.1 Paranoid Personality Disorder",
+    "location": "Personality_Disorders_out > Section1_Cluster A Personality Disorders > SubSection1.1_Paranoid Personality Disorder"
+  },
+  "total_word_count": 2016,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Paranoid Personality Disorder Diagnostic Criteria A. A pervasive distrust and suspiciousness of others such that their motives are interpreted as malevolent, beginning by early adulthood and present i..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "be litigious and frequently become involved in legal disputes. Individuals with this disorder seek to confirm their preconceived negative notions regarding people or situations they encounter, attribu..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 216,
+      "text_preview": "self-destructive behavior. People with avoidant personality disorder may also be reluctant to confide in others, but more from fear of being embarrassed or found inadequate than from fear of others\u2019 m..."
+    }
+  ]
+}

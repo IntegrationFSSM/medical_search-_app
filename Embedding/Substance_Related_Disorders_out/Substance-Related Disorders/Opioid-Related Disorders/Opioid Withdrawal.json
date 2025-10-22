@@ -1,0 +1,38 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Withdrawal.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Withdrawal.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid_Withdrawal.html",
+  "hierarchy": {
+    "file_name": "Opioid Withdrawal.txt",
+    "file_stem": "Opioid Withdrawal",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Opioid-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Withdrawal.txt",
+    "parsed_name": "Opioid Withdrawal",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Opioid-Related Disorders > Opioid Withdrawal"
+  },
+  "total_word_count": 1009,
+  "num_chunks": 2,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    2,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Opioid Withdrawal Diagnostic Criteria A. Presence of either of the following: 1. Cessation of (or reduction in) opioid use that has been heavy and prolonged (i.e., several weeks or longer). 2. Adminis..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 109,
+      "text_preview": "in hallucinogen intoxication and Opioid-induced mental disorders. stimulant intoxication. However, other signs or symptoms of opioid withdrawal, such as nausea, vomiting, diarrhea, abdominal cramps, r..."
+    }
+  ]
+}

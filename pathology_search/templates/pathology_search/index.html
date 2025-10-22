@@ -1,0 +1,489 @@
+{% extends 'pathology_search/base.html' %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-2">
+        <i class="fas fa-stethoscope text-purple-600 mr-2"></i>
+        Recherche de Pathologies Médicales
+    </h1>
+    <p class="text-gray-600">Entrez une description clinique ou une question pour identifier les pathologies correspondantes</p>
+</div>
+
+<!-- Search Form -->
+<div class="bg-white rounded-lg shadow-md p-6 mb-8">
+    <form id="searchForm" class="space-y-4">
+        <div>
+            <label for="query" class="block text-sm font-medium text-gray-700 mb-2">
+                <i class="fas fa-clipboard-list mr-1"></i> Description Clinique ou Question
+            </label>
+            <textarea 
+                id="query" 
+                name="query" 
+                rows="4" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="Exemple: Un enfant sans maladie médicale continue de passer les selles dans des endroits inappropriés malgré avoir été entraîné à la propreté..."
+                required
+            ></textarea>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label for="top_k" class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-list-ol mr-1"></i> Nombre de résultats
+                </label>
+                <select id="top_k" name="top_k" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option value="3">3 résultats</option>
+                    <option value="5" selected>5 résultats</option>
+                    <option value="10">10 résultats</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="aggregation" class="block text-sm font-medium text-gray-700 mb-2">
+                    <i class="fas fa-calculator mr-1"></i> Méthode d'agrégation
+                </label>
+                <select id="aggregation" name="aggregation" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option value="max" selected>Maximum</option>
+                    <option value="mean">Moyenne</option>
+                    <option value="weighted_mean">Moyenne pondérée</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Mode de validation -->
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+            <label class="flex items-center cursor-pointer">
+                <input type="checkbox" id="useValidation" name="useValidation" class="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500 mr-3">
+                <div class="flex-1">
+                    <span class="text-sm font-semibold text-gray-800">
+                        <i class="fas fa-clipboard-check mr-2 text-purple-600"></i>
+                        Mode Validation Étape par Étape
+                    </span>
+                    <p class="text-xs text-gray-600 mt-1">
+                        Examinez chaque résultat individuellement avec la page HTML complète et validez si c'est la bonne pathologie
+                    </p>
+                </div>
+            </label>
+        </div>
+        
+        <button 
+            type="submit" 
+            class="w-full gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition duration-200 flex items-center justify-center"
+        >
+            <i class="fas fa-search mr-2"></i>
+            Rechercher
+        </button>
+    </form>
+</div>
+
+<!-- Loading Indicator with Progress Bar -->
+<div id="loadingIndicator" class="hidden bg-white rounded-lg shadow-md p-8 mb-8">
+    <div class="space-y-6">
+        <!-- Progress Header -->
+        <div class="flex items-center justify-center">
+            <i class="fas fa-search text-3xl text-purple-600 mr-3"></i>
+            <h3 class="text-xl font-semibold text-gray-800">Recherche en cours...</h3>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="w-full">
+            <div class="w-full bg-gray-200 rounded-full h-4 mb-3 overflow-hidden">
+                <div id="progressBar" class="h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 ease-out" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600">
+                <span id="progressPercentage">0%</span>
+                <span id="progressStep">Initialisation...</span>
+            </div>
+        </div>
+        
+        <!-- Progress Steps -->
+        <div class="grid grid-cols-4 gap-2">
+            <div id="step1" class="progress-step text-center p-3 rounded-lg bg-gray-50">
+                <i class="fas fa-file-search text-2xl text-gray-400 mb-2"></i>
+                <p class="text-xs text-gray-600">Chargement</p>
+            </div>
+            <div id="step2" class="progress-step text-center p-3 rounded-lg bg-gray-50">
+                <i class="fas fa-brain text-2xl text-gray-400 mb-2"></i>
+                <p class="text-xs text-gray-600">Embedding</p>
+            </div>
+            <div id="step3" class="progress-step text-center p-3 rounded-lg bg-gray-50">
+                <i class="fas fa-chart-line text-2xl text-gray-400 mb-2"></i>
+                <p class="text-xs text-gray-600">Analyse</p>
+            </div>
+            <div id="step4" class="progress-step text-center p-3 rounded-lg bg-gray-50">
+                <i class="fas fa-check-circle text-2xl text-gray-400 mb-2"></i>
+                <p class="text-xs text-gray-600">Résultats</p>
+            </div>
+        </div>
+        
+        <!-- Files Counter -->
+        <div class="text-center">
+            <p class="text-sm text-gray-600">
+                <i class="fas fa-file-medical mr-2"></i>
+                <span id="filesProcessed">0</span> fichiers analysés
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Error Message -->
+<div id="errorMessage" class="hidden bg-red-50 border-l-4 border-red-500 p-4 mb-8 rounded">
+    <div class="flex">
+        <i class="fas fa-exclamation-circle text-red-500 text-xl mr-3"></i>
+        <p class="text-red-700" id="errorText"></p>
+    </div>
+</div>
+
+<!-- Diagnostic Summary -->
+<div id="diagnosticSummary" class="hidden bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg shadow-md p-6 mb-8 border-l-4 border-purple-500">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">
+        <i class="fas fa-diagnoses mr-2"></i>
+        Résumé Diagnostique
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <p class="text-sm text-gray-600 mb-1">Pathologie Suspectée:</p>
+            <p class="text-xl font-bold text-purple-700" id="suspectedPathology"></p>
+        </div>
+        <div>
+            <p class="text-sm text-gray-600 mb-1">Niveau de Confiance:</p>
+            <div class="flex items-center">
+                <div class="flex-1 bg-gray-200 rounded-full h-4 mr-3">
+                    <div id="confidenceBar" class="progress-bar h-4 rounded-full" style="width: 0%"></div>
+                </div>
+                <span id="confidenceText" class="text-lg font-bold"></span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <p class="text-sm text-gray-600 mb-1">Interprétation:</p>
+        <p class="text-gray-800" id="diagnosticMessage"></p>
+    </div>
+</div>
+
+<!-- Results -->
+<div id="results" class="space-y-6">
+    <!-- Results will be inserted here -->
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Progress animation variables
+let progressInterval;
+let currentProgress = 0;
+let filesCount = 0;
+
+function updateProgress(percentage, step, stepText) {
+    document.getElementById('progressBar').style.width = percentage + '%';
+    document.getElementById('progressPercentage').textContent = percentage + '%';
+    document.getElementById('progressStep').textContent = stepText;
+    
+    // Update step indicators
+    for (let i = 1; i <= 4; i++) {
+        const stepElement = document.getElementById('step' + i);
+        const icon = stepElement.querySelector('i');
+        const text = stepElement.querySelector('p');
+        
+        if (i < step) {
+            // Completed step
+            stepElement.className = 'progress-step text-center p-3 rounded-lg bg-green-50 border-2 border-green-500';
+            icon.className = icon.className.replace('text-gray-400', 'text-green-500');
+            text.className = 'text-xs text-green-700 font-semibold';
+        } else if (i === step) {
+            // Current step
+            stepElement.className = 'progress-step text-center p-3 rounded-lg bg-purple-50 border-2 border-purple-500';
+            icon.className = icon.className.replace('text-gray-400', 'text-purple-600') + ' fa-pulse';
+            text.className = 'text-xs text-purple-700 font-semibold';
+        } else {
+            // Pending step
+            stepElement.className = 'progress-step text-center p-3 rounded-lg bg-gray-50';
+            icon.className = icon.className.replace('text-green-500', 'text-gray-400').replace('text-purple-600', 'text-gray-400').replace(' fa-pulse', '');
+            text.className = 'text-xs text-gray-600';
+        }
+    }
+}
+
+function simulateProgress() {
+    currentProgress = 0;
+    filesCount = 0;
+    
+    // Reset progress
+    updateProgress(0, 1, 'Initialisation...');
+    document.getElementById('filesProcessed').textContent = '0';
+    
+    // Step 1: Loading (0-20%)
+    setTimeout(() => {
+        updateProgress(20, 1, 'Chargement des fichiers d\'embeddings...');
+        filesCount = Math.floor(Math.random() * 10) + 5;
+        document.getElementById('filesProcessed').textContent = filesCount;
+    }, 300);
+    
+    // Step 2: Embedding (20-40%)
+    setTimeout(() => {
+        updateProgress(40, 2, 'Génération de l\'embedding de la requête...');
+        filesCount += Math.floor(Math.random() * 20) + 10;
+        document.getElementById('filesProcessed').textContent = filesCount;
+    }, 800);
+    
+    // Step 3: Analysis (40-80%)
+    setTimeout(() => {
+        updateProgress(60, 3, 'Calcul des similarités...');
+        filesCount += Math.floor(Math.random() * 30) + 20;
+        document.getElementById('filesProcessed').textContent = filesCount;
+    }, 1400);
+    
+    setTimeout(() => {
+        updateProgress(80, 3, 'Agrégation des résultats...');
+        filesCount += Math.floor(Math.random() * 40) + 30;
+        document.getElementById('filesProcessed').textContent = filesCount;
+    }, 2000);
+    
+    // Step 4: Results (80-95%)
+    setTimeout(() => {
+        updateProgress(95, 4, 'Préparation des résultats...');
+    }, 2600);
+}
+
+function completeProgress() {
+    updateProgress(100, 4, 'Recherche terminée !');
+    setTimeout(() => {
+        document.getElementById('loadingIndicator').classList.add('hidden');
+    }, 500);
+}
+
+document.getElementById('searchForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const query = document.getElementById('query').value;
+    const top_k = document.getElementById('top_k').value;
+    const aggregation = document.getElementById('aggregation').value;
+    const useValidation = document.getElementById('useValidation').checked;
+    
+    // Show loading, hide errors and results
+    document.getElementById('loadingIndicator').classList.remove('hidden');
+    document.getElementById('errorMessage').classList.add('hidden');
+    document.getElementById('diagnosticSummary').classList.add('hidden');
+    document.getElementById('results').innerHTML = '';
+    
+    // Start progress animation
+    simulateProgress();
+    
+    try {
+        const response = await fetch('{% url "pathology_search:search" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({ 
+                query, 
+                top_k, 
+                aggregation,
+                use_validation: useValidation 
+            })
+        });
+        
+        const data = await response.json();
+        
+        // Complete progress and hide loading
+        completeProgress();
+        
+        if (data.success) {
+            // Si mode validation, rediriger vers la page de validation
+            if (data.use_validation) {
+                window.location.href = data.redirect_url;
+                return;
+            }
+            
+            // Sinon afficher les résultats normalement
+            // Update files count with actual number
+            if (data.total_files_searched) {
+                document.getElementById('filesProcessed').textContent = data.total_files_searched;
+            }
+            displayResults(data);
+        } else {
+            showError(data.error);
+        }
+    } catch (error) {
+        document.getElementById('loadingIndicator').classList.add('hidden');
+        showError('Erreur de connexion: ' + error.message);
+    }
+});
+
+function displayResults(data) {
+    const { results, diagnostic_info, total_files_searched } = data;
+    
+    if (!results || results.length === 0) {
+        showError('Aucun résultat trouvé');
+        return;
+    }
+    
+    // Show diagnostic summary
+    displayDiagnosticSummary(diagnostic_info);
+    
+    // Display results
+    const resultsContainer = document.getElementById('results');
+    
+    const headerHTML = `
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                <i class="fas fa-file-medical mr-2"></i>
+                Top ${results.length} Pathologies Correspondantes
+            </h2>
+            <p class="text-gray-600">
+                <i class="fas fa-database mr-1"></i>
+                ${total_files_searched} fichiers analysés
+            </p>
+        </div>
+    `;
+    
+    resultsContainer.innerHTML = headerHTML;
+    
+    results.forEach((result, index) => {
+        const card = createResultCard(result, index + 1);
+        resultsContainer.innerHTML += card;
+    });
+}
+
+function displayDiagnosticSummary(info) {
+    document.getElementById('diagnosticSummary').classList.remove('hidden');
+    document.getElementById('suspectedPathology').textContent = info.suspected_pathology || 'N/A';
+    document.getElementById('confidenceText').textContent = `${info.confidence.toFixed(1)}%`;
+    document.getElementById('diagnosticMessage').textContent = info.message;
+    
+    // Update confidence bar
+    const bar = document.getElementById('confidenceBar');
+    bar.style.width = `${info.confidence}%`;
+    
+    if (info.confidence_level === 'high') {
+        bar.className = 'progress-bar h-4 rounded-full bg-green-500';
+    } else if (info.confidence_level === 'moderate') {
+        bar.className = 'progress-bar h-4 rounded-full bg-yellow-500';
+    } else {
+        bar.className = 'progress-bar h-4 rounded-full bg-red-500';
+    }
+}
+
+function createResultCard(result, rank) {
+    const similarity = result.similarity * 100;
+    let confidenceClass, confidenceIcon, confidenceText;
+    
+    if (similarity >= 75) {
+        confidenceClass = 'high';
+        confidenceIcon = 'fa-check-circle text-green-500';
+        confidenceText = 'FORTE CORRESPONDANCE';
+    } else if (similarity >= 60) {
+        confidenceClass = 'moderate';
+        confidenceIcon = 'fa-exclamation-circle text-yellow-500';
+        confidenceText = 'CORRESPONDANCE MODÉRÉE';
+    } else {
+        confidenceClass = 'low';
+        confidenceIcon = 'fa-times-circle text-red-500';
+        confidenceText = 'CORRESPONDANCE FAIBLE';
+    }
+    
+    const pathologyName = result.file_name.replace('.txt', '').replace(/_/g, ' ');
+    const preview = result.best_chunk_text.substring(0, 300) + (result.best_chunk_text.length > 300 ? '...' : '');
+    
+    // Créer le lien vers la page HTML si disponible
+    const htmlLink = result.html_page ? `/pathology/${result.html_page}` : '#';
+    const hasHtmlPage = result.html_page && result.html_page !== '';
+    
+    return `
+        <div class="result-card ${confidenceClass} bg-white rounded-lg shadow-md p-6 card-hover">
+            <div class="flex items-start justify-between mb-4">
+                <div class="flex items-center flex-1">
+                    <div class="bg-purple-100 text-purple-700 rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">
+                        ${rank}
+                    </div>
+                    <div class="flex-1">
+                        ${hasHtmlPage ? `
+                        <a href="${htmlLink}" target="_blank" class="group">
+                            <h3 class="text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors flex items-center">
+                                ${pathologyName}
+                                <i class="fas fa-external-link-alt ml-2 text-sm text-purple-500 group-hover:text-purple-700"></i>
+                            </h3>
+                        </a>
+                        ` : `
+                        <h3 class="text-xl font-bold text-gray-800">${pathologyName}</h3>
+                        `}
+                        <p class="text-sm text-gray-500">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            ${result.location}
+                        </p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <i class="fas ${confidenceIcon} text-2xl mb-1"></i>
+                    <p class="text-xs font-semibold text-gray-600">${confidenceText}</p>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-600">Score de similarité</span>
+                    <span class="text-lg font-bold text-purple-700">${similarity.toFixed(1)}%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="h-3 rounded-full ${confidenceClass === 'high' ? 'bg-green-500' : confidenceClass === 'moderate' ? 'bg-yellow-500' : 'bg-red-500'}" style="width: ${similarity}%"></div>
+                </div>
+            </div>
+            
+            <div class="border-t pt-4">
+                <p class="text-sm text-gray-600 mb-2">
+                    <i class="fas fa-quote-left mr-1"></i>
+                    Extrait le plus pertinent (Chunk ${result.best_chunk_id + 1}/${result.num_chunks}):
+                </p>
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <p class="text-gray-700 text-sm italic">${preview}</p>
+                </div>
+            </div>
+            
+            <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
+                <span>
+                    <i class="fas fa-book mr-1"></i>
+                    ${result.num_chunks} sections analysées
+                </span>
+                <span>
+                    <i class="fas fa-file-alt mr-1"></i>
+                    ${result.file_name}
+                </span>
+            </div>
+            
+            ${hasHtmlPage ? `
+            <div class="mt-4 pt-4 border-t">
+                <a href="${htmlLink}" target="_blank" class="block w-full text-center gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition duration-200">
+                    <i class="fas fa-file-medical-alt mr-2"></i>
+                    Voir la Page Complète de la Pathologie
+                    <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
+            </div>
+            ` : ''}
+        </div>
+    `;
+}
+
+function showError(message) {
+    document.getElementById('errorMessage').classList.remove('hidden');
+    document.getElementById('errorText').textContent = message;
+}
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+{% endblock %}
+

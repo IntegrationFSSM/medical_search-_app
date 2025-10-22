@@ -1,0 +1,31 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection15_NCD_Multiple_Etiologies.txt",
+  "relative_path": "Neurocognitive_Disorders_out/SubSection15_NCD_Multiple_Etiologies.txt",
+  "html_page": "Neurocognitive_Disorders_out/NCD_Multiple_Etiologies.html",
+  "hierarchy": {
+    "file_name": "SubSection15_NCD_Multiple_Etiologies.txt",
+    "file_stem": "SubSection15_NCD_Multiple_Etiologies",
+    "folders": [
+      "Neurocognitive_Disorders_out"
+    ],
+    "full_path": "Neurocognitive_Disorders_out/SubSection15_NCD_Multiple_Etiologies.txt",
+    "parsed_name": "SubSection15 NCD Multiple Etiologies",
+    "location": "Neurocognitive_Disorders_out > SubSection15_NCD_Multiple_Etiologies"
+  },
+  "total_word_count": 607,
+  "num_chunks": 1,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    1,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 607,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Multiple\nEtiologies\nDiagnostic Criteria\nA. The criteria are met for major or mild neurocognitive disorder.\nB. There is evidence from the history, physical ..."
+    }
+  ]
+}

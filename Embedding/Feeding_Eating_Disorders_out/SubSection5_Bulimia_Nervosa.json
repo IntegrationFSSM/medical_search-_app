@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection5_Bulimia_Nervosa.txt",
+  "relative_path": "Feeding_Eating_Disorders_out/SubSection5_Bulimia_Nervosa.txt",
+  "html_page": "Feeding_Eating_Disorders_out/Bulimia_Nervosa.html",
+  "hierarchy": {
+    "file_name": "SubSection5_Bulimia_Nervosa.txt",
+    "file_stem": "SubSection5_Bulimia_Nervosa",
+    "folders": [
+      "Feeding_Eating_Disorders_out"
+    ],
+    "full_path": "Feeding_Eating_Disorders_out/SubSection5_Bulimia_Nervosa.txt",
+    "parsed_name": "SubSection5 Bulimia Nervosa",
+    "location": "Feeding_Eating_Disorders_out > SubSection5_Bulimia_Nervosa"
+  },
+  "total_word_count": 2736,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Bulimia Nervosa Diagnostic Criteria A. Recurrent episodes of binge eating. An episode of binge eating is characterized by both of the following: 1. Eating, in a discrete period of time (e.g., within a..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "amount of food. Individuals with bulimia nervosa may use a variety of methods to induce vomiting, including the use of fingers or instruments to stimulate the gag reflex. Individuals generally become ..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 936,
+      "text_preview": "childhood generalized anxiety disorder are associated with increased risk for the development of bulimia nervosa. Environmental. Internalization of a thin body ideal has been found to increase risk fo..."
+    }
+  ]
+}

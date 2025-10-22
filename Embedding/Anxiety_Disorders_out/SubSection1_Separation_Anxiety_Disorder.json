@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection1_Separation_Anxiety_Disorder.txt",
+  "relative_path": "Anxiety_Disorders_out/SubSection1_Separation_Anxiety_Disorder.txt",
+  "html_page": "Anxiety_Disorders_out/separation-anxiety-disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Separation_Anxiety_Disorder.txt",
+    "file_stem": "SubSection1_Separation_Anxiety_Disorder",
+    "folders": [
+      "Anxiety_Disorders_out"
+    ],
+    "full_path": "Anxiety_Disorders_out/SubSection1_Separation_Anxiety_Disorder.txt",
+    "parsed_name": "SubSection1 Separation Anxiety Disorder",
+    "location": "Anxiety_Disorders_out > SubSection1_Separation_Anxiety_Disorder"
+  },
+  "total_word_count": 2737,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Separation Anxiety Disorder Diagnostic Criteria A. Developmentally inappropriate and excessive fear or anxiety concerning separation from those to whom the individual is attached, as evidenced by at l..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "is forcing separation. When alone, especially in the evening or the dark, young children may report unusual perceptual experiences (e.g., seeing people peering into their room, frightening creatures r..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 937,
+      "text_preview": "communities place on strong interdependence among family members. Association With Suicidal Thoughts or Behavior Separation anxiety disorder in children and adolescents may be associated with an incre..."
+    }
+  ]
+}

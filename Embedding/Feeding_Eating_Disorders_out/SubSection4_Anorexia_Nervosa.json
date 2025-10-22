@@ -1,0 +1,46 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection4_Anorexia_Nervosa.txt",
+  "relative_path": "Feeding_Eating_Disorders_out/SubSection4_Anorexia_Nervosa.txt",
+  "html_page": "Feeding_Eating_Disorders_out/Anorexia_Nervosa.html",
+  "hierarchy": {
+    "file_name": "SubSection4_Anorexia_Nervosa.txt",
+    "file_stem": "SubSection4_Anorexia_Nervosa",
+    "folders": [
+      "Feeding_Eating_Disorders_out"
+    ],
+    "full_path": "Feeding_Eating_Disorders_out/SubSection4_Anorexia_Nervosa.txt",
+    "parsed_name": "SubSection4 Anorexia Nervosa",
+    "location": "Feeding_Eating_Disorders_out > SubSection4_Anorexia_Nervosa"
+  },
+  "total_word_count": 3593,
+  "num_chunks": 4,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    4,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Anorexia Nervosa Diagnostic Criteria A. Restriction of energy intake relative to requirements, leading to a significantly low body weight in the context of age, sex, developmental trajectory, and phys..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "to be significantly underweight in light of failure to maintain their expected growth trajectory. However, such individuals whose BMI nonetheless remains greater than the median BMI for age should not..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "be most prevalent in postindustrialized, high-income countries such as in the United States, many European countries, Australia, New Zealand, and Japan. Although the prevalence of anorexia nervosa is ..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 893,
+      "text_preview": "develop peripheral edema, especially during weight restoration or upon cessation of laxative and diuretic abuse. Rarely, petechiae or ecchymoses, usually on the extremities, may indicate a bleeding di..."
+    }
+  ]
+}

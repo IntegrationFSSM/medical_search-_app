@@ -1,0 +1,53 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Use Disorder.txt",
+  "relative_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Use Disorder.txt",
+  "html_page": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol_Use_Disorder.html",
+  "hierarchy": {
+    "file_name": "Alcohol Use Disorder.txt",
+    "file_stem": "Alcohol Use Disorder",
+    "folders": [
+      "Substance_Related_Disorders_out",
+      "Substance-Related Disorders",
+      "Alcohol-Related Disorders"
+    ],
+    "full_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Use Disorder.txt",
+    "parsed_name": "Alcohol Use Disorder",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Alcohol-Related Disorders > Alcohol Use Disorder"
+  },
+  "total_word_count": 4308,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Alcohol Use Disorder Diagnostic Criteria A. A problematic pattern of alcohol use leading to clinically significant impairment or distress, as manifested by at least two of the following, occurring wit..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "neglected; and alcohol-related absences may occur from school or work. The individual may use alcohol in physically hazardous circumstances (e.g., driving an automobile, swimming, operating machinery ..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "likely that consumption will rapidly escalate and that severe problems will once again develop. Alcohol use disorder is often erroneously perceived as an intractable condition, perhaps based on the fa..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "women\u2019s drinking. Despite small variations regarding individual criterion items, the diagnostic criteria perform equally well across most race/ethnicity groups. Sex- and Gender-Related Diagnostic Issu..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 708,
+      "text_preview": "alcohol and sedatives had an even stronger association with suicide attempt compared with alcohol use alone. A systematic review and meta-analysis of studies from 1975 through 2014 in several countrie..."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Dissociative_Disorders_out/SubSection3_Depersonalization_Derealization_Disorder.txt",
+  "relative_path": "Dissociative_Disorders_out/SubSection3_Depersonalization_Derealization_Disorder.txt",
+  "html_page": "Dissociative_Disorders_out/Depersonalization_Derealization_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3_Depersonalization_Derealization_Disorder.txt",
+    "file_stem": "SubSection3_Depersonalization_Derealization_Disorder",
+    "folders": [
+      "Dissociative_Disorders_out"
+    ],
+    "full_path": "Dissociative_Disorders_out/SubSection3_Depersonalization_Derealization_Disorder.txt",
+    "parsed_name": "SubSection3 Depersonalization Derealization Disorder",
+    "location": "Dissociative_Disorders_out > SubSection3_Depersonalization_Derealization_Disorder"
+  },
+  "total_word_count": 2059,
+  "num_chunks": 3,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    3,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Depersonalization/Derealization Disorder Diagnostic Criteria A. The presence of persistent or recurrent experiences of depersonalization, derealization, or both: 1. Depersonalization: Experiences of u..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "can wax and wane considerably, others report an unwavering level of intensity that in extreme cases can be constantly present for years or decades. Internal and external factors that affect symptom in..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 259,
+      "text_preview": "depersonalization/derealization disorder, the symptoms are precipitated by ingestion of such substances. If the symptoms persist for some time in the absence of any further substance or medication use..."
+    }
+  ]
+}

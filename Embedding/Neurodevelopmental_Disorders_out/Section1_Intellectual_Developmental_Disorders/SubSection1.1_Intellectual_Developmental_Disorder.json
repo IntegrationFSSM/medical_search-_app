@@ -1,0 +1,52 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/SubSection1.1_Intellectual_Developmental_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/SubSection1.1_Intellectual_Developmental_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/Intellectual_Developmental_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1.1_Intellectual_Developmental_Disorder.txt",
+    "file_stem": "SubSection1.1_Intellectual_Developmental_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section1_Intellectual_Developmental_Disorders"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/SubSection1.1_Intellectual_Developmental_Disorder.txt",
+    "parsed_name": "SubSection1.1 Intellectual Developmental Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section1_Intellectual_Developmental_Disorders > SubSection1.1_Intellectual_Developmental_Disorder"
+  },
+  "total_word_count": 3947,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Intellectual Developmental Disorder (Intellectual Disability) Diagnostic Criteria Intellectual developmental disorder (intellectual disability) is a disorder with onset during the developmental period..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "individual generally has little understanding of written language or of concepts involving numbers, quantity, time, and Spoken language is quite limited in terms of vocabulary and grammar. Speech may ..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "refer to how well a person meets community standards of personal independence and social responsibility, in comparison to others of similar age and sociocultural background. Adaptive functioning invol..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "at high risk for developing neurocognitive disorder due to Alzheimer\u2019s disease in adulthood). In this situation, both diagnoses, intellectual developmental disorder and neurocognitive disorder, are gi..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 347,
+      "text_preview": "childhood. Comorbidity Co-occurring neurodevelopmental and other mental and medical conditions are frequent in intellectual developmental disorder, with rates of some conditions (e.g., mental disorder..."
+    }
+  ]
+}

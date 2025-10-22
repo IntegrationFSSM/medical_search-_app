@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Neurocognitif Vasculaire – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+    .sub-section {
+      margin-left: 20px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-left: 3px solid #8cc63f;
+      margin-top: 10px;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Neurocognitif Vasculaire – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Critères du trouble neurocognitif majeur ou léger remplis</legend>
+  <p class="subtitle">Les critères sont remplis pour un trouble neurocognitif majeur ou léger</p>
+  <label><input type="radio" name="critereA" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
+  <label><input type="radio" name="critereA" value="Trouble neurocognitif léger"/> Trouble neurocognitif léger</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Caractéristiques cliniques cohérentes avec étiologie vasculaire</legend>
+  <p class="subtitle">Suggérées par l'un ou l'autre des éléments suivants</p>
+  <div class="warning-box">
+    ⚠️ Au moins 1 des 2 éléments suivants doit être présent
+  </div>
+  <label><input type="checkbox" name="critereB" value="1. Début des déficits cognitifs temporellement lié à ≥1 événement cérébrovasculaire"/> 1. Début des déficits cognitifs temporellement lié à un ou plusieurs événements cérébrovasculaires</label>
+  <label><input type="checkbox" name="critereB" value="2. Déclin proéminent en attention complexe (vitesse de traitement) et fonctions exécutives frontales"/> 2. Déclin proéminent en attention complexe (incluant vitesse de traitement) et fonctions exécutives frontales</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Preuve de maladie cérébrovasculaire</legend>
+  <p class="subtitle">Preuve de la présence de maladie cérébrovasculaire par l'histoire, examen physique et/ou neuroimagerie, considérée suffisante pour expliquer les déficits neurocognitifs</p>
+  <label><input type="checkbox" name="critereC" value="Preuve par l'histoire clinique"/> Preuve par l'histoire clinique</label>
+  <label><input type="checkbox" name="critereC" value="Preuve par l'examen physique"/> Preuve par l'examen physique</label>
+  <label><input type="checkbox" name="critereC" value="Preuve par neuroimagerie"/> Preuve par neuroimagerie</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Exclusion d'autres causes</legend>
+  <p class="subtitle">Les symptômes ne sont pas mieux expliqués par une autre maladie cérébrale ou trouble systémique</p>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliqués par autre maladie cérébrale ou trouble systémique"/> Les symptômes ne sont pas mieux expliqués par une autre maladie cérébrale ou trouble systémique</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Probable vs Possible -->
+<fieldset id="probableVsPossible" class="hidden">
+  <legend>Détermination : Probable vs Possible</legend>
+  <p class="subtitle">Le trouble neurocognitif vasculaire <strong>PROBABLE</strong> est diagnostiqué si l'un des éléments suivants est présent ; sinon, diagnostiquer <strong>POSSIBLE</strong></p>
+  
+  <div class="note-box">
+    <strong>Critères pour "Probable" :</strong> Au moins 1 des 3 éléments suivants doit être présent
+  </div>
+  
+  <label><input type="checkbox" name="probable" value="1. Critères cliniques soutenus par neuroimagerie (lésion parenchymateuse significative)"/> 1. Critères cliniques soutenus par neuroimagerie montrant lésion parenchymateuse significative attribuée à maladie cérébrovasculaire</label>
+  <label><input type="checkbox" name="probable" value="2. Syndrome neurocognitif temporellement lié à ≥1 événement cérébrovasculaire documenté"/> 2. Syndrome neurocognitif temporellement lié à un ou plusieurs événements cérébrovasculaires documentés</label>
+  <label><input type="checkbox" name="probable" value="3. Preuves cliniques ET génétiques de maladie cérébrovasculaire"/> 3. Preuves cliniques ET génétiques (ex: CADASIL) de maladie cérébrovasculaire</label>
+  
+  <div class="note-box" style="margin-top: 15px;">
+    <strong>Critères pour "Possible" :</strong> Les critères cliniques sont remplis mais la neuroimagerie n'est pas disponible ET la relation temporelle du syndrome neurocognitif avec un ou plusieurs événements cérébrovasculaires n'est pas établie
+  </div>
+  
+  <button type="button" onclick="validerProbableVsPossible()">✔️ Valider</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs</legend>
+  <p class="subtitle">Préciser les caractéristiques additionnelles</p>
+  
+  <p style="margin-top: 10px;"><strong>Perturbation comportementale :</strong></p>
+  <label><input type="radio" name="comportement" value="Avec perturbation comportementale"/> Avec perturbation comportementale</label>
+  <label><input type="radio" name="comportement" value="Sans perturbation comportementale"/> Sans perturbation comportementale</label>
+  
+  <p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
+  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
+  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
+  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
+  <label><input type="radio" name="severite" value="Non applicable"/> Non applicable (trouble neurocognitif léger)</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB:[],critereC:[],critereD:"",probable:[],comportement:"",severite:""};
+
+function validerCritereA(){
+  const c=document.querySelector("input[name='critereA']:checked");
+  if(c){
+    choix.critereA=c.value;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un type", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>=1){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins 1 élément du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereC=c;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereD(){
+  const c=document.querySelector("input[name='critereD']:checked");
+  if(c){
+    choix.critereD=c.value;
+    document.getElementById("probableVsPossible").classList.remove("hidden");
+  }else alert("Cochez l'option du critère D");
+}
+
+function validerProbableVsPossible(){
+  const prob=Array.from(document.querySelectorAll("input[name='probable']:checked")).map(e=>e.value);
+  choix.probable=prob;
+  document.getElementById("specificateurs").classList.remove("hidden");
+}
+
+function afficherResume(){
+  const comp=document.querySelector("input[name='comportement']:checked");
+  const sev=document.querySelector("input[name='severite']:checked");
+  if(!comp||!sev){
+    Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez comportement ET sévérité", confirmButtonColor: "#667eea"});
+    return;
+  }
+  choix.comportement=comp.value;
+  choix.severite=sev.value;
+  genererResume();
+}
+
+function genererResume(){
+  let code="";
+  let diag="";
+  const isMajeur=choix.critereA==="Trouble neurocognitif majeur";
+  const avecComp=choix.comportement==="Avec perturbation comportementale";
+  const isProbable=choix.probable.length>=1;
+  const probableText=isProbable?"probablement":"possiblement";
+  
+  if(isMajeur){
+    code=avecComp?"F01.51":"F01.50";
+    diag=code+" Trouble neurocognitif majeur "+probableText+" dû à une maladie vasculaire, "+choix.comportement.toLowerCase();
+  }else{
+    code="G31.84";
+    diag=code+" Trouble neurocognitif léger "+probableText+" dû à une maladie vasculaire, "+choix.comportement.toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  h+="<h4>Type de trouble</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  
+  h+="<h4>Critère B – Étiologie vasculaire ("+choix.critereB.length+" sur 2)</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Preuve de maladie cérébrovasculaire</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère D – Exclusion</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
+  
+  h+="<h4>Détermination : "+(isProbable?"PROBABLE":"POSSIBLE")+"</h4>";
+  if(isProbable){
+    h+="<ul class='choix-list'>";
+    choix.probable.forEach(s=>h+="<li>✓ "+s+"</li>");
+    h+="</ul>";
+  }else{
+    h+="<p style='font-style:italic; color:#666;'>Aucun critère pour \"Probable\" n'est rempli → Diagnostic \"Possible\"</p>";
+  }
+  
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'><li>✓ "+choix.comportement+"</li>";
+  if(isMajeur&&choix.severite!=="Non applicable")h+="<li>✓ Sévérité: "+choix.severite+"</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  if(isMajeur&&choix.severite!=="Non applicable")h+=" (sévérité "+choix.severite.toLowerCase()+" - à enregistrer mais non codable)";
+  h+="<br/><br/><strong>Note de codage :</strong> ";
+  if(isMajeur){
+    h+="Pour trouble neurocognitif majeur vasculaire (probable ou possible), utiliser F01.51 (avec perturbation) ou F01.50 (sans perturbation). Ne pas utiliser de code médical additionnel pour la maladie vasculaire.";
+  }else{
+    h+="Pour trouble neurocognitif léger vasculaire, utiliser G31.84. Ne pas utiliser de code additionnel pour la maladie vasculaire. \"Avec/sans perturbation comportementale\" ne peut pas être codé mais doit être enregistré.";
+  }
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>
