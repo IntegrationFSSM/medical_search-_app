@@ -148,4 +148,5 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
 EMBEDDING_MODEL = os.getenv('EMBEDDING_MODEL', 'text-embedding-ada-002')
 
 # Chemin vers le dossier contenant les embeddings
-EMBEDDINGS_FOLDER = os.getenv('EMBEDDINGS_FOLDER', '/content/drive/MyDrive/Embedding')
+# Par défaut, utiliser le chemin local, sur Heroku utiliser /app/Embedding
+EMBEDDINGS_FOLDER = os.getenv('EMBEDDINGS_FOLDER', str(BASE_DIR / 'Embedding'))

@@ -47,6 +47,15 @@ class PathologySearchService:
         print(f"🔍 DEBUG: folder_path existe? = {folder_path.exists()}")
         print(f"🔍 DEBUG: répertoire courant = {os.getcwd()}")
         
+        # Lister le contenu du répertoire parent
+        try:
+            parent = folder_path.parent
+            print(f"🔍 DEBUG: contenu de {parent}:")
+            for item in os.listdir(parent):
+                print(f"  - {item}")
+        except Exception as e:
+            print(f"❌ DEBUG: Erreur lors du listage: {e}")
+        
         if not folder_path.exists():
             return {
                 'success': False,
