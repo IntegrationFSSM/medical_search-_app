@@ -32,6 +32,12 @@ DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
+# Configuration CSRF pour Heroku
+CSRF_TRUSTED_ORIGINS = [
+    'https://medical-search-clv-01adee06ec45.herokuapp.com',
+    'https://*.herokuapp.com',
+]
+
 
 # Application definition
 
