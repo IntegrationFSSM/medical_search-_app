@@ -296,10 +296,10 @@
     // Animation au chargement
     document.addEventListener('DOMContentLoaded', function() {
         // Formater et afficher le diagnostic
-        const diagnosisText = {{ diagnosis|safe|escapejs }};
+        const diagnosisText = `{{ diagnosis|escapejs }}`;
         const diagnosisContent = document.getElementById('diagnosis-content');
         
-        if (diagnosisContent && diagnosisText) {
+        if (diagnosisContent && diagnosisText && diagnosisText.trim() !== '') {
             diagnosisContent.innerHTML = formatMarkdownToHTML(diagnosisText);
         }
         
