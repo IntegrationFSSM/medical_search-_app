@@ -139,8 +139,8 @@ class PathologySearchService:
             reverse=True
         )[:top_k]
         
-        # Vérifier la qualité des résultats - seuil minimum de 50%
-        if not results or results[0]['similarity'] < 0.5:
+        # Vérifier la qualité des résultats - seuil minimum de 60% (plus strict)
+        if not results or results[0]['similarity'] < 0.6:
             return {
                 'success': False,
                 'error': 'Aucune correspondance trouvée. Veuillez vérifier que votre description est complète et précise.',
