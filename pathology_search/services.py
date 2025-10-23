@@ -139,6 +139,16 @@ class PathologySearchService:
             reverse=True
         )[:top_k]
         
+        # Vérifier la qualité des résultats - seuil minimum de 50%
+        if not results or results[0]['similarity'] < 0.5:
+            return {
+                'success': False,
+                'error': 'Aucune correspondance trouvée. Veuillez vérifier que votre description est complète et précise.',
+                'error_type': 'low_similarity',
+                'best_score': results[0]['similarity'] * 100 if results else 0,
+                'results': []
+            }
+        
         # Ajouter des informations diagnostiques
         diagnostic_info = self._generate_diagnostic_info(results)
         
