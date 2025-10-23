@@ -26,45 +26,10 @@
             ></textarea>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-                <label for="top_k" class="block text-sm font-medium text-gray-700 mb-2">
-                    <i class="fas fa-list-ol mr-1"></i> Nombre de résultats
-                </label>
-                <select id="top_k" name="top_k" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="3">3 résultats</option>
-                    <option value="5" selected>5 résultats</option>
-                    <option value="10">10 résultats</option>
-                </select>
-            </div>
-            
-            <div>
-                <label for="aggregation" class="block text-sm font-medium text-gray-700 mb-2">
-                    <i class="fas fa-calculator mr-1"></i> Méthode d'agrégation
-                </label>
-                <select id="aggregation" name="aggregation" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                    <option value="max" selected>Maximum</option>
-                    <option value="mean">Moyenne</option>
-                    <option value="weighted_mean">Moyenne pondérée</option>
-                </select>
-            </div>
-        </div>
-        
-        <!-- Mode de validation -->
-        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <label class="flex items-center cursor-pointer">
-                <input type="checkbox" id="useValidation" name="useValidation" class="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500 mr-3">
-                <div class="flex-1">
-                    <span class="text-sm font-semibold text-gray-800">
-                        <i class="fas fa-clipboard-check mr-2 text-purple-600"></i>
-                        Mode Validation Étape par Étape
-                    </span>
-                    <p class="text-xs text-gray-600 mt-1">
-                        Examinez chaque résultat individuellement avec la page HTML complète et validez si c'est la bonne pathologie
-                    </p>
-                </div>
-            </label>
-        </div>
+        <!-- Options cachées avec valeurs par défaut -->
+        <input type="hidden" id="top_k" name="top_k" value="5">
+        <input type="hidden" id="aggregation" name="aggregation" value="max">
+        <input type="hidden" id="useValidation" name="useValidation" value="true">
         
         <button 
             type="submit" 
@@ -259,7 +224,7 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     const query = document.getElementById('query').value.trim();
     const top_k = document.getElementById('top_k').value;
     const aggregation = document.getElementById('aggregation').value;
-    const useValidation = document.getElementById('useValidation').checked;
+    const useValidation = document.getElementById('useValidation').value === 'true';
     
     // Validation de la requête
     if (query.length < 10) {
