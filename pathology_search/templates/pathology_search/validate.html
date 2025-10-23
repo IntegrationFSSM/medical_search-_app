@@ -89,16 +89,16 @@
 <!-- HTML Content Iframe Full Screen -->
 {% if result.html_page %}
 <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
-    <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4">
-        <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold flex items-center">
+    <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-3 sm:p-4">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <h3 class="text-lg sm:text-xl font-bold flex items-center">
                 <i class="fas fa-file-medical-alt mr-2"></i>
-                Page Complète de la Pathologie - {{ pathology_name }}
+                <span class="break-words">Page Complète de la Pathologie - {{ pathology_name }}</span>
             </h3>
             {% if not is_last %}
             <button 
                 onclick="skipResult()"
-                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center"
+                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center whitespace-nowrap"
             >
                 <i class="fas fa-forward mr-2"></i>
                 Passer au suivant
@@ -110,12 +110,12 @@
         <iframe 
             src="{% url 'pathology_search:view_pathology' result.html_page %}?mode=validation"
             class="w-full border-0 bg-white"
-            style="height: 85vh; min-height: 600px;"
+            style="height: 120vh; min-height: 900px;"
             id="pathologyIframe"
         ></iframe>
     </div>
-    <div class="bg-purple-50 border-t-4 border-purple-600 p-4">
-        <p class="text-center text-gray-700">
+    <div class="bg-purple-50 border-t-4 border-purple-600 p-3 sm:p-4">
+        <p class="text-center text-gray-700 text-sm sm:text-base">
             <i class="fas fa-info-circle mr-2 text-purple-600"></i>
             <strong>Remplissez le formulaire ci-dessus et cliquez sur "VALIDE" ou "NON VALIDE" à la fin</strong>
         </p>
