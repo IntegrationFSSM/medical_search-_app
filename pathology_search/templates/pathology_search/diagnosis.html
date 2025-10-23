@@ -154,7 +154,7 @@
                     Ce plan inclut : Médicaments recommandés, Dosages précis, Étapes thérapeutiques, et Conseils pratiques
                 </p>
             </div>
-            <div class="diagnosis-text" style="white-space: pre-wrap; line-height: 1.8; font-size: 15px;">{{ diagnosis }}</div>
+            <div id="diagnosis-content" class="diagnosis-text" style="line-height: 2; font-size: 15px;"></div>
         </div>
         {% else %}
         <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
@@ -240,12 +240,74 @@
 
 {% block extra_js %}
 <script>
+    // Fonction pour formater le markdown en HTML sophistiqué
+    function formatMarkdownToHTML(text) {
+        if (!text) return '';
+        
+        let html = text;
+        
+        // Remplacer les titres ### par des sections élégantes
+        html = html.replace(/###\s*(.+)/g, '<div class="mt-6 mb-4"><h4 class="text-xl font-bold text-purple-700 flex items-center border-b-2 border-purple-300 pb-2"><i class="fas fa-angle-double-right text-purple-500 mr-2"></i>$1</h4></div>');
+        
+        // Remplacer les titres ## par des sections principales
+        html = html.replace(/##\s*(.+)/g, '<div class="mt-8 mb-4"><h3 class="text-2xl font-bold text-purple-800 flex items-center"><i class="fas fa-prescription-bottle-alt text-purple-600 mr-3"></i>$1</h3><div class="h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-2 w-24"></div></div>');
+        
+        // Remplacer les titres # par des sections majeures
+        html = html.replace(/#\s*(.+)/g, '<div class="mt-6 mb-4"><h2 class="text-3xl font-bold text-gray-800">$1</h2></div>');
+        
+        // Remplacer **texte** par du texte en gras avec style
+        html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="text-purple-900 font-bold">$1</strong>');
+        
+        // Remplacer les listes numérotées avec style élégant
+        html = html.replace(/^(\d+)\.\s+(.+)$/gm, function(match, num, text) {
+            return `<div class="flex items-start my-3 p-3 bg-white rounded-lg border-l-4 border-purple-400 shadow-sm hover:shadow-md transition-shadow">
+                        <span class="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">${num}</span>
+                        <span class="flex-1 text-gray-700">${text}</span>
+                    </div>`;
+        });
+        
+        // Remplacer les listes à puces avec des icônes
+        html = html.replace(/^-\s+(.+)$/gm, '<div class="flex items-start my-2 pl-4"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i><span class="text-gray-700">$1</span></div>');
+        
+        // Remplacer les emojis médicaux par des icônes élégantes
+        html = html.replace(/💊/g, '<i class="fas fa-pills text-purple-500 mx-1"></i>');
+        html = html.replace(/⚠️/g, '<i class="fas fa-exclamation-triangle text-yellow-500 mx-1"></i>');
+        html = html.replace(/📊/g, '<i class="fas fa-chart-line text-blue-500 mx-1"></i>');
+        html = html.replace(/📋/g, '<i class="fas fa-clipboard-list text-indigo-500 mx-1"></i>');
+        html = html.replace(/🎯/g, '<i class="fas fa-bullseye text-red-500 mx-1"></i>');
+        html = html.replace(/🩺/g, '<i class="fas fa-stethoscope text-teal-500 mx-1"></i>');
+        html = html.replace(/🇫🇷/g, '<i class="fas fa-flag text-blue-600 mx-1"></i>');
+        html = html.replace(/✅/g, '<i class="fas fa-check-square text-green-600 mx-1"></i>');
+        html = html.replace(/📚/g, '<i class="fas fa-book-medical text-purple-600 mx-1"></i>');
+        
+        // Ajouter des sauts de ligne
+        html = html.replace(/\n\n/g, '<br><br>');
+        html = html.replace(/\n/g, '<br>');
+        
+        // Mettre en évidence les dosages (ex: "20 mg", "2 fois par jour")
+        html = html.replace(/(\d+\s*(?:mg|g|ml|mcg|UI|comprimés?))/gi, '<span class="font-semibold text-indigo-700 bg-indigo-50 px-2 py-1 rounded">$1</span>');
+        
+        // Mettre en évidence les durées
+        html = html.replace(/(\d+\s*(?:semaines?|mois|jours?|heures?))/gi, '<span class="font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded">$1</span>');
+        
+        return html;
+    }
+    
     // Animation au chargement
     document.addEventListener('DOMContentLoaded', function() {
+        // Formater et afficher le diagnostic
+        const diagnosisText = {{ diagnosis|safe|escapejs }};
+        const diagnosisContent = document.getElementById('diagnosis-content');
+        
+        if (diagnosisContent && diagnosisText) {
+            diagnosisContent.innerHTML = formatMarkdownToHTML(diagnosisText);
+        }
+        
+        // Animation de confirmation
         Swal.fire({
             icon: 'success',
             title: 'Plan de Traitement Généré !',
-            html: '<p class="text-gray-600">Le <strong>plan de traitement médical</strong> a été généré avec succès par l\'IA.</p><p class="text-sm text-gray-500 mt-2">💊 Médicaments, dosages et étapes thérapeutiques inclus</p>',
+            html: '<p class="text-gray-600">Le <strong>plan de traitement médical</strong> a été généré avec succès par l\'IA.</p><p class="text-sm text-gray-500 mt-2"><i class="fas fa-pills text-purple-500"></i> Médicaments, dosages et étapes thérapeutiques inclus</p>',
             timer: 2500,
             timerProgressBar: true,
             showConfirmButton: false

@@ -256,10 +256,33 @@ function completeProgress() {
 document.getElementById('searchForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const query = document.getElementById('query').value;
+    const query = document.getElementById('query').value.trim();
     const top_k = document.getElementById('top_k').value;
     const aggregation = document.getElementById('aggregation').value;
     const useValidation = document.getElementById('useValidation').checked;
+    
+    // Validation de la requête
+    if (query.length < 10) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Requête trop courte',
+            text: 'Veuillez entrer une description clinique d\'au moins 10 caractères.',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
+    
+    // Vérifier que ce n'est pas juste des caractères spéciaux
+    const hasLetters = /[a-zA-Z]/.test(query);
+    if (!hasLetters) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Requête invalide',
+            html: 'Veuillez entrer une description clinique réelle avec des mots.<br><small class="text-gray-600">Exemple: "Patient présentant des symptômes d\'anxiété et de troubles du sommeil"</small>',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
     
     // Show loading, hide errors and results
     document.getElementById('loadingIndicator').classList.remove('hidden');
