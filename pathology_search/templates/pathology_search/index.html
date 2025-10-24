@@ -43,12 +43,18 @@
 </div>
 
 <!-- Loading Indicator with Progress Bar -->
-<div id="loadingIndicator" class="hidden bg-white rounded-lg shadow-md p-8 mb-8">
+<div id="loadingIndicator" class="hidden bg-white rounded-lg shadow-md p-8 mb-8"
+     data-init-text="{% trans 'Initialisation...' %}"
+     data-loading-text="{% trans 'Chargement des fichiers d'\''embeddings...' %}"
+     data-embedding-text="{% trans 'Génération de l'\''embedding de la requête...' %}"
+     data-analysis-text="{% trans 'Calcul des similarités...' %}"
+     data-results-text="{% trans 'Finalisation des résultats...' %}"
+     data-files-text="{% trans 'fichiers analysés' %}">
     <div class="space-y-6">
         <!-- Progress Header -->
         <div class="flex items-center justify-center">
             <i class="fas fa-search text-3xl text-purple-600 mr-3"></i>
-            <h3 class="text-xl font-semibold text-gray-800">Recherche en cours...</h3>
+            <h3 class="text-xl font-semibold text-gray-800">{% trans "Recherche en cours..." %}</h3>
         </div>
         
         <!-- Progress Bar -->
@@ -58,7 +64,7 @@
             </div>
             <div class="flex justify-between text-sm text-gray-600">
                 <span id="progressPercentage">0%</span>
-                <span id="progressStep">Initialisation...</span>
+                <span id="progressStep">{% trans "Initialisation..." %}</span>
             </div>
         </div>
         
@@ -66,19 +72,19 @@
         <div class="grid grid-cols-4 gap-2">
             <div id="step1" class="progress-step text-center p-3 rounded-lg bg-gray-50">
                 <i class="fas fa-file-search text-2xl text-gray-400 mb-2"></i>
-                <p class="text-xs text-gray-600">Chargement</p>
+                <p class="text-xs text-gray-600">{% trans "Chargement" %}</p>
             </div>
             <div id="step2" class="progress-step text-center p-3 rounded-lg bg-gray-50">
                 <i class="fas fa-brain text-2xl text-gray-400 mb-2"></i>
-                <p class="text-xs text-gray-600">Embedding</p>
+                <p class="text-xs text-gray-600">{% trans "Embedding" %}</p>
             </div>
             <div id="step3" class="progress-step text-center p-3 rounded-lg bg-gray-50">
                 <i class="fas fa-chart-line text-2xl text-gray-400 mb-2"></i>
-                <p class="text-xs text-gray-600">Analyse</p>
+                <p class="text-xs text-gray-600">{% trans "Analyse" %}</p>
             </div>
             <div id="step4" class="progress-step text-center p-3 rounded-lg bg-gray-50">
                 <i class="fas fa-check-circle text-2xl text-gray-400 mb-2"></i>
-                <p class="text-xs text-gray-600">Résultats</p>
+                <p class="text-xs text-gray-600">{% trans "Résultats" %}</p>
             </div>
         </div>
         
@@ -86,7 +92,7 @@
         <div class="text-center">
             <p class="text-sm text-gray-600">
                 <i class="fas fa-file-medical mr-2"></i>
-                <span id="filesProcessed">0</span> fichiers analysés
+                <span id="filesProcessed">0</span> <span id="filesLabel">{% trans "fichiers analysés" %}</span>
             </p>
         </div>
     </div>
@@ -171,49 +177,55 @@ function updateProgress(percentage, step, stepText) {
     }
 }
 
+// Helper function to get translated text from data attributes
+function getTranslatedText(key) {
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    return loadingIndicator.getAttribute('data-' + key + '-text') || '';
+}
+
 function simulateProgress() {
     currentProgress = 0;
     filesCount = 0;
     
     // Reset progress
-    updateProgress(0, 1, 'Initialisation...');
+    updateProgress(0, 1, getTranslatedText('init'));
     document.getElementById('filesProcessed').textContent = '0';
     
     // Step 1: Loading (0-20%)
     setTimeout(() => {
-        updateProgress(20, 1, 'Chargement des fichiers d\'embeddings...');
+        updateProgress(20, 1, getTranslatedText('loading'));
         filesCount = Math.floor(Math.random() * 10) + 5;
         document.getElementById('filesProcessed').textContent = filesCount;
     }, 300);
     
     // Step 2: Embedding (20-40%)
     setTimeout(() => {
-        updateProgress(40, 2, 'Génération de l\'embedding de la requête...');
+        updateProgress(40, 2, getTranslatedText('embedding'));
         filesCount += Math.floor(Math.random() * 20) + 10;
         document.getElementById('filesProcessed').textContent = filesCount;
     }, 800);
     
     // Step 3: Analysis (40-80%)
     setTimeout(() => {
-        updateProgress(60, 3, 'Calcul des similarités...');
+        updateProgress(60, 3, getTranslatedText('analysis'));
         filesCount += Math.floor(Math.random() * 30) + 20;
         document.getElementById('filesProcessed').textContent = filesCount;
     }, 1400);
     
     setTimeout(() => {
-        updateProgress(80, 3, 'Agrégation des résultats...');
+        updateProgress(80, 3, getTranslatedText('analysis'));
         filesCount += Math.floor(Math.random() * 40) + 30;
         document.getElementById('filesProcessed').textContent = filesCount;
     }, 2000);
     
     // Step 4: Results (80-95%)
     setTimeout(() => {
-        updateProgress(95, 4, 'Préparation des résultats...');
+        updateProgress(95, 4, getTranslatedText('results'));
     }, 2600);
 }
 
 function completeProgress() {
-    updateProgress(100, 4, 'Recherche terminée !');
+    updateProgress(100, 4, getTranslatedText('results'));
     setTimeout(() => {
         document.getElementById('loadingIndicator').classList.add('hidden');
     }, 500);

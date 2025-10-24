@@ -265,3 +265,18 @@ msgstr "Back to Home"
 
 msgid "Imprimer le Plan"
 msgstr "Print Plan"
+
+msgid "fichiers analysés"
+msgstr "files analyzed"
+
+msgid "Chargement des fichiers d'embeddings..."
+msgstr "Loading embedding files..."
+
+msgid "Génération de l'embedding de la requête..."
+msgstr "Generating query embedding..."
+
+msgid "Calcul des similarités..."
+msgstr "Calculating similarities..."
+
+msgid "Finalisation des résultats..."
+msgstr "Finalizing results..."

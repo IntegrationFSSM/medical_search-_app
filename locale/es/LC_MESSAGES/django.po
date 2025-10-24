@@ -270,3 +270,18 @@ msgstr "Volver al Inicio"
 
 msgid "Imprimer le Plan"
 msgstr "Imprimir Plan"
+
+msgid "fichiers analysés"
+msgstr "archivos analizados"
+
+msgid "Chargement des fichiers d'embeddings..."
+msgstr "Cargando archivos de embedding..."
+
+msgid "Génération de l'embedding de la requête..."
+msgstr "Generando embedding de la consulta..."
+
+msgid "Calcul des similarités..."
+msgstr "Calculando similaridades..."
+
+msgid "Finalisation des résultats..."
+msgstr "Finalizando resultados..."
