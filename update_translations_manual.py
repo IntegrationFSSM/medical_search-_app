@@ -49,11 +49,11 @@ new_strings = {
         "en": "files analyzed",
         "es": "archivos analizados"
     },
-    "Chargement des fichiers d'embeddings...": {
+    "Chargement des fichiers d&#39;embeddings...": {
         "en": "Loading embedding files...",
         "es": "Cargando archivos de embedding..."
     },
-    "Génération de l'embedding de la requête...": {
+    "Génération de l&#39;embedding de la requête...": {
         "en": "Generating query embedding...",
         "es": "Generando embedding de la consulta..."
     },

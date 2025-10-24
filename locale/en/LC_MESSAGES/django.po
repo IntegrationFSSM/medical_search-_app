@@ -280,3 +280,9 @@ msgstr "Calculating similarities..."
 
 msgid "Finalisation des résultats..."
 msgstr "Finalizing results..."
+
+msgid "Chargement des fichiers d&#39;embeddings..."
+msgstr "Loading embedding files..."
+
+msgid "Génération de l&#39;embedding de la requête..."
+msgstr "Generating query embedding..."
