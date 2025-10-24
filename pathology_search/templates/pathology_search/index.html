@@ -1,12 +1,13 @@
 {% extends 'pathology_search/base.html' %}
+{% load i18n %}
 
 {% block content %}
 <div class="mb-6 sm:mb-8">
     <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
         <i class="fas fa-stethoscope text-purple-600 mr-2"></i>
-        Recherche de Pathologies Médicales
+        {% trans "Recherche de Pathologies Médicales" %}
     </h1>
-    <p class="text-sm sm:text-base text-gray-600">Entrez une description clinique ou une question pour identifier les pathologies correspondantes</p>
+    <p class="text-sm sm:text-base text-gray-600">{% trans "Entrez une description clinique ou une question pour identifier les pathologies correspondantes" %}</p>
 </div>
 
 <!-- Search Form -->
@@ -14,14 +15,14 @@
     <form id="searchForm" class="space-y-3 sm:space-y-4">
         <div>
             <label for="query" class="block text-sm font-medium text-gray-700 mb-2">
-                <i class="fas fa-clipboard-list mr-1"></i> Description Clinique ou Question
+                <i class="fas fa-clipboard-list mr-1"></i> {% trans "Description Clinique ou Question" %}
             </label>
             <textarea 
                 id="query" 
                 name="query" 
                 rows="4" 
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="Exemple: Un enfant sans maladie médicale continue de passer les selles dans des endroits inappropriés malgré avoir été entraîné à la propreté..."
+                placeholder="{% trans 'Exemple: Un enfant sans maladie médicale continue de passer les selles dans des endroits inappropriés malgré avoir été entraîné à la propreté...' %}"
                 required
             ></textarea>
         </div>
@@ -36,7 +37,7 @@
             class="w-full gradient-bg text-white font-semibold py-3 sm:py-4 px-6 rounded-lg hover:opacity-90 transition duration-200 flex items-center justify-center text-base sm:text-lg touch-action-manipulation"
         >
             <i class="fas fa-search mr-2"></i>
-            Rechercher
+            {% trans "Rechercher" %}
         </button>
     </form>
 </div>

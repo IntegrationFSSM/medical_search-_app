@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-24 20:35+0200\n"
+"PO-Revision-Date: 2025-10-24 20:35+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Recherche de Pathologies Médicales"
+msgstr "Búsqueda de Patologías Médicas"
+
+msgid "Recherche Pathologie"
+msgstr "Búsqueda Patología"
+
+msgid "Recherche"
+msgstr "Buscar"
+
+msgid "À propos"
+msgstr "Acerca de"
+
+msgid "Langue"
+msgstr "Idioma"
+
+msgid "Système de Recherche de Pathologies - Basé sur l'IA et les Embeddings OpenAI"
+msgstr "Sistema de Búsqueda de Patologías - Basado en IA y Embeddings de OpenAI"
+
+msgid "Entrez une description clinique ou une question pour identifier les pathologies correspondantes"
+msgstr "Ingrese una descripción clínica o pregunta para identificar las patologías correspondientes"
+
+msgid "Description Clinique ou Question"
+msgstr "Descripción Clínica o Pregunta"
+
+msgid "Exemple: Un enfant sans maladie médicale continue de passer les selles dans des endroits inappropriés malgré avoir été entraîné à la propreté..."
+msgstr "Ejemplo: Un niño sin enfermedad médica continúa defecando en lugares inapropiados a pesar de haber sido entrenado..."
+
+msgid "Rechercher"
+msgstr "Buscar"
+
+msgid "Recherche en cours..."
+msgstr "Búsqueda en curso..."
+
+msgid "Initialisation..."
+msgstr "Inicializando..."
+
+msgid "Chargement"
+msgstr "Cargando"
+
+msgid "Embedding"
+msgstr "Embedding"
+
+msgid "Analyse"
+msgstr "Análisis"
+
+msgid "Résultats"
+msgstr "Resultados"
+
+msgid "Correspondance Insuffisante"
+msgstr "Coincidencia Insuficiente"
+
+msgid "La description fournie ne correspond à aucune pathologie dans notre base de données."
+msgstr "La descripción proporcionada no coincide con ninguna patología en nuestra base de datos."
+
+msgid "Score de correspondance :"
+msgstr "Puntuación de coincidencia:"
+
+msgid "Seuil minimum requis :"
+msgstr "Umbral mínimo requerido:"
+
+msgid "Votre description pourrait être :"
+msgstr "Su descripción podría ser:"
+
+msgid "Incomplète"
+msgstr "Incompleta"
+
+msgid "Manque de détails cliniques importants"
+msgstr "Falta de detalles clínicos importantes"
+
+msgid "Imprécise"
+msgstr "Imprecisa"
+
+msgid "Symptômes trop vagues ou généraux"
+msgstr "Síntomas demasiado vagos o generales"
+
+msgid "Incorrecte"
+msgstr "Incorrecta"
+
+msgid "Ne correspond à aucune pathologie connue"
+msgstr "No coincide con ninguna patología conocida"
+
+msgid "Conseil :"
+msgstr "Consejo:"
+
+msgid "Décrivez les symptômes de manière précise et détaillée (durée, fréquence, intensité, contexte)."
+msgstr "Describa los síntomas de manera precisa y detallada (duración, frecuencia, intensidad, contexto)."
+
+msgid "Réessayer"
+msgstr "Reintentar"
+
+msgid "Erreur de recherche"
+msgstr "Error de búsqueda"
+
+msgid "Résultats de la recherche"
+msgstr "Resultados de búsqueda"
+
+msgid "pathologies trouvées"
+msgstr "patologías encontradas"
+
+msgid "Nouvelle recherche"
+msgstr "Nueva búsqueda"
+
+msgid "Forte correspondance"
+msgstr "Fuerte coincidencia"
+
+msgid "Correspondance modérée"
+msgstr "Coincidencia moderada"
+
+msgid "Correspondance faible"
+msgstr "Coincidencia débil"
+
+msgid "Score de similarité"
+msgstr "Puntuación de similitud"
+
+msgid "Extrait le plus pertinent"
+msgstr "Extracto más relevante"
+
+msgid "Chunk"
+msgstr "Fragmento"
+
+msgid "sections analysées"
+msgstr "secciones analizadas"
+
+msgid "Voir la Page Complète de la Pathologie"
+msgstr "Ver Página Completa de la Patología"
+
+msgid "Plan de Traitement"
+msgstr "Plan de Tratamiento"
+
+msgid "Critères Diagnostiques Validés"
+msgstr "Criterios Diagnósticos Validados"
+
+msgid "Résultat de la Recherche"
+msgstr "Resultado de Búsqueda"
+
+msgid "Fichier Source"
+msgstr "Archivo Fuente"
+
+msgid "Similarité"
+msgstr "Similitud"
+
+msgid "Localisation"
+msgstr "Ubicación"
+
+msgid "Génération du Plan de Traitement IA..."
+msgstr "Generando Plan de Tratamiento IA..."
+
+msgid "Analyse des critères diagnostiques..."
+msgstr "Analizando criterios diagnósticos..."
+
+msgid "Lecture du texte médical..."
+msgstr "Leyendo texto médico..."
+
+msgid "Génération des recommandations..."
+msgstr "Generando recomendaciones..."
+
+msgid "Finalisation..."
+msgstr "Finalizando..."
+
+msgid "Plan de Traitement Généré par IA"
+msgstr "Plan de Tratamiento Generado por IA"
+
+msgid "Aucune donnée de formulaire disponible."
+msgstr "No hay datos de formulario disponibles."
+
+msgid "Validation des Résultats"
+msgstr "Validación de Resultados"
+
+msgid "Requête"
+msgstr "Consulta"
+
+msgid "Résultat"
+msgstr "Resultado"
+
+msgid "Page Complète de la Pathologie"
+msgstr "Página Completa de la Patología"
+
+msgid "Passer au suivant"
+msgstr "Pasar al siguiente"
+
+msgid "Remplissez le formulaire ci-dessus et cliquez sur \"VALIDE\" ou \"NON VALIDE\" à la fin"
+msgstr "Complete el formulario arriba y haga clic en \"VÁLIDO\" o \"NO VÁLIDO\" al final"
+
+msgid "Pathologie Validée !"
+msgstr "¡Patología Validada!"
+
+msgid "Tous les résultats examinés"
+msgstr "Todos los resultados revisados"
+
+msgid "Vous avez parcouru tous les résultats disponibles."
+msgstr "Ha revisado todos los resultados disponibles."
+
