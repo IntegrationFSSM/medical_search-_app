@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Spécifique des Apprentissages – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+    .severity-desc {
+      background: #f9f9f9;
+      border-left: 3px solid #8cc63f;
+      padding: 8px;
+      margin: 8px 0;
+      font-size: 0.85em;
+    }
+    .domain-section {
+      background: #f5f5f5;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Spécifique des Apprentissages – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Difficultés d'apprentissage et d'utilisation des compétences académiques</legend>
+  <p class="subtitle">Présence d'au moins 1 des symptômes suivants ayant persisté pendant au moins 6 mois, malgré interventions ciblant ces difficultés</p>
+  <div class="warning-box">
+    ⚠️ Au moins 1 symptôme doit avoir persisté ≥6 mois malgré interventions
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="1. Lecture de mots inexacte ou lente et laborieuse"/> <strong>1. Lecture de mots inexacte ou lente et laborieuse</strong></label>
+  <div class="subtitle" style="margin-left: 20px;">Ex: lit mots isolés à voix haute incorrectement/lentement/hésitant, devine fréquemment mots, difficulté décoder mots</div>
+  
+  <label><input type="checkbox" name="critereA" value="2. Difficulté à comprendre signification de ce qui est lu"/> <strong>2. Difficulté à comprendre signification de ce qui est lu</strong></label>
+  <div class="subtitle" style="margin-left: 20px;">Ex: peut lire texte avec précision mais ne comprend pas séquence, relations, inférences ou significations profondes</div>
+  
+  <label><input type="checkbox" name="critereA" value="3. Difficultés avec orthographe"/> <strong>3. Difficultés avec orthographe</strong></label>
+  <div class="subtitle" style="margin-left: 20px;">Ex: peut ajouter, omettre ou substituer voyelles ou consonnes</div>
+  
+  <label><input type="checkbox" name="critereA" value="4. Difficultés avec expression écrite"/> <strong>4. Difficultés avec expression écrite</strong></label>
+  <div class="subtitle" style="margin-left: 20px;">Ex: erreurs grammaticales/ponctuation multiples dans phrases, organisation paragraphe pauvre, expression idées manque clarté</div>
+  
+  <label><input type="checkbox" name="critereA" value="5. Difficultés à maîtriser sens numérique, faits numériques ou calcul"/> <strong>5. Difficultés à maîtriser sens numérique, faits numériques ou calcul</strong></label>
+  <div class="subtitle" style="margin-left: 20px;">Ex: compréhension pauvre nombres/magnitude/relations, compte sur doigts pour additionner chiffres uniques, se perd dans calcul arithmétique</div>
+  
+  <label><input type="checkbox" name="critereA" value="6. Difficultés avec raisonnement mathématique"/> <strong>6. Difficultés avec raisonnement mathématique</strong></label>
+  <div class="subtitle" style="margin-left: 20px;">Ex: difficulté sévère appliquer concepts/faits/procédures mathématiques pour résoudre problèmes quantitatifs</div>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Compétences académiques substantiellement en dessous de l'attendu</legend>
+  <p class="subtitle">Les compétences académiques affectées sont substantiellement et quantifiablement en dessous de celles attendues pour l'âge chronologique, et causent interférence significative avec performance académique/professionnelle ou activités vie quotidienne, confirmées par mesures standardisées et évaluation clinique complète</p>
+  <label><input type="checkbox" name="critereB" value="Compétences substantiellement en dessous attendu pour âge"/> Compétences substantiellement et quantifiablement en dessous de l'attendu pour l'âge chronologique</label>
+  <label><input type="checkbox" name="critereB" value="Interférence significative avec performance académique"/> Interférence significative avec performance académique</label>
+  <label><input type="checkbox" name="critereB" value="Interférence significative avec performance professionnelle"/> Interférence significative avec performance professionnelle</label>
+  <label><input type="checkbox" name="critereB" value="Interférence significative avec activités vie quotidienne"/> Interférence significative avec activités de la vie quotidienne</label>
+  <div class="note-box">
+    <strong>Confirmation :</strong> Par mesures standardisées de réussite administrées individuellement ET évaluation clinique complète. Pour individus ≥17 ans, historique documenté de difficultés d'apprentissage altérant peut substituer évaluation standardisée.
+  </div>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Début durant années scolaires</legend>
+  <p class="subtitle">Les difficultés d'apprentissage commencent durant les années scolaires mais peuvent ne pas se manifester pleinement jusqu'à ce que les demandes excèdent les capacités limitées</p>
+  <label><input type="checkbox" name="critereC" value="Début durant années scolaires"/> Début durant les années scolaires</label>
+  <div class="note-box">
+    Peuvent ne pas se manifester pleinement jusqu'à ce que demandes excèdent capacités (ex: tests chronométrés, rapports longs/complexes avec délais serrés, charges académiques excessivement lourdes)
+  </div>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Exclusion d'autres causes</legend>
+  <p class="subtitle">Les difficultés d'apprentissage ne sont pas mieux expliquées par d'autres facteurs</p>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliquées par déficiences intellectuelles"/> Non mieux expliquées par déficiences intellectuelles</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliquées par acuité visuelle ou auditive non corrigée"/> Non mieux expliquées par acuité visuelle ou auditive non corrigée</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliquées par autres troubles mentaux ou neurologiques"/> Non mieux expliquées par autres troubles mentaux ou neurologiques</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliquées par adversité psychosociale"/> Non mieux expliquées par adversité psychosociale</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliquées par manque maîtrise langue instruction académique"/> Non mieux expliquées par manque de maîtrise de la langue d'instruction académique</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliquées par instruction éducative inadéquate"/> Non mieux expliquées par instruction éducative inadéquate</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Domaines altérés -->
+<fieldset id="domaines" class="hidden">
+  <legend>Spécifier tous les domaines académiques et sous-compétences altérés</legend>
+  
+  <div class="domain-section">
+    <p><strong>F81.0 Avec altération en LECTURE :</strong></p>
+    <label><input type="checkbox" name="lecture" value="Précision lecture de mots"/> Précision lecture de mots</label>
+    <label><input type="checkbox" name="lecture" value="Vitesse ou fluence de lecture"/> Vitesse ou fluence de lecture</label>
+    <label><input type="checkbox" name="lecture" value="Compréhension de lecture"/> Compréhension de lecture</label>
+    <div class="note-box">
+      <strong>Note Dyslexie :</strong> Terme alternatif pour pattern de difficultés caractérisé par problèmes reconnaissance précise/fluente mots, décodage pauvre, capacités orthographe pauvres. Si utilisé, spécifier aussi difficultés additionnelles présentes.
+    </div>
+  </div>
+  
+  <div class="domain-section">
+    <p><strong>F81.81 Avec altération en EXPRESSION ÉCRITE :</strong></p>
+    <label><input type="checkbox" name="ecriture" value="Précision orthographe"/> Précision orthographe</label>
+    <label><input type="checkbox" name="ecriture" value="Précision grammaire et ponctuation"/> Précision grammaire et ponctuation</label>
+    <label><input type="checkbox" name="ecriture" value="Clarté ou organisation expression écrite"/> Clarté ou organisation de l'expression écrite</label>
+  </div>
+  
+  <div class="domain-section">
+    <p><strong>F81.2 Avec altération en MATHÉMATIQUES :</strong></p>
+    <label><input type="checkbox" name="maths" value="Sens numérique"/> Sens numérique</label>
+    <label><input type="checkbox" name="maths" value="Mémorisation faits arithmétiques"/> Mémorisation des faits arithmétiques</label>
+    <label><input type="checkbox" name="maths" value="Calcul précis ou fluent"/> Calcul précis ou fluent</label>
+    <label><input type="checkbox" name="maths" value="Raisonnement mathématique précis"/> Raisonnement mathématique précis</label>
+    <div class="note-box">
+      <strong>Note Dyscalculie :</strong> Terme alternatif pour pattern de difficultés caractérisé par problèmes traitement information numérique, apprentissage faits arithmétiques, calculs précis/fluents. Si utilisé, spécifier aussi difficultés additionnelles présentes.
+    </div>
+  </div>
+  
+  <button type="button" onclick="validerDomaines()">✔️ Valider les domaines</button>
+</fieldset>
+
+<!-- Sévérité -->
+<fieldset id="severite" class="hidden">
+  <legend>Sévérité actuelle</legend>
+  
+  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger</strong></label>
+  <div class="severity-desc">
+    Quelques difficultés apprentissage compétences dans 1-2 domaines académiques, mais sévérité assez légère pour que individu puisse compenser ou bien fonctionner avec accommodations/services soutien appropriés, surtout durant années scolaires.
+  </div>
+  
+  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré</strong></label>
+  <div class="severity-desc">
+    Difficultés marquées apprentissage compétences dans ≥1 domaines académiques, tel que individu improbable devenir compétent sans intervalles enseignement intensif et spécialisé durant années scolaires. Certains accommodations/services soutien au moins partie journée à école/travail/maison peuvent être nécessaires pour compléter activités avec précision et efficacité.
+  </div>
+  
+  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère</strong></label>
+  <div class="severity-desc">
+    Difficultés sévères apprentissage compétences, affectant plusieurs domaines académiques, tel que individu improbable apprendre ces compétences sans enseignement intensif individualisé et spécialisé continu durant majorité années scolaires. Même avec gamme accommodations/services appropriés à maison/école/travail, individu peut ne pas pouvoir compléter toutes activités efficacement.
+  </div>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],critereC:"",critereD:[],lecture:[],ecriture:[],maths:[],severite:""};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>=1){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins 1 symptôme du critère A (ayant persisté ≥6 mois)", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function validerCritereD(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereD=c;
+    document.getElementById("domaines").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une exclusion du critère D", confirmButtonColor: "#667eea"});
+}
+
+function validerDomaines(){
+  choix.lecture=Array.from(document.querySelectorAll("input[name='lecture']:checked")).map(e=>e.value);
+  choix.ecriture=Array.from(document.querySelectorAll("input[name='ecriture']:checked")).map(e=>e.value);
+  choix.maths=Array.from(document.querySelectorAll("input[name='maths']:checked")).map(e=>e.value);
+  
+  if(choix.lecture.length>0||choix.ecriture.length>0||choix.maths.length>0){
+    document.getElementById("severite").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins un domaine académique altéré", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const sev=document.querySelector("input[name='severite']:checked");
+  if(!sev){
+    Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un niveau de sévérité", confirmButtonColor: "#667eea"});
+    return;
+  }
+  choix.severite=sev.value;
+  genererResume();
+}
+
+function genererResume(){
+  let codes=[];
+  let diags=[];
+  
+  if(choix.lecture.length>0){
+    codes.push("F81.0");
+    let d="F81.0 Trouble Spécifique des Apprentissages avec altération en lecture";
+    if(choix.lecture.length>0)d+=" ("+choix.lecture.join(", ")+")";
+    diags.push(d);
+  }
+  if(choix.ecriture.length>0){
+    codes.push("F81.81");
+    let d="F81.81 Trouble Spécifique des Apprentissages avec altération en expression écrite";
+    if(choix.ecriture.length>0)d+=" ("+choix.ecriture.join(", ")+")";
+    diags.push(d);
+  }
+  if(choix.maths.length>0){
+    codes.push("F81.2");
+    let d="F81.2 Trouble Spécifique des Apprentissages avec altération en mathématiques";
+    if(choix.maths.length>0)d+=" ("+choix.maths.join(", ")+")";
+    diags.push(d);
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Difficultés apprentissage compétences académiques ("+choix.critereA.length+"/6, ≥1 requis, ≥6 mois)</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Compétences substantiellement en dessous attendu ("+choix.critereB.length+" aspect(s))</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Début durant années scolaires</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Critère D – Exclusion d'autres causes</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Domaines académiques et sous-compétences altérés</h4>";
+  if(choix.lecture.length>0){
+    h+="<p style='font-weight:bold; color:#3d7a3b;'>F81.0 Avec altération en LECTURE :</p><ul class='choix-list'>";
+    choix.lecture.forEach(s=>h+="<li>✓ "+s+"</li>");
+    h+="</ul>";
+  }
+  if(choix.ecriture.length>0){
+    h+="<p style='font-weight:bold; color:#3d7a3b;'>F81.81 Avec altération en EXPRESSION ÉCRITE :</p><ul class='choix-list'>";
+    choix.ecriture.forEach(s=>h+="<li>✓ "+s+"</li>");
+    h+="</ul>";
+  }
+  if(choix.maths.length>0){
+    h+="<p style='font-weight:bold; color:#3d7a3b;'>F81.2 Avec altération en MATHÉMATIQUES :</p><ul class='choix-list'>";
+    choix.maths.forEach(s=>h+="<li>✓ "+s+"</li>");
+    h+="</ul>";
+  }
+  
+  h+="<h4>Sévérité actuelle</h4><ul class='choix-list'><li>✓ "+choix.severite+"</li></ul>";
+  
+  h+="<div class='code-section'><strong>Code(s):</strong> "+codes.join(", ")+"<br/><strong>Diagnostic(s):</strong><br/>";
+  diags.forEach(d=>h+=d+"<br/>");
+  h+="<br/><strong>Sévérité:</strong> "+choix.severite;
+  h+="<br/><br/><strong>Note importante :</strong> Chaque domaine académique et sous-compétence altérés doivent être enregistrés séparément selon exigences codage ICD.";
+  h+="<br/><br/><strong>Synthèse clinique :</strong> Les 4 critères diagnostiques doivent être remplis basés sur synthèse clinique de l'historique (développemental, médical, familial, éducatif), rapports scolaires et évaluation psychoéducative.";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble du Sommeil Induit par Substance/Médicament – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble du Sommeil Induit par Substance/Médicament – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Perturbation proéminente et sévère du sommeil</legend>
+  <p class="subtitle">Une perturbation proéminente et sévère du sommeil</p>
+  <label><input type="checkbox" name="critereA" value="Perturbation proéminente et sévère du sommeil"/> Perturbation proéminente et sévère du sommeil</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Évidence de relation avec substance/médicament</legend>
+  <p class="subtitle">Il existe des preuves provenant de l'histoire, de l'examen physique ou des résultats de laboratoire des deux éléments (1) et (2)</p>
+  <div class="warning-box">
+    ⚠️ Les deux éléments (1) et (2) doivent être présents
+  </div>
+  <label><input type="checkbox" name="critereB1" value="Symptômes développés durant ou peu après intoxication/sevrage de substance ou exposition/sevrage de médicament"/> <strong>1.</strong> Les symptômes du critère A se sont développés durant ou peu après l'intoxication ou le sevrage d'une substance ou après l'exposition à ou le sevrage d'un médicament</label>
+  <label><input type="checkbox" name="critereB2" value="Substance/médicament impliqué capable de produire symptômes critère A"/> <strong>2.</strong> La substance/le médicament impliqué est capable de produire les symptômes du critère A</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Non mieux expliqué par trouble du sommeil indépendant</legend>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par un trouble du sommeil non induit par substance/médicament</p>
+  <label><input type="checkbox" name="critereC" value="Symptômes ont précédé début utilisation substance/médicament"/> Les symptômes ont précédé le début de l'utilisation de la substance/médicament</label>
+  <label><input type="checkbox" name="critereC" value="Symptômes persistent période substantielle (environ 1 mois) après cessation sevrage aigu/intoxication sévère"/> Les symptômes persistent pour une période substantielle (ex: environ 1 mois) après la cessation du sevrage aigu ou de l'intoxication sévère</label>
+  <label><input type="checkbox" name="critereC" value="Autres preuves suggérant existence trouble sommeil indépendant (historique épisodes récurrents non liés substance)"/> Il existe d'autres preuves suggérant l'existence d'un trouble du sommeil indépendant (ex: historique d'épisodes récurrents non liés à substance/médicament)</label>
+  <label><input type="checkbox" name="critereC" value="Aucune preuve de trouble sommeil indépendant"/> Aucune preuve de trouble du sommeil indépendant</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Ne survient pas exclusivement durant un delirium</legend>
+  <p class="subtitle">La perturbation ne survient pas exclusivement durant le cours d'un delirium</p>
+  <label><input type="checkbox" name="critereD" value="Perturbation ne survient pas exclusivement durant cours d'un delirium"/> La perturbation ne survient pas exclusivement durant le cours d'un delirium</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Détresse ou altération cliniquement significative</legend>
+  <p class="subtitle">La perturbation cause une détresse ou altération cliniquement significative dans le fonctionnement</p>
+  <label><input type="checkbox" name="critereE" value="Perturbation cause détresse ou altération cliniquement significative dans fonctionnement social, professionnel ou autres domaines importants"/> La perturbation cause une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</label>
+  <div class="note-box">
+    <strong>Note :</strong> Ce diagnostic doit être posé au lieu d'un diagnostic d'intoxication ou sevrage uniquement quand les symptômes du critère A prédominent dans le tableau clinique et sont suffisamment sévères pour mériter attention clinique.
+  </div>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Substance et comorbidité -->
+<fieldset id="substance" class="hidden">
+  <legend>Spécifier la substance/médicament et la comorbidité</legend>
+  <p class="subtitle">Sélectionner la classe de substance impliquée</p>
+  <div class="warning-box">
+    ⚠️ Le code ICD-10-CM dépend de la substance et de la présence/sévérité d'un trouble d'usage comorbide
+  </div>
+  
+  <p style="margin-top: 10px;"><strong>Classe de substance :</strong></p>
+  <label><input type="radio" name="substance" value="Alcool"/> Alcool</label>
+  <label><input type="radio" name="substance" value="Caféine"/> Caféine</label>
+  <label><input type="radio" name="substance" value="Cannabis"/> Cannabis</label>
+  <label><input type="radio" name="substance" value="Opioïde"/> Opioïde</label>
+  <label><input type="radio" name="substance" value="Sédatif, hypnotique ou anxiolytique"/> Sédatif, hypnotique ou anxiolytique</label>
+  <label><input type="radio" name="substance" value="Substance type amphétamine (ou autre stimulant)"/> Substance type amphétamine (ou autre stimulant)</label>
+  <label><input type="radio" name="substance" value="Cocaïne"/> Cocaïne</label>
+  <label><input type="radio" name="substance" value="Tabac"/> Tabac</label>
+  <label><input type="radio" name="substance" value="Autre (ou inconnue) substance"/> Autre (ou inconnue) substance</label>
+  
+  <p style="margin-top: 15px;"><strong>Comorbidité avec trouble d'usage de substance :</strong></p>
+  <label><input type="radio" name="comorbidite" value="Sans trouble d'usage"/> Sans trouble d'usage de substance</label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage léger"/> Avec trouble d'usage de substance léger</label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage modéré"/> Avec trouble d'usage de substance modéré</label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage sévère"/> Avec trouble d'usage de substance sévère</label>
+  
+  <button type="button" onclick="validerSubstance()">✔️ Valider la substance</button>
+</fieldset>
+
+<!-- Type et moment -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécifier le type et le moment de début</legend>
+  
+  <p style="margin-top: 10px;"><strong>Type de trouble du sommeil :</strong></p>
+  <label><input type="radio" name="typeTrouble" value="Type insomnie"/> <strong>Type insomnie :</strong> Caractérisé par difficulté à s'endormir ou maintenir le sommeil, réveils nocturnes fréquents, ou sommeil non réparateur</label>
+  <label><input type="radio" name="typeTrouble" value="Type somnolence diurne"/> <strong>Type somnolence diurne :</strong> Caractérisé par plainte prédominante de somnolence excessive/fatigue durant heures d'éveil ou, moins communément, période de sommeil longue</label>
+  <label><input type="radio" name="typeTrouble" value="Type parasomnie"/> <strong>Type parasomnie :</strong> Caractérisé par événements comportementaux anormaux durant le sommeil</label>
+  <label><input type="radio" name="typeTrouble" value="Type mixte"/> <strong>Type mixte :</strong> Caractérisé par problème de sommeil avec types multiples de symptômes, mais aucun symptôme ne prédomine clairement</label>
+  
+  <p style="margin-top: 15px;"><strong>Moment de début :</strong></p>
+  <label><input type="radio" name="moment" value="Avec début durant intoxication"/> <strong>Avec début durant intoxication :</strong> Si critères remplis pour intoxication avec la substance et symptômes se développent durant l'intoxication</label>
+  <label><input type="radio" name="moment" value="Avec début durant sevrage"/> <strong>Avec début durant sevrage :</strong> Si critères remplis pour sevrage de la substance et symptômes se développent durant, ou peu après, le sevrage</label>
+  <label><input type="radio" name="moment" value="Avec début après utilisation de médicament"/> <strong>Avec début après utilisation de médicament :</strong> Si symptômes se sont développés à l'initiation du médicament, avec un changement d'utilisation du médicament, ou durant le sevrage du médicament</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB1:"",critereB2:"",critereC:[],critereD:"",critereE:"",substance:"",comorbidite:"",typeTrouble:"",moment:""};
+
+const codes={
+  "Alcool":{"Sans trouble d'usage":"F10.982","Avec trouble d'usage léger":"F10.182","Avec trouble d'usage modéré":"F10.282","Avec trouble d'usage sévère":"F10.282"},
+  "Caféine":{"Sans trouble d'usage":"F15.982","Avec trouble d'usage léger":"F15.982","Avec trouble d'usage modéré":"F15.982","Avec trouble d'usage sévère":"F15.982"},
+  "Cannabis":{"Sans trouble d'usage":"F12.988","Avec trouble d'usage léger":"F12.188","Avec trouble d'usage modéré":"F12.288","Avec trouble d'usage sévère":"F12.288"},
+  "Opioïde":{"Sans trouble d'usage":"F11.982","Avec trouble d'usage léger":"F11.182","Avec trouble d'usage modéré":"F11.282","Avec trouble d'usage sévère":"F11.282"},
+  "Sédatif, hypnotique ou anxiolytique":{"Sans trouble d'usage":"F13.982","Avec trouble d'usage léger":"F13.182","Avec trouble d'usage modéré":"F13.282","Avec trouble d'usage sévère":"F13.282"},
+  "Substance type amphétamine (ou autre stimulant)":{"Sans trouble d'usage":"F15.982","Avec trouble d'usage léger":"F15.182","Avec trouble d'usage modéré":"F15.282","Avec trouble d'usage sévère":"F15.282"},
+  "Cocaïne":{"Sans trouble d'usage":"F14.982","Avec trouble d'usage léger":"F14.182","Avec trouble d'usage modéré":"F14.282","Avec trouble d'usage sévère":"F14.282"},
+  "Tabac":{"Sans trouble d'usage":"NA","Avec trouble d'usage léger":"NA","Avec trouble d'usage modéré":"F17.208","Avec trouble d'usage sévère":"F17.208"},
+  "Autre (ou inconnue) substance":{"Sans trouble d'usage":"F19.982","Avec trouble d'usage léger":"F19.182","Avec trouble d'usage modéré":"F19.282","Avec trouble d'usage sévère":"F19.282"}
+};
+
+function validerCritereA(){
+  const c=document.querySelector("input[name='critereA']:checked");
+  if(c){
+    choix.critereA=c.value;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Cochez l'option du critère A");
+}
+
+function validerCritereB(){
+  const b1=document.querySelector("input[name='critereB1']:checked");
+  const b2=document.querySelector("input[name='critereB2']:checked");
+  if(b1&&b2){
+    choix.critereB1=b1.value;
+    choix.critereB2=b2.value;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Les deux éléments (1) et (2) du critère B doivent être cochés", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereC=c;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereD(){
+  const c=document.querySelector("input[name='critereD']:checked");
+  if(c){
+    choix.critereD=c.value;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else alert("Cochez l'option du critère D");
+}
+
+function validerCritereE(){
+  const c=document.querySelector("input[name='critereE']:checked");
+  if(c){
+    choix.critereE=c.value;
+    document.getElementById("substance").classList.remove("hidden");
+  }else alert("Cochez l'option du critère E");
+}
+
+function validerSubstance(){
+  const s=document.querySelector("input[name='substance']:checked");
+  const co=document.querySelector("input[name='comorbidite']:checked");
+  if(s&&co){
+    choix.substance=s.value;
+    choix.comorbidite=co.value;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la substance et la comorbidité", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const t=document.querySelector("input[name='typeTrouble']:checked");
+  const m=document.querySelector("input[name='moment']:checked");
+  if(t&&m){
+    choix.typeTrouble=t.value;
+    choix.moment=m.value;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le type de trouble et le moment de début", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code=codes[choix.substance][choix.comorbidite];
+  let diag="";
+  
+  if(code==="NA"){
+    diag="Code non applicable pour cette combinaison";
+  }else{
+    if(choix.comorbidite!=="Sans trouble d'usage"){
+      const severite=choix.comorbidite.replace("Avec trouble d'usage ","");
+      diag=code+" Trouble d'usage de "+choix.substance.toLowerCase()+" "+severite+" avec trouble du sommeil induit par "+choix.substance.toLowerCase()+", "+choix.moment.toLowerCase()+", "+choix.typeTrouble.toLowerCase();
+    }else{
+      diag=code+" Trouble du sommeil induit par "+choix.substance.toLowerCase()+", "+choix.moment.toLowerCase()+", "+choix.typeTrouble.toLowerCase();
+    }
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Perturbation proéminente et sévère du sommeil</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  
+  h+="<h4>Critère B – Évidence de relation avec substance/médicament</h4><ul class='choix-list'>";
+  h+="<li>✓ "+choix.critereB1+"</li>";
+  h+="<li>✓ "+choix.critereB2+"</li>";
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Non mieux expliqué par trouble du sommeil indépendant</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère D – Ne survient pas exclusivement durant un delirium</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
+  
+  h+="<h4>Critère E – Détresse ou altération cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
+  
+  h+="<h4>Substance et comorbidité</h4><ul class='choix-list'>";
+  h+="<li>✓ Substance: "+choix.substance+"</li>";
+  h+="<li>✓ Comorbidité: "+choix.comorbidite+"</li>";
+  h+="</ul>";
+  
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
+  h+="<li>✓ Type: "+choix.typeTrouble+"</li>";
+  h+="<li>✓ Moment de début: "+choix.moment+"</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Perturbation proéminente et sévère du sommeil induite par substance/médicament.";
+  h+="<br/><br/><strong>Critère A :</strong> Perturbation proéminente et sévère du sommeil.";
+  h+="<br/><br/><strong>Critère B :</strong> Preuves que (1) symptômes développés durant/peu après intoxication/sevrage et (2) substance capable de produire symptômes.";
+  h+="<br/><br/><strong>Critère C :</strong> Non mieux expliqué par trouble du sommeil indépendant.";
+  h+="<br/><br/><strong>Critère D :</strong> Ne survient pas exclusivement durant delirium.";
+  h+="<br/><br/><strong>Critère E :</strong> Cause détresse ou altération cliniquement significative.";
+  h+="<br/><br/><strong>Codage :</strong> Le code dépend de la substance et de la comorbidité:";
+  h+="<br/>• 4ème position '1': Trouble d'usage léger comorbide";
+  h+="<br/>• 4ème position '2': Trouble d'usage modéré/sévère comorbide";
+  h+="<br/>• 4ème position '9': Sans trouble d'usage comorbide";
+  h+="<br/><br/><strong>Exceptions de codage :</strong>";
+  h+="<br/>• <strong>Caféine :</strong> Code unique F15.982 (pas de trouble d'usage caféine dans DSM-5)";
+  h+="<br/>• <strong>Tabac :</strong> Code unique F17.208 (seulement avec trouble d'usage modéré/sévère)";
+  h+="<br/><br/><strong>Types de trouble du sommeil :</strong>";
+  h+="<br/>• Type insomnie: Difficulté s'endormir/maintenir sommeil, réveils fréquents, sommeil non réparateur";
+  h+="<br/>• Type somnolence diurne: Somnolence excessive/fatigue durant éveil ou période sommeil longue";
+  h+="<br/>• Type parasomnie: Événements comportementaux anormaux durant sommeil";
+  h+="<br/>• Type mixte: Types multiples de symptômes, aucun ne prédomine";
+  h+="<br/><br/><strong>Moment de début :</strong>";
+  h+="<br/>• Durant intoxication: Si critères intoxication remplis";
+  h+="<br/>• Durant sevrage: Si critères sevrage remplis";
+  h+="<br/>• Après utilisation médicament: À l'initiation, changement ou sevrage";
+  h+="<br/><br/><strong>Note :</strong> Ce diagnostic doit être posé au lieu d'intoxication/sevrage uniquement quand symptômes prédominent et sont suffisamment sévères pour mériter attention clinique.";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

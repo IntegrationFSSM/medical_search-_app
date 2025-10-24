@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Exhibitionniste – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Exhibitionniste – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Excitation sexuelle récurrente et intense</legend>
+  <p class="subtitle">Sur une période d'au moins 6 mois, excitation sexuelle récurrente et intense provenant de l'exposition de ses organes génitaux à une personne non consentante, manifestée par fantasmes, impulsions ou comportements</p>
+  <div class="warning-box">
+    ⚠️ Période d'au moins 6 mois requise
+  </div>
+  <label><input type="checkbox" name="critereA" value="Excitation sexuelle récurrente et intense"/> Excitation sexuelle récurrente et intense</label>
+  <label><input type="checkbox" name="critereA" value="Provenant exposition organes génitaux à personne non consentante"/> Provenant de l'exposition de ses organes génitaux à une personne non consentante</label>
+  <label><input type="checkbox" name="critereA" value="Manifestée par fantasmes"/> Manifestée par fantasmes</label>
+  <label><input type="checkbox" name="critereA" value="Manifestée par impulsions"/> Manifestée par impulsions</label>
+  <label><input type="checkbox" name="critereA" value="Manifestée par comportements"/> Manifestée par comportements</label>
+  <label><input type="checkbox" name="critereA" value="Période au moins 6 mois"/> Période d'au moins 6 mois</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Passage à l'acte ou détresse/altération significative</legend>
+  <p class="subtitle">L'individu a agi sur ces impulsions sexuelles avec une personne non consentante, OU les impulsions ou fantasmes sexuels causent détresse ou altération cliniquement significative</p>
+  <label><input type="checkbox" name="critereB" value="A agi sur impulsions sexuelles avec personne non consentante"/> A agi sur ces impulsions sexuelles avec une personne non consentante</label>
+  <label><input type="checkbox" name="critereB" value="Impulsions ou fantasmes causent détresse cliniquement significative"/> Les impulsions ou fantasmes sexuels causent détresse cliniquement significative</label>
+  <label><input type="checkbox" name="critereB" value="Impulsions ou fantasmes causent altération fonctionnement social"/> Les impulsions ou fantasmes causent altération dans le fonctionnement social</label>
+  <label><input type="checkbox" name="critereB" value="Impulsions ou fantasmes causent altération fonctionnement professionnel"/> Les impulsions ou fantasmes causent altération dans le fonctionnement professionnel</label>
+  <label><input type="checkbox" name="critereB" value="Impulsions ou fantasmes causent altération autres domaines importants"/> Les impulsions ou fantasmes causent altération dans autres domaines importants du fonctionnement</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Sous-types -->
+<fieldset id="soustypes" class="hidden">
+  <legend>Sous-types (basés sur âge ou maturité physique des personnes non consentantes)</legend>
+  
+  <label><input type="radio" name="soustype" value="Excitation sexuelle par exposition à enfants prépubères"/> Excitation sexuelle par exposition des organes génitaux à enfants prépubères</label>
+  <label><input type="radio" name="soustype" value="Excitation sexuelle par exposition à individus physiquement matures"/> Excitation sexuelle par exposition des organes génitaux à individus physiquement matures</label>
+  <label><input type="radio" name="soustype" value="Excitation sexuelle par exposition à enfants prépubères et individus physiquement matures"/> Excitation sexuelle par exposition des organes génitaux à enfants prépubères ET à individus physiquement matures</label>
+  
+  <div class="note-box">
+    <strong>Note importante :</strong> Les sous-types aident à attirer attention adéquate sur caractéristiques des victimes pour prévenir que trouble pédophilique comorbide ne soit négligé. Cependant, indications que individu est sexuellement attiré par exposition à enfants ne doivent pas exclure diagnostic de trouble pédophilique.
+  </div>
+  
+  <button type="button" onclick="validerSoustypes()">✔️ Valider</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs</legend>
+  
+  <p style="margin-top: 10px;"><strong>Environnement :</strong></p>
+  <label><input type="checkbox" name="environnement" value="En environnement contrôlé"/> En environnement contrôlé</label>
+  <div class="note-box">
+    Ce spécificateur s'applique principalement aux individus vivant en institutions ou autres contextes où opportunités d'exposer ses organes génitaux sont restreintes.
+  </div>
+  
+  <p style="margin-top: 15px;"><strong>Rémission :</strong></p>
+  <label><input type="checkbox" name="remission" value="En rémission complète"/> En rémission complète</label>
+  <div class="note-box">
+    L'individu n'a pas agi sur les impulsions avec une personne non consentante, et il n'y a eu aucune détresse ou altération dans le fonctionnement social, professionnel ou autres domaines, pendant au moins 5 ans en environnement non contrôlé.
+    <br/><br/>
+    <strong>Note :</strong> Le spécificateur "en rémission complète" ne traite pas de la présence ou absence continue de l'exhibitionnisme en soi, qui peut encore être présent après que comportements et détresse ont disparu.
+  </div>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],soustype:"",environnement:false,remission:false};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereB=c;
+    document.getElementById("soustypes").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerSoustypes(){
+  const s=document.querySelector("input[name='soustype']:checked");
+  if(s){
+    choix.soustype=s.value;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un sous-type", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  choix.environnement=document.querySelector("input[name='environnement']:checked")!==null;
+  choix.remission=document.querySelector("input[name='remission']:checked")!==null;
+  genererResume();
+}
+
+function genererResume(){
+  const code="F65.2";
+  let diag=code+" Trouble Exhibitionniste, "+choix.soustype.toLowerCase();
+  if(choix.environnement)diag+=", en environnement contrôlé";
+  if(choix.remission)diag+=", en rémission complète";
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Excitation sexuelle récurrente et intense (≥6 mois)</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Passage à l'acte ou détresse/altération significative</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Sous-type</h4><ul class='choix-list'><li>✓ "+choix.soustype+"</li></ul>";
+  
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
+  if(choix.environnement)h+="<li>✓ En environnement contrôlé</li>";
+  if(choix.remission)h+="<li>✓ En rémission complète (≥5 ans en environnement non contrôlé)</li>";
+  if(!choix.environnement&&!choix.remission)h+="<li>✓ Aucun spécificateur additionnel</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Sur période ≥6 mois, excitation sexuelle récurrente et intense provenant de l'exposition de ses organes génitaux à une personne non consentante, manifestée par fantasmes, impulsions ou comportements.";
+  h+="<br/><br/><strong>Critère B :</strong> Individu a agi sur impulsions avec personne non consentante, OU impulsions/fantasmes causent détresse ou altération cliniquement significative.";
+  h+="<br/><br/><strong>Sous-types :</strong> Basés sur âge ou maturité physique des personnes non consentantes (enfants prépubères, adultes, ou les deux). Aident à prévenir que trouble pédophilique comorbide ne soit négligé.";
+  if(choix.environnement){
+    h+="<br/><br/><strong>Environnement contrôlé :</strong> S'applique principalement aux individus vivant en institutions ou autres contextes où opportunités d'exposer organes génitaux sont restreintes.";
+  }
+  if(choix.remission){
+    h+="<br/><br/><strong>Rémission complète :</strong> Aucun passage à l'acte avec personne non consentante et aucune détresse/altération pendant ≥5 ans en environnement non contrôlé. Note: Exhibitionnisme en soi peut encore être présent après rémission des comportements et détresse.";
+  }
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

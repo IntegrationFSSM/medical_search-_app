@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Réactionnel de l'Attachement – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Réactionnel de l'Attachement – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Pattern de comportement inhibé et émotionnellement retiré</legend>
+  <p class="subtitle">Un pattern cohérent de comportement inhibé, émotionnellement retiré envers les donneurs de soins adultes, manifesté par les deux éléments suivants</p>
+  <div class="warning-box">
+    ⚠️ Les 2 éléments doivent être présents
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="1. Enfant cherche rarement ou minimalement réconfort quand en détresse"/> <strong>1.</strong> L'enfant cherche rarement ou minimalement réconfort quand en détresse</label>
+  
+  <label><input type="checkbox" name="critereA" value="2. Enfant répond rarement ou minimalement au réconfort quand en détresse"/> <strong>2.</strong> L'enfant répond rarement ou minimalement au réconfort quand en détresse</label>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Perturbation sociale et émotionnelle persistante</legend>
+  <p class="subtitle">Une perturbation sociale et émotionnelle persistante caractérisée par au moins deux des éléments suivants</p>
+  <div class="warning-box">
+    ⚠️ Au moins 2 des 3 perturbations doivent être présentes
+  </div>
+  
+  <label><input type="checkbox" name="critereB" value="1. Réactivité sociale et émotionnelle minimale envers autrui"/> <strong>1.</strong> Réactivité sociale et émotionnelle minimale envers autrui</label>
+  
+  <label><input type="checkbox" name="critereB" value="2. Affect positif limité"/> <strong>2.</strong> Affect positif limité</label>
+  
+  <label><input type="checkbox" name="critereB" value="3. Épisodes d'irritabilité, tristesse ou peur inexpliqués évidents même durant interactions non menaçantes avec donneurs de soins adultes"/> <strong>3.</strong> Épisodes d'irritabilité, tristesse ou peur inexpliqués qui sont évidents même durant des interactions non menaçantes avec les donneurs de soins adultes</label>
+  
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Pattern d'extrêmes de soins insuffisants</legend>
+  <p class="subtitle">L'enfant a vécu un pattern d'extrêmes de soins insuffisants comme en témoigne au moins un des éléments suivants</p>
+  <div class="warning-box">
+    ⚠️ Au moins 1 des 3 types de soins insuffisants doit être présent
+  </div>
+  
+  <label><input type="checkbox" name="critereC" value="1. Négligence ou privation sociale sous forme de manque persistant de satisfaction des besoins émotionnels de base (confort, stimulation, affection)"/> <strong>1.</strong> Négligence ou privation sociale sous forme de manque persistant de satisfaction des besoins émotionnels de base pour le confort, la stimulation et l'affection par les adultes donneurs de soins</label>
+  
+  <label><input type="checkbox" name="critereC" value="2. Changements répétés de donneurs de soins primaires limitant opportunités de former attachements stables (ex: changements fréquents en famille d'accueil)"/> <strong>2.</strong> Changements répétés de donneurs de soins primaires qui limitent les opportunités de former des attachements stables (ex: changements fréquents en famille d'accueil)</label>
+  
+  <label><input type="checkbox" name="critereC" value="3. Éducation dans environnements inhabituels limitant sévèrement opportunités de former attachements sélectifs (ex: institutions avec ratios élevés enfants/donneurs de soins)"/> <strong>3.</strong> Éducation dans des environnements inhabituels qui limitent sévèrement les opportunités de former des attachements sélectifs (ex: institutions avec ratios élevés enfants/donneurs de soins)</label>
+  
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Lien causal entre soins et comportement</legend>
+  <p class="subtitle">Les soins du critère C sont présumés responsables du comportement perturbé du critère A</p>
+  <label><input type="checkbox" name="critereD" value="Soins du critère C présumés responsables du comportement perturbé du critère A (perturbations ont commencé suite au manque de soins adéquats)"/> Les soins du critère C sont présumés responsables du comportement perturbé du critère A (ex: les perturbations du critère A ont commencé suite au manque de soins adéquats du critère C)</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Non attribuable au trouble du spectre de l'autisme</legend>
+  <p class="subtitle">Les critères du trouble du spectre de l'autisme ne sont pas remplis</p>
+  <label><input type="checkbox" name="critereE" value="Critères du trouble du spectre de l'autisme ne sont pas remplis"/> Les critères du trouble du spectre de l'autisme ne sont pas remplis</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Âge d'apparition</legend>
+  <p class="subtitle">La perturbation est évidente avant l'âge de 5 ans</p>
+  <label><input type="checkbox" name="critereF" value="Perturbation évidente avant âge de 5 ans"/> La perturbation est évidente avant l'âge de 5 ans</label>
+  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+</fieldset>
+
+<!-- Critère G -->
+<fieldset id="critereG" class="hidden">
+  <legend>Critère G – Âge développemental</legend>
+  <p class="subtitle">L'enfant a un âge développemental d'au moins 9 mois</p>
+  <label><input type="checkbox" name="critereG" value="Enfant a un âge développemental d'au moins 9 mois"/> L'enfant a un âge développemental d'au moins 9 mois</label>
+  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs</legend>
+  
+  <p style="margin-top: 10px;"><strong>Durée :</strong></p>
+  <label><input type="checkbox" name="persistant" value="Persistant"/> <strong>Persistant :</strong> Le trouble est présent depuis plus de 12 mois</label>
+  
+  <p style="margin-top: 15px;"><strong>Sévérité actuelle :</strong></p>
+  <label><input type="checkbox" name="severe" value="Sévère"/> <strong>Sévère :</strong> L'enfant présente tous les symptômes du trouble, chaque symptôme se manifestant à des niveaux relativement élevés</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],critereC:[],critereD:"",critereE:"",critereF:"",critereG:"",persistant:"",severe:""};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length===2){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Les 2 éléments du critère A doivent être cochés (actuellement: "+c.length+"/2)");
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>=2){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else alert("Au moins 2 des 3 perturbations doivent être cochées (actuellement: "+c.length+"/3)");
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>=1){
+    choix.critereC=c;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Au moins 1 des 3 types de soins insuffisants doit être coché", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereD(){
+  const c=document.querySelector("input[name='critereD']:checked");
+  if(c){
+    choix.critereD=c.value;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else alert("Cochez l'option du critère D");
+}
+
+function validerCritereE(){
+  const c=document.querySelector("input[name='critereE']:checked");
+  if(c){
+    choix.critereE=c.value;
+    document.getElementById("critereF").classList.remove("hidden");
+  }else alert("Cochez l'option du critère E");
+}
+
+function validerCritereF(){
+  const c=document.querySelector("input[name='critereF']:checked");
+  if(c){
+    choix.critereF=c.value;
+    document.getElementById("critereG").classList.remove("hidden");
+  }else alert("Cochez l'option du critère F");
+}
+
+function validerCritereG(){
+  const c=document.querySelector("input[name='critereG']:checked");
+  if(c){
+    choix.critereG=c.value;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else alert("Cochez l'option du critère G");
+}
+
+function afficherResume(){
+  const p=document.querySelector("input[name='persistant']:checked");
+  const s=document.querySelector("input[name='severe']:checked");
+  choix.persistant=p?p.value:"";
+  choix.severe=s?s.value:"";
+  genererResume();
+}
+
+function genererResume(){
+  const code="F94.1";
+  
+  let diag=code+" Trouble Réactionnel de l'Attachement";
+  if(choix.persistant)diag+=", persistant";
+  if(choix.severe)diag+=", sévère";
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Pattern de comportement inhibé et émotionnellement retiré (2/2 requis)</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Perturbation sociale et émotionnelle persistante (≥2/3)</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Pattern d'extrêmes de soins insuffisants (≥1/3)</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère D – Lien causal entre soins et comportement</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
+  
+  h+="<h4>Critère E – Non attribuable au trouble du spectre de l'autisme</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
+  
+  h+="<h4>Critère F – Âge d'apparition</h4><ul class='choix-list'><li>✓ "+choix.critereF+"</li></ul>";
+  
+  h+="<h4>Critère G – Âge développemental</h4><ul class='choix-list'><li>✓ "+choix.critereG+"</li></ul>";
+  
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
+  if(choix.persistant)h+="<li>✓ "+choix.persistant+" (>12 mois)</li>";
+  else h+="<li>✓ Non persistant (≤12 mois)</li>";
+  if(choix.severe)h+="<li>✓ "+choix.severe+" (tous symptômes à niveaux élevés)</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Trouble réactionnel de l'attachement avec retrait émotionnel et inhibition envers donneurs de soins suite à soins insuffisants.";
+  h+="<br/><br/><strong>Critère A :</strong> Pattern cohérent de comportement inhibé, émotionnellement retiré (2/2 requis):";
+  h+="<br/>1. Cherche rarement/minimalement réconfort quand en détresse";
+  h+="<br/>2. Répond rarement/minimalement au réconfort quand en détresse";
+  h+="<br/><br/><strong>Critère B :</strong> Perturbation sociale/émotionnelle persistante (≥2/3):";
+  h+="<br/>1. Réactivité sociale/émotionnelle minimale";
+  h+="<br/>2. Affect positif limité";
+  h+="<br/>3. Épisodes d'irritabilité/tristesse/peur inexpliqués";
+  h+="<br/><br/><strong>Critère C :</strong> Pattern d'extrêmes de soins insuffisants (≥1/3):";
+  h+="<br/>1. Négligence sociale/privation (besoins émotionnels non satisfaits)";
+  h+="<br/>2. Changements répétés de donneurs de soins primaires";
+  h+="<br/>3. Éducation en environnements inhabituels (institutions)";
+  h+="<br/><br/><strong>Critère D :</strong> Soins présumés responsables du comportement perturbé.";
+  h+="<br/><br/><strong>Critère E :</strong> Critères du trouble du spectre de l'autisme non remplis.";
+  h+="<br/><br/><strong>Critère F :</strong> Perturbation évidente avant âge de 5 ans.";
+  h+="<br/><br/><strong>Critère G :</strong> Âge développemental ≥9 mois.";
+  h+="<br/><br/><strong>Codage ICD-10-CM :</strong>";
+  h+="<br/>• <strong>F94.1</strong> : Trouble Réactionnel de l'Attachement";
+  h+="<br/><br/><strong>Spécificateurs :</strong>";
+  h+="<br/>• <strong>Persistant:</strong> Trouble présent >12 mois";
+  h+="<br/>• <strong>Sévère:</strong> Tous symptômes présents à niveaux élevés";
+  h+="<br/><br/><strong>Contexte développemental :</strong>";
+  h+="<br/>• Trouble lié au trauma et au stress";
+  h+="<br/>• Résulte de soins pathogènes dans petite enfance";
+  h+="<br/>• Âge minimal: 9 mois développementaux";
+  h+="<br/>• Évident avant 5 ans";
+  h+="<br/>• Peut persister si soins ne s'améliorent pas";
+  h+="<br/><br/><strong>Différence avec Trouble de l'Engagement Social Désinhibé (DSED) :</strong>";
+  h+="<br/>• <strong>RAD:</strong> Retrait émotionnel, absence de recherche de réconfort";
+  h+="<br/>• <strong>DSED:</strong> Comportement désinhibé, approche indiscriminée";
+  h+="<br/>• Peuvent coexister mais patterns distincts";
+  h+="<br/>• Même étiologie (soins pathogènes) mais manifestations opposées";
+  h+="<br/><br/><strong>Comportements typiques :</strong>";
+  h+="<br/>• Absence de recherche de réconfort quand en détresse";
+  h+="<br/>• Ne répond pas au réconfort offert";
+  h+="<br/>• Retrait émotionnel et social";
+  h+="<br/>• Affect positif limité (peu de sourires, joie)";
+  h+="<br/>• Irritabilité, tristesse ou peur inexpliquées";
+  h+="<br/>• Manque de réactivité émotionnelle";
+  h+="<br/><br/><strong>Facteurs de risque :</strong>";
+  h+="<br/>• Négligence sévère précoce";
+  h+="<br/>• Institutionnalisation";
+  h+="<br/>• Placements multiples en famille d'accueil";
+  h+="<br/>• Ratios élevés enfants/donneurs de soins";
+  h+="<br/>• Absence de donneur de soins stable";
+  h+="<br/>• Maltraitance";
+  h+="<br/><br/><strong>Différence avec trouble du spectre de l'autisme :</strong>";
+  h+="<br/>• <strong>RAD:</strong> Histoire de soins pathogènes, peut s'améliorer avec soins appropriés";
+  h+="<br/>• <strong>Autisme:</strong> Trouble neurodéveloppemental, pas lié aux soins";
+  h+="<br/>• RAD: Capacité d'attachement sélectif peut se développer";
+  h+="<br/>• Autisme: Difficultés sociales généralisées et persistantes";
+  h+="<br/><br/><strong>Évolution :</strong>";
+  h+="<br/>• Peut s'améliorer significativement avec placement stable";
+  h+="<br/>• Réponse au traitement généralement bonne si précoce";
+  h+="<br/>• Peut persister si soins restent inadéquats";
+  h+="<br/>• Risque de problèmes relationnels à long terme";
+  h+="<br/><br/><strong>Traitement :</strong>";
+  h+="<br/>• Placement stable avec donneur de soins sensible et réactif";
+  h+="<br/>• Thérapie centrée sur attachement";
+  h+="<br/>• Intervention précoce cruciale";
+  h+="<br/>• Support et formation pour donneurs de soins";
+  h+="<br/>• Environnement prévisible et sécurisant";
+  h+="<br/>• Patience (développement attachement prend du temps)";
+  h+="<br/><br/><strong>Pronostic :</strong>";
+  h+="<br/>• Meilleur si intervention précoce";
+  h+="<br/>• Amélioration possible même après plusieurs années de négligence";
+  h+="<br/>• Nécessite environnement stable à long terme";
+  h+="<br/>• Certains enfants peuvent développer attachements sécurisants";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

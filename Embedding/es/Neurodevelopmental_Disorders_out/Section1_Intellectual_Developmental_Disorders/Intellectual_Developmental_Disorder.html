@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble du Développement Intellectuel – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+    .severity-desc {
+      background: #f9f9f9;
+      border-left: 3px solid #8cc63f;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble du Développement Intellectuel (Déficience Intellectuelle) – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Déficits dans les fonctions intellectuelles</legend>
+  <p class="subtitle">Déficits dans les fonctions intellectuelles, tels que raisonnement, résolution de problèmes, planification, pensée abstraite, jugement, apprentissage académique et apprentissage par l'expérience, confirmés par évaluation clinique ET tests d'intelligence standardisés et individualisés</p>
+  <label><input type="checkbox" name="critereA" value="Déficits en raisonnement"/> Déficits en raisonnement</label>
+  <label><input type="checkbox" name="critereA" value="Déficits en résolution de problèmes"/> Déficits en résolution de problèmes</label>
+  <label><input type="checkbox" name="critereA" value="Déficits en planification"/> Déficits en planification</label>
+  <label><input type="checkbox" name="critereA" value="Déficits en pensée abstraite"/> Déficits en pensée abstraite</label>
+  <label><input type="checkbox" name="critereA" value="Déficits en jugement"/> Déficits en jugement</label>
+  <label><input type="checkbox" name="critereA" value="Déficits en apprentissage académique"/> Déficits en apprentissage académique</label>
+  <label><input type="checkbox" name="critereA" value="Déficits en apprentissage par expérience"/> Déficits en apprentissage par l'expérience</label>
+  <div class="note-box">
+    <strong>Important :</strong> Confirmés par évaluation clinique ET tests d'intelligence standardisés et individualisés
+  </div>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Déficits dans le fonctionnement adaptatif</legend>
+  <p class="subtitle">Déficits dans le fonctionnement adaptatif qui résultent en échec à atteindre les standards développementaux et socioculturels pour l'indépendance personnelle et la responsabilité sociale. Sans soutien continu, les déficits adaptatifs limitent le fonctionnement dans ≥1 activités de la vie quotidienne (communication, participation sociale, vie indépendante) à travers de multiples environnements (maison, école, travail, communauté)</p>
+  <label><input type="checkbox" name="critereB" value="Déficits limitent communication"/> Déficits limitent la communication</label>
+  <label><input type="checkbox" name="critereB" value="Déficits limitent participation sociale"/> Déficits limitent la participation sociale</label>
+  <label><input type="checkbox" name="critereB" value="Déficits limitent vie indépendante"/> Déficits limitent la vie indépendante</label>
+  <div class="note-box">
+    <strong>Contextes multiples :</strong> Maison, école, travail, communauté
+  </div>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Début durant la période développementale</legend>
+  <p class="subtitle">Début des déficits intellectuels et adaptatifs durant la période développementale</p>
+  <label><input type="checkbox" name="critereC" value="Début des déficits durant période développementale"/> Début des déficits intellectuels et adaptatifs durant la période développementale</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Sévérité -->
+<fieldset id="severite" class="hidden">
+  <legend>Sévérité actuelle</legend>
+  <p class="subtitle">Spécifier la sévérité actuelle basée sur le fonctionnement adaptatif (et non les scores de QI)</p>
+  <div class="note-box">
+    <strong>Note importante :</strong> Les niveaux de sévérité sont définis sur la base du fonctionnement adaptatif, et NON des scores de QI, car c'est le fonctionnement adaptatif qui détermine le niveau de soutiens requis.
+  </div>
+  
+  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger (F70)</strong></label>
+  <div class="severity-desc">
+    <strong>Domaine conceptuel :</strong> Difficultés apprentissage académique (lecture, écriture, arithmétique, temps, argent). Pensée abstraite, fonctions exécutives, mémoire court terme altérées. Approche concrète des problèmes.<br>
+    <strong>Domaine social :</strong> Immaturité interactions sociales, difficulté percevoir signaux sociaux, langage concret/immature, difficultés régulation émotions/comportement, jugement social immature, risque manipulation.<br>
+    <strong>Domaine pratique :</strong> Besoin soutien pour tâches quotidiennes complexes (courses, transport, organisation maison/enfants, préparation repas, gestion argent). Emploi compétitif possible dans emplois non conceptuels. Besoin soutien décisions santé/légales.
+  </div>
+  
+  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré (F71)</strong></label>
+  <div class="severity-desc">
+    <strong>Domaine conceptuel :</strong> Compétences conceptuelles très en retard. Langage/compétences préacadémiques développent lentement. Progrès lecture/écriture/mathématiques lent et limité. Compétences académiques niveau élémentaire à l'âge adulte. Assistance quotidienne nécessaire pour tâches conceptuelles.<br>
+    <strong>Domaine social :</strong> Différences marquées comportement social/communicatif. Langage parlé moins complexe que pairs. Capacité relations évidente (famille, amis, parfois relations romantiques). Peut ne pas percevoir/interpréter signaux sociaux correctement. Jugement social limité. Soutien social/communicatif significatif nécessaire au travail.<br>
+    <strong>Domaine pratique :</strong> Peut s'occuper besoins personnels (manger, habiller, élimination, hygiène) mais période enseignement prolongée nécessaire. Emploi indépendant possible avec soutien considérable. Comportement inadapté présent chez minorité significative.
+  </div>
+  
+  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère (F72)</strong></label>
+  <div class="severity-desc">
+    <strong>Domaine conceptuel :</strong> Acquisition compétences conceptuelles limitée. Peu compréhension langage écrit ou concepts nombres/quantité/temps/argent. Soignants fournissent soutiens extensifs pour résolution problèmes toute la vie.<br>
+    <strong>Domaine social :</strong> Langage parlé très limité (vocabulaire/grammaire). Parole peut être mots isolés/phrases, supplémentée par moyens augmentatifs. Parole/communication focalisées sur ici et maintenant. Comprend parole simple et communication gestuelle. Relations avec famille/familiers source de plaisir.<br>
+    <strong>Domaine pratique :</strong> Nécessite soutien pour toutes activités vie quotidienne (repas, habillage, bain, élimination). Nécessite supervision constante. Ne peut prendre décisions responsables. Participation tâches maison/loisirs/travail nécessite soutien/assistance continus. Comportement inadapté (auto-agression) présent chez minorité significative.
+  </div>
+  
+  <label><input type="radio" name="severite" value="Profond"/> <strong>Profond (F73)</strong></label>
+  <div class="severity-desc">
+    <strong>Domaine conceptuel :</strong> Compétences conceptuelles impliquent monde physique plutôt que processus symboliques. Peut utiliser objets de manière orientée vers but pour soins personnels/travail/loisirs. Certaines compétences visuospatiales (appariement/tri) peuvent être acquises. Altérations motrices/sensorielles co-survenant peuvent empêcher utilisation fonctionnelle objets.<br>
+    <strong>Domaine social :</strong> Compréhension très limitée communication symbolique (parole/geste). Peut comprendre instructions/gestes simples. Exprime désirs/émotions largement par communication non verbale/non symbolique. Apprécie relations avec famille/soignants familiers. Altérations sensorielles/physiques peuvent empêcher activités sociales.<br>
+    <strong>Domaine pratique :</strong> Dépendant d'autrui pour tous aspects soins physiques quotidiens/santé/sécurité, bien que puisse participer à certaines activités. Peut aider tâches domestiques simples. Actions simples avec objets peuvent être base participation activités professionnelles avec soutien élevé. Altérations physiques/sensorielles barrières fréquentes à participation. Comportement inadapté présent chez minorité significative.
+  </div>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],critereC:"",severite:""};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("severite").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function afficherResume(){
+  const sev=document.querySelector("input[name='severite']:checked");
+  if(!sev){
+    Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un niveau de sévérité", confirmButtonColor: "#667eea"});
+    return;
+  }
+  choix.severite=sev.value;
+  genererResume();
+}
+
+function genererResume(){
+  let code="";
+  if(choix.severite==="Léger")code="F70";
+  else if(choix.severite==="Modéré")code="F71";
+  else if(choix.severite==="Sévère")code="F72";
+  else if(choix.severite==="Profond")code="F73";
+  
+  const diag=code+" Trouble du Développement Intellectuel (Déficience Intellectuelle), "+choix.severite.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Déficits dans fonctions intellectuelles ("+choix.critereA.length+" domaine(s))</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  h+="<p style='font-style:italic; color:#666;'>Confirmés par évaluation clinique ET tests d'intelligence standardisés et individualisés</p>";
+  
+  h+="<h4>Critère B – Déficits dans fonctionnement adaptatif ("+choix.critereB.length+" domaine(s))</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  h+="<p style='font-style:italic; color:#666;'>Sans soutien continu, les déficits limitent le fonctionnement à travers multiples environnements</p>";
+  
+  h+="<h4>Critère C – Début durant période développementale</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Sévérité actuelle</h4><ul class='choix-list'><li>✓ "+choix.severite+"</li></ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Note terminologique :</strong> Le terme 'trouble du développement intellectuel' est utilisé pour clarifier sa relation avec le système de classification OMS ICD-11. Le terme équivalent 'déficience intellectuelle' est placé entre parenthèses pour usage continu.";
+  h+="<br/><br/><strong>Détermination de la sévérité :</strong> Les niveaux de sévérité sont définis sur la base du fonctionnement adaptatif, et NON des scores de QI, car c'est le fonctionnement adaptatif qui détermine le niveau de soutiens requis. Les mesures de QI sont moins valides à l'extrémité inférieure de la gamme de QI.";
+  h+="<br/><br/><strong>Trois critères doivent être remplis :</strong> A) Déficits fonctions intellectuelles, B) Déficits fonctionnement adaptatif, C) Début durant période développementale.";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

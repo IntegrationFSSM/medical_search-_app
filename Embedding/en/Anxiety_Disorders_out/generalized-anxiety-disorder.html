@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Anxieux Généralisé – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Anxieux Généralisé (TAG) – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Anxiété et inquiétude excessives</legend>
+  <p class="subtitle">Anxiété et inquiétude excessives survenant plus d'un jour sur deux pendant au moins 6 mois</p>
+  <label><input type="checkbox" name="critereA" value="Anxiété et inquiétude excessives"/> Anxiété et inquiétude excessives (attente avec appréhension)</label>
+  <label><input type="checkbox" name="critereA" value="Présentes plus d'un jour sur deux"/> Présentes plus d'un jour sur deux</label>
+  <label><input type="checkbox" name="critereA" value="Depuis au moins 6 mois"/> Depuis au moins 6 mois</label>
+  <label><input type="checkbox" name="critereA" value="Concernant plusieurs événements ou activités"/> Concernant plusieurs événements ou activités (travail, école, etc.)</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Difficulté à contrôler l'inquiétude</legend>
+  <p class="subtitle">La personne éprouve de la difficulté à contrôler cette inquiétude</p>
+  <label><input type="checkbox" id="choixB" value="Difficulté à contrôler l'inquiétude"/> Difficulté à contrôler l'inquiétude</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Symptômes associés (au moins 3 sur 6)</legend>
+  <p class="subtitle">L'anxiété et l'inquiétude sont associées à au moins 3 des 6 symptômes suivants (présents plus d'un jour sur deux pendant les 6 derniers mois)</p>
+  <div class="note-box">
+    <strong>Note :</strong> Un seul symptôme est requis chez les enfants.
+  </div>
+  <label><input type="checkbox" name="critereC" value="Agitation ou sensation d'être survolté ou à bout"/> 1. Agitation ou sensation d'être survolté ou à bout</label>
+  <label><input type="checkbox" name="critereC" value="Fatigabilité"/> 2. Fatigabilité</label>
+  <label><input type="checkbox" name="critereC" value="Difficultés de concentration ou trous de mémoire"/> 3. Difficultés de concentration ou trous de mémoire</label>
+  <label><input type="checkbox" name="critereC" value="Irritabilité"/> 4. Irritabilité</label>
+  <label><input type="checkbox" name="critereC" value="Tension musculaire"/> 5. Tension musculaire</label>
+  <label><input type="checkbox" name="critereC" value="Perturbation du sommeil (difficultés d'endormissement, sommeil interrompu ou agité et non satisfaisant)"/> 6. Perturbation du sommeil (difficultés d'endormissement, sommeil interrompu ou agité et non satisfaisant)</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Détresse ou altération du fonctionnement</legend>
+  <p class="subtitle">L'anxiété, l'inquiétude ou les symptômes physiques causent une détresse ou altération cliniquement significative</p>
+  <label><input type="checkbox" name="critereD" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
+  <label><input type="checkbox" name="critereD" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
+  <label><input type="checkbox" name="critereD" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
+  <label><input type="checkbox" name="critereD" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Exclusion des causes organiques</legend>
+  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
+  <label><input type="checkbox" name="critereE" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
+  <label><input type="checkbox" name="critereE" value="Pas attribuable à une affection médicale (hyperthyroïdie, etc.)"/> Pas attribuable à une affection médicale (hyperthyroïdie, etc.)</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Diagnostic différentiel</legend>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
+  <label><input type="checkbox" name="critereF" value="Pas anxiété concernant les attaques de panique (trouble panique)"/> Pas anxiété concernant les attaques de panique (trouble panique)</label>
+  <label><input type="checkbox" name="critereF" value="Pas peur de l'évaluation négative (anxiété sociale)"/> Pas peur de l'évaluation négative (anxiété sociale)</label>
+  <label><input type="checkbox" name="critereF" value="Pas contamination ou autres obsessions (TOC)"/> Pas contamination ou autres obsessions (TOC)</label>
+  <label><input type="checkbox" name="critereF" value="Pas séparation des figures d'attachement (anxiété de séparation)"/> Pas séparation des figures d'attachement (anxiété de séparation)</label>
+  <label><input type="checkbox" name="critereF" value="Pas rappels d'événements traumatiques (TSPT)"/> Pas rappels d'événements traumatiques (TSPT)</label>
+  <label><input type="checkbox" name="critereF" value="Pas prise de poids (anorexie mentale)"/> Pas prise de poids (anorexie mentale)</label>
+  <label><input type="checkbox" name="critereF" value="Pas plaintes physiques (trouble à symptomatologie somatique)"/> Pas plaintes physiques (trouble à symptomatologie somatique)</label>
+  <label><input type="checkbox" name="critereF" value="Pas défauts d'apparence perçus (dysmorphophobie)"/> Pas défauts d'apparence perçus (dysmorphophobie)</label>
+  <label><input type="checkbox" name="critereF" value="Pas peur d'avoir une maladie grave (anxiété liée à la maladie)"/> Pas peur d'avoir une maladie grave (anxiété liée à la maladie)</label>
+  <label><input type="checkbox" name="critereF" value="Pas contenu de croyances délirantes (schizophrénie ou trouble délirant)"/> Pas contenu de croyances délirantes (schizophrénie ou trouble délirant)</label>
+  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let tousLesChoix = {
+  critereA: [],
+  critereB: false,
+  critereC: [],
+  critereD: [],
+  critereE: [],
+  critereF: []
+};
+
+let etapeActuelle = 'A';
+
+function validerCritereA() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereA = choix;
+    document.getElementById("critereB").classList.remove("hidden");
+    etapeActuelle = 'B';
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereB() {
+  if (document.getElementById("choixB").checked) {
+    tousLesChoix.critereB = true;
+    document.getElementById("critereC").classList.remove("hidden");
+    etapeActuelle = 'C';
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère B.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereC() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
+  if (choix.length >= 3) {
+    tousLesChoix.critereC = choix;
+    document.getElementById("critereD").classList.remove("hidden");
+    etapeActuelle = 'D';
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins 3 symptômes pour le critère C (1 seul pour les enfants).", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereD() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereD = choix;
+    document.getElementById("critereE").classList.remove("hidden");
+    etapeActuelle = 'E';
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereE() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereE = choix;
+    document.getElementById("critereF").classList.remove("hidden");
+    etapeActuelle = 'F';
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère E.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereF() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereF']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereF = choix;
+    afficherResume();
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère F.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function afficherResume() {
+  let html = "<div class='resultat-box'>";
+  html += "<div class='resume-section'>";
+  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
+  
+  html += "<h4>Critère A – Anxiété et inquiétude excessives</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère B – Difficulté à contrôler l'inquiétude</h4>";
+  html += "<ul class='choix-list'>";
+  html += "<li>" + (tousLesChoix.critereB ? "✓" : "✗") + " Difficulté à contrôler l'inquiétude</li>";
+  html += "</ul>";
+  
+  html += "<h4>Critère C – Symptômes associés (au moins 3)</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère D – Détresse ou altération</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère E – Exclusion causes organiques</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereE.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère F – Diagnostic différentiel</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereF.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "</div>";
+  
+  html += "<div class='boutons-validation'>";
+  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
+  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
+  html += "</div>";
+  html += "</div>";
+  
+  document.getElementById("resultat").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+}
+
+function validerFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+</body>
+</html>

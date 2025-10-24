@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Pyromanie – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de la Pyromanie – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Mise à feu délibérée et intentionnelle</legend>
+  <p class="subtitle">À plus d'une occasion</p>
+  <label><input type="checkbox" name="critereA" value="Mise à feu délibérée et intentionnelle"/> Mise à feu délibérée et intentionnelle</label>
+  <label><input type="checkbox" name="critereA" value="À plus d'une occasion"/> À plus d'une occasion</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Tension ou excitation affective avant l'acte</legend>
+  <p class="subtitle">Tension ou excitation affective immédiatement avant l'acte</p>
+  <label><input type="checkbox" name="critereB" value="Tension avant l'acte"/> Tension avant l'acte</label>
+  <label><input type="checkbox" name="critereB" value="Excitation affective avant l'acte"/> Excitation affective avant l'acte</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Fascination pour le feu</legend>
+  <p class="subtitle">Fascination, intérêt, curiosité ou attraction pour le feu et ses contextes situationnels</p>
+  <label><input type="checkbox" name="critereC" value="Fascination pour le feu"/> Fascination pour le feu</label>
+  <label><input type="checkbox" name="critereC" value="Intérêt pour le feu"/> Intérêt pour le feu</label>
+  <label><input type="checkbox" name="critereC" value="Curiosité à propos du feu"/> Curiosité à propos du feu</label>
+  <label><input type="checkbox" name="critereC" value="Attraction pour le feu"/> Attraction pour le feu</label>
+  <label><input type="checkbox" name="critereC" value="Intérêt pour le matériel lié au feu"/> Intérêt pour le matériel lié au feu (paraphernalia)</label>
+  <label><input type="checkbox" name="critereC" value="Intérêt pour les usages du feu"/> Intérêt pour les usages du feu</label>
+  <label><input type="checkbox" name="critereC" value="Intérêt pour les conséquences du feu"/> Intérêt pour les conséquences du feu</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Plaisir, gratification ou soulagement</legend>
+  <p class="subtitle">Lors de la mise à feu, en assistant ou en participant aux conséquences</p>
+  <label><input type="checkbox" name="critereD" value="Plaisir lors de la mise à feu"/> Plaisir lors de la mise à feu</label>
+  <label><input type="checkbox" name="critereD" value="Gratification lors de la mise à feu"/> Gratification lors de la mise à feu</label>
+  <label><input type="checkbox" name="critereD" value="Soulagement lors de la mise à feu"/> Soulagement lors de la mise à feu</label>
+  <label><input type="checkbox" name="critereD" value="Plaisir en assistant aux conséquences"/> Plaisir en assistant aux conséquences</label>
+  <label><input type="checkbox" name="critereD" value="Gratification en assistant aux conséquences"/> Gratification en assistant aux conséquences</label>
+  <label><input type="checkbox" name="critereD" value="Soulagement en assistant aux conséquences"/> Soulagement en assistant aux conséquences</label>
+  <label><input type="checkbox" name="critereD" value="Plaisir en participant aux conséquences"/> Plaisir en participant aux conséquences</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Exclusion de motivations spécifiques</legend>
+  <p class="subtitle">La mise à feu n'est pas faite pour les raisons suivantes</p>
+  <label><input type="checkbox" name="critereE" value="Pas pour gain monétaire"/> Pas pour gain monétaire</label>
+  <label><input type="checkbox" name="critereE" value="Pas comme expression d'idéologie sociopolitique"/> Pas comme expression d'idéologie sociopolitique</label>
+  <label><input type="checkbox" name="critereE" value="Pas pour dissimuler une activité criminelle"/> Pas pour dissimuler une activité criminelle</label>
+  <label><input type="checkbox" name="critereE" value="Pas pour exprimer colère ou vengeance"/> Pas pour exprimer colère ou vengeance</label>
+  <label><input type="checkbox" name="critereE" value="Pas pour améliorer ses conditions de vie"/> Pas pour améliorer ses conditions de vie</label>
+  <label><input type="checkbox" name="critereE" value="Pas en réponse à une idée délirante"/> Pas en réponse à une idée délirante</label>
+  <label><input type="checkbox" name="critereE" value="Pas en réponse à une hallucination"/> Pas en réponse à une hallucination</label>
+  <label><input type="checkbox" name="critereE" value="Pas résultat d'un jugement altéré (trouble neurocognitif majeur, déficience intellectuelle, intoxication)"/> Pas résultat d'un jugement altéré (trouble neurocognitif majeur, déficience intellectuelle, intoxication)</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Diagnostic différentiel</legend>
+  <p class="subtitle">La mise à feu n'est pas mieux expliquée par d'autres troubles</p>
+  <label><input type="checkbox" name="critereF" value="Pas mieux expliquée par trouble des conduites"/> Pas mieux expliquée par trouble des conduites</label>
+  <label><input type="checkbox" name="critereF" value="Pas mieux expliquée par épisode maniaque"/> Pas mieux expliquée par épisode maniaque</label>
+  <label><input type="checkbox" name="critereF" value="Pas mieux expliquée par trouble de personnalité antisociale"/> Pas mieux expliquée par trouble de personnalité antisociale</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let tousLesChoix = {
+  critereA: [],
+  critereB: [],
+  critereC: [],
+  critereD: [],
+  critereE: [],
+  critereF: []
+};
+
+function validerCritereA() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereA = choix;
+    document.getElementById("critereB").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereB() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereB = choix;
+    document.getElementById("critereC").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereC() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereC = choix;
+    document.getElementById("critereD").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereD() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereD = choix;
+    document.getElementById("critereE").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereE() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereE = choix;
+    document.getElementById("critereF").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère E.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function afficherResume() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereF']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereF = choix;
+    genererResume();
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère F.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function genererResume() {
+  let html = "<div class='resultat-box'>";
+  html += "<div class='resume-section'>";
+  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
+  
+  html += "<h4>Critère A – Mise à feu délibérée et intentionnelle</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère B – Tension ou excitation affective avant l'acte</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère C – Fascination pour le feu</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère D – Plaisir, gratification ou soulagement</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère E – Exclusion de motivations spécifiques</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereE.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère F – Diagnostic différentiel</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereF.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<div class='code-section'>";
+  html += "<strong>Code diagnostique :</strong> F63.1<br/>";
+  html += "<strong>Diagnostic :</strong> F63.1 Pyromanie";
+  html += "</div>";
+  
+  html += "</div>";
+  
+  html += "<div class='boutons-validation'>";
+  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
+  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
+  html += "</div>";
+  html += "</div>";
+  
+  document.getElementById("resultat").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+}
+
+function validerFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+</body>
+</html>

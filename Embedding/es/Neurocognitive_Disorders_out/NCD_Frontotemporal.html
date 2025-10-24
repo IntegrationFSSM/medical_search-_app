@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Neurocognitif Frontotemporel – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Neurocognitif Frontotemporel – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Critères du trouble neurocognitif majeur ou léger remplis</legend>
+  <p class="subtitle">Les critères sont remplis pour un trouble neurocognitif majeur ou léger</p>
+  <label><input type="radio" name="critereA" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
+  <label><input type="radio" name="critereA" value="Trouble neurocognitif léger"/> Trouble neurocognitif léger</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Début insidieux et progression graduelle</legend>
+  <p class="subtitle">La perturbation a un début insidieux et une progression graduelle</p>
+  <label><input type="checkbox" name="critereB" value="Début insidieux"/> Début insidieux</label>
+  <label><input type="checkbox" name="critereB" value="Progression graduelle"/> Progression graduelle</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Variante comportementale OU variante langagière</legend>
+  <p class="subtitle">Sélectionner la variante applicable</p>
+  <div class="warning-box">
+    ⚠️ <strong>Important :</strong> Choisir (1) Variante comportementale OU (2) Variante langagière
+  </div>
+  <label><input type="radio" name="variante" value="comportementale"/> (1) Variante comportementale</label>
+  <label><input type="radio" name="variante" value="langagiere"/> (2) Variante langagière</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider</button>
+</fieldset>
+
+<!-- Variante comportementale -->
+<fieldset id="comportementale" class="hidden">
+  <legend>Critère C(1) – Variante comportementale</legend>
+  <p class="subtitle">a. Trois symptômes comportementaux ou plus sur 5</p>
+  <label><input type="checkbox" name="compSympt" value="i. Désinhibition comportementale"/> i. Désinhibition comportementale</label>
+  <label><input type="checkbox" name="compSympt" value="ii. Apathie ou inertie"/> ii. Apathie ou inertie</label>
+  <label><input type="checkbox" name="compSympt" value="iii. Perte de sympathie ou d'empathie"/> iii. Perte de sympathie ou d'empathie</label>
+  <label><input type="checkbox" name="compSympt" value="iv. Comportement persévératif, stéréotypé ou compulsif/ritualiste"/> iv. Comportement persévératif, stéréotypé ou compulsif/ritualiste</label>
+  <label><input type="checkbox" name="compSympt" value="v. Hyperoralité et changements alimentaires"/> v. Hyperoralité et changements alimentaires</label>
+  
+  <p style="margin-top: 15px;"><strong>b. Déclin proéminent en cognition sociale et/ou capacités exécutives</strong></p>
+  <label><input type="checkbox" name="compDeclin" value="Déclin proéminent en cognition sociale"/> Déclin proéminent en cognition sociale</label>
+  <label><input type="checkbox" name="compDeclin" value="Déclin proéminent en capacités exécutives"/> Déclin proéminent en capacités exécutives</label>
+  
+  <button type="button" onclick="validerComportementale()">✔️ Valider la variante comportementale</button>
+</fieldset>
+
+<!-- Variante langagière -->
+<fieldset id="langagiere" class="hidden">
+  <legend>Critère C(2) – Variante langagière</legend>
+  <p class="subtitle">Déclin proéminent des capacités langagières</p>
+  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en production de la parole"/> Déclin proéminent en production de la parole</label>
+  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en recherche de mots"/> Déclin proéminent en recherche de mots</label>
+  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en dénomination d'objets"/> Déclin proéminent en dénomination d'objets</label>
+  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en grammaire"/> Déclin proéminent en grammaire</label>
+  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en compréhension de mots"/> Déclin proéminent en compréhension de mots</label>
+  
+  <button type="button" onclick="validerLangagiere()">✔️ Valider la variante langagière</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Préservation relative de l'apprentissage, mémoire et fonction perceptivo-motrice</legend>
+  <p class="subtitle">Préservation relative de l'apprentissage et de la mémoire, et de la fonction perceptivo-motrice</p>
+  <label><input type="checkbox" name="critereD" value="Préservation relative de l'apprentissage et de la mémoire"/> Préservation relative de l'apprentissage et de la mémoire</label>
+  <label><input type="checkbox" name="critereD" value="Préservation relative de la fonction perceptivo-motrice"/> Préservation relative de la fonction perceptivo-motrice</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Diagnostic différentiel</legend>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par d'autres causes</p>
+  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par maladie cérébrovasculaire"/> Pas mieux expliquée par maladie cérébrovasculaire</label>
+  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par autre maladie neurodégénérative"/> Pas mieux expliquée par autre maladie neurodégénérative</label>
+  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par effets d'une substance"/> Pas mieux expliquée par effets d'une substance</label>
+  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par autre trouble mental"/> Pas mieux expliquée par autre trouble mental</label>
+  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par autre trouble neurologique"/> Pas mieux expliquée par autre trouble neurologique</label>
+  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par trouble systémique"/> Pas mieux expliquée par trouble systémique</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Probable/Possible -->
+<fieldset id="probPoss" class="hidden">
+  <legend>Trouble Frontotemporel Probable ou Possible</legend>
+  <p class="subtitle">Déterminer si probable ou possible selon les preuves</p>
+  <div class="note-box">
+    <strong>PROBABLE</strong> si l'un des 2 critères suivants, sinon <strong>POSSIBLE</strong> :<br/>
+    1. Preuve de mutation génétique causale (histoire familiale ou test génétique)<br/>
+    2. Preuve d'atteinte disproportionnée des lobes frontaux et/ou temporaux par neuroimagerie
+  </div>
+  <label><input type="checkbox" name="probable" value="Preuve de mutation génétique causale (histoire familiale ou test génétique)"/> Preuve de mutation génétique causale (histoire familiale ou test génétique)</label>
+  <label><input type="checkbox" name="probable" value="Preuve d'atteinte disproportionnée frontale/temporale par neuroimagerie"/> Preuve d'atteinte disproportionnée des lobes frontaux et/ou temporaux par neuroimagerie</label>
+  <button type="button" onclick="validerProbPoss()">✔️ Valider</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs</legend>
+  <p class="subtitle">Préciser les caractéristiques additionnelles</p>
+  
+  <p style="margin-top: 10px;"><strong>Perturbation comportementale :</strong></p>
+  <label><input type="radio" name="comportement" value="Avec perturbation comportementale"/> Avec perturbation comportementale</label>
+  <label><input type="radio" name="comportement" value="Sans perturbation comportementale"/> Sans perturbation comportementale</label>
+  
+  <p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
+  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
+  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
+  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
+  <label><input type="radio" name="severite" value="Non applicable"/> Non applicable (trouble neurocognitif léger)</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB:[],variante:"",compSympt:[],compDeclin:[],langSympt:[],critereD:[],critereE:[],typeFronto:"",probable:[],comportement:"",severite:""};
+
+function validerCritereA(){const c=document.querySelector("input[name='critereA']:checked");if(c){choix.critereA=c.value;document.getElementById("critereB").classList.remove("hidden")}else alert("Sélectionnez un type")}
+function validerCritereB(){const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);if(c.length>0){choix.critereB=c;document.getElementById("critereC").classList.remove("hidden")}else alert("Cochez au moins une option")}
+
+function validerCritereC(){
+  const v=document.querySelector("input[name='variante']:checked");
+  if(v){
+    choix.variante=v.value;
+    if(v.value==="comportementale"){
+      document.getElementById("comportementale").classList.remove("hidden");
+    }else{
+      document.getElementById("langagiere").classList.remove("hidden");
+    }
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez une variante", confirmButtonColor: "#667eea"});
+}
+
+function validerComportementale(){
+  const sympt=Array.from(document.querySelectorAll("input[name='compSympt']:checked")).map(e=>e.value);
+  const declin=Array.from(document.querySelectorAll("input[name='compDeclin']:checked")).map(e=>e.value);
+  if(sympt.length>=3&&declin.length>0){
+    choix.compSympt=sympt;
+    choix.compDeclin=declin;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez ≥3 symptômes comportementaux ET ≥1 déclin", confirmButtonColor: "#667eea"});
+}
+
+function validerLangagiere(){
+  const sympt=Array.from(document.querySelectorAll("input[name='langSympt']:checked")).map(e=>e.value);
+  if(sympt.length>0){
+    choix.langSympt=sympt;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereD(){const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);if(c.length>0){choix.critereD=c;document.getElementById("critereE").classList.remove("hidden")}else alert("Cochez au moins une option")}
+function validerCritereE(){const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);if(c.length>0){choix.critereE=c;document.getElementById("probPoss").classList.remove("hidden")}else alert("Cochez au moins une option")}
+
+function validerProbPoss(){
+  const p=Array.from(document.querySelectorAll("input[name='probable']:checked")).map(e=>e.value);
+  choix.probable=p;
+  choix.typeFronto=p.length>0?"Probable":"Possible";
+  document.getElementById("specificateurs").classList.remove("hidden");
+}
+
+function afficherResume(){
+  const comp=document.querySelector("input[name='comportement']:checked");
+  const sev=document.querySelector("input[name='severite']:checked");
+  if(!comp||!sev){Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez comportement ET sévérité", confirmButtonColor: "#667eea"});return}
+  choix.comportement=comp.value;
+  choix.severite=sev.value;
+  genererResume();
+}
+
+function genererResume(){
+  let code="";
+  let diag="";
+  const isMajeur=choix.critereA==="Trouble neurocognitif majeur";
+  const avecComp=choix.comportement==="Avec perturbation comportementale";
+  
+  if(isMajeur){
+    code="G31.09 + "+(avecComp?"F02.81":"F02.80");
+    diag=code+" Trouble neurocognitif majeur frontotemporel "+choix.typeFronto.toLowerCase()+", variante "+choix.variante+", "+choix.comportement.toLowerCase();
+  }else{
+    code="G31.84";
+    diag=code+" Trouble neurocognitif léger frontotemporel, variante "+choix.variante+", "+choix.comportement.toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  h+="<h4>Type de trouble</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  h+="<h4>Variante</h4><ul class='choix-list'><li>✓ Variante "+choix.variante+"</li></ul>";
+  h+="<h4>Type frontotemporel</h4><ul class='choix-list'><li>✓ "+choix.typeFronto+"</li></ul>";
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'><li>✓ "+choix.comportement+"</li>";
+  if(isMajeur&&choix.severite!=="Non applicable")h+="<li>✓ Sévérité: "+choix.severite+"</li>";
+  h+="</ul>";
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  if(isMajeur&&choix.severite!=="Non applicable")h+=" (sévérité "+choix.severite.toLowerCase()+" - à enregistrer mais non codable)";
+  h+="</div></div>";
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

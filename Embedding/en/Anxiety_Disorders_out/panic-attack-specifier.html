@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Attaque de Panique (Spécificateur) – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de l'Attaque de Panique (Spécificateur) – DSM-5-TR</h2>
+  </div>
+</div>
+
+<div class="warning-box">
+  ⚠️ <strong>Important :</strong> L'attaque de panique n'est PAS un trouble mental et ne peut pas être codée. C'est un SPÉCIFICATEUR qui peut survenir dans le contexte de tout trouble anxieux ou autre trouble mental.
+</div>
+
+<form id="formulaire">
+
+<!-- Définition -->
+<fieldset id="definition">
+  <legend>Définition – Montée brusque de peur ou d'inconfort intense</legend>
+  <p class="subtitle">Montée brusque atteignant un pic en quelques minutes</p>
+  <div class="note-box">
+    <strong>Note :</strong> La montée brusque peut survenir à partir d'un état calme ou d'un état anxieux.
+  </div>
+  <label><input type="checkbox" name="definition" value="Montée brusque de peur intense"/> Montée brusque de peur intense</label>
+  <label><input type="checkbox" name="definition" value="Montée brusque d'inconfort intense"/> Montée brusque d'inconfort intense</label>
+  <label><input type="checkbox" name="definition" value="Atteint un pic en quelques minutes"/> Atteint un pic en quelques minutes</label>
+  <button type="button" onclick="validerDefinition()">✔️ Valider la définition</button>
+</fieldset>
+
+<!-- Symptômes -->
+<fieldset id="symptomes" class="hidden">
+  <legend>Symptômes – Au moins 4 des 13 symptômes suivants</legend>
+  <p class="subtitle">Sélectionner au moins 4 symptômes parmi les 13 suivants</p>
+  <label><input type="checkbox" name="symptomes" value="1. Palpitations, cœur qui bat fort ou accélération du rythme cardiaque"/> 1. Palpitations, cœur qui bat fort ou accélération du rythme cardiaque</label>
+  <label><input type="checkbox" name="symptomes" value="2. Transpiration"/> 2. Transpiration</label>
+  <label><input type="checkbox" name="symptomes" value="3. Tremblements ou secousses musculaires"/> 3. Tremblements ou secousses musculaires</label>
+  <label><input type="checkbox" name="symptomes" value="4. Sensations de souffle coupé ou impression d'étouffement"/> 4. Sensations de souffle coupé ou impression d'étouffement</label>
+  <label><input type="checkbox" name="symptomes" value="5. Sensation d'étranglement"/> 5. Sensation d'étranglement</label>
+  <label><input type="checkbox" name="symptomes" value="6. Douleur ou gêne thoracique"/> 6. Douleur ou gêne thoracique</label>
+  <label><input type="checkbox" name="symptomes" value="7. Nausée ou gêne abdominale"/> 7. Nausée ou gêne abdominale</label>
+  <label><input type="checkbox" name="symptomes" value="8. Sensation de vertige, d'instabilité, de tête vide ou impression d'évanouissement"/> 8. Sensation de vertige, d'instabilité, de tête vide ou impression d'évanouissement</label>
+  <label><input type="checkbox" name="symptomes" value="9. Frissons ou bouffées de chaleur"/> 9. Frissons ou bouffées de chaleur</label>
+  <label><input type="checkbox" name="symptomes" value="10. Paresthésies (sensations d'engourdissement ou de picotements)"/> 10. Paresthésies (sensations d'engourdissement ou de picotements)</label>
+  <label><input type="checkbox" name="symptomes" value="11. Déréalisation (sentiments d'irréalité) ou dépersonnalisation (être détaché de soi)"/> 11. Déréalisation (sentiments d'irréalité) ou dépersonnalisation (être détaché de soi)</label>
+  <label><input type="checkbox" name="symptomes" value="12. Peur de perdre le contrôle ou de devenir fou"/> 12. Peur de perdre le contrôle ou de "devenir fou"</label>
+  <label><input type="checkbox" name="symptomes" value="13. Peur de mourir"/> 13. Peur de mourir</label>
+  <div class="note-box">
+    <strong>Note :</strong> Les symptômes spécifiques à la culture (acouphènes, douleur au cou, maux de tête, cris ou pleurs incontrôlables) peuvent être observés mais ne doivent PAS compter parmi les 4 symptômes requis.
+  </div>
+  <button type="button" onclick="validerSymptomes()">✔️ Valider les symptômes</button>
+</fieldset>
+
+<!-- Contexte -->
+<fieldset id="contexte" class="hidden">
+  <legend>Contexte – Dans quel contexte survient l'attaque de panique ?</legend>
+  <p class="subtitle">Identifier le trouble mental ou la condition médicale associé(e)</p>
+  <label><input type="checkbox" name="contexte" value="Trouble anxieux"/> Trouble anxieux</label>
+  <label><input type="checkbox" name="contexte" value="Trouble dépressif"/> Trouble dépressif</label>
+  <label><input type="checkbox" name="contexte" value="Trouble de stress post-traumatique (TSPT)"/> Trouble de stress post-traumatique (TSPT)</label>
+  <label><input type="checkbox" name="contexte" value="Trouble lié à l'utilisation de substances"/> Trouble lié à l'utilisation de substances</label>
+  <label><input type="checkbox" name="contexte" value="Condition médicale (cardiaque, respiratoire, vestibulaire, gastro-intestinale)"/> Condition médicale (cardiaque, respiratoire, vestibulaire, gastro-intestinale)</label>
+  <label><input type="checkbox" name="contexte" value="Autre trouble mental"/> Autre trouble mental</label>
+  <button type="button" onclick="validerContexte()">✔️ Valider le contexte</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let tousLesChoix = {
+  definition: [],
+  symptomes: [],
+  contexte: []
+};
+
+let etapeActuelle = 'definition';
+
+function validerDefinition() {
+  const choix = Array.from(document.querySelectorAll("input[name='definition']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.definition = choix;
+    document.getElementById("symptomes").classList.remove("hidden");
+    etapeActuelle = 'symptomes';
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour la définition.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerSymptomes() {
+  const choix = Array.from(document.querySelectorAll("input[name='symptomes']:checked")).map(el => el.value);
+  if (choix.length >= 4) {
+    tousLesChoix.symptomes = choix;
+    document.getElementById("contexte").classList.remove("hidden");
+    etapeActuelle = 'contexte';
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins 4 symptômes.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerContexte() {
+  const choix = Array.from(document.querySelectorAll("input[name='contexte']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.contexte = choix;
+    afficherResume();
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins un contexte.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function afficherResume() {
+  let html = "<div class='resultat-box'>";
+  html += "<div class='resume-section'>";
+  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
+  
+  html += "<h4>Définition – Montée brusque</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.definition.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Symptômes présents (" + tousLesChoix.symptomes.length + " sur 13)</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.symptomes.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Contexte d'apparition</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.contexte.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<div class='warning-box'>";
+  html += "⚠️ <strong>Rappel :</strong> L'attaque de panique est un SPÉCIFICATEUR, pas un diagnostic. Exemple de notation : \"Trouble de stress post-traumatique avec attaques de panique\".";
+  html += "</div>";
+  
+  html += "<div class='note-box'>";
+  html += "<strong>Exception :</strong> Pour le trouble panique, la présence d'attaques de panique est contenue dans les critères du trouble et l'attaque de panique n'est PAS utilisée comme spécificateur.";
+  html += "</div>";
+  
+  html += "</div>";
+  
+  html += "<div class='boutons-validation'>";
+  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
+  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
+  html += "</div>";
+  html += "</div>";
+  
+  document.getElementById("resultat").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+}
+
+function validerFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+</body>
+</html>

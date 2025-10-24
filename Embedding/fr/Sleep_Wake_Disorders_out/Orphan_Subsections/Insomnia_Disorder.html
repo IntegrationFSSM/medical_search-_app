@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble d'Insomnie – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble d'Insomnie – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Plainte prédominante d'insatisfaction avec le sommeil</legend>
+  <p class="subtitle">Plainte prédominante d'insatisfaction avec la quantité ou la qualité du sommeil, associée à un (ou plusieurs) des symptômes suivants</p>
+  <div class="warning-box">
+    ⚠️ Au moins 1 des 3 symptômes requis
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="Plainte prédominante d'insatisfaction avec quantité ou qualité du sommeil"/> Plainte prédominante d'insatisfaction avec la quantité ou la qualité du sommeil</label>
+  
+  <p style="margin-top: 10px;"><strong>Associée à un (ou plusieurs) des symptômes suivants :</strong></p>
+  
+  <label><input type="checkbox" name="symptomes" value="1. Difficulté à initier le sommeil (chez enfants: sans intervention du soignant)"/> <strong>1.</strong> Difficulté à initier le sommeil (Chez enfants: peut se manifester comme difficulté à initier le sommeil sans intervention du soignant)</label>
+  
+  <label><input type="checkbox" name="symptomes" value="2. Difficulté à maintenir le sommeil, caractérisée par réveils fréquents ou problèmes à se rendormir après réveils (chez enfants: sans intervention du soignant)"/> <strong>2.</strong> Difficulté à maintenir le sommeil, caractérisée par réveils fréquents ou problèmes à se rendormir après réveils (Chez enfants: peut se manifester comme difficulté à se rendormir sans intervention du soignant)</label>
+  
+  <label><input type="checkbox" name="symptomes" value="3. Réveil matinal précoce avec incapacité à se rendormir"/> <strong>3.</strong> Réveil matinal précoce avec incapacité à se rendormir</label>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Détresse ou altération cliniquement significative</legend>
+  <p class="subtitle">La perturbation du sommeil cause une détresse ou altération cliniquement significative dans le fonctionnement</p>
+  <label><input type="checkbox" name="critereB" value="Cause détresse ou altération cliniquement significative dans fonctionnement social, professionnel, éducatif, académique, comportemental ou autres domaines importants"/> Cause une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel, éducatif, académique, comportemental ou autres domaines importants</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Fréquence</legend>
+  <p class="subtitle">La difficulté de sommeil survient au moins 3 nuits par semaine</p>
+  <div class="warning-box">
+    ⚠️ Fréquence minimale : ≥3 nuits/semaine
+  </div>
+  <label><input type="checkbox" name="critereC" value="Difficulté de sommeil survient au moins 3 nuits par semaine"/> La difficulté de sommeil survient au moins 3 nuits par semaine</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Durée</legend>
+  <p class="subtitle">La difficulté de sommeil est présente depuis au moins 3 mois</p>
+  <div class="warning-box">
+    ⚠️ Durée minimale : ≥3 mois
+  </div>
+  <label><input type="checkbox" name="critereD" value="Difficulté de sommeil présente depuis au moins 3 mois"/> La difficulté de sommeil est présente depuis au moins 3 mois</label>
+  <div class="note-box">
+    <strong>Note :</strong> L'insomnie aiguë et à court terme (symptômes durant moins de 3 mois mais remplissant tous les autres critères) doit être codée comme autre trouble d'insomnie spécifié.
+  </div>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Opportunité adéquate pour le sommeil</legend>
+  <p class="subtitle">La difficulté de sommeil survient malgré une opportunité adéquate pour le sommeil</p>
+  <label><input type="checkbox" name="critereE" value="Difficulté de sommeil survient malgré opportunité adéquate pour sommeil"/> La difficulté de sommeil survient malgré une opportunité adéquate pour le sommeil</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Non mieux expliqué par autre trouble veille-sommeil</legend>
+  <p class="subtitle">L'insomnie n'est pas mieux expliquée par et ne survient pas exclusivement durant le cours d'un autre trouble veille-sommeil</p>
+  <label><input type="checkbox" name="critereF" value="Non mieux expliqué par autre trouble veille-sommeil (narcolepsie, trouble respiratoire, trouble rythme circadien, parasomnie)"/> Non mieux expliqué par et ne survient pas exclusivement durant un autre trouble veille-sommeil (ex: narcolepsie, trouble respiratoire du sommeil, trouble du rythme circadien veille-sommeil, parasomnie)</label>
+  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+</fieldset>
+
+<!-- Critère G -->
+<fieldset id="critereG" class="hidden">
+  <legend>Critère G – Non attribuable à substance</legend>
+  <p class="subtitle">L'insomnie n'est pas attribuable aux effets physiologiques d'une substance</p>
+  <label><input type="checkbox" name="critereG" value="Non attribuable aux effets physiologiques d'une substance (drogue, médicament)"/> Non attribuable aux effets physiologiques d'une substance (ex: drogue, médicament)</label>
+  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
+</fieldset>
+
+<!-- Critère H -->
+<fieldset id="critereH" class="hidden">
+  <legend>Critère H – Troubles coexistants n'expliquent pas adéquatement</legend>
+  <p class="subtitle">Les troubles mentaux et conditions médicales coexistants n'expliquent pas adéquatement la plainte prédominante d'insomnie</p>
+  <label><input type="checkbox" name="critereH" value="Troubles mentaux et conditions médicales coexistants n'expliquent pas adéquatement plainte prédominante d'insomnie"/> Les troubles mentaux et conditions médicales coexistants n'expliquent pas adéquatement la plainte prédominante d'insomnie</label>
+  <div class="note-box">
+    <strong>Note :</strong> Le diagnostic d'insomnie est posé qu'elle survienne comme condition indépendante ou soit comorbide avec un autre trouble mental, condition médicale ou autre trouble du sommeil. Un diagnostic concurrent d'insomnie doit être considéré uniquement quand l'insomnie est suffisamment sévère pour mériter une attention clinique indépendante.
+  </div>
+  <button type="button" onclick="validerCritereH()">✔️ Valider le critère H</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs</legend>
+  
+  <p style="margin-top: 10px;"><strong>Comorbidité :</strong></p>
+  <label><input type="checkbox" name="comorbidite" value="Avec trouble mental, incluant troubles d'usage de substances"/> Avec trouble mental, incluant troubles d'usage de substances</label>
+  <label><input type="checkbox" name="comorbidite" value="Avec condition médicale"/> Avec condition médicale</label>
+  <label><input type="checkbox" name="comorbidite" value="Avec autre trouble du sommeil"/> Avec autre trouble du sommeil</label>
+  
+  <div class="note-box">
+    <strong>Note de codage :</strong> Le code F51.01 s'applique aux trois spécificateurs. Coder également le trouble mental, la condition médicale ou l'autre trouble du sommeil associé immédiatement après le code pour le trouble d'insomnie afin d'indiquer l'association.
+  </div>
+  
+  <p style="margin-top: 15px;"><strong>Évolution :</strong></p>
+  <label><input type="radio" name="evolution" value="Épisodique"/> <strong>Épisodique :</strong> Symptômes durent au moins 1 mois mais moins de 3 mois</label>
+  <label><input type="radio" name="evolution" value="Persistant"/> <strong>Persistant :</strong> Symptômes durent 3 mois ou plus</label>
+  <label><input type="radio" name="evolution" value="Récurrent"/> <strong>Récurrent :</strong> Deux épisodes ou plus dans l'espace d'une année</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],symptomes:[],critereB:"",critereC:"",critereD:"",critereE:"",critereF:"",critereG:"",critereH:"",comorbidite:[],evolution:""};
+
+function validerCritereA(){
+  const ca=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  const sy=Array.from(document.querySelectorAll("input[name='symptomes']:checked")).map(e=>e.value);
+  if(ca.length>0&&sy.length>0){
+    choix.critereA=ca;
+    choix.symptomes=sy;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Cochez la plainte d'insatisfaction ET au moins 1 des 3 symptômes");
+}
+
+function validerCritereB(){
+  const c=document.querySelector("input[name='critereB']:checked");
+  if(c){
+    choix.critereB=c.value;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else alert("Cochez l'option du critère B");
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function validerCritereD(){
+  const c=document.querySelector("input[name='critereD']:checked");
+  if(c){
+    choix.critereD=c.value;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else alert("Cochez l'option du critère D");
+}
+
+function validerCritereE(){
+  const c=document.querySelector("input[name='critereE']:checked");
+  if(c){
+    choix.critereE=c.value;
+    document.getElementById("critereF").classList.remove("hidden");
+  }else alert("Cochez l'option du critère E");
+}
+
+function validerCritereF(){
+  const c=document.querySelector("input[name='critereF']:checked");
+  if(c){
+    choix.critereF=c.value;
+    document.getElementById("critereG").classList.remove("hidden");
+  }else alert("Cochez l'option du critère F");
+}
+
+function validerCritereG(){
+  const c=document.querySelector("input[name='critereG']:checked");
+  if(c){
+    choix.critereG=c.value;
+    document.getElementById("critereH").classList.remove("hidden");
+  }else alert("Cochez l'option du critère G");
+}
+
+function validerCritereH(){
+  const c=document.querySelector("input[name='critereH']:checked");
+  if(c){
+    choix.critereH=c.value;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else alert("Cochez l'option du critère H");
+}
+
+function afficherResume(){
+  const e=document.querySelector("input[name='evolution']:checked");
+  if(e){
+    choix.comorbidite=Array.from(document.querySelectorAll("input[name='comorbidite']:checked")).map(e=>e.value);
+    choix.evolution=e.value;
+    genererResume();
+  }else alert("Sélectionnez l'évolution");
+}
+
+function genererResume(){
+  const code="F51.01";
+  let diag=code+" Trouble d'Insomnie";
+  if(choix.comorbidite.length>0){
+    diag+=", "+choix.comorbidite.join(", ").toLowerCase();
+  }
+  diag+=", "+choix.evolution.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Plainte d'insatisfaction avec le sommeil + symptômes</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="<li><strong>Symptômes ("+choix.symptomes.length+"/3, minimum 1 requis) :</strong></li>";
+  choix.symptomes.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Détresse ou altération cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
+  
+  h+="<h4>Critère C – Fréquence (≥3 nuits/semaine)</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Critère D – Durée (≥3 mois)</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
+  
+  h+="<h4>Critère E – Opportunité adéquate pour le sommeil</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
+  
+  h+="<h4>Critère F – Non mieux expliqué par autre trouble veille-sommeil</h4><ul class='choix-list'><li>✓ "+choix.critereF+"</li></ul>";
+  
+  h+="<h4>Critère G – Non attribuable à substance</h4><ul class='choix-list'><li>✓ "+choix.critereG+"</li></ul>";
+  
+  h+="<h4>Critère H – Troubles coexistants n'expliquent pas adéquatement</h4><ul class='choix-list'><li>✓ "+choix.critereH+"</li></ul>";
+  
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
+  if(choix.comorbidite.length>0){
+    choix.comorbidite.forEach(s=>h+="<li>✓ "+s+"</li>");
+  }else{
+    h+="<li>✓ Aucune comorbidité spécifiée</li>";
+  }
+  h+="<li>✓ Évolution: "+choix.evolution+"</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Insatisfaction avec quantité ou qualité du sommeil.";
+  h+="<br/><br/><strong>Critère A :</strong> Plainte prédominante d'insatisfaction avec quantité/qualité du sommeil + au moins 1 des symptômes suivants:";
+  h+="<br/>1. Difficulté à initier le sommeil";
+  h+="<br/>2. Difficulté à maintenir le sommeil (réveils fréquents, problèmes à se rendormir)";
+  h+="<br/>3. Réveil matinal précoce avec incapacité à se rendormir";
+  h+="<br/><br/><strong>Critère B :</strong> Détresse ou altération cliniquement significative dans fonctionnement social, professionnel, éducatif, académique, comportemental ou autres domaines.";
+  h+="<br/><br/><strong>Critère C :</strong> Survient ≥3 nuits/semaine.";
+  h+="<br/><br/><strong>Critère D :</strong> Présente depuis ≥3 mois.";
+  h+="<br/><br/><strong>Critère E :</strong> Survient malgré opportunité adéquate pour le sommeil.";
+  h+="<br/><br/><strong>Critère F :</strong> Non mieux expliqué par autre trouble veille-sommeil (narcolepsie, trouble respiratoire, trouble rythme circadien, parasomnie).";
+  h+="<br/><br/><strong>Critère G :</strong> Non attribuable à substance (drogue, médicament).";
+  h+="<br/><br/><strong>Critère H :</strong> Troubles mentaux/conditions médicales coexistants n'expliquent pas adéquatement la plainte prédominante.";
+  h+="<br/><br/><strong>Spécificateurs de comorbidité :</strong>";
+  h+="<br/>• Avec trouble mental (incluant troubles d'usage de substances)";
+  h+="<br/>• Avec condition médicale";
+  h+="<br/>• Avec autre trouble du sommeil";
+  h+="<br/><br/><strong>Note de codage :</strong> F51.01 s'applique aux trois spécificateurs. Coder également le trouble associé immédiatement après.";
+  h+="<br/><br/><strong>Évolution :</strong>";
+  h+="<br/>• Épisodique: ≥1 mois et <3 mois";
+  h+="<br/>• Persistant: ≥3 mois";
+  h+="<br/>• Récurrent: ≥2 épisodes dans l'année";
+  h+="<br/><br/><strong>Note importante :</strong> Insomnie aiguë (<3 mois) = autre trouble d'insomnie spécifié.";
+  h+="<br/><br/><strong>Diagnostic concurrent :</strong> Uniquement si insomnie suffisamment sévère pour mériter attention clinique indépendante.";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

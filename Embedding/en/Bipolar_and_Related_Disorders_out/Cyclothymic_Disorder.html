@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Cyclothymique – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Cyclothymique – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Périodes nombreuses de symptômes hypomaniaques et dépressifs (≥2 ans)</legend>
+  <p class="subtitle">Pendant au moins 2 ans (1 an chez les enfants/adolescents), nombreuses périodes avec symptômes hypomaniaques ne remplissant PAS les critères d'un épisode hypomaniaque ET nombreuses périodes avec symptômes dépressifs ne remplissant PAS les critères d'un épisode dépressif majeur</p>
+  <div class="note-box">
+    <strong>Note :</strong> Les symptômes sont SOUS-SYNDROMIQUES (ne remplissent pas les critères complets d'un épisode).
+  </div>
+  <label><input type="checkbox" name="critereA" value="Durée d'au moins 2 ans (adultes)"/> Durée d'au moins 2 ans (adultes) ou 1 an (enfants/adolescents)</label>
+  <label><input type="checkbox" name="critereA" value="Nombreuses périodes avec symptômes hypomaniaques sous-syndromiques"/> Nombreuses périodes avec symptômes hypomaniaques sous-syndromiques</label>
+  <label><input type="checkbox" name="critereA" value="Nombreuses périodes avec symptômes dépressifs sous-syndromiques"/> Nombreuses périodes avec symptômes dépressifs sous-syndromiques</label>
+  <label><input type="checkbox" name="critereA" value="Les symptômes ne remplissent PAS les critères d'épisodes complets"/> Les symptômes ne remplissent PAS les critères d'épisodes hypomaniaques ou dépressifs majeurs complets</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Symptômes présents au moins la moitié du temps</legend>
+  <p class="subtitle">Pendant la période de 2 ans (1 an chez enfants/adolescents), les symptômes ont été présents au moins la moitié du temps et la personne n'a pas été sans symptômes pendant plus de 2 mois d'affilée</p>
+  <label><input type="checkbox" name="critereB" value="Symptômes présents au moins la moitié du temps"/> Symptômes présents au moins la moitié du temps</label>
+  <label><input type="checkbox" name="critereB" value="Pas sans symptômes pendant plus de 2 mois d'affilée"/> Pas sans symptômes pendant plus de 2 mois d'affilée</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Jamais d'épisode complet</legend>
+  <p class="subtitle">Les critères d'un épisode dépressif majeur, maniaque ou hypomaniaque n'ont JAMAIS été remplis</p>
+  <label><input type="checkbox" name="critereC" value="Jamais d'épisode dépressif majeur"/> Jamais d'épisode dépressif majeur</label>
+  <label><input type="checkbox" name="critereC" value="Jamais d'épisode maniaque"/> Jamais d'épisode maniaque</label>
+  <label><input type="checkbox" name="critereC" value="Jamais d'épisode hypomaniaque"/> Jamais d'épisode hypomaniaque</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Diagnostic différentiel</legend>
+  <p class="subtitle">Les symptômes ne sont pas mieux expliqués par d'autres troubles psychotiques</p>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un trouble schizo-affectif"/> Pas mieux expliqué par un trouble schizo-affectif</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par la schizophrénie"/> Pas mieux expliqué par la schizophrénie</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un trouble schizophréniforme"/> Pas mieux expliqué par un trouble schizophréniforme</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un trouble délirant"/> Pas mieux expliqué par un trouble délirant</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un autre trouble du spectre de la schizophrénie"/> Pas mieux expliqué par un autre trouble du spectre de la schizophrénie ou autre trouble psychotique</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Exclusion des causes organiques</legend>
+  <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une substance ou d'une affection médicale</p>
+  <label><input type="checkbox" name="critereE" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
+  <label><input type="checkbox" name="critereE" value="Pas attribuable à une affection médicale (hyperthyroïdie)"/> Pas attribuable à une affection médicale (ex: hyperthyroïdie)</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Détresse ou altération du fonctionnement</legend>
+  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
+  <label><input type="checkbox" name="critereF" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
+  <label><input type="checkbox" name="critereF" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
+  <label><input type="checkbox" name="critereF" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
+  <label><input type="checkbox" name="critereF" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
+  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+</fieldset>
+
+<!-- Spécificateur -->
+<fieldset id="specificateur" class="hidden">
+  <legend>Spécificateur (optionnel)</legend>
+  <p class="subtitle">Préciser si applicable</p>
+  <label><input type="checkbox" name="specificateur" value="Avec détresse anxieuse"/> Avec détresse anxieuse</label>
+  <button type="button" onclick="validerSpecificateur()">✔️ Valider le spécificateur</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let tousLesChoix = {
+  critereA: [],
+  critereB: [],
+  critereC: [],
+  critereD: [],
+  critereE: [],
+  critereF: [],
+  specificateur: []
+};
+
+function validerCritereA() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereA = choix;
+    document.getElementById("critereB").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereB() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereB = choix;
+    document.getElementById("critereC").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereC() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereC = choix;
+    document.getElementById("critereD").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereD() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereD = choix;
+    document.getElementById("critereE").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereE() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereE = choix;
+    document.getElementById("critereF").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère E.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereF() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereF']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereF = choix;
+    document.getElementById("specificateur").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère F.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerSpecificateur() {
+  const choix = Array.from(document.querySelectorAll("input[name='specificateur']:checked")).map(el => el.value);
+  tousLesChoix.specificateur = choix;
+  afficherResume();
+}
+
+function afficherResume() {
+  let html = "<div class='resultat-box'>";
+  html += "<div class='resume-section'>";
+  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
+  
+  html += "<h4>Critère A – Périodes nombreuses de symptômes (≥2 ans)</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère B – Symptômes présents au moins la moitié du temps</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère C – Jamais d'épisode complet</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère D – Diagnostic différentiel</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère E – Exclusion causes organiques</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereE.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère F – Détresse ou altération</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereF.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  if (tousLesChoix.specificateur.length > 0) {
+    html += "<h4>Spécificateur</h4>";
+    html += "<ul class='choix-list'>";
+    tousLesChoix.specificateur.forEach(s => html += "<li>✓ " + s + "</li>");
+    html += "</ul>";
+  }
+  
+  html += "<div class='code-section'>";
+  html += "<strong>Code diagnostique :</strong> F34.0<br/>";
+  html += "<strong>Diagnostic complet :</strong> F34.0 Trouble cyclothymique";
+  if (tousLesChoix.specificateur.length > 0) {
+    html += ", " + tousLesChoix.specificateur.join(", ").toLowerCase();
+  }
+  html += "</div>";
+  
+  html += "</div>";
+  
+  html += "<div class='boutons-validation'>";
+  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
+  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
+  html += "</div>";
+  html += "</div>";
+  
+  document.getElementById("resultat").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+}
+
+function validerFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+</body>
+</html>

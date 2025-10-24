@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Neurocognitif dû à Autre Affection Médicale – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Neurocognitif dû à une Autre Affection Médicale – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Critères du trouble neurocognitif majeur ou léger remplis</legend>
+  <p class="subtitle">Les critères sont remplis pour un trouble neurocognitif majeur ou léger</p>
+  <label><input type="radio" name="critereA" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
+  <label><input type="radio" name="critereA" value="Trouble neurocognitif léger"/> Trouble neurocognitif léger</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Preuves que le trouble est conséquence pathophysiologique d'une affection médicale</legend>
+  <p class="subtitle">Preuves issues de l'histoire, examen physique ou résultats de laboratoire</p>
+  <div class="note-box">
+    <strong>Exemples d'affections médicales :</strong> Sclérose en plaques, traumatisme crânien, maladie de Huntington, infection VIH, maladie de Parkinson, encéphalopathie hépatique, hypothyroïdie, déficience en vitamine B12, tumeur cérébrale, etc.
+  </div>
+  <label><input type="checkbox" name="critereB" value="Preuves de l'histoire"/> Preuves de l'histoire</label>
+  <label><input type="checkbox" name="critereB" value="Preuves de l'examen physique"/> Preuves de l'examen physique</label>
+  <label><input type="checkbox" name="critereB" value="Preuves des résultats de laboratoire"/> Preuves des résultats de laboratoire</label>
+  <label><input type="checkbox" name="critereB" value="Le trouble neurocognitif est conséquence pathophysiologique de l'affection médicale"/> Le trouble neurocognitif est conséquence pathophysiologique de l'affection médicale</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Diagnostic différentiel</legend>
+  <p class="subtitle">Les déficits cognitifs ne sont pas mieux expliqués par un autre trouble mental ou un autre trouble neurocognitif spécifique</p>
+  <label><input type="checkbox" name="critereC" value="Pas mieux expliqués par autre trouble mental (ex: trouble dépressif majeur)"/> Pas mieux expliqués par autre trouble mental (ex: trouble dépressif majeur)</label>
+  <label><input type="checkbox" name="critereC" value="Pas mieux expliqués par autre trouble neurocognitif spécifique (ex: Alzheimer)"/> Pas mieux expliqués par autre trouble neurocognitif spécifique (ex: trouble neurocognitif majeur dû à la maladie d'Alzheimer)</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Spécificateurs -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs et Affection Médicale</legend>
+  <p class="subtitle">Préciser l'affection médicale et les caractéristiques additionnelles</p>
+  
+  <p style="margin-top: 10px;"><strong>Affection médicale causale (exemples) :</strong></p>
+  <label><input type="radio" name="affection" value="Sclérose en plaques (G35)"/> Sclérose en plaques (G35)</label>
+  <label><input type="radio" name="affection" value="Traumatisme crânien"/> Traumatisme crânien</label>
+  <label><input type="radio" name="affection" value="Maladie de Huntington"/> Maladie de Huntington</label>
+  <label><input type="radio" name="affection" value="Infection VIH"/> Infection VIH</label>
+  <label><input type="radio" name="affection" value="Maladie de Parkinson"/> Maladie de Parkinson</label>
+  <label><input type="radio" name="affection" value="Encéphalopathie hépatique"/> Encéphalopathie hépatique</label>
+  <label><input type="radio" name="affection" value="Hypothyroïdie"/> Hypothyroïdie</label>
+  <label><input type="radio" name="affection" value="Déficience en vitamine B12"/> Déficience en vitamine B12</label>
+  <label><input type="radio" name="affection" value="Tumeur cérébrale"/> Tumeur cérébrale</label>
+  <label><input type="radio" name="affection" value="Autre affection médicale"/> Autre affection médicale (à spécifier)</label>
+  
+  <p style="margin-top: 15px;"><strong>Perturbation comportementale :</strong></p>
+  <label><input type="radio" name="comportement" value="Avec perturbation comportementale"/> Avec perturbation comportementale</label>
+  <label><input type="radio" name="comportement" value="Sans perturbation comportementale"/> Sans perturbation comportementale</label>
+  
+  <p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
+  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
+  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
+  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
+  <label><input type="radio" name="severite" value="Non applicable"/> Non applicable (trouble neurocognitif léger)</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB:[],critereC:[],affection:"",comportement:"",severite:""};
+
+function validerCritereA(){const c=document.querySelector("input[name='critereA']:checked");if(c){choix.critereA=c.value;document.getElementById("critereB").classList.remove("hidden")}else alert("Sélectionnez un type")}
+
+function validerCritereB(){const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);if(c.length>0){choix.critereB=c;document.getElementById("critereC").classList.remove("hidden")}else alert("Cochez au moins une option")}
+
+function validerCritereC(){const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);if(c.length>0){choix.critereC=c;document.getElementById("specificateurs").classList.remove("hidden")}else alert("Cochez au moins une option")}
+
+function afficherResume(){
+  const aff=document.querySelector("input[name='affection']:checked");
+  const comp=document.querySelector("input[name='comportement']:checked");
+  const sev=document.querySelector("input[name='severite']:checked");
+  if(!aff||!comp||!sev){Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez affection, comportement ET sévérité", confirmButtonColor: "#667eea"});return}
+  choix.affection=aff.value;
+  choix.comportement=comp.value;
+  choix.severite=sev.value;
+  genererResume();
+}
+
+function genererResume(){
+  let code="";
+  let diag="";
+  const isMajeur=choix.critereA==="Trouble neurocognitif majeur";
+  const avecComp=choix.comportement==="Avec perturbation comportementale";
+  
+  if(isMajeur){
+    const codeAff=choix.affection.includes("(G35)")?"G35":"[Code affection médicale]";
+    code=codeAff+" + "+(avecComp?"F02.81":"F02.80");
+    diag=code+" Trouble neurocognitif majeur dû à "+choix.affection.toLowerCase()+", "+choix.comportement.toLowerCase();
+  }else{
+    code="G31.84";
+    diag=code+" Trouble neurocognitif léger dû à "+choix.affection.toLowerCase()+", "+choix.comportement.toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  h+="<h4>Type de trouble</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  h+="<h4>Critère B – Preuves d'affection médicale</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
+  h+="<h4>Critère C – Diagnostic différentiel</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
+  h+="<h4>Affection médicale causale</h4><ul class='choix-list'><li>✓ "+choix.affection+"</li></ul>";
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'><li>✓ "+choix.comportement+"</li>";
+  if(isMajeur&&choix.severite!=="Non applicable")h+="<li>✓ Sévérité: "+choix.severite+"</li>";
+  h+="</ul>";
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  if(isMajeur&&choix.severite!=="Non applicable")h+=" (sévérité "+choix.severite.toLowerCase()+" - à enregistrer mais non codable)";
+  h+="<br/><br/><strong>Note de codage :</strong> Pour trouble majeur, coder d'abord l'affection médicale, puis le trouble neurocognitif. Pour trouble léger, utiliser uniquement G31.84.";
+  h+="</div></div>";
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble du Langage – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+    .sub-item {
+      margin-left: 20px;
+      padding: 8px;
+      background: #f9f9f9;
+      border-left: 3px solid #8cc63f;
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble du Langage – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Difficultés persistantes dans l'acquisition et l'utilisation du langage</legend>
+  <p class="subtitle">À travers les modalités (parlé, écrit, langue des signes ou autre) dues à des déficits en compréhension ou production incluant les éléments suivants</p>
+  <div class="warning-box">
+    ⚠️ LES 3 ÉLÉMENTS SUIVANTS DOIVENT ÊTRE PRÉSENTS
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="1. Vocabulaire réduit (connaissance et utilisation des mots)"/> <strong>1. Vocabulaire réduit</strong></label>
+  <div class="sub-item">
+    Connaissance et utilisation des mots réduites
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="2. Structure de phrase limitée (grammaire et morphologie)"/> <strong>2. Structure de phrase limitée</strong></label>
+  <div class="sub-item">
+    Capacité à assembler mots et terminaisons de mots pour former phrases selon règles de grammaire et morphologie
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="3. Altérations du discours (utilisation vocabulaire et connexion phrases)"/> <strong>3. Altérations du discours</strong></label>
+  <div class="sub-item">
+    Capacité à utiliser vocabulaire et connecter phrases pour expliquer/décrire un sujet ou série d'événements ou avoir une conversation
+  </div>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Capacités langagières substantiellement et quantifiablement en dessous de l'attendu</legend>
+  <p class="subtitle">Les capacités langagières sont substantiellement et quantifiablement en dessous de celles attendues pour l'âge, résultant en limitations fonctionnelles dans la communication efficace, participation sociale, réussite académique ou performance professionnelle, individuellement ou en toute combinaison</p>
+  <label><input type="checkbox" name="critereB" value="Limitations dans communication efficace"/> Limitations dans la communication efficace</label>
+  <label><input type="checkbox" name="critereB" value="Limitations dans participation sociale"/> Limitations dans la participation sociale</label>
+  <label><input type="checkbox" name="critereB" value="Limitations dans réussite académique"/> Limitations dans la réussite académique</label>
+  <label><input type="checkbox" name="critereB" value="Limitations dans performance professionnelle"/> Limitations dans la performance professionnelle</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Début précoce</legend>
+  <p class="subtitle">Le début des symptômes se situe dans la période développementale précoce</p>
+  <label><input type="checkbox" name="critereC" value="Début des symptômes dans période développementale précoce"/> Début des symptômes dans la période développementale précoce</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Exclusion d'autres causes</legend>
+  <p class="subtitle">Les difficultés ne sont pas attribuables à une altération auditive ou autre altération sensorielle, dysfonction motrice, autre condition médicale ou neurologique, et ne sont pas mieux expliquées par un trouble du développement intellectuel (déficience intellectuelle) ou retard global du développement</p>
+  <label><input type="checkbox" name="critereD" value="Non attribuables à altération auditive ou autre altération sensorielle"/> Non attribuables à altération auditive ou autre altération sensorielle</label>
+  <label><input type="checkbox" name="critereD" value="Non attribuables à dysfonction motrice"/> Non attribuables à dysfonction motrice</label>
+  <label><input type="checkbox" name="critereD" value="Non attribuables à autre condition médicale ou neurologique"/> Non attribuables à autre condition médicale ou neurologique</label>
+  <label><input type="checkbox" name="critereD" value="Non mieux expliquées par trouble développement intellectuel ou retard global"/> Non mieux expliquées par trouble du développement intellectuel (déficience intellectuelle) ou retard global du développement</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],critereC:"",critereD:[]};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length===3){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Les 3 éléments du critère A doivent être cochés", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=document.querySelector("input[name='critereC']:checked");
+  if(c){
+    choix.critereC=c.value;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Cochez l'option du critère C");
+}
+
+function afficherResume(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereD=c;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code="F80.9";
+  const diag=code+" Trouble du Langage";
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Difficultés persistantes dans acquisition/utilisation du langage (3/3 requis)</h4>";
+  if(choix.critereA.length===3)h+="<p style='color:green; font-weight:bold;'>✓ Critère rempli (3/3 éléments présents)</p>";
+  else h+="<p style='color:red; font-weight:bold;'>✗ Critère non rempli ("+choix.critereA.length+"/3 éléments)</p>";
+  h+="<ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Limitations fonctionnelles ("+choix.critereB.length+" domaine(s))</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Début précoce</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
+  
+  h+="<h4>Critère D – Exclusion d'autres causes</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Difficultés persistantes à travers les modalités (parlé, écrit, langue des signes ou autre) dues à déficits en compréhension ou production.";
+  h+="<br/><br/><strong>Critère A :</strong> Inclut vocabulaire réduit, structure de phrase limitée, et altérations du discours.";
+  h+="<br/><br/><strong>Critère B :</strong> Capacités langagières substantiellement et quantifiablement en dessous de l'attendu pour l'âge, causant limitations fonctionnelles.";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

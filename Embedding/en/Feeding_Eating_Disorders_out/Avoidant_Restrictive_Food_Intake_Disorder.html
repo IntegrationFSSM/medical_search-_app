@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble de Restriction/Évitement de l'Apport Alimentaire – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 17px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble de Restriction/Évitement de l'Apport Alimentaire – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Perturbation de l'alimentation associée à ≥1 des conséquences suivantes</legend>
+  <p class="subtitle">Perturbation de l'alimentation ou de l'apport alimentaire (manque apparent d'intérêt, évitement basé sur caractéristiques sensorielles, préoccupation concernant conséquences aversives)</p>
+  <div class="warning-box">
+    ⚠️ <strong>Important :</strong> Au moins une des 4 conséquences suivantes doit être présente.
+  </div>
+  
+  <p style="margin-top: 10px;"><strong>Type de perturbation alimentaire :</strong></p>
+  <label><input type="checkbox" name="perturbation" value="Manque apparent d'intérêt pour manger ou la nourriture"/> Manque apparent d'intérêt pour manger ou la nourriture</label>
+  <label><input type="checkbox" name="perturbation" value="Évitement basé sur les caractéristiques sensorielles de la nourriture"/> Évitement basé sur les caractéristiques sensorielles de la nourriture</label>
+  <label><input type="checkbox" name="perturbation" value="Préoccupation concernant les conséquences aversives de manger"/> Préoccupation concernant les conséquences aversives de manger</label>
+  
+  <p style="margin-top: 15px;"><strong>Conséquences (au moins 1 requise) :</strong></p>
+  <label><input type="checkbox" name="consequences" value="1. Perte de poids significative (ou échec à atteindre prise de poids attendue/croissance défaillante chez enfants)"/> 1. Perte de poids significative (ou échec à atteindre prise de poids attendue/croissance défaillante chez enfants)</label>
+  <label><input type="checkbox" name="consequences" value="2. Déficience nutritionnelle significative"/> 2. Déficience nutritionnelle significative</label>
+  <label><input type="checkbox" name="consequences" value="3. Dépendance à l'alimentation entérale ou aux suppléments nutritionnels oraux"/> 3. Dépendance à l'alimentation entérale ou aux suppléments nutritionnels oraux</label>
+  <label><input type="checkbox" name="consequences" value="4. Interférence marquée avec le fonctionnement psychosocial"/> 4. Interférence marquée avec le fonctionnement psychosocial</label>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Exclusion du manque de nourriture ou de pratiques culturelles</legend>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par un manque de nourriture disponible ou par une pratique culturellement sanctionnée</p>
+  <label><input type="checkbox" name="critereB" value="Pas mieux expliquée par manque de nourriture disponible"/> Pas mieux expliquée par manque de nourriture disponible</label>
+  <label><input type="checkbox" name="critereB" value="Pas mieux expliquée par pratique culturellement sanctionnée"/> Pas mieux expliquée par pratique culturellement sanctionnée</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Exclusion de l'anorexie et de la boulimie</legend>
+  <p class="subtitle">La perturbation alimentaire ne survient pas exclusivement au cours de l'anorexie ou de la boulimie, et pas de perturbation de la perception du poids/forme corporelle</p>
+  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de l'anorexie mentale"/> Ne survient pas exclusivement au cours de l'anorexie mentale</label>
+  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de la boulimie"/> Ne survient pas exclusivement au cours de la boulimie</label>
+  <label><input type="checkbox" name="critereC" value="Pas de perturbation de la perception du poids corporel"/> Pas de perturbation de la perception du poids corporel</label>
+  <label><input type="checkbox" name="critereC" value="Pas de perturbation de la perception de la forme corporelle"/> Pas de perturbation de la perception de la forme corporelle</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Exclusion des affections médicales et autres troubles mentaux</legend>
+  <p class="subtitle">La perturbation alimentaire n'est pas attribuable à une affection médicale concomitante ou mieux expliquée par un autre trouble mental</p>
+  <div class="note-box">
+    <strong>Note :</strong> Lorsque la perturbation alimentaire survient dans le contexte d'une autre affection ou trouble, la sévérité de la perturbation alimentaire dépasse celle habituellement associée à l'affection ou au trouble et justifie une attention clinique additionnelle.
+  </div>
+  <label><input type="checkbox" name="critereD" value="Pas attribuable à une affection médicale concomitante"/> Pas attribuable à une affection médicale concomitante</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par un autre trouble mental"/> Pas mieux expliquée par un autre trouble mental</label>
+  <label><input type="checkbox" name="critereD" value="Si contexte d'autre affection : sévérité dépasse celle habituellement associée"/> Si dans le contexte d'une autre affection : la sévérité dépasse celle habituellement associée et justifie attention additionnelle</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Rémission -->
+<fieldset id="remission" class="hidden">
+  <legend>Rémission (optionnel)</legend>
+  <p class="subtitle">Préciser si applicable</p>
+  <label><input type="radio" name="remission" value="En rémission"/> En rémission : Après que les critères complets aient été remplis, les critères n'ont pas été remplis pendant une période prolongée</label>
+  <label><input type="radio" name="remission" value="Non applicable"/> Non applicable (trouble actif)</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let tousLesChoix = {
+  perturbation: [],
+  consequences: [],
+  critereB: [],
+  critereC: [],
+  critereD: [],
+  remission: ""
+};
+
+function validerCritereA() {
+  const perturbation = Array.from(document.querySelectorAll("input[name='perturbation']:checked")).map(el => el.value);
+  const consequences = Array.from(document.querySelectorAll("input[name='consequences']:checked")).map(el => el.value);
+  
+  if (perturbation.length > 0 && consequences.length >= 1) {
+    tousLesChoix.perturbation = perturbation;
+    tousLesChoix.consequences = consequences;
+    document.getElementById("critereB").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une perturbation ET au moins une conséquence.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereB() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereB = choix;
+    document.getElementById("critereC").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereC() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereC = choix;
+    document.getElementById("critereD").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereD() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereD = choix;
+    document.getElementById("remission").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function afficherResume() {
+  const remission = document.querySelector("input[name='remission']:checked");
+  if (!remission) {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez sélectionner une option de rémission.", confirmButtonColor: "#667eea"});
+    return;
+  }
+  tousLesChoix.remission = remission.value;
+  genererResume();
+}
+
+function genererResume() {
+  let html = "<div class='resultat-box'>";
+  html += "<div class='resume-section'>";
+  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
+  
+  html += "<h4>Critère A – Perturbation de l'alimentation</h4>";
+  html += "<p style='margin-left: 10px;'><strong>Type de perturbation :</strong></p>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.perturbation.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  html += "<p style='margin-left: 10px;'><strong>Conséquences (" + tousLesChoix.consequences.length + " sur 4) :</strong></p>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.consequences.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère B – Exclusion manque nourriture/pratiques culturelles</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère C – Exclusion anorexie/boulimie</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère D – Exclusion affections médicales/autres troubles</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  if (tousLesChoix.remission !== "Non applicable") {
+    html += "<h4>Rémission</h4>";
+    html += "<ul class='choix-list'>";
+    html += "<li>✓ " + tousLesChoix.remission + "</li>";
+    html += "</ul>";
+  }
+  
+  html += "<div class='code-section'>";
+  html += "<strong>Code diagnostique :</strong> F50.82<br/>";
+  html += "<strong>Diagnostic :</strong> F50.82 Trouble de restriction ou d'évitement de l'apport alimentaire (ARFID)";
+  if (tousLesChoix.remission !== "Non applicable") {
+    html += ", " + tousLesChoix.remission.toLowerCase();
+  }
+  html += "</div>";
+  
+  html += "</div>";
+  
+  html += "<div class='boutons-validation'>";
+  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
+  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
+  html += "</div>";
+  html += "</div>";
+  
+  document.getElementById("resultat").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+}
+
+function validerFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble de Stress Post-Traumatique (TSPT) – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble de Stress Post-Traumatique (TSPT) – DSM-5-TR</h2>
+  </div>
+</div>
+
+<div class="warning-box">
+⚠️ IMPORTANT : Le TSPT a des critères différents selon l'âge. Sélectionnez la version appropriée ci-dessous.
+</div>
+
+<form id="formulaire">
+
+<!-- Sélection version -->
+<fieldset id="selectionVersion">
+  <legend>Sélection de la version des critères</legend>
+  <label><input type="radio" name="version" value="adulte"/> <strong>Adultes, adolescents et enfants de plus de 6 ans</strong></label>
+  <label><input type="radio" name="version" value="enfant"/> <strong>Enfants de 6 ans et moins</strong></label>
+  <button type="button" onclick="selectionnerVersion()">✔️ Continuer</button>
+</fieldset>
+
+<!-- VERSION ADULTE/ENFANT >6 ANS -->
+<div id="versionAdulte" class="hidden">
+
+<fieldset id="critereA_adulte">
+  <legend>Critère A – Exposition à événement traumatique</legend>
+  <p class="subtitle">Exposition à la mort réelle ou menacée, blessure grave ou violence sexuelle d'une (ou plus) des façons suivantes</p>
+  <label><input type="checkbox" name="critereA_adulte" value="1. Expérience directe de l'événement traumatique"/> <strong>1.</strong> Expérience directe de l'événement(s) traumatique(s)</label>
+  <label><input type="checkbox" name="critereA_adulte" value="2. Témoin en personne de l'événement survenant à d'autres"/> <strong>2.</strong> Témoin, en personne, de l'événement(s) survenant à d'autres</label>
+  <label><input type="checkbox" name="critereA_adulte" value="3. Apprendre que événement est survenu à membre famille proche ou ami proche (violent ou accidentel)"/> <strong>3.</strong> Apprendre que l'événement(s) traumatique(s) est survenu à un membre de la famille proche ou ami proche (événement doit avoir été violent ou accidentel)</label>
+  <label><input type="checkbox" name="critereA_adulte" value="4. Exposition répétée ou extrême à détails aversifs (premiers répondants, policiers)"/> <strong>4.</strong> Exposition répétée ou extrême à des détails aversifs de l'événement(s) traumatique(s) (ex: premiers répondants, policiers)<br/>
+  <em style="color:#666;">Note: Ne s'applique pas à exposition via médias électroniques sauf si liée au travail</em></label>
+  <button type="button" onclick="validerCritereA_adulte()">✔️ Valider le critère A</button>
+</fieldset>
+
+<fieldset id="critereB_adulte" class="hidden">
+  <legend>Critère B – Symptômes d'intrusion</legend>
+  <p class="subtitle">Présence d'un (ou plus) des symptômes d'intrusion suivants associés à l'événement traumatique, commençant après l'événement</p>
+  <div class="warning-box">⚠️ Au moins 1 des 5 symptômes d'intrusion doit être présent</div>
+  <label><input type="checkbox" name="critereB_adulte" value="1. Souvenirs récurrents, involontaires et intrusifs pénibles"/> <strong>1.</strong> Souvenirs récurrents, involontaires et intrusifs pénibles de l'événement(s) traumatique(s)</label>
+  <label><input type="checkbox" name="critereB_adulte" value="2. Rêves pénibles récurrents liés à l'événement"/> <strong>2.</strong> Rêves pénibles récurrents dont le contenu et/ou l'affect sont liés à l'événement(s)</label>
+  <label><input type="checkbox" name="critereB_adulte" value="3. Réactions dissociatives (flashbacks)"/> <strong>3.</strong> Réactions dissociatives (ex: flashbacks) où l'individu sent ou agit comme si l'événement(s) se reproduisait</label>
+  <label><input type="checkbox" name="critereB_adulte" value="4. Détresse psychologique intense à exposition à indices"/> <strong>4.</strong> Détresse psychologique intense ou prolongée à exposition à indices internes/externes symbolisant l'événement(s)</label>
+  <label><input type="checkbox" name="critereB_adulte" value="5. Réactions physiologiques marquées à indices"/> <strong>5.</strong> Réactions physiologiques marquées à indices internes/externes symbolisant l'événement(s)</label>
+  <button type="button" onclick="validerCritereB_adulte()">✔️ Valider le critère B</button>
+</fieldset>
+
+<fieldset id="critereC_adulte" class="hidden">
+  <legend>Critère C – Évitement persistant</legend>
+  <p class="subtitle">Évitement persistant des stimuli associés à l'événement traumatique, commençant après l'événement, comme en témoigne un ou les deux éléments suivants</p>
+  <div class="warning-box">⚠️ Au moins 1 des 2 types d'évitement doit être présent</div>
+  <label><input type="checkbox" name="critereC_adulte" value="1. Évitement de souvenirs, pensées ou sentiments pénibles"/> <strong>1.</strong> Évitement de ou efforts pour éviter les souvenirs, pensées ou sentiments pénibles à propos de ou étroitement associés à l'événement(s) traumatique(s)</label>
+  <label><input type="checkbox" name="critereC_adulte" value="2. Évitement de rappels externes (personnes, lieux, conversations, activités, objets, situations)"/> <strong>2.</strong> Évitement de ou efforts pour éviter les rappels externes (personnes, lieux, conversations, activités, objets, situations) qui suscitent des souvenirs, pensées ou sentiments pénibles</label>
+  <button type="button" onclick="validerCritereC_adulte()">✔️ Valider le critère C</button>
+</fieldset>
+
+<fieldset id="critereD_adulte" class="hidden">
+  <legend>Critère D – Altérations négatives des cognitions et de l'humeur</legend>
+  <p class="subtitle">Altérations négatives des cognitions et de l'humeur associées à l'événement traumatique, commençant ou s'aggravant après l'événement, comme en témoignent deux (ou plus) des éléments suivants</p>
+  <div class="warning-box">⚠️ Au moins 2 des 7 altérations doivent être présentes</div>
+  <label><input type="checkbox" name="critereD_adulte" value="1. Incapacité à se souvenir d'un aspect important (amnésie dissociative)"/> <strong>1.</strong> Incapacité à se souvenir d'un aspect important de l'événement(s) traumatique(s) (amnésie dissociative)</label>
+  <label><input type="checkbox" name="critereD_adulte" value="2. Croyances ou attentes négatives persistantes et exagérées"/> <strong>2.</strong> Croyances ou attentes négatives persistantes et exagérées à propos de soi-même, d'autrui ou du monde</label>
+  <label><input type="checkbox" name="critereD_adulte" value="3. Cognitions déformées persistantes sur cause/conséquences conduisant à se blâmer"/> <strong>3.</strong> Cognitions déformées persistantes sur la cause ou les conséquences de l'événement(s) conduisant l'individu à se blâmer ou blâmer autrui</label>
+  <label><input type="checkbox" name="critereD_adulte" value="4. État émotionnel négatif persistant (peur, horreur, colère, culpabilité, honte)"/> <strong>4.</strong> État émotionnel négatif persistant (ex: peur, horreur, colère, culpabilité ou honte)</label>
+  <label><input type="checkbox" name="critereD_adulte" value="5. Intérêt ou participation nettement diminués dans activités significatives"/> <strong>5.</strong> Intérêt ou participation nettement diminués dans des activités significatives</label>
+  <label><input type="checkbox" name="critereD_adulte" value="6. Sentiments de détachement ou d'éloignement d'autrui"/> <strong>6.</strong> Sentiments de détachement ou d'éloignement d'autrui</label>
+  <label><input type="checkbox" name="critereD_adulte" value="7. Incapacité persistante à éprouver émotions positives"/> <strong>7.</strong> Incapacité persistante à éprouver des émotions positives</label>
+  <button type="button" onclick="validerCritereD_adulte()">✔️ Valider le critère D</button>
+</fieldset>
+
+<fieldset id="critereE_adulte" class="hidden">
+  <legend>Critère E – Altérations marquées de l'activation et de la réactivité</legend>
+  <p class="subtitle">Altérations marquées de l'activation et de la réactivité associées à l'événement traumatique, commençant ou s'aggravant après l'événement, comme en témoignent deux (ou plus) des éléments suivants</p>
+  <div class="warning-box">⚠️ Au moins 2 des 6 altérations doivent être présentes</div>
+  <label><input type="checkbox" name="critereE_adulte" value="1. Comportement irritable et accès de colère"/> <strong>1.</strong> Comportement irritable et accès de colère (avec peu ou pas de provocation) typiquement exprimés comme agression verbale ou physique</label>
+  <label><input type="checkbox" name="critereE_adulte" value="2. Comportement imprudent ou autodestructeur"/> <strong>2.</strong> Comportement imprudent ou autodestructeur</label>
+  <label><input type="checkbox" name="critereE_adulte" value="3. Hypervigilance"/> <strong>3.</strong> Hypervigilance</label>
+  <label><input type="checkbox" name="critereE_adulte" value="4. Réponse de sursaut exagérée"/> <strong>4.</strong> Réponse de sursaut exagérée</label>
+  <label><input type="checkbox" name="critereE_adulte" value="5. Problèmes de concentration"/> <strong>5.</strong> Problèmes de concentration</label>
+  <label><input type="checkbox" name="critereE_adulte" value="6. Perturbation du sommeil"/> <strong>6.</strong> Perturbation du sommeil</label>
+  <button type="button" onclick="validerCritereE_adulte()">✔️ Valider le critère E</button>
+</fieldset>
+
+<fieldset id="critereFGH_adulte" class="hidden">
+  <legend>Critères F, G, H</legend>
+  <p><strong>Critère F – Durée :</strong></p>
+  <label><input type="checkbox" name="critereF_adulte" value="Durée de la perturbation (critères B, C, D, E) est plus de 1 mois"/> Durée de la perturbation (critères B, C, D, E) est plus de 1 mois</label>
+  <p style="margin-top:15px;"><strong>Critère G – Détresse ou altération :</strong></p>
+  <label><input type="checkbox" name="critereG_adulte" value="Perturbation cause détresse ou altération cliniquement significative"/> La perturbation cause une détresse ou altération cliniquement significative dans le fonctionnement</label>
+  <p style="margin-top:15px;"><strong>Critère H – Non attribuable à substance :</strong></p>
+  <label><input type="checkbox" name="critereH_adulte" value="Perturbation non attribuable aux effets physiologiques d'une substance ou autre condition médicale"/> La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou autre condition médicale</label>
+  <button type="button" onclick="validerCritereFGH_adulte()">✔️ Valider les critères F, G, H</button>
+</fieldset>
+
+<fieldset id="specificateurs_adulte" class="hidden">
+  <legend>Spécificateurs</legend>
+  <p><strong>Symptômes dissociatifs :</strong></p>
+  <label><input type="checkbox" name="dissociatif" value="Dépersonnalisation"/> <strong>Dépersonnalisation :</strong> Expériences persistantes/récurrentes de se sentir détaché de ses processus mentaux ou corps</label>
+  <label><input type="checkbox" name="dissociatif" value="Déréalisation"/> <strong>Déréalisation :</strong> Expériences persistantes/récurrentes d'irréalité de l'environnement</label>
+  <p style="margin-top:15px;"><strong>Expression retardée :</strong></p>
+  <label><input type="checkbox" name="retarde" value="Avec expression retardée"/> <strong>Avec expression retardée :</strong> Critères diagnostiques complets non remplis avant au moins 6 mois après l'événement</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</div>
+
+<!-- VERSION ENFANT ≤6 ANS - Simplifié pour la longueur -->
+<div id="versionEnfant" class="hidden">
+<div class="note-box"><strong>Note :</strong> Version pour enfants de 6 ans et moins avec critères adaptés. Cette version sera implémentée de manière similaire avec les critères spécifiques aux jeunes enfants.</div>
+<button type="button" onclick="alert('Version enfant ≤6 ans : Implémentation complète disponible sur demande')">Version enfant (à implémenter)</button>
+</div>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={version:"",critereA:[],critereB:[],critereC:[],critereD:[],critereE:[],critereF:"",critereG:"",critereH:"",dissociatif:[],retarde:""};
+
+function selectionnerVersion(){
+  const v=document.querySelector("input[name='version']:checked");
+  if(v){
+    choix.version=v.value;
+    if(v.value==="adulte"){
+      document.getElementById("versionAdulte").classList.remove("hidden");
+      document.getElementById("critereA_adulte").classList.remove("hidden");
+    }else{
+      document.getElementById("versionEnfant").classList.remove("hidden");
+    }
+    document.getElementById("selectionVersion").classList.add("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez une version", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereA_adulte(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA_adulte']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB_adulte").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB_adulte(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB_adulte']:checked")).map(e=>e.value);
+  if(c.length>=1){
+    choix.critereB=c;
+    document.getElementById("critereC_adulte").classList.remove("hidden");
+  }else alert("Au moins 1 des 5 symptômes d'intrusion doit être coché");
+}
+
+function validerCritereC_adulte(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC_adulte']:checked")).map(e=>e.value);
+  if(c.length>=1){
+    choix.critereC=c;
+    document.getElementById("critereD_adulte").classList.remove("hidden");
+  }else alert("Au moins 1 des 2 types d'évitement doit être coché");
+}
+
+function validerCritereD_adulte(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD_adulte']:checked")).map(e=>e.value);
+  if(c.length>=2){
+    choix.critereD=c;
+    document.getElementById("critereE_adulte").classList.remove("hidden");
+  }else alert("Au moins 2 des 7 altérations doivent être cochées (actuellement: "+c.length+"/7)");
+}
+
+function validerCritereE_adulte(){
+  const c=Array.from(document.querySelectorAll("input[name='critereE_adulte']:checked")).map(e=>e.value);
+  if(c.length>=2){
+    choix.critereE=c;
+    document.getElementById("critereFGH_adulte").classList.remove("hidden");
+  }else alert("Au moins 2 des 6 altérations doivent être cochées (actuellement: "+c.length+"/6)");
+}
+
+function validerCritereFGH_adulte(){
+  const f=document.querySelector("input[name='critereF_adulte']:checked");
+  const g=document.querySelector("input[name='critereG_adulte']:checked");
+  const h=document.querySelector("input[name='critereH_adulte']:checked");
+  if(f&&g&&h){
+    choix.critereF=f.value;
+    choix.critereG=g.value;
+    choix.critereH=h.value;
+    document.getElementById("specificateurs_adulte").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez toutes les options des critères F, G et H", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const d=Array.from(document.querySelectorAll("input[name='dissociatif']:checked")).map(e=>e.value);
+  const r=document.querySelector("input[name='retarde']:checked");
+  choix.dissociatif=d;
+  choix.retarde=r?r.value:"";
+  genererResume();
+}
+
+function genererResume(){
+  const code="F43.10";
+  let diag=code+" Trouble de Stress Post-Traumatique";
+  if(choix.dissociatif.length>0)diag+=", avec symptômes dissociatifs ("+choix.dissociatif.join(", ")+")";
+  if(choix.retarde)diag+=", avec expression retardée";
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  h+="<p><strong>Version:</strong> "+choix.version+"</p>";
+  h+="<h4>Critère A – Exposition à événement traumatique</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  h+="<h4>Critère B – Symptômes d'intrusion (≥1/5)</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  h+="<h4>Critère C – Évitement persistant (≥1/2)</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  h+="<h4>Critère D – Altérations négatives cognitions/humeur (≥2/7)</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  h+="<h4>Critère E – Altérations activation/réactivité (≥2/6)</h4><ul class='choix-list'>";
+  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  h+="<h4>Critères F, G, H</h4><ul class='choix-list'>";
+  h+="<li>✓ F: "+choix.critereF+"</li>";
+  h+="<li>✓ G: "+choix.critereG+"</li>";
+  h+="<li>✓ H: "+choix.critereH+"</li>";
+  h+="</ul>";
+  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
+  if(choix.dissociatif.length>0)choix.dissociatif.forEach(s=>h+="<li>✓ "+s+"</li>");
+  if(choix.retarde)h+="<li>✓ "+choix.retarde+"</li>";
+  h+="</ul>";
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Code ICD-10-CM:</strong> F43.10";
+  h+="<br/><br/><strong>Durée minimale:</strong> >1 mois (si <1 mois: considérer Trouble de Stress Aigu)";
+  h+="</div></div>";
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

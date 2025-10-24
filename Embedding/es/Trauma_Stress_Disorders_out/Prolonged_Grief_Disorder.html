@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble du Deuil Prolongé – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble du Deuil Prolongé – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Décès d'une personne proche</legend>
+  <p class="subtitle">Le décès, il y a au moins 12 mois (pour enfants et adolescents, au moins 6 mois), d'une personne qui était proche de l'individu endeuillé</p>
+  <div class="warning-box">
+    ⚠️ Adultes: ≥12 mois | Enfants/Adolescents: ≥6 mois
+  </div>
+  <label><input type="checkbox" name="critereA" value="Décès d'une personne proche il y a au moins 12 mois (adultes) ou 6 mois (enfants/adolescents)"/> Décès d'une personne proche il y a au moins 12 mois (adultes) ou 6 mois (enfants/adolescents)</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Réponse de deuil persistante</legend>
+  <p class="subtitle">Depuis le décès, développement d'une réponse de deuil persistante caractérisée par un ou les deux symptômes suivants, présents la plupart des jours à un degré cliniquement significatif. De plus, le(s) symptôme(s) est survenu presque chaque jour durant au moins le dernier mois</p>
+  <div class="warning-box">
+    ⚠️ Au moins 1 des 2 symptômes doit être présent (presque chaque jour durant le dernier mois)
+  </div>
+  <label><input type="checkbox" name="critereB" value="1. Désir intense/nostalgie de la personne décédée"/> <strong>1.</strong> Désir intense/nostalgie de la personne décédée</label>
+  <label><input type="checkbox" name="critereB" value="2. Préoccupation avec pensées ou souvenirs de la personne décédée"/> <strong>2.</strong> Préoccupation avec pensées ou souvenirs de la personne décédée<br/>
+  <em style="color:#666;">Note: Chez enfants/adolescents, préoccupation peut porter sur circonstances du décès</em></label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Symptômes additionnels</legend>
+  <p class="subtitle">Depuis le décès, au moins trois des symptômes suivants ont été présents la plupart des jours à un degré cliniquement significatif. De plus, les symptômes sont survenus presque chaque jour durant au moins le dernier mois</p>
+  <div class="warning-box">
+    ⚠️ Au moins 3 des 8 symptômes doivent être présents (presque chaque jour durant le dernier mois)
+  </div>
+  
+  <label><input type="checkbox" name="critereC" value="1. Perturbation de l'identité (sentiment qu'une partie de soi est morte)"/> <strong>1.</strong> Perturbation de l'identité (ex: sentiment qu'une partie de soi est morte) depuis le décès</label>
+  
+  <label><input type="checkbox" name="critereC" value="2. Sens marqué d'incrédulité à propos du décès"/> <strong>2.</strong> Sens marqué d'incrédulité à propos du décès</label>
+  
+  <label><input type="checkbox" name="critereC" value="3. Évitement de rappels que la personne est morte"/> <strong>3.</strong> Évitement de rappels que la personne est morte<br/>
+  <em style="color:#666;">Note: Chez enfants/adolescents, peut être caractérisé par efforts pour éviter rappels</em></label>
+  
+  <label><input type="checkbox" name="critereC" value="4. Douleur émotionnelle intense (colère, amertume, chagrin) liée au décès"/> <strong>4.</strong> Douleur émotionnelle intense (ex: colère, amertume, chagrin) liée au décès</label>
+  
+  <label><input type="checkbox" name="critereC" value="5. Difficulté à se réintégrer dans relations et activités après le décès"/> <strong>5.</strong> Difficulté à se réintégrer dans ses relations et activités après le décès (ex: problèmes à s'engager avec amis, poursuivre intérêts ou planifier l'avenir)</label>
+  
+  <label><input type="checkbox" name="critereC" value="6. Engourdissement émotionnel (absence ou réduction marquée de l'expérience émotionnelle) résultant du décès"/> <strong>6.</strong> Engourdissement émotionnel (absence ou réduction marquée de l'expérience émotionnelle) résultant du décès</label>
+  
+  <label><input type="checkbox" name="critereC" value="7. Sentiment que la vie est dénuée de sens résultant du décès"/> <strong>7.</strong> Sentiment que la vie est dénuée de sens résultant du décès</label>
+  
+  <label><input type="checkbox" name="critereC" value="8. Solitude intense résultant du décès"/> <strong>8.</strong> Solitude intense résultant du décès</label>
+  
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Détresse ou altération cliniquement significative</legend>
+  <p class="subtitle">La perturbation cause une détresse ou altération cliniquement significative dans le fonctionnement</p>
+  <label><input type="checkbox" name="critereD" value="Perturbation cause détresse ou altération cliniquement significative dans fonctionnement social, professionnel ou autres domaines importants"/> La perturbation cause une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Durée et sévérité excèdent normes attendues</legend>
+  <p class="subtitle">La durée et la sévérité de la réaction de deuil excèdent clairement les normes sociales, culturelles ou religieuses attendues pour la culture et le contexte de l'individu</p>
+  <label><input type="checkbox" name="critereE" value="Durée et sévérité de la réaction de deuil excèdent clairement normes sociales, culturelles ou religieuses attendues"/> La durée et la sévérité de la réaction de deuil excèdent clairement les normes sociales, culturelles ou religieuses attendues pour la culture et le contexte de l'individu</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Non mieux expliqué par autre trouble</legend>
+  <p class="subtitle">Les symptômes ne sont pas mieux expliqués par un autre trouble mental et ne sont pas attribuables aux effets physiologiques d'une substance ou autre condition médicale</p>
+  <label><input type="checkbox" name="critereF" value="Symptômes non mieux expliqués par autre trouble mental (dépression majeure, TSPT)"/> Les symptômes ne sont pas mieux expliqués par un autre trouble mental (ex: trouble dépressif majeur, trouble de stress post-traumatique)</label>
+  <label><input type="checkbox" name="critereF" value="Non attribuables aux effets physiologiques d'une substance ou autre condition médicale"/> Ne sont pas attribuables aux effets physiologiques d'une substance (ex: médicament, alcool) ou autre condition médicale</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB:[],critereC:[],critereD:"",critereE:"",critereF:[]};
+
+function validerCritereA(){
+  const c=document.querySelector("input[name='critereA']:checked");
+  if(c){
+    choix.critereA=c.value;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Cochez l'option du critère A");
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>=1){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Au moins 1 des 2 symptômes doit être coché", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>=3){
+    choix.critereC=c;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else alert("Au moins 3 des 8 symptômes doivent être cochés (actuellement: "+c.length+"/8)");
+}
+
+function validerCritereD(){
+  const c=document.querySelector("input[name='critereD']:checked");
+  if(c){
+    choix.critereD=c.value;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else alert("Cochez l'option du critère D");
+}
+
+function validerCritereE(){
+  const c=document.querySelector("input[name='critereE']:checked");
+  if(c){
+    choix.critereE=c.value;
+    document.getElementById("critereF").classList.remove("hidden");
+  }else alert("Cochez l'option du critère E");
+}
+
+function afficherResume(){
+  const c=Array.from(document.querySelectorAll("input[name='critereF']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereF=c;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère F", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code="F43.8";
+  const nbSymptomesB=choix.critereB.length;
+  const nbSymptomesC=choix.critereC.length;
+  
+  let diag=code+" Trouble du Deuil Prolongé ("+nbSymptomesB+" symptôme(s) critère B + "+nbSymptomesC+" symptômes critère C)";
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Décès d'une personne proche</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  
+  h+="<h4>Critère B – Réponse de deuil persistante (≥1/2)</h4>";
+  h+="<p><strong>Nombre de symptômes: "+nbSymptomesB+"/2</strong></p>";
+  h+="<ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Symptômes additionnels (≥3/8)</h4>";
+  h+="<p><strong>Nombre de symptômes: "+nbSymptomesC+"/8</strong></p>";
+  h+="<ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère D – Détresse ou altération cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
+  
+  h+="<h4>Critère E – Durée et sévérité excèdent normes attendues</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
+  
+  h+="<h4>Critère F – Non mieux expliqué par autre trouble</h4><ul class='choix-list'>";
+  choix.critereF.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Trouble du deuil prolongé avec réponse de deuil persistante excédant normes culturelles attendues.";
+  h+="<br/><br/><strong>Critère A :</strong> Décès d'une personne proche il y a:";
+  h+="<br/>• Adultes: ≥12 mois";
+  h+="<br/>• Enfants/Adolescents: ≥6 mois";
+  h+="<br/><br/><strong>Critère B :</strong> ≥1 des symptômes suivants (presque chaque jour durant dernier mois):";
+  h+="<br/>1. Désir intense/nostalgie de la personne décédée";
+  h+="<br/>2. Préoccupation avec pensées/souvenirs de la personne décédée";
+  h+="<br/><br/><strong>Critère C :</strong> ≥3 des symptômes suivants (presque chaque jour durant dernier mois):";
+  h+="<br/>1. Perturbation de l'identité";
+  h+="<br/>2. Incrédulité à propos du décès";
+  h+="<br/>3. Évitement de rappels";
+  h+="<br/>4. Douleur émotionnelle intense";
+  h+="<br/>5. Difficulté à se réintégrer";
+  h+="<br/>6. Engourdissement émotionnel";
+  h+="<br/>7. Vie dénuée de sens";
+  h+="<br/>8. Solitude intense";
+  h+="<br/><br/><strong>Critère D :</strong> Détresse ou altération cliniquement significative.";
+  h+="<br/><br/><strong>Critère E :</strong> Durée/sévérité excèdent normes culturelles attendues.";
+  h+="<br/><br/><strong>Critère F :</strong> Non mieux expliqué par autre trouble mental et non attribuable à substance/condition médicale.";
+  h+="<br/><br/><strong>Codage ICD-10-CM :</strong>";
+  h+="<br/>• <strong>F43.8</strong> : Trouble du Deuil Prolongé";
+  h+="<br/><br/><strong>Temporalité critique :</strong>";
+  h+="<br/>• Adultes: Diagnostic possible seulement si ≥12 mois après décès";
+  h+="<br/>• Enfants/Adolescents: Diagnostic possible seulement si ≥6 mois après décès";
+  h+="<br/>• Symptômes doivent être présents presque chaque jour durant dernier mois";
+  h+="<br/><br/><strong>Différence avec deuil normal :</strong>";
+  h+="<br/>• <strong>Deuil normal:</strong> Diminue avec le temps, n'altère pas fonctionnement de façon persistante";
+  h+="<br/>• <strong>Deuil prolongé:</strong> Persistant, intense, altère fonctionnement, excède normes culturelles";
+  h+="<br/><br/><strong>Différence avec dépression majeure :</strong>";
+  h+="<br/>• <strong>Deuil prolongé:</strong> Centré sur la perte, désir/nostalgie prédominants";
+  h+="<br/>• <strong>Dépression:</strong> Humeur dépressive généralisée, anhédonie";
+  h+="<br/>• Peuvent coexister";
+  h+="<br/><br/><strong>Différence avec TSPT :</strong>";
+  h+="<br/>• <strong>Deuil prolongé:</strong> Centré sur la perte et séparation";
+  h+="<br/>• <strong>TSPT:</strong> Centré sur le trauma et menace";
+  h+="<br/>• Peuvent coexister si décès traumatique";
+  h+="<br/><br/><strong>Considérations culturelles :</strong>";
+  h+="<br/>• Normes de deuil varient considérablement selon cultures";
+  h+="<br/>• Durée attendue du deuil varie";
+  h+="<br/>• Expressions du deuil varient";
+  h+="<br/>• Évaluation doit tenir compte du contexte culturel";
+  h+="<br/><br/><strong>Symptômes caractéristiques :</strong>";
+  h+="<br/>• <strong>Désir intense:</strong> Nostalgie persistante de la personne";
+  h+="<br/>• <strong>Préoccupation:</strong> Pensées envahissantes";
+  h+="<br/>• <strong>Perturbation identité:</strong> Sentiment de perte de soi";
+  h+="<br/>• <strong>Incrédulité:</strong> Difficulté à accepter la réalité";
+  h+="<br/>• <strong>Évitement:</strong> Des rappels du décès";
+  h+="<br/>• <strong>Douleur émotionnelle:</strong> Colère, amertume, chagrin";
+  h+="<br/>• <strong>Difficulté réintégration:</strong> Retrait social, perte d'intérêts";
+  h+="<br/>• <strong>Engourdissement:</strong> Détachement émotionnel";
+  h+="<br/>• <strong>Perte de sens:</strong> Vie perçue comme vide";
+  h+="<br/>• <strong>Solitude:</strong> Sentiment d'isolement profond";
+  h+="<br/><br/><strong>Traitement :</strong>";
+  h+="<br/>• Thérapie centrée sur le deuil compliqué";
+  h+="<br/>• Thérapie cognitivo-comportementale";
+  h+="<br/>• Groupes de soutien pour endeuillés";
+  h+="<br/>• Médicaments si dépression/anxiété comorbides";
+  h+="<br/>• Intervention précoce peut prévenir chronicisation";
+  h+="<br/><br/><strong>Facteurs de risque :</strong>";
+  h+="<br/>• Décès soudain ou traumatique";
+  h+="<br/>• Relation très proche avec le défunt";
+  h+="<br/>• Dépendance envers le défunt";
+  h+="<br/>• Pertes multiples";
+  h+="<br/>• Manque de support social";
+  h+="<br/>• Troubles mentaux préexistants";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Amnésie Dissociative – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de l'Amnésie Dissociative – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Incapacité à se rappeler des informations autobiographiques importantes</legend>
+  <p class="subtitle">Habituellement de nature traumatique ou stressante, incompatible avec l'oubli ordinaire</p>
+  <div class="note-box">
+    <strong>Note :</strong> L'amnésie dissociative consiste le plus souvent en une amnésie localisée ou sélective pour un ou des événements spécifiques ; ou une amnésie généralisée pour l'identité et l'histoire de vie.
+  </div>
+  <label><input type="checkbox" name="critereA" value="Incapacité à se rappeler des informations autobiographiques importantes"/> Incapacité à se rappeler des informations autobiographiques importantes</label>
+  <label><input type="checkbox" name="critereA" value="Informations habituellement de nature traumatique ou stressante"/> Informations habituellement de nature traumatique ou stressante</label>
+  <label><input type="checkbox" name="critereA" value="Incompatible avec l'oubli ordinaire"/> Incompatible avec l'oubli ordinaire</label>
+  <label><input type="checkbox" name="critereA" value="Amnésie localisée ou sélective pour événement(s) spécifique(s)"/> Amnésie localisée ou sélective pour événement(s) spécifique(s)</label>
+  <label><input type="checkbox" name="critereA" value="Amnésie généralisée pour identité et histoire de vie"/> Amnésie généralisée pour identité et histoire de vie</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Détresse ou altération du fonctionnement</legend>
+  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
+  <label><input type="checkbox" name="critereB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
+  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
+  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
+  <label><input type="checkbox" name="critereB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Exclusion des causes organiques</legend>
+  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection neurologique/médicale</p>
+  <label><input type="checkbox" name="critereC" value="Pas attribuable à l'alcool"/> Pas attribuable à l'alcool</label>
+  <label><input type="checkbox" name="critereC" value="Pas attribuable à une drogue"/> Pas attribuable à une drogue</label>
+  <label><input type="checkbox" name="critereC" value="Pas attribuable à un médicament"/> Pas attribuable à un médicament</label>
+  <label><input type="checkbox" name="critereC" value="Pas attribuable à des crises partielles complexes"/> Pas attribuable à des crises partielles complexes</label>
+  <label><input type="checkbox" name="critereC" value="Pas attribuable à une amnésie globale transitoire"/> Pas attribuable à une amnésie globale transitoire</label>
+  <label><input type="checkbox" name="critereC" value="Pas attribuable à séquelles de traumatisme crânien fermé/lésion cérébrale traumatique"/> Pas attribuable à séquelles de traumatisme crânien fermé/lésion cérébrale traumatique</label>
+  <label><input type="checkbox" name="critereC" value="Pas attribuable à autre affection neurologique"/> Pas attribuable à autre affection neurologique</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Diagnostic différentiel</legend>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par d'autres troubles</p>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble de l'identité dissociative"/> Pas mieux expliquée par trouble de l'identité dissociative</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble de stress post-traumatique"/> Pas mieux expliquée par trouble de stress post-traumatique</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble de stress aigu"/> Pas mieux expliquée par trouble de stress aigu</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble à symptomatologie somatique"/> Pas mieux expliquée par trouble à symptomatologie somatique</label>
+  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble neurocognitif majeur ou léger"/> Pas mieux expliquée par trouble neurocognitif majeur ou léger</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Spécificateur Fugue -->
+<fieldset id="fugue" class="hidden">
+  <legend>Spécificateur : Avec fugue dissociative (optionnel)</legend>
+  <p class="subtitle">Voyage apparemment intentionnel ou errance déconcertée associée à une amnésie pour l'identité ou d'autres informations autobiographiques importantes</p>
+  <label><input type="checkbox" name="fugue" value="Voyage apparemment intentionnel"/> Voyage apparemment intentionnel</label>
+  <label><input type="checkbox" name="fugue" value="Errance déconcertée"/> Errance déconcertée</label>
+  <label><input type="checkbox" name="fugue" value="Associée à amnésie pour l'identité"/> Associée à amnésie pour l'identité</label>
+  <label><input type="checkbox" name="fugue" value="Associée à amnésie pour autres informations autobiographiques importantes"/> Associée à amnésie pour autres informations autobiographiques importantes</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let tousLesChoix = {
+  critereA: [],
+  critereB: [],
+  critereC: [],
+  critereD: [],
+  fugue: []
+};
+
+function validerCritereA() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereA = choix;
+    document.getElementById("critereB").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereB() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereB = choix;
+    document.getElementById("critereC").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereC() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereC = choix;
+    document.getElementById("critereD").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereD() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereD = choix;
+    document.getElementById("fugue").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function afficherResume() {
+  tousLesChoix.fugue = Array.from(document.querySelectorAll("input[name='fugue']:checked")).map(el => el.value);
+  genererResume();
+}
+
+function genererResume() {
+  const avecFugue = tousLesChoix.fugue.length > 0;
+  const code = avecFugue ? "F44.1" : "F44.0";
+  
+  let html = "<div class='resultat-box'>";
+  html += "<div class='resume-section'>";
+  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
+  
+  html += "<h4>Critère A – Incapacité à se rappeler des informations autobiographiques</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère B – Détresse ou altération du fonctionnement</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère C – Exclusion des causes organiques</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère D – Diagnostic différentiel</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  if (avecFugue) {
+    html += "<h4>Spécificateur : Avec fugue dissociative</h4>";
+    html += "<ul class='choix-list'>";
+    tousLesChoix.fugue.forEach(s => html += "<li>✓ " + s + "</li>");
+    html += "</ul>";
+  }
+  
+  html += "<div class='code-section'>";
+  html += "<strong>Code diagnostique :</strong> " + code + "<br/>";
+  html += "<strong>Diagnostic :</strong> " + code + " Amnésie dissociative";
+  if (avecFugue) {
+    html += ", avec fugue dissociative";
+  }
+  html += "</div>";
+  
+  html += "</div>";
+  
+  html += "<div class='boutons-validation'>";
+  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
+  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
+  html += "</div>";
+  html += "</div>";
+  
+  document.getElementById("resultat").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+}
+
+function validerFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+</body>
+</html>

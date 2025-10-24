@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Intoxication à une Autre Substance (ou Inconnue) – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de l'Intoxication à une Autre Substance (ou Inconnue) – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Développement d'un syndrome réversible spécifique à la substance</legend>
+  <p class="subtitle">Le développement d'un syndrome réversible spécifique à la substance attribuable à l'ingestion récente de (ou exposition à) une substance qui n'est pas listée ailleurs ou est inconnue</p>
+  <div class="note-box">
+    <strong>Note :</strong> Cette catégorie s'applique aux substances non couvertes par les autres catégories (alcool, cannabis, hallucinogènes, inhalants, opioïdes, sédatifs, stimulants, tabac) ou lorsque la substance est inconnue.
+  </div>
+  <label><input type="checkbox" name="critereA" value="Développement d'un syndrome réversible spécifique à la substance"/> Développement d'un syndrome réversible spécifique à la substance</label>
+  <label><input type="checkbox" name="critereA" value="Attribuable à ingestion récente de (ou exposition à) substance non listée ailleurs ou inconnue"/> Attribuable à l'ingestion récente de (ou exposition à) une substance qui n'est pas listée ailleurs ou est inconnue</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Changements comportementaux ou psychologiques problématiques</legend>
+  <p class="subtitle">Changements comportementaux ou psychologiques problématiques cliniquement significatifs attribuables à l'effet de la substance sur le système nerveux central, qui se développent durant, ou peu après, l'usage de la substance</p>
+  <label><input type="checkbox" name="critereB" value="Changements comportementaux ou psychologiques problématiques cliniquement significatifs"/> Changements comportementaux ou psychologiques problématiques cliniquement significatifs</label>
+  <label><input type="checkbox" name="critereB" value="Attribuables à effet de la substance sur système nerveux central"/> Attribuables à l'effet de la substance sur le système nerveux central</label>
+  <label><input type="checkbox" name="critereB" value="Développés durant, ou peu après, usage de la substance"/> Développés durant, ou peu après, l'usage de la substance</label>
+  
+  <p style="margin-top: 10px;"><strong>Exemples de changements :</strong></p>
+  <label><input type="checkbox" name="exempleB" value="Coordination motrice altérée"/> Coordination motrice altérée</label>
+  <label><input type="checkbox" name="exempleB" value="Agitation psychomotrice"/> Agitation psychomotrice</label>
+  <label><input type="checkbox" name="exempleB" value="Retard psychomoteur"/> Retard psychomoteur</label>
+  <label><input type="checkbox" name="exempleB" value="Euphorie"/> Euphorie</label>
+  <label><input type="checkbox" name="exempleB" value="Anxiété"/> Anxiété</label>
+  <label><input type="checkbox" name="exempleB" value="Belligérance"/> Belligérance</label>
+  <label><input type="checkbox" name="exempleB" value="Labilité de l'humeur"/> Labilité de l'humeur</label>
+  <label><input type="checkbox" name="exempleB" value="Altération cognitive"/> Altération cognitive</label>
+  <label><input type="checkbox" name="exempleB" value="Jugement altéré"/> Jugement altéré</label>
+  <label><input type="checkbox" name="exempleB" value="Retrait social"/> Retrait social</label>
+  
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Non attribuable à autre condition</legend>
+  <p class="subtitle">Les signes ou symptômes ne sont pas attribuables à une autre condition médicale et ne sont pas mieux expliqués par un autre trouble mental</p>
+  <label><input type="checkbox" name="critereC" value="Signes ou symptômes non attribuables à autre condition médicale"/> Les signes ou symptômes ne sont pas attribuables à une autre condition médicale</label>
+  <label><input type="checkbox" name="critereC" value="Non mieux expliqués par autre trouble mental, incluant intoxication avec autre substance"/> Ne sont pas mieux expliqués par un autre trouble mental, incluant intoxication avec une autre substance</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Spécificateurs et comorbidité -->
+<fieldset id="specificateurs" class="hidden">
+  <legend>Spécificateurs et comorbidité</legend>
+  
+  <p style="margin-top: 10px;"><strong>Perturbations perceptuelles :</strong></p>
+  <label><input type="checkbox" name="perceptuel" value="Avec perturbations perceptuelles"/> <strong>Avec perturbations perceptuelles :</strong> Ce spécificateur peut être noté quand des hallucinations avec test de réalité intact ou des illusions auditives, visuelles ou tactiles surviennent en l'absence de delirium</label>
+  
+  <p style="margin-top: 15px;"><strong>Trouble d'usage d'autre substance (ou inconnue) comorbide :</strong></p>
+  <div class="warning-box">
+    ⚠️ Le code ICD-10-CM dépend de la comorbidité ET des perturbations perceptuelles
+  </div>
+  <label><input type="radio" name="comorbidite" value="Sans trouble d'usage d'autre substance"/> <strong>Sans trouble d'usage d'autre substance (ou inconnue) comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'autre substance léger"/> <strong>Avec trouble d'usage d'autre substance (ou inconnue) léger comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'autre substance modéré"/> <strong>Avec trouble d'usage d'autre substance (ou inconnue) modéré comorbide</strong></label>
+  <label><input type="radio" name="comorbidite" value="Avec trouble d'usage d'autre substance sévère"/> <strong>Avec trouble d'usage d'autre substance (ou inconnue) sévère comorbide</strong></label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:[],exempleB:[],critereC:[],perceptuel:"",comorbidite:""};
+
+const codes={
+  "Sans trouble d'usage d'autre substance":{sans:"F19.920",avec:"F19.922"},
+  "Avec trouble d'usage d'autre substance léger":{sans:"F19.120",avec:"F19.122"},
+  "Avec trouble d'usage d'autre substance modéré":{sans:"F19.220",avec:"F19.222"},
+  "Avec trouble d'usage d'autre substance sévère":{sans:"F19.220",avec:"F19.222"}
+};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const cb=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  const ex=Array.from(document.querySelectorAll("input[name='exempleB']:checked")).map(e=>e.value);
+  if(cb.length>0){
+    choix.critereB=cb;
+    choix.exempleB=ex;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereC=c;
+    document.getElementById("specificateurs").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const co=document.querySelector("input[name='comorbidite']:checked");
+  const pe=document.querySelector("input[name='perceptuel']:checked");
+  if(co){
+    choix.comorbidite=co.value;
+    choix.perceptuel=pe?pe.value:"";
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la comorbidité", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const avecPerceptuel=choix.perceptuel!=="";
+  const code=avecPerceptuel?codes[choix.comorbidite].avec:codes[choix.comorbidite].sans;
+  
+  let diag=code+" Intoxication à une Autre Substance (ou Inconnue)";
+  if(avecPerceptuel)diag+=", avec perturbations perceptuelles";
+  if(choix.comorbidite!=="Sans trouble d'usage d'autre substance"){
+    diag+=", "+choix.comorbidite.toLowerCase();
+  }
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Syndrome réversible spécifique à la substance</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Changements comportementaux/psychologiques problématiques</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  if(choix.exempleB.length>0){
+    h+="<li><strong>Exemples observés :</strong></li>";
+    choix.exempleB.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
+  }
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Non attribuable à autre condition</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Spécificateurs et comorbidité</h4><ul class='choix-list'>";
+  if(choix.perceptuel)h+="<li>✓ "+choix.perceptuel+"</li>";
+  else h+="<li>✓ Sans perturbations perceptuelles</li>";
+  h+="<li>✓ Comorbidité: "+choix.comorbidite+"</li>";
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Intoxication à une substance non listée ailleurs ou inconnue avec changements comportementaux/psychologiques.";
+  h+="<br/><br/><strong>Critère A :</strong> Développement d'un syndrome réversible spécifique à la substance attribuable à ingestion récente de (ou exposition à) substance non listée ailleurs ou inconnue.";
+  h+="<br/><br/><strong>Note :</strong> Cette catégorie s'applique aux substances NON couvertes par les autres catégories:";
+  h+="<br/>• Alcool";
+  h+="<br/>• Cannabis";
+  h+="<br/>• Hallucinogènes (incluant phencyclidine)";
+  h+="<br/>• Inhalants";
+  h+="<br/>• Opioïdes";
+  h+="<br/>• Sédatifs, hypnotiques ou anxiolytiques";
+  h+="<br/>• Stimulants (incluant substances de type amphétamine, cocaïne)";
+  h+="<br/>• Tabac";
+  h+="<br/><br/><strong>Critère B :</strong> Changements comportementaux ou psychologiques problématiques cliniquement significatifs attribuables à effet de la substance sur système nerveux central, développés durant/peu après usage.";
+  h+="<br/><br/><strong>Exemples de changements :</strong> Coordination motrice altérée, agitation ou retard psychomoteur, euphorie, anxiété, belligérance, labilité de l'humeur, altération cognitive, jugement altéré, retrait social.";
+  h+="<br/><br/><strong>Critère C :</strong> Non attribuables à autre condition médicale et non mieux expliqués par autre trouble mental (incluant intoxication avec autre substance).";
+  h+="<br/><br/><strong>Spécificateur - Avec perturbations perceptuelles :</strong>";
+  h+="<br/>Hallucinations avec test de réalité intact OU illusions auditives, visuelles ou tactiles en absence de delirium.";
+  h+="<br/><br/><strong>Codage ICD-10-CM (dépend de comorbidité ET perturbations perceptuelles) :</strong>";
+  h+="<br/><br/><strong>SANS perturbations perceptuelles :</strong>";
+  h+="<br/>• F19.920 : Sans trouble d'usage comorbide";
+  h+="<br/>• F19.120 : Avec trouble d'usage léger comorbide";
+  h+="<br/>• F19.220 : Avec trouble d'usage modéré ou sévère comorbide";
+  h+="<br/><br/><strong>AVEC perturbations perceptuelles :</strong>";
+  h+="<br/>• F19.922 : Sans trouble d'usage comorbide";
+  h+="<br/>• F19.122 : Avec trouble d'usage léger comorbide";
+  h+="<br/>• F19.222 : Avec trouble d'usage modéré ou sévère comorbide";
+  h+="<br/><br/><strong>Exemples de substances pouvant être codées ici :</strong>";
+  h+="<br/>• Stéroïdes anabolisants";
+  h+="<br/>• Nitrite d'amyle ('poppers')";
+  h+="<br/>• Protoxyde d'azote ('gaz hilarant')";
+  h+="<br/>• Anticholinergiques (ex: datura, belladone)";
+  h+="<br/>• Antihistaminiques (doses élevées)";
+  h+="<br/>• Cortisol et hormones apparentées";
+  h+="<br/>• Médicaments non psychotropes (doses toxiques)";
+  h+="<br/>• Substances de synthèse non classifiées";
+  h+="<br/>• Substances inconnues ou mélanges";
+  h+="<br/><br/><strong>Usage de cette catégorie :</strong>";
+  h+="<br/>• Substance identifiée mais non listée dans autres catégories";
+  h+="<br/>• Substance inconnue (patient ne peut identifier)";
+  h+="<br/>• Mélange de substances (polyconsommation)";
+  h+="<br/>• Nouvelles substances de synthèse";
+  h+="<br/><br/><strong>Importance de l'identification :</strong>";
+  h+="<br/>• Essayer d'identifier la substance si possible";
+  h+="<br/>• Tests toxicologiques peuvent aider";
+  h+="<br/>• Histoire du patient et circonstances";
+  h+="<br/>• Si substance identifiée ultérieurement, reclasser dans catégorie appropriée";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

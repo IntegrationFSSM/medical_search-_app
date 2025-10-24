@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble de la Personnalité Borderline – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble de la Personnalité Borderline – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Pattern envahissant d'instabilité</legend>
+  <p class="subtitle">Pattern envahissant d'instabilité des relations interpersonnelles, de l'image de soi et des affects, et impulsivité marquée, débutant au début de l'âge adulte et présent dans divers contextes</p>
+  <div class="warning-box">
+    ⚠️ Au moins 5 des 9 critères suivants sont requis
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="1. Efforts effrénés pour éviter abandon réel ou imaginé"/> <strong>1.</strong> Efforts effrénés pour éviter un abandon réel ou imaginé</label>
+  <div class="note-box">
+    Note: Ne pas inclure comportement suicidaire ou automutilation couvert au critère 5.
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="2. Pattern de relations interpersonnelles instables et intenses caractérisé par alternance entre idéalisation et dévalorisation"/> <strong>2.</strong> Pattern de relations interpersonnelles instables et intenses caractérisé par alternance entre extrêmes d'idéalisation et de dévalorisation</label>
+  
+  <label><input type="checkbox" name="critereA" value="3. Perturbation identité: image de soi ou sens de soi marqué et persistant instable"/> <strong>3.</strong> Perturbation de l'identité: image de soi ou sens de soi marqué et persistant instable</label>
+  
+  <label><input type="checkbox" name="critereA" value="4. Impulsivité dans au moins deux domaines potentiellement auto-dommageables (dépenses, sexe, abus substances, conduite imprudente, frénésie alimentaire)"/> <strong>4.</strong> Impulsivité dans au moins deux domaines potentiellement auto-dommageables (ex: dépenses, sexe, abus de substances, conduite imprudente, frénésie alimentaire)</label>
+  <div class="note-box">
+    Note: Ne pas inclure comportement suicidaire ou automutilation couvert au critère 5.
+  </div>
+  
+  <label><input type="checkbox" name="critereA" value="5. Comportement suicidaire récurrent, gestes ou menaces, ou comportement automutilant"/> <strong>5.</strong> Comportement suicidaire récurrent, gestes ou menaces, ou comportement automutilant</label>
+  
+  <label><input type="checkbox" name="critereA" value="6. Instabilité affective due à réactivité marquée de l'humeur (dysphorie épisodique intense, irritabilité ou anxiété durant quelques heures)"/> <strong>6.</strong> Instabilité affective due à une réactivité marquée de l'humeur (ex: dysphorie épisodique intense, irritabilité ou anxiété durant habituellement quelques heures et rarement plus de quelques jours)</label>
+  
+  <label><input type="checkbox" name="critereA" value="7. Sentiments chroniques de vide"/> <strong>7.</strong> Sentiments chroniques de vide</label>
+  
+  <label><input type="checkbox" name="critereA" value="8. Colère inappropriée et intense ou difficulté à contrôler colère (manifestations fréquentes de tempérament, colère constante, bagarres physiques récurrentes)"/> <strong>8.</strong> Colère inappropriée et intense ou difficulté à contrôler la colère (ex: manifestations fréquentes de tempérament, colère constante, bagarres physiques récurrentes)</label>
+  
+  <label><input type="checkbox" name="critereA" value="9. Idéation paranoïde transitoire liée au stress ou symptômes dissociatifs sévères"/> <strong>9.</strong> Idéation paranoïde transitoire liée au stress ou symptômes dissociatifs sévères</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[]};
+
+function afficherResume(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>=5){
+    choix.critereA=c;
+    genererResume();
+  }else alert("Au moins 5 des 9 critères sont requis (actuellement: "+c.length+")");
+}
+
+function genererResume(){
+  const code="F60.3";
+  const diag=code+" Trouble de la Personnalité Borderline";
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Pattern envahissant d'instabilité ("+choix.critereA.length+"/9, minimum 5 requis)</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Pattern envahissant d'instabilité des relations interpersonnelles, de l'image de soi et des affects, et impulsivité marquée, débutant au début de l'âge adulte et présent dans divers contextes. Au moins 5 des 9 critères requis.";
+  h+="<br/><br/><strong>Critères ("+choix.critereA.length+"/9) :</strong>";
+  h+="<br/>1. Efforts effrénés pour éviter abandon";
+  h+="<br/>2. Relations instables et intenses (idéalisation/dévalorisation)";
+  h+="<br/>3. Perturbation de l'identité";
+  h+="<br/>4. Impulsivité dans ≥2 domaines auto-dommageables";
+  h+="<br/>5. Comportement suicidaire/automutilant récurrent";
+  h+="<br/>6. Instabilité affective (réactivité marquée de l'humeur)";
+  h+="<br/>7. Sentiments chroniques de vide";
+  h+="<br/>8. Colère inappropriée et intense";
+  h+="<br/>9. Idéation paranoïde transitoire ou symptômes dissociatifs sévères";
+  h+="<br/><br/><strong>Notes importantes :</strong>";
+  h+="<br/>• Critère 1: Ne pas inclure comportement suicidaire/automutilation (couvert au critère 5)";
+  h+="<br/>• Critère 4: Impulsivité dans au moins 2 domaines. Ne pas inclure comportement suicidaire/automutilation (couvert au critère 5)";
+  h+="<br/>• Critère 6: Dysphorie, irritabilité ou anxiété durant habituellement quelques heures, rarement plus de quelques jours";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

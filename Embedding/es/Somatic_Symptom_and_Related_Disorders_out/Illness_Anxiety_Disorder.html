@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Anxiété de Maladie – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Anxiété de Maladie – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Préoccupation d'avoir ou d'acquérir une maladie grave</legend>
+  <p class="subtitle">Préoccupation d'avoir ou d'acquérir une maladie grave</p>
+  <label><input type="checkbox" name="critereA" value="Préoccupation d'avoir ou d'acquérir une maladie grave"/> Préoccupation d'avoir ou d'acquérir une maladie grave</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Symptômes somatiques absents ou légers</legend>
+  <p class="subtitle">Les symptômes somatiques ne sont pas présents ou, s'ils sont présents, sont seulement d'intensité légère</p>
+  <label><input type="checkbox" name="critereB" value="Symptômes somatiques non présents"/> Les symptômes somatiques ne sont pas présents</label>
+  <label><input type="checkbox" name="critereB" value="OU symptômes somatiques présents mais seulement d'intensité légère"/> OU les symptômes somatiques sont présents mais seulement d'intensité légère</label>
+  <label><input type="checkbox" name="critereB" value="Si autre condition médicale présente ou risque élevé de développer condition médicale (ex: antécédents familiaux forts), préoccupation clairement excessive ou disproportionnée"/> Si une autre condition médicale est présente ou il existe un risque élevé de développer une condition médicale (ex: antécédents familiaux forts présents), la préoccupation est clairement excessive ou disproportionnée</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Niveau élevé d'anxiété concernant la santé</legend>
+  <p class="subtitle">Il existe un niveau élevé d'anxiété concernant la santé, et l'individu est facilement alarmé concernant son état de santé personnel</p>
+  <label><input type="checkbox" name="critereC" value="Niveau élevé d'anxiété concernant santé"/> Il existe un niveau élevé d'anxiété concernant la santé</label>
+  <label><input type="checkbox" name="critereC" value="Individu facilement alarmé concernant état de santé personnel"/> L'individu est facilement alarmé concernant son état de santé personnel</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Comportements excessifs ou évitement inadapté</legend>
+  <p class="subtitle">L'individu effectue des comportements excessifs liés à la santé ou manifeste un évitement inadapté</p>
+  <label><input type="checkbox" name="critereD" value="Individu effectue comportements excessifs liés à santé (vérifie répétitivement son corps pour signes de maladie)"/> L'individu effectue des comportements excessifs liés à la santé (ex: vérifie répétitivement son corps pour des signes de maladie)</label>
+  <label><input type="checkbox" name="critereD" value="OU manifeste évitement inadapté (évite rendez-vous médicaux et hôpitaux)"/> OU manifeste un évitement inadapté (ex: évite les rendez-vous médicaux et les hôpitaux)</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Durée d'au moins 6 mois</legend>
+  <p class="subtitle">La préoccupation de maladie a été présente pendant au moins 6 mois, mais la maladie spécifique qui est crainte peut changer durant cette période</p>
+  <label><input type="checkbox" name="critereE" value="Préoccupation de maladie présente pendant au moins 6 mois"/> La préoccupation de maladie a été présente pendant au moins 6 mois</label>
+  <label><input type="checkbox" name="critereE" value="Maladie spécifique crainte peut changer durant cette période"/> La maladie spécifique qui est crainte peut changer durant cette période de temps</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Critère F -->
+<fieldset id="critereF" class="hidden">
+  <legend>Critère F – Non mieux expliqué par autre trouble mental</legend>
+  <p class="subtitle">La préoccupation liée à la maladie n'est pas mieux expliquée par un autre trouble mental</p>
+  <label><input type="checkbox" name="critereF" value="Préoccupation liée à maladie non mieux expliquée par autre trouble mental (trouble symptôme somatique, trouble panique, trouble anxieux généralisé, trouble dysmorphique corporel, trouble obsessionnel-compulsif, trouble délirant type somatique)"/> La préoccupation liée à la maladie n'est pas mieux expliquée par un autre trouble mental, tel que trouble à symptôme somatique, trouble panique, trouble anxieux généralisé, trouble dysmorphique corporel, trouble obsessionnel-compulsif ou trouble délirant, type somatique</label>
+  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+</fieldset>
+
+<!-- Type -->
+<fieldset id="typeRecherche" class="hidden">
+  <legend>Spécifier le type</legend>
+  <p style="margin-top: 10px;"><strong>Type de comportement face aux soins médicaux :</strong></p>
+  <label><input type="radio" name="type" value="Type recherche de soins"/> <strong>Type recherche de soins :</strong> Les soins médicaux, incluant visites chez le médecin ou réalisation de tests et procédures, sont fréquemment utilisés</label>
+  <label><input type="radio" name="type" value="Type évitement de soins"/> <strong>Type évitement de soins :</strong> Les soins médicaux sont rarement utilisés</label>
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:"",critereB:[],critereC:[],critereD:[],critereE:[],critereF:"",type:""};
+
+function validerCritereA(){
+  const c=document.querySelector("input[name='critereA']:checked");
+  if(c){
+    choix.critereA=c.value;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else alert("Cochez l'option du critère A");
+}
+
+function validerCritereB(){
+  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereB=c;
+    document.getElementById("critereC").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereC(){
+  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereC=c;
+    document.getElementById("critereD").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereD(){
+  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereD=c;
+    document.getElementById("critereE").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereE(){
+  const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereE=c;
+    document.getElementById("critereF").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère E", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereF(){
+  const c=document.querySelector("input[name='critereF']:checked");
+  if(c){
+    choix.critereF=c.value;
+    document.getElementById("typeRecherche").classList.remove("hidden");
+  }else alert("Cochez l'option du critère F");
+}
+
+function afficherResume(){
+  const t=document.querySelector("input[name='type']:checked");
+  if(t){
+    choix.type=t.value;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le type", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code="F45.21";
+  let diag=code+" Trouble Anxiété de Maladie, "+choix.type.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Préoccupation d'avoir ou d'acquérir une maladie grave</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
+  
+  h+="<h4>Critère B – Symptômes somatiques absents ou légers</h4><ul class='choix-list'>";
+  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère C – Niveau élevé d'anxiété concernant la santé</h4><ul class='choix-list'>";
+  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère D – Comportements excessifs ou évitement inadapté</h4><ul class='choix-list'>";
+  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère E – Durée d'au moins 6 mois</h4><ul class='choix-list'>";
+  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère F – Non mieux expliqué par autre trouble mental</h4><ul class='choix-list'><li>✓ "+choix.critereF+"</li></ul>";
+  
+  h+="<h4>Type</h4><ul class='choix-list'><li>✓ "+choix.type+"</li></ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Préoccupation d'avoir ou d'acquérir une maladie grave avec anxiété élevée concernant la santé.";
+  h+="<br/><br/><strong>Critère A :</strong> Préoccupation d'avoir ou d'acquérir une maladie grave.";
+  h+="<br/><br/><strong>Critère B :</strong> Symptômes somatiques non présents OU seulement d'intensité légère. Si condition médicale présente ou risque élevé (ex: antécédents familiaux forts), préoccupation clairement excessive ou disproportionnée.";
+  h+="<br/><br/><strong>Critère C :</strong> Niveau élevé d'anxiété concernant santé + individu facilement alarmé concernant état de santé personnel.";
+  h+="<br/><br/><strong>Critère D :</strong> Comportements excessifs liés à santé (vérifie répétitivement corps pour signes maladie) OU évitement inadapté (évite rendez-vous médicaux et hôpitaux).";
+  h+="<br/><br/><strong>Critère E :</strong> Préoccupation de maladie présente ≥6 mois (maladie spécifique crainte peut changer durant cette période).";
+  h+="<br/><br/><strong>Critère F :</strong> Non mieux expliqué par autre trouble mental (trouble symptôme somatique, trouble panique, TAG, trouble dysmorphique corporel, TOC, trouble délirant type somatique).";
+  h+="<br/><br/><strong>Types :</strong>";
+  h+="<br/>• <strong>Type recherche de soins :</strong> Soins médicaux (visites médecin, tests, procédures) fréquemment utilisés";
+  h+="<br/>• <strong>Type évitement de soins :</strong> Soins médicaux rarement utilisés";
+  h+="<br/><br/><strong>Caractéristiques clés :</strong>";
+  h+="<br/>• Préoccupation d'avoir/acquérir maladie grave";
+  h+="<br/>• Symptômes somatiques absents ou légers (différent du trouble à symptôme somatique)";
+  h+="<br/>• Anxiété élevée concernant santé";
+  h+="<br/>• Facilement alarmé concernant santé";
+  h+="<br/>• Comportements excessifs OU évitement inadapté";
+  h+="<br/>• Durée ≥6 mois";
+  h+="<br/>• Maladie crainte peut changer";
+  h+="<br/><br/><strong>Différence avec trouble à symptôme somatique :</strong>";
+  h+="<br/>• <strong>Trouble anxiété de maladie :</strong> Symptômes somatiques absents ou légers, focus sur peur d'avoir maladie";
+  h+="<br/>• <strong>Trouble à symptôme somatique :</strong> Symptômes somatiques significatifs présents, focus sur symptômes";
+  h+="<br/><br/><strong>Comportements typiques :</strong>";
+  h+="<br/>• Recherche de soins: Consultations médicales fréquentes, tests répétés, recherche de réassurance";
+  h+="<br/>• Évitement de soins: Évite médecins/hôpitaux par peur de découvrir maladie";
+  h+="<br/>• Vérifications corporelles répétées";
+  h+="<br/>• Recherche excessive d'informations médicales";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

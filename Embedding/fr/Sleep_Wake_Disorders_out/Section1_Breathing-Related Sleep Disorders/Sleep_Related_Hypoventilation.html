@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Hypoventilation Liée au Sommeil – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de l'Hypoventilation Liée au Sommeil – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Évidence polysomnographique</legend>
+  <p class="subtitle">La polysomnographie démontre des épisodes de respiration diminuée associés à des niveaux élevés de CO2</p>
+  <div class="note-box">
+    <strong>Note :</strong> En l'absence de mesure objective du CO2, des niveaux persistants bas de saturation en oxygène de l'hémoglobine non associés à des événements apnéiques/hypopnéiques peuvent indiquer une hypoventilation.
+  </div>
+  <label><input type="checkbox" name="critereA" value="Polysomnographie démontre épisodes de respiration diminuée associés à niveaux élevés de CO2"/> La polysomnographie démontre des épisodes de respiration diminuée associés à des niveaux élevés de CO2</label>
+  <label><input type="checkbox" name="critereA" value="OU niveaux persistants bas de saturation en oxygène hémoglobine non associés à événements apnéiques/hypopnéiques"/> OU niveaux persistants bas de saturation en oxygène de l'hémoglobine non associés à des événements apnéiques/hypopnéiques</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Non mieux expliqué par un autre trouble du sommeil</legend>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble du sommeil actuel</p>
+  <label><input type="checkbox" name="critereB" value="Perturbation non mieux expliquée par autre trouble du sommeil actuel"/> La perturbation n'est pas mieux expliquée par un autre trouble du sommeil actuel</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Sous-types -->
+<fieldset id="soustypes" class="hidden">
+  <legend>Spécifier le sous-type</legend>
+  <p class="subtitle">Sélectionner le sous-type d'hypoventilation liée au sommeil</p>
+  <div class="warning-box">
+    ⚠️ Le code ICD-10-CM dépend du sous-type sélectionné
+  </div>
+  
+  <label><input type="radio" name="soustype" value="Hypoventilation idiopathique"/> <strong>G47.34 Hypoventilation idiopathique :</strong> Ce sous-type n'est pas attribuable à une condition facilement identifiable</label>
+  
+  <label><input type="radio" name="soustype" value="Hypoventilation alvéolaire centrale congénitale"/> <strong>G47.35 Hypoventilation alvéolaire centrale congénitale :</strong> Trouble congénital rare dans lequel l'individu se présente typiquement durant la période périnatale avec respiration superficielle, ou cyanose et apnée durant le sommeil</label>
+  
+  <label><input type="radio" name="soustype" value="Hypoventilation liée au sommeil comorbide"/> <strong>G47.36 Hypoventilation liée au sommeil comorbide :</strong> Ce sous-type survient comme conséquence d'une condition médicale, telle que trouble pulmonaire (ex: maladie pulmonaire interstitielle, MPOC), trouble neuromusculaire ou de la paroi thoracique (ex: dystrophies musculaires, syndrome post-polio, lésion médullaire cervicale, cyphoscoliose), médicaments (ex: benzodiazépines, opiacés), ou obésité (trouble d'hypoventilation par obésité)</label>
+  
+  <button type="button" onclick="validerSoustype()">✔️ Valider le sous-type</button>
+</fieldset>
+
+<!-- Sévérité -->
+<fieldset id="severite" class="hidden">
+  <legend>Spécifier la sévérité actuelle</legend>
+  <p class="subtitle">La sévérité est graduée selon le degré d'hypoxémie et d'hypercapnie présent durant le sommeil et évidence d'altération des organes terminaux</p>
+  
+  <label><input type="checkbox" name="severiteInfo" value="Sévérité basée sur degré d'hypoxémie durant sommeil"/> Sévérité basée sur le degré d'hypoxémie durant le sommeil</label>
+  <label><input type="checkbox" name="severiteInfo" value="Sévérité basée sur degré d'hypercapnie durant sommeil"/> Sévérité basée sur le degré d'hypercapnie durant le sommeil</label>
+  <label><input type="checkbox" name="severiteInfo" value="Sévérité basée sur évidence d'altération des organes terminaux (insuffisance cardiaque droite)"/> Sévérité basée sur l'évidence d'altération des organes terminaux (ex: insuffisance cardiaque droite)</label>
+  <label><input type="checkbox" name="severiteInfo" value="Présence d'anomalies des gaz sanguins durant éveil = indicateur de sévérité plus grande"/> La présence d'anomalies des gaz sanguins durant l'éveil est un indicateur de sévérité plus grande</label>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={critereA:[],critereB:"",soustype:"",severiteInfo:[]};
+
+function validerCritereA(){
+  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  if(c.length>0){
+    choix.critereA=c;
+    document.getElementById("critereB").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
+}
+
+function validerCritereB(){
+  const c=document.querySelector("input[name='critereB']:checked");
+  if(c){
+    choix.critereB=c.value;
+    document.getElementById("soustypes").classList.remove("hidden");
+  }else alert("Cochez l'option du critère B");
+}
+
+function validerSoustype(){
+  const s=document.querySelector("input[name='soustype']:checked");
+  if(s){
+    choix.soustype=s.value;
+    document.getElementById("severite").classList.remove("hidden");
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un sous-type", confirmButtonColor: "#667eea"});
+}
+
+function afficherResume(){
+  const s=Array.from(document.querySelectorAll("input[name='severiteInfo']:checked")).map(e=>e.value);
+  choix.severiteInfo=s;
+  genererResume();
+}
+
+function genererResume(){
+  let code="";
+  let typeName="";
+  
+  if(choix.soustype==="Hypoventilation idiopathique"){
+    code="G47.34";
+    typeName="Hypoventilation Idiopathique";
+  }else if(choix.soustype==="Hypoventilation alvéolaire centrale congénitale"){
+    code="G47.35";
+    typeName="Hypoventilation Alvéolaire Centrale Congénitale";
+  }else if(choix.soustype==="Hypoventilation liée au sommeil comorbide"){
+    code="G47.36";
+    typeName="Hypoventilation Liée au Sommeil Comorbide";
+  }
+  
+  let diag=code+" Hypoventilation Liée au Sommeil, "+typeName.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Évidence polysomnographique</h4><ul class='choix-list'>";
+  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
+  h+="</ul>";
+  
+  h+="<h4>Critère B – Non mieux expliqué par autre trouble du sommeil</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
+  
+  h+="<h4>Sous-type</h4><ul class='choix-list'><li>✓ "+choix.soustype+"</li></ul>";
+  
+  if(choix.severiteInfo.length>0){
+    h+="<h4>Critères de sévérité</h4><ul class='choix-list'>";
+    choix.severiteInfo.forEach(s=>h+="<li>✓ "+s+"</li>");
+    h+="</ul>";
+  }
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Épisodes de respiration diminuée associés à niveaux élevés de CO2 durant le sommeil.";
+  h+="<br/><br/><strong>Critère A :</strong> Polysomnographie démontre épisodes de respiration diminuée associés à niveaux élevés de CO2. En l'absence de mesure objective du CO2, niveaux persistants bas de saturation en oxygène hémoglobine non associés à événements apnéiques/hypopnéiques peuvent indiquer hypoventilation.";
+  h+="<br/><br/><strong>Critère B :</strong> Non mieux expliqué par autre trouble du sommeil actuel.";
+  h+="<br/><br/><strong>Sous-types :</strong>";
+  h+="<br/>• <strong>G47.34 Hypoventilation idiopathique :</strong> Non attribuable à condition facilement identifiable.";
+  h+="<br/>• <strong>G47.35 Hypoventilation alvéolaire centrale congénitale :</strong> Trouble congénital rare, présentation périnatale avec respiration superficielle, cyanose et apnée durant sommeil.";
+  h+="<br/>• <strong>G47.36 Hypoventilation comorbide :</strong> Conséquence de condition médicale (trouble pulmonaire, neuromusculaire, paroi thoracique, médicaments, obésité).";
+  h+="<br/><br/><strong>Hypoventilation par obésité (sous G47.36) :</strong>";
+  h+="<br/>• IMC >30";
+  h+="<br/>• Hypercapnie durant éveil (pCO2 >45)";
+  h+="<br/>• Sans autre évidence d'hypoventilation";
+  h+="<br/>• Combinaison: travail respiratoire augmenté + inadéquation ventilation-perfusion + drive ventilatoire variablement réduit";
+  h+="<br/><br/><strong>Sévérité (graduée selon) :</strong>";
+  h+="<br/>• Degré d'hypoxémie durant sommeil";
+  h+="<br/>• Degré d'hypercapnie durant sommeil";
+  h+="<br/>• Évidence d'altération des organes terminaux (ex: insuffisance cardiaque droite)";
+  h+="<br/>• Présence d'anomalies des gaz sanguins durant éveil = indicateur de sévérité plus grande";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Trouble Anxieux Induit par une Substance/Médicament – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation du Trouble Anxieux Induit par une Substance/Médicament – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Attaques de panique ou anxiété prédominante</legend>
+  <p class="subtitle">Les attaques de panique ou l'anxiété prédominent dans le tableau clinique</p>
+  <label><input type="checkbox" name="critereA" value="Attaques de panique prédominantes"/> Attaques de panique prédominantes</label>
+  <label><input type="checkbox" name="critereA" value="Anxiété prédominante"/> Anxiété prédominante</label>
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Critère B -->
+<fieldset id="critereB" class="hidden">
+  <legend>Critère B – Preuves de (1) et (2)</legend>
+  <p class="subtitle">Preuves issues de l'anamnèse, de l'examen physique ou des résultats de laboratoire</p>
+  <p style="margin-top: 10px;"><strong>(1) Développement des symptômes :</strong></p>
+  <label><input type="checkbox" name="critereB1" value="Pendant ou peu après une intoxication par une substance"/> Pendant ou peu après une intoxication par une substance</label>
+  <label><input type="checkbox" name="critereB1" value="Pendant ou peu après un sevrage d'une substance"/> Pendant ou peu après un sevrage d'une substance</label>
+  <label><input type="checkbox" name="critereB1" value="Après exposition à un médicament"/> Après exposition à un médicament</label>
+  <label><input type="checkbox" name="critereB1" value="Après sevrage d'un médicament"/> Après sevrage d'un médicament</label>
+  
+  <p style="margin-top: 10px;"><strong>(2) La substance/médicament est capable de produire les symptômes :</strong></p>
+  <label><input type="checkbox" id="critereB2" value="La substance/médicament impliquée est capable de produire les symptômes"/> La substance/médicament impliquée est capable de produire les symptômes</label>
+  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+</fieldset>
+
+<!-- Critère C -->
+<fieldset id="critereC" class="hidden">
+  <legend>Critère C – Diagnostic différentiel</legend>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par un trouble anxieux non induit par une substance/médicament</p>
+  <label><input type="checkbox" name="critereC" value="Les symptômes ne précèdent pas l'utilisation de la substance/médicament"/> Les symptômes ne précèdent pas l'utilisation de la substance/médicament</label>
+  <label><input type="checkbox" name="critereC" value="Les symptômes ne persistent pas pendant une période substantielle après la cessation"/> Les symptômes ne persistent pas pendant une période substantielle (environ 1 mois) après la cessation du sevrage aigu ou de l'intoxication sévère</label>
+  <label><input type="checkbox" name="critereC" value="Pas d'autres preuves d'un trouble anxieux indépendant"/> Pas d'autres preuves d'un trouble anxieux indépendant (pas d'antécédents d'épisodes récurrents non liés à une substance/médicament)</label>
+  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+</fieldset>
+
+<!-- Critère D -->
+<fieldset id="critereD" class="hidden">
+  <legend>Critère D – Exclusion du delirium</legend>
+  <p class="subtitle">La perturbation ne survient pas exclusivement au cours d'un delirium</p>
+  <label><input type="checkbox" id="choixD" value="Ne survient pas exclusivement au cours d'un delirium"/> Ne survient pas exclusivement au cours d'un delirium</label>
+  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+</fieldset>
+
+<!-- Critère E -->
+<fieldset id="critereE" class="hidden">
+  <legend>Critère E – Détresse ou altération du fonctionnement</legend>
+  <p class="subtitle">La perturbation cause une détresse ou une altération cliniquement significative</p>
+  <div class="note-box">
+    <strong>Note :</strong> Ce diagnostic doit être posé au lieu d'un diagnostic d'intoxication ou de sevrage SEULEMENT lorsque les symptômes prédominent dans le tableau clinique et sont suffisamment sévères pour justifier une attention clinique.
+  </div>
+  <label><input type="checkbox" name="critereE" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
+  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
+  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
+  <label><input type="checkbox" name="critereE" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
+  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+</fieldset>
+
+<!-- Substance et Sévérité -->
+<fieldset id="substance" class="hidden">
+  <legend>Substance/Médicament et Sévérité du Trouble d'Usage</legend>
+  <p class="subtitle">Identifier la substance et la sévérité du trouble d'usage comorbide (si applicable)</p>
+  
+  <p style="margin-top: 10px;"><strong>Substance/Médicament impliquée :</strong></p>
+  <label><input type="radio" name="substance" value="Alcool"/> Alcool</label>
+  <label><input type="radio" name="substance" value="Caféine"/> Caféine</label>
+  <label><input type="radio" name="substance" value="Cannabis"/> Cannabis</label>
+  <label><input type="radio" name="substance" value="Phencyclidine"/> Phencyclidine</label>
+  <label><input type="radio" name="substance" value="Autre hallucinogène"/> Autre hallucinogène</label>
+  <label><input type="radio" name="substance" value="Inhalant"/> Inhalant</label>
+  <label><input type="radio" name="substance" value="Opioïde"/> Opioïde</label>
+  <label><input type="radio" name="substance" value="Sédatif, hypnotique ou anxiolytique"/> Sédatif, hypnotique ou anxiolytique</label>
+  <label><input type="radio" name="substance" value="Substance de type amphétamine (ou autre stimulant)"/> Substance de type amphétamine (ou autre stimulant)</label>
+  <label><input type="radio" name="substance" value="Cocaïne"/> Cocaïne</label>
+  <label><input type="radio" name="substance" value="Autre (ou inconnue) substance"/> Autre (ou inconnue) substance</label>
+  
+  <p style="margin-top: 15px;"><strong>Sévérité du trouble d'usage de substance comorbide :</strong></p>
+  <label><input type="radio" name="severite" value="Pas de trouble d'usage"/> Pas de trouble d'usage</label>
+  <label><input type="radio" name="severite" value="Trouble d'usage léger"/> Trouble d'usage léger</label>
+  <label><input type="radio" name="severite" value="Trouble d'usage modéré"/> Trouble d'usage modéré</label>
+  <label><input type="radio" name="severite" value="Trouble d'usage sévère"/> Trouble d'usage sévère</label>
+  
+  <button type="button" onclick="validerSubstance()">✔️ Valider la substance</button>
+</fieldset>
+
+<!-- Spécificateur -->
+<fieldset id="specificateur" class="hidden">
+  <legend>Spécificateur – Moment d'apparition</legend>
+  <p class="subtitle">Préciser le moment d'apparition des symptômes</p>
+  <label><input type="radio" name="specificateur" value="Avec apparition pendant l'intoxication"/> Avec apparition pendant l'intoxication</label>
+  <label><input type="radio" name="specificateur" value="Avec apparition pendant le sevrage"/> Avec apparition pendant le sevrage</label>
+  <label><input type="radio" name="specificateur" value="Avec apparition après l'utilisation du médicament"/> Avec apparition après l'utilisation du médicament</label>
+  <button type="button" onclick="validerSpecificateur()">✔️ Valider le spécificateur</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let tousLesChoix = {
+  critereA: [],
+  critereB1: [],
+  critereB2: false,
+  critereC: [],
+  critereD: false,
+  critereE: [],
+  substance: "",
+  severite: "",
+  specificateur: ""
+};
+
+const codeTable = {
+  "Alcool": { "Pas de trouble d'usage": "F10.980", "Trouble d'usage léger": "F10.180", "Trouble d'usage modéré": "F10.280", "Trouble d'usage sévère": "F10.280" },
+  "Caféine": { "Pas de trouble d'usage": "F15.980", "Trouble d'usage léger": "NA", "Trouble d'usage modéré": "NA", "Trouble d'usage sévère": "NA" },
+  "Cannabis": { "Pas de trouble d'usage": "F12.980", "Trouble d'usage léger": "F12.180", "Trouble d'usage modéré": "F12.280", "Trouble d'usage sévère": "F12.280" },
+  "Phencyclidine": { "Pas de trouble d'usage": "F16.980", "Trouble d'usage léger": "F16.180", "Trouble d'usage modéré": "F16.280", "Trouble d'usage sévère": "F16.280" },
+  "Autre hallucinogène": { "Pas de trouble d'usage": "F16.980", "Trouble d'usage léger": "F16.180", "Trouble d'usage modéré": "F16.280", "Trouble d'usage sévère": "F16.280" },
+  "Inhalant": { "Pas de trouble d'usage": "F18.980", "Trouble d'usage léger": "F18.180", "Trouble d'usage modéré": "F18.280", "Trouble d'usage sévère": "F18.280" },
+  "Opioïde": { "Pas de trouble d'usage": "F11.988", "Trouble d'usage léger": "F11.188", "Trouble d'usage modéré": "F11.288", "Trouble d'usage sévère": "F11.288" },
+  "Sédatif, hypnotique ou anxiolytique": { "Pas de trouble d'usage": "F13.980", "Trouble d'usage léger": "F13.180", "Trouble d'usage modéré": "F13.280", "Trouble d'usage sévère": "F13.280" },
+  "Substance de type amphétamine (ou autre stimulant)": { "Pas de trouble d'usage": "F15.980", "Trouble d'usage léger": "F15.180", "Trouble d'usage modéré": "F15.280", "Trouble d'usage sévère": "F15.280" },
+  "Cocaïne": { "Pas de trouble d'usage": "F14.980", "Trouble d'usage léger": "F14.180", "Trouble d'usage modéré": "F14.280", "Trouble d'usage sévère": "F14.280" },
+  "Autre (ou inconnue) substance": { "Pas de trouble d'usage": "F19.980", "Trouble d'usage léger": "F19.180", "Trouble d'usage modéré": "F19.280", "Trouble d'usage sévère": "F19.280" }
+};
+
+function validerCritereA() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereA = choix;
+    document.getElementById("critereB").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereB() {
+  const choix1 = Array.from(document.querySelectorAll("input[name='critereB1']:checked")).map(el => el.value);
+  const choix2 = document.getElementById("critereB2").checked;
+  
+  if (choix1.length > 0 && choix2) {
+    tousLesChoix.critereB1 = choix1;
+    tousLesChoix.critereB2 = true;
+    document.getElementById("critereC").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour (1) ET la case pour (2).", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereC() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereC = choix;
+    document.getElementById("critereD").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereD() {
+  if (document.getElementById("choixD").checked) {
+    tousLesChoix.critereD = true;
+    document.getElementById("critereE").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère D.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerCritereE() {
+  const choix = Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(el => el.value);
+  if (choix.length > 0) {
+    tousLesChoix.critereE = choix;
+    document.getElementById("substance").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère E.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerSubstance() {
+  const substance = document.querySelector("input[name='substance']:checked");
+  const severite = document.querySelector("input[name='severite']:checked");
+  
+  if (substance && severite) {
+    tousLesChoix.substance = substance.value;
+    tousLesChoix.severite = severite.value;
+    document.getElementById("specificateur").classList.remove("hidden");
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez sélectionner une substance ET une sévérité.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function validerSpecificateur() {
+  const spec = document.querySelector("input[name='specificateur']:checked");
+  if (spec) {
+    tousLesChoix.specificateur = spec.value;
+    afficherResume();
+  } else {
+    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez sélectionner un spécificateur.", confirmButtonColor: "#667eea"});
+  }
+}
+
+function afficherResume() {
+  let html = "<div class='resultat-box'>";
+  html += "<div class='resume-section'>";
+  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
+  
+  html += "<h4>Critère A – Attaques de panique ou anxiété</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère B – Preuves</h4>";
+  html += "<p style='margin-left: 10px;'><strong>(1) Développement des symptômes :</strong></p>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereB1.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  html += "<p style='margin-left: 10px;'><strong>(2) Capacité de la substance :</strong></p>";
+  html += "<ul class='choix-list'>";
+  html += "<li>✓ La substance/médicament est capable de produire les symptômes</li>";
+  html += "</ul>";
+  
+  html += "<h4>Critère C – Diagnostic différentiel</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Critère D – Exclusion du delirium</h4>";
+  html += "<ul class='choix-list'>";
+  html += "<li>✓ Ne survient pas exclusivement au cours d'un delirium</li>";
+  html += "</ul>";
+  
+  html += "<h4>Critère E – Détresse ou altération</h4>";
+  html += "<ul class='choix-list'>";
+  tousLesChoix.critereE.forEach(s => html += "<li>✓ " + s + "</li>");
+  html += "</ul>";
+  
+  html += "<h4>Substance et Sévérité</h4>";
+  html += "<ul class='choix-list'>";
+  html += "<li><strong>Substance :</strong> " + tousLesChoix.substance + "</li>";
+  html += "<li><strong>Sévérité :</strong> " + tousLesChoix.severite + "</li>";
+  html += "</ul>";
+  
+  html += "<h4>Spécificateur</h4>";
+  html += "<ul class='choix-list'>";
+  html += "<li>✓ " + tousLesChoix.specificateur + "</li>";
+  html += "</ul>";
+  
+  const code = codeTable[tousLesChoix.substance][tousLesChoix.severite];
+  html += "<div class='code-section'>";
+  html += "<strong>Code diagnostique :</strong> " + code + "<br/>";
+  html += "<strong>Diagnostic complet :</strong><br/>";
+  if (tousLesChoix.severite !== "Pas de trouble d'usage") {
+    html += code + " " + tousLesChoix.severite + " de " + tousLesChoix.substance.toLowerCase() + " avec trouble anxieux induit par " + tousLesChoix.substance.toLowerCase() + ", " + tousLesChoix.specificateur.toLowerCase();
+  } else {
+    html += code + " Trouble anxieux induit par " + tousLesChoix.substance.toLowerCase() + ", " + tousLesChoix.specificateur.toLowerCase();
+  }
+  html += "</div>";
+  
+  html += "</div>";
+  
+  html += "<div class='boutons-validation'>";
+  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
+  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
+  html += "</div>";
+  html += "</div>";
+  
+  document.getElementById("resultat").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+}
+
+function validerFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacée dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+</body>
+</html>

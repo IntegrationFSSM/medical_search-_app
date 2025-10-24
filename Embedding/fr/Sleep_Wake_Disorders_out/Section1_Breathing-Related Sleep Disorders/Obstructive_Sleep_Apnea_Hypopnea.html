@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Évaluation Apnée Obstructive du Sommeil Hypopnée – DSM-5-TR</title>
+  <style>
+  .top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #dff0dc;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+  }
+  .titre-centre {
+    flex: 1;
+    text-align: center;
+  }
+  .titre-centre h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #3d7a3b;
+  }
+  .titre-centre h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #3d7a3b;
+  }
+
+    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    legend { font-weight: bold; color: #3d7a3b; }
+    label { display: block; margin-bottom: 5px; }
+    button {
+      background-color: #8cc63f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #76b42f; }
+    .hidden { display: none; }
+    .resume-section {
+      background: #f0f8f0;
+      border-left: 4px solid #8cc63f;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    .resume-section h4 {
+      margin-top: 0;
+      color: #3d7a3b;
+    }
+    .choix-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .choix-list li {
+      padding: 8px;
+      background: white;
+      margin: 5px 0;
+      border-left: 3px solid #8cc63f;
+      padding-left: 10px;
+    }
+    .boutons-validation {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .btn-valide {
+      background-color: #28a745;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-valide:hover {
+      background-color: #218838;
+    }
+    .btn-non-valide {
+      background-color: #dc3545;
+      padding: 12px 30px;
+      font-size: 16px;
+      flex: 1;
+    }
+    .btn-non-valide:hover {
+      background-color: #c82333;
+    }
+    .resultat-box {
+      margin-top: 30px;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+    }
+    .note-box {
+      background: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    .code-section {
+      background: #fff9e6;
+      border-left: 4px solid #ffc107;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 0.85em;
+    }
+  </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="titre-centre">
+    <h1>CLINIQUE LA VALLÉE</h1>
+    <h2>Évaluation de l'Apnée Obstructive du Sommeil Hypopnée – DSM-5-TR</h2>
+  </div>
+</div>
+
+<form id="formulaire">
+
+<!-- Critère A -->
+<fieldset id="critereA">
+  <legend>Critère A – Évidence polysomnographique</legend>
+  <p class="subtitle">Soit (1) ou (2)</p>
+  <div class="warning-box">
+    ⚠️ Sélectionner l'option (1) OU l'option (2)
+  </div>
+  
+  <p style="margin-top: 10px;"><strong>Option 1 : ≥5 apnées/hypopnées par heure + symptômes</strong></p>
+  <label><input type="checkbox" name="option1" value="Évidence polysomnographique d'au moins 5 apnées ou hypopnées obstructives par heure de sommeil"/> Évidence par polysomnographie d'au moins 5 apnées ou hypopnées obstructives par heure de sommeil</label>
+  
+  <p style="margin-left: 20px; margin-top: 10px;"><em>ET l'un des symptômes de sommeil suivants :</em></p>
+  <label style="margin-left: 20px;"><input type="checkbox" name="symptomes1" value="a. Perturbations respiratoires nocturnes: ronflement, reniflement/halètement, ou pauses respiratoires durant sommeil"/> <strong>a.</strong> Perturbations respiratoires nocturnes: ronflement, reniflement/halètement, ou pauses respiratoires durant le sommeil</label>
+  
+  <label style="margin-left: 20px;"><input type="checkbox" name="symptomes1" value="b. Somnolence diurne, fatigue ou sommeil non réparateur malgré opportunités suffisantes de sommeil"/> <strong>b.</strong> Somnolence diurne, fatigue ou sommeil non réparateur malgré opportunités suffisantes de sommeil (non mieux expliqué par autre trouble mental ou condition médicale)</label>
+  
+  <p style="margin-top: 15px;"><strong>Option 2 : ≥15 apnées/hypopnées par heure (sans symptômes requis)</strong></p>
+  <label><input type="checkbox" name="option2" value="Évidence polysomnographique de 15 apnées/hypopnées obstructives ou plus par heure de sommeil indépendamment des symptômes accompagnateurs"/> Évidence par polysomnographie de 15 apnées et/ou hypopnées obstructives ou plus par heure de sommeil indépendamment des symptômes accompagnateurs</label>
+  
+  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+</fieldset>
+
+<!-- Sévérité -->
+<fieldset id="severite" class="hidden">
+  <legend>Spécifier la sévérité actuelle</legend>
+  <p class="subtitle">La sévérité est mesurée par l'index apnée-hypopnée (nombre d'apnées + hypopnées par heure de sommeil)</p>
+  <div class="warning-box">
+    ⚠️ Sévérité basée sur l'index apnée-hypopnée
+  </div>
+  
+  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> Index apnée-hypopnée <15</label>
+  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> Index apnée-hypopnée 15-30</label>
+  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> Index apnée-hypopnée >30</label>
+  
+  <div class="note-box">
+    <strong>Note :</strong> La sévérité globale est également informée par les niveaux de désaturation nocturne et de fragmentation du sommeil (mesurée par fréquence d'éveil cortical et stades de sommeil) et degré de symptômes associés et altération diurne.
+    <br/><br/>
+    Le trouble est considéré plus sévère quand les apnées/hypopnées sont accompagnées de :
+    <br/>• Désaturation significative en oxygène hémoglobine (ex: >10% du temps de sommeil à <90%)
+    <br/>• Fragmentation sévère du sommeil (index d'éveil >30/heure ou temps en sommeil profond <5%)
+  </div>
+  
+  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+</fieldset>
+
+</form>
+
+<div id="resultat"></div>
+
+<script>
+let choix={option1:false,symptomes1:[],option2:false,severite:""};
+
+function validerCritereA(){
+  const opt1=document.querySelector("input[name='option1']:checked");
+  const symp1=Array.from(document.querySelectorAll("input[name='symptomes1']:checked")).map(e=>e.value);
+  const opt2=document.querySelector("input[name='option2']:checked");
+  
+  if(opt1&&symp1.length>0){
+    choix.option1=true;
+    choix.symptomes1=symp1;
+    document.getElementById("severite").classList.remove("hidden");
+  }else if(opt2){
+    choix.option2=true;
+    document.getElementById("severite").classList.remove("hidden");
+  }else{
+    alert("Sélectionnez soit l'option 1 (≥5 apnées/hypopnées + au moins 1 symptôme) OU l'option 2 (≥15 apnées/hypopnées)");
+  }
+}
+
+function afficherResume(){
+  const s=document.querySelector("input[name='severite']:checked");
+  if(s){
+    choix.severite=s.value;
+    genererResume();
+  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la sévérité", confirmButtonColor: "#667eea"});
+}
+
+function genererResume(){
+  const code="G47.33";
+  let diag=code+" Apnée Obstructive du Sommeil Hypopnée, sévérité "+choix.severite.toLowerCase();
+  
+  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
+  
+  h+="<h4>Critère A – Évidence polysomnographique</h4><ul class='choix-list'>";
+  if(choix.option1){
+    h+="<li>✓ <strong>Option 1 :</strong> Évidence polysomnographique d'au moins 5 apnées ou hypopnées obstructives par heure de sommeil</li>";
+    h+="<li style='margin-left:20px;'><strong>Symptômes de sommeil :</strong></li>";
+    choix.symptomes1.forEach(s=>h+="<li style='margin-left:40px;'>✓ "+s+"</li>");
+  }
+  if(choix.option2){
+    h+="<li>✓ <strong>Option 2 :</strong> Évidence polysomnographique de 15 apnées/hypopnées obstructives ou plus par heure de sommeil (indépendamment des symptômes)</li>";
+  }
+  h+="</ul>";
+  
+  h+="<h4>Sévérité actuelle</h4><ul class='choix-list'><li>✓ "+choix.severite+"</li></ul>";
+  
+  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
+  h+="<br/><br/><strong>Caractéristiques :</strong> Apnées et hypopnées obstructives durant le sommeil.";
+  h+="<br/><br/><strong>Critère A - Deux options (1 OU 2) :</strong>";
+  h+="<br/><strong>Option 1 :</strong> Évidence polysomnographique d'au moins 5 apnées/hypopnées obstructives par heure de sommeil ET l'un des symptômes suivants:";
+  h+="<br/>• a. Perturbations respiratoires nocturnes (ronflement, reniflement/halètement, pauses respiratoires)";
+  h+="<br/>• b. Somnolence diurne, fatigue ou sommeil non réparateur malgré opportunités suffisantes";
+  h+="<br/><strong>Option 2 :</strong> Évidence polysomnographique de 15 apnées/hypopnées obstructives ou plus par heure de sommeil (indépendamment des symptômes).";
+  h+="<br/><br/><strong>Sévérité (basée sur index apnée-hypopnée) :</strong>";
+  h+="<br/>• Léger: Index <15";
+  h+="<br/>• Modéré: Index 15-30";
+  h+="<br/>• Sévère: Index >30";
+  h+="<br/><br/><strong>Définitions :</strong>";
+  h+="<br/>• <strong>Apnée :</strong> Absence totale de flux d'air";
+  h+="<br/>• <strong>Hypopnée :</strong> Réduction du flux d'air";
+  h+="<br/>• <strong>Index apnée-hypopnée :</strong> Nombre d'apnées + hypopnées par heure de sommeil";
+  h+="<br/><br/><strong>Facteurs de sévérité additionnels :</strong>";
+  h+="<br/>• Niveaux de désaturation nocturne en oxygène";
+  h+="<br/>• Fragmentation du sommeil (fréquence d'éveil cortical, stades de sommeil)";
+  h+="<br/>• Degré de symptômes associés et altération diurne";
+  h+="<br/><br/><strong>Considéré plus sévère si :</strong>";
+  h+="<br/>• Désaturation significative en oxygène hémoglobine (>10% du temps de sommeil à <90%)";
+  h+="<br/>• Fragmentation sévère du sommeil (index d'éveil >30/heure)";
+  h+="<br/>• Temps réduit en sommeil profond (stade N3 <5%)";
+  h+="</div></div>";
+  
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  document.getElementById("resultat").innerHTML=h;
+}
+</script>
+
+<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+  <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+</footer>
+
+
+
+
+<script>
+function validerFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+}
+
+function nonValiderFormulaire() {
+  // Cette fonction sera remplacee dynamiquement par Django en mode validation
+  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+}
+</script>
+
+</body>
+</html>
