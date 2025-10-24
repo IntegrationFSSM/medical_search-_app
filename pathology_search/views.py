@@ -66,10 +66,12 @@ def about(request):
 
 def view_pathology(request, html_path):
     """
-    Afficher le contenu HTML d'une pathologie.
+    Afficher le contenu HTML d'une pathologie avec traduction automatique.
     """
     from django.conf import settings
     from django.http import HttpResponse, Http404
+    from django.utils.translation import get_language
+    from .translation_service import HTMLTranslationService
     import os
     
     try:
@@ -84,9 +86,21 @@ def view_pathology(request, html_path):
         if not os.path.abspath(full_path).startswith(os.path.abspath(settings.EMBEDDINGS_FOLDER)):
             raise Http404("Accès non autorisé")
         
-        # Lire le contenu HTML
-        with open(full_path, 'r', encoding='utf-8') as f:
-            html_content = f.read()
+        # Détecter la langue active
+        current_lang = get_language()  # 'fr', 'en', 'es', etc.
+        
+        # Si ce n'est pas français, traduire avec le service
+        if current_lang and current_lang != 'fr':
+            translation_service = HTMLTranslationService()
+            html_content = translation_service.translate_html_page(html_path, current_lang)
+            if html_content is None:
+                # Fallback sur l'original si erreur
+                with open(full_path, 'r', encoding='utf-8') as f:
+                    html_content = f.read()
+        else:
+            # Lire le contenu HTML original (français)
+            with open(full_path, 'r', encoding='utf-8') as f:
+                html_content = f.read()
         
         # Si chargé dans une iframe (mode validation), injecter le script de communication
         if request.GET.get('mode') == 'validation' or 'validate' in request.META.get('HTTP_REFERER', ''):
