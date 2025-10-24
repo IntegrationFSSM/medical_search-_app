@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Mutisme Sélectif – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Selective Mutism Evaluation – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -105,80 +106,69 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Mutisme Sélectif – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Assessment of Selective Mutism – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Incapacité constante à parler dans des situations sociales spécifiques</legend>
-  <p class="subtitle">Incapacité à parler dans certaines situations où l'on s'attend à ce que l'enfant parle, malgré la capacité de parler dans d'autres situations</p>
-  <label><input type="checkbox" name="critereA" value="Incapacité constante à parler dans des situations sociales spécifiques"/> Incapacité constante à parler dans des situations sociales spécifiques</label>
-  <label><input type="checkbox" name="critereA" value="Situations où il y a une attente de parler (à l'école)"/> Situations où il y a une attente de parler (à l'école)</label>
-  <label><input type="checkbox" name="critereA" value="Parle dans d'autres situations"/> Parle dans d'autres situations</label>
-  <p style="margin-top: 10px;"><strong>Situations où l'enfant ne parle pas :</strong></p>
-  <label><input type="checkbox" name="situations" value="À l'école"/> À l'école</label>
-  <label><input type="checkbox" name="situations" value="Avec des personnes non familières"/> Avec des personnes non familières</label>
-  <label><input type="checkbox" name="situations" value="Dans des lieux publics"/> Dans des lieux publics</label>
-  <label><input type="checkbox" name="situations" value="Lors d'événements sociaux"/> Lors d'événements sociaux</label>
-  <label><input type="checkbox" name="situations" value="Autres situations sociales spécifiques"/> Autres situations sociales spécifiques</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Constant inability to speak in specific social situations</legend>
+<p class="subtitle">Inability to speak in certain situations where it is expected that the child speaks, despite the ability to speak in other situations.</p>
+<label>Constant inability to speak in specific social situations</label>
+<label>Situations where there is a wait to speak (at school)</label>
+<label>Speak in other situations</label>
+<p style="margin-top: 10px;"><strong>Situations où l'enfant ne parle pas :</strong></p>
+<label>At school</label>
+<label>With unfamiliar people</label>
+<label>In public places</label>
+<label>During social events</label>
+<label>Other specific social situations</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Interférence avec la réussite ou la communication</legend>
-  <p class="subtitle">La perturbation interfère avec la réussite scolaire/professionnelle ou la communication sociale</p>
-  <label><input type="checkbox" name="critereB" value="Interfère avec la réussite scolaire"/> Interfère avec la réussite scolaire</label>
-  <label><input type="checkbox" name="critereB" value="Interfère avec la réussite professionnelle"/> Interfère avec la réussite professionnelle</label>
-  <label><input type="checkbox" name="critereB" value="Interfère avec la communication sociale"/> Interfère avec la communication sociale</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Interference with success or communication</legend>
+<p class="subtitle">The disruption interferes with academic/professional success or social communication.</p>
+<label>Interferes with academic success</label>
+<label>Interferes with professional success</label>
+<label>Interferes with social communication</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Durée (au moins 1 mois)</legend>
-  <p class="subtitle">La durée de la perturbation est d'au moins 1 mois (ne se limite pas au premier mois d'école)</p>
-  <label><input type="checkbox" name="critereC" value="Durée d'au moins 1 mois"/> Durée d'au moins 1 mois</label>
-  <label><input type="checkbox" name="critereC" value="Ne se limite pas au premier mois d'école"/> Ne se limite pas au premier mois d'école</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Duration (at least 1 month)</legend>
+<p class="subtitle">The duration of the disruption is at least 1 month (not limited to the first month of school)</p>
+<label>Duration of at least 1 month</label>
+<label>Does not limit itself to the first month of school</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion des problèmes linguistiques</legend>
-  <p class="subtitle">L'incapacité à parler n'est pas attribuable à un manque de connaissance ou de confort avec la langue parlée</p>
-  <label><input type="checkbox" name="critereD" value="Pas dû à un manque de connaissance de la langue"/> Pas dû à un manque de connaissance de la langue requise dans la situation sociale</label>
-  <label><input type="checkbox" name="critereD" value="Pas dû à un manque de confort avec la langue"/> Pas dû à un manque de confort avec la langue parlée requise</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Exclusion of language issues</legend>
+<p class="subtitle">The inability to speak is not attributable to a lack of knowledge or comfort with the spoken language.</p>
+<label>Not due to a lack of knowledge of the language required in the social situation.</label>
+<label>Not due to a lack of comfort with the required spoken language.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un trouble de la communication ou autre trouble</p>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliqué par un trouble de la communication"/> Pas mieux expliqué par un trouble de la communication (trouble de la fluence d'apparition pendant l'enfance)</label>
-  <label><input type="checkbox" name="critereE" value="Ne survient pas exclusivement au cours d'un trouble du spectre de l'autisme"/> Ne survient pas exclusivement au cours d'un trouble du spectre de l'autisme</label>
-  <label><input type="checkbox" name="critereE" value="Ne survient pas exclusivement au cours de la schizophrénie"/> Ne survient pas exclusivement au cours de la schizophrénie</label>
-  <label><input type="checkbox" name="critereE" value="Ne survient pas exclusivement au cours d'un autre trouble psychotique"/> Ne survient pas exclusivement au cours d'un autre trouble psychotique</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Differential Diagnosis</legend>
+<p class="subtitle">The disturbance is not better explained by a communication disorder or another disorder.</p>
+<label>Not better explained by a communication disorder (fluency disorder occurring during childhood)</label>
+<label>Does not occur exclusively during an autism spectrum disorder.</label>
+<label>Does not occur exclusively during schizophrenia.</label>
+<label>Does not occur exclusively during another psychotic disorder.</label>
+<button onclick="validerCritereE()" type="button">✔️ Validate criterion E</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -309,10 +299,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

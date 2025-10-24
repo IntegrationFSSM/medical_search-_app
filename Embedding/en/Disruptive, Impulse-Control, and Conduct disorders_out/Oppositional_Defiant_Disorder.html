@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Oppositionnel avec Provocation – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation of Oppositional Defiant Disorder – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -125,90 +126,76 @@
       margin-bottom: 5px;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Oppositionnel avec Provocation – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Oppositional Defiant Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Pattern d'humeur/comportement (≥4 symptômes sur 8, pendant ≥6 mois)</legend>
-  <p class="subtitle">Pattern d'humeur colérique/irritable, de comportement querelleur/provocateur ou de caractère vindicatif, manifesté lors d'interactions avec au moins un individu qui n'est pas un frère/sœur</p>
-  <div class="warning-box">
+<legend>Criterion A – Mood/behavior pattern (≥4 symptoms out of 8, for ≥6 months)</legend>
+<p class="subtitle">Angry/irritable mood pattern, quarrelsome/provocative behavior, or vindictive character, manifested during interactions with at least one individual who is not a sibling.</p>
+<div class="warning-box">
     ⚠️ <strong>Fréquence :</strong><br/>
     • <strong>&lt;5 ans :</strong> Comportement présent la plupart des jours pendant ≥6 mois (sauf A8)<br/>
     • <strong>≥5 ans :</strong> Comportement présent au moins 1 fois par semaine pendant ≥6 mois (sauf A8)
   </div>
-  
-  <p class="category-title">HUMEUR COLÉRIQUE/IRRITABLE</p>
-  <label><input type="checkbox" name="critereA" value="1. Perd souvent son sang-froid"/> 1. Perd souvent son sang-froid</label>
-  <label><input type="checkbox" name="critereA" value="2. Est souvent susceptible ou facilement agacé"/> 2. Est souvent susceptible ou facilement agacé</label>
-  <label><input type="checkbox" name="critereA" value="3. Est souvent en colère et plein de ressentiment"/> 3. Est souvent en colère et plein de ressentiment</label>
-  
-  <p class="category-title">COMPORTEMENT QUERELLEUR/PROVOCATEUR</p>
-  <label><input type="checkbox" name="critereA" value="4. Conteste souvent les figures d'autorité (ou adultes pour enfants/ados)"/> 4. Conteste souvent les figures d'autorité (ou adultes pour enfants/adolescents)</label>
-  <label><input type="checkbox" name="critereA" value="5. S'oppose activement ou refuse de se plier aux demandes/règles"/> 5. S'oppose activement ou refuse de se plier aux demandes des figures d'autorité ou aux règles</label>
-  <label><input type="checkbox" name="critereA" value="6. Embête délibérément les autres"/> 6. Embête délibérément les autres</label>
-  <label><input type="checkbox" name="critereA" value="7. Fait souvent porter à autrui la responsabilité de ses erreurs/mauvais comportements"/> 7. Fait souvent porter à autrui la responsabilité de ses erreurs ou mauvais comportements</label>
-  
-  <p class="category-title">CARACTÈRE VINDICATIF</p>
-  <label><input type="checkbox" name="critereA" value="8. S'est montré méchant ou vindicatif au moins 2 fois dans les 6 derniers mois"/> 8. S'est montré méchant ou vindicatif au moins 2 fois dans les 6 derniers mois</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<p class="category-title">ANGRY/IRRITABLE MOOD</p>
+<label>1. Often loses his temper</label>
+<label>2. Is often sensitive or easily annoyed</label>
+<label>3. Is often angry and full of resentment</label>
+<p class="category-title">QUARRELSOME/PROVOCATIVE BEHAVIOR</p>
+<label>4. Often challenges authority figures (or adults for children/adolescents)</label>
+<label>5. Actively opposes or refuses to comply with the demands of authority figures or rules</label>
+<label>6. Deliberately annoys others</label>
+<label>7. Often shifts the responsibility for their mistakes or bad behaviors onto others.</label>
+<p class="category-title">VINDICTIVE NATURE</p>
+<label>8. Has shown cruel or vindictive behavior at least 2 times in the last 6 months</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Détresse ou impact négatif</legend>
-  <p class="subtitle">La perturbation du comportement est associée à une détresse chez l'individu ou autrui dans son contexte social immédiat, ou a un impact négatif sur le fonctionnement</p>
-  <label><input type="checkbox" name="critereB" value="Détresse chez l'individu"/> Détresse chez l'individu</label>
-  <label><input type="checkbox" name="critereB" value="Détresse chez autrui (famille, pairs, collègues)"/> Détresse chez autrui dans le contexte social immédiat (famille, pairs, collègues)</label>
-  <label><input type="checkbox" name="critereB" value="Impact négatif sur fonctionnement social"/> Impact négatif sur le fonctionnement social</label>
-  <label><input type="checkbox" name="critereB" value="Impact négatif sur fonctionnement éducatif"/> Impact négatif sur le fonctionnement éducatif</label>
-  <label><input type="checkbox" name="critereB" value="Impact négatif sur fonctionnement professionnel"/> Impact négatif sur le fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereB" value="Impact négatif sur autres domaines importants"/> Impact négatif sur autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Distress or negative impact</legend>
+<p class="subtitle">Behavioral disruption is associated with distress in the individual or others in their immediate social context, or has a negative impact on functioning.</p>
+<label>Distress in the individual</label>
+<label>Distress in others within the immediate social context (family, peers, colleagues)</label>
+<label>Negative impact on social functioning</label>
+<label>Negative impact on educational functioning</label>
+<label>Negative impact on professional functioning</label>
+<label>Negative impact on other important areas of functioning</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Diagnostic différentiel</legend>
-  <p class="subtitle">Les comportements ne surviennent pas exclusivement au cours d'autres troubles</p>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours d'un trouble psychotique"/> Ne survient pas exclusivement au cours d'un trouble psychotique</label>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours d'un trouble lié à l'usage de substances"/> Ne survient pas exclusivement au cours d'un trouble lié à l'usage de substances</label>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours d'un trouble dépressif"/> Ne survient pas exclusivement au cours d'un trouble dépressif</label>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours d'un trouble bipolaire"/> Ne survient pas exclusivement au cours d'un trouble bipolaire</label>
-  <label><input type="checkbox" name="critereC" value="Critères du trouble dysrégulation de l'humeur explosive non remplis"/> Critères du trouble dysrégulation de l'humeur explosive (DMDD) non remplis</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Differential Diagnosis</legend>
+<p class="subtitle">Behaviors do not occur exclusively during other disorders.</p>
+<label>Does not occur exclusively during a psychotic disorder.</label>
+<label>Does not occur exclusively during a substance use disorder.</label>
+<label>Does not occur exclusively during a depressive disorder.</label>
+<label>Does not occur exclusively during a bipolar disorder.</label>
+<label>Criteria for Disruptive Mood Dysregulation Disorder (DMDD) not met</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Sévérité -->
-<fieldset id="severite" class="hidden">
-  <legend>Sévérité actuelle</legend>
-  <p class="subtitle">Préciser la sévérité actuelle basée sur le nombre de contextes où les symptômes sont présents</p>
-  <div class="note-box">
-    <strong>Note :</strong> Il n'est pas rare que les individus avec TOP montrent des symptômes seulement à la maison et avec les membres de la famille. Cependant, la pervasivité des symptômes est un indicateur de la sévérité du trouble.
+<fieldset class="hidden" id="severite">
+<legend>Current severity</legend>
+<p class="subtitle">Specify the current severity based on the number of contexts where symptoms are present.</p>
+<div class="note-box">
+<strong>Note :</strong> Il n'est pas rare que les individus avec TOP montrent des symptômes seulement à la maison et avec les membres de la famille. Cependant, la pervasivité des symptômes est un indicateur de la sévérité du trouble.
   </div>
-  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> Symptômes confinés à un seul contexte (maison, école, travail, pairs)</label>
-  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> Certains symptômes présents dans au moins deux contextes</label>
-  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> Certains symptômes présents dans trois contextes ou plus</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<label>Symptoms confined to a single context (home, school, work, peers)</label>
+<label>Certain symptoms present in at least two contexts</label>
+<label>Certain symptoms present in three or more contexts</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -307,10 +294,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

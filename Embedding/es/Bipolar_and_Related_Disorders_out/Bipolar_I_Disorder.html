@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Bipolaire I – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Bipolar I – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -120,145 +121,126 @@
       font-size: 0.9em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Bipolaire I – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Bipolar I – DSM-5-TR</h2>
 </div>
-
+</div>
 <div class="warning-box">
   ⚠️ <strong>Important :</strong> Pour diagnostiquer un trouble bipolaire I, il est nécessaire de remplir les critères d'au moins UN épisode maniaque (Critères A-D).
 </div>
-
 <form id="formulaire">
-
 <!-- ÉPISODE MANIAQUE -->
-<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">ÉPISODE MANIAQUE</h3>
-
+<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">EPISODIO MANÍACO</h3>
 <!-- Maniaque A -->
 <fieldset id="maniaqueA">
-  <legend>Critère A – Période distincte d'humeur élevée et d'énergie accrue</legend>
-  <p class="subtitle">Période distincte d'humeur et d'énergie/activité anormalement et persistamment élevées, durant au moins 1 semaine, présente presque toute la journée, presque tous les jours (ou toute durée si hospitalisation nécessaire)</p>
-  <label><input type="checkbox" name="maniaqueA" value="Humeur anormalement et persistamment élevée"/> Humeur anormalement et persistamment élevée</label>
-  <label><input type="checkbox" name="maniaqueA" value="Humeur expansive"/> Humeur expansive</label>
-  <label><input type="checkbox" name="maniaqueA" value="Humeur irritable"/> Humeur irritable</label>
-  <label><input type="checkbox" name="maniaqueA" value="Augmentation anormale et persistante de l'activité"/> Augmentation anormale et persistante de l'activité</label>
-  <label><input type="checkbox" name="maniaqueA" value="Augmentation anormale et persistante de l'énergie"/> Augmentation anormale et persistante de l'énergie</label>
-  <label><input type="checkbox" name="maniaqueA" value="Durée d'au moins 1 semaine (ou toute durée si hospitalisation)"/> Durée d'au moins 1 semaine (ou toute durée si hospitalisation)</label>
-  <button type="button" onclick="validerManiaqueA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Período distinto de ánimo elevado y aumento de energía</legend>
+<p class="subtitle">Período distinto de estado de ánimo y energía/actividad anormalmente y persistentemente elevados, durante al menos 1 semana, presente casi todo el día, casi todos los días (o cualquier duración si se requiere hospitalización)</p>
+<label>Estado de ánimo anormalmente y persistentemente elevado</label>
+<label>Humedad expansiva</label>
+<label>Humedad irritable</label>
+<label>Aumento anormal y persistente de la actividad</label>
+<label>Aumento anormal y persistente de la energía</label>
+<label>Duración de al menos 1 semana (o cualquier duración si hay hospitalización)</label>
+<button onclick="validerManiaqueA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Maniaque B -->
-<fieldset id="maniaqueB" class="hidden">
-  <legend>Critère B – Symptômes (3 ou plus, 4 si humeur seulement irritable)</legend>
-  <p class="subtitle">Au moins 3 symptômes (4 si l'humeur est seulement irritable), présents à un degré significatif et représentant un changement notable du comportement habituel</p>
-  <label><input type="checkbox" name="maniaqueB" value="1. Estime de soi exagérée ou idées de grandeur"/> 1. Estime de soi exagérée ou idées de grandeur</label>
-  <label><input type="checkbox" name="maniaqueB" value="2. Réduction du besoin de sommeil (se sent reposé après seulement 3 heures)"/> 2. Réduction du besoin de sommeil (se sent reposé après seulement 3 heures)</label>
-  <label><input type="checkbox" name="maniaqueB" value="3. Plus loquace que d'habitude ou pression à parler continuellement"/> 3. Plus loquace que d'habitude ou pression à parler continuellement</label>
-  <label><input type="checkbox" name="maniaqueB" value="4. Fuite des idées ou expérience subjective que les pensées défilent"/> 4. Fuite des idées ou expérience subjective que les pensées défilent</label>
-  <label><input type="checkbox" name="maniaqueB" value="5. Distractibilité (attention trop facilement attirée par des stimuli externes)"/> 5. Distractibilité (attention trop facilement attirée par des stimuli externes sans importance ou non pertinents)</label>
-  <label><input type="checkbox" name="maniaqueB" value="6. Augmentation de l'activité orientée vers un but ou agitation psychomotrice"/> 6. Augmentation de l'activité orientée vers un but (sociale, professionnelle, scolaire, sexuelle) ou agitation psychomotrice</label>
-  <label><input type="checkbox" name="maniaqueB" value="7. Engagement excessif dans des activités à potentiel élevé de conséquences dommageables"/> 7. Engagement excessif dans des activités à potentiel élevé de conséquences dommageables (achats inconsidérés, indiscrétions sexuelles, investissements imprudents)</label>
-  <button type="button" onclick="validerManiaqueB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="maniaqueB">
+<legend>Criterio B – Síntomas (3 o más, 4 si el estado de ánimo es solo irritable)</legend>
+<p class="subtitle">Al menos 3 síntomas (4 si el estado de ánimo es solo irritable), presentes en un grado significativo y que representan un cambio notable en el comportamiento habitual.</p>
+<label>1. Autoestima exagerada o ideas de grandeza</label>
+<label>2. Reducción de la necesidad de sueño (se siente descansado después de solo 3 horas)</label>
+<label>3. Más locuaz de lo habitual o presión para hablar continuamente</label>
+<label>4. Fuga de ideas o experiencia subjetiva de que los pensamientos desfilan</label>
+<label>5. Distractibilidad (atención atraída demasiado fácilmente por estímulos externos sin importancia o no relevantes)</label>
+<label>6. Aumento de la actividad orientada hacia un objetivo (social, profesional, escolar, sexual) o agitación psicomotora</label>
+<label>7. Compromiso excesivo en actividades con alto potencial de consecuencias dañinas (compras imprudentes, indiscreciones sexuales, inversiones imprudentes)</label>
+<button onclick="validerManiaqueB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Maniaque C -->
-<fieldset id="maniaqueC" class="hidden">
-  <legend>Critère C – Altération marquée du fonctionnement</legend>
-  <p class="subtitle">La perturbation de l'humeur est suffisamment sévère pour causer une altération marquée ou nécessiter une hospitalisation ou présente des caractéristiques psychotiques</p>
-  <label><input type="checkbox" name="maniaqueC" value="Altération marquée du fonctionnement social"/> Altération marquée du fonctionnement social</label>
-  <label><input type="checkbox" name="maniaqueC" value="Altération marquée du fonctionnement professionnel"/> Altération marquée du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="maniaqueC" value="Nécessite une hospitalisation pour prévenir un danger"/> Nécessite une hospitalisation pour prévenir un danger pour soi ou autrui</label>
-  <label><input type="checkbox" name="maniaqueC" value="Présence de caractéristiques psychotiques"/> Présence de caractéristiques psychotiques</label>
-  <button type="button" onclick="validerManiaqueC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="maniaqueC">
+<legend>Criterio C – Alteración marcada del funcionamiento</legend>
+<p class="subtitle">La perturbación del estado de ánimo es lo suficientemente grave como para causar un deterioro marcado o requerir hospitalización o presenta características psicóticas.</p>
+<label>Alteración marcada del funcionamiento social</label>
+<label>Alteración marcada del funcionamiento profesional</label>
+<label>Necesita una hospitalización para prevenir un peligro para sí mismo o para otros</label>
+<label>Presencia de características psicóticas</label>
+<button onclick="validerManiaqueC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Maniaque D -->
-<fieldset id="maniaqueD" class="hidden">
-  <legend>Critère D – Exclusion des causes organiques</legend>
-  <p class="subtitle">L'épisode n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <div class="note-box">
-    <strong>Note :</strong> Un épisode maniaque complet qui émerge pendant un traitement antidépresseur mais persiste à un niveau syndromique complet au-delà de l'effet physiologique de ce traitement est une preuve suffisante d'un épisode maniaque et donc d'un diagnostic de trouble bipolaire I.
+<fieldset class="hidden" id="maniaqueD">
+<legend>Criterio D – Exclusión de causas orgánicas</legend>
+<p class="subtitle">El episodio no es atribuible a los efectos fisiológicos de una sustancia o de una afección médica.</p>
+<div class="note-box">
+<strong>Note :</strong> Un épisode maniaque complet qui émerge pendant un traitement antidépresseur mais persiste à un niveau syndromique complet au-delà de l'effet physiologique de ce traitement est une preuve suffisante d'un épisode maniaque et donc d'un diagnostic de trouble bipolaire I.
   </div>
-  <label><input type="checkbox" name="maniaqueD" value="Pas attribuable à une substance (drogue, médicament, autre traitement)"/> Pas attribuable à une substance (drogue, médicament, autre traitement)</label>
-  <label><input type="checkbox" name="maniaqueD" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale</label>
-  <button type="button" onclick="validerManiaqueD()">✔️ Valider le critère D</button>
+<label>No atribuible a una sustancia (droga, medicamento, otro tratamiento)</label>
+<label>No atribuible a una afección médica</label>
+<button onclick="validerManiaqueD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Bipolar I A -->
-<fieldset id="bipolarA" class="hidden">
-  <legend>Trouble Bipolaire I – Critère A</legend>
-  <p class="subtitle">Les critères d'au moins un épisode maniaque ont été remplis (Critères A-D ci-dessus)</p>
-  <div class="note-box">
-    <strong>Note :</strong> Au moins un épisode maniaque au cours de la vie est requis pour le diagnostic de trouble bipolaire I.
+<fieldset class="hidden" id="bipolarA">
+<legend>Trastorno Bipolar I – Criterio A</legend>
+<p class="subtitle">Se han cumplido los criterios de al menos un episodio maníaco (Criterios A-D arriba)</p>
+<div class="note-box">
+<strong>Note :</strong> Au moins un épisode maniaque au cours de la vie est requis pour le diagnostic de trouble bipolaire I.
   </div>
-  <label><input type="checkbox" id="bipolarACheck" value="Les critères d'au moins un épisode maniaque ont été remplis"/> Les critères d'au moins un épisode maniaque ont été remplis</label>
-  <button type="button" onclick="validerBipolarA()">✔️ Valider</button>
+<label>Se han cumplido los criterios de al menos un episodio maníaco.</label>
+<button onclick="validerBipolarA()" type="button">✔️ Validar</button>
 </fieldset>
-
 <!-- Bipolar I B -->
-<fieldset id="bipolarB" class="hidden">
-  <legend>Trouble Bipolaire I – Critère B (Diagnostic différentiel)</legend>
-  <p class="subtitle">Au moins un épisode maniaque n'est pas mieux expliqué par d'autres troubles psychotiques</p>
-  <label><input type="checkbox" name="bipolarB" value="Pas mieux expliqué par un trouble schizo-affectif"/> Pas mieux expliqué par un trouble schizo-affectif</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à la schizophrénie"/> Pas superposé à la schizophrénie</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à un trouble schizophréniforme"/> Pas superposé à un trouble schizophréniforme</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à un trouble délirant"/> Pas superposé à un trouble délirant</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à un autre trouble du spectre de la schizophrénie"/> Pas superposé à un autre trouble du spectre de la schizophrénie ou autre trouble psychotique</label>
-  <button type="button" onclick="validerBipolarB()">✔️ Valider</button>
+<fieldset class="hidden" id="bipolarB">
+<legend>Trastorno Bipolar I – Criterio B (Diagnóstico diferencial)</legend>
+<p class="subtitle">Al menos un episodio maníaco no está mejor explicado por otros trastornos psicóticos.</p>
+<label>No se explica mejor por un trastorno esquizoafectivo.</label>
+<label>No superpuesto a la esquizofrenia</label>
+<label>No superpuesto a un trastorno esquizofreniforme</label>
+<label>No superpuesto a un trastorno delirante</label>
+<label>No superpuesto a otro trastorno del espectro de la esquizofrenia o a otro trastorno psicótico.</label>
+<button onclick="validerBipolarB()" type="button">✔️ Validar</button>
 </fieldset>
-
 <!-- Type et Sévérité -->
-<fieldset id="codage" class="hidden">
-  <legend>Codage – Type d'épisode actuel ou le plus récent</legend>
-  <p class="subtitle">Sélectionner le type d'épisode actuel ou le plus récent</p>
-  
-  <p style="margin-top: 10px;"><strong>Type d'épisode :</strong></p>
-  <label><input type="radio" name="typeEpisode" value="Maniaque"/> Épisode maniaque (actuel ou le plus récent)</label>
-  <label><input type="radio" name="typeEpisode" value="Hypomaniaque"/> Épisode hypomaniaque (actuel ou le plus récent)</label>
-  <label><input type="radio" name="typeEpisode" value="Dépressif"/> Épisode dépressif (actuel ou le plus récent)</label>
-  <label><input type="radio" name="typeEpisode" value="Non spécifié"/> Non spécifié</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité/État (si applicable) :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
-  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
-  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
-  <label><input type="radio" name="severite" value="Avec caractéristiques psychotiques"/> Avec caractéristiques psychotiques</label>
-  <label><input type="radio" name="severite" value="En rémission partielle"/> En rémission partielle</label>
-  <label><input type="radio" name="severite" value="En rémission complète"/> En rémission complète</label>
-  <label><input type="radio" name="severite" value="Non spécifié"/> Non spécifié</label>
-  
-  <button type="button" onclick="validerCodage()">✔️ Valider le codage</button>
+<fieldset class="hidden" id="codage">
+<legend>Codificación – Tipo de episodio actual o más reciente</legend>
+<p class="subtitle">Seleccionar el tipo de episodio actual o más reciente</p>
+<p style="margin-top: 10px;"><strong>Type d'épisode :</strong></p>
+<label>Episodio maníaco (actual o más reciente)</label>
+<label>Episodio hipomaníaco (actual o más reciente)</label>
+<label>Episodio depresivo (actual o más reciente)</label>
+<label>No especificado</label>
+<p style="margin-top: 15px;"><strong>Sévérité/État (si applicable) :</strong></p>
+<label>Ligero</label>
+<label>Moderado</label>
+<label>Severo</label>
+<label>Con características psicóticas</label>
+<label>En remisión parcial</label>
+<label>En remisión completa</label>
+<label>No especificado</label>
+<button onclick="validerCodage()" type="button">✔️ Validar la codificación</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs additionnels (optionnels)</legend>
-  <p class="subtitle">Cocher tous les spécificateurs qui s'appliquent à l'épisode actuel (ou le plus récent si en rémission)</p>
-  <label><input type="checkbox" name="specificateurs" value="Avec détresse anxieuse"/> Avec détresse anxieuse</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques mixtes"/> Avec caractéristiques mixtes</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec cycles rapides"/> Avec cycles rapides</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques mélancoliques"/> Avec caractéristiques mélancoliques</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques atypiques"/> Avec caractéristiques atypiques</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques psychotiques congruentes à l'humeur"/> Avec caractéristiques psychotiques congruentes à l'humeur</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques psychotiques non congruentes à l'humeur"/> Avec caractéristiques psychotiques non congruentes à l'humeur</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec catatonie (code additionnel F06.1)"/> Avec catatonie (code additionnel F06.1)</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec début lors du péripartum"/> Avec début lors du péripartum</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractère saisonnier"/> Avec caractère saisonnier</label>
-  <button type="button" onclick="validerSpecificateurs()">✔️ Valider les spécificateurs</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Especificadores adicionales (opcionales)</legend>
+<p class="subtitle">Marque todos los especificadores que se aplican al episodio actual (o al más reciente si está en remisión)</p>
+<label>Con angustia ansiosa</label>
+<label>Con características mixtas</label>
+<label>Con ciclos rápidos</label>
+<label>Con características melancólicas</label>
+<label>Con características atípicas</label>
+<label>Con características psicóticas congruentes con el estado de ánimo</label>
+<label>Con características psicóticas no congruentes con el estado de ánimo</label>
+<label>Con catatonía (código adicional F06.1)</label>
+<label>Con inicio durante el periparto</label>
+<label>Con carácter estacional</label>
+<button onclick="validerSpecificateurs()" type="button">✔️ Validar los especificadores</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   maniaqueA: [],
@@ -472,10 +454,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

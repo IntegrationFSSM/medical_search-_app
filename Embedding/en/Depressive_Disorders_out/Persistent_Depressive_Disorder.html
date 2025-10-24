@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Dépressif Persistant (Dysthymie) – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation of Persistent Depressive Disorder (Dysthymia) – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -119,144 +120,122 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Dépressif Persistant (Dysthymie) – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Persistent Depressive Disorder (Dysthymia) – DSM-5-TR</h2>
 </div>
-
+</div>
 <div class="warning-box">
   ℹ️ <strong>Note :</strong> Ce trouble représente une consolidation du trouble dépressif majeur chronique et du trouble dysthymique du DSM-IV.
 </div>
-
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Humeur dépressive (≥2 ans adultes, ≥1 an enfants/ados)</legend>
-  <p class="subtitle">Humeur dépressive la plupart du temps, plus de jours que non, pendant au moins 2 ans</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants et adolescents, l'humeur peut être irritable et la durée doit être d'au moins 1 an.
+<legend>Criterion A – Depressive mood (≥2 years adults, ≥1 year children/adolescents)</legend>
+<p class="subtitle">Depressed mood most of the time, more days than not, for at least 2 years</p>
+<div class="note-box">
+<strong>Note :</strong> Chez les enfants et adolescents, l'humeur peut être irritable et la durée doit être d'au moins 1 an.
   </div>
-  <label><input type="checkbox" name="critereA" value="Humeur dépressive la plupart du temps"/> Humeur dépressive la plupart du temps, plus de jours que non</label>
-  <label><input type="checkbox" name="critereA" value="Durée d'au moins 2 ans (adultes)"/> Durée d'au moins 2 ans (adultes) ou 1 an (enfants/adolescents)</label>
-  <label><input type="checkbox" name="critereA" value="Indiquée par compte-rendu subjectif ou observation"/> Indiquée par compte-rendu subjectif ou observation par autrui</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<label>Depressed mood most of the time, more days than not</label>
+<label>Duration of at least 2 years (adults) or 1 year (children/adolescents)</label>
+<label>Indicated by subjective report or observation by others</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – 2 symptômes ou plus pendant la dépression</legend>
-  <p class="subtitle">Présence de 2 symptômes ou plus parmi les suivants pendant la période dépressive</p>
-  <label><input type="checkbox" name="critereB" value="1. Appétit faible ou suralimentation"/> 1. Appétit faible ou suralimentation</label>
-  <label><input type="checkbox" name="critereB" value="2. Insomnie ou hypersomnie"/> 2. Insomnie ou hypersomnie</label>
-  <label><input type="checkbox" name="critereB" value="3. Faible énergie ou fatigue"/> 3. Faible énergie ou fatigue</label>
-  <label><input type="checkbox" name="critereB" value="4. Faible estime de soi"/> 4. Faible estime de soi</label>
-  <label><input type="checkbox" name="critereB" value="5. Mauvaise concentration ou difficulté à prendre des décisions"/> 5. Mauvaise concentration ou difficulté à prendre des décisions</label>
-  <label><input type="checkbox" name="critereB" value="6. Sentiments de désespoir"/> 6. Sentiments de désespoir</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – 2 or more symptoms during the depression</legend>
+<p class="subtitle">Presence of 2 or more symptoms among the following during the depressive period</p>
+<label>1. Low appetite or overeating</label>
+<label>2. Insomnia or hypersomnia</label>
+<label>3. Low energy or fatigue</label>
+<label>4. Low self-esteem</label>
+<label>5. Poor concentration or difficulty making decisions</label>
+<label>6. Feelings of despair</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Pas sans symptômes pendant plus de 2 mois</legend>
-  <p class="subtitle">Pendant la période de 2 ans (1 an enfants/ados), jamais sans les symptômes A et B pendant plus de 2 mois d'affilée</p>
-  <label><input type="checkbox" id="choixC" value="Jamais sans symptômes pendant plus de 2 mois d'affilée"/> Jamais sans symptômes pendant plus de 2 mois d'affilée</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – No symptoms for more than 2 months</legend>
+<p class="subtitle">During the 2-year period (1 year for children/adolescents), never without symptoms A and B for more than 2 consecutive months.</p>
+<label>Never without symptoms for more than 2 consecutive months.</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Épisode dépressif majeur possible</legend>
-  <p class="subtitle">Les critères d'un trouble dépressif majeur peuvent être continuellement présents pendant 2 ans</p>
-  <div class="note-box">
-    <strong>Note :</strong> Si les critères d'un épisode dépressif majeur sont remplis à un moment quelconque pendant la période de 2 ans, un diagnostic séparé de dépression majeure doit être posé EN PLUS du trouble dépressif persistant avec le spécificateur approprié.
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Possible major depressive episode</legend>
+<p class="subtitle">The criteria for a major depressive disorder may be continuously present for 2 years.</p>
+<div class="note-box">
+<strong>Note :</strong> Si les critères d'un épisode dépressif majeur sont remplis à un moment quelconque pendant la période de 2 ans, un diagnostic séparé de dépression majeure doit être posé EN PLUS du trouble dépressif persistant avec le spécificateur approprié.
   </div>
-  <label><input type="checkbox" id="choixD" value="Critères EDM peuvent être présents"/> Les critères d'un épisode dépressif majeur peuvent être continuellement présents pendant 2 ans</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<label>The criteria for a major depressive episode may be continuously present for 2 years.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Jamais d'épisode maniaque ou hypomaniaque</legend>
-  <p class="subtitle">Il n'y a jamais eu d'épisode maniaque ou hypomaniaque</p>
-  <label><input type="checkbox" id="choixE" value="Jamais d'épisode maniaque ou hypomaniaque"/> Jamais d'épisode maniaque ou hypomaniaque</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Never had a manic or hypomanic episode</legend>
+<p class="subtitle">There has never been a manic or hypomanic episode.</p>
+<label>Never any manic or hypomanic episodes</label>
+<button onclick="validerCritereE()" type="button">✔️ Validate criterion E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par d'autres troubles psychotiques</p>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliquée par trouble schizo-affectif persistant"/> Pas mieux expliquée par trouble schizo-affectif persistant</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliquée par schizophrénie"/> Pas mieux expliquée par schizophrénie</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliquée par trouble délirant"/> Pas mieux expliquée par trouble délirant</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliquée par autre trouble du spectre de la schizophrénie"/> Pas mieux expliquée par autre trouble du spectre de la schizophrénie ou autre trouble psychotique</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+<fieldset class="hidden" id="critereF">
+<legend>Criterion F – Differential Diagnosis</legend>
+<p class="subtitle">The disturbance is not better explained by other psychotic disorders.</p>
+<label>Not better explained by persistent schizoaffective disorder.</label>
+<label>Not better explained by schizophrenia</label>
+<label>Not better explained by delusional disorder</label>
+<label>Not better explained by another schizophrenia spectrum disorder or another psychotic disorder.</label>
+<button onclick="validerCritereF()" type="button">✔️ Validate criterion F</button>
 </fieldset>
-
 <!-- Critère G -->
-<fieldset id="critereG" class="hidden">
-  <legend>Critère G – Exclusion des causes organiques</legend>
-  <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereG" value="Pas attribuable à une substance"/> Pas attribuable à une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereG" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale (ex: hypothyroïdie)</label>
-  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
+<fieldset class="hidden" id="critereG">
+<legend>Criterion G – Exclusion of organic causes</legend>
+<p class="subtitle">The symptoms are not attributable to the physiological effects of a substance or a medical condition.</p>
+<label>Not attributable to a substance (drug, medication)</label>
+<label>Not attributable to a medical condition (e.g., hypothyroidism)</label>
+<button onclick="validerCritereG()" type="button">✔️ Validate criterion G</button>
 </fieldset>
-
 <!-- Critère H -->
-<fieldset id="critereH" class="hidden">
-  <legend>Critère H – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereH" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereH" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereH" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereH" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereH()">✔️ Valider le critère H</button>
+<fieldset class="hidden" id="critereH">
+<legend>Criterion H – Distress or impairment in functioning</legend>
+<p class="subtitle">Symptoms cause clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerCritereH()" type="button">✔️ Validate criterion H</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs</legend>
-  <p class="subtitle">Sélectionner tous les spécificateurs applicables</p>
-  
-  <p style="margin-top: 10px;"><strong>Caractéristiques additionnelles :</strong></p>
-  <label><input type="checkbox" name="specs1" value="Avec détresse anxieuse"/> Avec détresse anxieuse</label>
-  <label><input type="checkbox" name="specs1" value="Avec caractéristiques atypiques"/> Avec caractéristiques atypiques</label>
-  
-  <p style="margin-top: 15px;"><strong>Rémission :</strong></p>
-  <label><input type="checkbox" name="specs2" value="En rémission partielle"/> En rémission partielle</label>
-  <label><input type="checkbox" name="specs2" value="En rémission complète"/> En rémission complète</label>
-  
-  <p style="margin-top: 15px;"><strong>Âge de début :</strong></p>
-  <label><input type="radio" name="debut" value="Début précoce (avant 21 ans)"/> Début précoce : Si début avant 21 ans</label>
-  <label><input type="radio" name="debut" value="Début tardif (21 ans ou plus)"/> Début tardif : Si début à 21 ans ou plus</label>
-  
-  <p style="margin-top: 15px;"><strong>Pattern (pour les 2 dernières années) :</strong></p>
-  <label><input type="radio" name="pattern" value="Avec syndrome dysthymique pur"/> Avec syndrome dysthymique pur : Critères EDM non remplis pendant au moins les 2 dernières années</label>
-  <label><input type="radio" name="pattern" value="Avec épisode dépressif majeur persistant"/> Avec épisode dépressif majeur persistant : Critères EDM remplis tout au long des 2 dernières années</label>
-  <label><input type="radio" name="pattern" value="Avec épisodes dépressifs majeurs intermittents, avec épisode actuel"/> Avec épisodes dépressifs majeurs intermittents, avec épisode actuel : Critères EDM actuellement remplis, mais périodes ≥8 semaines sous le seuil</label>
-  <label><input type="radio" name="pattern" value="Avec épisodes dépressifs majeurs intermittents, sans épisode actuel"/> Avec épisodes dépressifs majeurs intermittents, sans épisode actuel : Critères EDM non actuellement remplis, mais ≥1 EDM dans les 2 dernières années</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité actuelle :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
-  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
-  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Specifiers</legend>
+<p class="subtitle">Select all applicable specifiers</p>
+<p style="margin-top: 10px;"><strong>Caractéristiques additionnelles :</strong></p>
+<label>With anxious distress</label>
+<label>With atypical characteristics</label>
+<p style="margin-top: 15px;"><strong>Rémission :</strong></p>
+<label>In partial remission</label>
+<label>In complete remission</label>
+<p style="margin-top: 15px;"><strong>Âge de début :</strong></p>
+<label>Early onset: If onset before 21 years old</label>
+<label>Late onset: If onset at 21 years or older</label>
+<p style="margin-top: 15px;"><strong>Pattern (pour les 2 dernières années) :</strong></p>
+<label>With pure dysthymic syndrome: EDM criteria not met for at least the last 2 years.</label>
+<label>With persistent major depressive episode: MDE criteria met throughout the last 2 years.</label>
+<label>With intermittent major depressive episodes, with current episode: EDM criteria currently met, but periods ≥8 weeks below threshold.</label>
+<label>With intermittent major depressive episodes, without current episode: EDM criteria not currently met, but ≥1 EDM in the last 2 years.</label>
+<p style="margin-top: 15px;"><strong>Sévérité actuelle :</strong></p>
+<label>Light</label>
+<label>Moderate</label>
+<label>Severe</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix={critereA:[],critereB:[],critereC:false,critereD:false,critereE:false,critereF:[],critereG:[],critereH:[],specs1:[],specs2:[],debut:"",pattern:"",severite:""};
 
@@ -311,15 +290,10 @@ function afficherResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -331,6 +305,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

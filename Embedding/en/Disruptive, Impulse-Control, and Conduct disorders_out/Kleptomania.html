@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Kleptomanie – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Kleptomania Assessment – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,74 +113,63 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation de la Kleptomanie – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Kleptomania – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Échec récurrent à résister aux impulsions de voler</legend>
-  <p class="subtitle">Vols d'objets qui ne sont pas nécessaires pour l'usage personnel ou pour leur valeur monétaire</p>
-  <label><input type="checkbox" name="critereA" value="Échec récurrent à résister aux impulsions de voler"/> Échec récurrent à résister aux impulsions de voler</label>
-  <label><input type="checkbox" name="critereA" value="Objets volés non nécessaires pour usage personnel"/> Objets volés non nécessaires pour usage personnel</label>
-  <label><input type="checkbox" name="critereA" value="Objets volés non nécessaires pour leur valeur monétaire"/> Objets volés non nécessaires pour leur valeur monétaire</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Recurrent failure to resist the impulses to steal</legend>
+<p class="subtitle">Theft of objects that are not necessary for personal use or for their monetary value</p>
+<label>Recurrent failure to resist the impulses to steal</label>
+<label>Stolen items not necessary for personal use</label>
+<label>Stolen objects not necessary for their monetary value</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Tension croissante avant le vol</legend>
-  <p class="subtitle">Sensation croissante de tension immédiatement avant de commettre le vol</p>
-  <label><input type="checkbox" id="choixB" value="Sensation croissante de tension immédiatement avant le vol"/> Sensation croissante de tension immédiatement avant de commettre le vol</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Increasing tension before the flight</legend>
+<p class="subtitle">Increasing sense of tension immediately before committing the theft</p>
+<label>Increasing sense of tension immediately before committing the theft</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Plaisir, gratification ou soulagement au moment du vol</legend>
-  <p class="subtitle">Plaisir, gratification ou soulagement au moment de commettre le vol</p>
-  <label><input type="checkbox" name="critereC" value="Plaisir au moment du vol"/> Plaisir au moment de commettre le vol</label>
-  <label><input type="checkbox" name="critereC" value="Gratification au moment du vol"/> Gratification au moment de commettre le vol</label>
-  <label><input type="checkbox" name="critereC" value="Soulagement au moment du vol"/> Soulagement au moment de commettre le vol</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Pleasure, gratification, or relief at the time of the theft</legend>
+<p class="subtitle">Pleasure, gratification, or relief at the moment of committing the theft</p>
+<label>Pleasure at the moment of committing the theft</label>
+<label>Gratification at the moment of committing the theft</label>
+<label>Relief at the moment of committing the theft</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion de motivations spécifiques</legend>
-  <p class="subtitle">Le vol n'est pas commis pour exprimer la colère ou la vengeance, et n'est pas en réponse à une idée délirante ou une hallucination</p>
-  <label><input type="checkbox" name="critereD" value="Vol non commis pour exprimer la colère"/> Vol non commis pour exprimer la colère</label>
-  <label><input type="checkbox" name="critereD" value="Vol non commis pour exprimer la vengeance"/> Vol non commis pour exprimer la vengeance</label>
-  <label><input type="checkbox" name="critereD" value="Vol non en réponse à une idée délirante"/> Vol non en réponse à une idée délirante</label>
-  <label><input type="checkbox" name="critereD" value="Vol non en réponse à une hallucination"/> Vol non en réponse à une hallucination</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Exclusion of specific motivations</legend>
+<p class="subtitle">The theft is not committed to express anger or revenge, and is not in response to a delusional idea or a hallucination.</p>
+<label>Flight not committed to express anger</label>
+<label>Flight not committed to express vengeance</label>
+<label>Flight not in response to a delusional idea</label>
+<label>Flight not in response to a hallucination</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Diagnostic différentiel</legend>
-  <p class="subtitle">Le vol n'est pas mieux expliqué par un trouble des conduites, un épisode maniaque ou un trouble de personnalité antisociale</p>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliqué par trouble des conduites"/> Pas mieux expliqué par trouble des conduites</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliqué par épisode maniaque"/> Pas mieux expliqué par épisode maniaque</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliqué par trouble de personnalité antisociale"/> Pas mieux expliqué par trouble de personnalité antisociale</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Differential Diagnosis</legend>
+<p class="subtitle">The flight is not better explained by a conduct disorder, a manic episode, or an antisocial personality disorder.</p>
+<label>Not better explained by conduct disorder</label>
+<label>Not better explained by manic episode</label>
+<label>Not better explained by antisocial personality disorder.</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -296,10 +286,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

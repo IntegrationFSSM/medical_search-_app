@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Anxiété de Séparation – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno de Ansiedad por Separación – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -98,73 +99,63 @@
       font-style: italic;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Anxiété de Séparation – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno de Ansiedad por Separación – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Peur ou anxiété excessive concernant la séparation (au moins 3 sur 8)</legend>
-  <p class="subtitle">Peur ou anxiété inappropriée au développement et excessive concernant la séparation des figures d'attachement, manifestée par au moins 3 des symptômes suivants</p>
-  <label><input type="checkbox" name="critereA" value="1. Détresse excessive récurrente lors de l'anticipation ou de l'expérience de la séparation"/> 1. Détresse excessive récurrente lors de l'anticipation ou de l'expérience de la séparation du domicile ou des figures d'attachement majeures</label>
-  <label><input type="checkbox" name="critereA" value="2. Inquiétude persistante et excessive de perdre les figures d'attachement majeures"/> 2. Inquiétude persistante et excessive de perdre les figures d'attachement majeures ou qu'il leur arrive un malheur (maladie, blessure, catastrophe, décès)</label>
-  <label><input type="checkbox" name="critereA" value="3. Inquiétude persistante et excessive qu'un événement malheureux entraîne une séparation"/> 3. Inquiétude persistante et excessive qu'un événement malheureux (se perdre, être kidnappé, avoir un accident, tomber malade) entraîne une séparation d'une figure d'attachement majeure</label>
-  <label><input type="checkbox" name="critereA" value="4. Réticence ou refus persistant de sortir, de s'éloigner du domicile, d'aller à l'école ou au travail"/> 4. Réticence ou refus persistant de sortir, de s'éloigner du domicile, d'aller à l'école, au travail ou ailleurs par peur de la séparation</label>
-  <label><input type="checkbox" name="critereA" value="5. Peur excessive et persistante ou réticence à être seul(e) ou sans figures d'attachement majeures"/> 5. Peur excessive et persistante ou réticence à être seul(e) ou sans figures d'attachement majeures à la maison ou dans d'autres environnements</label>
-  <label><input type="checkbox" name="critereA" value="6. Réticence ou refus persistant de dormir loin du domicile ou sans être près d'une figure d'attachement"/> 6. Réticence ou refus persistant de dormir loin du domicile ou de s'endormir sans être près d'une figure d'attachement majeure</label>
-  <label><input type="checkbox" name="critereA" value="7. Cauchemars répétés impliquant le thème de la séparation"/> 7. Cauchemars répétés impliquant le thème de la séparation</label>
-  <label><input type="checkbox" name="critereA" value="8. Plaintes répétées de symptômes physiques lors de la séparation ou de son anticipation"/> 8. Plaintes répétées de symptômes physiques (maux de tête, maux d'estomac, nausées, vomissements) lors de la séparation des figures d'attachement majeures ou de son anticipation</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Miedo o ansiedad excesiva relacionada con la separación (al menos 3 de 8)</legend>
+<p class="subtitle">Miedo o ansiedad inapropiada para el desarrollo y excesiva respecto a la separación de las figuras de apego, manifestada por al menos 3 de los siguientes síntomas</p>
+<label>1. Angustia excesiva recurrente al anticipar o experimentar la separación del hogar o de las figuras de apego principales</label>
+<label>2. Preocupación persistente y excesiva por perder a las figuras de apego principales o que les ocurra algún mal (enfermedad, lesión, catástrofe, fallecimiento)</label>
+<label>3. Preocupación persistente y excesiva de que un evento desafortunado (perderse, ser secuestrado, tener un accidente, enfermarse) provoque una separación de una figura de apego principal</label>
+<label>4. Reticencia o rechazo persistente a salir, a alejarse del hogar, a ir a la escuela, al trabajo o a otros lugares por miedo a la separación</label>
+<label>5. Miedo excesivo y persistente o renuencia a estar solo/a o sin figuras de apego importantes en casa o en otros entornos</label>
+<label>6. Reticencia o rechazo persistente a dormir lejos del hogar o a quedarse dormido sin estar cerca de una figura de apego importante</label>
+<label>7. Pesadillas repetidas que involucran el tema de la separación</label>
+<label>8. Quejas repetidas de síntomas físicos (dolores de cabeza, dolores de estómago, náuseas, vómitos) al separarse de figuras de apego importantes o al anticipar dicha separación.</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Durée</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement est persistant</p>
-  <label><input type="checkbox" name="critereB" value="Dure au moins 4 semaines chez les enfants et adolescents"/> Dure au moins 4 semaines chez les enfants et adolescents</label>
-  <label><input type="checkbox" name="critereB" value="Dure typiquement 6 mois ou plus chez les adultes"/> Dure typiquement 6 mois ou plus chez les adultes</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Duración</legend>
+<p class="subtitle">El miedo, la ansiedad o la evitación son persistentes</p>
+<label>Dura al menos 4 semanas en niños y adolescentes</label>
+<label>Dura típicamente 6 meses o más en los adultos</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">La perturbation cause une détresse ou altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereC" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement scolaire"/> Altération du fonctionnement scolaire</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereC" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Angustia o alteración del funcionamiento</legend>
+<p class="subtitle">La perturbación causa una angustia o alteración clínicamente significativa</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento social</label>
+<label>Alteración del funcionamiento escolar</label>
+<label>Alteración del funcionamiento profesional</label>
+<label>Alteración en otros ámbitos importantes del funcionamiento</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereD" value="Pas refus de quitter la maison en raison d'une résistance excessive au changement (TSA)"/> Pas refus de quitter la maison en raison d'une résistance excessive au changement (trouble du spectre de l'autisme)</label>
-  <label><input type="checkbox" name="critereD" value="Pas délires ou hallucinations concernant la séparation (troubles psychotiques)"/> Pas délires ou hallucinations concernant la séparation (troubles psychotiques)</label>
-  <label><input type="checkbox" name="critereD" value="Pas refus de sortir sans compagnon de confiance (agoraphobie)"/> Pas refus de sortir sans compagnon de confiance (agoraphobie)</label>
-  <label><input type="checkbox" name="critereD" value="Pas inquiétudes concernant la santé ou le malheur d'autrui (TAG)"/> Pas inquiétudes concernant la santé ou le malheur d'autrui (trouble anxieux généralisé)</label>
-  <label><input type="checkbox" name="critereD" value="Pas préoccupations concernant une maladie (anxiété liée à la maladie)"/> Pas préoccupations concernant une maladie (trouble anxiété liée à la maladie)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Diagnóstico diferencial</legend>
+<p class="subtitle">La perturbación no se explica mejor por otro trastorno mental.</p>
+<label>No rechazo de abandonar la casa debido a una resistencia excesiva al cambio (trastorno del espectro autista)</label>
+<label>Sin delirios ni alucinaciones respecto a la separación (trastornos psicóticos)</label>
+<label>No rechazo a salir sin un compañero de confianza (agorafobia)</label>
+<label>Sin preocupaciones sobre la salud o la desgracia de los demás (trastorno de ansiedad generalizada)</label>
+<label>Sin preocupaciones relacionadas con una enfermedad (trastorno de ansiedad relacionado con la enfermedad)</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -266,10 +257,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble de Dépersonnalisation/Déréalisation – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation of Depersonalization/Derealization Disorder – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -118,93 +119,79 @@
       margin-bottom: 5px;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble de Dépersonnalisation/Déréalisation – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Depersonalization/Derealization Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Expériences persistantes ou récurrentes</legend>
-  <p class="subtitle">Présence de dépersonnalisation, déréalisation, ou les deux</p>
-  
-  <p class="category-title">1. DÉPERSONNALISATION</p>
-  <p class="subtitle">Expériences d'irréalité, de détachement ou d'être un observateur extérieur par rapport à ses propres pensées, sentiments, sensations, corps ou actions</p>
-  <label><input type="checkbox" name="depersonnalisation" value="Expériences d'irréalité par rapport à soi-même"/> Expériences d'irréalité par rapport à soi-même</label>
-  <label><input type="checkbox" name="depersonnalisation" value="Détachement par rapport à ses pensées, sentiments, sensations, corps ou actions"/> Détachement par rapport à ses pensées, sentiments, sensations, corps ou actions</label>
-  <label><input type="checkbox" name="depersonnalisation" value="Sentiment d'être un observateur extérieur de soi-même"/> Sentiment d'être un observateur extérieur de soi-même</label>
-  <label><input type="checkbox" name="depersonnalisation" value="Altérations perceptuelles"/> Altérations perceptuelles</label>
-  <label><input type="checkbox" name="depersonnalisation" value="Sens du temps distordu"/> Sens du temps distordu</label>
-  <label><input type="checkbox" name="depersonnalisation" value="Soi irréel ou absent"/> Soi irréel ou absent</label>
-  <label><input type="checkbox" name="depersonnalisation" value="Engourdissement émotionnel"/> Engourdissement émotionnel</label>
-  <label><input type="checkbox" name="depersonnalisation" value="Engourdissement physique"/> Engourdissement physique</label>
-  
-  <p class="category-title">2. DÉRÉALISATION</p>
-  <p class="subtitle">Expériences d'irréalité ou de détachement par rapport à l'environnement</p>
-  <label><input type="checkbox" name="derealisation" value="Individus ou objets vécus comme irréels"/> Individus ou objets vécus comme irréels</label>
-  <label><input type="checkbox" name="derealisation" value="Environnement vécu comme onirique"/> Environnement vécu comme onirique</label>
-  <label><input type="checkbox" name="derealisation" value="Environnement vécu comme brumeux"/> Environnement vécu comme brumeux</label>
-  <label><input type="checkbox" name="derealisation" value="Environnement vécu comme sans vie"/> Environnement vécu comme sans vie</label>
-  <label><input type="checkbox" name="derealisation" value="Distorsions visuelles de l'environnement"/> Distorsions visuelles de l'environnement</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Persistent or recurrent experiences</legend>
+<p class="subtitle">Presence of depersonalization, derealization, or both</p>
+<p class="category-title">1. DEPERSONALIZATION</p>
+<p class="subtitle">Experiences of unreality, detachment, or being an outside observer in relation to one's own thoughts, feelings, sensations, body, or actions</p>
+<label>Experiences of unreality concerning oneself</label>
+<label>Detachment from one's thoughts, feelings, sensations, body, or actions</label>
+<label>Feeling like an outside observer of oneself</label>
+<label>Perceptual alterations</label>
+<label>Distorted sense of time</label>
+<label>Self unreal or absent</label>
+<label>Emotional numbness</label>
+<label>Physical numbness</label>
+<p class="category-title">2. DEREALIZATION</p>
+<p class="subtitle">Experiences of unreality or detachment from the environment</p>
+<label>Individuals or objects perceived as unreal</label>
+<label>Environment experienced as dreamlike</label>
+<label>Environment perceived as hazy</label>
+<label>Environment experienced as lifeless</label>
+<label>Visual distortions of the environment</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Test de réalité intact</legend>
-  <p class="subtitle">Pendant les expériences de dépersonnalisation ou déréalisation, le test de réalité reste intact</p>
-  <label><input type="checkbox" id="choixB" value="Test de réalité intact"/> Le test de réalité reste intact (la personne sait que ces expériences ne sont pas réelles)</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Intact reality testing</legend>
+<p class="subtitle">During experiences of depersonalization or derealization, the reality testing remains intact.</p>
+<label>The reality test remains intact (the person knows that these experiences are not real)</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereC" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereC" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Distress or impairment in functioning</legend>
+<p class="subtitle">Symptoms cause clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion des causes organiques</legend>
-  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereD" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereD" value="Pas attribuable à une affection médicale (crises convulsives)"/> Pas attribuable à une affection médicale (ex: crises convulsives)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Exclusion of organic causes</legend>
+<p class="subtitle">The disturbance is not attributable to the physiological effects of a substance or a medical condition.</p>
+<label>Not attributable to a substance (drug, medication)</label>
+<label>Not attributable to a medical condition (e.g., seizures)</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par schizophrénie"/> Pas mieux expliquée par schizophrénie</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par trouble panique"/> Pas mieux expliquée par trouble panique</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par trouble dépressif majeur"/> Pas mieux expliquée par trouble dépressif majeur</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par trouble de stress aigu"/> Pas mieux expliquée par trouble de stress aigu</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par trouble de stress post-traumatique"/> Pas mieux expliquée par trouble de stress post-traumatique</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par autre trouble dissociatif"/> Pas mieux expliquée par autre trouble dissociatif</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Differential Diagnosis</legend>
+<p class="subtitle">The disturbance is not better explained by another mental disorder.</p>
+<label>Not better explained by schizophrenia</label>
+<label>No better explained by panic disorder</label>
+<label>Not better explained by major depressive disorder</label>
+<label>No better explained by acute stress disorder</label>
+<label>No better explained by post-traumatic stress disorder</label>
+<label>Not better explained by another dissociative disorder.</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   depersonnalisation: [],
@@ -336,10 +323,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

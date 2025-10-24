@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Neurocognitif dû à Alzheimer – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Assessment of Neurocognitive Disorder due to Alzheimer's – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -120,118 +121,96 @@
       font-size: 0.85em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Neurocognitif dû à la Maladie d'Alzheimer – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Neurocognitive Disorder due to Alzheimer's Disease – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Critères du trouble neurocognitif majeur ou léger remplis</legend>
-  <p class="subtitle">Les critères sont remplis pour un trouble neurocognitif majeur ou léger</p>
-  <label><input type="radio" name="critereA" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
-  <label><input type="radio" name="critereA" value="Trouble neurocognitif léger"/> Trouble neurocognitif léger</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Criteria for major or mild neurocognitive disorder met</legend>
+<p class="subtitle">The criteria are met for a major or mild neurocognitive disorder.</p>
+<label>Major neurocognitive disorder</label>
+<label>Mild neurocognitive disorder</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Début insidieux et progression graduelle</legend>
-  <p class="subtitle">Début insidieux et progression graduelle de l'altération dans un ou plusieurs domaines cognitifs (pour majeur : ≥2 domaines altérés)</p>
-  <label><input type="checkbox" name="critereB" value="Début insidieux"/> Début insidieux</label>
-  <label><input type="checkbox" name="critereB" value="Progression graduelle de l'altération"/> Progression graduelle de l'altération</label>
-  <label><input type="checkbox" name="critereB" value="Altération dans un ou plusieurs domaines cognitifs"/> Altération dans un ou plusieurs domaines cognitifs</label>
-  <label><input type="checkbox" name="critereB" value="Pour majeur : au moins 2 domaines altérés"/> Pour trouble neurocognitif majeur : au moins 2 domaines altérés</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Insidious onset and gradual progression</legend>
+<p class="subtitle">Insidious onset and gradual progression of impairment in one or more cognitive domains (for major: ≥2 impaired domains)</p>
+<label>Insidious onset</label>
+<label>Gradual progression of deterioration</label>
+<label>Alteration in one or more cognitive domains</label>
+<label>For major neurocognitive disorder: at least 2 impaired domains.</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Maladie d'Alzheimer probable ou possible</legend>
-  <p class="subtitle">Critères remplis pour maladie d'Alzheimer probable ou possible</p>
-  <div class="warning-box">
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Probable or Possible Alzheimer's Disease</legend>
+<p class="subtitle">Criteria met for probable or possible Alzheimer's disease</p>
+<div class="warning-box">
     ⚠️ Les critères diffèrent selon que le trouble est majeur ou léger
   </div>
-  <button type="button" onclick="validerCritereC()">✔️ Continuer vers critères spécifiques</button>
+<button onclick="validerCritereC()" type="button">✔️ Continue to specific criteria</button>
 </fieldset>
-
 <!-- Critères C pour MAJEUR -->
-<fieldset id="critereCMajeur" class="hidden">
-  <legend>Critère C – Pour Trouble Neurocognitif MAJEUR</legend>
-  <p class="subtitle">Maladie d'Alzheimer PROBABLE si l'un des 2 critères suivants, sinon POSSIBLE</p>
-  
-  <p style="margin-top: 10px;"><strong>Option 1 : Mutation génétique</strong></p>
-  <label><input type="checkbox" name="majeurProb1" value="Preuve de mutation génétique causale (histoire familiale ou test génétique)"/> Preuve de mutation génétique causale de la maladie d'Alzheimer (histoire familiale ou test génétique)</label>
-  
-  <p style="margin-top: 15px;"><strong>Option 2 : Les 3 critères suivants (a, b, c)</strong></p>
-  <label><input type="checkbox" name="majeurProb2" value="a. Preuve claire de déclin mémoire/apprentissage + ≥1 autre domaine"/> a. Preuve claire de déclin en mémoire et apprentissage + au moins 1 autre domaine cognitif (histoire détaillée ou tests neuropsychologiques sériés)</label>
-  <label><input type="checkbox" name="majeurProb2" value="b. Déclin cognitif progressif et graduel, sans plateaux prolongés"/> b. Déclin cognitif progressif et graduel de manière constante, sans plateaux prolongés</label>
-  <label><input type="checkbox" name="majeurProb2" value="c. Pas de preuve d'étiologie mixte"/> c. Pas de preuve d'étiologie mixte (absence d'autre maladie neurodégénérative, cérébrovasculaire, neurologique, mentale ou systémique contribuant au déclin)</label>
-  
-  <button type="button" onclick="validerCritereCMajeur()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereCMajeur">
+<legend>Criterion C – For MAJOR Neurocognitive Disorder</legend>
+<p class="subtitle">Probable Alzheimer's disease if one of the 2 following criteria is met, otherwise POSSIBLE.</p>
+<p style="margin-top: 10px;"><strong>Option 1 : Mutation génétique</strong></p>
+<label>Evidence of causal genetic mutation of Alzheimer's disease (family history or genetic testing)</label>
+<p style="margin-top: 15px;"><strong>Option 2 : Les 3 critères suivants (a, b, c)</strong></p>
+<label>a. Clear evidence of decline in memory and learning + at least 1 other cognitive domain (detailed history or serial neuropsychological tests)</label>
+<label>b. Progressive and gradual cognitive decline in a constant manner, without prolonged plateaus.</label>
+<label>c. No evidence of mixed etiology (absence of other neurodegenerative, cerebrovascular, neurological, mental, or systemic diseases contributing to the decline)</label>
+<button onclick="validerCritereCMajeur()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critères C pour LÉGER -->
-<fieldset id="critereCLeger" class="hidden">
-  <legend>Critère C – Pour Trouble Neurocognitif LÉGER</legend>
-  <p class="subtitle">Maladie d'Alzheimer PROBABLE si mutation génétique, sinon POSSIBLE si les 3 critères suivants</p>
-  
-  <p style="margin-top: 10px;"><strong>Pour PROBABLE :</strong></p>
-  <label><input type="checkbox" name="legerProb" value="Preuve de mutation génétique causale (test génétique ou histoire familiale)"/> Preuve de mutation génétique causale de la maladie d'Alzheimer (test génétique ou histoire familiale)</label>
-  
-  <p style="margin-top: 15px;"><strong>Pour POSSIBLE (les 3 critères suivants) :</strong></p>
-  <label><input type="checkbox" name="legerPoss" value="1. Preuve claire de déclin en mémoire et apprentissage"/> 1. Preuve claire de déclin en mémoire et apprentissage</label>
-  <label><input type="checkbox" name="legerPoss" value="2. Déclin cognitif progressif et graduel, sans plateaux prolongés"/> 2. Déclin cognitif progressif et graduel de manière constante, sans plateaux prolongés</label>
-  <label><input type="checkbox" name="legerPoss" value="3. Pas de preuve d'étiologie mixte"/> 3. Pas de preuve d'étiologie mixte (absence d'autre maladie neurodégénérative, cérébrovasculaire, neurologique ou systémique contribuant au déclin)</label>
-  
-  <button type="button" onclick="validerCritereCLeger()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereCLeger">
+<legend>Criterion C – For Mild Neurocognitive Disorder</legend>
+<p class="subtitle">Alzheimer's disease PROBABLE if genetic mutation, otherwise POSSIBLE if the following 3 criteria are met</p>
+<p style="margin-top: 10px;"><strong>Pour PROBABLE :</strong></p>
+<label>Evidence of causal genetic mutation for Alzheimer's disease (genetic test or family history)</label>
+<p style="margin-top: 15px;"><strong>Pour POSSIBLE (les 3 critères suivants) :</strong></p>
+<label>1. Clear evidence of decline in memory and learning</label>
+<label>2. Progressive and gradual cognitive decline in a constant manner, without prolonged plateaus.</label>
+<label>3. No evidence of mixed etiology (absence of other neurodegenerative, cerebrovascular, neurological, or systemic diseases contributing to the decline)</label>
+<button onclick="validerCritereCLeger()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par d'autres causes</p>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par maladie cérébrovasculaire"/> Pas mieux expliquée par maladie cérébrovasculaire</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par autre maladie neurodégénérative"/> Pas mieux expliquée par autre maladie neurodégénérative</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par effets d'une substance"/> Pas mieux expliquée par effets d'une substance</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par autre trouble mental"/> Pas mieux expliquée par autre trouble mental</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par autre trouble neurologique"/> Pas mieux expliquée par autre trouble neurologique</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble systémique"/> Pas mieux expliquée par trouble systémique</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Differential Diagnosis</legend>
+<p class="subtitle">The disturbance is not better explained by other causes.</p>
+<label>No better explained by cerebrovascular disease</label>
+<label>Not better explained by another neurodegenerative disease.</label>
+<label>Not better explained by the effects of a substance</label>
+<label>Not better explained by another mental disorder.</label>
+<label>Not better explained by another neurological disorder.</label>
+<label>Not better explained by systemic disorder</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs et Sévérité</legend>
-  <p class="subtitle">Préciser les caractéristiques additionnelles</p>
-  
-  <p style="margin-top: 10px;"><strong>Perturbation comportementale :</strong></p>
-  <label><input type="radio" name="comportement" value="Avec perturbation comportementale"/> Avec perturbation comportementale</label>
-  <label><input type="radio" name="comportement" value="Sans perturbation comportementale"/> Sans perturbation comportementale</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
-  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
-  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
-  <label><input type="radio" name="severite" value="Non applicable"/> Non applicable (trouble neurocognitif léger)</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Specifiers and Severity</legend>
+<p class="subtitle">Specify the additional characteristics</p>
+<p style="margin-top: 10px;"><strong>Perturbation comportementale :</strong></p>
+<label>With behavioral disturbance</label>
+<label>Without behavioral disturbance</label>
+<p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
+<label>Light</label>
+<label>Moderate</label>
+<label>Severe</label>
+<label>Not applicable (mild neurocognitive disorder)</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix={critereA:"",critereB:[],typeAlz:"",majeurProb1:[],majeurProb2:[],legerProb:[],legerPoss:[],critereD:[],comportement:"",severite:""};
 
@@ -321,15 +300,10 @@ function genererResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -341,6 +315,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Encoprésie – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation Encopresis – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,76 +113,65 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation de l'Encoprésie – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Assessment of Encopresis – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Émission répétée de selles dans des endroits inappropriés</legend>
-  <p class="subtitle">Que ce soit involontaire ou intentionnel (ex: vêtements, sol)</p>
-  <label><input type="checkbox" name="critereA" value="Émission répétée de selles dans des endroits inappropriés"/> Émission répétée de selles dans des endroits inappropriés</label>
-  <label><input type="checkbox" name="critereA" value="Dans les vêtements"/> Dans les vêtements</label>
-  <label><input type="checkbox" name="critereA" value="Sur le sol"/> Sur le sol</label>
-  <label><input type="checkbox" name="critereA" value="Involontaire"/> Involontaire</label>
-  <label><input type="checkbox" name="critereA" value="Intentionnel"/> Intentionnel</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Repeated emission of stools in inappropriate places</legend>
+<p class="subtitle">Whether it is involuntary or intentional (e.g., clothing, floor)</p>
+<label>Repeated passage of stools in inappropriate places</label>
+<label>In the clothing</label>
+<label>On the ground</label>
+<label>Involuntary</label>
+<label>Intentional</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Fréquence (≥1 événement par mois pendant ≥3 mois)</legend>
-  <p class="subtitle">Au moins un tel événement survient chaque mois pendant au moins 3 mois</p>
-  <label><input type="checkbox" name="critereB" value="Au moins 1 événement par mois"/> Au moins 1 événement par mois</label>
-  <label><input type="checkbox" name="critereB" value="Pendant au moins 3 mois"/> Pendant au moins 3 mois</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Frequency (≥1 event per month for ≥3 months)</legend>
+<p class="subtitle">At least one such event occurs every month for at least 3 months.</p>
+<label>At least 1 event per month</label>
+<label>For at least 3 months</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Âge chronologique</legend>
-  <p class="subtitle">L'âge chronologique est d'au moins 4 ans (ou niveau de développement équivalent)</p>
-  <label><input type="checkbox" id="choixC" value="Âge chronologique ≥4 ans"/> Âge chronologique ≥4 ans (ou niveau de développement équivalent)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Chronological Age</legend>
+<p class="subtitle">Chronological age is at least 4 years (or equivalent developmental level)</p>
+<label>Chronological age ≥4 years (or equivalent developmental level)</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion des causes organiques</legend>
-  <p class="subtitle">Le comportement n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale (sauf par un mécanisme impliquant la constipation)</p>
-  <label><input type="checkbox" name="critereD" value="Pas attribuable à une substance (laxatifs)"/> Pas attribuable à une substance (ex: laxatifs)</label>
-  <label><input type="checkbox" name="critereD" value="Pas attribuable à une affection médicale (sauf constipation)"/> Pas attribuable à une affection médicale (sauf par mécanisme impliquant la constipation)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Exclusion of organic causes</legend>
+<p class="subtitle">The behavior is not attributable to the physiological effects of a substance or a medical condition (except by a mechanism involving constipation)</p>
+<label>Not attributable to a substance (e.g., laxatives)</label>
+<label>Not attributable to a medical condition (except by a mechanism involving constipation)</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Sous-type -->
-<fieldset id="soustype" class="hidden">
-  <legend>Sous-type</legend>
-  <p class="subtitle">Préciser le sous-type basé sur la présence ou l'absence de constipation</p>
-  <div class="note-box">
-    <strong>Avec constipation et incontinence par débordement :</strong> Selles caractéristiquement mal formées, fuite peut être peu fréquente à continue (jour et nuit). Seule une partie des selles est évacuée lors de la toilette. L'incontinence se résout après traitement de la constipation.<br/><br/>
-    <strong>Sans constipation et incontinence par débordement :</strong> Selles de forme et consistance normales, souillure intermittente. Les selles peuvent être déposées dans un endroit visible. Souvent associé au TOP ou trouble des conduites, ou conséquence de masturbation anale. Moins fréquent que le sous-type avec constipation.
+<fieldset class="hidden" id="soustype">
+<legend>Subtype</legend>
+<p class="subtitle">Specify the subtype based on the presence or absence of constipation.</p>
+<div class="note-box">
+<strong>Avec constipation et incontinence par débordement :</strong> Selles caractéristiquement mal formées, fuite peut être peu fréquente à continue (jour et nuit). Seule une partie des selles est évacuée lors de la toilette. L'incontinence se résout après traitement de la constipation.<br/><br/>
+<strong>Sans constipation et incontinence par débordement :</strong> Selles de forme et consistance normales, souillure intermittente. Les selles peuvent être déposées dans un endroit visible. Souvent associé au TOP ou trouble des conduites, ou conséquence de masturbation anale. Moins fréquent que le sous-type avec constipation.
   </div>
-  <label><input type="radio" name="soustype" value="F98.1 - Avec constipation et incontinence par débordement"/> <strong>F98.1</strong> - Avec constipation et incontinence par débordement : Preuve de constipation à l'examen physique ou par anamnèse</label>
-  <label><input type="radio" name="soustype" value="F98.1 - Sans constipation et incontinence par débordement"/> <strong>F98.1</strong> - Sans constipation et incontinence par débordement : Aucune preuve de constipation à l'examen physique ou par anamnèse</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<label>- With constipation and overflow incontinence: Evidence of constipation on physical examination or through history taking.</label>
+<label>- Without constipation and overflow incontinence: No evidence of constipation on physical examination or by history</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -298,10 +288,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

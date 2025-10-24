@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble de Rumination – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno de Ruminación – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,80 +113,69 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble de Rumination – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno de Ruminación – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Régurgitation répétée de nourriture (≥1 mois)</legend>
-  <p class="subtitle">La nourriture régurgitée peut être remâchée, re-avalée ou recrachée</p>
-  <label><input type="checkbox" name="critereA" value="Régurgitation répétée de nourriture"/> Régurgitation répétée de nourriture</label>
-  <label><input type="checkbox" name="critereA" value="Pendant au moins 1 mois"/> Pendant une période d'au moins 1 mois</label>
-  <label><input type="checkbox" name="critereA" value="Nourriture régurgitée peut être remâchée"/> Nourriture régurgitée peut être remâchée</label>
-  <label><input type="checkbox" name="critereA" value="Nourriture régurgitée peut être re-avalée"/> Nourriture régurgitée peut être re-avalée</label>
-  <label><input type="checkbox" name="critereA" value="Nourriture régurgitée peut être recrachée"/> Nourriture régurgitée peut être recrachée</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Regurgitación repetida de alimentos (≥1 mes)</legend>
+<p class="subtitle">La comida regurgitada puede ser remasticada, retragada o escupida.</p>
+<label>Regurgitación repetida de alimentos</label>
+<label>Durante un período de al menos 1 mes</label>
+<label>La comida regurgitada puede ser masticada de nuevo.</label>
+<label>La comida regurgitada puede ser re-deglutida</label>
+<label>La comida regurgitada puede ser escupida</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Exclusion des affections gastro-intestinales ou médicales</legend>
-  <p class="subtitle">La régurgitation répétée n'est pas attribuable à une affection gastro-intestinale associée ou à une autre affection médicale</p>
-  <label><input type="checkbox" name="critereB" value="Pas attribuable à reflux gastro-œsophagien"/> Pas attribuable à reflux gastro-œsophagien</label>
-  <label><input type="checkbox" name="critereB" value="Pas attribuable à sténose pylorique"/> Pas attribuable à sténose pylorique</label>
-  <label><input type="checkbox" name="critereB" value="Pas attribuable à autre affection gastro-intestinale"/> Pas attribuable à autre affection gastro-intestinale</label>
-  <label><input type="checkbox" name="critereB" value="Pas attribuable à autre affection médicale"/> Pas attribuable à autre affection médicale</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Exclusión de afecciones gastrointestinales o médicas</legend>
+<p class="subtitle">La regurgitación repetida no se atribuye a una afección gastrointestinal asociada o a otra afección médica.</p>
+<label>No atribuible a reflujo gastroesofágico</label>
+<label>No atribuible a estenosis pilórica</label>
+<label>No atribuible a otra afección gastrointestinal</label>
+<label>No atribuible a otra afección médica</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Exclusion des troubles alimentaires</legend>
-  <p class="subtitle">La perturbation alimentaire ne survient pas exclusivement au cours d'autres troubles alimentaires</p>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de l'anorexie mentale"/> Ne survient pas exclusivement au cours de l'anorexie mentale</label>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de la boulimie"/> Ne survient pas exclusivement au cours de la boulimie</label>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours du trouble de l'hyperphagie boulimique"/> Ne survient pas exclusivement au cours du trouble de l'hyperphagie boulimique</label>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours du trouble de restriction/évitement de l'apport alimentaire"/> Ne survient pas exclusivement au cours du trouble de restriction/évitement de l'apport alimentaire</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Exclusión de los trastornos alimentarios</legend>
+<p class="subtitle">La perturbación alimentaria no ocurre exclusivamente durante otros trastornos alimentarios.</p>
+<label>No ocurre exclusivamente durante la anorexia mental.</label>
+<label>No ocurre exclusivamente durante la bulimia</label>
+<label>No ocurre exclusivamente durante el trastorno por atracón.</label>
+<label>No ocurre exclusivamente durante el trastorno de restricción/evitación de la ingesta alimentaria.</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Sévérité suffisante si dans contexte d'autre trouble mental</legend>
-  <p class="subtitle">Si les symptômes surviennent dans le contexte d'un autre trouble mental, ils sont suffisamment sévères pour justifier une attention clinique additionnelle</p>
-  <div class="note-box">
-    <strong>Note :</strong> Si les symptômes surviennent dans le contexte d'un autre trouble mental (déficience intellectuelle ou autre trouble neurodéveloppemental), ils doivent être suffisamment sévères pour justifier une attention clinique additionnelle.
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Severidad suficiente si en el contexto de otro trastorno mental</legend>
+<p class="subtitle">Si los síntomas aparecen en el contexto de otro trastorno mental, son lo suficientemente graves como para justificar una atención clínica adicional.</p>
+<div class="note-box">
+<strong>Note :</strong> Si les symptômes surviennent dans le contexte d'un autre trouble mental (déficience intellectuelle ou autre trouble neurodéveloppemental), ils doivent être suffisamment sévères pour justifier une attention clinique additionnelle.
   </div>
-  <label><input type="checkbox" name="critereD" value="Si contexte d'autre trouble mental : sévérité suffisante pour attention additionnelle"/> Si dans le contexte d'un autre trouble mental : sévérité suffisante pour justifier attention clinique additionnelle</label>
-  <label><input type="checkbox" name="critereD" value="Pas dans le contexte d'un autre trouble mental"/> Pas dans le contexte d'un autre trouble mental</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<label>Si en el contexto de otro trastorno mental: severidad suficiente para justificar atención clínica adicional</label>
+<label>No en el contexto de otro trastorno mental.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Rémission -->
-<fieldset id="remission" class="hidden">
-  <legend>Rémission (optionnel)</legend>
-  <p class="subtitle">Préciser si applicable</p>
-  <label><input type="radio" name="remission" value="En rémission"/> En rémission : Après que les critères complets aient été remplis, les critères n'ont pas été remplis pendant une période prolongée</label>
-  <label><input type="radio" name="remission" value="Non applicable"/> Non applicable (trouble actif)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="remission">
+<legend>Remisión (opcional)</legend>
+<p class="subtitle">Especificar si es aplicable</p>
+<label>En remisión: Después de que se hayan cumplido los criterios completos, los criterios no se han cumplido durante un período prolongado.</label>
+<label>No aplicable (trastorno activo)</label>
+<button onclick="afficherResume()" type="button">✔️ Terminar</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -308,10 +298,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

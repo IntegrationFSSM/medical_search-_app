@@ -66,37 +66,17 @@ def about(request):
 
 def view_pathology(request, html_path):
     """
-    Afficher le contenu HTML d'une pathologie avec support i18n Django.
+    Afficher le contenu HTML d'une pathologie.
     """
     from django.conf import settings
     from django.http import HttpResponse, Http404
-    from django.utils.translation import get_language
     import os
     
     try:
-        # Détecter la langue active
-        current_lang = get_language()  # 'fr', 'en', 'es', etc.
+        # Construire le chemin complet vers le fichier HTML
+        full_path = os.path.join(settings.EMBEDDINGS_FOLDER, html_path)
         
-        # Construire le chemin avec la langue
-        # Structure: Embedding/fr/..., Embedding/en/..., Embedding/es/...
-        if current_lang and current_lang != 'fr':
-            # Essayer d'abord avec la langue spécifique
-            lang_path = os.path.join(settings.EMBEDDINGS_FOLDER, current_lang, html_path)
-            if os.path.exists(lang_path):
-                full_path = lang_path
-            else:
-                # Fallback sur français si traduction non disponible
-                full_path = os.path.join(settings.EMBEDDINGS_FOLDER, 'fr', html_path)
-                if not os.path.exists(full_path):
-                    # Fallback final sur le chemin original (sans sous-dossier langue)
-                    full_path = os.path.join(settings.EMBEDDINGS_FOLDER, html_path)
-        else:
-            # Français : chercher dans fr/ puis à la racine
-            full_path = os.path.join(settings.EMBEDDINGS_FOLDER, 'fr', html_path)
-            if not os.path.exists(full_path):
-                full_path = os.path.join(settings.EMBEDDINGS_FOLDER, html_path)
-        
-        # Vérifier que le fichier existe
+        # Vérifier que le fichier existe et est dans le dossier autorisé
         if not os.path.exists(full_path):
             raise Http404("Page HTML non trouvée")
         

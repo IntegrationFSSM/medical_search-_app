@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Bipolaire II – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Bipolar II – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -120,178 +121,150 @@
       font-size: 0.9em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Bipolaire II – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Bipolar II – DSM-5-TR</h2>
 </div>
-
+</div>
 <div class="warning-box">
   ⚠️ <strong>Important :</strong> Pour diagnostiquer un trouble bipolaire II, il faut au moins UN épisode hypomaniaque ET au moins UN épisode dépressif majeur. Il ne doit JAMAIS y avoir eu d'épisode maniaque.
 </div>
-
 <form id="formulaire">
-
 <!-- ÉPISODE HYPOMANIAQUE -->
-<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">ÉPISODE HYPOMANIAQUE</h3>
-
+<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">EPISODIO HIPOMANIACO</h3>
 <fieldset id="hypoA">
-  <legend>Critère A – Période distincte d'humeur élevée (≥4 jours)</legend>
-  <p class="subtitle">Durée d'au moins 4 jours consécutifs, présente presque toute la journée, presque tous les jours</p>
-  <label><input type="checkbox" name="hypoA" value="Humeur anormalement et persistamment élevée"/> Humeur anormalement et persistamment élevée</label>
-  <label><input type="checkbox" name="hypoA" value="Humeur expansive"/> Humeur expansive</label>
-  <label><input type="checkbox" name="hypoA" value="Humeur irritable"/> Humeur irritable</label>
-  <label><input type="checkbox" name="hypoA" value="Augmentation anormale et persistante de l'activité"/> Augmentation anormale et persistante de l'activité</label>
-  <label><input type="checkbox" name="hypoA" value="Augmentation anormale et persistante de l'énergie"/> Augmentation anormale et persistante de l'énergie</label>
-  <label><input type="checkbox" name="hypoA" value="Durée d'au moins 4 jours consécutifs"/> Durée d'au moins 4 jours consécutifs</label>
-  <button type="button" onclick="validerHypoA()">✔️ Valider</button>
+<legend>Criterio A – Período distinto de estado de ánimo elevado (≥4 días)</legend>
+<p class="subtitle">Duración de al menos 4 días consecutivos, presente casi todo el día, casi todos los días</p>
+<label>Estado de ánimo anormalmente y persistentemente elevado</label>
+<label>Humedad expansiva</label>
+<label>Humedad irritable</label>
+<label>Aumento anormal y persistente de la actividad</label>
+<label>Aumento anormal y persistente de la energía</label>
+<label>Duración de al menos 4 días consecutivos</label>
+<button onclick="validerHypoA()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="hypoB" class="hidden">
-  <legend>Critère B – Symptômes (3 ou plus, 4 si humeur seulement irritable)</legend>
-  <p class="subtitle">Au moins 3 symptômes (4 si l'humeur est seulement irritable)</p>
-  <label><input type="checkbox" name="hypoB" value="1. Estime de soi exagérée ou idées de grandeur"/> 1. Estime de soi exagérée ou idées de grandeur</label>
-  <label><input type="checkbox" name="hypoB" value="2. Réduction du besoin de sommeil"/> 2. Réduction du besoin de sommeil (se sent reposé après 3 heures)</label>
-  <label><input type="checkbox" name="hypoB" value="3. Plus loquace que d'habitude"/> 3. Plus loquace que d'habitude ou pression à parler</label>
-  <label><input type="checkbox" name="hypoB" value="4. Fuite des idées ou pensées qui défilent"/> 4. Fuite des idées ou pensées qui défilent</label>
-  <label><input type="checkbox" name="hypoB" value="5. Distractibilité"/> 5. Distractibilité</label>
-  <label><input type="checkbox" name="hypoB" value="6. Augmentation de l'activité orientée vers un but ou agitation"/> 6. Augmentation de l'activité orientée vers un but ou agitation</label>
-  <label><input type="checkbox" name="hypoB" value="7. Engagement excessif dans activités à risque"/> 7. Engagement excessif dans activités à risque</label>
-  <button type="button" onclick="validerHypoB()">✔️ Valider</button>
+<fieldset class="hidden" id="hypoB">
+<legend>Criterio B – Síntomas (3 o más, 4 si el estado de ánimo es solo irritable)</legend>
+<p class="subtitle">Al menos 3 síntomas (4 si el estado de ánimo es solo irritable)</p>
+<label>1. Autoestima exagerada o ideas de grandeza</label>
+<label>2. Reducción de la necesidad de sueño (se siente descansado después de 3 horas)</label>
+<label>3. Más locuaz de lo habitual o presión para hablar</label>
+<label>4. Fuga de ideas o pensamientos que desfilan</label>
+<label>5. Distractibilidad</label>
+<label>6. Aumento de la actividad orientada a un objetivo o agitación</label>
+<label>7. Compromiso excesivo en actividades de riesgo</label>
+<button onclick="validerHypoB()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="hypoC" class="hidden">
-  <legend>Critère C – Changement de fonctionnement sans équivoque</legend>
-  <label><input type="checkbox" id="hypoCCheck" value="Changement de fonctionnement observable"/> Changement de fonctionnement sans équivoque, non caractéristique de la personne</label>
-  <button type="button" onclick="validerHypoC()">✔️ Valider</button>
+<fieldset class="hidden" id="hypoC">
+<legend>Criterio C – Cambio de funcionamiento inequívoco</legend>
+<label>Cambio de funcionamiento inequívoco, no característico de la persona</label>
+<button onclick="validerHypoC()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="hypoD" class="hidden">
-  <legend>Critère D – Observable par autrui</legend>
-  <label><input type="checkbox" id="hypoDCheck" value="Perturbation observable par autrui"/> La perturbation de l'humeur et le changement de fonctionnement sont observables par autrui</label>
-  <button type="button" onclick="validerHypoD()">✔️ Valider</button>
+<fieldset class="hidden" id="hypoD">
+<legend>Criterio D – Observable por otros</legend>
+<label>La perturbación del estado de ánimo y el cambio en el funcionamiento son observables por otros.</label>
+<button onclick="validerHypoD()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="hypoE" class="hidden">
-  <legend>Critère E – Pas assez sévère</legend>
-  <p class="subtitle">L'épisode n'est PAS assez sévère pour causer une altération marquée ou nécessiter une hospitalisation</p>
-  <div class="note-box">
-    <strong>Note :</strong> S'il y a des caractéristiques psychotiques, l'épisode est par définition maniaque (et non hypomaniaque).
+<fieldset class="hidden" id="hypoE">
+<legend>Criterio E – No lo suficientemente severo</legend>
+<p class="subtitle">El episodio NO es lo suficientemente grave como para causar una alteración marcada o requerir hospitalización.</p>
+<div class="note-box">
+<strong>Note :</strong> S'il y a des caractéristiques psychotiques, l'épisode est par définition maniaque (et non hypomaniaque).
   </div>
-  <label><input type="checkbox" id="hypoECheck" value="Pas assez sévère"/> Pas assez sévère pour causer altération marquée ou hospitalisation</label>
-  <button type="button" onclick="validerHypoE()">✔️ Valider</button>
+<label>No lo suficientemente grave como para causar alteración marcada o hospitalización</label>
+<button onclick="validerHypoE()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="hypoF" class="hidden">
-  <legend>Critère F – Exclusion causes organiques</legend>
-  <label><input type="checkbox" name="hypoF" value="Pas attribuable à une substance"/> Pas attribuable à une substance</label>
-  <label><input type="checkbox" name="hypoF" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale</label>
-  <button type="button" onclick="validerHypoF()">✔️ Valider</button>
+<fieldset class="hidden" id="hypoF">
+<legend>Criterio F – Exclusión de causas orgánicas</legend>
+<label>No atribuible a una sustancia</label>
+<label>No atribuible a una afección médica</label>
+<button onclick="validerHypoF()" type="button">✔️ Validar</button>
 </fieldset>
-
 <!-- ÉPISODE DÉPRESSIF MAJEUR -->
-<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;" id="depTitle" class="hidden">ÉPISODE DÉPRESSIF MAJEUR</h3>
-
-<fieldset id="depA" class="hidden">
-  <legend>Critère A – 5 symptômes ou plus (dont humeur dépressive OU perte d'intérêt)</legend>
-  <p class="subtitle">Pendant la même période de 2 semaines, au moins un symptôme doit être (1) humeur dépressive OU (2) perte d'intérêt/plaisir</p>
-  <label><input type="checkbox" name="depA" value="1. Humeur dépressive"/> 1. Humeur dépressive presque toute la journée</label>
-  <label><input type="checkbox" name="depA" value="2. Perte d'intérêt ou de plaisir"/> 2. Perte d'intérêt ou de plaisir marquée</label>
-  <label><input type="checkbox" name="depA" value="3. Perte ou gain de poids significatif"/> 3. Perte ou gain de poids significatif</label>
-  <label><input type="checkbox" name="depA" value="4. Insomnie ou hypersomnie"/> 4. Insomnie ou hypersomnie</label>
-  <label><input type="checkbox" name="depA" value="5. Agitation ou ralentissement psychomoteur"/> 5. Agitation ou ralentissement psychomoteur</label>
-  <label><input type="checkbox" name="depA" value="6. Fatigue ou perte d'énergie"/> 6. Fatigue ou perte d'énergie</label>
-  <label><input type="checkbox" name="depA" value="7. Sentiments de dévalorisation ou culpabilité excessive"/> 7. Sentiments de dévalorisation ou culpabilité excessive</label>
-  <label><input type="checkbox" name="depA" value="8. Diminution de la capacité de penser ou de se concentrer"/> 8. Diminution de la capacité de penser ou de se concentrer</label>
-  <label><input type="checkbox" name="depA" value="9. Pensées de mort récurrentes ou idées suicidaires"/> 9. Pensées de mort récurrentes ou idées suicidaires</label>
-  <button type="button" onclick="validerDepA()">✔️ Valider</button>
+<h3 class="hidden" id="depTitle" style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">EPISODIO DEPRESIVO MAYOR</h3>
+<fieldset class="hidden" id="depA">
+<legend>Criterio A – 5 síntomas o más (incluyendo estado de ánimo depresivo O pérdida de interés)</legend>
+<p class="subtitle">Durante el mismo período de 2 semanas, al menos un síntoma debe ser (1) estado de ánimo depresivo O (2) pérdida de interés/placer</p>
+<label>1. Estado de ánimo depresivo casi todo el día</label>
+<label>2. Pérdida de interés o de placer marcada</label>
+<label>3. Pérdida o ganancia de peso significativa</label>
+<label>4. Insomnio o hipersomnia</label>
+<label>5. Agitación o enlentecimiento psicomotor</label>
+<label>6. Fatiga o pérdida de energía</label>
+<label>7. Sentimientos de desvalorización o culpa excesiva</label>
+<label>8. Disminución de la capacidad de pensar o de concentrarse</label>
+<label>9. Pensamientos recurrentes de muerte o ideas suicidas</label>
+<button onclick="validerDepA()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="depB" class="hidden">
-  <legend>Critère B – Détresse ou altération</legend>
-  <label><input type="checkbox" name="depB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="depB" value="Altération du fonctionnement"/> Altération du fonctionnement (social, professionnel, autres)</label>
-  <button type="button" onclick="validerDepB()">✔️ Valider</button>
+<fieldset class="hidden" id="depB">
+<legend>Criterio B – Angustia o alteración</legend>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento (social, profesional, otros)</label>
+<button onclick="validerDepB()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="depC" class="hidden">
-  <legend>Critère C – Exclusion causes organiques</legend>
-  <label><input type="checkbox" name="depC" value="Pas attribuable à une substance"/> Pas attribuable à une substance</label>
-  <label><input type="checkbox" name="depC" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale</label>
-  <button type="button" onclick="validerDepC()">✔️ Valider</button>
+<fieldset class="hidden" id="depC">
+<legend>Criterio C – Exclusión de causas orgánicas</legend>
+<label>No atribuible a una sustancia</label>
+<label>No atribuible a una afección médica</label>
+<button onclick="validerDepC()" type="button">✔️ Validar</button>
 </fieldset>
-
 <!-- BIPOLAR II -->
-<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;" id="bipolarTitle" class="hidden">TROUBLE BIPOLAIRE II</h3>
-
-<fieldset id="bipolarA" class="hidden">
-  <legend>Critère A – Au moins un épisode hypomaniaque ET un épisode dépressif majeur</legend>
-  <label><input type="checkbox" id="bipolarACheck" value="Critères remplis"/> Les critères ont été remplis pour au moins un épisode hypomaniaque ET au moins un épisode dépressif majeur</label>
-  <button type="button" onclick="validerBipolarA()">✔️ Valider</button>
+<h3 class="hidden" id="bipolarTitle" style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">TROUBLE BIPOLAR II</h3>
+<fieldset class="hidden" id="bipolarA">
+<legend>Criterio A – Al menos un episodio hipomaníaco Y un episodio depresivo mayor</legend>
+<label>Los criterios se han cumplido para al menos un episodio hipomaníaco Y al menos un episodio depresivo mayor.</label>
+<button onclick="validerBipolarA()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="bipolarB" class="hidden">
-  <legend>Critère B – Jamais d'épisode maniaque</legend>
-  <label><input type="checkbox" id="bipolarBCheck" value="Jamais d'épisode maniaque"/> Il n'y a JAMAIS eu d'épisode maniaque</label>
-  <button type="button" onclick="validerBipolarB()">✔️ Valider</button>
+<fieldset class="hidden" id="bipolarB">
+<legend>Criterio B – Nunca un episodio maníaco</legend>
+<label>Nunca ha habido un episodio maníaco.</label>
+<button onclick="validerBipolarB()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="bipolarC" class="hidden">
-  <legend>Critère C – Diagnostic différentiel</legend>
-  <label><input type="checkbox" name="bipolarC" value="Pas mieux expliqué par trouble schizo-affectif"/> Pas mieux expliqué par trouble schizo-affectif</label>
-  <label><input type="checkbox" name="bipolarC" value="Pas superposé à schizophrénie ou autres troubles psychotiques"/> Pas superposé à schizophrénie ou autres troubles psychotiques</label>
-  <button type="button" onclick="validerBipolarC()">✔️ Valider</button>
+<fieldset class="hidden" id="bipolarC">
+<legend>Criterio C – Diagnóstico diferencial</legend>
+<label>No mejor explicado por trastorno esquizoafectivo</label>
+<label>No superpuesto a esquizofrenia u otros trastornos psicóticos</label>
+<button onclick="validerBipolarC()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="bipolarD" class="hidden">
-  <legend>Critère D – Détresse ou altération significative</legend>
-  <label><input type="checkbox" name="bipolarD" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="bipolarD" value="Altération du fonctionnement"/> Altération du fonctionnement</label>
-  <label><input type="checkbox" name="bipolarD" value="Imprévisibilité due à l'alternance"/> Imprévisibilité due à l'alternance fréquente entre dépression et hypomanie</label>
-  <button type="button" onclick="validerBipolarD()">✔️ Valider</button>
+<fieldset class="hidden" id="bipolarD">
+<legend>Criterio D – Angustia o alteración significativa</legend>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento</label>
+<label>Imprevisibilidad debido a la alternancia frecuente entre depresión e hipomanía</label>
+<button onclick="validerBipolarD()" type="button">✔️ Validar</button>
 </fieldset>
-
-<fieldset id="codage" class="hidden">
-  <legend>Codage et Spécificateurs</legend>
-  <p class="subtitle">Le code diagnostique est toujours F31.81</p>
-  
-  <p style="margin-top: 10px;"><strong>Épisode actuel ou le plus récent :</strong></p>
-  <label><input type="radio" name="episode" value="Hypomaniaque"/> Hypomaniaque</label>
-  <label><input type="radio" name="episode" value="Dépressif"/> Dépressif</label>
-  
-  <p style="margin-top: 15px;"><strong>État/Sévérité (si applicable) :</strong></p>
-  <label><input type="checkbox" name="etat" value="Léger"/> Léger</label>
-  <label><input type="checkbox" name="etat" value="Modéré"/> Modéré</label>
-  <label><input type="checkbox" name="etat" value="Sévère"/> Sévère</label>
-  <label><input type="checkbox" name="etat" value="En rémission partielle"/> En rémission partielle</label>
-  <label><input type="checkbox" name="etat" value="En rémission complète"/> En rémission complète</label>
-  
-  <p style="margin-top: 15px;"><strong>Spécificateurs (optionnels) :</strong></p>
-  <label><input type="checkbox" name="specs" value="Avec détresse anxieuse"/> Avec détresse anxieuse</label>
-  <label><input type="checkbox" name="specs" value="Avec caractéristiques mixtes"/> Avec caractéristiques mixtes</label>
-  <label><input type="checkbox" name="specs" value="Avec cycles rapides"/> Avec cycles rapides</label>
-  <label><input type="checkbox" name="specs" value="Avec caractéristiques mélancoliques"/> Avec caractéristiques mélancoliques</label>
-  <label><input type="checkbox" name="specs" value="Avec caractéristiques atypiques"/> Avec caractéristiques atypiques</label>
-  <label><input type="checkbox" name="specs" value="Avec caractéristiques psychotiques congruentes"/> Avec caractéristiques psychotiques congruentes</label>
-  <label><input type="checkbox" name="specs" value="Avec caractéristiques psychotiques non congruentes"/> Avec caractéristiques psychotiques non congruentes</label>
-  <label><input type="checkbox" name="specs" value="Avec catatonie"/> Avec catatonie (code additionnel F06.1)</label>
-  <label><input type="checkbox" name="specs" value="Avec début lors du péripartum"/> Avec début lors du péripartum</label>
-  <label><input type="checkbox" name="specs" value="Avec caractère saisonnier"/> Avec caractère saisonnier</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="codage">
+<legend>Codificación y Especificadores</legend>
+<p class="subtitle">El código diagnóstico es siempre F31.81</p>
+<p style="margin-top: 10px;"><strong>Épisode actuel ou le plus récent :</strong></p>
+<label>Hipomaníaco</label>
+<label>Depresivo</label>
+<p style="margin-top: 15px;"><strong>État/Sévérité (si applicable) :</strong></p>
+<label>Ligero</label>
+<label>Moderado</label>
+<label>Severo</label>
+<label>En remisión parcial</label>
+<label>En remisión completa</label>
+<p style="margin-top: 15px;"><strong>Spécificateurs (optionnels) :</strong></p>
+<label>Con angustia ansiosa</label>
+<label>Con características mixtas</label>
+<label>Con ciclos rápidos</label>
+<label>Con características melancólicas</label>
+<label>Con características atípicas</label>
+<label>Con características psicóticas congruentes</label>
+<label>Con características psicóticas no congruentes</label>
+<label>Con catatonía (código adicional F06.1)</label>
+<label>Con inicio durante el periparto</label>
+<label>Con carácter estacional</label>
+<button onclick="afficherResume()" type="button">✔️ Terminar</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix = {hypoA:[],hypoB:[],hypoC:false,hypoD:false,hypoE:false,hypoF:[],depA:[],depB:[],depC:[],bipolarA:false,bipolarB:false,bipolarC:[],bipolarD:[],episode:"",etat:[],specs:[]};
 
@@ -336,15 +309,10 @@ function afficherResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -356,6 +324,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

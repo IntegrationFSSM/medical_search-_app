@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Dépressif Induit par Substance/Médicament – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation of Substance/Medication-Induced Depressive Disorder – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -113,116 +114,99 @@
       font-size: 0.9em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Dépressif Induit par une Substance/Médicament – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Substance/Medication-Induced Depressive Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Perturbation de l'humeur prédominante et persistante</legend>
-  <p class="subtitle">Perturbation prédominante caractérisée par une humeur dépressive ou une diminution marquée de l'intérêt/plaisir</p>
-  <label><input type="checkbox" name="critereA" value="Humeur dépressive"/> Humeur dépressive</label>
-  <label><input type="checkbox" name="critereA" value="Diminution marquée de l'intérêt ou du plaisir dans toutes ou presque toutes les activités"/> Diminution marquée de l'intérêt ou du plaisir dans toutes ou presque toutes les activités</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Predominant and persistent mood disturbance</legend>
+<p class="subtitle">Predominant disturbance characterized by a depressive mood or a marked decrease in interest/pleasure</p>
+<label>Depressive mood</label>
+<label>Marked decrease in interest or pleasure in all or almost all activities</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Preuves de (1) et (2)</legend>
-  <p class="subtitle">Preuves issues de l'anamnèse, de l'examen physique ou des résultats de laboratoire</p>
-  <p style="margin-top: 10px;"><strong>(1) Développement des symptômes :</strong></p>
-  <label><input type="checkbox" name="critereB1" value="Pendant ou peu après une intoxication par une substance"/> Pendant ou peu après une intoxication par une substance</label>
-  <label><input type="checkbox" name="critereB1" value="Pendant ou peu après un sevrage d'une substance"/> Pendant ou peu après un sevrage d'une substance</label>
-  <label><input type="checkbox" name="critereB1" value="Après exposition à un médicament"/> Après exposition à un médicament</label>
-  <label><input type="checkbox" name="critereB1" value="Après sevrage d'un médicament"/> Après sevrage d'un médicament</label>
-  
-  <p style="margin-top: 10px;"><strong>(2) La substance/médicament est capable de produire les symptômes :</strong></p>
-  <label><input type="checkbox" id="critereB2" value="La substance/médicament impliquée est capable de produire les symptômes"/> La substance/médicament impliquée est capable de produire les symptômes</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Evidence of (1) and (2)</legend>
+<p class="subtitle">Evidence from the medical history, physical examination, or laboratory results</p>
+<p style="margin-top: 10px;"><strong>(1) Développement des symptômes :</strong></p>
+<label>During or shortly after poisoning by a substance</label>
+<label>During or shortly after the withdrawal from a substance</label>
+<label>After exposure to a medication</label>
+<label>After withdrawal from a medication</label>
+<p style="margin-top: 10px;"><strong>(2) La substance/médicament est capable de produire les symptômes :</strong></p>
+<label>The substance/drug involved is capable of producing the symptoms.</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un trouble dépressif non induit par une substance/médicament</p>
-  <label><input type="checkbox" name="critereC" value="Les symptômes ne précèdent pas l'utilisation de la substance/médicament"/> Les symptômes ne précèdent pas l'utilisation de la substance/médicament</label>
-  <label><input type="checkbox" name="critereC" value="Les symptômes ne persistent pas pendant une période substantielle après la cessation"/> Les symptômes ne persistent pas pendant une période substantielle (environ 1 mois) après la cessation du sevrage aigu ou de l'intoxication sévère</label>
-  <label><input type="checkbox" name="critereC" value="Pas d'autres preuves d'un trouble dépressif indépendant"/> Pas d'autres preuves d'un trouble dépressif indépendant (pas d'antécédents d'épisodes récurrents non liés à une substance/médicament)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Differential Diagnosis</legend>
+<p class="subtitle">The disturbance is not better explained by a substance/medication-induced depressive disorder.</p>
+<label>The symptoms do not precede the use of the substance/drug.</label>
+<label>The symptoms do not persist for a substantial period (approximately 1 month) after the cessation of acute withdrawal or severe intoxication.</label>
+<label>No other evidence of an independent depressive disorder (no history of recurrent episodes unrelated to a substance/medication)</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion du delirium</legend>
-  <p class="subtitle">La perturbation ne survient pas exclusivement au cours d'un delirium</p>
-  <label><input type="checkbox" id="choixD" value="Ne survient pas exclusivement au cours d'un delirium"/> Ne survient pas exclusivement au cours d'un delirium</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Exclusion of delirium</legend>
+<p class="subtitle">The disturbance does not occur exclusively during a delirium.</p>
+<label>Does not occur exclusively during a delirium.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">La perturbation cause une détresse ou une altération cliniquement significative</p>
-  <div class="note-box">
-    <strong>Note :</strong> Ce diagnostic doit être posé au lieu d'un diagnostic d'intoxication ou de sevrage SEULEMENT lorsque les symptômes prédominent dans le tableau clinique et sont suffisamment sévères pour justifier une attention clinique.
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Distress or impairment in functioning</legend>
+<p class="subtitle">The disruption causes clinically significant distress or impairment.</p>
+<div class="note-box">
+<strong>Note :</strong> Ce diagnostic doit être posé au lieu d'un diagnostic d'intoxication ou de sevrage SEULEMENT lorsque les symptômes prédominent dans le tableau clinique et sont suffisamment sévères pour justifier une attention clinique.
   </div>
-  <label><input type="checkbox" name="critereE" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereE" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerCritereE()" type="button">✔️ Validate criterion E</button>
 </fieldset>
-
 <!-- Substance et Sévérité -->
-<fieldset id="substance" class="hidden">
-  <legend>Substance/Médicament et Sévérité du Trouble d'Usage</legend>
-  <p class="subtitle">Identifier la substance et la sévérité du trouble d'usage comorbide (si applicable)</p>
-  
-  <p style="margin-top: 10px;"><strong>Substance/Médicament impliquée :</strong></p>
-  <label><input type="radio" name="substance" value="Alcool"/> Alcool</label>
-  <label><input type="radio" name="substance" value="Phencyclidine"/> Phencyclidine</label>
-  <label><input type="radio" name="substance" value="Autre hallucinogène"/> Autre hallucinogène</label>
-  <label><input type="radio" name="substance" value="Inhalant"/> Inhalant</label>
-  <label><input type="radio" name="substance" value="Opioïde"/> Opioïde</label>
-  <label><input type="radio" name="substance" value="Sédatif, hypnotique ou anxiolytique"/> Sédatif, hypnotique ou anxiolytique</label>
-  <label><input type="radio" name="substance" value="Substance de type amphétamine (ou autre stimulant)"/> Substance de type amphétamine (ou autre stimulant)</label>
-  <label><input type="radio" name="substance" value="Cocaïne"/> Cocaïne</label>
-  <label><input type="radio" name="substance" value="Autre (ou inconnue) substance"/> Autre (ou inconnue) substance</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité du trouble d'usage de substance comorbide :</strong></p>
-  <label><input type="radio" name="severite" value="Pas de trouble d'usage"/> Pas de trouble d'usage</label>
-  <label><input type="radio" name="severite" value="Trouble d'usage léger"/> Trouble d'usage léger</label>
-  <label><input type="radio" name="severite" value="Trouble d'usage modéré"/> Trouble d'usage modéré</label>
-  <label><input type="radio" name="severite" value="Trouble d'usage sévère"/> Trouble d'usage sévère</label>
-  
-  <button type="button" onclick="validerSubstance()">✔️ Valider la substance</button>
+<fieldset class="hidden" id="substance">
+<legend>Substance/Medication and Severity of Use Disorder</legend>
+<p class="subtitle">Identify the substance and the severity of the comorbid use disorder (if applicable)</p>
+<p style="margin-top: 10px;"><strong>Substance/Médicament impliquée :</strong></p>
+<label>Alcohol</label>
+<label>Phencyclidine</label>
+<label>Other hallucinogen</label>
+<label>Inhalant</label>
+<label>Opioid</label>
+<label>Sedative, hypnotic, or anxiolytic</label>
+<label>Amphetamine-type substance (or other stimulant)</label>
+<label>Cocaine</label>
+<label>Other (or unknown) substance</label>
+<p style="margin-top: 15px;"><strong>Sévérité du trouble d'usage de substance comorbide :</strong></p>
+<label>No usage disorder</label>
+<label>Mild use disorder</label>
+<label>Moderate use disorder</label>
+<label>Severe usage disorder</label>
+<button onclick="validerSubstance()" type="button">✔️ Validate the substance</button>
 </fieldset>
-
 <!-- Spécificateur -->
-<fieldset id="specificateur" class="hidden">
-  <legend>Spécificateur – Moment d'apparition</legend>
-  <p class="subtitle">Préciser le moment d'apparition des symptômes</p>
-  <label><input type="radio" name="specificateur" value="Avec apparition pendant l'intoxication"/> Avec apparition pendant l'intoxication</label>
-  <label><input type="radio" name="specificateur" value="Avec apparition pendant le sevrage"/> Avec apparition pendant le sevrage</label>
-  <label><input type="radio" name="specificateur" value="Avec apparition après l'utilisation du médicament"/> Avec apparition après l'utilisation du médicament</label>
-  <button type="button" onclick="validerSpecificateur()">✔️ Valider le spécificateur</button>
+<fieldset class="hidden" id="specificateur">
+<legend>Specifier – Time of Onset</legend>
+<p class="subtitle">Specify the onset of symptoms</p>
+<label>With onset during intoxication</label>
+<label>With onset during withdrawal</label>
+<label>With onset after the use of the medication</label>
+<button onclick="validerSpecificateur()" type="button">✔️ Validate the specifier</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -403,10 +387,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

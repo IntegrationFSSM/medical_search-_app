@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Anorexie Mentale – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation of Anorexia Nervosa – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,96 +113,84 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation de l'Anorexie Mentale – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Anorexia Nervosa – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Restriction de l'apport énergétique menant à un poids corporel significativement bas</legend>
-  <p class="subtitle">Poids significativement bas dans le contexte de l'âge, du sexe, de la trajectoire développementale et de la santé physique</p>
-  <label><input type="checkbox" name="critereA" value="Restriction de l'apport énergétique par rapport aux besoins"/> Restriction de l'apport énergétique par rapport aux besoins</label>
-  <label><input type="checkbox" name="critereA" value="Poids significativement bas"/> Poids significativement bas</label>
-  <label><input type="checkbox" name="critereA" value="Poids inférieur au minimum normal (adultes)"/> Poids inférieur au minimum normal (adultes)</label>
-  <label><input type="checkbox" name="critereA" value="Poids inférieur au minimum attendu (enfants/adolescents)"/> Poids inférieur au minimum attendu (enfants/adolescents)</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Restriction of energy intake leading to a significantly low body weight</legend>
+<p class="subtitle">Significantly low weight in the context of age, sex, developmental trajectory, and physical health</p>
+<label>Restriction of energy intake relative to needs</label>
+<label>Significantly low weight</label>
+<label>Weight below the normal minimum (adults)</label>
+<label>Weight below the expected minimum (children/adolescents)</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Peur intense de prendre du poids ou comportement interférant avec la prise de poids</legend>
-  <p class="subtitle">Même à un poids significativement bas</p>
-  <label><input type="checkbox" name="critereB" value="Peur intense de prendre du poids"/> Peur intense de prendre du poids</label>
-  <label><input type="checkbox" name="critereB" value="Peur intense de devenir gros(se)"/> Peur intense de devenir gros(se)</label>
-  <label><input type="checkbox" name="critereB" value="Comportement persistant interférant avec la prise de poids"/> Comportement persistant interférant avec la prise de poids</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Intense fear of gaining weight or behavior interfering with weight gain</legend>
+<p class="subtitle">Even at a significantly low weight</p>
+<label>Intense fear of gaining weight</label>
+<label>Intense fear of becoming overweight</label>
+<label>Persistent behavior interfering with weight gain</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Perturbation de la perception du poids ou de la forme corporelle</legend>
-  <p class="subtitle">Influence indue du poids/forme sur l'auto-évaluation, ou manque persistant de reconnaissance de la gravité du faible poids actuel</p>
-  <label><input type="checkbox" name="critereC" value="Perturbation de la façon dont le poids corporel est perçu"/> Perturbation de la façon dont le poids corporel est perçu</label>
-  <label><input type="checkbox" name="critereC" value="Perturbation de la façon dont la forme corporelle est perçue"/> Perturbation de la façon dont la forme corporelle est perçue</label>
-  <label><input type="checkbox" name="critereC" value="Influence indue du poids corporel sur l'auto-évaluation"/> Influence indue du poids corporel sur l'auto-évaluation</label>
-  <label><input type="checkbox" name="critereC" value="Influence indue de la forme corporelle sur l'auto-évaluation"/> Influence indue de la forme corporelle sur l'auto-évaluation</label>
-  <label><input type="checkbox" name="critereC" value="Manque persistant de reconnaissance de la gravité du faible poids actuel"/> Manque persistant de reconnaissance de la gravité du faible poids actuel</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Disturbance in the perception of weight or body shape</legend>
+<p class="subtitle">Undue influence of weight/shape on self-evaluation, or persistent lack of recognition of the severity of current low weight</p>
+<label>Disruption of how body weight is perceived</label>
+<label>Disturbance in the way body shape is perceived</label>
+<label>Undue influence of body weight on self-assessment</label>
+<label>Undue influence of body shape on self-assessment</label>
+<label>Persistent lack of recognition of the seriousness of the current low weight</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Sous-type -->
-<fieldset id="soustype" class="hidden">
-  <legend>Sous-type (basé sur les 3 derniers mois)</legend>
-  <p class="subtitle">Préciser le sous-type basé sur les comportements des 3 derniers mois</p>
-  <div class="note-box">
-    <strong>Type restrictif :</strong> Perte de poids accomplie principalement par régime, jeûne et/ou exercice excessif. Pas d'épisodes récurrents d'hyperphagie ou de purge.<br/><br/>
-    <strong>Type avec crises d'hyperphagie/purge :</strong> Épisodes récurrents d'hyperphagie et/ou comportements purgatifs (vomissements provoqués, usage abusif de laxatifs, diurétiques ou lavements). Certains individus purgent après consommation de petites quantités de nourriture sans hyperphagie.<br/><br/>
-    <strong>Note :</strong> Le passage d'un sous-type à l'autre au cours du trouble n'est pas rare. Le sous-type décrit les symptômes actuels plutôt que le cours longitudinal.
+<fieldset class="hidden" id="soustype">
+<legend>Subtype (based on the last 3 months)</legend>
+<p class="subtitle">Specify the subtype based on behaviors from the last 3 months.</p>
+<div class="note-box">
+<strong>Type restrictif :</strong> Perte de poids accomplie principalement par régime, jeûne et/ou exercice excessif. Pas d'épisodes récurrents d'hyperphagie ou de purge.<br/><br/>
+<strong>Type avec crises d'hyperphagie/purge :</strong> Épisodes récurrents d'hyperphagie et/ou comportements purgatifs (vomissements provoqués, usage abusif de laxatifs, diurétiques ou lavements). Certains individus purgent après consommation de petites quantités de nourriture sans hyperphagie.<br/><br/>
+<strong>Note :</strong> Le passage d'un sous-type à l'autre au cours du trouble n'est pas rare. Le sous-type décrit les symptômes actuels plutôt que le cours longitudinal.
   </div>
-  <label><input type="radio" name="soustype" value="F50.01 - Type restrictif"/> <strong>F50.01</strong> - Type restrictif : Pas d'épisodes récurrents d'hyperphagie ou de purge durant les 3 derniers mois</label>
-  <label><input type="radio" name="soustype" value="F50.02 - Type avec crises d'hyperphagie/purge"/> <strong>F50.02</strong> - Type avec crises d'hyperphagie/purge : Épisodes récurrents d'hyperphagie ou de purge durant les 3 derniers mois</label>
-  <button type="button" onclick="validerSoustype()">✔️ Valider le sous-type</button>
+<label>- Restrictive type: No recurrent episodes of binge eating or purging in the last 3 months</label>
+<label>- Type with binge/purge episodes: Recurrent episodes of binge eating or purging in the last 3 months</label>
+<button onclick="validerSoustype()" type="button">✔️ Validate the subtype</button>
 </fieldset>
-
 <!-- Rémission -->
-<fieldset id="remission" class="hidden">
-  <legend>Rémission (optionnel)</legend>
-  <p class="subtitle">Préciser si applicable</p>
-  <label><input type="radio" name="remission" value="En rémission partielle"/> En rémission partielle : Critère A non rempli pour période prolongée, mais critère B ou C encore présent</label>
-  <label><input type="radio" name="remission" value="En rémission complète"/> En rémission complète : Aucun critère rempli pour période prolongée</label>
-  <label><input type="radio" name="remission" value="Non applicable"/> Non applicable (trouble actif)</label>
-  <button type="button" onclick="validerRemission()">✔️ Valider la rémission</button>
+<fieldset class="hidden" id="remission">
+<legend>Remission (optional)</legend>
+<p class="subtitle">Specify if applicable</p>
+<label>In partial remission: Criterion A not met for an extended period, but criterion B or C still present.</label>
+<label>In complete remission: No criteria met for an extended period</label>
+<label>Not applicable (active disorder)</label>
+<button onclick="validerRemission()" type="button">✔️ Validate remission</button>
 </fieldset>
-
 <!-- Sévérité -->
-<fieldset id="severite" class="hidden">
-  <legend>Sévérité actuelle (basée sur l'IMC)</legend>
-  <p class="subtitle">Pour adultes : basé sur l'IMC actuel. Pour enfants/adolescents : basé sur le percentile d'IMC</p>
-  <div class="note-box">
-    <strong>Note :</strong> Le niveau de sévérité peut être augmenté pour refléter les symptômes cliniques, le degré d'incapacité fonctionnelle et le besoin de supervision.
+<fieldset class="hidden" id="severite">
+<legend>Current severity (based on BMI)</legend>
+<p class="subtitle">For adults: based on current BMI. For children/adolescents: based on BMI percentile.</p>
+<div class="note-box">
+<strong>Note :</strong> Le niveau de sévérité peut être augmenté pour refléter les symptômes cliniques, le degré d'incapacité fonctionnelle et le besoin de supervision.
   </div>
-  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> IMC ≥17 kg/m²</label>
-  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> IMC 16-16,99 kg/m²</label>
-  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> IMC 15-15,99 kg/m²</label>
-  <label><input type="radio" name="severite" value="Extrême"/> <strong>Extrême :</strong> IMC <15 kg/m²</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<label>BMI ≥17 kg/m²</label>
+<label>BMI 16-16.99 kg/m²</label>
+<label>BMI 15-15.99 kg/m²</label>
+<label>BMI &lt;15 kg/m²</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -343,10 +332,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

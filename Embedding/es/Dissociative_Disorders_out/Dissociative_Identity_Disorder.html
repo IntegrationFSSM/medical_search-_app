@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble de l'Identité Dissociative – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno de Identidad Disociativa – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,88 +113,77 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble de l'Identité Dissociative – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno de Identidad Disociativa – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Perturbation de l'identité (≥2 états de personnalité distincts)</legend>
-  <p class="subtitle">Discontinuité marquée du sens de soi et du sens d'agentivité, accompagnée d'altérations connexes</p>
-  <label><input type="checkbox" name="critereA" value="Deux ou plusieurs états de personnalité distincts"/> Deux ou plusieurs états de personnalité distincts</label>
-  <label><input type="checkbox" name="critereA" value="Peut être décrit comme expérience de possession (certaines cultures)"/> Peut être décrit comme expérience de possession (dans certaines cultures)</label>
-  <label><input type="checkbox" name="critereA" value="Discontinuité marquée du sens de soi"/> Discontinuité marquée du sens de soi</label>
-  <label><input type="checkbox" name="critereA" value="Discontinuité marquée du sens d'agentivité"/> Discontinuité marquée du sens d'agentivité</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de l'affect"/> Altérations de l'affect</label>
-  <label><input type="checkbox" name="critereA" value="Altérations du comportement"/> Altérations du comportement</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la conscience"/> Altérations de la conscience</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la mémoire"/> Altérations de la mémoire</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la perception"/> Altérations de la perception</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la cognition"/> Altérations de la cognition</label>
-  <label><input type="checkbox" name="critereA" value="Altérations du fonctionnement sensori-moteur"/> Altérations du fonctionnement sensori-moteur</label>
-  <label><input type="checkbox" name="critereA" value="Signes/symptômes observés par autrui ou rapportés par l'individu"/> Signes/symptômes observés par autrui ou rapportés par l'individu</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Alteración de la identidad (≥2 estados de personalidad distintos)</legend>
+<p class="subtitle">Discontinuidad marcada del sentido de uno mismo y del sentido de agencia, acompañada de alteraciones conexas</p>
+<label>Dos o más estados de personalidad distintos</label>
+<label>Puede ser descrito como experiencia de posesión (en algunas culturas)</label>
+<label>Discontinuidad marcada del sentido del yo</label>
+<label>Discontinuidad marcada del sentido de agentividad</label>
+<label>Alteraciones del afecto</label>
+<label>Alteraciones del comportamiento</label>
+<label>Alteraciones de la conciencia</label>
+<label>Alteraciones de la memoria</label>
+<label>Alteraciones de la percepción</label>
+<label>Alteraciones de la cognición</label>
+<label>Alteraciones del funcionamiento sensoriomotor</label>
+<label>Signos/síntomas observados por otros o reportados por el individuo</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Lacunes récurrentes dans le rappel</legend>
-  <p class="subtitle">Lacunes récurrentes dans le rappel d'événements quotidiens, d'informations personnelles importantes et/ou d'événements traumatiques, incompatibles avec l'oubli ordinaire</p>
-  <label><input type="checkbox" name="critereB" value="Lacunes récurrentes dans le rappel"/> Lacunes récurrentes dans le rappel</label>
-  <label><input type="checkbox" name="critereB" value="Lacunes pour événements quotidiens"/> Lacunes pour événements quotidiens</label>
-  <label><input type="checkbox" name="critereB" value="Lacunes pour informations personnelles importantes"/> Lacunes pour informations personnelles importantes</label>
-  <label><input type="checkbox" name="critereB" value="Lacunes pour événements traumatiques"/> Lacunes pour événements traumatiques</label>
-  <label><input type="checkbox" name="critereB" value="Incompatibles avec l'oubli ordinaire"/> Incompatibles avec l'oubli ordinaire</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Lagunas recurrentes en la memoria</legend>
+<p class="subtitle">Lacunas recurrentes en el recuerdo de eventos cotidianos, de información personal importante y/o de eventos traumáticos, incompatibles con el olvido ordinario.</p>
+<label>Lacunas recurrentes en la memoria</label>
+<label>Lacunas para eventos diarios</label>
+<label>Lacunas para información personal importante</label>
+<label>Lacunas para eventos traumáticos</label>
+<label>Incompatibles con el olvido ordinario</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereC" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereC" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Angustia o alteración del funcionamiento</legend>
+<p class="subtitle">Los síntomas causan una angustia o una alteración clínicamente significativa</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento social</label>
+<label>Alteración del funcionamiento profesional</label>
+<label>Alteración en otros ámbitos importantes del funcionamiento</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion des pratiques culturelles/religieuses</legend>
-  <p class="subtitle">La perturbation ne fait pas partie d'une pratique culturelle ou religieuse largement acceptée</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants, les symptômes ne sont pas mieux expliqués par des compagnons de jeu imaginaires ou d'autres jeux de fantaisie.
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Exclusión de prácticas culturales/religiosas</legend>
+<p class="subtitle">La perturbación no forma parte de una práctica cultural o religiosa ampliamente aceptada.</p>
+<div class="note-box">
+<strong>Note :</strong> Chez les enfants, les symptômes ne sont pas mieux expliqués par des compagnons de jeu imaginaires ou d'autres jeux de fantaisie.
   </div>
-  <label><input type="checkbox" name="critereD" value="Ne fait pas partie d'une pratique culturelle ou religieuse normale"/> Ne fait pas partie d'une pratique culturelle ou religieuse largement acceptée</label>
-  <label><input type="checkbox" name="critereD" value="Chez enfants : pas mieux expliqué par compagnons imaginaires ou jeux de fantaisie"/> Chez enfants : pas mieux expliqué par compagnons de jeu imaginaires ou autres jeux de fantaisie</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<label>No forma parte de una práctica cultural o religiosa ampliamente aceptada.</label>
+<label>En niños: no mejor explicado por compañeros de juego imaginarios u otros juegos de fantasía</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Exclusion des causes organiques</legend>
-  <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une substance (blackouts ou comportement chaotique lors d'intoxication alcoolique)"/> Pas attribuable à une substance (ex: blackouts ou comportement chaotique lors d'intoxication alcoolique)</label>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une affection médicale (crises partielles complexes)"/> Pas attribuable à une affection médicale (ex: crises partielles complexes)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Exclusión de causas orgánicas</legend>
+<p class="subtitle">Los síntomas no son atribuibles a los efectos fisiológicos de una sustancia o de una afección médica.</p>
+<label>No atribuible a una sustancia (ej: desmayos o comportamiento caótico durante la intoxicación por alcohol)</label>
+<label>No atribuible a una afección médica (ej: crisis parciales complejas)</label>
+<button onclick="afficherResume()" type="button">✔️ Terminar</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -311,10 +301,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

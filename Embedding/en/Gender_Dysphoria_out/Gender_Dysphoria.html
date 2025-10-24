@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Dysphorie de Genre – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Gender Dysphoria Assessment – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -119,101 +120,89 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation de la Dysphorie de Genre – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Gender Dysphoria – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Sélection version -->
 <fieldset id="version">
-  <legend>Sélectionner la version appropriée</legend>
-  <p class="subtitle">Choisir selon l'âge de l'individu</p>
-  <label><input type="radio" name="version" value="enfant"/> Dysphorie de Genre chez les Enfants</label>
-  <label><input type="radio" name="version" value="adulte"/> Dysphorie de Genre chez les Adolescents et Adultes</label>
-  <button type="button" onclick="validerVersion()">✔️ Valider</button>
+<legend>Select the appropriate version</legend>
+<p class="subtitle">Choose according to the individual's age</p>
+<label>Gender Dysphoria in Children</label>
+<label>Gender Dysphoria in Adolescents and Adults</label>
+<button onclick="validerVersion()" type="button">✔️ Validate</button>
 </fieldset>
-
 <!-- VERSION ENFANTS -->
-<div id="enfant-section" class="hidden">
-  <fieldset id="enfantA">
-    <legend>Critère A – Incongruence marquée (≥6 mois, ≥6 critères dont A1 obligatoire)</legend>
-    <p class="subtitle">Incongruence marquée entre genre vécu/exprimé et genre assigné, durée ≥6 mois</p>
-    <div class="warning-box">
+<div class="hidden" id="enfant-section">
+<fieldset id="enfantA">
+<legend>Criterion A – Marked incongruence (≥6 months, ≥6 criteria including A1 mandatory)</legend>
+<p class="subtitle">Marked incongruence between experienced/expressed gender and assigned gender, duration ≥6 months</p>
+<div class="warning-box">
       ⚠️ <strong>Important :</strong> Au moins 6 des 8 critères suivants, dont le critère A1 est OBLIGATOIRE.
     </div>
-    <label><input type="checkbox" name="enfantA" value="A1. Désir fort d'être de l'autre genre ou insistance qu'on est de l'autre genre (OBLIGATOIRE)"/> <strong>A1.</strong> Désir fort d'être de l'autre genre ou insistance qu'on est de l'autre genre (ou genre alternatif) <strong>[OBLIGATOIRE]</strong></label>
-    <label><input type="checkbox" name="enfantA" value="A2. Garçons : préférence forte pour travestissement ou simulation vêtements féminins / Filles : préférence forte pour vêtements masculins et résistance aux vêtements féminins"/> A2. Garçons : préférence forte pour travestissement ou simulation vêtements féminins / Filles : préférence forte pour vêtements masculins et résistance aux vêtements féminins</label>
-    <label><input type="checkbox" name="enfantA" value="A3. Préférence forte pour rôles de genre croisé dans jeu de simulation ou fantaisie"/> A3. Préférence forte pour rôles de genre croisé dans jeu de simulation ou fantaisie</label>
-    <label><input type="checkbox" name="enfantA" value="A4. Préférence forte pour jouets, jeux ou activités stéréotypiquement utilisés par l'autre genre"/> A4. Préférence forte pour jouets, jeux ou activités stéréotypiquement utilisés par l'autre genre</label>
-    <label><input type="checkbox" name="enfantA" value="A5. Préférence forte pour camarades de jeu de l'autre genre"/> A5. Préférence forte pour camarades de jeu de l'autre genre</label>
-    <label><input type="checkbox" name="enfantA" value="A6. Garçons : rejet fort de jouets/jeux/activités masculins et évitement jeu brutal / Filles : rejet fort de jouets/jeux/activités féminins"/> A6. Garçons : rejet fort de jouets/jeux/activités masculins et évitement jeu brutal / Filles : rejet fort de jouets/jeux/activités féminins</label>
-    <label><input type="checkbox" name="enfantA" value="A7. Aversion forte pour son anatomie sexuelle"/> A7. Aversion forte pour son anatomie sexuelle</label>
-    <label><input type="checkbox" name="enfantA" value="A8. Désir fort pour caractéristiques sexuelles primaires/secondaires correspondant au genre vécu"/> A8. Désir fort pour caractéristiques sexuelles primaires et/ou secondaires correspondant au genre vécu</label>
-    <button type="button" onclick="validerEnfantA()">✔️ Valider le critère A</button>
-  </fieldset>
-
-  <fieldset id="enfantB" class="hidden">
-    <legend>Critère B – Détresse ou altération du fonctionnement</legend>
-    <p class="subtitle">La condition est associée à une détresse ou altération cliniquement significative</p>
-    <label><input type="checkbox" name="enfantB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-    <label><input type="checkbox" name="enfantB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-    <label><input type="checkbox" name="enfantB" value="Altération du fonctionnement scolaire"/> Altération du fonctionnement scolaire</label>
-    <label><input type="checkbox" name="enfantB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-    <button type="button" onclick="validerEnfantB()">✔️ Valider le critère B</button>
-  </fieldset>
+<label>Strong desire to be of the other gender or insistence that one is of the other gender (or alternative gender)</label>
+<label>A2. Boys: strong preference for cross-dressing or simulating female clothing / Girls: strong preference for male clothing and resistance to female clothing</label>
+<label>A3. Strong preference for cross-gender roles in simulation or fantasy games</label>
+<label>A4. Strong preference for toys, games, or activities stereotypically used by the other gender</label>
+<label>A5. Strong preference for playmates of the opposite gender</label>
+<label>A6. Boys: strong rejection of masculine toys/games/activities and avoidance of rough play / Girls: strong rejection of feminine toys/games/activities</label>
+<label>A7. Strong aversion to his sexual anatomy</label>
+<label>A8. Strong desire for primary and/or secondary sexual characteristics corresponding to the experienced gender</label>
+<button onclick="validerEnfantA()" type="button">✔️ Validate criterion A</button>
+</fieldset>
+<fieldset class="hidden" id="enfantB">
+<legend>Criterion B – Distress or impairment in functioning</legend>
+<p class="subtitle">The condition is associated with clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of school functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerEnfantB()" type="button">✔️ Validate criterion B</button>
+</fieldset>
 </div>
-
 <!-- VERSION ADOLESCENTS/ADULTES -->
-<div id="adulte-section" class="hidden">
-  <fieldset id="adulteA">
-    <legend>Critère A – Incongruence marquée (≥6 mois, ≥2 critères)</legend>
-    <p class="subtitle">Incongruence marquée entre genre vécu/exprimé et genre assigné, durée ≥6 mois</p>
-    <div class="warning-box">
+<div class="hidden" id="adulte-section">
+<fieldset id="adulteA">
+<legend>Criterion A – Marked incongruence (≥6 months, ≥2 criteria)</legend>
+<p class="subtitle">Marked incongruence between experienced/expressed gender and assigned gender, duration ≥6 months</p>
+<div class="warning-box">
       ⚠️ <strong>Important :</strong> Au moins 2 des 6 critères suivants.
     </div>
-    <label><input type="checkbox" name="adulteA" value="A1. Incongruence marquée entre genre vécu/exprimé et caractéristiques sexuelles primaires/secondaires"/> A1. Incongruence marquée entre genre vécu/exprimé et caractéristiques sexuelles primaires et/ou secondaires (ou chez jeunes adolescents, caractéristiques secondaires anticipées)</label>
-    <label><input type="checkbox" name="adulteA" value="A2. Désir fort de se débarrasser de ses caractéristiques sexuelles primaires/secondaires"/> A2. Désir fort de se débarrasser de ses caractéristiques sexuelles primaires et/ou secondaires en raison d'incongruence marquée (ou chez jeunes adolescents, désir de prévenir développement)</label>
-    <label><input type="checkbox" name="adulteA" value="A3. Désir fort pour caractéristiques sexuelles primaires/secondaires de l'autre genre"/> A3. Désir fort pour les caractéristiques sexuelles primaires et/ou secondaires de l'autre genre</label>
-    <label><input type="checkbox" name="adulteA" value="A4. Désir fort d'être de l'autre genre (ou genre alternatif)"/> A4. Désir fort d'être de l'autre genre (ou genre alternatif différent du genre assigné)</label>
-    <label><input type="checkbox" name="adulteA" value="A5. Désir fort d'être traité comme l'autre genre (ou genre alternatif)"/> A5. Désir fort d'être traité comme l'autre genre (ou genre alternatif différent du genre assigné)</label>
-    <label><input type="checkbox" name="adulteA" value="A6. Conviction forte d'avoir sentiments et réactions typiques de l'autre genre"/> A6. Conviction forte d'avoir les sentiments et réactions typiques de l'autre genre (ou genre alternatif différent du genre assigné)</label>
-    <button type="button" onclick="validerAdulteA()">✔️ Valider le critère A</button>
-  </fieldset>
-
-  <fieldset id="adulteB" class="hidden">
-    <legend>Critère B – Détresse ou altération du fonctionnement</legend>
-    <p class="subtitle">La condition est associée à une détresse ou altération cliniquement significative</p>
-    <label><input type="checkbox" name="adulteB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-    <label><input type="checkbox" name="adulteB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-    <label><input type="checkbox" name="adulteB" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-    <label><input type="checkbox" name="adulteB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-    <button type="button" onclick="validerAdulteB()">✔️ Valider le critère B</button>
-  </fieldset>
-</div>
-
-<!-- Spécificateurs communs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs</legend>
-  <p class="subtitle">Préciser si applicable</p>
-  <label><input type="checkbox" name="specs" value="Avec trouble/différence du développement sexuel"/> Avec trouble/différence du développement sexuel (ex: hyperplasie congénitale des surrénales E25.0, syndrome d'insensibilité aux androgènes E34.50)</label>
-  <label><input type="checkbox" name="specs" value="Post-transition (adolescents/adultes uniquement)"/> Post-transition (adolescents/adultes uniquement) : Transition vers vie à temps plein dans genre vécu avec ≥1 procédure/traitement médical d'affirmation de genre</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<label>A1. Marked incongruence between experienced/expressed gender and primary and/or secondary sexual characteristics (or in young adolescents, anticipated secondary characteristics)</label>
+<label>A2. Strong desire to rid oneself of primary and/or secondary sexual characteristics due to marked incongruence (or in young adolescents, desire to prevent development)</label>
+<label>A3. Strong desire for the primary and/or secondary sexual characteristics of the other gender</label>
+<label>A4. Strong desire to be of the other gender (or alternative gender different from the assigned gender)</label>
+<label>A5. Strong desire to be treated as the other gender (or an alternative gender different from the assigned gender)</label>
+<label>A6. Strong conviction of having the typical feelings and reactions of the other gender (or an alternative gender different from the assigned gender)</label>
+<button onclick="validerAdulteA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
+<fieldset class="hidden" id="adulteB">
+<legend>Criterion B – Distress or impairment in functioning</legend>
+<p class="subtitle">The condition is associated with clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerAdulteB()" type="button">✔️ Validate criterion B</button>
+</fieldset>
+</div>
+<!-- Spécificateurs communs -->
+<fieldset class="hidden" id="specificateurs">
+<legend>Specifiers</legend>
+<p class="subtitle">Specify if applicable</p>
+<label>With sexual development disorder/difference (e.g., congenital adrenal hyperplasia E25.0, androgen insensitivity syndrome E34.50)</label>
+<label>Post-transition (adolescents/adults only): Transition to full-time living in experienced gender with ≥1 medical procedure/treatment for gender affirmation</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
+</fieldset>
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix={version:"",enfantA:[],enfantB:[],adulteA:[],adulteB:[],specs:[]};
 
@@ -253,15 +242,10 @@ function afficherResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -273,6 +257,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

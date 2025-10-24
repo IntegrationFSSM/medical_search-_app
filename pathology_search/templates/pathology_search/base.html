@@ -1,11 +1,10 @@
-{% load i18n %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token }}">
-    <title>{% block title %}{% trans "Recherche de Pathologies Médicales" %}{% endblock %}</title>
+    <title>{% block title %}Recherche de Pathologies Médicales{% endblock %}</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -143,40 +142,16 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <i class="fas fa-heartbeat text-white text-xl sm:text-2xl mr-2 sm:mr-3"></i>
-                    <span class="text-white text-base sm:text-xl font-bold">{% trans "Recherche Pathologie" %}</span>
+                    <span class="text-white text-base sm:text-xl font-bold">Recherche Pathologie</span>
                 </div>
                 <!-- Desktop Menu -->
                 <div class="hidden sm:flex items-center space-x-4">
                     <a href="{% url 'pathology_search:index' %}" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">
-                        <i class="fas fa-search mr-1"></i> {% trans "Recherche" %}
+                        <i class="fas fa-search mr-1"></i> Recherche
                     </a>
                     <a href="{% url 'pathology_search:about' %}" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">
-                        <i class="fas fa-info-circle mr-1"></i> {% trans "À propos" %}
+                        <i class="fas fa-info-circle mr-1"></i> À propos
                     </a>
-                    <!-- Language Selector -->
-                    <div class="relative">
-                        <button id="lang-button" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                            <i class="fas fa-globe mr-2"></i>
-                            {{ LANGUAGE_CODE|upper }}
-                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </button>
-                        <div id="lang-menu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-50">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            {% get_available_languages as LANGUAGES %}
-                            {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                            <form action="{% url 'set_language' %}" method="post" class="m-0">
-                                {% csrf_token %}
-                                <input type="hidden" name="language" value="{{ language.code }}">
-                                <input type="hidden" name="next" value="{{ request.path }}">
-                                <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 {% if language.code == LANGUAGE_CODE %}bg-purple-100 font-semibold{% endif %}">
-                                    {% if language.code == 'fr' %}🇫🇷{% elif language.code == 'en' %}🇬🇧{% elif language.code == 'es' %}🇪🇸{% endif %}
-                                    {{ language.name_local }}
-                                </button>
-                            </form>
-                            {% endfor %}
-                        </div>
-                    </div>
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="sm:hidden flex items-center">
@@ -188,31 +163,11 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="mobile-menu sm:hidden pb-4">
                 <a href="{% url 'pathology_search:index' %}" class="block text-white hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium">
-                    <i class="fas fa-search mr-2"></i> {% trans "Recherche" %}
+                    <i class="fas fa-search mr-2"></i> Recherche
                 </a>
                 <a href="{% url 'pathology_search:about' %}" class="block text-white hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium mt-1">
-                    <i class="fas fa-info-circle mr-2"></i> {% trans "À propos" %}
+                    <i class="fas fa-info-circle mr-2"></i> À propos
                 </a>
-                <!-- Mobile Language Selector -->
-                <div class="mt-3 pt-3 border-t border-purple-500">
-                    <p class="text-white text-xs px-3 mb-2 opacity-75">
-                        <i class="fas fa-globe mr-2"></i>{% trans "Langue" %}
-                    </p>
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                    <form action="{% url 'set_language' %}" method="post" class="m-0">
-                        {% csrf_token %}
-                        <input type="hidden" name="language" value="{{ language.code }}">
-                        <input type="hidden" name="next" value="{{ request.path }}">
-                        <button type="submit" class="block w-full text-left text-white hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium {% if language.code == LANGUAGE_CODE %}bg-purple-800{% endif %}">
-                            {% if language.code == 'fr' %}🇫🇷{% elif language.code == 'en' %}🇬🇧{% elif language.code == 'es' %}🇪🇸{% endif %}
-                            {{ language.name_local }}
-                        </button>
-                    </form>
-                    {% endfor %}
-                </div>
             </div>
         </div>
     </nav>
@@ -227,7 +182,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <p class="text-center text-gray-500 text-xs sm:text-sm px-2">
                 <i class="fas fa-microscope mr-1"></i>
-                {% trans "Système de Recherche de Pathologies - Basé sur l'IA et les Embeddings OpenAI" %}
+                Système de Recherche de Pathologies - Basé sur l'IA et les Embeddings OpenAI
             </p>
         </div>
     </footer>
@@ -248,29 +203,6 @@
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
-            });
-        }
-        
-        // Language Selector Script
-        const langButton = document.getElementById('lang-button');
-        const langMenu = document.getElementById('lang-menu');
-        
-        if (langButton && langMenu) {
-            langButton.addEventListener('click', function(e) {
-                e.stopPropagation();
-                langMenu.classList.toggle('hidden');
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function() {
-                if (!langMenu.classList.contains('hidden')) {
-                    langMenu.classList.add('hidden');
-                }
-            });
-            
-            // Prevent closing when clicking inside the menu
-            langMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
             });
         }
     </script>

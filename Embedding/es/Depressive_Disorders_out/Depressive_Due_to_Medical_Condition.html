@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Dépressif dû à une Affection Médicale – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Depresivo debido a una Afección Médica – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -105,83 +106,71 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Dépressif dû à une Affection Médicale – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Depresivo debido a una Afección Médica – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Perturbation de l'humeur prédominante et persistante</legend>
-  <p class="subtitle">Perturbation prédominante caractérisée par une humeur dépressive ou une diminution marquée de l'intérêt/plaisir</p>
-  <label><input type="checkbox" name="critereA" value="Humeur dépressive"/> Humeur dépressive</label>
-  <label><input type="checkbox" name="critereA" value="Diminution marquée de l'intérêt ou du plaisir dans toutes ou presque toutes les activités"/> Diminution marquée de l'intérêt ou du plaisir dans toutes ou presque toutes les activités</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Alteración del estado de ánimo predominante y persistente</legend>
+<p class="subtitle">Perturbación predominante caracterizada por un estado de ánimo depresivo o una disminución marcada del interés/placer</p>
+<label>Estado de ánimo depresivo</label>
+<label>Disminución marcada del interés o del placer en todas o casi todas las actividades</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Preuves d'une conséquence pathophysiologique directe</legend>
-  <p class="subtitle">Preuves issues de l'anamnèse, de l'examen physique ou des résultats de laboratoire que la perturbation est la conséquence pathophysiologique directe d'une autre affection médicale</p>
-  <label><input type="checkbox" name="critereB" value="Preuves de l'anamnèse"/> Preuves de l'anamnèse</label>
-  <label><input type="checkbox" name="critereB" value="Preuves de l'examen physique"/> Preuves de l'examen physique</label>
-  <label><input type="checkbox" name="critereB" value="Preuves des résultats de laboratoire"/> Preuves des résultats de laboratoire</label>
-  <label><input type="checkbox" name="critereB" value="Lien pathophysiologique direct établi"/> Lien pathophysiologique direct établi avec l'affection médicale</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Pruebas de una consecuencia patofisiológica directa</legend>
+<p class="subtitle">Pruebas derivadas de la anamnesis, del examen físico o de los resultados de laboratorio que la alteración es la consecuencia patofisiológica directa de otra afección médica.</p>
+<label>Pruebas de la anamnesis</label>
+<label>Pruebas del examen físico</label>
+<label>Pruebas de los resultados de laboratorio</label>
+<label>Enlace patofisiológico directo establecido con la afección médica</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereC" value="Pas mieux expliquée par un trouble de l'adaptation avec humeur dépressive"/> Pas mieux expliquée par un trouble de l'adaptation avec humeur dépressive (où le facteur de stress est une affection médicale grave)</label>
-  <label><input type="checkbox" name="critereC" value="Pas mieux expliquée par un autre trouble mental"/> Pas mieux expliquée par un autre trouble mental</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Diagnóstico diferencial</legend>
+<p class="subtitle">La perturbación no se explica mejor por otro trastorno mental.</p>
+<label>No mejor explicada por un trastorno de adaptación con estado de ánimo depresivo (donde el factor de estrés es una enfermedad médica grave)</label>
+<label>No mejor explicada por otro trastorno mental.</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion du delirium</legend>
-  <p class="subtitle">La perturbation ne survient pas exclusivement au cours d'un delirium</p>
-  <label><input type="checkbox" id="choixD" value="Ne survient pas exclusivement au cours d'un delirium"/> Ne survient pas exclusivement au cours d'un delirium</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Exclusión del delirium</legend>
+<p class="subtitle">La perturbación no ocurre exclusivamente durante un delirium.</p>
+<label>No ocurre exclusivamente durante un delirium.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">La perturbation cause une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereE" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereE" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Angustia o alteración del funcionamiento</legend>
+<p class="subtitle">La perturbación causa una angustia o una alteración clínicamente significativa</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento social</label>
+<label>Alteración del funcionamiento profesional</label>
+<label>Alteración en otros ámbitos importantes del funcionamiento</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs – Type de présentation</legend>
-  <p class="subtitle">Sélectionner le spécificateur approprié</p>
-  <label><input type="radio" name="specificateur" value="F06.31 - Avec caractéristiques dépressives"/> <strong>F06.31</strong> - Avec caractéristiques dépressives : Les critères complets d'un épisode dépressif majeur ne sont PAS remplis</label>
-  <label><input type="radio" name="specificateur" value="F06.32 - Avec épisode de type dépressif majeur"/> <strong>F06.32</strong> - Avec épisode de type dépressif majeur : Les critères complets sont remplis (sauf critère C) pour un épisode dépressif majeur</label>
-  <label><input type="radio" name="specificateur" value="F06.34 - Avec caractéristiques mixtes"/> <strong>F06.34</strong> - Avec caractéristiques mixtes : Des symptômes de manie ou d'hypomanie sont également présents mais ne prédominent PAS dans le tableau clinique</label>
-  <button type="button" onclick="validerSpecificateurs()">✔️ Valider le spécificateur</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Especificadores – Tipo de presentación</legend>
+<p class="subtitle">Seleccionar el especificador apropiado</p>
+<label>- Con características depresivas: Los criterios completos para un episodio depresivo mayor NO se cumplen</label>
+<label>- Con episodio de tipo depresivo mayor: Se cumplen los criterios completos (excepto el criterio C) para un episodio depresivo mayor</label>
+<label>- Con características mixtas: También están presentes síntomas de manía o hipomanía, pero NO predominan en el cuadro clínico.</label>
+<button onclick="validerSpecificateurs()" type="button">✔️ Validar el especificador</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -318,10 +307,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

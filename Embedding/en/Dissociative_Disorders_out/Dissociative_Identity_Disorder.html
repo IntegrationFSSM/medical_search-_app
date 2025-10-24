@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble de l'Identité Dissociative – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation of Dissociative Identity Disorder – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,88 +113,77 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble de l'Identité Dissociative – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Dissociative Identity Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Perturbation de l'identité (≥2 états de personnalité distincts)</legend>
-  <p class="subtitle">Discontinuité marquée du sens de soi et du sens d'agentivité, accompagnée d'altérations connexes</p>
-  <label><input type="checkbox" name="critereA" value="Deux ou plusieurs états de personnalité distincts"/> Deux ou plusieurs états de personnalité distincts</label>
-  <label><input type="checkbox" name="critereA" value="Peut être décrit comme expérience de possession (certaines cultures)"/> Peut être décrit comme expérience de possession (dans certaines cultures)</label>
-  <label><input type="checkbox" name="critereA" value="Discontinuité marquée du sens de soi"/> Discontinuité marquée du sens de soi</label>
-  <label><input type="checkbox" name="critereA" value="Discontinuité marquée du sens d'agentivité"/> Discontinuité marquée du sens d'agentivité</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de l'affect"/> Altérations de l'affect</label>
-  <label><input type="checkbox" name="critereA" value="Altérations du comportement"/> Altérations du comportement</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la conscience"/> Altérations de la conscience</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la mémoire"/> Altérations de la mémoire</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la perception"/> Altérations de la perception</label>
-  <label><input type="checkbox" name="critereA" value="Altérations de la cognition"/> Altérations de la cognition</label>
-  <label><input type="checkbox" name="critereA" value="Altérations du fonctionnement sensori-moteur"/> Altérations du fonctionnement sensori-moteur</label>
-  <label><input type="checkbox" name="critereA" value="Signes/symptômes observés par autrui ou rapportés par l'individu"/> Signes/symptômes observés par autrui ou rapportés par l'individu</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Identity disturbance (≥2 distinct personality states)</legend>
+<p class="subtitle">Marked discontinuity of self-identity and sense of agency, accompanied by related alterations.</p>
+<label>Two or more distinct personality states</label>
+<label>Can be described as possession experience (in certain cultures)</label>
+<label>Marked discontinuity of self-identity</label>
+<label>Marked discontinuity of the sense of agency</label>
+<label>Affective disturbances</label>
+<label>Behavioral changes</label>
+<label>Alterations of consciousness</label>
+<label>Memory impairments</label>
+<label>Alterations in perception</label>
+<label>Cognitive alterations</label>
+<label>Alterations in sensorimotor function</label>
+<label>Signs/symptoms observed by others or reported by the individual</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Lacunes récurrentes dans le rappel</legend>
-  <p class="subtitle">Lacunes récurrentes dans le rappel d'événements quotidiens, d'informations personnelles importantes et/ou d'événements traumatiques, incompatibles avec l'oubli ordinaire</p>
-  <label><input type="checkbox" name="critereB" value="Lacunes récurrentes dans le rappel"/> Lacunes récurrentes dans le rappel</label>
-  <label><input type="checkbox" name="critereB" value="Lacunes pour événements quotidiens"/> Lacunes pour événements quotidiens</label>
-  <label><input type="checkbox" name="critereB" value="Lacunes pour informations personnelles importantes"/> Lacunes pour informations personnelles importantes</label>
-  <label><input type="checkbox" name="critereB" value="Lacunes pour événements traumatiques"/> Lacunes pour événements traumatiques</label>
-  <label><input type="checkbox" name="critereB" value="Incompatibles avec l'oubli ordinaire"/> Incompatibles avec l'oubli ordinaire</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Recurrent gaps in recall</legend>
+<p class="subtitle">Recurrent gaps in the recall of daily events, important personal information, and/or traumatic events, incompatible with ordinary forgetting.</p>
+<label>Recurrent gaps in recall</label>
+<label>Gaps for daily events</label>
+<label>Gaps for important personal information</label>
+<label>Gaps for traumatic events</label>
+<label>Incompatible with ordinary forgetfulness</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereC" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereC" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereC" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Distress or impairment in functioning</legend>
+<p class="subtitle">Symptoms cause clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion des pratiques culturelles/religieuses</legend>
-  <p class="subtitle">La perturbation ne fait pas partie d'une pratique culturelle ou religieuse largement acceptée</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants, les symptômes ne sont pas mieux expliqués par des compagnons de jeu imaginaires ou d'autres jeux de fantaisie.
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Exclusion of cultural/religious practices</legend>
+<p class="subtitle">The disturbance is not part of a widely accepted cultural or religious practice.</p>
+<div class="note-box">
+<strong>Note :</strong> Chez les enfants, les symptômes ne sont pas mieux expliqués par des compagnons de jeu imaginaires ou d'autres jeux de fantaisie.
   </div>
-  <label><input type="checkbox" name="critereD" value="Ne fait pas partie d'une pratique culturelle ou religieuse normale"/> Ne fait pas partie d'une pratique culturelle ou religieuse largement acceptée</label>
-  <label><input type="checkbox" name="critereD" value="Chez enfants : pas mieux expliqué par compagnons imaginaires ou jeux de fantaisie"/> Chez enfants : pas mieux expliqué par compagnons de jeu imaginaires ou autres jeux de fantaisie</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<label>Does not form part of a widely accepted cultural or religious practice.</label>
+<label>In children: not better explained by imaginary playmates or other fantasy games.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Exclusion des causes organiques</legend>
-  <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une substance (blackouts ou comportement chaotique lors d'intoxication alcoolique)"/> Pas attribuable à une substance (ex: blackouts ou comportement chaotique lors d'intoxication alcoolique)</label>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une affection médicale (crises partielles complexes)"/> Pas attribuable à une affection médicale (ex: crises partielles complexes)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Exclusion of organic causes</legend>
+<p class="subtitle">The symptoms are not attributable to the physiological effects of a substance or a medical condition.</p>
+<label>Not attributable to a substance (e.g., blackouts or chaotic behavior during alcohol intoxication)</label>
+<label>Not attributable to a medical condition (e.g., complex partial seizures)</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -311,10 +301,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

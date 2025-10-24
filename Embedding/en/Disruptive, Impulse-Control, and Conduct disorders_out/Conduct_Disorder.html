@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble des Conduites – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Assessment of Conduct Disorder – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -125,111 +126,94 @@
       margin-bottom: 5px;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble des Conduites – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Assessment of Conduct Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Pattern répétitif et persistant (≥3 sur 15 dans les 12 derniers mois, ≥1 dans les 6 derniers mois)</legend>
-  <p class="subtitle">Violation des droits fondamentaux d'autrui ou des normes/règles sociétales majeures appropriées à l'âge</p>
-  <div class="warning-box">
+<legend>Criterion A – Repetitive and persistent pattern (≥3 out of 15 in the last 12 months, ≥1 in the last 6 months)</legend>
+<p class="subtitle">Violation of the fundamental rights of others or of major societal norms/rules appropriate to the age</p>
+<div class="warning-box">
     ⚠️ <strong>Important :</strong> Au moins 3 critères dans les 12 derniers mois, dont au moins 1 dans les 6 derniers mois.
   </div>
-  
-  <p class="category-title">AGRESSION ENVERS LES PERSONNES ET LES ANIMAUX</p>
-  <label><input type="checkbox" name="critereA" value="1. Brutalise, menace ou intimide souvent autrui"/> 1. Brutalise, menace ou intimide souvent autrui</label>
-  <label><input type="checkbox" name="critereA" value="2. Commence souvent des bagarres physiques"/> 2. Commence souvent des bagarres physiques</label>
-  <label><input type="checkbox" name="critereA" value="3. A utilisé une arme pouvant causer des blessures graves"/> 3. A utilisé une arme pouvant causer des blessures graves (bâton, brique, bouteille cassée, couteau, arme à feu)</label>
-  <label><input type="checkbox" name="critereA" value="4. A fait preuve de cruauté physique envers des personnes"/> 4. A fait preuve de cruauté physique envers des personnes</label>
-  <label><input type="checkbox" name="critereA" value="5. A fait preuve de cruauté physique envers des animaux"/> 5. A fait preuve de cruauté physique envers des animaux</label>
-  <label><input type="checkbox" name="critereA" value="6. A volé en confrontant une victime"/> 6. A volé en confrontant une victime (agression, vol de sac, extorsion, vol à main armée)</label>
-  <label><input type="checkbox" name="critereA" value="7. A contraint quelqu'un à une activité sexuelle"/> 7. A contraint quelqu'un à une activité sexuelle</label>
-  
-  <p class="category-title">DESTRUCTION DE PROPRIÉTÉ</p>
-  <label><input type="checkbox" name="critereA" value="8. A délibérément mis le feu avec intention de causer des dommages graves"/> 8. A délibérément mis le feu avec intention de causer des dommages graves</label>
-  <label><input type="checkbox" name="critereA" value="9. A délibérément détruit la propriété d'autrui (autrement qu'en mettant le feu)"/> 9. A délibérément détruit la propriété d'autrui (autrement qu'en mettant le feu)</label>
-  
-  <p class="category-title">FRAUDE OU VOL</p>
-  <label><input type="checkbox" name="critereA" value="10. A pénétré par effraction dans une maison, un bâtiment ou une voiture"/> 10. A pénétré par effraction dans une maison, un bâtiment ou une voiture</label>
-  <label><input type="checkbox" name="critereA" value="11. Ment souvent pour obtenir des biens/faveurs ou éviter des obligations"/> 11. Ment souvent pour obtenir des biens/faveurs ou éviter des obligations (arnaque autrui)</label>
-  <label><input type="checkbox" name="critereA" value="12. A volé des objets de valeur non négligeable sans confronter une victime"/> 12. A volé des objets de valeur non négligeable sans confronter une victime (vol à l'étalage sans effraction, contrefaçon)</label>
-  
-  <p class="category-title">VIOLATIONS GRAVES DES RÈGLES</p>
-  <label><input type="checkbox" name="critereA" value="13. Reste souvent dehors la nuit malgré interdictions parentales (début avant 13 ans)"/> 13. Reste souvent dehors la nuit malgré interdictions parentales (début avant 13 ans)</label>
-  <label><input type="checkbox" name="critereA" value="14. A fugué au moins 2 fois ou 1 fois sans retour pendant longue période"/> 14. A fugué au moins 2 fois du domicile parental, ou 1 fois sans retour pendant longue période</label>
-  <label><input type="checkbox" name="critereA" value="15. Fait souvent l'école buissonnière (début avant 13 ans)"/> 15. Fait souvent l'école buissonnière (début avant 13 ans)</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<p class="category-title">AGGRESSION TOWARDS PEOPLE AND ANIMALS</p>
+<label>1. Often brutalizes, threatens, or intimidates others</label>
+<label>2. Often starts physical fights</label>
+<label>3. Used a weapon that can cause serious injuries (stick, brick, broken bottle, knife, firearm)</label>
+<label>4. Has shown physical cruelty towards individuals</label>
+<label>5. Has shown physical cruelty towards animals</label>
+<label>6. Stole by confronting a victim (assault, bag theft, extortion, armed robbery)</label>
+<label>7. Forced someone into a sexual activity</label>
+<p class="category-title">DESTRUCTION OF PROPERTY</p>
+<label>8. Deliberately set fire with the intent to cause serious harm</label>
+<label>9. Deliberately destroyed someone else's property (other than by setting fire to it)</label>
+<p class="category-title">FRAUD OR THEFT</p>
+<label>10. Has broken into a house, a building, or a car</label>
+<label>11. Often lies to obtain goods/favors or to avoid obligations (scams others)</label>
+<label>12. Stole items of significant value without confronting a victim (shoplifting without breaking and entering, counterfeiting)</label>
+<p class="category-title">SERIOUS VIOLATIONS OF THE RULES</p>
+<label>13. Often stays outside at night despite parental prohibitions (began before age 13)</label>
+<label>14. Has run away from home at least 2 times, or 1 time without returning for a long period.</label>
+<label>15. Often skips school (starts before age 13)</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Altération du fonctionnement</legend>
-  <p class="subtitle">La perturbation du comportement cause une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement académique"/> Altération du fonctionnement académique</label>
-  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Impairment of functioning</legend>
+<p class="subtitle">Behavioral disruption causes a clinically significant alteration.</p>
+<label>Alteration of social functioning</label>
+<label>Alteration of academic functioning</label>
+<label>Alteration of professional functioning</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Exclusion du trouble de personnalité antisociale</legend>
-  <p class="subtitle">Si l'individu a 18 ans ou plus, les critères du trouble de personnalité antisociale ne sont pas remplis</p>
-  <label><input type="checkbox" id="choixC" value="Critères trouble personnalité antisociale non remplis"/> Si ≥18 ans, les critères du trouble de personnalité antisociale ne sont pas remplis</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Exclusion of Antisocial Personality Disorder</legend>
+<p class="subtitle">If the individual is 18 years old or older, the criteria for antisocial personality disorder are not met.</p>
+<label>If ≥18 years old, the criteria for antisocial personality disorder are not met.</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Type de début -->
-<fieldset id="typeDebut" class="hidden">
-  <legend>Type de début (sous-type)</legend>
-  <p class="subtitle">Préciser l'âge de début des symptômes</p>
-  <label><input type="radio" name="typeDebut" value="F91.1 - Début dans l'enfance"/> <strong>F91.1</strong> - Début dans l'enfance : Au moins un symptôme avant 10 ans</label>
-  <label><input type="radio" name="typeDebut" value="F91.2 - Début à l'adolescence"/> <strong>F91.2</strong> - Début à l'adolescence : Aucun symptôme avant 10 ans</label>
-  <label><input type="radio" name="typeDebut" value="F91.9 - Début non spécifié"/> <strong>F91.9</strong> - Début non spécifié : Informations insuffisantes pour déterminer si début avant ou après 10 ans</label>
-  <button type="button" onclick="validerTypeDebut()">✔️ Valider le type de début</button>
+<fieldset class="hidden" id="typeDebut">
+<legend>Type of onset (subtype)</legend>
+<p class="subtitle">Specify the age of onset of symptoms</p>
+<label>- Onset in childhood: At least one symptom before the age of 10</label>
+<label>- Onset in adolescence: No symptoms before age 10</label>
+<label>- Onset unspecified: Insufficient information to determine if onset was before or after 10 years</label>
+<button onclick="validerTypeDebut()" type="button">✔️ Validate the start type</button>
 </fieldset>
-
 <!-- Émotions prosociales limitées -->
-<fieldset id="prosocial" class="hidden">
-  <legend>Spécificateur : Avec émotions prosociales limitées (optionnel)</legend>
-  <p class="subtitle">Au moins 2 des 4 caractéristiques suivantes de manière persistante pendant ≥12 mois, dans plusieurs relations et contextes</p>
-  <div class="note-box">
-    <strong>Note :</strong> Ces caractéristiques reflètent le pattern typique de fonctionnement interpersonnel et émotionnel, pas seulement des occurrences occasionnelles. Sources d'information multiples nécessaires (parents, enseignants, collègues, pairs).
+<fieldset class="hidden" id="prosocial">
+<legend>Specifier: With limited prosocial emotions (optional)</legend>
+<p class="subtitle">At least 2 of the 4 characteristics persistently for ≥12 months, in multiple relationships and contexts.</p>
+<div class="note-box">
+<strong>Note :</strong> Ces caractéristiques reflètent le pattern typique de fonctionnement interpersonnel et émotionnel, pas seulement des occurrences occasionnelles. Sources d'information multiples nécessaires (parents, enseignants, collègues, pairs).
   </div>
-  <label><input type="checkbox" name="prosocial" value="Absence de remords ou de culpabilité"/> <strong>Absence de remords ou de culpabilité :</strong> Ne se sent pas mal ou coupable après avoir fait quelque chose de mal (exclure remords exprimé seulement quand pris/puni). Manque général de préoccupation pour les conséquences négatives</label>
-  <label><input type="checkbox" name="prosocial" value="Insensible - manque d'empathie"/> <strong>Insensible - manque d'empathie :</strong> Ignore et ne se soucie pas des sentiments d'autrui. Décrit comme froid et indifférent. Plus préoccupé par les effets sur soi que sur autrui</label>
-  <label><input type="checkbox" name="prosocial" value="Indifférent à la performance"/> <strong>Indifférent à la performance :</strong> Ne montre pas de préoccupation pour une performance médiocre/problématique (école, travail). Ne fournit pas l'effort nécessaire, blâme autrui</label>
-  <label><input type="checkbox" name="prosocial" value="Affect superficiel ou déficient"/> <strong>Affect superficiel ou déficient :</strong> N'exprime pas de sentiments ou émotions sauf de manière superficielle, non sincère (peut activer/désactiver émotions rapidement, ou utilise émotions pour manipuler/intimider)</label>
-  <button type="button" onclick="validerProsocial()">✔️ Valider le spécificateur</button>
+<label>Does not feel bad or guilty after doing something wrong (exclude remorse expressed only when caught/punished). General lack of concern for negative consequences.</label>
+<label>Ignores and does not care about the feelings of others. Described as cold and indifferent. More concerned about the effects on oneself than on others.</label>
+<label>Does not show concern for poor/problematic performance (school, work). Does not put in the necessary effort, blames others.</label>
+<label>Do not express feelings or emotions except in a superficial, insincere manner (can quickly activate/deactivate emotions, or use emotions to manipulate/intimidate).</label>
+<button onclick="validerProsocial()" type="button">✔️ Validate the specifier</button>
 </fieldset>
-
 <!-- Sévérité -->
-<fieldset id="severite" class="hidden">
-  <legend>Sévérité actuelle</legend>
-  <p class="subtitle">Préciser la sévérité actuelle du trouble</p>
-  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> Peu ou pas de problèmes de conduite au-delà de ceux requis pour le diagnostic, dommages relativement mineurs (mensonges, absentéisme, sorties nocturnes sans permission)</label>
-  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> Nombre de problèmes et effets sur autrui intermédiaires entre léger et sévère (vol sans confrontation, vandalisme)</label>
-  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> Nombreux problèmes au-delà de ceux requis, ou dommages considérables (activité sexuelle forcée, cruauté physique, arme, vol avec confrontation, effraction)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="severite">
+<legend>Current severity</legend>
+<p class="subtitle">Specify the current severity of the disorder.</p>
+<label>Little or no conduct problems beyond those required for diagnosis, relatively minor damage (lying, absenteeism, going out at night without permission)</label>
+<label>Number of problems and effects on others intermediate between mild and severe (theft without confrontation, vandalism)</label>
+<label>Numerous problems beyond those required, or significant harm (forced sexual activity, physical cruelty, weapon, robbery with confrontation, burglary)</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix={critereA:[],critereB:[],critereC:false,typeDebut:"",prosocial:[],severite:""};
 
@@ -270,15 +254,10 @@ function afficherResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -290,6 +269,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

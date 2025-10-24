@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble de Restriction/Évitement de l'Apport Alimentaire – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno de Restricción/Evitación de la Ingesta Alimentaria – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -119,89 +120,75 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble de Restriction/Évitement de l'Apport Alimentaire – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno de Restricción/Evitación de la Ingesta Alimentaria – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Perturbation de l'alimentation associée à ≥1 des conséquences suivantes</legend>
-  <p class="subtitle">Perturbation de l'alimentation ou de l'apport alimentaire (manque apparent d'intérêt, évitement basé sur caractéristiques sensorielles, préoccupation concernant conséquences aversives)</p>
-  <div class="warning-box">
+<legend>Criterio A – Alteración de la alimentación asociada a ≥1 de las siguientes consecuencias</legend>
+<p class="subtitle">Perturbación de la alimentación o de la ingesta alimentaria (falta aparente de interés, evitación basada en características sensoriales, preocupación por las consecuencias aversivas)</p>
+<div class="warning-box">
     ⚠️ <strong>Important :</strong> Au moins une des 4 conséquences suivantes doit être présente.
   </div>
-  
-  <p style="margin-top: 10px;"><strong>Type de perturbation alimentaire :</strong></p>
-  <label><input type="checkbox" name="perturbation" value="Manque apparent d'intérêt pour manger ou la nourriture"/> Manque apparent d'intérêt pour manger ou la nourriture</label>
-  <label><input type="checkbox" name="perturbation" value="Évitement basé sur les caractéristiques sensorielles de la nourriture"/> Évitement basé sur les caractéristiques sensorielles de la nourriture</label>
-  <label><input type="checkbox" name="perturbation" value="Préoccupation concernant les conséquences aversives de manger"/> Préoccupation concernant les conséquences aversives de manger</label>
-  
-  <p style="margin-top: 15px;"><strong>Conséquences (au moins 1 requise) :</strong></p>
-  <label><input type="checkbox" name="consequences" value="1. Perte de poids significative (ou échec à atteindre prise de poids attendue/croissance défaillante chez enfants)"/> 1. Perte de poids significative (ou échec à atteindre prise de poids attendue/croissance défaillante chez enfants)</label>
-  <label><input type="checkbox" name="consequences" value="2. Déficience nutritionnelle significative"/> 2. Déficience nutritionnelle significative</label>
-  <label><input type="checkbox" name="consequences" value="3. Dépendance à l'alimentation entérale ou aux suppléments nutritionnels oraux"/> 3. Dépendance à l'alimentation entérale ou aux suppléments nutritionnels oraux</label>
-  <label><input type="checkbox" name="consequences" value="4. Interférence marquée avec le fonctionnement psychosocial"/> 4. Interférence marquée avec le fonctionnement psychosocial</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<p style="margin-top: 10px;"><strong>Type de perturbation alimentaire :</strong></p>
+<label>Falta aparente de interés por comer o por la comida</label>
+<label>Evitar basado en las características sensoriales de los alimentos</label>
+<label>Preocupación por las consecuencias adversas de comer</label>
+<p style="margin-top: 15px;"><strong>Conséquences (au moins 1 requise) :</strong></p>
+<label>1. Pérdida de peso significativa (o fracaso en alcanzar el aumento de peso esperado/crecimiento deficiente en niños)</label>
+<label>2. Deficiencia nutricional significativa</label>
+<label>3. Dependencia de la alimentación enteral o de los suplementos nutricionales orales</label>
+<label>4. Interferencia marcada con el funcionamiento psicosocial</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Exclusion du manque de nourriture ou de pratiques culturelles</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un manque de nourriture disponible ou par une pratique culturellement sanctionnée</p>
-  <label><input type="checkbox" name="critereB" value="Pas mieux expliquée par manque de nourriture disponible"/> Pas mieux expliquée par manque de nourriture disponible</label>
-  <label><input type="checkbox" name="critereB" value="Pas mieux expliquée par pratique culturellement sanctionnée"/> Pas mieux expliquée par pratique culturellement sanctionnée</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Exclusión de la falta de alimentos o de prácticas culturales</legend>
+<p class="subtitle">La perturbación no se explica mejor por una falta de comida disponible o por una práctica culturalmente sancionada.</p>
+<label>No mejor explicada por falta de comida disponible</label>
+<label>No mejor explicada por práctica culturalmente sancionada</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Exclusion de l'anorexie et de la boulimie</legend>
-  <p class="subtitle">La perturbation alimentaire ne survient pas exclusivement au cours de l'anorexie ou de la boulimie, et pas de perturbation de la perception du poids/forme corporelle</p>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de l'anorexie mentale"/> Ne survient pas exclusivement au cours de l'anorexie mentale</label>
-  <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de la boulimie"/> Ne survient pas exclusivement au cours de la boulimie</label>
-  <label><input type="checkbox" name="critereC" value="Pas de perturbation de la perception du poids corporel"/> Pas de perturbation de la perception du poids corporel</label>
-  <label><input type="checkbox" name="critereC" value="Pas de perturbation de la perception de la forme corporelle"/> Pas de perturbation de la perception de la forme corporelle</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Exclusión de la anorexia y la bulimia</legend>
+<p class="subtitle">La perturbación alimentaria no ocurre exclusivamente durante la anorexia o la bulimia, y no hay alteración en la percepción del peso/forma corporal.</p>
+<label>No ocurre exclusivamente durante la anorexia mental.</label>
+<label>No ocurre exclusivamente durante la bulimia</label>
+<label>Sin perturbación de la percepción del peso corporal</label>
+<label>Sin perturbación de la percepción de la forma corporal</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion des affections médicales et autres troubles mentaux</legend>
-  <p class="subtitle">La perturbation alimentaire n'est pas attribuable à une affection médicale concomitante ou mieux expliquée par un autre trouble mental</p>
-  <div class="note-box">
-    <strong>Note :</strong> Lorsque la perturbation alimentaire survient dans le contexte d'une autre affection ou trouble, la sévérité de la perturbation alimentaire dépasse celle habituellement associée à l'affection ou au trouble et justifie une attention clinique additionnelle.
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Exclusión de afecciones médicas y otros trastornos mentales</legend>
+<p class="subtitle">La perturbación alimentaria no es atribuible a una afección médica concomitante o mejor explicada por otro trastorno mental.</p>
+<div class="note-box">
+<strong>Note :</strong> Lorsque la perturbation alimentaire survient dans le contexte d'une autre affection ou trouble, la sévérité de la perturbation alimentaire dépasse celle habituellement associée à l'affection ou au trouble et justifie une attention clinique additionnelle.
   </div>
-  <label><input type="checkbox" name="critereD" value="Pas attribuable à une affection médicale concomitante"/> Pas attribuable à une affection médicale concomitante</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par un autre trouble mental"/> Pas mieux expliquée par un autre trouble mental</label>
-  <label><input type="checkbox" name="critereD" value="Si contexte d'autre affection : sévérité dépasse celle habituellement associée"/> Si dans le contexte d'une autre affection : la sévérité dépasse celle habituellement associée et justifie attention additionnelle</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<label>No atribuible a una afección médica concomitante</label>
+<label>No mejor explicada por otro trastorno mental.</label>
+<label>Si en el contexto de otra afección: la gravedad supera la que se asocia habitualmente y justifica atención adicional.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Rémission -->
-<fieldset id="remission" class="hidden">
-  <legend>Rémission (optionnel)</legend>
-  <p class="subtitle">Préciser si applicable</p>
-  <label><input type="radio" name="remission" value="En rémission"/> En rémission : Après que les critères complets aient été remplis, les critères n'ont pas été remplis pendant une période prolongée</label>
-  <label><input type="radio" name="remission" value="Non applicable"/> Non applicable (trouble actif)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="remission">
+<legend>Remisión (opcional)</legend>
+<p class="subtitle">Especificar si es aplicable</p>
+<label>En remisión: Después de que se hayan cumplido los criterios completos, los criterios no se han cumplido durante un período prolongado.</label>
+<label>No aplicable (trastorno activo)</label>
+<button onclick="afficherResume()" type="button">✔️ Terminar</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   perturbation: [],
@@ -333,10 +320,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

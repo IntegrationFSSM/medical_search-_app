@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Amnésie Dissociative – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Dissociative Amnesia Evaluation – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,88 +113,77 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation de l'Amnésie Dissociative – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Dissociative Amnesia – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Incapacité à se rappeler des informations autobiographiques importantes</legend>
-  <p class="subtitle">Habituellement de nature traumatique ou stressante, incompatible avec l'oubli ordinaire</p>
-  <div class="note-box">
-    <strong>Note :</strong> L'amnésie dissociative consiste le plus souvent en une amnésie localisée ou sélective pour un ou des événements spécifiques ; ou une amnésie généralisée pour l'identité et l'histoire de vie.
+<legend>Criterion A – Inability to recall important autobiographical information</legend>
+<p class="subtitle">Usually of a traumatic or stressful nature, incompatible with ordinary forgetting.</p>
+<div class="note-box">
+<strong>Note :</strong> L'amnésie dissociative consiste le plus souvent en une amnésie localisée ou sélective pour un ou des événements spécifiques ; ou une amnésie généralisée pour l'identité et l'histoire de vie.
   </div>
-  <label><input type="checkbox" name="critereA" value="Incapacité à se rappeler des informations autobiographiques importantes"/> Incapacité à se rappeler des informations autobiographiques importantes</label>
-  <label><input type="checkbox" name="critereA" value="Informations habituellement de nature traumatique ou stressante"/> Informations habituellement de nature traumatique ou stressante</label>
-  <label><input type="checkbox" name="critereA" value="Incompatible avec l'oubli ordinaire"/> Incompatible avec l'oubli ordinaire</label>
-  <label><input type="checkbox" name="critereA" value="Amnésie localisée ou sélective pour événement(s) spécifique(s)"/> Amnésie localisée ou sélective pour événement(s) spécifique(s)</label>
-  <label><input type="checkbox" name="critereA" value="Amnésie généralisée pour identité et histoire de vie"/> Amnésie généralisée pour identité et histoire de vie</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<label>Inability to recall important autobiographical information</label>
+<label>Information usually of a traumatic or stressful nature</label>
+<label>Incompatible with ordinary forgetfulness</label>
+<label>Localized or selective amnesia for specific event(s)</label>
+<label>Generalized amnesia for identity and life history</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Distress or impairment in functioning</legend>
+<p class="subtitle">Symptoms cause clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Exclusion des causes organiques</legend>
-  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection neurologique/médicale</p>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à l'alcool"/> Pas attribuable à l'alcool</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à une drogue"/> Pas attribuable à une drogue</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à un médicament"/> Pas attribuable à un médicament</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à des crises partielles complexes"/> Pas attribuable à des crises partielles complexes</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à une amnésie globale transitoire"/> Pas attribuable à une amnésie globale transitoire</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à séquelles de traumatisme crânien fermé/lésion cérébrale traumatique"/> Pas attribuable à séquelles de traumatisme crânien fermé/lésion cérébrale traumatique</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à autre affection neurologique"/> Pas attribuable à autre affection neurologique</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Exclusion of organic causes</legend>
+<p class="subtitle">The disturbance is not attributable to the physiological effects of a substance or a neurological/medical condition.</p>
+<label>Not attributable to alcohol</label>
+<label>Not attributable to a drug</label>
+<label>Not attributable to a medication</label>
+<label>Not attributable to complex partial seizures</label>
+<label>Not attributable to transient global amnesia</label>
+<label>Not attributable to sequelae of closed head trauma/traumatic brain injury</label>
+<label>Not attributable to another neurological condition</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par d'autres troubles</p>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble de l'identité dissociative"/> Pas mieux expliquée par trouble de l'identité dissociative</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble de stress post-traumatique"/> Pas mieux expliquée par trouble de stress post-traumatique</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble de stress aigu"/> Pas mieux expliquée par trouble de stress aigu</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble à symptomatologie somatique"/> Pas mieux expliquée par trouble à symptomatologie somatique</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquée par trouble neurocognitif majeur ou léger"/> Pas mieux expliquée par trouble neurocognitif majeur ou léger</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Differential Diagnosis</legend>
+<p class="subtitle">The disturbance is not better explained by other disorders.</p>
+<label>No better explained by dissociative identity disorder.</label>
+<label>No better explained by post-traumatic stress disorder</label>
+<label>No better explained by acute stress disorder</label>
+<label>No better explained by a disorder with somatic symptomatology.</label>
+<label>Not better explained by major or mild neurocognitive disorder.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Spécificateur Fugue -->
-<fieldset id="fugue" class="hidden">
-  <legend>Spécificateur : Avec fugue dissociative (optionnel)</legend>
-  <p class="subtitle">Voyage apparemment intentionnel ou errance déconcertée associée à une amnésie pour l'identité ou d'autres informations autobiographiques importantes</p>
-  <label><input type="checkbox" name="fugue" value="Voyage apparemment intentionnel"/> Voyage apparemment intentionnel</label>
-  <label><input type="checkbox" name="fugue" value="Errance déconcertée"/> Errance déconcertée</label>
-  <label><input type="checkbox" name="fugue" value="Associée à amnésie pour l'identité"/> Associée à amnésie pour l'identité</label>
-  <label><input type="checkbox" name="fugue" value="Associée à amnésie pour autres informations autobiographiques importantes"/> Associée à amnésie pour autres informations autobiographiques importantes</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="fugue">
+<legend>Specifier: With dissociative fugue (optional)</legend>
+<p class="subtitle">Apparent intentional travel or bewildered wandering associated with amnesia for identity or other important autobiographical information</p>
+<label>Apparently intentional travel</label>
+<label>Disconcerted wandering</label>
+<label>Associated with identity amnesia</label>
+<label>Associated with amnesia for other important autobiographical information</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -314,10 +304,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

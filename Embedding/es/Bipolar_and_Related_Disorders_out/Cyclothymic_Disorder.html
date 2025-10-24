@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Cyclothymique – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Ciclotímico – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,98 +113,85 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Cyclothymique – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Ciclotímico – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Périodes nombreuses de symptômes hypomaniaques et dépressifs (≥2 ans)</legend>
-  <p class="subtitle">Pendant au moins 2 ans (1 an chez les enfants/adolescents), nombreuses périodes avec symptômes hypomaniaques ne remplissant PAS les critères d'un épisode hypomaniaque ET nombreuses périodes avec symptômes dépressifs ne remplissant PAS les critères d'un épisode dépressif majeur</p>
-  <div class="note-box">
-    <strong>Note :</strong> Les symptômes sont SOUS-SYNDROMIQUES (ne remplissent pas les critères complets d'un épisode).
+<legend>Criterio A – Períodos numerosos de síntomas hipomaníacos y depresivos (≥2 años)</legend>
+<p class="subtitle">Durante al menos 2 años (1 año en niños/adolescentes), numerosos períodos con síntomas hipomaníacos que NO cumplen con los criterios de un episodio hipomaníaco Y numerosos períodos con síntomas depresivos que NO cumplen con los criterios de un episodio depresivo mayor.</p>
+<div class="note-box">
+<strong>Note :</strong> Les symptômes sont SOUS-SYNDROMIQUES (ne remplissent pas les critères complets d'un épisode).
   </div>
-  <label><input type="checkbox" name="critereA" value="Durée d'au moins 2 ans (adultes)"/> Durée d'au moins 2 ans (adultes) ou 1 an (enfants/adolescents)</label>
-  <label><input type="checkbox" name="critereA" value="Nombreuses périodes avec symptômes hypomaniaques sous-syndromiques"/> Nombreuses périodes avec symptômes hypomaniaques sous-syndromiques</label>
-  <label><input type="checkbox" name="critereA" value="Nombreuses périodes avec symptômes dépressifs sous-syndromiques"/> Nombreuses périodes avec symptômes dépressifs sous-syndromiques</label>
-  <label><input type="checkbox" name="critereA" value="Les symptômes ne remplissent PAS les critères d'épisodes complets"/> Les symptômes ne remplissent PAS les critères d'épisodes hypomaniaques ou dépressifs majeurs complets</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<label>Duración de al menos 2 años (adultos) o 1 año (niños/adolescentes)</label>
+<label>Numerosos períodos con síntomas hipomaníacos sub-sindrómicos</label>
+<label>Numerosos períodos con síntomas depresivos subsindrómicos</label>
+<label>Los síntomas NO cumplen con los criterios de episodios hipomaníacos o depresivos mayores completos.</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Symptômes présents au moins la moitié du temps</legend>
-  <p class="subtitle">Pendant la période de 2 ans (1 an chez enfants/adolescents), les symptômes ont été présents au moins la moitié du temps et la personne n'a pas été sans symptômes pendant plus de 2 mois d'affilée</p>
-  <label><input type="checkbox" name="critereB" value="Symptômes présents au moins la moitié du temps"/> Symptômes présents au moins la moitié du temps</label>
-  <label><input type="checkbox" name="critereB" value="Pas sans symptômes pendant plus de 2 mois d'affilée"/> Pas sans symptômes pendant plus de 2 mois d'affilée</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Síntomas presentes al menos la mitad del tiempo</legend>
+<p class="subtitle">Durante el período de 2 años (1 año en niños/adolescentes), los síntomas han estado presentes al menos la mitad del tiempo y la persona no ha estado sin síntomas durante más de 2 meses consecutivos.</p>
+<label>Síntomas presentes al menos la mitad del tiempo</label>
+<label>No sin síntomas durante más de 2 meses consecutivos</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Jamais d'épisode complet</legend>
-  <p class="subtitle">Les critères d'un épisode dépressif majeur, maniaque ou hypomaniaque n'ont JAMAIS été remplis</p>
-  <label><input type="checkbox" name="critereC" value="Jamais d'épisode dépressif majeur"/> Jamais d'épisode dépressif majeur</label>
-  <label><input type="checkbox" name="critereC" value="Jamais d'épisode maniaque"/> Jamais d'épisode maniaque</label>
-  <label><input type="checkbox" name="critereC" value="Jamais d'épisode hypomaniaque"/> Jamais d'épisode hypomaniaque</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Nunca un episodio completo</legend>
+<p class="subtitle">Los criterios para un episodio depresivo mayor, maníaco o hipomaníaco NUNCA han sido cumplidos.</p>
+<label>Nunca un episodio depresivo mayor</label>
+<label>Nunca episodios maníacos</label>
+<label>Nunca un episodio hipomaníaco</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Diagnostic différentiel</legend>
-  <p class="subtitle">Les symptômes ne sont pas mieux expliqués par d'autres troubles psychotiques</p>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un trouble schizo-affectif"/> Pas mieux expliqué par un trouble schizo-affectif</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par la schizophrénie"/> Pas mieux expliqué par la schizophrénie</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un trouble schizophréniforme"/> Pas mieux expliqué par un trouble schizophréniforme</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un trouble délirant"/> Pas mieux expliqué par un trouble délirant</label>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par un autre trouble du spectre de la schizophrénie"/> Pas mieux expliqué par un autre trouble du spectre de la schizophrénie ou autre trouble psychotique</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Diagnóstico diferencial</legend>
+<p class="subtitle">Los síntomas no se explican mejor por otros trastornos psicóticos.</p>
+<label>No se explica mejor por un trastorno esquizoafectivo.</label>
+<label>No se explica mejor por la esquizofrenia.</label>
+<label>No mejor explicado por un trastorno esquizofreniforme</label>
+<label>No se explica mejor por un trastorno delirante.</label>
+<label>No mejor explicado por otro trastorno del espectro de la esquizofrenia o por otro trastorno psicótico.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Exclusion des causes organiques</legend>
-  <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une affection médicale (hyperthyroïdie)"/> Pas attribuable à une affection médicale (ex: hyperthyroïdie)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Exclusión de causas orgánicas</legend>
+<p class="subtitle">Los síntomas no son atribuibles a los efectos fisiológicos de una sustancia o de una afección médica.</p>
+<label>No atribuible a una sustancia (droga, medicamento)</label>
+<label>No atribuible a una afección médica (ej: hipertiroidismo)</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereF" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereF" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereF" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereF" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+<fieldset class="hidden" id="critereF">
+<legend>Criterio F – Angustia o alteración del funcionamiento</legend>
+<p class="subtitle">Los síntomas causan una angustia o una alteración clínicamente significativa</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento social</label>
+<label>Alteración del funcionamiento profesional</label>
+<label>Alteración en otros ámbitos importantes del funcionamiento</label>
+<button onclick="validerCritereF()" type="button">✔️ Validar el criterio F</button>
 </fieldset>
-
 <!-- Spécificateur -->
-<fieldset id="specificateur" class="hidden">
-  <legend>Spécificateur (optionnel)</legend>
-  <p class="subtitle">Préciser si applicable</p>
-  <label><input type="checkbox" name="specificateur" value="Avec détresse anxieuse"/> Avec détresse anxieuse</label>
-  <button type="button" onclick="validerSpecificateur()">✔️ Valider le spécificateur</button>
+<fieldset class="hidden" id="specificateur">
+<legend>Especificador (opcional)</legend>
+<p class="subtitle">Especificar si es aplicable</p>
+<label>Con angustia ansiosa</label>
+<button onclick="validerSpecificateur()" type="button">✔️ Validar el especificador</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -354,10 +342,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

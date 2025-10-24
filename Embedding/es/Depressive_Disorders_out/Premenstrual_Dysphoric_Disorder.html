@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Dysphorique Prémenstruel – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Disfórico Premenstrual – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -119,110 +120,97 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Dysphorique Prémenstruel – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Disfórico Premenstrual – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Au moins 5 symptômes dans la majorité des cycles menstruels</legend>
-  <p class="subtitle">Présents dans la dernière semaine avant les règles, commencent à s'améliorer quelques jours après le début des règles, et deviennent minimes ou absents dans la semaine post-menstruelle</p>
-  <label><input type="checkbox" name="critereA" value="Symptômes présents dans la dernière semaine avant les règles"/> Symptômes présents dans la dernière semaine avant les règles</label>
-  <label><input type="checkbox" name="critereA" value="Commencent à s'améliorer quelques jours après le début des règles"/> Commencent à s'améliorer quelques jours après le début des règles</label>
-  <label><input type="checkbox" name="critereA" value="Deviennent minimes ou absents dans la semaine post-menstruelle"/> Deviennent minimes ou absents dans la semaine post-menstruelle</label>
-  <label><input type="checkbox" name="critereA" value="Présents dans la majorité des cycles menstruels"/> Présents dans la majorité des cycles menstruels</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Al menos 5 síntomas en la mayoría de los ciclos menstruales</legend>
+<p class="subtitle">Presentes en la última semana antes de la menstruación, comienzan a mejorar unos días después del inicio de la menstruación y se vuelven mínimos o ausentes en la semana post-menstrual.</p>
+<label>Síntomas presentes en la última semana antes de la menstruación</label>
+<label>Comienzan a mejorar unos días después del inicio de la menstruación</label>
+<label>Se vuelven mínimos o ausentes en la semana post-menstrual.</label>
+<label>Presentes en la mayoría de los ciclos menstruales</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Au moins 1 des 4 symptômes affectifs suivants</legend>
-  <p class="subtitle">Au moins un symptôme parmi les suivants doit être présent</p>
-  <label><input type="checkbox" name="critereB" value="1. Labilité affective marquée (sautes d'humeur, tristesse soudaine, sensibilité au rejet)"/> 1. Labilité affective marquée (sautes d'humeur, tristesse soudaine, sensibilité au rejet)</label>
-  <label><input type="checkbox" name="critereB" value="2. Irritabilité ou colère marquée, ou conflits interpersonnels accrus"/> 2. Irritabilité ou colère marquée, ou conflits interpersonnels accrus</label>
-  <label><input type="checkbox" name="critereB" value="3. Humeur dépressive marquée, sentiments de désespoir ou pensées d'autodépréciation"/> 3. Humeur dépressive marquée, sentiments de désespoir ou pensées d'autodépréciation</label>
-  <label><input type="checkbox" name="critereB" value="4. Anxiété marquée, tension et/ou sentiments d'être survolté ou à cran"/> 4. Anxiété marquée, tension et/ou sentiments d'être survolté ou à cran</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Al menos 1 de los 4 síntomas afectivos siguientes</legend>
+<p class="subtitle">Al menos un síntoma de los siguientes debe estar presente</p>
+<label>1. Labilidad afectiva marcada (cambios de humor, tristeza repentina, sensibilidad al rechazo)</label>
+<label>2. Irritabilidad o ira marcada, o conflictos interpersonales aumentados</label>
+<label>3. Estado de ánimo depresivo marcado, sentimientos de desesperanza o pensamientos de autodevaluación</label>
+<label>4. Ansiedad marcada, tensión y/o sentimientos de estar sobreexcitado o al borde.</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Symptômes additionnels pour atteindre un total de 5</legend>
-  <p class="subtitle">Un ou plusieurs des symptômes suivants doivent être présents en plus des symptômes du critère B, pour atteindre un total de 5 symptômes</p>
-  <label><input type="checkbox" name="critereC" value="1. Diminution de l'intérêt pour les activités habituelles"/> 1. Diminution de l'intérêt pour les activités habituelles (travail, école, amis, loisirs)</label>
-  <label><input type="checkbox" name="critereC" value="2. Difficulté subjective de concentration"/> 2. Difficulté subjective de concentration</label>
-  <label><input type="checkbox" name="critereC" value="3. Léthargie, fatigabilité facile ou manque marqué d'énergie"/> 3. Léthargie, fatigabilité facile ou manque marqué d'énergie</label>
-  <label><input type="checkbox" name="critereC" value="4. Changement marqué de l'appétit, suralimentation ou envies alimentaires spécifiques"/> 4. Changement marqué de l'appétit, suralimentation ou envies alimentaires spécifiques</label>
-  <label><input type="checkbox" name="critereC" value="5. Hypersomnie ou insomnie"/> 5. Hypersomnie ou insomnie</label>
-  <label><input type="checkbox" name="critereC" value="6. Sentiment d'être submergée ou de perdre le contrôle"/> 6. Sentiment d'être submergée ou de perdre le contrôle</label>
-  <label><input type="checkbox" name="critereC" value="7. Symptômes physiques (sensibilité mammaire, douleurs articulaires/musculaires, ballonnement, prise de poids)"/> 7. Symptômes physiques (sensibilité mammaire, douleurs articulaires/musculaires, ballonnement, prise de poids)</label>
-  <div class="note-box">
-    <strong>Note :</strong> Les symptômes des critères A-C doivent avoir été remplis pour la plupart des cycles menstruels au cours de l'année précédente.
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Síntomas adicionales para alcanzar un total de 5</legend>
+<p class="subtitle">Uno o más de los siguientes síntomas deben estar presentes además de los síntomas del criterio B, para alcanzar un total de 5 síntomas.</p>
+<label>1. Disminución del interés por las actividades habituales (trabajo, escuela, amigos, ocio)</label>
+<label>2. Dificultad subjetiva de concentración</label>
+<label>3. Letargia, fácil fatigabilidad o falta marcada de energía</label>
+<label>4. Cambio marcado en el apetito, sobrealimentación o antojos alimentarios específicos</label>
+<label>5. Hipersomnia o insomnio</label>
+<label>6. Sentimiento de estar abrumada o de perder el control</label>
+<label>7. Síntomas físicos (sensibilidad mamaria, dolores articulares/musculares, hinchazón, aumento de peso)</label>
+<div class="note-box">
+<strong>Note :</strong> Les symptômes des critères A-C doivent avoir été remplis pour la plupart des cycles menstruels au cours de l'année précédente.
   </div>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Détresse ou interférence significative</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une interférence cliniquement significative</p>
-  <label><input type="checkbox" name="critereD" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereD" value="Interférence avec le travail"/> Interférence avec le travail</label>
-  <label><input type="checkbox" name="critereD" value="Interférence avec l'école"/> Interférence avec l'école</label>
-  <label><input type="checkbox" name="critereD" value="Interférence avec les activités sociales habituelles"/> Interférence avec les activités sociales habituelles</label>
-  <label><input type="checkbox" name="critereD" value="Interférence avec les relations"/> Interférence avec les relations avec autrui</label>
-  <label><input type="checkbox" name="critereD" value="Évitement des activités sociales"/> Évitement des activités sociales</label>
-  <label><input type="checkbox" name="critereD" value="Diminution de la productivité et de l'efficacité"/> Diminution de la productivité et de l'efficacité (travail, école, maison)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Angustia o interferencia significativa</legend>
+<p class="subtitle">Los síntomas causan una angustia o una interferencia clínicamente significativa</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Interferencia con el trabajo</label>
+<label>Interferencia con la escuela</label>
+<label>Interferencia con las actividades sociales habituales</label>
+<label>Interferencia con las relaciones con los demás</label>
+<label>Evitar actividades sociales</label>
+<label>Disminución de la productividad y de la eficacia (trabajo, escuela, hogar)</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Pas simplement une exacerbation d'un autre trouble</legend>
-  <p class="subtitle">La perturbation n'est pas simplement une exacerbation des symptômes d'un autre trouble (bien qu'elle puisse coexister)</p>
-  <label><input type="checkbox" name="critereE" value="Pas simplement exacerbation d'un trouble dépressif majeur"/> Pas simplement exacerbation d'un trouble dépressif majeur</label>
-  <label><input type="checkbox" name="critereE" value="Pas simplement exacerbation d'un trouble panique"/> Pas simplement exacerbation d'un trouble panique</label>
-  <label><input type="checkbox" name="critereE" value="Pas simplement exacerbation d'un trouble dépressif persistant"/> Pas simplement exacerbation d'un trouble dépressif persistant</label>
-  <label><input type="checkbox" name="critereE" value="Pas simplement exacerbation d'un trouble de la personnalité"/> Pas simplement exacerbation d'un trouble de la personnalité</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – No simplemente una exacerbación de otro trastorno</legend>
+<p class="subtitle">La perturbación no es simplemente una exacerbación de los síntomas de otro trastorno (aunque puede coexistir)</p>
+<label>No simplemente exacerbación de un trastorno depresivo mayor</label>
+<label>No simplemente exacerbación de un trastorno de pánico</label>
+<label>No simplemente exacerbación de un trastorno depresivo persistente</label>
+<label>No simplemente exacerbación de un trastorno de la personalidad</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Confirmation par évaluations quotidiennes prospectives</legend>
-  <p class="subtitle">Le critère A doit être confirmé par des évaluations quotidiennes prospectives pendant au moins deux cycles symptomatiques</p>
-  <div class="warning-box">
+<fieldset class="hidden" id="critereF">
+<legend>Criterio F – Confirmación mediante evaluaciones diarias prospectivas</legend>
+<p class="subtitle">El criterio A debe ser confirmado por evaluaciones diarias prospectivas durante al menos dos ciclos sintomáticos.</p>
+<div class="warning-box">
     ⚠️ <strong>Note :</strong> Le diagnostic peut être posé de manière PROVISOIRE avant cette confirmation.
   </div>
-  <label><input type="radio" name="critereF" value="Confirmé par évaluations prospectives (≥2 cycles)"/> Confirmé par évaluations quotidiennes prospectives (≥2 cycles)</label>
-  <label><input type="radio" name="critereF" value="Non encore confirmé (diagnostic provisoire)"/> Non encore confirmé (diagnostic PROVISOIRE)</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+<label>Confirmado por evaluaciones diarias prospectivas (≥2 ciclos)</label>
+<label>No aún confirmado (diagnóstico PROVISIONAL)</label>
+<button onclick="validerCritereF()" type="button">✔️ Validar el criterio F</button>
 </fieldset>
-
 <!-- Critère G -->
-<fieldset id="critereG" class="hidden">
-  <legend>Critère G – Exclusion des causes organiques</legend>
-  <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereG" value="Pas attribuable à une substance (drogue, médicament, autre traitement)"/> Pas attribuable à une substance (drogue, médicament, autre traitement)</label>
-  <label><input type="checkbox" name="critereG" value="Pas attribuable à une affection médicale (hyperthyroïdie)"/> Pas attribuable à une affection médicale (ex: hyperthyroïdie)</label>
-  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
+<fieldset class="hidden" id="critereG">
+<legend>Criterio G – Exclusión de causas orgánicas</legend>
+<p class="subtitle">Los síntomas no son atribuibles a los efectos fisiológicos de una sustancia o de una afección médica.</p>
+<label>No atribuible a una sustancia (droga, medicamento, otro tratamiento)</label>
+<label>No atribuible a una afección médica (ej: hipertiroidismo)</label>
+<button onclick="validerCritereG()" type="button">✔️ Validar el criterio G</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -381,10 +369,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

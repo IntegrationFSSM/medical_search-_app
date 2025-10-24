@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Neurocognitif dû à Autre Affection Médicale – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Neurocognitivo debido a Otra Enfermedad Médica – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -113,87 +114,73 @@
       font-size: 0.85em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Neurocognitif dû à une Autre Affection Médicale – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Neurocognitivo debido a Otra Enfermedad Médica – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Critères du trouble neurocognitif majeur ou léger remplis</legend>
-  <p class="subtitle">Les critères sont remplis pour un trouble neurocognitif majeur ou léger</p>
-  <label><input type="radio" name="critereA" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
-  <label><input type="radio" name="critereA" value="Trouble neurocognitif léger"/> Trouble neurocognitif léger</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Criterios del trastorno neurocognitivo mayor o leve cumplidos</legend>
+<p class="subtitle">Los criterios se cumplen para un trastorno neurocognitivo mayor o leve.</p>
+<label>Trastorno neurocognitivo mayor</label>
+<label>Trastorno neurocognitivo leve</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Preuves que le trouble est conséquence pathophysiologique d'une affection médicale</legend>
-  <p class="subtitle">Preuves issues de l'histoire, examen physique ou résultats de laboratoire</p>
-  <div class="note-box">
-    <strong>Exemples d'affections médicales :</strong> Sclérose en plaques, traumatisme crânien, maladie de Huntington, infection VIH, maladie de Parkinson, encéphalopathie hépatique, hypothyroïdie, déficience en vitamine B12, tumeur cérébrale, etc.
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Pruebas de que el trastorno es consecuencia fisiopatológica de una afección médica</legend>
+<p class="subtitle">Pruebas provenientes de la historia, examen físico o resultados de laboratorio</p>
+<div class="note-box">
+<strong>Exemples d'affections médicales :</strong> Sclérose en plaques, traumatisme crânien, maladie de Huntington, infection VIH, maladie de Parkinson, encéphalopathie hépatique, hypothyroïdie, déficience en vitamine B12, tumeur cérébrale, etc.
   </div>
-  <label><input type="checkbox" name="critereB" value="Preuves de l'histoire"/> Preuves de l'histoire</label>
-  <label><input type="checkbox" name="critereB" value="Preuves de l'examen physique"/> Preuves de l'examen physique</label>
-  <label><input type="checkbox" name="critereB" value="Preuves des résultats de laboratoire"/> Preuves des résultats de laboratoire</label>
-  <label><input type="checkbox" name="critereB" value="Le trouble neurocognitif est conséquence pathophysiologique de l'affection médicale"/> Le trouble neurocognitif est conséquence pathophysiologique de l'affection médicale</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<label>Pruebas de la historia</label>
+<label>Pruebas del examen físico</label>
+<label>Pruebas de los resultados de laboratorio</label>
+<label>El trastorno neurocognitivo es consecuencia patofisiológica de la afección médica.</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Diagnostic différentiel</legend>
-  <p class="subtitle">Les déficits cognitifs ne sont pas mieux expliqués par un autre trouble mental ou un autre trouble neurocognitif spécifique</p>
-  <label><input type="checkbox" name="critereC" value="Pas mieux expliqués par autre trouble mental (ex: trouble dépressif majeur)"/> Pas mieux expliqués par autre trouble mental (ex: trouble dépressif majeur)</label>
-  <label><input type="checkbox" name="critereC" value="Pas mieux expliqués par autre trouble neurocognitif spécifique (ex: Alzheimer)"/> Pas mieux expliqués par autre trouble neurocognitif spécifique (ex: trouble neurocognitif majeur dû à la maladie d'Alzheimer)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Diagnóstico diferencial</legend>
+<p class="subtitle">Los déficits cognitivos no se explican mejor por otro trastorno mental o por otro trastorno neurocognitivo específico.</p>
+<label>No mejor explicados por otro trastorno mental (ej: trastorno depresivo mayor)</label>
+<label>No mejor explicados por otro trastorno neurocognitivo específico (ej: trastorno neurocognitivo mayor debido a la enfermedad de Alzheimer)</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs et Affection Médicale</legend>
-  <p class="subtitle">Préciser l'affection médicale et les caractéristiques additionnelles</p>
-  
-  <p style="margin-top: 10px;"><strong>Affection médicale causale (exemples) :</strong></p>
-  <label><input type="radio" name="affection" value="Sclérose en plaques (G35)"/> Sclérose en plaques (G35)</label>
-  <label><input type="radio" name="affection" value="Traumatisme crânien"/> Traumatisme crânien</label>
-  <label><input type="radio" name="affection" value="Maladie de Huntington"/> Maladie de Huntington</label>
-  <label><input type="radio" name="affection" value="Infection VIH"/> Infection VIH</label>
-  <label><input type="radio" name="affection" value="Maladie de Parkinson"/> Maladie de Parkinson</label>
-  <label><input type="radio" name="affection" value="Encéphalopathie hépatique"/> Encéphalopathie hépatique</label>
-  <label><input type="radio" name="affection" value="Hypothyroïdie"/> Hypothyroïdie</label>
-  <label><input type="radio" name="affection" value="Déficience en vitamine B12"/> Déficience en vitamine B12</label>
-  <label><input type="radio" name="affection" value="Tumeur cérébrale"/> Tumeur cérébrale</label>
-  <label><input type="radio" name="affection" value="Autre affection médicale"/> Autre affection médicale (à spécifier)</label>
-  
-  <p style="margin-top: 15px;"><strong>Perturbation comportementale :</strong></p>
-  <label><input type="radio" name="comportement" value="Avec perturbation comportementale"/> Avec perturbation comportementale</label>
-  <label><input type="radio" name="comportement" value="Sans perturbation comportementale"/> Sans perturbation comportementale</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
-  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
-  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
-  <label><input type="radio" name="severite" value="Non applicable"/> Non applicable (trouble neurocognitif léger)</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Especificadores y Afección Médica</legend>
+<p class="subtitle">Especificar la afección médica y las características adicionales</p>
+<p style="margin-top: 10px;"><strong>Affection médicale causale (exemples) :</strong></p>
+<label>Esclerosis múltiple (G35)</label>
+<label>Traumatismo craneal</label>
+<label>Enfermedad de Huntington</label>
+<label>Infección VIH</label>
+<label>Enfermedad de Parkinson</label>
+<label>Encefalopatía hepática</label>
+<label>Hipotiroidismo</label>
+<label>Deficiencia de vitamina B12</label>
+<label>Tumor cerebral</label>
+<label>Otra afección médica (especificar)</label>
+<p style="margin-top: 15px;"><strong>Perturbation comportementale :</strong></p>
+<label>Con perturbación del comportamiento</label>
+<label>Sin perturbación del comportamiento</label>
+<p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
+<label>Ligero</label>
+<label>Moderado</label>
+<label>Severo</label>
+<label>No aplicable (trastorno neurocognitivo leve)</label>
+<button onclick="afficherResume()" type="button">✔️ Terminar</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix={critereA:"",critereB:[],critereC:[],affection:"",comportement:"",severite:""};
 
@@ -247,15 +234,10 @@ function genererResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -267,6 +249,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

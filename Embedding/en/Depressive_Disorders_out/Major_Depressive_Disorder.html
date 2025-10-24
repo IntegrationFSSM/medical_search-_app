@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Dépressif Majeur – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Major Depressive Disorder Evaluation – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -113,127 +114,111 @@
       font-size: 0.9em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Dépressif Majeur – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Major Depressive Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – 5 symptômes ou plus (dont humeur dépressive OU perte d'intérêt)</legend>
-  <p class="subtitle">Pendant la même période de 2 semaines, au moins un symptôme doit être (1) humeur dépressive OU (2) perte d'intérêt/plaisir</p>
-  <div class="note-box">
-    <strong>Note :</strong> Ne pas inclure les symptômes clairement attribuables à une affection médicale.
+<legend>Criterion A – 5 symptoms or more (including depressed mood OR loss of interest)</legend>
+<p class="subtitle">During the same 2-week period, at least one symptom must be (1) depressed mood OR (2) loss of interest/pleasure</p>
+<div class="note-box">
+<strong>Note :</strong> Ne pas inclure les symptômes clairement attribuables à une affection médicale.
   </div>
-  <label><input type="checkbox" name="critereA" value="1. Humeur dépressive presque toute la journée, presque tous les jours"/> 1. Humeur dépressive presque toute la journée, presque tous les jours (Note: chez enfants/adolescents, peut être humeur irritable)</label>
-  <label><input type="checkbox" name="critereA" value="2. Diminution marquée de l'intérêt ou du plaisir"/> 2. Diminution marquée de l'intérêt ou du plaisir dans toutes ou presque toutes les activités</label>
-  <label><input type="checkbox" name="critereA" value="3. Perte ou gain de poids significatif, ou changement d'appétit"/> 3. Perte ou gain de poids significatif (>5% en 1 mois), ou changement d'appétit</label>
-  <label><input type="checkbox" name="critereA" value="4. Insomnie ou hypersomnie presque tous les jours"/> 4. Insomnie ou hypersomnie presque tous les jours</label>
-  <label><input type="checkbox" name="critereA" value="5. Agitation ou ralentissement psychomoteur (observable)"/> 5. Agitation ou ralentissement psychomoteur presque tous les jours (observable par autrui)</label>
-  <label><input type="checkbox" name="critereA" value="6. Fatigue ou perte d'énergie presque tous les jours"/> 6. Fatigue ou perte d'énergie presque tous les jours</label>
-  <label><input type="checkbox" name="critereA" value="7. Sentiments de dévalorisation ou culpabilité excessive"/> 7. Sentiments de dévalorisation ou culpabilité excessive ou inappropriée (peut être délirante)</label>
-  <label><input type="checkbox" name="critereA" value="8. Diminution de la capacité de penser, se concentrer ou indécision"/> 8. Diminution de la capacité de penser, se concentrer ou indécision presque tous les jours</label>
-  <label><input type="checkbox" name="critereA" value="9. Pensées de mort récurrentes, idées suicidaires ou tentative"/> 9. Pensées de mort récurrentes, idées suicidaires (avec ou sans plan) ou tentative de suicide</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<label>1. Depressed mood almost all day, nearly every day (Note: in children/adolescents, it may be irritable mood)</label>
+<label>2. Marked decrease in interest or pleasure in all or almost all activities</label>
+<label>3. Significant weight loss or gain (&gt;5% in 1 month), or change in appetite</label>
+<label>4. Insomnia or hypersomnia almost every day</label>
+<label>5. Agitation or psychomotor retardation nearly every day (observable by others)</label>
+<label>6. Fatigue or loss of energy almost every day</label>
+<label>7. Feelings of devaluation or excessive or inappropriate guilt (may be delusional)</label>
+<label>8. Decreased ability to think, concentrate, or indecisiveness almost every day</label>
+<label>9. Recurrent thoughts of death, suicidal ideation (with or without a plan) or suicide attempt</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les symptômes causent une détresse ou une altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereB" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Distress or impairment in functioning</legend>
+<p class="subtitle">Symptoms cause clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Exclusion des causes organiques</legend>
-  <p class="subtitle">L'épisode n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <div class="note-box">
-    <strong>Note :</strong> Les réponses à une perte significative (deuil, ruine financière, catastrophe naturelle, maladie grave) peuvent inclure tristesse intense, rumination, insomnie, perte d'appétit et poids. Bien que ces symptômes puissent être compréhensibles, la présence d'un épisode dépressif majeur en plus de la réponse normale à la perte doit être soigneusement considérée selon l'histoire individuelle et les normes culturelles.
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Exclusion of organic causes</legend>
+<p class="subtitle">The episode is not attributable to the physiological effects of a substance or a medical condition.</p>
+<div class="note-box">
+<strong>Note :</strong> Les réponses à une perte significative (deuil, ruine financière, catastrophe naturelle, maladie grave) peuvent inclure tristesse intense, rumination, insomnie, perte d'appétit et poids. Bien que ces symptômes puissent être compréhensibles, la présence d'un épisode dépressif majeur en plus de la réponse normale à la perte doit être soigneusement considérée selon l'histoire individuelle et les normes culturelles.
   </div>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à une substance"/> Pas attribuable à une substance</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<label>Not attributable to a substance</label>
+<label>Not attributable to a medical condition</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Diagnostic différentiel</legend>
-  <p class="subtitle">Au moins un épisode dépressif majeur n'est pas mieux expliqué par d'autres troubles psychotiques</p>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par trouble schizo-affectif"/> Pas mieux expliqué par trouble schizo-affectif</label>
-  <label><input type="checkbox" name="critereD" value="Pas superposé à schizophrénie"/> Pas superposé à schizophrénie</label>
-  <label><input type="checkbox" name="critereD" value="Pas superposé à trouble schizophréniforme"/> Pas superposé à trouble schizophréniforme</label>
-  <label><input type="checkbox" name="critereD" value="Pas superposé à trouble délirant"/> Pas superposé à trouble délirant</label>
-  <label><input type="checkbox" name="critereD" value="Pas superposé à autre trouble du spectre de la schizophrénie"/> Pas superposé à autre trouble du spectre de la schizophrénie ou autre trouble psychotique</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Differential Diagnosis</legend>
+<p class="subtitle">At least one major depressive episode is not better explained by other psychotic disorders.</p>
+<label>Not better explained by schizoaffective disorder</label>
+<label>Not superimposed on schizophrenia</label>
+<label>Not superimposed on schizophreniform disorder</label>
+<label>Not superimposed on delirious disorder</label>
+<label>Not superimposed on another schizophrenia spectrum disorder or another psychotic disorder</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Jamais d'épisode maniaque ou hypomaniaque</legend>
-  <p class="subtitle">Il n'y a jamais eu d'épisode maniaque ou hypomaniaque</p>
-  <div class="note-box">
-    <strong>Note :</strong> Cette exclusion ne s'applique PAS si tous les épisodes de type maniaque ou hypomaniaque sont induits par une substance ou attribuables aux effets physiologiques d'une affection médicale.
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Never had a manic or hypomanic episode</legend>
+<p class="subtitle">There has never been a manic or hypomanic episode.</p>
+<div class="note-box">
+<strong>Note :</strong> Cette exclusion ne s'applique PAS si tous les épisodes de type maniaque ou hypomaniaque sont induits par une substance ou attribuables aux effets physiologiques d'une affection médicale.
   </div>
-  <label><input type="checkbox" id="choixE" value="Jamais d'épisode maniaque ou hypomaniaque"/> Jamais d'épisode maniaque ou hypomaniaque</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<label>Never any manic or hypomanic episodes</label>
+<button onclick="validerCritereE()" type="button">✔️ Validate criterion E</button>
 </fieldset>
-
 <!-- Codage -->
-<fieldset id="codage" class="hidden">
-  <legend>Codage – Type d'épisode et Sévérité</legend>
-  <p class="subtitle">Sélectionner le type d'épisode et la sévérité</p>
-  
-  <p style="margin-top: 10px;"><strong>Type d'épisode :</strong></p>
-  <label><input type="radio" name="typeEpisode" value="Épisode unique"/> Épisode unique</label>
-  <label><input type="radio" name="typeEpisode" value="Épisode récurrent"/> Épisode récurrent (intervalle d'au moins 2 mois consécutifs sans critères remplis)</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité/État :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
-  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
-  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
-  <label><input type="radio" name="severite" value="Avec caractéristiques psychotiques"/> Avec caractéristiques psychotiques</label>
-  <label><input type="radio" name="severite" value="En rémission partielle"/> En rémission partielle</label>
-  <label><input type="radio" name="severite" value="En rémission complète"/> En rémission complète</label>
-  <label><input type="radio" name="severite" value="Non spécifié"/> Non spécifié</label>
-  
-  <button type="button" onclick="validerCodage()">✔️ Valider le codage</button>
+<fieldset class="hidden" id="codage">
+<legend>Coding – Episode Type and Severity</legend>
+<p class="subtitle">Select the type of episode and the severity</p>
+<p style="margin-top: 10px;"><strong>Type d'épisode :</strong></p>
+<label>Single episode</label>
+<label>Recurrent episode (interval of at least 2 consecutive months without criteria met)</label>
+<p style="margin-top: 15px;"><strong>Sévérité/État :</strong></p>
+<label>Light</label>
+<label>Moderate</label>
+<label>Severe</label>
+<label>With psychotic features</label>
+<label>In partial remission</label>
+<label>In complete remission</label>
+<label>Not specified</label>
+<button onclick="validerCodage()" type="button">✔️ Validate the coding</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs additionnels (optionnels)</legend>
-  <p class="subtitle">Cocher tous les spécificateurs qui s'appliquent à l'épisode actuel (ou le plus récent si en rémission)</p>
-  <label><input type="checkbox" name="specificateurs" value="Avec détresse anxieuse"/> Avec détresse anxieuse</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques mixtes"/> Avec caractéristiques mixtes</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques mélancoliques"/> Avec caractéristiques mélancoliques</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques atypiques"/> Avec caractéristiques atypiques</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques psychotiques congruentes à l'humeur"/> Avec caractéristiques psychotiques congruentes à l'humeur</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques psychotiques non congruentes à l'humeur"/> Avec caractéristiques psychotiques non congruentes à l'humeur</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec catatonie (code additionnel F06.1)"/> Avec catatonie (code additionnel F06.1)</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec début lors du péripartum"/> Avec début lors du péripartum</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractère saisonnier (épisodes récurrents)"/> Avec caractère saisonnier (s'applique au pattern d'épisodes récurrents)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Additional specifiers (optional)</legend>
+<p class="subtitle">Check all the specifiers that apply to the current episode (or the most recent one if in remission)</p>
+<label>With anxious distress</label>
+<label>With mixed characteristics</label>
+<label>With melancholic characteristics</label>
+<label>With atypical characteristics</label>
+<label>With mood-congruent psychotic features</label>
+<label>With psychotic features not congruent with mood</label>
+<label>With catatonia (additional code F06.1)</label>
+<label>With onset during the peripartum</label>
+<label>With a seasonal character (applies to the pattern of recurrent episodes)</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix = {critereA:[],critereB:[],critereC:[],critereD:[],critereE:false,typeEpisode:"",severite:"",specificateurs:[]};
 
@@ -287,15 +272,10 @@ function afficherResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -307,6 +287,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

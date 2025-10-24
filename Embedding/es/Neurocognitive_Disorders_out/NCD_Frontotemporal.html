@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Neurocognitif Frontotemporel – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Neurocognitivo Frontotemporal – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -120,139 +121,118 @@
       font-size: 0.85em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Neurocognitif Frontotemporel – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Neurocognitivo Frontotemporal – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Critères du trouble neurocognitif majeur ou léger remplis</legend>
-  <p class="subtitle">Les critères sont remplis pour un trouble neurocognitif majeur ou léger</p>
-  <label><input type="radio" name="critereA" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
-  <label><input type="radio" name="critereA" value="Trouble neurocognitif léger"/> Trouble neurocognitif léger</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Criterios del trastorno neurocognitivo mayor o leve cumplidos</legend>
+<p class="subtitle">Los criterios se cumplen para un trastorno neurocognitivo mayor o leve.</p>
+<label>Trastorno neurocognitivo mayor</label>
+<label>Trastorno neurocognitivo leve</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Début insidieux et progression graduelle</legend>
-  <p class="subtitle">La perturbation a un début insidieux et une progression graduelle</p>
-  <label><input type="checkbox" name="critereB" value="Début insidieux"/> Début insidieux</label>
-  <label><input type="checkbox" name="critereB" value="Progression graduelle"/> Progression graduelle</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Inicio insidioso y progresión gradual</legend>
+<p class="subtitle">La perturbación tiene un inicio insidioso y una progresión gradual.</p>
+<label>Inicio insidioso</label>
+<label>Progresión gradual</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Variante comportementale OU variante langagière</legend>
-  <p class="subtitle">Sélectionner la variante applicable</p>
-  <div class="warning-box">
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Variante conductual O variante lingüística</legend>
+<p class="subtitle">Seleccionar la variante aplicable</p>
+<div class="warning-box">
     ⚠️ <strong>Important :</strong> Choisir (1) Variante comportementale OU (2) Variante langagière
   </div>
-  <label><input type="radio" name="variante" value="comportementale"/> (1) Variante comportementale</label>
-  <label><input type="radio" name="variante" value="langagiere"/> (2) Variante langagière</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider</button>
+<label>(1) Variante conductual</label>
+<label>(2) Variante lingüística</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar</button>
 </fieldset>
-
 <!-- Variante comportementale -->
-<fieldset id="comportementale" class="hidden">
-  <legend>Critère C(1) – Variante comportementale</legend>
-  <p class="subtitle">a. Trois symptômes comportementaux ou plus sur 5</p>
-  <label><input type="checkbox" name="compSympt" value="i. Désinhibition comportementale"/> i. Désinhibition comportementale</label>
-  <label><input type="checkbox" name="compSympt" value="ii. Apathie ou inertie"/> ii. Apathie ou inertie</label>
-  <label><input type="checkbox" name="compSympt" value="iii. Perte de sympathie ou d'empathie"/> iii. Perte de sympathie ou d'empathie</label>
-  <label><input type="checkbox" name="compSympt" value="iv. Comportement persévératif, stéréotypé ou compulsif/ritualiste"/> iv. Comportement persévératif, stéréotypé ou compulsif/ritualiste</label>
-  <label><input type="checkbox" name="compSympt" value="v. Hyperoralité et changements alimentaires"/> v. Hyperoralité et changements alimentaires</label>
-  
-  <p style="margin-top: 15px;"><strong>b. Déclin proéminent en cognition sociale et/ou capacités exécutives</strong></p>
-  <label><input type="checkbox" name="compDeclin" value="Déclin proéminent en cognition sociale"/> Déclin proéminent en cognition sociale</label>
-  <label><input type="checkbox" name="compDeclin" value="Déclin proéminent en capacités exécutives"/> Déclin proéminent en capacités exécutives</label>
-  
-  <button type="button" onclick="validerComportementale()">✔️ Valider la variante comportementale</button>
+<fieldset class="hidden" id="comportementale">
+<legend>Criterio C(1) – Variante conductual</legend>
+<p class="subtitle">a. Tres síntomas conductuales o más de 5</p>
+<label>i. Desinhibición conductual</label>
+<label>ii. Apatía o inercia</label>
+<label>iii. Pérdida de simpatía o de empatía</label>
+<label>iv. Comportamiento perseverativo, estereotipado o compulsivo/ritualista</label>
+<label>v. Hiperoralidad y cambios alimentarios</label>
+<p style="margin-top: 15px;"><strong>b. Déclin proéminent en cognition sociale et/ou capacités exécutives</strong></p>
+<label>Declive prominente en la cognición social</label>
+<label>Declive prominente en capacidades ejecutivas</label>
+<button onclick="validerComportementale()" type="button">✔️ Validar la variante conductual</button>
 </fieldset>
-
 <!-- Variante langagière -->
-<fieldset id="langagiere" class="hidden">
-  <legend>Critère C(2) – Variante langagière</legend>
-  <p class="subtitle">Déclin proéminent des capacités langagières</p>
-  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en production de la parole"/> Déclin proéminent en production de la parole</label>
-  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en recherche de mots"/> Déclin proéminent en recherche de mots</label>
-  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en dénomination d'objets"/> Déclin proéminent en dénomination d'objets</label>
-  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en grammaire"/> Déclin proéminent en grammaire</label>
-  <label><input type="checkbox" name="langSympt" value="Déclin proéminent en compréhension de mots"/> Déclin proéminent en compréhension de mots</label>
-  
-  <button type="button" onclick="validerLangagiere()">✔️ Valider la variante langagière</button>
+<fieldset class="hidden" id="langagiere">
+<legend>Criterio C(2) – Variante lingüística</legend>
+<p class="subtitle">Declive prominente de las capacidades lingüísticas</p>
+<label>Declive prominente en la producción del habla</label>
+<label>Declive prominente en la búsqueda de palabras</label>
+<label>Declive prominente en denominación de objetos</label>
+<label>Declinación prominente en gramática</label>
+<label>Declive prominente en la comprensión de palabras</label>
+<button onclick="validerLangagiere()" type="button">✔️ Validar la variante lingüística</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Préservation relative de l'apprentissage, mémoire et fonction perceptivo-motrice</legend>
-  <p class="subtitle">Préservation relative de l'apprentissage et de la mémoire, et de la fonction perceptivo-motrice</p>
-  <label><input type="checkbox" name="critereD" value="Préservation relative de l'apprentissage et de la mémoire"/> Préservation relative de l'apprentissage et de la mémoire</label>
-  <label><input type="checkbox" name="critereD" value="Préservation relative de la fonction perceptivo-motrice"/> Préservation relative de la fonction perceptivo-motrice</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Conservación relativa del aprendizaje, memoria y función perceptivo-motora</legend>
+<p class="subtitle">Preservación relativa del aprendizaje y de la memoria, y de la función perceptivo-motriz</p>
+<label>Preservación relativa del aprendizaje y de la memoria</label>
+<label>Preservación relativa de la función perceptivo-motora</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par d'autres causes</p>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par maladie cérébrovasculaire"/> Pas mieux expliquée par maladie cérébrovasculaire</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par autre maladie neurodégénérative"/> Pas mieux expliquée par autre maladie neurodégénérative</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par effets d'une substance"/> Pas mieux expliquée par effets d'une substance</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par autre trouble mental"/> Pas mieux expliquée par autre trouble mental</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par autre trouble neurologique"/> Pas mieux expliquée par autre trouble neurologique</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliquée par trouble systémique"/> Pas mieux expliquée par trouble systémique</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Diagnóstico diferencial</legend>
+<p class="subtitle">La perturbación no se explica mejor por otras causas.</p>
+<label>No mejor explicada por enfermedad cerebrovascular</label>
+<label>No mejor explicada por otra enfermedad neurodegenerativa.</label>
+<label>No mejor explicada por los efectos de una sustancia</label>
+<label>No mejor explicada por otro trastorno mental</label>
+<label>No mejor explicada por otro trastorno neurológico</label>
+<label>No mejor explicada por trastorno sistémico</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Probable/Possible -->
-<fieldset id="probPoss" class="hidden">
-  <legend>Trouble Frontotemporel Probable ou Possible</legend>
-  <p class="subtitle">Déterminer si probable ou possible selon les preuves</p>
-  <div class="note-box">
-    <strong>PROBABLE</strong> si l'un des 2 critères suivants, sinon <strong>POSSIBLE</strong> :<br/>
+<fieldset class="hidden" id="probPoss">
+<legend>Trastorno Frontotemporal Probable o Posible</legend>
+<p class="subtitle">Determinar si es probable o posible según las pruebas</p>
+<div class="note-box">
+<strong>PROBABLE</strong> si l'un des 2 critères suivants, sinon <strong>POSSIBLE</strong> :<br/>
     1. Preuve de mutation génétique causale (histoire familiale ou test génétique)<br/>
     2. Preuve d'atteinte disproportionnée des lobes frontaux et/ou temporaux par neuroimagerie
   </div>
-  <label><input type="checkbox" name="probable" value="Preuve de mutation génétique causale (histoire familiale ou test génétique)"/> Preuve de mutation génétique causale (histoire familiale ou test génétique)</label>
-  <label><input type="checkbox" name="probable" value="Preuve d'atteinte disproportionnée frontale/temporale par neuroimagerie"/> Preuve d'atteinte disproportionnée des lobes frontaux et/ou temporaux par neuroimagerie</label>
-  <button type="button" onclick="validerProbPoss()">✔️ Valider</button>
+<label>Prueba de mutación genética causal (historia familiar o prueba genética)</label>
+<label>Prueba de afectación desproporcionada de los lóbulos frontales y/o temporales por neuroimagen</label>
+<button onclick="validerProbPoss()" type="button">✔️ Validar</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs</legend>
-  <p class="subtitle">Préciser les caractéristiques additionnelles</p>
-  
-  <p style="margin-top: 10px;"><strong>Perturbation comportementale :</strong></p>
-  <label><input type="radio" name="comportement" value="Avec perturbation comportementale"/> Avec perturbation comportementale</label>
-  <label><input type="radio" name="comportement" value="Sans perturbation comportementale"/> Sans perturbation comportementale</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
-  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
-  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
-  <label><input type="radio" name="severite" value="Non applicable"/> Non applicable (trouble neurocognitif léger)</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Especificadores</legend>
+<p class="subtitle">Especificar las características adicionales</p>
+<p style="margin-top: 10px;"><strong>Perturbation comportementale :</strong></p>
+<label>Con perturbación del comportamiento</label>
+<label>Sin perturbación del comportamiento</label>
+<p style="margin-top: 15px;"><strong>Sévérité (pour trouble neurocognitif majeur uniquement) :</strong></p>
+<label>Ligero</label>
+<label>Moderado</label>
+<label>Severo</label>
+<label>No aplicable (trastorno neurocognitivo leve)</label>
+<button onclick="afficherResume()" type="button">✔️ Terminar</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix={critereA:"",critereB:[],variante:"",compSympt:[],compDeclin:[],langSympt:[],critereD:[],critereE:[],typeFronto:"",probable:[],comportement:"",severite:""};
 
@@ -336,15 +316,10 @@ function genererResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -356,6 +331,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

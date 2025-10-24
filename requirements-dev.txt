@@ -1,5 +1,0 @@
-# Dépendances de développement uniquement
-# Pour les scripts de traduction HTML
-beautifulsoup4==4.12.3
-googletrans==4.0.0rc1
-

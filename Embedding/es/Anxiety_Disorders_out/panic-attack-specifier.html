@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Attaque de Panique (Spécificateur) – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Ataque de Pánico (Especificador) – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -112,78 +113,68 @@
       font-weight: bold;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation de l'Attaque de Panique (Spécificateur) – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Ataque de Pánico (Especificador) – DSM-5-TR</h2>
 </div>
-
+</div>
 <div class="warning-box">
   ⚠️ <strong>Important :</strong> L'attaque de panique n'est PAS un trouble mental et ne peut pas être codée. C'est un SPÉCIFICATEUR qui peut survenir dans le contexte de tout trouble anxieux ou autre trouble mental.
 </div>
-
 <form id="formulaire">
-
 <!-- Définition -->
 <fieldset id="definition">
-  <legend>Définition – Montée brusque de peur ou d'inconfort intense</legend>
-  <p class="subtitle">Montée brusque atteignant un pic en quelques minutes</p>
-  <div class="note-box">
-    <strong>Note :</strong> La montée brusque peut survenir à partir d'un état calme ou d'un état anxieux.
+<legend>Definición – Aumento repentino de miedo o incomodidad intensa</legend>
+<p class="subtitle">Aumento brusco alcanzando un pico en pocos minutos</p>
+<div class="note-box">
+<strong>Note :</strong> La montée brusque peut survenir à partir d'un état calme ou d'un état anxieux.
   </div>
-  <label><input type="checkbox" name="definition" value="Montée brusque de peur intense"/> Montée brusque de peur intense</label>
-  <label><input type="checkbox" name="definition" value="Montée brusque d'inconfort intense"/> Montée brusque d'inconfort intense</label>
-  <label><input type="checkbox" name="definition" value="Atteint un pic en quelques minutes"/> Atteint un pic en quelques minutes</label>
-  <button type="button" onclick="validerDefinition()">✔️ Valider la définition</button>
+<label>Aumento brusco de miedo intenso</label>
+<label>Aumento brusco de incomodidad intensa</label>
+<label>Alcanza un pico en unos minutos</label>
+<button onclick="validerDefinition()" type="button">✔️ Validar la definición</button>
 </fieldset>
-
 <!-- Symptômes -->
-<fieldset id="symptomes" class="hidden">
-  <legend>Symptômes – Au moins 4 des 13 symptômes suivants</legend>
-  <p class="subtitle">Sélectionner au moins 4 symptômes parmi les 13 suivants</p>
-  <label><input type="checkbox" name="symptomes" value="1. Palpitations, cœur qui bat fort ou accélération du rythme cardiaque"/> 1. Palpitations, cœur qui bat fort ou accélération du rythme cardiaque</label>
-  <label><input type="checkbox" name="symptomes" value="2. Transpiration"/> 2. Transpiration</label>
-  <label><input type="checkbox" name="symptomes" value="3. Tremblements ou secousses musculaires"/> 3. Tremblements ou secousses musculaires</label>
-  <label><input type="checkbox" name="symptomes" value="4. Sensations de souffle coupé ou impression d'étouffement"/> 4. Sensations de souffle coupé ou impression d'étouffement</label>
-  <label><input type="checkbox" name="symptomes" value="5. Sensation d'étranglement"/> 5. Sensation d'étranglement</label>
-  <label><input type="checkbox" name="symptomes" value="6. Douleur ou gêne thoracique"/> 6. Douleur ou gêne thoracique</label>
-  <label><input type="checkbox" name="symptomes" value="7. Nausée ou gêne abdominale"/> 7. Nausée ou gêne abdominale</label>
-  <label><input type="checkbox" name="symptomes" value="8. Sensation de vertige, d'instabilité, de tête vide ou impression d'évanouissement"/> 8. Sensation de vertige, d'instabilité, de tête vide ou impression d'évanouissement</label>
-  <label><input type="checkbox" name="symptomes" value="9. Frissons ou bouffées de chaleur"/> 9. Frissons ou bouffées de chaleur</label>
-  <label><input type="checkbox" name="symptomes" value="10. Paresthésies (sensations d'engourdissement ou de picotements)"/> 10. Paresthésies (sensations d'engourdissement ou de picotements)</label>
-  <label><input type="checkbox" name="symptomes" value="11. Déréalisation (sentiments d'irréalité) ou dépersonnalisation (être détaché de soi)"/> 11. Déréalisation (sentiments d'irréalité) ou dépersonnalisation (être détaché de soi)</label>
-  <label><input type="checkbox" name="symptomes" value="12. Peur de perdre le contrôle ou de devenir fou"/> 12. Peur de perdre le contrôle ou de "devenir fou"</label>
-  <label><input type="checkbox" name="symptomes" value="13. Peur de mourir"/> 13. Peur de mourir</label>
-  <div class="note-box">
-    <strong>Note :</strong> Les symptômes spécifiques à la culture (acouphènes, douleur au cou, maux de tête, cris ou pleurs incontrôlables) peuvent être observés mais ne doivent PAS compter parmi les 4 symptômes requis.
+<fieldset class="hidden" id="symptomes">
+<legend>Síntomas – Al menos 4 de los 13 síntomas siguientes</legend>
+<p class="subtitle">Seleccionar al menos 4 síntomas de los 13 siguientes</p>
+<label>1. Palpitaciones, corazón que late fuerte o aceleración del ritmo cardíaco</label>
+<label>2. Transpiración</label>
+<label>3. Temblores o sacudidas musculares</label>
+<label>4. Sensaciones de falta de aire o impresión de asfixia</label>
+<label>5. Sensación de estrangulamiento</label>
+<label>6. Dolor o molestia torácica</label>
+<label>7. Náuseas o malestar abdominal</label>
+<label>8. Sensación de vértigo, inestabilidad, cabeza vacía o impresión de desmayo</label>
+<label>9. Escalofríos o sofocos</label>
+<label>10. Parestesias (sensaciones de entumecimiento o de hormigueo)</label>
+<label>11. Desrealización (sentimientos de irrealidad) o despersonalización (estar desconectado de uno mismo)</label>
+<label>12. Miedo a perder el control o a "volverse loco"</label>
+<label>13. Miedo a morir</label>
+<div class="note-box">
+<strong>Note :</strong> Les symptômes spécifiques à la culture (acouphènes, douleur au cou, maux de tête, cris ou pleurs incontrôlables) peuvent être observés mais ne doivent PAS compter parmi les 4 symptômes requis.
   </div>
-  <button type="button" onclick="validerSymptomes()">✔️ Valider les symptômes</button>
+<button onclick="validerSymptomes()" type="button">✔️ Validar los síntomas</button>
 </fieldset>
-
 <!-- Contexte -->
-<fieldset id="contexte" class="hidden">
-  <legend>Contexte – Dans quel contexte survient l'attaque de panique ?</legend>
-  <p class="subtitle">Identifier le trouble mental ou la condition médicale associé(e)</p>
-  <label><input type="checkbox" name="contexte" value="Trouble anxieux"/> Trouble anxieux</label>
-  <label><input type="checkbox" name="contexte" value="Trouble dépressif"/> Trouble dépressif</label>
-  <label><input type="checkbox" name="contexte" value="Trouble de stress post-traumatique (TSPT)"/> Trouble de stress post-traumatique (TSPT)</label>
-  <label><input type="checkbox" name="contexte" value="Trouble lié à l'utilisation de substances"/> Trouble lié à l'utilisation de substances</label>
-  <label><input type="checkbox" name="contexte" value="Condition médicale (cardiaque, respiratoire, vestibulaire, gastro-intestinale)"/> Condition médicale (cardiaque, respiratoire, vestibulaire, gastro-intestinale)</label>
-  <label><input type="checkbox" name="contexte" value="Autre trouble mental"/> Autre trouble mental</label>
-  <button type="button" onclick="validerContexte()">✔️ Valider le contexte</button>
+<fieldset class="hidden" id="contexte">
+<legend>Contexto – ¿En qué contexto ocurre el ataque de pánico?</legend>
+<p class="subtitle">Identificar el trastorno mental o la condición médica asociada</p>
+<label>Trastorno de ansiedad</label>
+<label>Trastorno depresivo</label>
+<label>Trastorno de estrés postraumático (TEPT)</label>
+<label>Problemas relacionados con el uso de sustancias</label>
+<label>Condición médica (cardíaca, respiratoria, vestibular, gastrointestinal)</label>
+<label>Otro trastorno mental</label>
+<button onclick="validerContexte()" type="button">✔️ Validar el contexto</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   definition: [],
@@ -276,10 +267,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

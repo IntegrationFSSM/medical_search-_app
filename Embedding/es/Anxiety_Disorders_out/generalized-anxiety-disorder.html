@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Anxieux Généralisé – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno de Ansiedad Generalizada – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -105,97 +106,85 @@
       font-style: italic;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Anxieux Généralisé (TAG) – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno de Ansiedad Generalizada (TAG) – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Anxiété et inquiétude excessives</legend>
-  <p class="subtitle">Anxiété et inquiétude excessives survenant plus d'un jour sur deux pendant au moins 6 mois</p>
-  <label><input type="checkbox" name="critereA" value="Anxiété et inquiétude excessives"/> Anxiété et inquiétude excessives (attente avec appréhension)</label>
-  <label><input type="checkbox" name="critereA" value="Présentes plus d'un jour sur deux"/> Présentes plus d'un jour sur deux</label>
-  <label><input type="checkbox" name="critereA" value="Depuis au moins 6 mois"/> Depuis au moins 6 mois</label>
-  <label><input type="checkbox" name="critereA" value="Concernant plusieurs événements ou activités"/> Concernant plusieurs événements ou activités (travail, école, etc.)</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Ansiedad y preocupación excesivas</legend>
+<p class="subtitle">Ansiedad y preocupación excesivas que ocurren más de un día sí y otro también durante al menos 6 meses</p>
+<label>Ansiedad y preocupación excesivas (expectativa con aprehensión)</label>
+<label>Presentes más de un día de cada dos</label>
+<label>Desde hace al menos 6 meses</label>
+<label>Concerniente a varios eventos o actividades (trabajo, escuela, etc.)</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Difficulté à contrôler l'inquiétude</legend>
-  <p class="subtitle">La personne éprouve de la difficulté à contrôler cette inquiétude</p>
-  <label><input type="checkbox" id="choixB" value="Difficulté à contrôler l'inquiétude"/> Difficulté à contrôler l'inquiétude</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Dificultad para controlar la preocupación</legend>
+<p class="subtitle">La persona tiene dificultad para controlar esta preocupación.</p>
+<label>Dificultad para controlar la preocupación</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Symptômes associés (au moins 3 sur 6)</legend>
-  <p class="subtitle">L'anxiété et l'inquiétude sont associées à au moins 3 des 6 symptômes suivants (présents plus d'un jour sur deux pendant les 6 derniers mois)</p>
-  <div class="note-box">
-    <strong>Note :</strong> Un seul symptôme est requis chez les enfants.
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Síntomas asociados (al menos 3 de 6)</legend>
+<p class="subtitle">La ansiedad y la preocupación están asociadas a al menos 3 de los 6 síntomas siguientes (presentes más de un día de cada dos durante los últimos 6 meses)</p>
+<div class="note-box">
+<strong>Note :</strong> Un seul symptôme est requis chez les enfants.
   </div>
-  <label><input type="checkbox" name="critereC" value="Agitation ou sensation d'être survolté ou à bout"/> 1. Agitation ou sensation d'être survolté ou à bout</label>
-  <label><input type="checkbox" name="critereC" value="Fatigabilité"/> 2. Fatigabilité</label>
-  <label><input type="checkbox" name="critereC" value="Difficultés de concentration ou trous de mémoire"/> 3. Difficultés de concentration ou trous de mémoire</label>
-  <label><input type="checkbox" name="critereC" value="Irritabilité"/> 4. Irritabilité</label>
-  <label><input type="checkbox" name="critereC" value="Tension musculaire"/> 5. Tension musculaire</label>
-  <label><input type="checkbox" name="critereC" value="Perturbation du sommeil (difficultés d'endormissement, sommeil interrompu ou agité et non satisfaisant)"/> 6. Perturbation du sommeil (difficultés d'endormissement, sommeil interrompu ou agité et non satisfaisant)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<label>1. Agitación o sensación de estar sobreexcitado o al límite</label>
+<label>2. Fatigabilidad</label>
+<label>3. Dificultades de concentración o lagunas de memoria</label>
+<label>4. Irritabilidad</label>
+<label>5. Tensión muscular</label>
+<label>6. Perturbación del sueño (dificultades para conciliar el sueño, sueño interrumpido o agitado y no satisfactorio)</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">L'anxiété, l'inquiétude ou les symptômes physiques causent une détresse ou altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereD" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereD" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereD" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereD" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Angustia o alteración del funcionamiento</legend>
+<p class="subtitle">La ansiedad, la preocupación o los síntomas físicos causan una angustia o alteración clínicamente significativa.</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento social</label>
+<label>Alteración del funcionamiento profesional</label>
+<label>Alteración en otros ámbitos importantes del funcionamiento</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Exclusion des causes organiques</legend>
-  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereE" value="Pas attribuable à une affection médicale (hyperthyroïdie, etc.)"/> Pas attribuable à une affection médicale (hyperthyroïdie, etc.)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Exclusión de causas orgánicas</legend>
+<p class="subtitle">La perturbación no es atribuible a los efectos fisiológicos de una sustancia o de una afección médica.</p>
+<label>No atribuible a una sustancia (droga, medicamento)</label>
+<label>No atribuible a una afección médica (hipertiroidismo, etc.)</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereF" value="Pas anxiété concernant les attaques de panique (trouble panique)"/> Pas anxiété concernant les attaques de panique (trouble panique)</label>
-  <label><input type="checkbox" name="critereF" value="Pas peur de l'évaluation négative (anxiété sociale)"/> Pas peur de l'évaluation négative (anxiété sociale)</label>
-  <label><input type="checkbox" name="critereF" value="Pas contamination ou autres obsessions (TOC)"/> Pas contamination ou autres obsessions (TOC)</label>
-  <label><input type="checkbox" name="critereF" value="Pas séparation des figures d'attachement (anxiété de séparation)"/> Pas séparation des figures d'attachement (anxiété de séparation)</label>
-  <label><input type="checkbox" name="critereF" value="Pas rappels d'événements traumatiques (TSPT)"/> Pas rappels d'événements traumatiques (TSPT)</label>
-  <label><input type="checkbox" name="critereF" value="Pas prise de poids (anorexie mentale)"/> Pas prise de poids (anorexie mentale)</label>
-  <label><input type="checkbox" name="critereF" value="Pas plaintes physiques (trouble à symptomatologie somatique)"/> Pas plaintes physiques (trouble à symptomatologie somatique)</label>
-  <label><input type="checkbox" name="critereF" value="Pas défauts d'apparence perçus (dysmorphophobie)"/> Pas défauts d'apparence perçus (dysmorphophobie)</label>
-  <label><input type="checkbox" name="critereF" value="Pas peur d'avoir une maladie grave (anxiété liée à la maladie)"/> Pas peur d'avoir une maladie grave (anxiété liée à la maladie)</label>
-  <label><input type="checkbox" name="critereF" value="Pas contenu de croyances délirantes (schizophrénie ou trouble délirant)"/> Pas contenu de croyances délirantes (schizophrénie ou trouble délirant)</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+<fieldset class="hidden" id="critereF">
+<legend>Criterio F – Diagnóstico diferencial</legend>
+<p class="subtitle">La perturbación no se explica mejor por otro trastorno mental.</p>
+<label>Sin ansiedad respecto a los ataques de pánico (trastorno de pánico)</label>
+<label>No tengas miedo de la evaluación negativa (ansiedad social)</label>
+<label>Sin contaminación ni otras obsesiones (TOC)</label>
+<label>&lt;p&gt;Pas separación de las figuras de apego (ansiedad de separación)&lt;/p&gt;</label>
+<label>Sin recuerdos de eventos traumáticos (TEPT)</label>
+<label>Sin aumento de peso (anorexia mental)</label>
+<label>Sin quejas físicas (trastorno con sintomatología somática)</label>
+<label>Sin defectos de apariencia percibidos (disformofobia)</label>
+<label>No tengas miedo de tener una enfermedad grave (ansiedad relacionada con la enfermedad)</label>
+<label>Pas contenido de creencias delirantes (esquizofrenia o trastorno delirante)</label>
+<button onclick="validerCritereF()" type="button">✔️ Validar el criterio F</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -330,10 +319,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

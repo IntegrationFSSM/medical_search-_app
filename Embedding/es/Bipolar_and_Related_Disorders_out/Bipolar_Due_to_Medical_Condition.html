@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Bipolaire dû à une Affection Médicale – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno Bipolar debido a una Enfermedad Médica – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -105,87 +106,75 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Bipolaire dû à une Affection Médicale – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno Bipolar debido a una Afección Médica – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Perturbation de l'humeur prédominante et persistante</legend>
-  <p class="subtitle">Perturbation de l'humeur prédominante caractérisée par une humeur et une énergie/activité anormalement élevées</p>
-  <label><input type="checkbox" name="critereA" value="Humeur anormalement élevée"/> Humeur anormalement élevée</label>
-  <label><input type="checkbox" name="critereA" value="Humeur expansive"/> Humeur expansive</label>
-  <label><input type="checkbox" name="critereA" value="Humeur irritable"/> Humeur irritable</label>
-  <label><input type="checkbox" name="critereA" value="Augmentation anormale de l'activité"/> Augmentation anormale de l'activité</label>
-  <label><input type="checkbox" name="critereA" value="Augmentation anormale de l'énergie"/> Augmentation anormale de l'énergie</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Alteración del estado de ánimo predominante y persistente</legend>
+<p class="subtitle">Perturbación del estado de ánimo predominante caracterizada por un estado de ánimo y una energía/actividad anormalmente elevados</p>
+<label>Humedad anormalmente elevada</label>
+<label>Humedad expansiva</label>
+<label>Humedad irritable</label>
+<label>Aumento anormal de la actividad</label>
+<label>Aumento anormal de la energía</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Preuves d'une conséquence pathophysiologique directe</legend>
-  <p class="subtitle">Preuves issues de l'anamnèse, de l'examen physique ou des résultats de laboratoire que la perturbation est la conséquence pathophysiologique directe d'une autre affection médicale</p>
-  <label><input type="checkbox" name="critereB" value="Preuves de l'anamnèse"/> Preuves de l'anamnèse</label>
-  <label><input type="checkbox" name="critereB" value="Preuves de l'examen physique"/> Preuves de l'examen physique</label>
-  <label><input type="checkbox" name="critereB" value="Preuves des résultats de laboratoire"/> Preuves des résultats de laboratoire</label>
-  <label><input type="checkbox" name="critereB" value="Lien pathophysiologique direct établi"/> Lien pathophysiologique direct établi avec l'affection médicale</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Pruebas de una consecuencia patofisiológica directa</legend>
+<p class="subtitle">Pruebas derivadas de la anamnesis, del examen físico o de los resultados de laboratorio que la alteración es la consecuencia patofisiológica directa de otra afección médica.</p>
+<label>Pruebas de la anamnesis</label>
+<label>Pruebas del examen físico</label>
+<label>Pruebas de los resultados de laboratorio</label>
+<label>Enlace patofisiológico directo establecido con la afección médica</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" id="choixC" value="Pas mieux expliquée par un autre trouble mental"/> Pas mieux expliquée par un autre trouble mental</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Diagnóstico diferencial</legend>
+<p class="subtitle">La perturbación no se explica mejor por otro trastorno mental.</p>
+<label>No mejor explicada por otro trastorno mental.</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Exclusion du delirium</legend>
-  <p class="subtitle">La perturbation ne survient pas exclusivement au cours d'un delirium</p>
-  <label><input type="checkbox" id="choixD" value="Ne survient pas exclusivement au cours d'un delirium"/> Ne survient pas exclusivement au cours d'un delirium</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Exclusión del delirium</legend>
+<p class="subtitle">La perturbación no ocurre exclusivamente durante un delirium.</p>
+<label>No ocurre exclusivamente durante un delirium.</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Détresse, altération ou hospitalisation</legend>
-  <p class="subtitle">La perturbation cause une détresse/altération cliniquement significative, nécessite une hospitalisation, ou présente des caractéristiques psychotiques</p>
-  <label><input type="checkbox" name="critereE" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereE" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereE" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <label><input type="checkbox" name="critereE" value="Nécessite une hospitalisation pour prévenir un danger"/> Nécessite une hospitalisation pour prévenir un danger pour soi ou autrui</label>
-  <label><input type="checkbox" name="critereE" value="Présence de caractéristiques psychotiques"/> Présence de caractéristiques psychotiques</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Angustia, alteración u hospitalización</legend>
+<p class="subtitle">La perturbación causa una angustia/alteración clínicamente significativa, requiere hospitalización o presenta características psicóticas.</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento social</label>
+<label>Alteración del funcionamiento profesional</label>
+<label>Alteración en otros ámbitos importantes del funcionamiento</label>
+<label>Necesita una hospitalización para prevenir un peligro para sí mismo o para otros</label>
+<label>Presencia de características psicóticas</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs – Type de présentation</legend>
-  <p class="subtitle">Sélectionner le spécificateur approprié</p>
-  <label><input type="radio" name="specificateur" value="F06.33 - Avec caractéristiques maniaques"/> <strong>F06.33</strong> - Avec caractéristiques maniaques : Les critères complets d'un épisode maniaque ou hypomaniaque ne sont PAS remplis</label>
-  <label><input type="radio" name="specificateur" value="F06.33 - Avec épisode de type maniaque ou hypomaniaque"/> <strong>F06.33</strong> - Avec épisode de type maniaque ou hypomaniaque : Les critères complets sont remplis SAUF le critère D (maniaque) ou F (hypomaniaque)</label>
-  <label><input type="radio" name="specificateur" value="F06.34 - Avec caractéristiques mixtes"/> <strong>F06.34</strong> - Avec caractéristiques mixtes : Des symptômes de dépression sont également présents mais ne prédominent PAS dans le tableau clinique</label>
-  <button type="button" onclick="validerSpecificateurs()">✔️ Valider le spécificateur</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Especificadores – Tipo de presentación</legend>
+<p class="subtitle">Seleccionar el especificador apropiado</p>
+<label>- Con características maníacas: Los criterios completos para un episodio maníaco o hipomaníaco NO se cumplen</label>
+<label>- Con episodio de tipo maníaco o hipomaníaco: Se cumplen todos los criterios COMPLETOS SALVO el criterio D (maníaco) o F (hipomaníaco)</label>
+<label>- Con características mixtas: También están presentes síntomas de depresión, pero NO predominan en el cuadro clínico.</label>
+<button onclick="validerSpecificateurs()" type="button">✔️ Validar el especificador</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -321,10 +310,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>

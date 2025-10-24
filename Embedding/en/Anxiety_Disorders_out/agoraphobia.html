@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Agoraphobie – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation Agoraphobia – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -105,118 +106,103 @@
       font-style: italic;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation de l'Agoraphobie – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Agoraphobia – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Peur ou anxiété marquée dans au moins 2 situations</legend>
-  <p class="subtitle">Sélectionner au moins deux des cinq situations suivantes</p>
-  <label><input type="checkbox" name="critereA" value="Utilisation des transports en commun (automobiles, bus, trains, bateaux, avions)"/> Utilisation des transports en commun (automobiles, bus, trains, bateaux, avions)</label>
-  <label><input type="checkbox" name="critereA" value="Se trouver dans des espaces ouverts (parkings, marchés, ponts)"/> Se trouver dans des espaces ouverts (parkings, marchés, ponts)</label>
-  <label><input type="checkbox" name="critereA" value="Se trouver dans des endroits clos (magasins, théâtres, cinémas)"/> Se trouver dans des endroits clos (magasins, théâtres, cinémas)</label>
-  <label><input type="checkbox" name="critereA" value="Faire la queue ou être dans une foule"/> Faire la queue ou être dans une foule</label>
-  <label><input type="checkbox" name="critereA" value="Être à l'extérieur du domicile seul(e)"/> Être à l'extérieur du domicile seul(e)</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Marked fear or anxiety in at least 2 situations</legend>
+<p class="subtitle">Select at least two of the following five situations</p>
+<label>Use of public transport (cars, buses, trains, boats, airplanes)</label>
+<label>Being in open spaces (parking lots, markets, bridges)</label>
+<label>Being in enclosed places (stores, theaters, cinemas)</label>
+<label>Stand in line or be in a crowd</label>
+<label>Being outside the home alone</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Raisons de la peur ou de l'évitement</legend>
-  <p class="subtitle">La personne craint ou évite ces situations en raison de pensées spécifiques</p>
-  <label><input type="checkbox" name="critereB" value="Peur que l'échappement soit difficile"/> Peur que l'échappement soit difficile</label>
-  <label><input type="checkbox" name="critereB" value="Peur que l'aide ne soit pas disponible"/> Peur que l'aide ne soit pas disponible</label>
-  <label><input type="checkbox" name="critereB" value="Peur de développer des symptômes de type panique"/> Peur de développer des symptômes de type panique</label>
-  <label><input type="checkbox" name="critereB" value="Peur d'autres symptômes incapacitants ou embarrassants"/> Peur d'autres symptômes incapacitants ou embarrassants</label>
-  <label><input type="checkbox" name="critereB" value="Peur de tomber (chez les personnes âgées)"/> Peur de tomber (chez les personnes âgées)</label>
-  <label><input type="checkbox" name="critereB" value="Peur de l'incontinence"/> Peur de l'incontinence</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Reasons for fear or avoidance</legend>
+<p class="subtitle">The person fears or avoids these situations due to specific thoughts.</p>
+<label>Fear that the escape will be difficult</label>
+<label>Fear that help may not be available</label>
+<label>Fear of developing panic-like symptoms</label>
+<label>Fear of other disabling or embarrassing symptoms</label>
+<label>Fear of falling (in elderly individuals)</label>
+<label>Fear of incontinence</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Provocation constante de peur ou d'anxiété</legend>
-  <p class="subtitle">Les situations agoraphobiques provoquent presque toujours la peur ou l'anxiété</p>
-  <label><input type="checkbox" id="choixC" value="Les situations agoraphobiques provoquent presque toujours peur ou anxiété"/> Les situations agoraphobiques provoquent presque toujours peur ou anxiété</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Constant provocation of fear or anxiety</legend>
+<p class="subtitle">Agoraphobic situations almost always provoke fear or anxiety.</p>
+<label>Agoraphobic situations almost always provoke fear or anxiety.</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Évitement actif ou endurance avec détresse</legend>
-  <p class="subtitle">Les situations agoraphobiques sont activement évitées ou endurées avec détresse</p>
-  <label><input type="checkbox" name="critereD" value="Les situations sont activement évitées"/> Les situations sont activement évitées</label>
-  <label><input type="checkbox" name="critereD" value="Nécessitent la présence d'un accompagnateur"/> Nécessitent la présence d'un accompagnateur</label>
-  <label><input type="checkbox" name="critereD" value="Sont endurées avec peur ou anxiété intense"/> Sont endurées avec peur ou anxiété intense</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Active avoidance or endurance with distress</legend>
+<p class="subtitle">Agoraphobic situations are actively avoided or endured with distress.</p>
+<label>Situations are actively avoided.</label>
+<label>Requires the presence of an accompanying person</label>
+<label>Are endured with fear or intense anxiety</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Peur ou anxiété disproportionnée</legend>
-  <p class="subtitle">La peur ou l'anxiété est disproportionnée par rapport au danger réel</p>
-  <label><input type="checkbox" name="critereE" value="Disproportionnée par rapport au danger réel posé par les situations"/> Disproportionnée par rapport au danger réel posé par les situations</label>
-  <label><input type="checkbox" name="critereE" value="Disproportionnée par rapport au contexte socioculturel"/> Disproportionnée par rapport au contexte socioculturel</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Disproportionate fear or anxiety</legend>
+<p class="subtitle">Fear or anxiety is disproportionate to the actual danger.</p>
+<label>Disproportionate to the actual danger posed by the situations</label>
+<label>Disproportionate in relation to the sociocultural context</label>
+<button onclick="validerCritereE()" type="button">✔️ Validate criterion E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Durée (6 mois ou plus)</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement est persistant, durant typiquement 6 mois ou plus</p>
-  <label><input type="checkbox" id="choixF" value="Symptômes persistants depuis 6 mois ou plus"/> Symptômes persistants depuis 6 mois ou plus</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+<fieldset class="hidden" id="critereF">
+<legend>Criterion F – Duration (6 months or more)</legend>
+<p class="subtitle">Fear, anxiety, or avoidance is persistent, typically lasting 6 months or more.</p>
+<label>Persistent symptoms for 6 months or more</label>
+<button onclick="validerCritereF()" type="button">✔️ Validate criterion F</button>
 </fieldset>
-
 <!-- Critère G -->
-<fieldset id="critereG" class="hidden">
-  <legend>Critère G – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement cause une détresse ou altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereG" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereG" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereG" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereG" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
+<fieldset class="hidden" id="critereG">
+<legend>Criterion G – Distress or impairment in functioning</legend>
+<p class="subtitle">Fear, anxiety, or avoidance causes clinically significant distress or impairment.</p>
+<label>Clinically significant distress</label>
+<label>Alteration of social functioning</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration in other important areas of functioning</label>
+<button onclick="validerCritereG()" type="button">✔️ Validate criterion G</button>
 </fieldset>
-
 <!-- Critère H -->
-<fieldset id="critereH" class="hidden">
-  <legend>Critère H – Exclusion des affections médicales</legend>
-  <p class="subtitle">Si une autre affection médicale est présente, la peur/anxiété/évitement est clairement excessive</p>
-  <label><input type="checkbox" name="critereH" value="Pas d'affection médicale présente"/> Pas d'affection médicale présente</label>
-  <label><input type="checkbox" name="critereH" value="Affection médicale présente mais peur/anxiété clairement excessive"/> Affection médicale présente (maladie inflammatoire de l'intestin, Parkinson, etc.) mais peur/anxiété clairement excessive</label>
-  <button type="button" onclick="validerCritereH()">✔️ Valider le critère H</button>
+<fieldset class="hidden" id="critereH">
+<legend>Criterion H – Exclusion of medical conditions</legend>
+<p class="subtitle">If another medical condition is present, the fear/anxiety/avoidance is clearly excessive.</p>
+<label>No medical condition present</label>
+<label>Medical condition present (inflammatory bowel disease, Parkinson's, etc.) but clearly excessive fear/anxiety</label>
+<button onclick="validerCritereH()" type="button">✔️ Validate criterion H</button>
 </fieldset>
-
 <!-- Critère I -->
-<fieldset id="critereI" class="hidden">
-  <legend>Critère I – Diagnostic différentiel</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereI" value="Pas confiné à une phobie spécifique de type situationnel"/> Pas confiné à une phobie spécifique de type situationnel</label>
-  <label><input type="checkbox" name="critereI" value="Ne concerne pas uniquement des situations sociales (trouble anxiété sociale)"/> Ne concerne pas uniquement des situations sociales (trouble anxiété sociale)</label>
-  <label><input type="checkbox" name="critereI" value="Pas lié exclusivement aux obsessions (TOC)"/> Pas lié exclusivement aux obsessions (TOC)</label>
-  <label><input type="checkbox" name="critereI" value="Pas lié aux défauts perçus de l'apparence physique (dysmorphophobie)"/> Pas lié aux défauts perçus de l'apparence physique (dysmorphophobie)</label>
-  <label><input type="checkbox" name="critereI" value="Pas lié aux rappels d'événements traumatiques (TSPT)"/> Pas lié aux rappels d'événements traumatiques (TSPT)</label>
-  <label><input type="checkbox" name="critereI" value="Pas lié à la peur de la séparation (trouble anxiété de séparation)"/> Pas lié à la peur de la séparation (trouble anxiété de séparation)</label>
-  <button type="button" onclick="validerCritereI()">✔️ Valider le critère I</button>
+<fieldset class="hidden" id="critereI">
+<legend>Criterion I – Differential Diagnosis</legend>
+<p class="subtitle">Fear, anxiety, or avoidance is not better explained by another mental disorder.</p>
+<label>Not confined to a specific situational phobia</label>
+<label>Does not only concern social situations (social anxiety disorder)</label>
+<label>Not exclusively related to obsessions (OCD)</label>
+<label>Not related to perceived defects in physical appearance (dysmorphophobia)</label>
+<label>Not related to traumatic event reminders (PTSD)</label>
+<label>Not related to separation anxiety (separation anxiety disorder)</label>
+<button onclick="validerCritereI()" type="button">✔️ Validate criterion I</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -405,10 +391,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

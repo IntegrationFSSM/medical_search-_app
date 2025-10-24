@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Panique – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Panic Disorder Evaluation – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -105,90 +106,78 @@
       font-style: italic;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Panique – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Panic Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Attaques de panique récurrentes et inattendues</legend>
-  <p class="subtitle">Montée brusque de peur ou d'inconfort intense atteignant un pic en quelques minutes, avec au moins 4 symptômes</p>
-  <div class="note-box">
-    <strong>Note :</strong> La montée brusque peut survenir à partir d'un état calme ou d'un état anxieux.
+<legend>Criterion A – Recurrent and unexpected panic attacks</legend>
+<p class="subtitle">Sudden onset of fear or intense discomfort reaching a peak within minutes, with at least 4 symptoms.</p>
+<div class="note-box">
+<strong>Note :</strong> La montée brusque peut survenir à partir d'un état calme ou d'un état anxieux.
   </div>
-  <label><input type="checkbox" name="critereA_base" value="Attaques de panique récurrentes"/> Attaques de panique récurrentes</label>
-  <label><input type="checkbox" name="critereA_base" value="Attaques inattendues (non prévisibles)"/> Attaques inattendues (non prévisibles)</label>
-  <label><input type="checkbox" name="critereA_base" value="Montée brusque de peur ou d'inconfort intense"/> Montée brusque de peur ou d'inconfort intense</label>
-  <label><input type="checkbox" name="critereA_base" value="Atteint un pic en quelques minutes"/> Atteint un pic en quelques minutes</label>
-  
-  <p style="margin-top: 15px;"><strong>Symptômes présents (cocher au moins 4 sur 13) :</strong></p>
-  <label><input type="checkbox" name="critereA_symptomes" value="1. Palpitations, cœur qui bat fort ou accélération du rythme cardiaque"/> 1. Palpitations, cœur qui bat fort ou accélération du rythme cardiaque</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="2. Transpiration"/> 2. Transpiration</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="3. Tremblements ou secousses musculaires"/> 3. Tremblements ou secousses musculaires</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="4. Sensations de souffle coupé ou impression d'étouffement"/> 4. Sensations de souffle coupé ou impression d'étouffement</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="5. Sensation d'étranglement"/> 5. Sensation d'étranglement</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="6. Douleur ou gêne thoracique"/> 6. Douleur ou gêne thoracique</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="7. Nausée ou gêne abdominale"/> 7. Nausée ou gêne abdominale</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="8. Sensation de vertige, d'instabilité, de tête vide ou impression d'évanouissement"/> 8. Sensation de vertige, d'instabilité, de tête vide ou impression d'évanouissement</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="9. Frissons ou bouffées de chaleur"/> 9. Frissons ou bouffées de chaleur</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="10. Paresthésies (sensations d'engourdissement ou de picotements)"/> 10. Paresthésies (sensations d'engourdissement ou de picotements)</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="11. Déréalisation (sentiments d'irréalité) ou dépersonnalisation (être détaché de soi)"/> 11. Déréalisation (sentiments d'irréalité) ou dépersonnalisation (être détaché de soi)</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="12. Peur de perdre le contrôle ou de devenir fou"/> 12. Peur de perdre le contrôle ou de "devenir fou"</label>
-  <label><input type="checkbox" name="critereA_symptomes" value="13. Peur de mourir"/> 13. Peur de mourir</label>
-  
-  <div class="note-box">
-    <strong>Note :</strong> Les symptômes spécifiques à la culture (acouphènes, douleur au cou, maux de tête, cris ou pleurs incontrôlables) peuvent être observés mais ne doivent PAS compter parmi les 4 symptômes requis.
+<label>Recurrent panic attacks</label>
+<label>Unexpected attacks (unpredictable)</label>
+<label>Sudden onset of fear or intense discomfort</label>
+<label>Reaches a peak within a few minutes</label>
+<p style="margin-top: 15px;"><strong>Symptômes présents (cocher au moins 4 sur 13) :</strong></p>
+<label>1. Palpitations, heart pounding or increased heart rate</label>
+<label>2. Sweating</label>
+<label>3. Tremors or muscle twitches</label>
+<label>4. Feelings of shortness of breath or a sensation of suffocation</label>
+<label>5. Sensation of choking</label>
+<label>6. Chest pain or discomfort</label>
+<label>7. Nausea or abdominal discomfort</label>
+<label>8. Sensation of dizziness, instability, feeling of emptiness in the head, or impression of fainting</label>
+<label>9. Chills or hot flashes</label>
+<label>10. Paresthesias (sensations of numbness or tingling)</label>
+<label>11. Derealization (feelings of unreality) or depersonalization (being detached from oneself)</label>
+<label>12. Fear of losing control or "going crazy"</label>
+<label>13. Fear of dying</label>
+<div class="note-box">
+<strong>Note :</strong> Les symptômes spécifiques à la culture (acouphènes, douleur au cou, maux de tête, cris ou pleurs incontrôlables) peuvent être observés mais ne doivent PAS compter parmi les 4 symptômes requis.
   </div>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Conséquences pendant au moins 1 mois</legend>
-  <p class="subtitle">Au moins une des attaques a été suivie pendant 1 mois (ou plus) par l'un ou les deux éléments suivants</p>
-  <label><input type="checkbox" name="critereB" value="Inquiétude ou préoccupation persistante concernant d'autres attaques de panique"/> Inquiétude ou préoccupation persistante concernant d'autres attaques de panique</label>
-  <label><input type="checkbox" name="critereB" value="Inquiétude concernant les conséquences des attaques (perdre le contrôle, crise cardiaque, devenir fou)"/> Inquiétude concernant les conséquences des attaques (perdre le contrôle, crise cardiaque, "devenir fou")</label>
-  <label><input type="checkbox" name="critereB" value="Changement de comportement significatif et inadapté lié aux attaques"/> Changement de comportement significatif et inadapté lié aux attaques</label>
-  <label><input type="checkbox" name="critereB" value="Comportements d'évitement (exercice, situations non familières)"/> Comportements d'évitement (exercice, situations non familières)</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Consequences lasting at least 1 month</legend>
+<p class="subtitle">At least one of the attacks was followed for 1 month (or more) by one or both of the following elements</p>
+<label>Persistent worry or concern about further panic attacks</label>
+<label>Concern about the consequences of the attacks (losing control, heart attack, "going crazy")</label>
+<label>Significant and inappropriate behavioral change related to the attacks</label>
+<label>Avoidance behaviors (exercise, unfamiliar situations)</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Exclusion des causes organiques</legend>
-  <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereC" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale (hyperthyroïdie, troubles cardiopulmonaires)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Exclusion of organic causes</legend>
+<p class="subtitle">The disturbance is not attributable to the physiological effects of a substance or a medical condition.</p>
+<label>Not attributable to a substance (drug, medication)</label>
+<label>Not attributable to a medical condition (hyperthyroidism, cardiopulmonary disorders)</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereD" value="Les attaques ne surviennent pas uniquement en réponse à des situations sociales redoutées (anxiété sociale)"/> Les attaques ne surviennent pas uniquement en réponse à des situations sociales redoutées (anxiété sociale)</label>
-  <label><input type="checkbox" name="critereD" value="Pas en réponse à des objets ou situations phobiques circonscrits (phobie spécifique)"/> Pas en réponse à des objets ou situations phobiques circonscrits (phobie spécifique)</label>
-  <label><input type="checkbox" name="critereD" value="Pas en réponse à des obsessions (TOC)"/> Pas en réponse à des obsessions (TOC)</label>
-  <label><input type="checkbox" name="critereD" value="Pas en réponse à des rappels d'événements traumatiques (TSPT)"/> Pas en réponse à des rappels d'événements traumatiques (TSPT)</label>
-  <label><input type="checkbox" name="critereD" value="Pas en réponse à la séparation des figures d'attachement (anxiété de séparation)"/> Pas en réponse à la séparation des figures d'attachement (anxiété de séparation)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Differential Diagnosis</legend>
+<p class="subtitle">The disturbance is not better explained by another mental disorder.</p>
+<label>Attacks do not occur solely in response to feared social situations (social anxiety)</label>
+<label>Not in response to specific phobic objects or situations (specific phobia)</label>
+<label>Not in response to obsessions (OCD)</label>
+<label>Not in response to reminders of traumatic events (PTSD)</label>
+<label>Not in response to the separation of attachment figures (separation anxiety)</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA_base: [],
@@ -299,10 +288,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

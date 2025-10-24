@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Bipolaire I – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluation Bipolar Disorder I – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -120,145 +121,126 @@
       font-size: 0.9em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Bipolaire I – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Evaluation of Bipolar I Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <div class="warning-box">
   ⚠️ <strong>Important :</strong> Pour diagnostiquer un trouble bipolaire I, il est nécessaire de remplir les critères d'au moins UN épisode maniaque (Critères A-D).
 </div>
-
 <form id="formulaire">
-
 <!-- ÉPISODE MANIAQUE -->
-<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">ÉPISODE MANIAQUE</h3>
-
+<h3 style="color: #3d7a3b; border-bottom: 2px solid #8cc63f; padding-bottom: 5px;">MANIC EPISODE</h3>
 <!-- Maniaque A -->
 <fieldset id="maniaqueA">
-  <legend>Critère A – Période distincte d'humeur élevée et d'énergie accrue</legend>
-  <p class="subtitle">Période distincte d'humeur et d'énergie/activité anormalement et persistamment élevées, durant au moins 1 semaine, présente presque toute la journée, presque tous les jours (ou toute durée si hospitalisation nécessaire)</p>
-  <label><input type="checkbox" name="maniaqueA" value="Humeur anormalement et persistamment élevée"/> Humeur anormalement et persistamment élevée</label>
-  <label><input type="checkbox" name="maniaqueA" value="Humeur expansive"/> Humeur expansive</label>
-  <label><input type="checkbox" name="maniaqueA" value="Humeur irritable"/> Humeur irritable</label>
-  <label><input type="checkbox" name="maniaqueA" value="Augmentation anormale et persistante de l'activité"/> Augmentation anormale et persistante de l'activité</label>
-  <label><input type="checkbox" name="maniaqueA" value="Augmentation anormale et persistante de l'énergie"/> Augmentation anormale et persistante de l'énergie</label>
-  <label><input type="checkbox" name="maniaqueA" value="Durée d'au moins 1 semaine (ou toute durée si hospitalisation)"/> Durée d'au moins 1 semaine (ou toute durée si hospitalisation)</label>
-  <button type="button" onclick="validerManiaqueA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Distinct period of elevated mood and increased energy</legend>
+<p class="subtitle">Distinct period of mood and energy/activity abnormally and persistently elevated, lasting at least 1 week, present almost all day, nearly every day (or any duration if hospitalization is necessary)</p>
+<label>Abnormally and persistently elevated mood</label>
+<label>Expansive mood</label>
+<label>Irritable mood</label>
+<label>Abnormal and persistent increase in activity</label>
+<label>Abnormal and persistent increase in energy</label>
+<label>Duration of at least 1 week (or any duration if hospitalized)</label>
+<button onclick="validerManiaqueA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Maniaque B -->
-<fieldset id="maniaqueB" class="hidden">
-  <legend>Critère B – Symptômes (3 ou plus, 4 si humeur seulement irritable)</legend>
-  <p class="subtitle">Au moins 3 symptômes (4 si l'humeur est seulement irritable), présents à un degré significatif et représentant un changement notable du comportement habituel</p>
-  <label><input type="checkbox" name="maniaqueB" value="1. Estime de soi exagérée ou idées de grandeur"/> 1. Estime de soi exagérée ou idées de grandeur</label>
-  <label><input type="checkbox" name="maniaqueB" value="2. Réduction du besoin de sommeil (se sent reposé après seulement 3 heures)"/> 2. Réduction du besoin de sommeil (se sent reposé après seulement 3 heures)</label>
-  <label><input type="checkbox" name="maniaqueB" value="3. Plus loquace que d'habitude ou pression à parler continuellement"/> 3. Plus loquace que d'habitude ou pression à parler continuellement</label>
-  <label><input type="checkbox" name="maniaqueB" value="4. Fuite des idées ou expérience subjective que les pensées défilent"/> 4. Fuite des idées ou expérience subjective que les pensées défilent</label>
-  <label><input type="checkbox" name="maniaqueB" value="5. Distractibilité (attention trop facilement attirée par des stimuli externes)"/> 5. Distractibilité (attention trop facilement attirée par des stimuli externes sans importance ou non pertinents)</label>
-  <label><input type="checkbox" name="maniaqueB" value="6. Augmentation de l'activité orientée vers un but ou agitation psychomotrice"/> 6. Augmentation de l'activité orientée vers un but (sociale, professionnelle, scolaire, sexuelle) ou agitation psychomotrice</label>
-  <label><input type="checkbox" name="maniaqueB" value="7. Engagement excessif dans des activités à potentiel élevé de conséquences dommageables"/> 7. Engagement excessif dans des activités à potentiel élevé de conséquences dommageables (achats inconsidérés, indiscrétions sexuelles, investissements imprudents)</label>
-  <button type="button" onclick="validerManiaqueB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="maniaqueB">
+<legend>Criterion B – Symptoms (3 or more, 4 if mood is only irritable)</legend>
+<p class="subtitle">At least 3 symptoms (4 if the mood is only irritable), present to a significant degree and representing a notable change from usual behavior.</p>
+<label>1. Exaggerated self-esteem or delusions of grandeur</label>
+<label>2. Reduced need for sleep (feels rested after only 3 hours)</label>
+<label>3. More talkative than usual or pressure to speak continuously</label>
+<label>4. Flight of ideas or subjective experience that thoughts are racing</label>
+<label>5. Distractibility (attention too easily drawn to unimportant or irrelevant external stimuli)</label>
+<label>6. Increase in goal-directed activity (social, professional, academic, sexual) or psychomotor agitation</label>
+<label>7. Excessive engagement in activities with a high potential for harmful consequences (reckless spending, sexual indiscretions, imprudent investments)</label>
+<button onclick="validerManiaqueB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Maniaque C -->
-<fieldset id="maniaqueC" class="hidden">
-  <legend>Critère C – Altération marquée du fonctionnement</legend>
-  <p class="subtitle">La perturbation de l'humeur est suffisamment sévère pour causer une altération marquée ou nécessiter une hospitalisation ou présente des caractéristiques psychotiques</p>
-  <label><input type="checkbox" name="maniaqueC" value="Altération marquée du fonctionnement social"/> Altération marquée du fonctionnement social</label>
-  <label><input type="checkbox" name="maniaqueC" value="Altération marquée du fonctionnement professionnel"/> Altération marquée du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="maniaqueC" value="Nécessite une hospitalisation pour prévenir un danger"/> Nécessite une hospitalisation pour prévenir un danger pour soi ou autrui</label>
-  <label><input type="checkbox" name="maniaqueC" value="Présence de caractéristiques psychotiques"/> Présence de caractéristiques psychotiques</label>
-  <button type="button" onclick="validerManiaqueC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="maniaqueC">
+<legend>Criterion C – Marked impairment of functioning</legend>
+<p class="subtitle">Mood disturbance is severe enough to cause marked impairment or to necessitate hospitalization, or it presents with psychotic features.</p>
+<label>Marked impairment of social functioning</label>
+<label>Marked alteration of professional functioning</label>
+<label>Requires hospitalization to prevent danger to oneself or others</label>
+<label>Presence of psychotic features</label>
+<button onclick="validerManiaqueC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Maniaque D -->
-<fieldset id="maniaqueD" class="hidden">
-  <legend>Critère D – Exclusion des causes organiques</legend>
-  <p class="subtitle">L'épisode n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <div class="note-box">
-    <strong>Note :</strong> Un épisode maniaque complet qui émerge pendant un traitement antidépresseur mais persiste à un niveau syndromique complet au-delà de l'effet physiologique de ce traitement est une preuve suffisante d'un épisode maniaque et donc d'un diagnostic de trouble bipolaire I.
+<fieldset class="hidden" id="maniaqueD">
+<legend>Criterion D – Exclusion of organic causes</legend>
+<p class="subtitle">The episode is not attributable to the physiological effects of a substance or a medical condition.</p>
+<div class="note-box">
+<strong>Note :</strong> Un épisode maniaque complet qui émerge pendant un traitement antidépresseur mais persiste à un niveau syndromique complet au-delà de l'effet physiologique de ce traitement est une preuve suffisante d'un épisode maniaque et donc d'un diagnostic de trouble bipolaire I.
   </div>
-  <label><input type="checkbox" name="maniaqueD" value="Pas attribuable à une substance (drogue, médicament, autre traitement)"/> Pas attribuable à une substance (drogue, médicament, autre traitement)</label>
-  <label><input type="checkbox" name="maniaqueD" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale</label>
-  <button type="button" onclick="validerManiaqueD()">✔️ Valider le critère D</button>
+<label>Not attributable to a substance (drug, medication, other treatment)</label>
+<label>Not attributable to a medical condition</label>
+<button onclick="validerManiaqueD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Bipolar I A -->
-<fieldset id="bipolarA" class="hidden">
-  <legend>Trouble Bipolaire I – Critère A</legend>
-  <p class="subtitle">Les critères d'au moins un épisode maniaque ont été remplis (Critères A-D ci-dessus)</p>
-  <div class="note-box">
-    <strong>Note :</strong> Au moins un épisode maniaque au cours de la vie est requis pour le diagnostic de trouble bipolaire I.
+<fieldset class="hidden" id="bipolarA">
+<legend>Bipolar I Disorder – Criterion A</legend>
+<p class="subtitle">The criteria for at least one manic episode have been met (Criteria A-D above)</p>
+<div class="note-box">
+<strong>Note :</strong> Au moins un épisode maniaque au cours de la vie est requis pour le diagnostic de trouble bipolaire I.
   </div>
-  <label><input type="checkbox" id="bipolarACheck" value="Les critères d'au moins un épisode maniaque ont été remplis"/> Les critères d'au moins un épisode maniaque ont été remplis</label>
-  <button type="button" onclick="validerBipolarA()">✔️ Valider</button>
+<label>The criteria for at least one manic episode have been met.</label>
+<button onclick="validerBipolarA()" type="button">✔️ Validate</button>
 </fieldset>
-
 <!-- Bipolar I B -->
-<fieldset id="bipolarB" class="hidden">
-  <legend>Trouble Bipolaire I – Critère B (Diagnostic différentiel)</legend>
-  <p class="subtitle">Au moins un épisode maniaque n'est pas mieux expliqué par d'autres troubles psychotiques</p>
-  <label><input type="checkbox" name="bipolarB" value="Pas mieux expliqué par un trouble schizo-affectif"/> Pas mieux expliqué par un trouble schizo-affectif</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à la schizophrénie"/> Pas superposé à la schizophrénie</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à un trouble schizophréniforme"/> Pas superposé à un trouble schizophréniforme</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à un trouble délirant"/> Pas superposé à un trouble délirant</label>
-  <label><input type="checkbox" name="bipolarB" value="Pas superposé à un autre trouble du spectre de la schizophrénie"/> Pas superposé à un autre trouble du spectre de la schizophrénie ou autre trouble psychotique</label>
-  <button type="button" onclick="validerBipolarB()">✔️ Valider</button>
+<fieldset class="hidden" id="bipolarB">
+<legend>Bipolar I Disorder – Criterion B (Differential Diagnosis)</legend>
+<p class="subtitle">At least one manic episode is not better explained by other psychotic disorders.</p>
+<label>Not better explained by a schizoaffective disorder.</label>
+<label>Not superimposed on schizophrenia</label>
+<label>Not superimposed on a schizopheniform disorder</label>
+<label>Not superimposed on a delusional disorder</label>
+<label>Not superimposed on another schizophrenia spectrum disorder or other psychotic disorder</label>
+<button onclick="validerBipolarB()" type="button">✔️ Validate</button>
 </fieldset>
-
 <!-- Type et Sévérité -->
-<fieldset id="codage" class="hidden">
-  <legend>Codage – Type d'épisode actuel ou le plus récent</legend>
-  <p class="subtitle">Sélectionner le type d'épisode actuel ou le plus récent</p>
-  
-  <p style="margin-top: 10px;"><strong>Type d'épisode :</strong></p>
-  <label><input type="radio" name="typeEpisode" value="Maniaque"/> Épisode maniaque (actuel ou le plus récent)</label>
-  <label><input type="radio" name="typeEpisode" value="Hypomaniaque"/> Épisode hypomaniaque (actuel ou le plus récent)</label>
-  <label><input type="radio" name="typeEpisode" value="Dépressif"/> Épisode dépressif (actuel ou le plus récent)</label>
-  <label><input type="radio" name="typeEpisode" value="Non spécifié"/> Non spécifié</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité/État (si applicable) :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
-  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
-  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
-  <label><input type="radio" name="severite" value="Avec caractéristiques psychotiques"/> Avec caractéristiques psychotiques</label>
-  <label><input type="radio" name="severite" value="En rémission partielle"/> En rémission partielle</label>
-  <label><input type="radio" name="severite" value="En rémission complète"/> En rémission complète</label>
-  <label><input type="radio" name="severite" value="Non spécifié"/> Non spécifié</label>
-  
-  <button type="button" onclick="validerCodage()">✔️ Valider le codage</button>
+<fieldset class="hidden" id="codage">
+<legend>Coding – Type of current or most recent episode</legend>
+<p class="subtitle">Select the type of current or most recent episode</p>
+<p style="margin-top: 10px;"><strong>Type d'épisode :</strong></p>
+<label>Manic episode (current or most recent)</label>
+<label>Hypomanic episode (current or most recent)</label>
+<label>Depressive episode (current or most recent)</label>
+<label>Not specified</label>
+<p style="margin-top: 15px;"><strong>Sévérité/État (si applicable) :</strong></p>
+<label>Light</label>
+<label>Moderate</label>
+<label>Severe</label>
+<label>With psychotic features</label>
+<label>In partial remission</label>
+<label>In complete remission</label>
+<label>Not specified</label>
+<button onclick="validerCodage()" type="button">✔️ Validate the coding</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs additionnels (optionnels)</legend>
-  <p class="subtitle">Cocher tous les spécificateurs qui s'appliquent à l'épisode actuel (ou le plus récent si en rémission)</p>
-  <label><input type="checkbox" name="specificateurs" value="Avec détresse anxieuse"/> Avec détresse anxieuse</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques mixtes"/> Avec caractéristiques mixtes</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec cycles rapides"/> Avec cycles rapides</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques mélancoliques"/> Avec caractéristiques mélancoliques</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques atypiques"/> Avec caractéristiques atypiques</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques psychotiques congruentes à l'humeur"/> Avec caractéristiques psychotiques congruentes à l'humeur</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractéristiques psychotiques non congruentes à l'humeur"/> Avec caractéristiques psychotiques non congruentes à l'humeur</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec catatonie (code additionnel F06.1)"/> Avec catatonie (code additionnel F06.1)</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec début lors du péripartum"/> Avec début lors du péripartum</label>
-  <label><input type="checkbox" name="specificateurs" value="Avec caractère saisonnier"/> Avec caractère saisonnier</label>
-  <button type="button" onclick="validerSpecificateurs()">✔️ Valider les spécificateurs</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Additional specifiers (optional)</legend>
+<p class="subtitle">Check all the specifiers that apply to the current episode (or the most recent one if in remission)</p>
+<label>With anxious distress</label>
+<label>With mixed characteristics</label>
+<label>With rapid cycles</label>
+<label>With melancholic characteristics</label>
+<label>With atypical characteristics</label>
+<label>With mood-congruent psychotic features</label>
+<label>With psychotic features not congruent with mood</label>
+<label>With catatonia (additional code F06.1)</label>
+<label>With onset during the peripartum</label>
+<label>With seasonal characteristics</label>
+<button onclick="validerSpecificateurs()" type="button">✔️ Validate the specifiers</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   maniaqueA: [],
@@ -472,10 +454,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

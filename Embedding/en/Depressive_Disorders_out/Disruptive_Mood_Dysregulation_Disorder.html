@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble de Dysrégulation de l'Humeur Explosive – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Assessment of Disruptive Mood Dysregulation Disorder – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -119,133 +120,116 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble de Dysrégulation de l'Humeur Explosive – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Assessment of Disruptive Mood Dysregulation Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Accès de colère sévères et récurrents</legend>
-  <p class="subtitle">Manifestés verbalement et/ou comportementalement, totalement disproportionnés en intensité ou durée par rapport à la situation</p>
-  <label><input type="checkbox" name="critereA" value="Accès de colère sévères et récurrents"/> Accès de colère sévères et récurrents</label>
-  <label><input type="checkbox" name="critereA" value="Manifestations verbales (rages verbales)"/> Manifestations verbales (rages verbales)</label>
-  <label><input type="checkbox" name="critereA" value="Manifestations comportementales (agression physique envers personnes ou biens)"/> Manifestations comportementales (agression physique envers personnes ou biens)</label>
-  <label><input type="checkbox" name="critereA" value="Totalement disproportionnés en intensité ou durée"/> Totalement disproportionnés en intensité ou durée par rapport à la situation ou provocation</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterion A – Severe and recurrent temper outbursts</legend>
+<p class="subtitle">Verbally and/or behaviorally manifested, totally disproportionate in intensity or duration compared to the situation.</p>
+<label>Severe and recurrent anger outbursts</label>
+<label>Verbal manifestations (verbal rages)</label>
+<label>Behavioral manifestations (physical aggression towards people or property)</label>
+<label>Totally disproportionate in intensity or duration compared to the situation or provocation.</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Incompatibles avec le niveau de développement</legend>
-  <p class="subtitle">Les accès de colère sont incompatibles avec le niveau de développement de l'enfant</p>
-  <label><input type="checkbox" id="choixB" value="Incompatibles avec le niveau de développement"/> Incompatibles avec le niveau de développement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Incompatible with the level of development</legend>
+<p class="subtitle">Outbursts of anger are incompatible with the child's level of development.</p>
+<label>Incompatible with the level of development</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Fréquence (3 fois ou plus par semaine)</legend>
-  <p class="subtitle">Les accès de colère surviennent en moyenne 3 fois ou plus par semaine</p>
-  <label><input type="checkbox" id="choixC" value="Surviennent en moyenne 3 fois ou plus par semaine"/> Surviennent en moyenne 3 fois ou plus par semaine</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Frequency (3 times or more per week)</legend>
+<p class="subtitle">Anger outbursts occur on average 3 times or more per week.</p>
+<label>Occur on average 3 times or more per week</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Humeur irritable ou colérique persistante entre les accès</legend>
-  <p class="subtitle">L'humeur entre les accès est persistamment irritable ou colérique presque toute la journée, presque tous les jours, et observable par autrui</p>
-  <label><input type="checkbox" name="critereD" value="Humeur persistamment irritable ou colérique"/> Humeur persistamment irritable ou colérique</label>
-  <label><input type="checkbox" name="critereD" value="Presque toute la journée, presque tous les jours"/> Presque toute la journée, presque tous les jours</label>
-  <label><input type="checkbox" name="critereD" value="Observable par autrui (parents, enseignants, pairs)"/> Observable par autrui (parents, enseignants, pairs)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Persistent irritable or angry mood between episodes</legend>
+<p class="subtitle">The mood between episodes is persistently irritable or angry almost all day, nearly every day, and observable by others.</p>
+<label>Persistently irritable or angry mood</label>
+<label>Almost all day, almost every day</label>
+<label>Observable by others (parents, teachers, peers)</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Durée (12 mois ou plus)</legend>
-  <p class="subtitle">Les critères A-D sont présents depuis 12 mois ou plus, sans période de 3 mois consécutifs ou plus sans tous les symptômes</p>
-  <label><input type="checkbox" name="critereE" value="Présents depuis 12 mois ou plus"/> Présents depuis 12 mois ou plus</label>
-  <label><input type="checkbox" name="critereE" value="Pas de période de 3 mois consécutifs ou plus sans tous les symptômes"/> Pas de période de 3 mois consécutifs ou plus sans tous les symptômes</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Duration (12 months or more)</legend>
+<p class="subtitle">The A-D criteria have been present for 12 months or more, without a period of 3 consecutive months or more without all the symptoms.</p>
+<label>Present for 12 months or more</label>
+<label>No period of 3 consecutive months or more without all the symptoms</label>
+<button onclick="validerCritereE()" type="button">✔️ Validate criterion E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Présence dans au moins 2 contextes sur 3</legend>
-  <p class="subtitle">Les critères A et D sont présents dans au moins 2 contextes sur 3 (maison, école, pairs) et sévères dans au moins un</p>
-  <label><input type="checkbox" name="critereF" value="Présents à la maison"/> Présents à la maison</label>
-  <label><input type="checkbox" name="critereF" value="Présents à l'école"/> Présents à l'école</label>
-  <label><input type="checkbox" name="critereF" value="Présents avec les pairs"/> Présents avec les pairs</label>
-  <label><input type="checkbox" name="critereF" value="Sévères dans au moins un contexte"/> Sévères dans au moins un contexte</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+<fieldset class="hidden" id="critereF">
+<legend>Criterion F – Presence in at least 2 out of 3 contexts</legend>
+<p class="subtitle">Criteria A and D are present in at least 2 out of 3 contexts (home, school, peers) and severe in at least one.</p>
+<label>Present at home</label>
+<label>Present at school</label>
+<label>Present with peers</label>
+<label>Severe in at least one context</label>
+<button onclick="validerCritereF()" type="button">✔️ Validate criterion F</button>
 </fieldset>
-
 <!-- Critère G -->
-<fieldset id="critereG" class="hidden">
-  <legend>Critère G – Âge du diagnostic (entre 6 et 18 ans)</legend>
-  <p class="subtitle">Le diagnostic ne doit pas être posé pour la première fois avant 6 ans ou après 18 ans</p>
-  <label><input type="checkbox" name="critereG" value="Âge au moment du diagnostic entre 6 et 18 ans"/> Âge au moment du diagnostic entre 6 et 18 ans</label>
-  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
+<fieldset class="hidden" id="critereG">
+<legend>Criterion G – Age of diagnosis (between 6 and 18 years)</legend>
+<p class="subtitle">The diagnosis should not be made for the first time before the age of 6 or after the age of 18.</p>
+<label>Age at the time of diagnosis between 6 and 18 years</label>
+<button onclick="validerCritereG()" type="button">✔️ Validate criterion G</button>
 </fieldset>
-
 <!-- Critère H -->
-<fieldset id="critereH" class="hidden">
-  <legend>Critère H – Âge de début (avant 10 ans)</legend>
-  <p class="subtitle">Par anamnèse ou observation, l'âge de début des critères A-E est avant 10 ans</p>
-  <label><input type="checkbox" id="choixH" value="Âge de début avant 10 ans"/> Âge de début avant 10 ans</label>
-  <button type="button" onclick="validerCritereH()">✔️ Valider le critère H</button>
+<fieldset class="hidden" id="critereH">
+<legend>Criterion H – Age of onset (before 10 years)</legend>
+<p class="subtitle">By anamnesis or observation, the age of onset of criteria A-E is before 10 years.</p>
+<label>Onset age before 10 years</label>
+<button onclick="validerCritereH()" type="button">✔️ Validate criterion H</button>
 </fieldset>
-
 <!-- Critère I -->
-<fieldset id="critereI" class="hidden">
-  <legend>Critère I – Jamais d'épisode maniaque ou hypomaniaque</legend>
-  <p class="subtitle">Il n'y a jamais eu de période distincte durant plus d'1 jour où les critères complets (sauf durée) d'un épisode maniaque ou hypomaniaque ont été remplis</p>
-  <div class="note-box">
-    <strong>Note :</strong> L'élévation de l'humeur appropriée au développement (événement très positif) ne doit pas être considérée comme symptôme de manie ou d'hypomanie.
+<fieldset class="hidden" id="critereI">
+<legend>Criterion I – Never had a manic or hypomanic episode</legend>
+<p class="subtitle">There has never been a distinct period lasting more than 1 day during which the full criteria (except for duration) for a manic or hypomanic episode have been met.</p>
+<div class="note-box">
+<strong>Note :</strong> L'élévation de l'humeur appropriée au développement (événement très positif) ne doit pas être considérée comme symptôme de manie ou d'hypomanie.
   </div>
-  <label><input type="checkbox" id="choixI" value="Jamais d'épisode maniaque ou hypomaniaque"/> Jamais d'épisode maniaque ou hypomaniaque (>1 jour)</label>
-  <button type="button" onclick="validerCritereI()">✔️ Valider le critère I</button>
+<label>Never a manic or hypomanic episode (&gt;1 day)</label>
+<button onclick="validerCritereI()" type="button">✔️ Validate criterion I</button>
 </fieldset>
-
 <!-- Critère J -->
-<fieldset id="critereJ" class="hidden">
-  <legend>Critère J – Diagnostic différentiel</legend>
-  <p class="subtitle">Les comportements ne surviennent pas exclusivement pendant un épisode dépressif majeur et ne sont pas mieux expliqués par un autre trouble mental</p>
-  <div class="warning-box">
+<fieldset class="hidden" id="critereJ">
+<legend>Criterion J – Differential Diagnosis</legend>
+<p class="subtitle">Behaviors do not occur exclusively during a major depressive episode and are not better explained by another mental disorder.</p>
+<div class="warning-box">
     ⚠️ <strong>Important :</strong> Ce diagnostic NE PEUT PAS coexister avec le trouble oppositionnel avec provocation, le trouble explosif intermittent ou le trouble bipolaire. Si les critères des deux troubles sont remplis, seul le DMDD est diagnostiqué. Si un épisode maniaque/hypomaniaque a déjà eu lieu, le DMDD ne doit PAS être assigné.
   </div>
-  <label><input type="checkbox" name="critereJ" value="Ne survient pas exclusivement pendant un épisode dépressif majeur"/> Ne survient pas exclusivement pendant un épisode dépressif majeur</label>
-  <label><input type="checkbox" name="critereJ" value="Pas mieux expliqué par trouble du spectre de l'autisme"/> Pas mieux expliqué par trouble du spectre de l'autisme</label>
-  <label><input type="checkbox" name="critereJ" value="Pas mieux expliqué par trouble de stress post-traumatique"/> Pas mieux expliqué par trouble de stress post-traumatique</label>
-  <label><input type="checkbox" name="critereJ" value="Pas mieux expliqué par trouble anxiété de séparation"/> Pas mieux expliqué par trouble anxiété de séparation</label>
-  <label><input type="checkbox" name="critereJ" value="Pas mieux expliqué par trouble dépressif persistant"/> Pas mieux expliqué par trouble dépressif persistant</label>
-  <button type="button" onclick="validerCritereJ()">✔️ Valider le critère J</button>
+<label>Does not occur exclusively during a major depressive episode.</label>
+<label>No better explained by autism spectrum disorder.</label>
+<label>No better explained by post-traumatic stress disorder.</label>
+<label>No better explained by separation anxiety disorder</label>
+<label>No better explained by persistent depressive disorder</label>
+<button onclick="validerCritereJ()" type="button">✔️ Validate criterion J</button>
 </fieldset>
-
 <!-- Critère K -->
-<fieldset id="critereK" class="hidden">
-  <legend>Critère K – Exclusion des causes organiques</legend>
-  <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une substance ou d'une affection médicale/neurologique</p>
-  <label><input type="checkbox" name="critereK" value="Pas attribuable à une substance"/> Pas attribuable à une substance</label>
-  <label><input type="checkbox" name="critereK" value="Pas attribuable à une affection médicale ou neurologique"/> Pas attribuable à une affection médicale ou neurologique</label>
-  <button type="button" onclick="validerCritereK()">✔️ Valider le critère K</button>
+<fieldset class="hidden" id="critereK">
+<legend>Criterion K – Exclusion of organic causes</legend>
+<p class="subtitle">The symptoms are not attributable to the physiological effects of a substance or a medical condition.</p>
+<label>Not attributable to a substance</label>
+<label>Not attributable to a medical or neurological condition</label>
+<button onclick="validerCritereK()" type="button">✔️ Validate criterion K</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -447,10 +431,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

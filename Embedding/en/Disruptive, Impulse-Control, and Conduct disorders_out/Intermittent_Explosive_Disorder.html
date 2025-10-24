@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Explosif Intermittent – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Assessment of Intermittent Explosive Disorder – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -119,105 +120,90 @@
       font-family: monospace;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Explosif Intermittent – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLINIC LA VALLÉE</h1>
+<h2>Assessment of Intermittent Explosive Disorder – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Explosions comportementales récurrentes (échec à contrôler les impulsions agressives)</legend>
-  <p class="subtitle">Manifestées par l'une OU l'autre des options suivantes</p>
-  <div class="warning-box">
+<legend>Criterion A – Recurrent behavioral explosions (failure to control aggressive impulses)</legend>
+<p class="subtitle">Manifested by either of the following options</p>
+<div class="warning-box">
     ⚠️ <strong>Important :</strong> Sélectionner l'option (1) OU l'option (2), ou les deux si applicables.
   </div>
-  
-  <p style="margin-top: 10px;"><strong>Option (1) - Agression fréquente de faible intensité :</strong></p>
-  <label><input type="checkbox" name="critereA1" value="Agression verbale (crises de colère, tirades, disputes verbales ou bagarres)"/> Agression verbale (crises de colère, tirades, disputes verbales ou bagarres)</label>
-  <label><input type="checkbox" name="critereA1" value="Agression physique envers propriété, animaux ou individus"/> Agression physique envers propriété, animaux ou individus</label>
-  <label><input type="checkbox" name="critereA1" value="Survenant 2 fois par semaine en moyenne pendant 3 mois"/> Survenant 2 fois par semaine en moyenne pendant 3 mois</label>
-  <label><input type="checkbox" name="critereA1" value="L'agression physique ne cause pas de dommages/destruction ni de blessures"/> L'agression physique ne cause pas de dommages/destruction ni de blessures</label>
-  
-  <p style="margin-top: 15px;"><strong>Option (2) - Explosions graves avec dommages/blessures :</strong></p>
-  <label><input type="checkbox" name="critereA2" value="3 explosions comportementales impliquant dommages/destruction de propriété"/> 3 explosions comportementales impliquant dommages/destruction de propriété</label>
-  <label><input type="checkbox" name="critereA2" value="ET/OU agression physique causant blessures à animaux ou individus"/> ET/OU agression physique causant blessures à animaux ou individus</label>
-  <label><input type="checkbox" name="critereA2" value="Survenant dans une période de 12 mois"/> Survenant dans une période de 12 mois</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<p style="margin-top: 10px;"><strong>Option (1) - Agression fréquente de faible intensité :</strong></p>
+<label>Verbal aggression (anger outbursts, tirades, verbal disputes, or fights)</label>
+<label>Physical aggression towards property, animals, or individuals</label>
+<label>Occurring an average of 2 times per week for 3 months</label>
+<label>Physical aggression does not cause damage/destruction or injuries.</label>
+<p style="margin-top: 15px;"><strong>Option (2) - Explosions graves avec dommages/blessures :</strong></p>
+<label>3 behavioral explosions involving property damage/destruction</label>
+<label>AND/OR physical aggression causing injuries to animals or individuals</label>
+<label>Occurring within a 12-month period</label>
+<button onclick="validerCritereA()" type="button">✔️ Validate criterion A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Magnitude de l'agressivité disproportionnée</legend>
-  <p class="subtitle">L'ampleur de l'agressivité exprimée est totalement disproportionnée par rapport à la provocation ou aux facteurs de stress</p>
-  <label><input type="checkbox" name="critereB" value="Totalement disproportionnée par rapport à la provocation"/> Totalement disproportionnée par rapport à la provocation</label>
-  <label><input type="checkbox" name="critereB" value="Totalement disproportionnée par rapport aux facteurs de stress psychosociaux"/> Totalement disproportionnée par rapport aux facteurs de stress psychosociaux</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterion B – Magnitude of the disproportionate aggression</legend>
+<p class="subtitle">The level of expressed aggression is completely disproportionate to the provocation or stress factors.</p>
+<label>Totally disproportionate to the provocation</label>
+<label>Totally disproportionate to the psychosocial stress factors</label>
+<button onclick="validerCritereB()" type="button">✔️ Validate criterion B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Explosions impulsives et non préméditées</legend>
-  <p class="subtitle">Les explosions agressives récurrentes ne sont pas préméditées et ne visent pas un objectif tangible</p>
-  <label><input type="checkbox" name="critereC" value="Impulsives et/ou basées sur la colère"/> Impulsives et/ou basées sur la colère</label>
-  <label><input type="checkbox" name="critereC" value="Non commises pour obtenir un objectif tangible (argent, pouvoir, intimidation)"/> Non commises pour obtenir un objectif tangible (argent, pouvoir, intimidation)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterion C – Impulsive and unpremeditated explosions</legend>
+<p class="subtitle">Recurrent aggressive outbursts are not premeditated and do not target a tangible objective.</p>
+<label>Impulsive and/or anger-based</label>
+<label>Not committed to achieving a tangible goal (money, power, intimidation)</label>
+<button onclick="validerCritereC()" type="button">✔️ Validate criterion C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">Les explosions agressives récurrentes causent une détresse marquée ou une altération du fonctionnement, ou sont associées à des conséquences financières/légales</p>
-  <label><input type="checkbox" name="critereD" value="Détresse marquée chez l'individu"/> Détresse marquée chez l'individu</label>
-  <label><input type="checkbox" name="critereD" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereD" value="Altération du fonctionnement interpersonnel"/> Altération du fonctionnement interpersonnel</label>
-  <label><input type="checkbox" name="critereD" value="Conséquences financières"/> Conséquences financières</label>
-  <label><input type="checkbox" name="critereD" value="Conséquences légales"/> Conséquences légales</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterion D – Distress or impairment in functioning</legend>
+<p class="subtitle">Recurrent aggressive outbursts cause marked distress or impairment in functioning, or are associated with financial/legal consequences.</p>
+<label>Marked distress in the individual</label>
+<label>Alteration of professional functioning</label>
+<label>Alteration of interpersonal functioning</label>
+<label>Financial consequences</label>
+<label>Legal consequences</label>
+<button onclick="validerCritereD()" type="button">✔️ Validate criterion D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Âge chronologique</legend>
-  <p class="subtitle">L'âge chronologique est d'au moins 6 ans (ou niveau de développement équivalent)</p>
-  <label><input type="checkbox" id="choixE" value="Âge chronologique ≥6 ans"/> Âge chronologique ≥6 ans (ou niveau de développement équivalent)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterion E – Chronological Age</legend>
+<p class="subtitle">Chronological age is at least 6 years (or equivalent developmental level)</p>
+<label>Chronological age ≥6 years (or equivalent developmental level)</label>
+<button onclick="validerCritereE()" type="button">✔️ Validate criterion E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Diagnostic différentiel et exclusions</legend>
-  <p class="subtitle">Les explosions agressives récurrentes ne sont pas mieux expliquées par un autre trouble mental et ne sont pas attribuables à une affection médicale ou à une substance</p>
-  <div class="note-box">
-    <strong>Note :</strong> Ce diagnostic PEUT être posé en plus du TDAH, trouble des conduites, trouble oppositionnel avec provocation ou trouble du spectre de l'autisme lorsque les explosions agressives impulsives sont EN EXCÈS de celles habituellement observées dans ces troubles et justifient une attention clinique indépendante.
+<fieldset class="hidden" id="critereF">
+<legend>Criterion F – Differential Diagnosis and Exclusions</legend>
+<p class="subtitle">Recurrent aggressive explosions are not better explained by another mental disorder and are not attributable to a medical condition or substance.</p>
+<div class="note-box">
+<strong>Note :</strong> Ce diagnostic PEUT être posé en plus du TDAH, trouble des conduites, trouble oppositionnel avec provocation ou trouble du spectre de l'autisme lorsque les explosions agressives impulsives sont EN EXCÈS de celles habituellement observées dans ces troubles et justifient une attention clinique indépendante.
   </div>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble dépressif majeur"/> Pas mieux expliqué par trouble dépressif majeur</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble bipolaire"/> Pas mieux expliqué par trouble bipolaire</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble dysrégulation de l'humeur explosive"/> Pas mieux expliqué par trouble dysrégulation de l'humeur explosive</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble psychotique"/> Pas mieux expliqué par trouble psychotique</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble de personnalité antisociale"/> Pas mieux expliqué par trouble de personnalité antisociale</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble de personnalité borderline"/> Pas mieux expliqué par trouble de personnalité borderline</label>
-  <label><input type="checkbox" name="critereF" value="Pas attribuable à traumatisme crânien"/> Pas attribuable à traumatisme crânien</label>
-  <label><input type="checkbox" name="critereF" value="Pas attribuable à maladie d'Alzheimer"/> Pas attribuable à maladie d'Alzheimer</label>
-  <label><input type="checkbox" name="critereF" value="Pas attribuable aux effets physiologiques d'une substance"/> Pas attribuable aux effets physiologiques d'une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereF" value="Pour enfants 6-18 ans : pas un trouble de l'adaptation"/> Pour enfants 6-18 ans : comportement agressif ne fait pas partie d'un trouble de l'adaptation</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<label>Not better explained by major depressive disorder</label>
+<label>No better explained by bipolar disorder</label>
+<label>No better explained by explosive mood dysregulation disorder.</label>
+<label>Not better explained by psychotic disorder</label>
+<label>Not better explained by antisocial personality disorder.</label>
+<label>No better explained by borderline personality disorder.</label>
+<label>Not attributable to head trauma</label>
+<label>Not attributable to Alzheimer's disease</label>
+<label>Not attributable to the physiological effects of a substance (drug, medication)</label>
+<label>For children aged 6-18 years: aggressive behavior is not part of an adjustment disorder.</label>
+<button onclick="afficherResume()" type="button">✔️ Finish</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA1: [],
@@ -363,10 +349,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Date: 10/15/2025 —</p>
 </footer>
 </body>
 </html>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Delirium – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación Delirium – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -120,134 +121,114 @@
       font-size: 0.85em;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Delirium – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Delirio – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Perturbation de l'attention et de la conscience de l'environnement</legend>
-  <p class="subtitle">Capacité réduite à diriger, focaliser, soutenir et déplacer l'attention, accompagnée d'une conscience réduite de l'environnement</p>
-  <label><input type="checkbox" name="critereA" value="Capacité réduite à diriger l'attention"/> Capacité réduite à diriger l'attention</label>
-  <label><input type="checkbox" name="critereA" value="Capacité réduite à focaliser l'attention"/> Capacité réduite à focaliser l'attention</label>
-  <label><input type="checkbox" name="critereA" value="Capacité réduite à soutenir l'attention"/> Capacité réduite à soutenir l'attention</label>
-  <label><input type="checkbox" name="critereA" value="Capacité réduite à déplacer l'attention"/> Capacité réduite à déplacer l'attention</label>
-  <label><input type="checkbox" name="critereA" value="Conscience réduite de l'environnement"/> Conscience réduite de l'environnement</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<legend>Criterio A – Alteración de la atención y de la conciencia del entorno</legend>
+<p class="subtitle">Capacidad reducida para dirigir, enfocar, sostener y mover la atención, acompañada de una conciencia reducida del entorno.</p>
+<label>Capacidad reducida para dirigir la atención</label>
+<label>Capacidad reducida para enfocar la atención</label>
+<label>Capacidad reducida para mantener la atención</label>
+<label>Capacidad reducida para desplazar la atención</label>
+<label>Conciencia reducida del entorno</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Développement sur courte période et fluctuation</legend>
-  <p class="subtitle">Développement sur courte période (heures à quelques jours), changement par rapport à l'état de base, tendance à fluctuer en sévérité durant la journée</p>
-  <label><input type="checkbox" name="critereB" value="Développement sur courte période (heures à quelques jours)"/> Développement sur courte période (heures à quelques jours)</label>
-  <label><input type="checkbox" name="critereB" value="Représente un changement par rapport à l'attention et conscience de base"/> Représente un changement par rapport à l'attention et conscience de base</label>
-  <label><input type="checkbox" name="critereB" value="Tend à fluctuer en sévérité durant la journée"/> Tend à fluctuer en sévérité durant la journée</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Desarrollo en corto período y fluctuación</legend>
+<p class="subtitle">Desarrollo en un corto período (horas a unos días), cambio con respecto al estado basal, tendencia a fluctuar en severidad durante el día.</p>
+<label>Desarrollo en un corto período (horas a unos días)</label>
+<label>Representa un cambio con respecto a la atención y la conciencia básicas.</label>
+<label>Tiende a fluctuar en severidad durante el día</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Perturbation cognitive additionnelle</legend>
-  <p class="subtitle">Déficit mnésique, désorientation, langage, capacité visuospatiale ou perception</p>
-  <label><input type="checkbox" name="critereC" value="Déficit mnésique"/> Déficit mnésique</label>
-  <label><input type="checkbox" name="critereC" value="Désorientation"/> Désorientation</label>
-  <label><input type="checkbox" name="critereC" value="Perturbation du langage"/> Perturbation du langage</label>
-  <label><input type="checkbox" name="critereC" value="Perturbation de la capacité visuospatiale"/> Perturbation de la capacité visuospatiale</label>
-  <label><input type="checkbox" name="critereC" value="Perturbation de la perception"/> Perturbation de la perception</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Alteración cognitiva adicional</legend>
+<p class="subtitle">Déficit mnésico, desorientación, lenguaje, capacidad visuoespacial o percepción</p>
+<label>Déficit mnésique</label>
+<label>Desorientación</label>
+<label>Perturbación del lenguaje</label>
+<label>Perturbación de la capacidad visuoespacial</label>
+<label>Perturbación de la percepción</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Diagnostic différentiel</legend>
-  <p class="subtitle">Perturbations non mieux expliquées par autre trouble neurocognitif préexistant, et ne surviennent pas dans contexte de niveau d'éveil sévèrement réduit (coma)</p>
-  <label><input type="checkbox" name="critereD" value="Pas mieux expliquées par autre trouble neurocognitif préexistant"/> Pas mieux expliquées par autre trouble neurocognitif préexistant, établi ou évolutif</label>
-  <label><input type="checkbox" name="critereD" value="Ne surviennent pas dans contexte de niveau d'éveil sévèrement réduit (coma)"/> Ne surviennent pas dans contexte de niveau d'éveil sévèrement réduit (ex: coma)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Diagnóstico diferencial</legend>
+<p class="subtitle">Perturbaciones no mejor explicadas por otro trastorno neurocognitivo preexistente, y que no ocurren en un contexto de nivel de conciencia severamente reducido (coma)</p>
+<label>No mejor explicadas por otro trastorno neurocognitivo preexistente, establecido o evolutivo.</label>
+<label>No ocurren en un contexto de nivel de conciencia severamente reducido (ej: coma)</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Preuves d'étiologie physiologique</legend>
-  <p class="subtitle">Preuves que la perturbation est conséquence physiologique directe d'affection médicale, intoxication/sevrage de substance, exposition à toxine, ou étiologies multiples</p>
-  <label><input type="checkbox" name="critereE" value="Preuves d'affection médicale"/> Preuves que la perturbation est conséquence physiologique directe d'une affection médicale</label>
-  <label><input type="checkbox" name="critereE" value="Preuves d'intoxication par substance"/> Preuves d'intoxication par substance (drogue ou médicament)</label>
-  <label><input type="checkbox" name="critereE" value="Preuves de sevrage de substance"/> Preuves de sevrage de substance</label>
-  <label><input type="checkbox" name="critereE" value="Preuves d'exposition à toxine"/> Preuves d'exposition à toxine</label>
-  <label><input type="checkbox" name="critereE" value="Preuves d'étiologies multiples"/> Preuves d'étiologies multiples</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Pruebas de etiología fisiológica</legend>
+<p class="subtitle">Pruebas de que la perturbación es consecuencia fisiológica directa de una afección médica, intoxicación/abstinencia de sustancia, exposición a toxinas o etiologías múltiples.</p>
+<label>Pruebas de que la perturbación es consecuencia fisiológica directa de una afección médica</label>
+<label>Pruebas de intoxicación por sustancia (droga o medicamento)</label>
+<label>Pruebas de abstinencia de sustancias</label>
+<label>Pruebas de exposición a toxinas</label>
+<label>Pruebas de etiologías múltiples</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Type d'étiologie -->
-<fieldset id="etiologie" class="hidden">
-  <legend>Type d'étiologie</legend>
-  <p class="subtitle">Préciser le type de delirium selon l'étiologie</p>
-  <label><input type="radio" name="etiologie" value="intoxication"/> Delirium par intoxication à une substance</label>
-  <label><input type="radio" name="etiologie" value="sevrage"/> Delirium par sevrage d'une substance</label>
-  <label><input type="radio" name="etiologie" value="medicament"/> Delirium induit par médicament</label>
-  <label><input type="radio" name="etiologie" value="medical"/> Delirium dû à une affection médicale (F05)</label>
-  <label><input type="radio" name="etiologie" value="multiple"/> Delirium dû à étiologies multiples (F05)</label>
-  <button type="button" onclick="validerEtiologie()">✔️ Valider l'étiologie</button>
+<fieldset class="hidden" id="etiologie">
+<legend>Tipo de etiología</legend>
+<p class="subtitle">Especificar el tipo de delirium según la etiología</p>
+<label>Delirio por intoxicación con una sustancia</label>
+<label>Delirio por abstinencia de una sustancia</label>
+<label>Delirio inducido por medicamentos</label>
+<label>Delirio debido a una afección médica (F05)</label>
+<label>Delirio debido a etiologías múltiples (F05)</label>
+<button onclick="validerEtiologie()" type="button">✔️ Validar la etiología</button>
 </fieldset>
-
 <!-- Substance (si applicable) -->
-<fieldset id="substance" class="hidden">
-  <legend>Substance et Sévérité du Trouble d'Usage</legend>
-  <p class="subtitle">Identifier la substance et la sévérité du trouble d'usage comorbide (si applicable)</p>
-  
-  <p style="margin-top: 10px;"><strong>Substance impliquée :</strong></p>
-  <label><input type="radio" name="substance" value="Alcool"/> Alcool</label>
-  <label><input type="radio" name="substance" value="Cannabis"/> Cannabis</label>
-  <label><input type="radio" name="substance" value="Phencyclidine"/> Phencyclidine</label>
-  <label><input type="radio" name="substance" value="Autre hallucinogène"/> Autre hallucinogène</label>
-  <label><input type="radio" name="substance" value="Inhalant"/> Inhalant</label>
-  <label><input type="radio" name="substance" value="Opioïde"/> Opioïde</label>
-  <label><input type="radio" name="substance" value="Sédatif, hypnotique ou anxiolytique"/> Sédatif, hypnotique ou anxiolytique</label>
-  <label><input type="radio" name="substance" value="Substance de type amphétamine (ou autre stimulant)"/> Substance de type amphétamine (ou autre stimulant)</label>
-  <label><input type="radio" name="substance" value="Cocaïne"/> Cocaïne</label>
-  <label><input type="radio" name="substance" value="Autre (ou inconnue) substance"/> Autre (ou inconnue) substance</label>
-  
-  <p style="margin-top: 15px;"><strong>Sévérité du trouble d'usage de substance comorbide :</strong></p>
-  <label><input type="radio" name="severite" value="Pas de trouble d'usage"/> Pas de trouble d'usage</label>
-  <label><input type="radio" name="severite" value="Trouble d'usage léger"/> Trouble d'usage léger</label>
-  <label><input type="radio" name="severite" value="Trouble d'usage modéré ou sévère"/> Trouble d'usage modéré ou sévère</label>
-  
-  <button type="button" onclick="validerSubstance()">✔️ Valider la substance</button>
+<fieldset class="hidden" id="substance">
+<legend>Sustancia y Severidad del Trastorno por Uso</legend>
+<p class="subtitle">Identificar la sustancia y la gravedad del trastorno por uso comórbido (si corresponde)</p>
+<p style="margin-top: 10px;"><strong>Substance impliquée :</strong></p>
+<label>Alcohol</label>
+<label>Cannabis</label>
+<label>Fenciclidina</label>
+<label>Otro alucinógeno</label>
+<label>Inhalante</label>
+<label>Opioide</label>
+<label>Sedante, hipnótico o ansiolítico</label>
+<label>Sustancia de tipo anfetamina (o otro estimulante)</label>
+<label>Cocaína</label>
+<label>Otra (o desconocida) sustancia</label>
+<p style="margin-top: 15px;"><strong>Sévérité du trouble d'usage de substance comorbide :</strong></p>
+<label>Sin trastorno por uso</label>
+<label>Trastorno de uso leve</label>
+<label>Trastorno de uso moderado o severo</label>
+<button onclick="validerSubstance()" type="button">✔️ Validar la sustancia</button>
 </fieldset>
-
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécificateurs</legend>
-  <p class="subtitle">Préciser le cours et le niveau d'activité psychomotrice</p>
-  
-  <p style="margin-top: 10px;"><strong>Cours :</strong></p>
-  <label><input type="radio" name="cours" value="Aigu"/> Aigu : Durant quelques heures ou jours</label>
-  <label><input type="radio" name="cours" value="Persistant"/> Persistant : Durant des semaines ou mois</label>
-  
-  <p style="margin-top: 15px;"><strong>Niveau d'activité psychomotrice :</strong></p>
-  <label><input type="radio" name="activite" value="Hyperactif"/> Hyperactif : Niveau hyperactif d'activité psychomotrice avec labilité de l'humeur, agitation et/ou refus de coopérer</label>
-  <label><input type="radio" name="activite" value="Hypoactif"/> Hypoactif : Niveau hypoactif d'activité psychomotrice avec lenteur et léthargie approchant la stupeur</label>
-  <label><input type="radio" name="activite" value="Niveau mixte"/> Niveau mixte d'activité : Niveau normal d'activité psychomotrice ou fluctuation rapide</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset class="hidden" id="specificateurs">
+<legend>Especificadores</legend>
+<p class="subtitle">Especificar el curso y el nivel de actividad psicomotora</p>
+<p style="margin-top: 10px;"><strong>Cours :</strong></p>
+<label>Agudo: Durante algunas horas o días</label>
+<label>Persistente: Durante semanas o meses</label>
+<p style="margin-top: 15px;"><strong>Niveau d'activité psychomotrice :</strong></p>
+<label>Hiperactivo: Nivel hiperactivo de actividad psicomotora con labilidad del estado de ánimo, agitación y/o negativa a cooperar</label>
+<label>Hipoadactivo: Nivel hipoadactivo de actividad psicomotora con lentitud y letargo que se aproxima a la estupor.</label>
+<label>Nivel mixto de actividad: Nivel normal de actividad psicomotora o fluctuación rápida</label>
+<button onclick="afficherResume()" type="button">✔️ Terminar</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let choix={critereA:[],critereB:[],critereC:[],critereD:[],critereE:[],etiologie:"",substance:"",severite:"",cours:"",activite:""};
 
@@ -341,15 +322,10 @@ function genererResume(){
   document.getElementById("resultat").innerHTML=h;
 }
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
-
-
-
-
 <script>
 function validerFormulaire() {
   // Cette fonction sera remplacee dynamiquement par Django en mode validation
@@ -361,6 +337,5 @@ function nonValiderFormulaire() {
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
-
 </body>
 </html>

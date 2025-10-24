@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Évaluation Trouble Anxiété Sociale – DSM-5-TR</title>
-  <style>
+<meta charset="utf-8"/>
+<title>Evaluación del Trastorno de Ansiedad Social – DSM-5-TR</title>
+<style>
   .top-bar {
     display: flex;
     align-items: center;
@@ -105,134 +106,117 @@
       font-style: italic;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-
 <div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble Anxiété Sociale (Phobie Sociale) – DSM-5-TR</h2>
-  </div>
+<div class="titre-centre">
+<h1>CLÍNICA LA VALLE</h1>
+<h2>Evaluación del Trastorno de Ansiedad Social (Fobia Social) – DSM-5-TR</h2>
 </div>
-
+</div>
 <form id="formulaire">
-
 <!-- Critère A -->
 <fieldset id="critereA">
-  <legend>Critère A – Peur ou anxiété marquée dans des situations sociales</legend>
-  <p class="subtitle">Peur ou anxiété marquée à propos d'une ou plusieurs situations sociales dans lesquelles la personne est exposée à l'observation attentive d'autrui</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants, l'anxiété doit survenir en présence de pairs et pas seulement lors d'interactions avec des adultes.
+<legend>Criterio A – Miedo o ansiedad marcada en situaciones sociales</legend>
+<p class="subtitle">Miedo o ansiedad marcada acerca de una o varias situaciones sociales en las que la persona está expuesta a la observación atenta de otros.</p>
+<div class="note-box">
+<strong>Note :</strong> Chez les enfants, l'anxiété doit survenir en présence de pairs et pas seulement lors d'interactions avec des adultes.
   </div>
-  <label><input type="checkbox" name="critereA" value="Interactions sociales (avoir une conversation, rencontrer des personnes non familières)"/> Interactions sociales (avoir une conversation, rencontrer des personnes non familières)</label>
-  <label><input type="checkbox" name="critereA" value="Être observé(e) (manger ou boire)"/> Être observé(e) (manger ou boire)</label>
-  <label><input type="checkbox" name="critereA" value="Performer devant d'autres personnes (faire un discours)"/> Performer devant d'autres personnes (faire un discours)</label>
-  <label><input type="checkbox" name="critereA" value="Autres situations sociales avec observation possible"/> Autres situations sociales avec observation possible</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<label>Interacciones sociales (tener una conversación, conocer personas no familiares)</label>
+<label>Ser observado(a) (comer o beber)</label>
+<label>Realizar frente a otras personas (dar un discurso)</label>
+<label>Otras situaciones sociales con observación posible</label>
+<button onclick="validerCritereA()" type="button">✔️ Validar el criterio A</button>
 </fieldset>
-
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Peur d'être évalué(e) négativement</legend>
-  <p class="subtitle">La personne craint d'agir ou de montrer des symptômes d'anxiété qui seront évalués négativement</p>
-  <label><input type="checkbox" name="critereB" value="Peur d'être humilié(e)"/> Peur d'être humilié(e)</label>
-  <label><input type="checkbox" name="critereB" value="Peur d'être embarrassé(e)"/> Peur d'être embarrassé(e)</label>
-  <label><input type="checkbox" name="critereB" value="Peur d'être rejeté(e)"/> Peur d'être rejeté(e)</label>
-  <label><input type="checkbox" name="critereB" value="Peur d'offenser les autres"/> Peur d'offenser les autres</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset class="hidden" id="critereB">
+<legend>Criterio B – Miedo a ser evaluado(a) negativamente</legend>
+<p class="subtitle">La persona teme actuar o mostrar síntomas de ansiedad que serán evaluados negativamente.</p>
+<label>Miedo a ser humillado(a)</label>
+<label>Miedo a sentirse avergonzado(a)</label>
+<label>Miedo a ser rechazado(a)</label>
+<label>Miedo de ofender a los demás</label>
+<button onclick="validerCritereB()" type="button">✔️ Validar el criterio B</button>
 </fieldset>
-
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Provocation constante de peur ou d'anxiété</legend>
-  <p class="subtitle">Les situations sociales provoquent presque toujours la peur ou l'anxiété</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants, la peur ou l'anxiété peut s'exprimer par des pleurs, des crises de colère, un figement, un agrippement, un retrait ou l'incapacité de parler dans les situations sociales.
+<fieldset class="hidden" id="critereC">
+<legend>Criterio C – Provocación constante de miedo o ansiedad</legend>
+<p class="subtitle">Las situaciones sociales casi siempre provocan miedo o ansiedad</p>
+<div class="note-box">
+<strong>Note :</strong> Chez les enfants, la peur ou l'anxiété peut s'exprimer par des pleurs, des crises de colère, un figement, un agrippement, un retrait ou l'incapacité de parler dans les situations sociales.
   </div>
-  <label><input type="checkbox" id="choixC" value="Les situations sociales provoquent presque toujours peur ou anxiété"/> Les situations sociales provoquent presque toujours peur ou anxiété</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<label>Las situaciones sociales casi siempre provocan miedo o ansiedad</label>
+<button onclick="validerCritereC()" type="button">✔️ Validar el criterio C</button>
 </fieldset>
-
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Évitement ou endurance avec détresse</legend>
-  <p class="subtitle">Les situations sociales sont évitées ou endurées avec peur ou anxiété intense</p>
-  <label><input type="checkbox" name="critereD" value="Les situations sont évitées"/> Les situations sont évitées</label>
-  <label><input type="checkbox" name="critereD" value="Les situations sont endurées avec peur ou anxiété intense"/> Les situations sont endurées avec peur ou anxiété intense</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset class="hidden" id="critereD">
+<legend>Criterio D – Evitación o resistencia con angustia</legend>
+<p class="subtitle">Las situaciones sociales se evitan o se soportan con miedo o ansiedad intensa.</p>
+<label>Las situaciones se evitan</label>
+<label>Las situaciones se soportan con miedo o ansiedad intensa</label>
+<button onclick="validerCritereD()" type="button">✔️ Validar el criterio D</button>
 </fieldset>
-
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Peur ou anxiété disproportionnée</legend>
-  <p class="subtitle">La peur ou l'anxiété est disproportionnée par rapport à la menace réelle</p>
-  <label><input type="checkbox" name="critereE" value="Disproportionnée par rapport à la menace réelle posée par la situation sociale"/> Disproportionnée par rapport à la menace réelle posée par la situation sociale</label>
-  <label><input type="checkbox" name="critereE" value="Disproportionnée par rapport au contexte socioculturel"/> Disproportionnée par rapport au contexte socioculturel</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
+<fieldset class="hidden" id="critereE">
+<legend>Criterio E – Miedo o ansiedad desproporcionados</legend>
+<p class="subtitle">El miedo o la ansiedad es desproporcionado en relación con la amenaza real</p>
+<label>Desproporcionada en relación con la amenaza real que plantea la situación social</label>
+<label>Desproporcionada en relación con el contexto sociocultural</label>
+<button onclick="validerCritereE()" type="button">✔️ Validar el criterio E</button>
 </fieldset>
-
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Durée (6 mois ou plus)</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement est persistant, durant typiquement 6 mois ou plus</p>
-  <label><input type="checkbox" id="choixF" value="Symptômes persistants depuis 6 mois ou plus"/> Symptômes persistants depuis 6 mois ou plus</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
+<fieldset class="hidden" id="critereF">
+<legend>Criterio F – Duración (6 meses o más)</legend>
+<p class="subtitle">El miedo, la ansiedad o la evitación son persistentes, durando típicamente 6 meses o más.</p>
+<label>Síntomas persistentes durante 6 meses o más</label>
+<button onclick="validerCritereF()" type="button">✔️ Validar el criterio F</button>
 </fieldset>
-
 <!-- Critère G -->
-<fieldset id="critereG" class="hidden">
-  <legend>Critère G – Détresse ou altération du fonctionnement</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement cause une détresse ou altération cliniquement significative</p>
-  <label><input type="checkbox" name="critereG" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
-  <label><input type="checkbox" name="critereG" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
-  <label><input type="checkbox" name="critereG" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <label><input type="checkbox" name="critereG" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
+<fieldset class="hidden" id="critereG">
+<legend>Criterio G – Angustia o alteración del funcionamiento</legend>
+<p class="subtitle">El miedo, la ansiedad o la evitación causan un malestar o alteración clínicamente significativa</p>
+<label>Dificultad clínicamente significativa</label>
+<label>Alteración del funcionamiento social</label>
+<label>Alteración del funcionamiento profesional</label>
+<label>Alteración en otros ámbitos importantes del funcionamiento</label>
+<button onclick="validerCritereG()" type="button">✔️ Validar el criterio G</button>
 </fieldset>
-
 <!-- Critère H -->
-<fieldset id="critereH" class="hidden">
-  <legend>Critère H – Exclusion des causes organiques</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
-  <label><input type="checkbox" name="critereH" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereH" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale</label>
-  <button type="button" onclick="validerCritereH()">✔️ Valider le critère H</button>
+<fieldset class="hidden" id="critereH">
+<legend>Criterio H – Exclusión de las causas orgánicas</legend>
+<p class="subtitle">El miedo, la ansiedad o la evitación no son atribuibles a los efectos fisiológicos de una sustancia o de una afección médica.</p>
+<label>No atribuible a una sustancia (droga, medicamento)</label>
+<label>No atribuible a una afección médica</label>
+<button onclick="validerCritereH()" type="button">✔️ Validar el criterio H</button>
 </fieldset>
-
 <!-- Critère I -->
-<fieldset id="critereI" class="hidden">
-  <legend>Critère I – Diagnostic différentiel</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereI" value="Pas mieux expliqué par le trouble panique"/> Pas mieux expliqué par le trouble panique</label>
-  <label><input type="checkbox" name="critereI" value="Pas mieux expliqué par la dysmorphophobie"/> Pas mieux expliqué par la dysmorphophobie (trouble dysmorphique corporel)</label>
-  <label><input type="checkbox" name="critereI" value="Pas mieux expliqué par le trouble du spectre de l'autisme"/> Pas mieux expliqué par le trouble du spectre de l'autisme</label>
-  <button type="button" onclick="validerCritereI()">✔️ Valider le critère I</button>
+<fieldset class="hidden" id="critereI">
+<legend>Criterio I – Diagnóstico diferencial</legend>
+<p class="subtitle">El miedo, la ansiedad o la evitación no se explican mejor por otro trastorno mental.</p>
+<label>No mejor explicado por el trastorno de pánico</label>
+<label>No mejor explicado por la dismorfia corporal (trastorno dismórfico corporal)</label>
+<label>No mejor explicado por el trastorno del espectro autista.</label>
+<button onclick="validerCritereI()" type="button">✔️ Validar el criterio I</button>
 </fieldset>
-
 <!-- Critère J -->
-<fieldset id="critereJ" class="hidden">
-  <legend>Critère J – Affection médicale concomitante</legend>
-  <p class="subtitle">Si une autre affection médicale est présente, la peur/anxiété/évitement est clairement non liée ou excessive</p>
-  <label><input type="checkbox" name="critereJ" value="Pas d'affection médicale présente"/> Pas d'affection médicale présente</label>
-  <label><input type="checkbox" name="critereJ" value="Affection médicale présente mais peur/anxiété clairement non liée ou excessive"/> Affection médicale présente (maladie de Parkinson, obésité, défiguration) mais peur/anxiété clairement non liée ou excessive</label>
-  <button type="button" onclick="validerCritereJ()">✔️ Valider le critère J</button>
+<fieldset class="hidden" id="critereJ">
+<legend>Criterio J – Afección médica concomitante</legend>
+<p class="subtitle">Si hay otra afección médica presente, el miedo/la ansiedad/el evitamiento es claramente no relacionado o excesivo.</p>
+<label>No hay afección médica presente</label>
+<label>Afección médica presente (enfermedad de Parkinson, obesidad, desfiguración) pero miedo/ansiedad claramente no relacionada o excesiva</label>
+<button onclick="validerCritereJ()" type="button">✔️ Validar el criterio J</button>
 </fieldset>
-
 <!-- Spécificateur -->
-<fieldset id="specificateur" class="hidden">
-  <legend>Spécificateur</legend>
-  <p class="subtitle">Préciser si la peur est limitée à la performance</p>
-  <label><input type="checkbox" name="specificateur" value="Performance uniquement"/> <strong>Performance uniquement :</strong> Si la peur est limitée à parler ou performer en public</label>
-  <button type="button" onclick="validerSpecificateur()">✔️ Valider le spécificateur</button>
+<fieldset class="hidden" id="specificateur">
+<legend>Especificador</legend>
+<p class="subtitle">Especificar si el miedo está limitado al rendimiento</p>
+<label>Si el miedo se limita a hablar o actuar en público</label>
+<button onclick="validerSpecificateur()" type="button">✔️ Validar el especificador</button>
 </fieldset>
-
 </form>
-
 <div id="resultat"></div>
-
 <script>
 let tousLesChoix = {
   critereA: [],
@@ -449,10 +433,9 @@ function nonValiderFormulaire() {
 }
 
 </script>
-
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
-  <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
-  <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
+<p>CLÍNICA LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
+<p>Fecha: 15/10/2025 —</p>
 </footer>
 </body>
 </html>
