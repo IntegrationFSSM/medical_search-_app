@@ -2,7 +2,7 @@ Django==5.2.3
 openai==2.6.0
 numpy==1.26.4
 python-dotenv==1.0.1
-beautifulsoup4==4.12.3
+polib==1.2.0
 
 # Heroku deployment
 gunicorn==21.2.0

@@ -66,19 +66,37 @@ def about(request):
 
 def view_pathology(request, html_path):
     """
-    Afficher le contenu HTML d'une pathologie avec traduction automatique.
+    Afficher le contenu HTML d'une pathologie avec support i18n Django.
     """
     from django.conf import settings
     from django.http import HttpResponse, Http404
     from django.utils.translation import get_language
-    from .translation_service import HTMLTranslationService
     import os
     
     try:
-        # Construire le chemin complet vers le fichier HTML
-        full_path = os.path.join(settings.EMBEDDINGS_FOLDER, html_path)
+        # Détecter la langue active
+        current_lang = get_language()  # 'fr', 'en', 'es', etc.
         
-        # Vérifier que le fichier existe et est dans le dossier autorisé
+        # Construire le chemin avec la langue
+        # Structure: Embedding/fr/..., Embedding/en/..., Embedding/es/...
+        if current_lang and current_lang != 'fr':
+            # Essayer d'abord avec la langue spécifique
+            lang_path = os.path.join(settings.EMBEDDINGS_FOLDER, current_lang, html_path)
+            if os.path.exists(lang_path):
+                full_path = lang_path
+            else:
+                # Fallback sur français si traduction non disponible
+                full_path = os.path.join(settings.EMBEDDINGS_FOLDER, 'fr', html_path)
+                if not os.path.exists(full_path):
+                    # Fallback final sur le chemin original (sans sous-dossier langue)
+                    full_path = os.path.join(settings.EMBEDDINGS_FOLDER, html_path)
+        else:
+            # Français : chercher dans fr/ puis à la racine
+            full_path = os.path.join(settings.EMBEDDINGS_FOLDER, 'fr', html_path)
+            if not os.path.exists(full_path):
+                full_path = os.path.join(settings.EMBEDDINGS_FOLDER, html_path)
+        
+        # Vérifier que le fichier existe
         if not os.path.exists(full_path):
             raise Http404("Page HTML non trouvée")
         
@@ -86,21 +104,9 @@ def view_pathology(request, html_path):
         if not os.path.abspath(full_path).startswith(os.path.abspath(settings.EMBEDDINGS_FOLDER)):
             raise Http404("Accès non autorisé")
         
-        # Détecter la langue active
-        current_lang = get_language()  # 'fr', 'en', 'es', etc.
-        
-        # Si ce n'est pas français, traduire avec le service
-        if current_lang and current_lang != 'fr':
-            translation_service = HTMLTranslationService()
-            html_content = translation_service.translate_html_page(html_path, current_lang)
-            if html_content is None:
-                # Fallback sur l'original si erreur
-                with open(full_path, 'r', encoding='utf-8') as f:
-                    html_content = f.read()
-        else:
-            # Lire le contenu HTML original (français)
-            with open(full_path, 'r', encoding='utf-8') as f:
-                html_content = f.read()
+        # Lire le contenu HTML
+        with open(full_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
         
         # Si chargé dans une iframe (mode validation), injecter le script de communication
         if request.GET.get('mode') == 'validation' or 'validate' in request.META.get('HTTP_REFERER', ''):
