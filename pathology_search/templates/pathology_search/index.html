@@ -6,12 +6,160 @@
         <i class="fas fa-stethoscope text-purple-600 mr-2"></i>
         Recherche de Pathologies Médicales
     </h1>
-    <p class="text-sm sm:text-base text-gray-600">Entrez une description clinique ou une question pour identifier les pathologies correspondantes</p>
+    <p class="text-sm sm:text-base text-gray-600">Sélectionnez un patient puis entrez une description clinique pour identifier les pathologies correspondantes</p>
+</div>
+
+<!-- Patient Selection Section -->
+<div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg shadow-md p-4 sm:p-6 mb-6 border-l-4 border-purple-500">
+    <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-gray-800 flex items-center">
+            <i class="fas fa-user-md text-purple-600 mr-2"></i>
+            Sélection du Patient
+        </h3>
+        <button 
+            type="button" 
+            onclick="openCreatePatientModal()"
+            class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center text-sm"
+        >
+            <i class="fas fa-user-plus mr-2"></i>
+            Nouveau Patient
+        </button>
+    </div>
+    
+    <div class="space-y-3">
+        <label for="patientSelect" class="block text-sm font-medium text-gray-700">
+            <i class="fas fa-search mr-1"></i> Rechercher et sélectionner un patient
+        </label>
+        <select 
+            id="patientSelect" 
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white"
+            required
+        >
+            <option value="">-- Sélectionnez un patient --</option>
+        </select>
+        
+        <!-- Patient Info Display -->
+        <div id="patientInfo" class="hidden mt-3 p-4 bg-white rounded-lg border-l-4 border-green-500">
+            <h4 class="font-semibold text-gray-800 mb-2">
+                <i class="fas fa-info-circle text-green-600 mr-2"></i>
+                Informations du patient
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div>
+                    <span class="text-gray-600">Nom complet :</span>
+                    <span class="font-semibold ml-2" id="patientNomComplet"></span>
+                </div>
+                <div>
+                    <span class="text-gray-600">N° Dossier :</span>
+                    <span class="font-semibold ml-2" id="patientNumeroDossier"></span>
+                </div>
+                <div>
+                    <span class="text-gray-600">Date de naissance :</span>
+                    <span class="font-semibold ml-2" id="patientDateNaissance"></span>
+                </div>
+                <div>
+                    <span class="text-gray-600">Téléphone :</span>
+                    <span class="font-semibold ml-2" id="patientTelephone"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Patient Modal -->
+<div id="createPatientModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 sm:p-6 rounded-t-lg">
+            <h3 class="text-xl font-bold flex items-center">
+                <i class="fas fa-user-plus mr-2"></i>
+                Nouveau Patient
+            </h3>
+        </div>
+        
+        <form id="createPatientForm" class="p-4 sm:p-6 space-y-4">
+            <div>
+                <label for="patientNom" class="block text-sm font-medium text-gray-700 mb-1">
+                    Nom <span class="text-red-500">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="patientNom" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                    required
+                />
+            </div>
+            
+            <div>
+                <label for="patientPrenom" class="block text-sm font-medium text-gray-700 mb-1">
+                    Prénom <span class="text-red-500">*</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="patientPrenom" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                    required
+                />
+            </div>
+            
+            <div>
+                <label for="patientDateNaissance" class="block text-sm font-medium text-gray-700 mb-1">
+                    Date de naissance
+                </label>
+                <input 
+                    type="date" 
+                    id="patientDateNaissance" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                />
+            </div>
+            
+            <div>
+                <label for="patientTelephone" class="block text-sm font-medium text-gray-700 mb-1">
+                    Téléphone
+                </label>
+                <input 
+                    type="tel" 
+                    id="patientTelephone" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                    placeholder="06XXXXXXXX"
+                />
+            </div>
+            
+            <div>
+                <label for="patientEmail" class="block text-sm font-medium text-gray-700 mb-1">
+                    Email
+                </label>
+                <input 
+                    type="email" 
+                    id="patientEmail" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                />
+            </div>
+            
+            <div class="flex gap-3 pt-4">
+                <button 
+                    type="button" 
+                    onclick="closeCreatePatientModal()"
+                    class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-4 rounded-lg transition"
+                >
+                    Annuler
+                </button>
+                <button 
+                    type="submit" 
+                    class="flex-1 gradient-bg text-white font-semibold py-3 px-4 rounded-lg hover:opacity-90 transition"
+                >
+                    <i class="fas fa-save mr-2"></i>
+                    Créer
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <!-- Search Form -->
 <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
     <form id="searchForm" class="space-y-3 sm:space-y-4">
+        <input type="hidden" id="selectedPatientId" value="">
+        
         <div>
             <label for="query" class="block text-sm font-medium text-gray-700 mb-2">
                 <i class="fas fa-clipboard-list mr-1"></i> Description Clinique ou Question
@@ -535,6 +683,283 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+// ============ GESTION DES PATIENTS ============
+
+let currentPatients = [];
+let selectedPatient = null;
+
+// Charger la liste des patients au chargement de la page
+document.addEventListener('DOMContentLoaded', async function() {
+    await loadPatients();
+});
+
+async function loadPatients() {
+    try {
+        const response = await fetch('/api/patients/');
+        const data = await response.json();
+        
+        if (data.success) {
+            currentPatients = data.patients;
+            populatePatientSelect();
+        }
+    } catch (error) {
+        console.error('Erreur lors du chargement des patients:', error);
+    }
+}
+
+function populatePatientSelect() {
+    const select = document.getElementById('patientSelect');
+    // Garder la première option
+    select.innerHTML = '<option value="">-- Sélectionnez un patient --</option>';
+    
+    currentPatients.forEach(patient => {
+        const option = document.createElement('option');
+        option.value = patient.id;
+        option.textContent = `${patient.nom_complet} (${patient.numero_dossier})`;
+        option.dataset.patient = JSON.stringify(patient);
+        select.appendChild(option);
+    });
+}
+
+// Gérer la sélection d'un patient
+document.getElementById('patientSelect').addEventListener('change', function(e) {
+    const selectedOption = e.target.selectedOptions[0];
+    
+    if (selectedOption.value) {
+        selectedPatient = JSON.parse(selectedOption.dataset.patient);
+        document.getElementById('selectedPatientId').value = selectedPatient.id;
+        
+        // Afficher les informations du patient
+        document.getElementById('patientNomComplet').textContent = selectedPatient.nom_complet;
+        document.getElementById('patientNumeroDossier').textContent = selectedPatient.numero_dossier;
+        document.getElementById('patientDateNaissance').textContent = selectedPatient.date_naissance ? new Date(selectedPatient.date_naissance).toLocaleDateString('fr-FR') : 'Non renseignée';
+        document.getElementById('patientTelephone').textContent = selectedPatient.telephone || 'Non renseigné';
+        document.getElementById('patientInfo').classList.remove('hidden');
+    } else {
+        selectedPatient = null;
+        document.getElementById('selectedPatientId').value = '';
+        document.getElementById('patientInfo').classList.add('hidden');
+    }
+});
+
+// Modal de création de patient
+function openCreatePatientModal() {
+    document.getElementById('createPatientModal').classList.remove('hidden');
+}
+
+function closeCreatePatientModal() {
+    document.getElementById('createPatientModal').classList.add('hidden');
+    document.getElementById('createPatientForm').reset();
+}
+
+// Créer un nouveau patient
+document.getElementById('createPatientForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const patientData = {
+        nom: document.getElementById('patientNom').value,
+        prenom: document.getElementById('patientPrenom').value,
+        date_naissance: document.getElementById('patientDateNaissance').value || null,
+        telephone: document.getElementById('patientTelephone').value,
+        email: document.getElementById('patientEmail').value
+    };
+    
+    try {
+        const response = await fetch('/api/patients/create/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify(patientData)
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Patient créé !',
+                text: `${data.patient.nom_complet} a été ajouté avec le n° ${data.patient.numero_dossier}`,
+                confirmButtonColor: '#667eea'
+            });
+            
+            // Recharger la liste des patients
+            await loadPatients();
+            
+            // Sélectionner automatiquement le nouveau patient
+            document.getElementById('patientSelect').value = data.patient.id;
+            document.getElementById('patientSelect').dispatchEvent(new Event('change'));
+            
+            // Fermer le modal
+            closeCreatePatientModal();
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur',
+                text: data.error,
+                confirmButtonColor: '#667eea'
+            });
+        }
+    } catch (error) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur',
+            text: 'Erreur lors de la création du patient: ' + error.message,
+            confirmButtonColor: '#667eea'
+        });
+    }
+});
+
+// Modifier la validation du formulaire de recherche pour inclure le patient
+const originalSearchFormSubmit = document.getElementById('searchForm').onsubmit;
+document.getElementById('searchForm').onsubmit = null;
+
+document.getElementById('searchForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Vérifier qu'un patient est sélectionné
+    if (!selectedPatient) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Patient requis',
+            text: 'Veuillez sélectionner un patient avant de lancer la recherche.',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
+    
+    const query = document.getElementById('query').value.trim();
+    const top_k = document.getElementById('top_k').value;
+    const aggregation = document.getElementById('aggregation').value;
+    const useValidation = document.getElementById('useValidation').value === 'true';
+    
+    // Validation de la requête - minimum 3 caractères
+    if (query.length < 3) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Requête trop courte',
+            text: 'Veuillez entrer au moins 3 caractères.',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
+    
+    // Vérifier que ce n'est pas juste des caractères spéciaux ou symboles
+    const hasLetters = /[a-zA-ZÀ-ÿ]/.test(query);
+    if (!hasLetters) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Requête invalide',
+            text: 'Veuillez entrer des mots (lettres), pas seulement des symboles.',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
+    
+    // Show loading, hide errors and results
+    document.getElementById('loadingIndicator').classList.remove('hidden');
+    document.getElementById('errorMessage').classList.add('hidden');
+    document.getElementById('diagnosticSummary').classList.add('hidden');
+    document.getElementById('results').innerHTML = '';
+    
+    // Start progress animation
+    simulateProgress();
+    
+    try {
+        const response = await fetch('{% url "pathology_search:search" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({ 
+                query, 
+                top_k, 
+                aggregation,
+                use_validation: useValidation,
+                patient_id: selectedPatient.id  // Ajouter l'ID du patient
+            })
+        });
+        
+        const data = await response.json();
+        
+        // Complete progress and hide loading
+        completeProgress();
+        
+        if (data.success) {
+            // Si mode validation, rediriger vers la page de validation
+            if (data.use_validation) {
+                window.location.href = data.redirect_url;
+                return;
+            }
+            
+            // Sinon afficher les résultats normalement
+            // Update files count with actual number
+            if (data.total_files_searched) {
+                document.getElementById('filesProcessed').textContent = data.total_files_searched;
+            }
+            displayResults(data);
+        } else {
+            // Vérifier si c'est une erreur de requête invalide (validation GPT-4o)
+            if (data.error_type === 'invalid_query') {
+                document.getElementById('loadingIndicator').classList.add('hidden');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Requête Non Valide',
+                    text: 'Votre requête n\'est pas une description médicale valide. Veuillez décrire des symptômes réels.',
+                    confirmButtonText: 'Réessayer',
+                    confirmButtonColor: '#667eea'
+                });
+            }
+            // Vérifier si c'est une erreur de similarité faible
+            else if (data.error_type === 'low_similarity') {
+                document.getElementById('loadingIndicator').classList.add('hidden');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Correspondance Insuffisante',
+                    html: `
+                        <div class="text-left p-4">
+                            <p class="text-gray-700 mb-4">
+                                <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                                La description fournie ne correspond à aucune pathologie dans notre base de données.
+                            </p>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                                <p class="text-sm text-yellow-800">
+                                    <strong>Score de correspondance :</strong> ${data.best_score ? data.best_score.toFixed(1) : 0}%
+                                    <br>
+                                    <strong>Seuil minimum requis :</strong> 60%
+                                </p>
+                            </div>
+                            <p class="text-gray-700 font-semibold mb-2">Votre description pourrait être :</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1 ml-2">
+                                <li>❌ <strong>Incomplète</strong> : Manque de détails cliniques importants</li>
+                                <li>❌ <strong>Imprécise</strong> : Symptômes trop vagues ou généraux</li>
+                                <li>❌ <strong>Incorrecte</strong> : Ne correspond à aucune pathologie connue</li>
+                            </ul>
+                            <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+                                <p class="text-sm text-blue-800">
+                                    <i class="fas fa-lightbulb mr-2"></i>
+                                    <strong>Conseil :</strong> Décrivez les symptômes de manière précise et détaillée (durée, fréquence, intensité, contexte).
+                                </p>
+                            </div>
+                        </div>
+                    `,
+                    confirmButtonText: 'Réessayer',
+                    confirmButtonColor: '#667eea',
+                    width: '600px'
+                });
+            } else {
+                showError(data.error);
+            }
+        }
+    } catch (error) {
+        document.getElementById('loadingIndicator').classList.add('hidden');
+        showError('Erreur de connexion: ' + error.message);
+    }
+});
+
 </script>
 {% endblock %}
 
