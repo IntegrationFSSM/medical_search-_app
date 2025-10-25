@@ -16,6 +16,71 @@ class PathologySearchService:
         self.embedding_model = settings.EMBEDDING_MODEL
         self.embeddings_folder = settings.EMBEDDINGS_FOLDER
     
+    def validate_medical_query(self, query):
+        """
+        Valider si une requête est une description médicale valide en utilisant GPT-4o.
+        
+        Args:
+            query: Texte de la requête à valider
+            
+        Returns:
+            dict: {
+                'is_valid': bool,
+                'reason': str (si non valide)
+            }
+        """
+        try:
+            prompt = f"""Tu es un expert médical. Analyse la requête suivante et détermine si c'est une description médicale valide pour rechercher une pathologie dans le DSM-5-TR.
+
+Requête: "{query}"
+
+Critères d'une requête VALIDE:
+- Décrit des symptômes, comportements, ou états psychologiques précis
+- Mentionne une durée, fréquence, ou contexte clinique
+- Est suffisamment détaillée (au moins 10 mots)
+- Est en lien avec la santé mentale ou comportementale
+
+Critères d'une requête NON VALIDE:
+- Texte sans sens (blabla, mots aléatoires, etc.)
+- Trop courte ou vague
+- Pas de lien avec la médecine/santé mentale
+- Test ou spam
+
+Réponds UNIQUEMENT par un JSON au format suivant (sans aucun autre texte):
+{{
+    "is_valid": true/false,
+    "reason": "Explication courte si non valide (sinon null)"
+}}"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3,
+                max_tokens=200
+            )
+            
+            result_text = response.choices[0].message.content.strip()
+            
+            # Parser le JSON
+            import json
+            result = json.loads(result_text)
+            
+            return {
+                'is_valid': result.get('is_valid', False),
+                'reason': result.get('reason', 'Requête invalide')
+            }
+            
+        except Exception as e:
+            print(f"❌ Erreur validation: {e}")
+            # En cas d'erreur, on laisse passer pour ne pas bloquer
+            return {
+                'is_valid': True,
+                'reason': None
+            }
+    
     def get_embedding(self, text):
         """Obtenir l'embedding d'un texte via l'API OpenAI."""
         text = text.replace("\n", " ")

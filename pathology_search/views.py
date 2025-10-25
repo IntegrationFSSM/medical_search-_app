@@ -32,8 +32,19 @@ def search(request):
                 'error': 'La requête ne peut pas être vide'
             }, status=400)
         
-        # Effectuer la recherche
+        # ÉTAPE 1: Valider la requête avec GPT-4o AVANT la recherche
         service = PathologySearchService()
+        validation_result = service.validate_medical_query(query)
+        
+        if not validation_result['is_valid']:
+            return JsonResponse({
+                'success': False,
+                'error': 'Requête non valide',
+                'error_type': 'invalid_query',
+                'reason': validation_result['reason']
+            })
+        
+        # ÉTAPE 2: Si valide, effectuer la recherche
         search_results = service.find_best_match(
             query=query,
             top_k=top_k,
