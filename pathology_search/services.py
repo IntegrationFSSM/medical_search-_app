@@ -30,23 +30,26 @@ class PathologySearchService:
             }
         """
         try:
-            prompt = f"""Tu es un expert médical. Analyse la requête suivante et détermine si c'est une description médicale valide pour rechercher une pathologie dans le DSM-5-TR.
+            prompt = f"""Tu es un validateur médical. Analyse la requête suivante et détermine si elle contient un réel contenu médical OU du texte sans sens.
 
 Requête: "{query}"
 
-Critères d'une requête VALIDE:
-- Décrit des symptômes, comportements, ou états psychologiques précis
-- Mentionne une durée, fréquence, ou contexte clinique
-- Est suffisamment détaillée (au moins 10 mots)
-- Est en lien avec la santé mentale ou comportementale
+ACCEPTE (is_valid = true) si la requête:
+- Mentionne des symptômes, troubles, comportements ou conditions médicales
+- Décrit une situation clinique (même simple)
+- Est liée à la santé mentale ou comportementale
+- Contient des mots français/anglais normaux avec du sens médical
+- Exemples VALIDES: "homme alcoolique", "enfant anxieux", "troubles du sommeil", "dépression", "patient agressif"
 
-Critères d'une requête NON VALIDE:
-- Texte sans sens (blabla, mots aléatoires, etc.)
-- Trop courte ou vague
-- Pas de lien avec la médecine/santé mentale
-- Test ou spam
+REJETTE (is_valid = false) SEULEMENT si:
+- Mots répétitifs sans sens: "blabla blabla", "test test test", "aaaa aaaa"
+- Uniquement des symboles: ".....", "????", "!!!!"
+- Mots aléatoires sans rapport médical: "voiture maison arbre"
+- Texte incohérent ou spam évident
 
-Réponds UNIQUEMENT par un JSON au format suivant (sans aucun autre texte):
+IMPORTANT: Si la requête mentionne un terme médical/psychologique réel (même court), accepte-la !
+
+Réponds UNIQUEMENT par un JSON:
 {{
     "is_valid": true/false,
     "reason": "Explication courte si non valide (sinon null)"
