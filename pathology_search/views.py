@@ -25,12 +25,18 @@ def search(request):
         top_k = int(data.get('top_k', 5))
         aggregation = data.get('aggregation', 'max')
         use_validation = data.get('use_validation', False)  # Mode validation ou affichage normal
+        patient_id = data.get('patient_id')  # Récupérer l'ID du patient
         
         if not query:
             return JsonResponse({
                 'success': False,
                 'error': 'La requête ne peut pas être vide'
             }, status=400)
+        
+        # Sauvegarder l'ID du patient dans la session pour l'utiliser lors de la validation
+        if patient_id:
+            request.session['current_patient_id'] = patient_id
+            request.session.modified = True
         
         # ÉTAPE 1: Valider la requête avec GPT-4o AVANT la recherche
         service = PathologySearchService()
@@ -75,6 +81,53 @@ def about(request):
     return render(request, 'pathology_search/about.html')
 
 
+def print_report(request, consultation_id):
+    """
+    Générer un rapport imprimable de la consultation avec en-tête CLINIQUE LA VALLÉE.
+    """
+    try:
+        from .models import Consultation
+        from django.utils import timezone
+        
+        consultation = Consultation.objects.select_related('patient').get(id=consultation_id)
+        
+        context = {
+            'consultation': consultation,
+            'patient': consultation.patient,
+            'date_impression': timezone.now(),
+        }
+        
+        return render(request, 'pathology_search/print_report.html', context)
+        
+    except Consultation.DoesNotExist:
+        return render(request, 'pathology_search/index.html', {
+            'error': 'Consultation non trouvée.'
+        })
+
+
+def patient_history(request, patient_id):
+    """
+    Afficher l'historique des consultations d'un patient.
+    """
+    try:
+        from .models import Patient, Consultation
+        
+        patient = Patient.objects.get(id=patient_id)
+        consultations = Consultation.objects.filter(patient=patient).order_by('-date_consultation')
+        
+        context = {
+            'patient': patient,
+            'consultations': consultations,
+        }
+        
+        return render(request, 'pathology_search/patient_history.html', context)
+        
+    except Patient.DoesNotExist:
+        return render(request, 'pathology_search/index.html', {
+            'error': 'Patient non trouvé.'
+        })
+
+
 @require_http_methods(["GET"])
 def get_patients(request):
     """Récupérer la liste de tous les patients"""
@@ -113,7 +166,7 @@ def create_patient(request):
         
         # Générer un numéro de dossier unique
         last_patient = Patient.objects.order_by('-id').first()
-        if last_patient and last_patient.numero_dossier.startswith('PAT-2025-'):
+        if last_patient and last_patient.numero_dossier.startswith('EE-2025-'):
             try:
                 last_num = int(last_patient.numero_dossier.split('-')[-1])
                 new_num = last_num + 1
@@ -122,7 +175,7 @@ def create_patient(request):
         else:
             new_num = 1
         
-        numero_dossier = f'PAT-2025-{new_num:03d}'
+        numero_dossier = f'EE-2025-{new_num:03d}'
         
         # Convertir la date de naissance si fournie
         date_naissance = None
@@ -563,6 +616,36 @@ def validate_action(request):
         }
         request.session.modified = True
         
+        # Sauvegarder la consultation dans la base de données PostgreSQL
+        try:
+            from .models import Patient, Consultation
+            
+            # Récupérer l'ID du patient depuis la session
+            patient_id = request.session.get('current_patient_id')
+            query = request.session.get('search_query', '')
+            
+            if patient_id:
+                patient = Patient.objects.get(id=patient_id)
+                
+                # Créer la consultation
+                consultation = Consultation.objects.create(
+                    patient=patient,
+                    description_clinique=query,
+                    pathologie_identifiee=pathology_name,
+                    score_similarite=similarity_score / 100,  # Convertir en décimal (0-1)
+                    fichier_source=result.get('file_name', ''),
+                    criteres_valides=form_data,
+                    plan_traitement=diagnosis_result.get('diagnosis', ''),
+                    statut='valide'
+                )
+                
+                # Stocker l'ID de la consultation dans la session pour le rapport
+                request.session['diagnoses'][diagnosis_id]['consultation_id'] = str(consultation.id)
+                request.session.modified = True
+        except Exception as e:
+            # Si erreur, continuer quand même (ne pas bloquer l'utilisateur)
+            print(f"Erreur lors de la sauvegarde de la consultation: {e}")
+        
         return JsonResponse({
             'success': True,
             'action': 'validated',
@@ -613,6 +696,10 @@ def show_diagnosis(request, diagnosis_id):
     # Formater le diagnostic pour l'affichage
     diagnosis_text = diagnosis_result.get('diagnosis', '')
     
+    # Récupérer l'ID de consultation et du patient depuis la session
+    consultation_id = diagnosis_data.get('consultation_id')
+    patient_id = request.session.get('current_patient_id')
+    
     context = {
         'diagnosis_id': diagnosis_id,
         'diagnosis': diagnosis_text,
@@ -621,7 +708,9 @@ def show_diagnosis(request, diagnosis_id):
         'timestamp': diagnosis_result.get('timestamp', ''),
         'result': result,
         'form_data': form_data,
-        'success': diagnosis_result.get('success', False)
+        'success': diagnosis_result.get('success', False),
+        'consultation_id': consultation_id,
+        'patient_id': patient_id
     }
     
     return render(request, 'pathology_search/diagnosis.html', context)

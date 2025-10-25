@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport de Consultation - {{ patient.nom_complet }}</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+            @page {
+                margin: 1.5cm;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+            padding: 20px;
+        }
+        
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e5e7eb;
+        }
+        
+        /* En-tête */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 5px solid #f39c12;
+        }
+        
+        .clinic-name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .clinic-subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+        
+        .clinic-address {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 15px;
+        }
+        
+        /* Corps du document */
+        .content {
+            padding: 30px;
+        }
+        
+        .document-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #764ba2;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .info-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .info-value {
+            color: #2c3e50;
+            font-size: 15px;
+        }
+        
+        .text-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #764ba2;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+        
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .criteria-item {
+            background: #f0f4ff;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .criteria-label {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .criteria-value {
+            color: #2c3e50;
+        }
+        
+        /* Pied de page */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .footer-text {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .footer-separator {
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            margin: 15px 0;
+        }
+        
+        /* Bouton d'impression */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-button:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        .score-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.print()" class="print-button no-print">🖨️ Imprimer</button>
+    <a href="/" class="back-button no-print">⬅️ Accueil</a>
+    
+    <div class="report-container">
+        <!-- En-tête -->
+        <div class="header">
+            <div class="clinic-name">🏥 CLINIQUE LA VALLÉE</div>
+            <div class="clinic-subtitle">Centre de Santé Mentale et de Diagnostic Psychiatrique</div>
+            <div class="clinic-address">
+                📍 Av. de la Liberté, Casablanca - Maroc<br>
+                📞 +212 5XX-XXXXXX | 📧 contact@clinique-lavallee.ma
+            </div>
+        </div>
+        
+        <!-- Corps du document -->
+        <div class="content">
+            <div class="document-title">
+                RAPPORT DE CONSULTATION PSYCHIATRIQUE
+            </div>
+            
+            <!-- Informations patient -->
+            <div class="section">
+                <div class="section-title">👤 INFORMATIONS DU PATIENT</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Nom complet</div>
+                        <div class="info-value">{{ patient.nom_complet }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">N° Dossier</div>
+                        <div class="info-value">{{ patient.numero_dossier }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Date de naissance</div>
+                        <div class="info-value">
+                            {% if patient.date_naissance %}
+                                {{ patient.date_naissance|date:"d/m/Y" }} ({{ patient.date_naissance|timesince }} )
+                            {% else %}
+                                Non renseignée
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Téléphone</div>
+                        <div class="info-value">{{ patient.telephone|default:"Non renseigné" }}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Informations de consultation -->
+            <div class="section">
+                <div class="section-title">📋 INFORMATIONS DE LA CONSULTATION</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Date de consultation</div>
+                        <div class="info-value">{{ consultation.date_consultation|date:"d/m/Y à H:i" }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Date d'impression</div>
+                        <div class="info-value">{{ date_impression|date:"d/m/Y à H:i" }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Pathologie identifiée</div>
+                        <div class="info-value">{{ consultation.pathologie_identifiee }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Score de similarité</div>
+                        <div class="info-value">
+                            <span class="score-badge">{{ consultation.score_similarite|floatformat:1 }}%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Description clinique -->
+            <div class="section">
+                <div class="section-title">🩺 DESCRIPTION CLINIQUE</div>
+                <div class="text-content">{{ consultation.description_clinique }}</div>
+            </div>
+            
+            <!-- Critères diagnostiques validés -->
+            <div class="section">
+                <div class="section-title">✅ CRITÈRES DIAGNOSTIQUES VALIDÉS</div>
+                <ul class="criteria-list">
+                    {% for key, value in consultation.criteres_valides.items %}
+                        <li class="criteria-item">
+                            <div class="criteria-label">{{ key|title }}</div>
+                            <div class="criteria-value">{{ value }}</div>
+                        </li>
+                    {% empty %}
+                        <li class="criteria-item">
+                            <div class="criteria-value">Aucun critère spécifique validé</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <!-- Plan de traitement -->
+            <div class="section">
+                <div class="section-title">💊 PLAN DE TRAITEMENT RECOMMANDÉ</div>
+                <div class="text-content">{{ consultation.plan_traitement }}</div>
+            </div>
+        </div>
+        
+        <!-- Pied de page -->
+        <div class="footer">
+            <div class="footer-text">
+                Ce document est confidentiel et destiné exclusivement au patient et aux professionnels de santé autorisés.
+            </div>
+            <div class="footer-separator"></div>
+            <div class="footer-text">
+                CLINIQUE LA VALLÉE - Centre de Santé Mentale<br>
+                Rapport généré automatiquement le {{ date_impression|date:"d/m/Y à H:i" }}<br>
+                N° Consultation: {{ consultation.id }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

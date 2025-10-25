@@ -17,5 +17,8 @@ urlpatterns = [
     # API Patients
     path('api/patients/', views.get_patients, name='get_patients'),
     path('api/patients/create/', views.create_patient, name='create_patient'),
+    # Rapports et historique
+    path('print/<uuid:consultation_id>/', views.print_report, name='print_report'),
+    path('patient/<int:patient_id>/history/', views.patient_history, name='patient_history'),
 ]
 
