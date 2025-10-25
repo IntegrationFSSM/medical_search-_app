@@ -75,6 +75,91 @@ def about(request):
     return render(request, 'pathology_search/about.html')
 
 
+@require_http_methods(["GET"])
+def get_patients(request):
+    """Récupérer la liste de tous les patients"""
+    from .models import Patient
+    
+    try:
+        patients = Patient.objects.all()
+        patients_data = [
+            {
+                'id': patient.id,
+                'nom': patient.nom,
+                'prenom': patient.prenom,
+                'nom_complet': patient.nom_complet,
+                'numero_dossier': patient.numero_dossier,
+                'date_naissance': patient.date_naissance.isoformat() if patient.date_naissance else None,
+                'telephone': patient.telephone
+            }
+            for patient in patients
+        ]
+        return JsonResponse({'success': True, 'patients': patients_data})
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': f'Erreur lors de la récupération des patients: {str(e)}'
+        }, status=500)
+
+
+@require_http_methods(["POST"])
+def create_patient(request):
+    """Créer un nouveau patient"""
+    from .models import Patient
+    from datetime import datetime
+    
+    try:
+        data = json.loads(request.body)
+        
+        # Générer un numéro de dossier unique
+        last_patient = Patient.objects.order_by('-id').first()
+        if last_patient and last_patient.numero_dossier.startswith('PAT-2025-'):
+            try:
+                last_num = int(last_patient.numero_dossier.split('-')[-1])
+                new_num = last_num + 1
+            except:
+                new_num = 1
+        else:
+            new_num = 1
+        
+        numero_dossier = f'PAT-2025-{new_num:03d}'
+        
+        # Convertir la date de naissance si fournie
+        date_naissance = None
+        if data.get('date_naissance'):
+            try:
+                date_naissance = datetime.strptime(data['date_naissance'], '%Y-%m-%d').date()
+            except:
+                pass
+        
+        patient = Patient.objects.create(
+            nom=data.get('nom', '').strip().upper(),
+            prenom=data.get('prenom', '').strip().capitalize(),
+            date_naissance=date_naissance,
+            numero_dossier=numero_dossier,
+            telephone=data.get('telephone', '').strip(),
+            email=data.get('email', '').strip()
+        )
+        
+        return JsonResponse({
+            'success': True,
+            'patient': {
+                'id': patient.id,
+                'nom': patient.nom,
+                'prenom': patient.prenom,
+                'nom_complet': patient.nom_complet,
+                'numero_dossier': patient.numero_dossier,
+                'date_naissance': patient.date_naissance.isoformat() if patient.date_naissance else None,
+                'telephone': patient.telephone
+            }
+        })
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': f'Erreur lors de la création du patient: {str(e)}'
+        }, status=500)
+
+
 def view_pathology(request, html_path):
     """
     Afficher le contenu HTML d'une pathologie.
