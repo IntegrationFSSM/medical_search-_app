@@ -125,11 +125,30 @@
         
         .text-content {
             background: #f8f9fa;
-            padding: 15px;
+            padding: 20px;
             border-radius: 6px;
             border-left: 4px solid #764ba2;
-            line-height: 1.8;
-            white-space: pre-wrap;
+            line-height: 2;
+            font-size: 15px;
+            color: #2c3e50;
+        }
+        
+        .text-content p {
+            margin-bottom: 12px;
+        }
+        
+        .text-content strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .text-content ul, .text-content ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        .text-content li {
+            margin-bottom: 8px;
         }
         
         .criteria-list {
@@ -300,10 +319,8 @@
                         <div class="info-value">{{ consultation.pathologie_identifiee }}</div>
                     </div>
                     <div class="info-item">
-                        <div class="info-label">Score de similarité</div>
-                        <div class="info-value">
-                            <span class="score-badge">{{ consultation.score_similarite|floatformat:1 }}%</span>
-                        </div>
+                        <div class="info-label">Statut</div>
+                        <div class="info-value">{{ consultation.get_statut_display }}</div>
                     </div>
                 </div>
             </div>
@@ -320,8 +337,8 @@
                 <ul class="criteria-list">
                     {% for key, value in consultation.criteres_valides.items %}
                         <li class="criteria-item">
-                            <div class="criteria-label">{{ key|title }}</div>
-                            <div class="criteria-value">{{ value }}</div>
+                            <div class="criteria-label">{{ key|clean_text|title }}</div>
+                            <div class="criteria-value">{{ value|clean_text }}</div>
                         </li>
                     {% empty %}
                         <li class="criteria-item">
@@ -334,7 +351,7 @@
             <!-- Plan de traitement -->
             <div class="section">
                 <div class="section-title">💊 PLAN DE TRAITEMENT RECOMMANDÉ</div>
-                <div class="text-content">{{ consultation.plan_traitement }}</div>
+                <div class="text-content">{{ consultation.plan_traitement|clean_text|linebreaks|safe }}</div>
             </div>
         </div>
         
@@ -346,7 +363,6 @@
             <div class="footer-separator"></div>
             <div class="footer-text">
                 CLINIQUE LA VALLÉE - Centre de Santé Mentale<br>
-                Rapport généré automatiquement le {{ date_impression|date:"d/m/Y à H:i" }}<br>
                 N° Consultation: {{ consultation.id }}
             </div>
         </div>
