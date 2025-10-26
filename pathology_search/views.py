@@ -152,55 +152,77 @@ def search(request):
             first_result = search_results['results'][0]
             similarity = first_result.get('similarity', 0)
             
+            print(f"🎯 DEBUG Auto-validation: similarity = {similarity} (seuil = 0.75)")
+            
             # Si similarité >= 75%, auto-valider le premier résultat
             if similarity >= 0.75:
-                # Auto-valider directement
-                result = first_result
-                pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
-                similarity_score = result.get('similarity', 0) * 100
+                print(f"✅ AUTO-VALIDATION ACTIVÉE (similarité {similarity*100:.1f}% >= 75%)")
                 
-                # Extraire le texte médical du meilleur chunk
-                best_chunk_text = result.get('best_chunk_text', '')
-                
-                # Générer le diagnostic IA avec OpenAI
-                diagnosis_result = service.generate_ai_diagnosis(
-                    clinical_description=query,
-                    pathology_name=pathology_name,
-                    criteria={},  # Pas de critères validés dans le formulaire
-                    medical_text=best_chunk_text
-                )
-                
-                if diagnosis_result['success']:
-                    # Sauvegarder dans la base de données
-                    from .models import Patient, Medecin, Consultation
-                    import uuid
+                try:
+                    # Auto-valider directement
+                    result = first_result
+                    pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
+                    similarity_score = result.get('similarity', 0) * 100
                     
-                    patient_id = request.session.get('current_patient_id')
-                    medecin_id = request.session.get('current_medecin_id')
+                    # Extraire le texte médical du meilleur chunk
+                    best_chunk_text = result.get('best_chunk_text', '')
                     
-                    patient = Patient.objects.get(id=patient_id) if patient_id else None
-                    medecin = Medecin.objects.get(id=medecin_id) if medecin_id else None
+                    print(f"🔄 Génération du diagnostic IA pour: {pathology_name}")
                     
-                    diagnosis_id = uuid.uuid4()
-                    consultation = Consultation.objects.create(
-                        id=diagnosis_id,
-                        patient=patient,
-                        medecin=medecin,
-                        description_clinique=query,
-                        pathologie_identifiee=pathology_name,
-                        score_similarite=similarity_score / 100,
-                        fichier_source=result.get('file_name', ''),
-                        criteres_valides={},
-                        plan_traitement=diagnosis_result.get('diagnosis', ''),
-                        statut='complete'
+                    # Générer le diagnostic IA avec OpenAI
+                    diagnosis_result = service.generate_ai_diagnosis(
+                        clinical_description=query,
+                        pathology_name=pathology_name,
+                        criteria={},  # Pas de critères validés dans le formulaire
+                        medical_text=best_chunk_text
                     )
                     
-                    # Rediriger vers la page de diagnostic
-                    return JsonResponse({
-                        'success': True,
-                        'auto_validated': True,
-                        'redirect_url': f'/diagnosis/{diagnosis_id}/'
-                    })
+                    print(f"📊 Résultat génération: success={diagnosis_result.get('success')}")
+                    
+                    if diagnosis_result['success']:
+                        # Sauvegarder dans la base de données
+                        from .models import Patient, Medecin, Consultation
+                        import uuid
+                        
+                        patient_id = request.session.get('current_patient_id')
+                        medecin_id = request.session.get('current_medecin_id')
+                        
+                        patient = Patient.objects.get(id=patient_id) if patient_id else None
+                        medecin = Medecin.objects.get(id=medecin_id) if medecin_id else None
+                        
+                        diagnosis_id = uuid.uuid4()
+                        consultation = Consultation.objects.create(
+                            id=diagnosis_id,
+                            patient=patient,
+                            medecin=medecin,
+                            description_clinique=query,
+                            pathologie_identifiee=pathology_name,
+                            score_similarite=similarity_score / 100,
+                            fichier_source=result.get('file_name', ''),
+                            criteres_valides={},
+                            plan_traitement=diagnosis_result.get('diagnosis', ''),
+                            statut='complete'
+                        )
+                        
+                        print(f"💾 Consultation sauvegardée: {diagnosis_id}")
+                        
+                        # Rediriger vers la page de diagnostic
+                        return JsonResponse({
+                            'success': True,
+                            'auto_validated': True,
+                            'redirect_url': f'/diagnosis/{diagnosis_id}/'
+                        })
+                    else:
+                        print(f"❌ Erreur génération diagnostic: {diagnosis_result.get('error')}")
+                        # En cas d'erreur, passer à la validation manuelle
+                        
+                except Exception as e:
+                    print(f"❌ Exception lors de l'auto-validation: {str(e)}")
+                    import traceback
+                    traceback.print_exc()
+                    # En cas d'erreur, passer à la validation manuelle
+            else:
+                print(f"⚠️ Similarité {similarity*100:.1f}% < 75%, validation manuelle requise")
             
             # Sinon, passer par la validation manuelle
             request.session['search_results'] = search_results['results']
