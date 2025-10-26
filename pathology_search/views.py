@@ -287,7 +287,8 @@ def get_patients(request):
                 'nom_complet': patient.nom_complet,
                 'numero_dossier': patient.numero_dossier,
                 'date_naissance': patient.date_naissance.isoformat() if patient.date_naissance else None,
-                'telephone': patient.telephone
+                'telephone': patient.telephone,
+                'email': patient.email
             }
             for patient in patients
         ]
@@ -386,7 +387,8 @@ def create_patient(request):
                 'nom_complet': patient.nom_complet,
                 'numero_dossier': patient.numero_dossier,
                 'date_naissance': patient.date_naissance.isoformat() if patient.date_naissance else None,
-                'telephone': patient.telephone
+                'telephone': patient.telephone,
+                'email': patient.email
             }
         })
     except Exception as e:

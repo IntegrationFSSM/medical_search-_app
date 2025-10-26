@@ -61,6 +61,10 @@
                     <span class="text-gray-600">Téléphone :</span>
                     <span class="font-semibold ml-2" id="patientTelephone"></span>
                 </div>
+                <div>
+                    <span class="text-gray-600">Email :</span>
+                    <span class="font-semibold ml-2" id="patientEmailDisplay"></span>
+                </div>
             </div>
         </div>
         
@@ -905,6 +909,7 @@ document.getElementById('patientSelect').addEventListener('change', async functi
         document.getElementById('patientNumeroDossier').textContent = selectedPatient.numero_dossier;
         document.getElementById('patientDateNaissance').textContent = selectedPatient.date_naissance ? new Date(selectedPatient.date_naissance).toLocaleDateString('fr-FR') : 'Non renseignée';
         document.getElementById('patientTelephone').textContent = selectedPatient.telephone || 'Non renseigné';
+        document.getElementById('patientEmailDisplay').textContent = selectedPatient.email || 'Non renseigné';
         document.getElementById('patientInfo').classList.remove('hidden');
         
         // Charger l'historique du patient
