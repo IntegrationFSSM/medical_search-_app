@@ -66,22 +66,43 @@ Réponds UNIQUEMENT par un JSON:
             )
             
             result_text = response.choices[0].message.content.strip()
+            print(f"🔍 Validation GPT-4o response: {result_text}")
             
-            # Parser le JSON
+            # Extraire le JSON si le texte contient du texte avant/après
             import json
+            import re
+            
+            # Essayer de trouver un JSON dans le texte
+            json_match = re.search(r'\{[^}]*"is_valid"[^}]*\}', result_text)
+            if json_match:
+                result_text = json_match.group(0)
+            
             result = json.loads(result_text)
             
+            is_valid = result.get('is_valid', False)
+            reason = result.get('reason', 'Requête invalide')
+            
+            print(f"✅ Validation result: is_valid={is_valid}, reason={reason}")
+            
             return {
-                'is_valid': result.get('is_valid', False),
-                'reason': result.get('reason', 'Requête invalide')
+                'is_valid': is_valid,
+                'reason': reason
             }
             
-        except Exception as e:
-            print(f"❌ Erreur validation: {e}")
-            # En cas d'erreur, on laisse passer pour ne pas bloquer
+        except json.JSONDecodeError as e:
+            print(f"❌ Erreur JSON parsing: {e}")
+            print(f"❌ Response text: {result_text}")
+            # En cas d'erreur de parsing, considérer comme invalide par sécurité
             return {
-                'is_valid': True,
-                'reason': None
+                'is_valid': False,
+                'reason': 'Erreur de validation - veuillez réessayer'
+            }
+        except Exception as e:
+            print(f"❌ Erreur validation GPT: {e}")
+            # En cas d'erreur API, considérer comme invalide par sécurité
+            return {
+                'is_valid': False,
+                'reason': 'Service de validation temporairement indisponible'
             }
     
     def get_embedding(self, text):
