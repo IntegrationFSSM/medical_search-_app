@@ -26,6 +26,7 @@ def search(request):
         aggregation = data.get('aggregation', 'max')
         use_validation = data.get('use_validation', False)  # Mode validation ou affichage normal
         patient_id = data.get('patient_id')  # Récupérer l'ID du patient
+        medecin_id = data.get('medecin_id')  # Récupérer l'ID du médecin
         
         if not query:
             return JsonResponse({
@@ -33,9 +34,11 @@ def search(request):
                 'error': 'La requête ne peut pas être vide'
             }, status=400)
         
-        # Sauvegarder l'ID du patient dans la session pour l'utiliser lors de la validation
+        # Sauvegarder l'ID du patient et du médecin dans la session
         if patient_id:
             request.session['current_patient_id'] = patient_id
+        if medecin_id:
+            request.session['current_medecin_id'] = medecin_id
             request.session.modified = True
         
         # ÉTAPE 1: Valider la requête avec GPT-4o AVANT la recherche
@@ -94,7 +97,7 @@ def print_report(request, consultation_id):
         
         logger = logging.getLogger(__name__)
         
-        consultation = Consultation.objects.select_related('patient').get(id=consultation_id)
+        consultation = Consultation.objects.select_related('patient', 'medecin').get(id=consultation_id)
         
         logger.info(f"Generating PDF for consultation {consultation_id}")
         
@@ -174,6 +177,7 @@ def print_report(request, consultation_id):
         context = {
             'consultation': consultation,
             'patient': consultation.patient,
+            'medecin': consultation.medecin,
             'date_impression': timezone.now(),
             'plan_traitement_clean': plan_traitement_clean,
             'pathologie_clean': pathologie_clean,
@@ -322,6 +326,82 @@ def create_patient(request):
         return JsonResponse({
             'success': False,
             'error': f'Erreur lors de la création du patient: {str(e)}'
+        }, status=500)
+
+
+def get_medecins(request):
+    """Récupérer la liste de tous les médecins"""
+    from .models import Medecin
+    
+    try:
+        medecins = Medecin.objects.all()
+        medecins_data = [
+            {
+                'id': medecin.id,
+                'nom': medecin.nom,
+                'prenom': medecin.prenom,
+                'nom_complet': medecin.nom_complet,
+                'specialite': medecin.specialite,
+                'numero_ordre': medecin.numero_ordre,
+                'telephone': medecin.telephone,
+                'email': medecin.email
+            }
+            for medecin in medecins
+        ]
+        return JsonResponse({'success': True, 'medecins': medecins_data})
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': f'Erreur lors de la récupération des médecins: {str(e)}'
+        }, status=500)
+
+
+def create_medecin(request):
+    """Créer un nouveau médecin"""
+    from .models import Medecin
+    
+    try:
+        data = json.loads(request.body)
+        
+        # Générer un numéro d'ordre unique
+        last_medecin = Medecin.objects.order_by('-id').first()
+        if last_medecin and last_medecin.numero_ordre.startswith('MED-2025-'):
+            try:
+                last_num = int(last_medecin.numero_ordre.split('-')[-1])
+                new_num = last_num + 1
+            except:
+                new_num = 1
+        else:
+            new_num = 1
+        
+        numero_ordre = f'MED-2025-{new_num:03d}'
+        
+        medecin = Medecin.objects.create(
+            nom=data.get('nom', '').strip().upper(),
+            prenom=data.get('prenom', '').strip().capitalize(),
+            specialite=data.get('specialite', '').strip(),
+            numero_ordre=numero_ordre,
+            telephone=data.get('telephone', '').strip(),
+            email=data.get('email', '').strip()
+        )
+        
+        return JsonResponse({
+            'success': True,
+            'medecin': {
+                'id': medecin.id,
+                'nom': medecin.nom,
+                'prenom': medecin.prenom,
+                'nom_complet': medecin.nom_complet,
+                'specialite': medecin.specialite,
+                'numero_ordre': medecin.numero_ordre,
+                'telephone': medecin.telephone,
+                'email': medecin.email
+            }
+        })
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': f'Erreur lors de la création du médecin: {str(e)}'
         }, status=500)
 
 
@@ -762,14 +842,25 @@ def validate_action(request):
             
             # Récupérer l'ID du patient depuis la session
             patient_id = request.session.get('current_patient_id')
+            medecin_id = request.session.get('current_medecin_id')
             query = request.session.get('search_query', '')
             
             if patient_id:
                 patient = Patient.objects.get(id=patient_id)
                 
+                # Récupérer le médecin si disponible
+                medecin = None
+                if medecin_id:
+                    try:
+                        from .models import Medecin
+                        medecin = Medecin.objects.get(id=medecin_id)
+                    except Medecin.DoesNotExist:
+                        pass
+                
                 # Créer la consultation
                 consultation = Consultation.objects.create(
                     patient=patient,
+                    medecin=medecin,
                     description_clinique=query,
                     pathologie_identifiee=pathology_name,
                     score_similarite=similarity_score / 100,  # Convertir en décimal (0-1)

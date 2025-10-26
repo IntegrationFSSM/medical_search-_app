@@ -220,6 +220,27 @@
         </table>
     </div>
     
+    <!-- Informations médecin -->
+    {% if medecin %}
+    <div class="section">
+        <div class="section-title">MÉDECIN TRAITANT</div>
+        <table class="info-table">
+            <tr>
+                <td class="info-label">Nom</td>
+                <td class="info-value">Dr. {{ medecin.nom }} {{ medecin.prenom }}</td>
+                <td class="info-label">Spécialité</td>
+                <td class="info-value">{{ medecin.specialite }}</td>
+            </tr>
+            <tr>
+                <td class="info-label">N° Ordre</td>
+                <td class="info-value">{{ medecin.numero_ordre }}</td>
+                <td class="info-label">Téléphone</td>
+                <td class="info-value">{{ medecin.telephone|default:"Non renseigné" }}</td>
+            </tr>
+        </table>
+    </div>
+    {% endif %}
+    
     <!-- Informations de consultation -->
     <div class="section">
         <div class="section-title">INFORMATIONS DE LA CONSULTATION</div>

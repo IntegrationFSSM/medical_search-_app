@@ -3,6 +3,29 @@ from django.utils import timezone
 import uuid
 
 
+class Medecin(models.Model):
+    """Modèle pour stocker les informations des médecins"""
+    nom = models.CharField(max_length=100, verbose_name="Nom")
+    prenom = models.CharField(max_length=100, verbose_name="Prénom")
+    specialite = models.CharField(max_length=100, verbose_name="Spécialité")
+    numero_ordre = models.CharField(max_length=50, unique=True, verbose_name="Numéro d'ordre")
+    telephone = models.CharField(max_length=20, blank=True, verbose_name="Téléphone")
+    email = models.EmailField(blank=True, verbose_name="Email")
+    date_creation = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    
+    class Meta:
+        verbose_name = "Médecin"
+        verbose_name_plural = "Médecins"
+        ordering = ['nom', 'prenom']
+    
+    def __str__(self):
+        return f"Dr. {self.nom} {self.prenom} - {self.specialite}"
+    
+    @property
+    def nom_complet(self):
+        return f"Dr. {self.prenom} {self.nom}"
+
+
 class Patient(models.Model):
     """Modèle pour stocker les informations des patients"""
     nom = models.CharField(max_length=100, verbose_name="Nom")
@@ -30,6 +53,7 @@ class Consultation(models.Model):
     """Modèle pour stocker les consultations"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='consultations')
+    medecin = models.ForeignKey(Medecin, on_delete=models.SET_NULL, null=True, related_name='consultations', verbose_name="Médecin")
     date_consultation = models.DateTimeField(default=timezone.now, verbose_name="Date de consultation")
     description_clinique = models.TextField(verbose_name="Description clinique")
     
