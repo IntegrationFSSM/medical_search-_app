@@ -83,11 +83,15 @@ def about(request):
 
 def print_report(request, consultation_id):
     """
-    Générer un rapport imprimable de la consultation avec en-tête CLINIQUE LA VALLÉE.
+    Générer un rapport PDF de la consultation avec en-tête CLINIQUE LA VALLÉE.
     """
     try:
         from .models import Consultation
         from django.utils import timezone
+        from django.template.loader import render_to_string
+        from xhtml2pdf import pisa
+        from django.http import HttpResponse
+        import io
         
         consultation = Consultation.objects.select_related('patient').get(id=consultation_id)
         
@@ -97,7 +101,20 @@ def print_report(request, consultation_id):
             'date_impression': timezone.now(),
         }
         
-        return render(request, 'pathology_search/print_report.html', context)
+        # Rendre le template HTML
+        html = render_to_string('pathology_search/print_report.html', context)
+        
+        # Créer le PDF
+        result = io.BytesIO()
+        pdf = pisa.pisaDocument(io.BytesIO(html.encode("UTF-8")), result)
+        
+        if not pdf.err:
+            response = HttpResponse(result.getvalue(), content_type='application/pdf')
+            response['Content-Disposition'] = f'inline; filename="rapport_consultation_{consultation.patient.numero_dossier}.pdf"'
+            return response
+        
+        # En cas d'erreur, renvoyer une réponse d'erreur
+        return HttpResponse('Erreur lors de la génération du PDF', status=500)
         
     except Consultation.DoesNotExist:
         return render(request, 'pathology_search/index.html', {
@@ -283,6 +300,16 @@ def validate_results(request):
     results = request.session.get('search_results', [])
     current_index = int(request.GET.get('index', 0))
     query = request.session.get('search_query', '')
+    patient_id = request.session.get('current_patient_id')
+    
+    # Récupérer les informations du patient
+    patient = None
+    if patient_id:
+        from .models import Patient
+        try:
+            patient = Patient.objects.get(id=patient_id)
+        except Patient.DoesNotExist:
+            pass
     
     if not results or current_index >= len(results):
         return render(request, 'pathology_search/index.html', {
@@ -302,19 +329,36 @@ def validate_results(request):
                 with open(full_path, 'r', encoding='utf-8') as f:
                     html_content = f.read()
                 
-                # Injecter un bandeau de navigation en haut (sans bouton "Passer au suivant")
+                # Injecter un bandeau de navigation en haut avec informations patient
+                patient_info_html = ""
+                if patient:
+                    patient_date_naissance = patient.date_naissance.strftime('%d/%m/%Y') if patient.date_naissance else 'Non renseignée'
+                    patient_info_html = f"""
+                    <div style="background: rgba(255,255,255,0.15); padding: 10px 15px; border-radius: 8px; margin-top: 10px;">
+                        <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px;">
+                            <div><i class="fas fa-user"></i> <strong>{patient.nom_complet}</strong></div>
+                            <div><i class="fas fa-id-card"></i> {patient.numero_dossier}</div>
+                            <div><i class="fas fa-calendar"></i> {patient_date_naissance}</div>
+                            <div><i class="fas fa-phone"></i> {patient.telephone or 'Non renseigné'}</div>
+                        </div>
+                    </div>
+                    """
+                
                 navigation_header = f"""
                 <div style="position: sticky; top: 0; z-index: 1000; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <h3 style="margin: 0; font-size: 18px;">
-                                <i class="fas fa-clipboard-check"></i> Validation - Résultat {current_index + 1}/{len(results)}
-                            </h3>
-                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Requête: {query}</p>
+                    <div style="max-width: 1200px; margin: 0 auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1;">
+                                <h3 style="margin: 0; font-size: 18px;">
+                                    <i class="fas fa-clipboard-check"></i> Validation - Résultat {current_index + 1}/{len(results)}
+                                </h3>
+                                <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Requête: {query}</p>
+                                {patient_info_html}
+                            </div>
+                            <a href="/" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+                                <i class="fas fa-home"></i> Accueil
+                            </a>
                         </div>
-                        <a href="/" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-                            <i class="fas fa-home"></i> Accueil
-                        </a>
                     </div>
                 </div>
                 """

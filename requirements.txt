@@ -2,6 +2,7 @@ Django==5.2.3
 openai==2.6.0
 numpy==1.26.4
 python-dotenv==1.0.1
+xhtml2pdf==0.2.13
 
 # Heroku deployment
 gunicorn==21.2.0

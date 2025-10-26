@@ -338,15 +338,11 @@ Réponds UNIQUEMENT par un JSON:
 **Pathologie diagnostiquée :** {pathology_name}
 **Niveau de correspondance :** {similarity_score:.1f}%
 
----
-
-## 📚 DOCUMENTATION MÉDICALE DE RÉFÉRENCE (DSM-5-TR)
+📚 DOCUMENTATION MÉDICALE DE RÉFÉRENCE (DSM-5-TR)
 
 {medical_text if medical_text else "Documentation non disponible - Utilisez vos connaissances médicales."}
 
----
-
-## 🩺 SYMPTÔMES ET CRITÈRES PRÉSENTS CHEZ LE PATIENT
+🩺 SYMPTÔMES ET CRITÈRES PRÉSENTS CHEZ LE PATIENT
 
 **Critères validés lors de l'évaluation clinique :**
 """
@@ -384,9 +380,7 @@ Réponds UNIQUEMENT par un JSON:
 - Interactions médicamenteuses
 - Examens biologiques de suivi
 
----
-
-## 2. 📋 ÉTAPES THÉRAPEUTIQUES À SUIVRE
+2. 📋 ÉTAPES THÉRAPEUTIQUES À SUIVRE
 
 **Semaine 1-2 : Phase d'initiation**
 - Début du traitement médicamenteux
@@ -408,9 +402,7 @@ Réponds UNIQUEMENT par un JSON:
 - Prévention des rechutes
 - Objectifs à long terme
 
----
-
-## 3. 🎯 PSYCHOTHÉRAPIE ET INTERVENTIONS NON-MÉDICAMENTEUSES
+3. 🎯 PSYCHOTHÉRAPIE ET INTERVENTIONS NON-MÉDICAMENTEUSES
 
 **Approches recommandées :**
 - Type de psychothérapie (TCC, psychodynamique, etc.)
@@ -422,9 +414,7 @@ Réponds UNIQUEMENT par un JSON:
 - Activité physique
 - Hygiène de vie
 
----
-
-## 4. 📊 SUIVI ET ÉVALUATION
+4. 📊 SUIVI ET ÉVALUATION
 
 **Consultations de suivi :**
 - J+15 : Première réévaluation
@@ -435,9 +425,7 @@ Réponds UNIQUEMENT par un JSON:
 - Critères d'amélioration à observer
 - Quand envisager une réduction de traitement
 
----
-
-## 5. ⚡ GESTION DES SITUATIONS D'URGENCE
+5. ⚡ GESTION DES SITUATIONS D'URGENCE
 
 **Que faire en cas de :**
 - Crise aiguë
@@ -446,9 +434,7 @@ Réponds UNIQUEMENT par un JSON:
 
 **Numéros d'urgence et ressources**
 
----
-
-## 6. 💡 CONSEILS PRATIQUES POUR LE PATIENT
+6. 💡 CONSEILS PRATIQUES POUR LE PATIENT
 
 **À faire :**
 - Recommandations quotidiennes
@@ -457,8 +443,6 @@ Réponds UNIQUEMENT par un JSON:
 **À éviter :**
 - Comportements contre-productifs
 - Facteurs aggravants
-
----
 
 **IMPORTANT :** 
 1. ⚠️ Basez-vous STRICTEMENT sur la DOCUMENTATION MÉDICALE fournie ci-dessus (DSM-5-TR)
