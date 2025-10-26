@@ -93,6 +93,17 @@
             margin-bottom: 15px;
             white-space: pre-wrap;
             word-wrap: break-word;
+            line-height: 1.6;
+        }
+        
+        .plan-traitement {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 11pt;
         }
         
         .criteria-item {
@@ -180,11 +191,7 @@
             </tr>
             <tr>
                 <td class="info-label">Pathologie identifiée</td>
-                <td class="info-value">{{ consultation.pathologie_identifiee }}</td>
-            </tr>
-            <tr>
-                <td class="info-label">Statut</td>
-                <td class="info-value">{{ consultation.get_statut_display }}</td>
+                <td class="info-value">{{ pathologie_clean }}</td>
             </tr>
         </table>
     </div>
@@ -211,7 +218,7 @@
     <!-- Plan de traitement -->
     <div class="section">
         <div class="section-title">PLAN DE TRAITEMENT RECOMMANDÉ</div>
-        <div class="text-content">{{ plan_traitement_clean }}</div>
+        <div class="plan-traitement">{{ plan_traitement_clean }}</div>
     </div>
     
     <!-- Pied de page -->

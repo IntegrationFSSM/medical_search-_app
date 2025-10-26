@@ -114,6 +114,14 @@ def print_report(request, consultation_id):
             text = text.strip('[]"\'')
             text = text.replace('["', '').replace('"]', '')
             text = text.replace("['", '').replace("']", '')
+            # Enlever les emojis (unicode)
+            text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)  # Emojis généraux
+            text = re.sub(r'[\u2600-\u26FF]', '', text)  # Symboles
+            text = re.sub(r'[\u2700-\u27BF]', '', text)  # Dingbats
+            # Enlever les emojis médicaux courants
+            text = text.replace('🩺', '').replace('💊', '').replace('📋', '')
+            text = text.replace('⚕️', '').replace('🏥', '').replace('👨‍⚕️', '')
+            text = text.replace('📚', '').replace('🔬', '').replace('💉', '')
             # Enlever le markdown
             text = re.sub(r'#{1,6}\s*', '', text)
             text = re.sub(r'\*\*([^\*]+)\*\*', r'\1', text)
@@ -122,10 +130,16 @@ def print_report(request, consultation_id):
             text = re.sub(r'_([^_]+)_', r'\1', text)
             text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)
             text = re.sub(r' +', ' ', text)
+            # Nettoyer les sections/sous-sections pour avoir juste le texte principal
+            text = re.sub(r'Section\s+\d+\s*:\s*', '', text)
+            text = re.sub(r'Sous-section\s+[\d.]+\s*:\s*', '', text)
             return text.strip()
         
         # Nettoyer le plan de traitement
         plan_traitement_clean = clean_text_for_pdf(consultation.plan_traitement)
+        
+        # Nettoyer le nom de la pathologie (enlever sections/sous-sections)
+        pathologie_clean = clean_text_for_pdf(consultation.pathologie_identifiee)
         
         # Nettoyer les critères validés
         criteres_valides_clean = {}
@@ -139,6 +153,7 @@ def print_report(request, consultation_id):
             'patient': consultation.patient,
             'date_impression': timezone.now(),
             'plan_traitement_clean': plan_traitement_clean,
+            'pathologie_clean': pathologie_clean,
             'criteres_valides_clean': criteres_valides_clean,
         }
         
