@@ -104,10 +104,44 @@ def print_report(request, consultation_id):
         if not consultation.criteres_valides:
             consultation.criteres_valides = {}
         
+        # Nettoyer les données pour le PDF (sans utiliser les filtres Django)
+        import re
+        
+        def clean_text_for_pdf(text):
+            """Nettoyer le texte pour le PDF"""
+            if not text:
+                return text
+            text = str(text)
+            # Enlever les crochets et guillemets
+            text = text.strip('[]"\'')
+            text = text.replace('["', '').replace('"]', '')
+            text = text.replace("['", '').replace("']", '')
+            # Enlever le markdown
+            text = re.sub(r'#{1,6}\s*', '', text)
+            text = re.sub(r'\*\*([^\*]+)\*\*', r'\1', text)
+            text = re.sub(r'__([^_]+)__', r'\1', text)
+            text = re.sub(r'\*([^\*]+)\*', r'\1', text)
+            text = re.sub(r'_([^_]+)_', r'\1', text)
+            text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)
+            text = re.sub(r' +', ' ', text)
+            return text.strip()
+        
+        # Nettoyer le plan de traitement
+        plan_traitement_clean = clean_text_for_pdf(consultation.plan_traitement)
+        
+        # Nettoyer les critères validés
+        criteres_valides_clean = {}
+        for key, value in consultation.criteres_valides.items():
+            clean_key = clean_text_for_pdf(key)
+            clean_value = clean_text_for_pdf(value)
+            criteres_valides_clean[clean_key] = clean_value
+        
         context = {
             'consultation': consultation,
             'patient': consultation.patient,
             'date_impression': timezone.now(),
+            'plan_traitement_clean': plan_traitement_clean,
+            'criteres_valides_clean': criteres_valides_clean,
         }
         
         try:
