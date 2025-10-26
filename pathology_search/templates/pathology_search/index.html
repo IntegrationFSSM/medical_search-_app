@@ -63,6 +63,20 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Patient History Display -->
+        <div id="patientHistory" class="hidden mt-3 p-4 bg-white rounded-lg border-l-4 border-blue-500">
+            <h4 class="font-semibold text-gray-800 mb-3 flex items-center justify-between">
+                <span>
+                    <i class="fas fa-history text-blue-600 mr-2"></i>
+                    Historique des consultations
+                </span>
+                <span id="historyCount" class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"></span>
+            </h4>
+            <div id="historyList" class="space-y-2 max-h-60 overflow-y-auto">
+                <!-- Les consultations seront insérées ici -->
+            </div>
+        </div>
     </div>
 </div>
 
@@ -879,7 +893,7 @@ function populatePatientSelect() {
 }
 
 // Gérer la sélection d'un patient
-document.getElementById('patientSelect').addEventListener('change', function(e) {
+document.getElementById('patientSelect').addEventListener('change', async function(e) {
     const selectedOption = e.target.selectedOptions[0];
     
     if (selectedOption.value) {
@@ -892,12 +906,77 @@ document.getElementById('patientSelect').addEventListener('change', function(e) 
         document.getElementById('patientDateNaissance').textContent = selectedPatient.date_naissance ? new Date(selectedPatient.date_naissance).toLocaleDateString('fr-FR') : 'Non renseignée';
         document.getElementById('patientTelephone').textContent = selectedPatient.telephone || 'Non renseigné';
         document.getElementById('patientInfo').classList.remove('hidden');
+        
+        // Charger l'historique du patient
+        await loadPatientHistory(selectedPatient.id);
     } else {
         selectedPatient = null;
         document.getElementById('selectedPatientId').value = '';
         document.getElementById('patientInfo').classList.add('hidden');
+        document.getElementById('patientHistory').classList.add('hidden');
     }
 });
+
+// Charger l'historique d'un patient
+async function loadPatientHistory(patientId) {
+    try {
+        const response = await fetch(`/api/patients/${patientId}/history/`);
+        const data = await response.json();
+        
+        if (data.success && data.consultations.length > 0) {
+            // Afficher la section d'historique
+            document.getElementById('patientHistory').classList.remove('hidden');
+            document.getElementById('historyCount').textContent = `${data.consultations.length} consultation(s)`;
+            
+            // Remplir la liste des consultations
+            const historyList = document.getElementById('historyList');
+            historyList.innerHTML = '';
+            
+            data.consultations.forEach(consultation => {
+                const consultationDiv = document.createElement('div');
+                consultationDiv.className = 'bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-gray-100 transition';
+                consultationDiv.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fas fa-calendar-alt text-blue-600 text-sm"></i>
+                                <span class="font-semibold text-gray-800 text-sm">${consultation.date_consultation}</span>
+                            </div>
+                            <div class="text-sm text-gray-600 ml-5">
+                                <i class="fas fa-diagnoses mr-1"></i>
+                                ${consultation.pathologie_identifiee || 'Non renseigné'}
+                            </div>
+                            <div class="text-xs text-gray-500 ml-5 mt-1">
+                                <i class="fas fa-user-doctor mr-1"></i>
+                                ${consultation.medecin}
+                            </div>
+                        </div>
+                        <button 
+                            onclick="viewReport('${consultation.id}')"
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center justify-center gap-2 whitespace-nowrap"
+                        >
+                            <i class="fas fa-file-pdf"></i>
+                            Voir le rapport
+                        </button>
+                    </div>
+                `;
+                historyList.appendChild(consultationDiv);
+            });
+        } else {
+            // Cacher la section d'historique si aucune consultation
+            document.getElementById('patientHistory').classList.add('hidden');
+        }
+    } catch (error) {
+        console.error('Erreur lors du chargement de l\'historique:', error);
+        document.getElementById('patientHistory').classList.add('hidden');
+    }
+}
+
+// Fonction pour voir un rapport
+function viewReport(consultationId) {
+    // Ouvrir le rapport dans un nouvel onglet
+    window.open(`/print/${consultationId}/`, '_blank');
+}
 
 // Modal de création de patient
 function openCreatePatientModal() {

@@ -271,6 +271,45 @@ def get_patients(request):
         }, status=500)
 
 
+def get_patient_history(request, patient_id):
+    """Récupérer l'historique des consultations d'un patient"""
+    from .models import Patient, Consultation
+    
+    try:
+        patient = Patient.objects.get(id=patient_id)
+        consultations = Consultation.objects.filter(patient=patient).order_by('-date_consultation')
+        
+        consultations_data = [
+            {
+                'id': str(consultation.id),
+                'date_consultation': consultation.date_consultation.strftime('%d/%m/%Y à %H:%M'),
+                'pathologie_identifiee': consultation.pathologie_identifiee,
+                'medecin': consultation.medecin.nom_complet if consultation.medecin else 'Non renseigné',
+                'statut': consultation.get_statut_display()
+            }
+            for consultation in consultations
+        ]
+        
+        return JsonResponse({
+            'success': True,
+            'consultations': consultations_data,
+            'patient': {
+                'nom_complet': patient.nom_complet,
+                'numero_dossier': patient.numero_dossier
+            }
+        })
+    except Patient.DoesNotExist:
+        return JsonResponse({
+            'success': False,
+            'error': 'Patient non trouvé'
+        }, status=404)
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': f'Erreur lors de la récupération de l\'historique: {str(e)}'
+        }, status=500)
+
+
 @require_http_methods(["POST"])
 def create_patient(request):
     """Créer un nouveau patient"""
