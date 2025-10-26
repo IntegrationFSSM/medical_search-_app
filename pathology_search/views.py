@@ -144,8 +144,65 @@ def search(request):
             aggregation=aggregation
         )
         
-        # Si mode validation, sauvegarder dans la session
-        if use_validation and search_results.get('success'):
+        # Vérifier si la similarité du premier résultat est très élevée (>= 75%)
+        # Si oui, valider automatiquement sans passer par l'étape de validation manuelle
+        if (use_validation and search_results.get('success') and 
+            len(search_results.get('results', [])) > 0):
+            
+            first_result = search_results['results'][0]
+            similarity = first_result.get('similarity', 0)
+            
+            # Si similarité >= 75%, auto-valider le premier résultat
+            if similarity >= 0.75:
+                # Auto-valider directement
+                result = first_result
+                pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
+                similarity_score = result.get('similarity', 0) * 100
+                
+                # Extraire le texte médical du meilleur chunk
+                best_chunk_text = result.get('best_chunk_text', '')
+                
+                # Générer le diagnostic IA avec OpenAI
+                diagnosis_result = service.generate_ai_diagnosis(
+                    clinical_description=query,
+                    pathology_name=pathology_name,
+                    criteria={},  # Pas de critères validés dans le formulaire
+                    medical_text=best_chunk_text
+                )
+                
+                if diagnosis_result['success']:
+                    # Sauvegarder dans la base de données
+                    from .models import Patient, Medecin, Consultation
+                    import uuid
+                    
+                    patient_id = request.session.get('current_patient_id')
+                    medecin_id = request.session.get('current_medecin_id')
+                    
+                    patient = Patient.objects.get(id=patient_id) if patient_id else None
+                    medecin = Medecin.objects.get(id=medecin_id) if medecin_id else None
+                    
+                    diagnosis_id = uuid.uuid4()
+                    consultation = Consultation.objects.create(
+                        id=diagnosis_id,
+                        patient=patient,
+                        medecin=medecin,
+                        description_clinique=query,
+                        pathologie_identifiee=pathology_name,
+                        score_similarite=similarity_score / 100,
+                        fichier_source=result.get('file_name', ''),
+                        criteres_valides={},
+                        plan_traitement=diagnosis_result.get('diagnosis', ''),
+                        statut='complete'
+                    )
+                    
+                    # Rediriger vers la page de diagnostic
+                    return JsonResponse({
+                        'success': True,
+                        'auto_validated': True,
+                        'redirect_url': f'/diagnosis/{diagnosis_id}/'
+                    })
+            
+            # Sinon, passer par la validation manuelle
             request.session['search_results'] = search_results['results']
             request.session['search_query'] = query
             return JsonResponse({

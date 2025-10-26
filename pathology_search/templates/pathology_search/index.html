@@ -596,6 +596,22 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
+            // Si auto-validation (haute similarité), afficher un message et rediriger
+            if (data.auto_validated) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Correspondance parfaite !',
+                    html: 'Résultat validé automatiquement<br>Génération du plan de traitement en cours...',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                }).then(() => {
+                    window.location.href = data.redirect_url;
+                });
+                return;
+            }
+            
             // Si mode validation, rediriger vers la page de validation
             if (data.use_validation) {
                 window.location.href = data.redirect_url;
@@ -1248,6 +1264,22 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
+            // Si auto-validation (haute similarité), afficher un message et rediriger
+            if (data.auto_validated) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Correspondance parfaite !',
+                    html: 'Résultat validé automatiquement<br>Génération du plan de traitement en cours...',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                }).then(() => {
+                    window.location.href = data.redirect_url;
+                });
+                return;
+            }
+            
             // Si mode validation, rediriger vers la page de validation
             if (data.use_validation) {
                 window.location.href = data.redirect_url;
