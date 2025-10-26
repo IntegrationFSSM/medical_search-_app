@@ -108,23 +108,55 @@ def print_report(request, consultation_id):
         # Nettoyer les données pour le PDF (sans utiliser les filtres Django)
         import re
         
-        def clean_text_for_pdf(text):
-            """Nettoyer le texte simple (pour pathologie et critères)"""
-            if not text:
-                return text
-            text = str(text)
-            # Enlever les crochets et guillemets
-            text = text.strip('[]"\'')
-            text = text.replace('["', '').replace('"]', '')
-            text = text.replace("['", '').replace("']", '')
-            # Enlever les emojis
-            text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
-            text = re.sub(r'[\u2600-\u26FF]', '', text)
-            text = re.sub(r'[\u2700-\u27BF]', '', text)
-            # Enlever les sections/sous-sections
-            text = re.sub(r'Section\s+\d+\s*:\s*', '', text)
-            text = re.sub(r'Sous-section\s+[\d.]+\s*:\s*', '', text)
-            return text.strip()
+def clean_pathology_name(text):
+    """Nettoyer le nom de la pathologie en enlevant les préfixes Section/SubSection"""
+    if not text:
+        return text
+    text = str(text)
+    
+    # Enlever les crochets et guillemets
+    text = text.strip('[]"\'')
+    text = text.replace('["', '').replace('"]', '')
+    text = text.replace("['", '').replace("']", '')
+    
+    # Enlever les emojis
+    text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+    text = re.sub(r'[\u2600-\u26FF]', '', text)
+    text = re.sub(r'[\u2700-\u27BF]', '', text)
+    
+    # Enlever les préfixes SubSection et Section avec leurs numéros
+    # Par exemple: "SubSection2.1 Language Disorder" -> "Language Disorder"
+    text = re.sub(r'SubSection\s*\d+\.?\d*\s+', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'Section\s*\d+\.?\d*\s+', '', text, flags=re.IGNORECASE)
+    
+    # Enlever aussi les variantes avec tirets bas et points
+    text = re.sub(r'SubSection\d+\.\d+[_\s]+', '', text)
+    text = re.sub(r'Section\d+[_\s]+', '', text)
+    
+    # Enlever les "Section :" et "Sous-section :" en français
+    text = re.sub(r'Section\s+\d+\s*:\s*', '', text)
+    text = re.sub(r'Sous-section\s+[\d.]+\s*:\s*', '', text)
+    
+    # Remplacer les underscores par des espaces
+    text = text.replace('_', ' ')
+    
+    return text.strip()
+
+
+def clean_text_for_pdf(text):
+    """Nettoyer le texte simple (pour critères)"""
+    if not text:
+        return text
+    text = str(text)
+    # Enlever les crochets et guillemets
+    text = text.strip('[]"\'')
+    text = text.replace('["', '').replace('"]', '')
+    text = text.replace("['", '').replace("']", '')
+    # Enlever les emojis
+    text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+    text = re.sub(r'[\u2600-\u26FF]', '', text)
+    text = re.sub(r'[\u2700-\u27BF]', '', text)
+    return text.strip()
         
         def format_plan_traitement_html(text):
             """Formater le plan de traitement avec HTML sophistiqué"""
@@ -165,7 +197,7 @@ def print_report(request, consultation_id):
         plan_traitement_clean = format_plan_traitement_html(consultation.plan_traitement)
         
         # Nettoyer le nom de la pathologie (enlever sections/sous-sections)
-        pathologie_clean = clean_text_for_pdf(consultation.pathologie_identifiee)
+        pathologie_clean = clean_pathology_name(consultation.pathologie_identifiee)
         
         # Nettoyer les critères validés
         criteres_valides_clean = {}
@@ -283,7 +315,7 @@ def get_patient_history(request, patient_id):
             {
                 'id': str(consultation.id),
                 'date_consultation': consultation.date_consultation.strftime('%d/%m/%Y à %H:%M'),
-                'pathologie_identifiee': consultation.pathologie_identifiee,
+                'pathologie_identifiee': clean_pathology_name(consultation.pathologie_identifiee),
                 'medecin': consultation.medecin.nom_complet if consultation.medecin else 'Non renseigné',
                 'statut': consultation.get_statut_display()
             }
@@ -816,7 +848,7 @@ def validate_results(request):
             pass
     
     # Si pas de HTML, afficher le template de base
-    pathology_name = current_result.get('file_name', '').replace('.txt', '').replace('_', ' ')
+    pathology_name = clean_pathology_name(current_result.get('file_name', '').replace('.txt', ''))
     context = {
         'result': current_result,
         'pathology_name': pathology_name,
@@ -844,7 +876,7 @@ def validate_action(request):
     if action == 'validate':
         # L'utilisateur a validé ce résultat
         result = results[current_index]
-        pathology_name = result.get('file_name', '').replace('.txt', '').replace('_', ' ')
+        pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
         similarity_score = result.get('similarity', 0) * 100
         
         # Extraire le texte médical du meilleur chunk
