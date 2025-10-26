@@ -55,11 +55,11 @@
                 </div>
                 <div>
                     <span class="text-gray-600">Date de naissance :</span>
-                    <span class="font-semibold ml-2" id="patientDateNaissance"></span>
+                    <span class="font-semibold ml-2" id="patientDateNaissanceDisplay"></span>
                 </div>
                 <div>
                     <span class="text-gray-600">Téléphone :</span>
-                    <span class="font-semibold ml-2" id="patientTelephone"></span>
+                    <span class="font-semibold ml-2" id="patientTelephoneDisplay"></span>
                 </div>
                 <div>
                     <span class="text-gray-600">Email :</span>
@@ -177,35 +177,35 @@
             </div>
             
             <div>
-                <label for="patientDateNaissance" class="block text-sm font-medium text-gray-700 mb-1">
+                <label for="newPatientDateNaissance" class="block text-sm font-medium text-gray-700 mb-1">
                     Date de naissance
                 </label>
                 <input 
                     type="date" 
-                    id="patientDateNaissance" 
+                    id="newPatientDateNaissance" 
                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                 />
             </div>
             
             <div>
-                <label for="patientTelephone" class="block text-sm font-medium text-gray-700 mb-1">
+                <label for="newPatientTelephone" class="block text-sm font-medium text-gray-700 mb-1">
                     Téléphone
                 </label>
                 <input 
                     type="tel" 
-                    id="patientTelephone" 
+                    id="newPatientTelephone" 
                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="06XXXXXXXX"
                 />
             </div>
             
             <div>
-                <label for="patientEmail" class="block text-sm font-medium text-gray-700 mb-1">
+                <label for="newPatientEmail" class="block text-sm font-medium text-gray-700 mb-1">
                     Email
                 </label>
                 <input 
                     type="email" 
-                    id="patientEmail" 
+                    id="newPatientEmail" 
                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                 />
             </div>
@@ -907,8 +907,8 @@ document.getElementById('patientSelect').addEventListener('change', async functi
         // Afficher les informations du patient
         document.getElementById('patientNomComplet').textContent = selectedPatient.nom_complet;
         document.getElementById('patientNumeroDossier').textContent = selectedPatient.numero_dossier;
-        document.getElementById('patientDateNaissance').textContent = selectedPatient.date_naissance ? new Date(selectedPatient.date_naissance).toLocaleDateString('fr-FR') : 'Non renseignée';
-        document.getElementById('patientTelephone').textContent = selectedPatient.telephone || 'Non renseigné';
+        document.getElementById('patientDateNaissanceDisplay').textContent = selectedPatient.date_naissance ? new Date(selectedPatient.date_naissance).toLocaleDateString('fr-FR') : 'Non renseignée';
+        document.getElementById('patientTelephoneDisplay').textContent = selectedPatient.telephone || 'Non renseigné';
         document.getElementById('patientEmailDisplay').textContent = selectedPatient.email || 'Non renseigné';
         document.getElementById('patientInfo').classList.remove('hidden');
         
@@ -1000,9 +1000,9 @@ document.getElementById('createPatientForm').addEventListener('submit', async fu
     const patientData = {
         nom: document.getElementById('patientNom').value,
         prenom: document.getElementById('patientPrenom').value,
-        date_naissance: document.getElementById('patientDateNaissance').value || null,
-        telephone: document.getElementById('patientTelephone').value,
-        email: document.getElementById('patientEmail').value
+        date_naissance: document.getElementById('newPatientDateNaissance').value || null,
+        telephone: document.getElementById('newPatientTelephone').value,
+        email: document.getElementById('newPatientEmail').value
     };
     
     try {
