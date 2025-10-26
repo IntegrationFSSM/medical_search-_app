@@ -106,6 +106,45 @@
             font-size: 11pt;
         }
         
+        .plan-h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .plan-h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #764ba2;
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .plan-h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #495057;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .plan-bullet {
+            margin-left: 15px;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        
+        .plan-number {
+            margin-left: 20px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
         .criteria-item {
             background-color: #f0f4ff;
             padding: 10px;
@@ -218,7 +257,7 @@
     <!-- Plan de traitement -->
     <div class="section">
         <div class="section-title">PLAN DE TRAITEMENT RECOMMANDÉ</div>
-        <div class="plan-traitement">{{ plan_traitement_clean }}</div>
+        <div class="plan-traitement">{{ plan_traitement_clean|safe }}</div>
     </div>
     
     <!-- Pied de page -->

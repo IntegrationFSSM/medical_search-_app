@@ -106,7 +106,7 @@ def print_report(request, consultation_id):
         import re
         
         def clean_text_for_pdf(text):
-            """Nettoyer le texte pour le PDF"""
+            """Nettoyer le texte simple (pour pathologie et critères)"""
             if not text:
                 return text
             text = str(text)
@@ -114,29 +114,52 @@ def print_report(request, consultation_id):
             text = text.strip('[]"\'')
             text = text.replace('["', '').replace('"]', '')
             text = text.replace("['", '').replace("']", '')
-            # Enlever les emojis (unicode)
-            text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)  # Emojis généraux
-            text = re.sub(r'[\u2600-\u26FF]', '', text)  # Symboles
-            text = re.sub(r'[\u2700-\u27BF]', '', text)  # Dingbats
-            # Enlever les emojis médicaux courants
-            text = text.replace('🩺', '').replace('💊', '').replace('📋', '')
-            text = text.replace('⚕️', '').replace('🏥', '').replace('👨‍⚕️', '')
-            text = text.replace('📚', '').replace('🔬', '').replace('💉', '')
-            # Enlever le markdown
-            text = re.sub(r'#{1,6}\s*', '', text)
-            text = re.sub(r'\*\*([^\*]+)\*\*', r'\1', text)
-            text = re.sub(r'__([^_]+)__', r'\1', text)
-            text = re.sub(r'\*([^\*]+)\*', r'\1', text)
-            text = re.sub(r'_([^_]+)_', r'\1', text)
-            text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)
-            text = re.sub(r' +', ' ', text)
-            # Nettoyer les sections/sous-sections pour avoir juste le texte principal
+            # Enlever les emojis
+            text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+            text = re.sub(r'[\u2600-\u26FF]', '', text)
+            text = re.sub(r'[\u2700-\u27BF]', '', text)
+            # Enlever les sections/sous-sections
             text = re.sub(r'Section\s+\d+\s*:\s*', '', text)
             text = re.sub(r'Sous-section\s+[\d.]+\s*:\s*', '', text)
             return text.strip()
         
-        # Nettoyer le plan de traitement
-        plan_traitement_clean = clean_text_for_pdf(consultation.plan_traitement)
+        def format_plan_traitement_html(text):
+            """Formater le plan de traitement avec HTML sophistiqué"""
+            if not text:
+                return text
+            text = str(text)
+            
+            # Enlever les emojis
+            text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+            text = re.sub(r'[\u2600-\u26FF]', '', text)
+            text = re.sub(r'[\u2700-\u27BF]', '', text)
+            
+            # Convertir les titres markdown en HTML avec styles
+            # H1 (# Titre)
+            text = re.sub(r'^# (.+)$', r'<div class="plan-h1">\1</div>', text, flags=re.MULTILINE)
+            # H2 (## Titre)
+            text = re.sub(r'^## (.+)$', r'<div class="plan-h2">\1</div>', text, flags=re.MULTILINE)
+            # H3 (### Titre)
+            text = re.sub(r'^### (.+)$', r'<div class="plan-h3">\1</div>', text, flags=re.MULTILINE)
+            
+            # Convertir le gras **texte** en <strong>
+            text = re.sub(r'\*\*([^\*]+)\*\*', r'<strong>\1</strong>', text)
+            
+            # Convertir les listes à puces
+            text = re.sub(r'^\- (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
+            text = re.sub(r'^\* (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
+            
+            # Convertir les numéros de liste
+            text = re.sub(r'^\d+\.\s+(.+)$', r'<div class="plan-number">\1</div>', text, flags=re.MULTILINE)
+            
+            # Convertir les sauts de ligne en <br>
+            text = text.replace('\n\n', '<br><br>')
+            text = text.replace('\n', '<br>')
+            
+            return text
+        
+        # Formater le plan de traitement de manière sophistiquée
+        plan_traitement_clean = format_plan_traitement_html(consultation.plan_traitement)
         
         # Nettoyer le nom de la pathologie (enlever sections/sous-sections)
         pathologie_clean = clean_text_for_pdf(consultation.pathologie_identifiee)
