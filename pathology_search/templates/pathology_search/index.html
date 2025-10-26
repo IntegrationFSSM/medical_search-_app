@@ -126,15 +126,15 @@
                 </div>
                 <div>
                     <span class="text-gray-600">Spécialité :</span>
-                    <span class="font-semibold ml-2" id="medecinSpecialite"></span>
+                    <span class="font-semibold ml-2" id="medecinSpecialiteDisplay"></span>
                 </div>
                 <div>
                     <span class="text-gray-600">N° Ordre :</span>
-                    <span class="font-semibold ml-2" id="medecinNumeroOrdre"></span>
+                    <span class="font-semibold ml-2" id="medecinNumeroOrdreDisplay"></span>
                 </div>
                 <div>
                     <span class="text-gray-600">Téléphone :</span>
-                    <span class="font-semibold ml-2" id="medecinTelephone"></span>
+                    <span class="font-semibold ml-2" id="medecinTelephoneDisplay"></span>
                 </div>
             </div>
         </div>
@@ -1093,9 +1093,9 @@ document.getElementById('medecinSelect').addEventListener('change', function(e) 
         
         // Afficher les informations du médecin
         document.getElementById('medecinNomComplet').textContent = selectedMedecin.nom_complet;
-        document.getElementById('medecinSpecialite').textContent = selectedMedecin.specialite;
-        document.getElementById('medecinNumeroOrdre').textContent = selectedMedecin.numero_ordre;
-        document.getElementById('medecinTelephone').textContent = selectedMedecin.telephone || 'Non renseigné';
+        document.getElementById('medecinSpecialiteDisplay').textContent = selectedMedecin.specialite;
+        document.getElementById('medecinNumeroOrdreDisplay').textContent = selectedMedecin.numero_ordre;
+        document.getElementById('medecinTelephoneDisplay').textContent = selectedMedecin.telephone || 'Non renseigné';
         document.getElementById('medecinInfo').classList.remove('hidden');
     } else {
         selectedMedecin = null;
