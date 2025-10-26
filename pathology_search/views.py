@@ -101,8 +101,8 @@ def print_report(request, consultation_id):
             'date_impression': timezone.now(),
         }
         
-        # Rendre le template HTML
-        html = render_to_string('pathology_search/print_report.html', context)
+        # Rendre le template HTML simplifié pour PDF
+        html = render_to_string('pathology_search/print_report_pdf.html', context)
         
         # Créer le PDF
         result = io.BytesIO()
@@ -110,7 +110,8 @@ def print_report(request, consultation_id):
         
         if not pdf.err:
             response = HttpResponse(result.getvalue(), content_type='application/pdf')
-            response['Content-Disposition'] = f'inline; filename="rapport_consultation_{consultation.patient.numero_dossier}.pdf"'
+            filename = f'rapport_{consultation.patient.nom}_{consultation.patient.prenom}_{consultation.patient.numero_dossier}.pdf'
+            response['Content-Disposition'] = f'inline; filename="{filename}"'
             return response
         
         # En cas d'erreur, renvoyer une réponse d'erreur
@@ -336,7 +337,8 @@ def validate_results(request):
                     patient_info_html = f"""
                     <div style="background: rgba(255,255,255,0.15); padding: 10px 15px; border-radius: 8px; margin-top: 10px;">
                         <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px;">
-                            <div><i class="fas fa-user"></i> <strong>{patient.nom_complet}</strong></div>
+                            <div><i class="fas fa-user"></i> <strong>Nom:</strong> {patient.nom}</div>
+                            <div><i class="fas fa-user"></i> <strong>Prénom:</strong> {patient.prenom}</div>
                             <div><i class="fas fa-id-card"></i> {patient.numero_dossier}</div>
                             <div><i class="fas fa-calendar"></i> {patient_date_naissance}</div>
                             <div><i class="fas fa-phone"></i> {patient.telephone or 'Non renseigné'}</div>
