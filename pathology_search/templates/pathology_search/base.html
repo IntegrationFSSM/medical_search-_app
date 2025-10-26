@@ -139,34 +139,10 @@
     <!-- Navigation -->
     <nav class="gradient-bg shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
+            <div class="flex justify-center h-16">
+                <a href="{% url 'pathology_search:index' %}" class="flex items-center hover:opacity-80 transition-opacity cursor-pointer">
                     <i class="fas fa-heartbeat text-white text-xl sm:text-2xl mr-2 sm:mr-3"></i>
                     <span class="text-white text-base sm:text-xl font-bold">Recherche Pathologie</span>
-                </div>
-                <!-- Desktop Menu -->
-                <div class="hidden sm:flex items-center space-x-4">
-                    <a href="{% url 'pathology_search:index' %}" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">
-                        <i class="fas fa-search mr-1"></i> Recherche
-                    </a>
-                    <a href="{% url 'pathology_search:about' %}" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium">
-                        <i class="fas fa-info-circle mr-1"></i> À propos
-                    </a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <div class="sm:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-white p-2">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="mobile-menu sm:hidden pb-4">
-                <a href="{% url 'pathology_search:index' %}" class="block text-white hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium">
-                    <i class="fas fa-search mr-2"></i> Recherche
-                </a>
-                <a href="{% url 'pathology_search:about' %}" class="block text-white hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium mt-1">
-                    <i class="fas fa-info-circle mr-2"></i> À propos
                 </a>
             </div>
         </div>
@@ -187,26 +163,6 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('active');
-                const icon = this.querySelector('i');
-                if (mobileMenu.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        }
-    </script>
-    
     {% block extra_js %}{% endblock %}
 </body>
 </html>
