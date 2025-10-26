@@ -596,18 +596,18 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Si auto-validation (haute similarité), afficher un message et rediriger
+            // Si auto-validation (haute similarité), afficher un message et rediriger immédiatement
             if (data.auto_validated) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Correspondance parfaite !',
-                    html: 'Résultat validé automatiquement<br>Génération du plan de traitement en cours...',
-                    timer: 2000,
-                    timerProgressBar: true,
+                    html: '<div class="text-center">Résultat validé automatiquement<br><i class="fas fa-spinner fa-spin mt-3 mb-2" style="font-size: 2em;"></i><br>Génération du plan de traitement...</div>',
                     showConfirmButton: false,
-                    allowOutsideClick: false
-                }).then(() => {
-                    window.location.href = data.redirect_url;
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        // Rediriger immédiatement
+                        window.location.href = data.redirect_url;
+                    }
                 });
                 return;
             }
@@ -1264,18 +1264,18 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Si auto-validation (haute similarité), afficher un message et rediriger
+            // Si auto-validation (haute similarité), afficher un message et rediriger immédiatement
             if (data.auto_validated) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Correspondance parfaite !',
-                    html: 'Résultat validé automatiquement<br>Génération du plan de traitement en cours...',
-                    timer: 2000,
-                    timerProgressBar: true,
+                    html: '<div class="text-center">Résultat validé automatiquement<br><i class="fas fa-spinner fa-spin mt-3 mb-2" style="font-size: 2em;"></i><br>Génération du plan de traitement...</div>',
                     showConfirmButton: false,
-                    allowOutsideClick: false
-                }).then(() => {
-                    window.location.href = data.redirect_url;
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        // Rediriger immédiatement
+                        window.location.href = data.redirect_url;
+                    }
                 });
                 return;
             }
