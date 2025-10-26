@@ -5,10 +5,10 @@ class Command(BaseCommand):
     help = 'Supprime le patient ENNHILI YASSINE'
     
     def handle(self, *args, **kwargs):
-        # Chercher le patient
-        self.stdout.write('🔍 Recherche du patient ENNHILI YASSINE...')
+        # Chercher le patient (ID 17: YASSINE Ennhili)
+        self.stdout.write('🔍 Recherche du patient YASSINE Ennhili (ID: 17)...')
         
-        patients = Patient.objects.filter(nom__icontains='ENNHILI')
+        patients = Patient.objects.filter(id=17)
         
         if not patients.exists():
             self.stdout.write(self.style.ERROR('❌ Aucun patient trouvé avec ce nom'))
