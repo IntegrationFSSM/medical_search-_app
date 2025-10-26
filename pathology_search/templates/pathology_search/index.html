@@ -596,22 +596,6 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Si auto-validation (haute similarité), afficher un message et rediriger immédiatement
-            if (data.auto_validated) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Correspondance parfaite !',
-                    html: '<div class="text-center">Résultat validé automatiquement<br><i class="fas fa-spinner fa-spin mt-3 mb-2" style="font-size: 2em;"></i><br>Génération du plan de traitement...</div>',
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    didOpen: () => {
-                        // Rediriger immédiatement
-                        window.location.href = data.redirect_url;
-                    }
-                });
-                return;
-            }
-            
             // Si mode validation, rediriger vers la page de validation
             if (data.use_validation) {
                 window.location.href = data.redirect_url;
@@ -1264,22 +1248,6 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Si auto-validation (haute similarité), afficher un message et rediriger immédiatement
-            if (data.auto_validated) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Correspondance parfaite !',
-                    html: '<div class="text-center">Résultat validé automatiquement<br><i class="fas fa-spinner fa-spin mt-3 mb-2" style="font-size: 2em;"></i><br>Génération du plan de traitement...</div>',
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    didOpen: () => {
-                        // Rediriger immédiatement
-                        window.location.href = data.redirect_url;
-                    }
-                });
-                return;
-            }
-            
             // Si mode validation, rediriger vers la page de validation
             if (data.use_validation) {
                 window.location.href = data.redirect_url;

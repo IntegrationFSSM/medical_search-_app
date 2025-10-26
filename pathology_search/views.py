@@ -1,7 +1,7 @@
 """
 Vues pour l'application de recherche de pathologies
 """
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from .services import PathologySearchService
@@ -144,44 +144,8 @@ def search(request):
             aggregation=aggregation
         )
         
-        # Vérifier si la similarité du premier résultat est très élevée (>= 75%)
-        # Si oui, valider automatiquement sans passer par l'étape de validation manuelle
-        if (use_validation and search_results.get('success') and 
-            len(search_results.get('results', [])) > 0):
-            
-            first_result = search_results['results'][0]
-            similarity = first_result.get('similarity', 0)
-            
-            print(f"🎯 DEBUG Auto-validation: similarity = {similarity} (seuil = 0.75)")
-            
-            # Si similarité >= 75%, auto-valider le premier résultat
-            if similarity >= 0.75:
-                print(f"✅ AUTO-VALIDATION ACTIVÉE (similarité {similarity*100:.1f}% >= 75%)")
-                
-                # Sauvegarder les infos dans la session pour génération différée
-                result = first_result
-                pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
-                
-                request.session['auto_validation_data'] = {
-                    'result': first_result,
-                    'query': query,
-                    'pathology_name': pathology_name,
-                    'similarity': similarity
-                }
-                request.session.modified = True
-                
-                print(f"💾 Données auto-validation sauvegardées en session")
-                
-                # Rediriger vers une page qui va générer le diagnostic
-                return JsonResponse({
-                    'success': True,
-                    'auto_validated': True,
-                    'redirect_url': '/generate_auto_diagnosis/'
-                })
-            else:
-                print(f"⚠️ Similarité {similarity*100:.1f}% < 75%, validation manuelle requise")
-            
-            # Sinon, passer par la validation manuelle
+        # Si mode validation, sauvegarder dans la session
+        if use_validation and search_results.get('success'):
             request.session['search_results'] = search_results['results']
             request.session['search_query'] = query
             return JsonResponse({
@@ -202,81 +166,6 @@ def search(request):
 def about(request):
     """Page À propos."""
     return render(request, 'pathology_search/about.html')
-
-
-def generate_auto_diagnosis(request):
-    """
-    Génère le diagnostic pour l'auto-validation (similarité >= 75%).
-    Cette vue est appelée après la redirection pour éviter les timeouts.
-    """
-    try:
-        # Récupérer les données de la session
-        auto_data = request.session.get('auto_validation_data')
-        if not auto_data:
-            return HttpResponse("Erreur : Aucune donnée d'auto-validation trouvée", status=400)
-        
-        result = auto_data['result']
-        query = auto_data['query']
-        pathology_name = auto_data['pathology_name']
-        similarity = auto_data['similarity']
-        
-        # Extraire le texte médical du meilleur chunk
-        best_chunk_text = result.get('best_chunk_text', '')
-        
-        print(f"🔄 Génération du diagnostic IA pour: {pathology_name}")
-        
-        # Générer le diagnostic IA avec OpenAI
-        service = PathologySearchService()
-        diagnosis_result = service.generate_ai_diagnosis(
-            pathology_name=pathology_name,
-            form_data={'clinical_description': query},
-            similarity_score=similarity,
-            medical_text=best_chunk_text
-        )
-        
-        print(f"📊 Résultat génération: success={diagnosis_result.get('success')}")
-        
-        if diagnosis_result['success']:
-            # Sauvegarder dans la base de données
-            from .models import Patient, Medecin, Consultation
-            import uuid
-            
-            patient_id = request.session.get('current_patient_id')
-            medecin_id = request.session.get('current_medecin_id')
-            
-            patient = Patient.objects.get(id=patient_id) if patient_id else None
-            medecin = Medecin.objects.get(id=medecin_id) if medecin_id else None
-            
-            diagnosis_id = uuid.uuid4()
-            consultation = Consultation.objects.create(
-                id=diagnosis_id,
-                patient=patient,
-                medecin=medecin,
-                description_clinique=query,
-                pathologie_identifiee=pathology_name,
-                score_similarite=similarity,
-                fichier_source=result.get('file_name', ''),
-                criteres_valides={'auto_validated': True, 'description': query},
-                plan_traitement=diagnosis_result.get('diagnosis', ''),
-                statut='complete'
-            )
-            
-            print(f"💾 Consultation sauvegardée: {diagnosis_id}")
-            
-            # Nettoyer la session
-            if 'auto_validation_data' in request.session:
-                del request.session['auto_validation_data']
-            
-            # Rediriger vers la page de diagnostic
-            return redirect('pathology_search:diagnosis', diagnosis_id=diagnosis_id)
-        else:
-            return HttpResponse(f"Erreur lors de la génération du diagnostic: {diagnosis_result.get('error')}", status=500)
-            
-    except Exception as e:
-        print(f"❌ Exception lors de la génération auto-diagnostic: {str(e)}")
-        import traceback
-        traceback.print_exc()
-        return HttpResponse(f"Erreur : {str(e)}", status=500)
 
 
 def print_report(request, consultation_id):

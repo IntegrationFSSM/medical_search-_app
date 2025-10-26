@@ -1,2 +1,2 @@
-web: gunicorn medical_search.wsgi --log-file - --timeout 120
+web: gunicorn medical_search.wsgi --log-file -
 
