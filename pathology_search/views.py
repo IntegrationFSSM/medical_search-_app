@@ -6,6 +6,90 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from .services import PathologySearchService
 import json
+import re
+
+
+def clean_pathology_name(text):
+    """Nettoyer le nom de la pathologie en enlevant les préfixes Section/SubSection"""
+    if not text:
+        return text
+    text = str(text)
+    
+    # Enlever les crochets et guillemets
+    text = text.strip('[]"\'')
+    text = text.replace('["', '').replace('"]', '')
+    text = text.replace("['", '').replace("']", '')
+    
+    # Enlever les emojis
+    text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+    text = re.sub(r'[\u2600-\u26FF]', '', text)
+    text = re.sub(r'[\u2700-\u27BF]', '', text)
+    
+    # Enlever les préfixes SubSection et Section avec leurs numéros
+    text = re.sub(r'SubSection\s*\d+\.?\d*\s+', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'Section\s*\d+\.?\d*\s+', '', text, flags=re.IGNORECASE)
+    
+    # Enlever aussi les variantes avec tirets bas et points
+    text = re.sub(r'SubSection\d+\.\d+[_\s]+', '', text)
+    text = re.sub(r'Section\d+[_\s]+', '', text)
+    
+    # Enlever les "Section :" et "Sous-section :" en français
+    text = re.sub(r'Section\s+\d+\s*:\s*', '', text)
+    text = re.sub(r'Sous-section\s+[\d.]+\s*:\s*', '', text)
+    
+    # Remplacer les underscores par des espaces
+    text = text.replace('_', ' ')
+    
+    return text.strip()
+
+
+def clean_text_for_pdf(text):
+    """Nettoyer le texte simple (pour critères)"""
+    if not text:
+        return text
+    text = str(text)
+    # Enlever les crochets et guillemets
+    text = text.strip('[]"\'')
+    text = text.replace('["', '').replace('"]', '')
+    text = text.replace("['", '').replace("']", '')
+    # Enlever les emojis
+    text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+    text = re.sub(r'[\u2600-\u26FF]', '', text)
+    text = re.sub(r'[\u2700-\u27BF]', '', text)
+    return text.strip()
+
+
+def format_plan_traitement_html(text):
+    """Formater le plan de traitement avec HTML sophistiqué"""
+    if not text:
+        return text
+    text = str(text)
+    
+    # Enlever les emojis
+    text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+    text = re.sub(r'[\u2600-\u26FF]', '', text)
+    text = re.sub(r'[\u2700-\u27BF]', '', text)
+    
+    # Convertir les titres markdown en HTML avec styles
+    text = re.sub(r'^# (.+)$', r'<div class="plan-h1">\1</div>', text, flags=re.MULTILINE)
+    text = re.sub(r'^## (.+)$', r'<div class="plan-h2">\1</div>', text, flags=re.MULTILINE)
+    text = re.sub(r'^### (.+)$', r'<div class="plan-h3">\1</div>', text, flags=re.MULTILINE)
+    
+    # Convertir le gras **texte** en <strong>
+    text = re.sub(r'\*\*([^\*]+)\*\*', r'<strong>\1</strong>', text)
+    
+    # Convertir les listes à puces
+    text = re.sub(r'^\- (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
+    text = re.sub(r'^\* (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
+    
+    # Convertir les numéros de liste
+    text = re.sub(r'^\d+\.\s+(.+)$', r'<div class="plan-number">\1</div>', text, flags=re.MULTILINE)
+    
+    # Convertir les sauts de ligne en <br>
+    text = text.replace('\n\n', '<br><br>')
+    text = text.replace('\n', '<br>')
+    
+    return text
 
 
 def index(request):
@@ -104,94 +188,6 @@ def print_report(request, consultation_id):
         # S'assurer que les données sont présentes
         if not consultation.criteres_valides:
             consultation.criteres_valides = {}
-        
-        # Nettoyer les données pour le PDF (sans utiliser les filtres Django)
-        import re
-        
-def clean_pathology_name(text):
-    """Nettoyer le nom de la pathologie en enlevant les préfixes Section/SubSection"""
-    if not text:
-        return text
-    text = str(text)
-    
-    # Enlever les crochets et guillemets
-    text = text.strip('[]"\'')
-    text = text.replace('["', '').replace('"]', '')
-    text = text.replace("['", '').replace("']", '')
-    
-    # Enlever les emojis
-    text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
-    text = re.sub(r'[\u2600-\u26FF]', '', text)
-    text = re.sub(r'[\u2700-\u27BF]', '', text)
-    
-    # Enlever les préfixes SubSection et Section avec leurs numéros
-    # Par exemple: "SubSection2.1 Language Disorder" -> "Language Disorder"
-    text = re.sub(r'SubSection\s*\d+\.?\d*\s+', '', text, flags=re.IGNORECASE)
-    text = re.sub(r'Section\s*\d+\.?\d*\s+', '', text, flags=re.IGNORECASE)
-    
-    # Enlever aussi les variantes avec tirets bas et points
-    text = re.sub(r'SubSection\d+\.\d+[_\s]+', '', text)
-    text = re.sub(r'Section\d+[_\s]+', '', text)
-    
-    # Enlever les "Section :" et "Sous-section :" en français
-    text = re.sub(r'Section\s+\d+\s*:\s*', '', text)
-    text = re.sub(r'Sous-section\s+[\d.]+\s*:\s*', '', text)
-    
-    # Remplacer les underscores par des espaces
-    text = text.replace('_', ' ')
-    
-    return text.strip()
-
-
-def clean_text_for_pdf(text):
-    """Nettoyer le texte simple (pour critères)"""
-    if not text:
-        return text
-    text = str(text)
-    # Enlever les crochets et guillemets
-    text = text.strip('[]"\'')
-    text = text.replace('["', '').replace('"]', '')
-    text = text.replace("['", '').replace("']", '')
-    # Enlever les emojis
-    text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
-    text = re.sub(r'[\u2600-\u26FF]', '', text)
-    text = re.sub(r'[\u2700-\u27BF]', '', text)
-    return text.strip()
-        
-        def format_plan_traitement_html(text):
-            """Formater le plan de traitement avec HTML sophistiqué"""
-            if not text:
-                return text
-            text = str(text)
-            
-            # Enlever les emojis
-            text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
-            text = re.sub(r'[\u2600-\u26FF]', '', text)
-            text = re.sub(r'[\u2700-\u27BF]', '', text)
-            
-            # Convertir les titres markdown en HTML avec styles
-            # H1 (# Titre)
-            text = re.sub(r'^# (.+)$', r'<div class="plan-h1">\1</div>', text, flags=re.MULTILINE)
-            # H2 (## Titre)
-            text = re.sub(r'^## (.+)$', r'<div class="plan-h2">\1</div>', text, flags=re.MULTILINE)
-            # H3 (### Titre)
-            text = re.sub(r'^### (.+)$', r'<div class="plan-h3">\1</div>', text, flags=re.MULTILINE)
-            
-            # Convertir le gras **texte** en <strong>
-            text = re.sub(r'\*\*([^\*]+)\*\*', r'<strong>\1</strong>', text)
-            
-            # Convertir les listes à puces
-            text = re.sub(r'^\- (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
-            text = re.sub(r'^\* (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
-            
-            # Convertir les numéros de liste
-            text = re.sub(r'^\d+\.\s+(.+)$', r'<div class="plan-number">\1</div>', text, flags=re.MULTILINE)
-            
-            # Convertir les sauts de ligne en <br>
-            text = text.replace('\n\n', '<br><br>')
-            text = text.replace('\n', '<br>')
-            
-            return text
         
         # Formater le plan de traitement de manière sophistiquée
         plan_traitement_clean = format_plan_traitement_html(consultation.plan_traitement)
