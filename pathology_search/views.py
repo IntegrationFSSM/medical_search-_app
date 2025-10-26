@@ -171,9 +171,9 @@ def search(request):
                     
                     # Générer le diagnostic IA avec OpenAI
                     diagnosis_result = service.generate_ai_diagnosis(
-                        clinical_description=query,
                         pathology_name=pathology_name,
-                        criteria={},  # Pas de critères validés dans le formulaire
+                        form_data={'clinical_description': query},  # Données du formulaire
+                        similarity_score=similarity_score / 100,
                         medical_text=best_chunk_text
                     )
                     
@@ -197,9 +197,9 @@ def search(request):
                             medecin=medecin,
                             description_clinique=query,
                             pathologie_identifiee=pathology_name,
-                            score_similarite=similarity_score / 100,
+                            score_similarite=similarity,  # Déjà en format 0.XX
                             fichier_source=result.get('file_name', ''),
-                            criteres_valides={},
+                            criteres_valides={'auto_validated': True, 'description': query},
                             plan_traitement=diagnosis_result.get('diagnosis', ''),
                             statut='complete'
                         )
