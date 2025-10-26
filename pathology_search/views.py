@@ -92,8 +92,17 @@ def print_report(request, consultation_id):
         from xhtml2pdf import pisa
         from django.http import HttpResponse
         import io
+        import logging
+        
+        logger = logging.getLogger(__name__)
         
         consultation = Consultation.objects.select_related('patient').get(id=consultation_id)
+        
+        logger.info(f"Generating PDF for consultation {consultation_id}")
+        
+        # S'assurer que les données sont présentes
+        if not consultation.criteres_valides:
+            consultation.criteres_valides = {}
         
         context = {
             'consultation': consultation,
@@ -101,26 +110,43 @@ def print_report(request, consultation_id):
             'date_impression': timezone.now(),
         }
         
-        # Rendre le template HTML simplifié pour PDF
-        html = render_to_string('pathology_search/print_report_pdf.html', context)
+        try:
+            # Rendre le template HTML simplifié pour PDF
+            html = render_to_string('pathology_search/print_report_pdf.html', context)
+            logger.info("HTML template rendered successfully")
+        except Exception as e:
+            logger.error(f"Error rendering template: {str(e)}")
+            return HttpResponse(f'Erreur lors du rendu du template: {str(e)}', status=500)
         
         # Créer le PDF
         result = io.BytesIO()
-        pdf = pisa.pisaDocument(io.BytesIO(html.encode("UTF-8")), result)
-        
-        if not pdf.err:
-            response = HttpResponse(result.getvalue(), content_type='application/pdf')
-            filename = f'rapport_{consultation.patient.nom}_{consultation.patient.prenom}_{consultation.patient.numero_dossier}.pdf'
-            response['Content-Disposition'] = f'inline; filename="{filename}"'
-            return response
-        
-        # En cas d'erreur, renvoyer une réponse d'erreur
-        return HttpResponse('Erreur lors de la génération du PDF', status=500)
+        try:
+            pdf = pisa.pisaDocument(io.BytesIO(html.encode("UTF-8")), result)
+            
+            if not pdf.err:
+                response = HttpResponse(result.getvalue(), content_type='application/pdf')
+                # Nettoyer le nom de fichier pour éviter les caractères spéciaux
+                filename = f'rapport_{consultation.patient.nom}_{consultation.patient.prenom}_{consultation.patient.numero_dossier}.pdf'
+                filename = filename.replace(' ', '_').replace("'", '')
+                response['Content-Disposition'] = f'inline; filename="{filename}"'
+                logger.info("PDF generated successfully")
+                return response
+            else:
+                logger.error(f"PDF generation error: {pdf.err}")
+                return HttpResponse(f'Erreur lors de la génération du PDF: {pdf.err}', status=500)
+        except Exception as e:
+            logger.error(f"Error creating PDF: {str(e)}")
+            return HttpResponse(f'Erreur lors de la création du PDF: {str(e)}', status=500)
         
     except Consultation.DoesNotExist:
         return render(request, 'pathology_search/index.html', {
             'error': 'Consultation non trouvée.'
         })
+    except Exception as e:
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.error(f"Unexpected error in print_report: {str(e)}")
+        return HttpResponse(f'Erreur inattendue: {str(e)}', status=500)
 
 
 def patient_history(request, patient_id):
