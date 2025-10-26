@@ -451,6 +451,7 @@ Réponds UNIQUEMENT par un JSON:
 4. 📋 Détaillez les ÉTAPES CHRONOLOGIQUES du traitement
 5. 🇫🇷 Répondez en français médical professionnel mais compréhensible
 6. 🎯 Ce plan sera utilisé DIRECTEMENT par le médecin traitant avec le patient
+7. ❌ N'AJOUTEZ PAS de phrases générales d'avertissement ou de disclaimer à la fin (comme "ce plan doit être adapté", "consultez un médecin", etc.)
 
 **Format de réponse attendu :**
 - Organisé par sections numérotées (1. 2. 3. etc.)
@@ -458,6 +459,7 @@ Réponds UNIQUEMENT par un JSON:
 - Listes à puces claires
 - Médicaments avec dosages précis
 - Timeline thérapeutique détaillée
+- NE PAS inclure de phrases d'avertissement générales à la fin
 """
         
         return prompt
