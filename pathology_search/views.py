@@ -89,9 +89,7 @@ def print_report(request, consultation_id):
         from .models import Consultation
         from django.utils import timezone
         from django.template.loader import render_to_string
-        from xhtml2pdf import pisa
         from django.http import HttpResponse
-        import io
         import logging
         
         logger = logging.getLogger(__name__)
@@ -152,22 +150,20 @@ def print_report(request, consultation_id):
             logger.error(f"Error rendering template: {str(e)}")
             return HttpResponse(f'Erreur lors du rendu du template: {str(e)}', status=500)
         
-        # Créer le PDF
-        result = io.BytesIO()
+        # Créer le PDF avec WeasyPrint
         try:
-            pdf = pisa.pisaDocument(io.BytesIO(html.encode("UTF-8")), result)
+            from weasyprint import HTML
             
-            if not pdf.err:
-                response = HttpResponse(result.getvalue(), content_type='application/pdf')
-                # Nettoyer le nom de fichier pour éviter les caractères spéciaux
-                filename = f'rapport_{consultation.patient.nom}_{consultation.patient.prenom}_{consultation.patient.numero_dossier}.pdf'
-                filename = filename.replace(' ', '_').replace("'", '')
-                response['Content-Disposition'] = f'inline; filename="{filename}"'
-                logger.info("PDF generated successfully")
-                return response
-            else:
-                logger.error(f"PDF generation error: {pdf.err}")
-                return HttpResponse(f'Erreur lors de la génération du PDF: {pdf.err}', status=500)
+            # Générer le PDF
+            pdf_file = HTML(string=html).write_pdf()
+            
+            response = HttpResponse(pdf_file, content_type='application/pdf')
+            # Nettoyer le nom de fichier pour éviter les caractères spéciaux
+            filename = f'rapport_{consultation.patient.nom}_{consultation.patient.prenom}_{consultation.patient.numero_dossier}.pdf'
+            filename = filename.replace(' ', '_').replace("'", '')
+            response['Content-Disposition'] = f'inline; filename="{filename}"'
+            logger.info("PDF generated successfully with WeasyPrint")
+            return response
         except Exception as e:
             logger.error(f"Error creating PDF: {str(e)}")
             return HttpResponse(f'Erreur lors de la création du PDF: {str(e)}', status=500)
