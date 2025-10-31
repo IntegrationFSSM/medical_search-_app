@@ -1,0 +1,220 @@
+{% extends 'pathology_search/base.html' %}
+
+{% block title %}{{ pathology_name }} - Formulaire{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+    <!-- En-tête avec informations -->
+    <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div class="flex-1">
+                <h1 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                    <i class="fas fa-file-medical text-purple-600 mr-2"></i>
+                    {{ pathology_name }}
+                </h1>
+                <div class="flex flex-wrap gap-3 text-sm">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800">
+                        <i class="fas fa-chart-line mr-1"></i>
+                        Similarité: <strong class="ml-1">{{ similarity|floatformat:1 }}%</strong>
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                        <i class="fas fa-list-ol mr-1"></i>
+                        Résultat {{ result_index|add:1 }} sur {{ total_results }}
+                    </span>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <a href="{% url 'pathology_search:index' %}" 
+                   class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors text-sm sm:text-base">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Retour
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulaire HTML de la pathologie -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        {% if html_page %}
+            <iframe 
+                id="pathologyFrame"
+                src="/pathology/{{ html_page }}"
+                class="w-full"
+                style="height: 120vh; min-height: 900px; border: none;"
+                onload="setupFormValidation()"
+            ></iframe>
+        {% else %}
+            <div class="p-8 text-center">
+                <i class="fas fa-exclamation-triangle text-yellow-500 text-4xl mb-4"></i>
+                <p class="text-gray-700">Formulaire HTML non disponible pour cette pathologie.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+function setupFormValidation() {
+    const iframe = document.getElementById('pathologyFrame');
+    
+    if (!iframe || !iframe.contentWindow) {
+        return;
+    }
+    
+    try {
+        const iframeDoc = iframe.contentWindow.document;
+        
+        // Injecter le script de validation dans l'iframe
+        const script = iframeDoc.createElement('script');
+        script.textContent = `
+            // Récupérer le token CSRF depuis le parent
+            function getCSRFToken() {
+                const meta = window.parent.document.querySelector('meta[name="csrf-token"]');
+                if (meta) {
+                    return meta.getAttribute('content');
+                }
+                const cookies = window.parent.document.cookie.split(';');
+                for (let cookie of cookies) {
+                    const [name, value] = cookie.trim().split('=');
+                    if (name === 'csrftoken') {
+                        return value;
+                    }
+                }
+                return '';
+            }
+
+            // Fonction de validation
+            function validerFormulaire() {
+                const formData = {};
+                const inputs = document.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked, select, textarea, input[type="text"], input[type="number"]');
+                
+                inputs.forEach(input => {
+                    const name = input.name || input.id;
+                    if (name) {
+                        if (input.type === 'checkbox' || input.type === 'radio') {
+                            if (!formData[name]) {
+                                formData[name] = [];
+                            }
+                            formData[name].push(input.value || input.nextSibling?.textContent?.trim() || 'Coché');
+                        } else {
+                            formData[name] = input.value;
+                        }
+                    }
+                });
+
+                // Afficher une animation de chargement
+                window.parent.Swal.fire({
+                    title: 'Génération du diagnostic...',
+                    html: \`
+                        <div class="flex flex-col items-center space-y-4 py-4">
+                            <div class="relative w-24 h-24">
+                                <div class="absolute top-0 left-0 w-full h-full border-4 border-purple-200 rounded-full"></div>
+                                <div class="absolute top-0 left-0 w-full h-full border-4 border-purple-600 rounded-full border-t-transparent animate-spin"></div>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-gray-700 font-semibold mb-2">Intelligence Artificielle en cours...</p>
+                                <p class="text-sm text-gray-500">Analyse des critères diagnostiques</p>
+                                <p class="text-sm text-gray-500 mt-1">Génération du plan de traitement</p>
+                            </div>
+                        </div>
+                    \`,
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    background: '#fff',
+                    customClass: {
+                        popup: 'rounded-xl shadow-2xl'
+                    }
+                });
+
+                // Envoyer les données au serveur
+                fetch('/validate/action/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCSRFToken()
+                    },
+                    body: JSON.stringify({
+                        action: 'validate',
+                        form_data: formData,
+                        result_index: {{ result_index }}
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    window.parent.Swal.close();
+                    if (data.success) {
+                        window.parent.Swal.fire({
+                            icon: 'success',
+                            title: 'Diagnostic généré !',
+                            text: 'Redirection vers le plan de traitement...',
+                            timer: 1500,
+                            showConfirmButton: false
+                        }).then(() => {
+                            window.location.href = data.redirect_url;
+                        });
+                    } else {
+                        window.parent.Swal.fire({
+                            icon: 'error',
+                            title: 'Erreur',
+                            text: data.error || 'Une erreur est survenue'
+                        });
+                    }
+                })
+                .catch(error => {
+                    window.parent.Swal.close();
+                    window.parent.Swal.fire({
+                        icon: 'error',
+                        title: 'Erreur de connexion',
+                        text: 'Impossible de générer le diagnostic'
+                    });
+                });
+            }
+
+            // Fonction pour retourner à la recherche
+            function nonValiderFormulaire() {
+                window.parent.Swal.fire({
+                    title: 'Annulation',
+                    text: 'Retour à la recherche...',
+                    icon: 'info',
+                    timer: 1000,
+                    showConfirmButton: false
+                }).then(() => {
+                    window.location.href = '/';
+                });
+            }
+
+            // Remplacer les fonctions existantes
+            window.validerFormulaire = validerFormulaire;
+            window.nonValiderFormulaire = nonValiderFormulaire;
+
+            // Ajouter des écouteurs d'événements sur tous les boutons
+            document.addEventListener('DOMContentLoaded', function() {
+                const buttons = document.querySelectorAll('button, input[type="button"], input[type="submit"]');
+                buttons.forEach(button => {
+                    const text = button.textContent || button.value || '';
+                    if (text.includes('VALIDE') && !text.includes('NON')) {
+                        button.onclick = function(e) {
+                            e.preventDefault();
+                            validerFormulaire();
+                            return false;
+                        };
+                    } else if (text.includes('NON VALIDE') || text.includes('ANNULER')) {
+                        button.onclick = function(e) {
+                            e.preventDefault();
+                            nonValiderFormulaire();
+                            return false;
+                        };
+                    }
+                });
+            });
+        `;
+        
+        iframeDoc.body.appendChild(script);
+    } catch (e) {
+        console.error('Erreur lors de l\'injection du script:', e);
+    }
+}
+</script>
+
+{% endblock %}
+
