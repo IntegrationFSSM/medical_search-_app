@@ -108,6 +108,7 @@ def search(request):
         query = data.get('query', '').strip()
         top_k = int(data.get('top_k', 5))
         aggregation = data.get('aggregation', 'max')
+        use_validation = data.get('use_validation', False)  # Mode validation ou affichage normal
         patient_id = data.get('patient_id')  # Récupérer l'ID du patient
         medecin_id = data.get('medecin_id')  # Récupérer l'ID du médecin
         
@@ -143,11 +144,15 @@ def search(request):
             aggregation=aggregation
         )
         
-        # Sauvegarder les résultats dans la session pour affichage ultérieur
-        if search_results.get('success'):
+        # Si mode validation, sauvegarder dans la session
+        if use_validation and search_results.get('success'):
             request.session['search_results'] = search_results['results']
             request.session['search_query'] = query
-            request.session.modified = True
+            return JsonResponse({
+                'success': True,
+                'use_validation': True,
+                'redirect_url': '/validate/?index=0'
+            })
         
         return JsonResponse(search_results)
         
@@ -161,113 +166,6 @@ def search(request):
 def about(request):
     """Page À propos."""
     return render(request, 'pathology_search/about.html')
-
-
-def show_results(request):
-    """
-    Afficher les résultats de recherche dans une page dédiée.
-    """
-    try:
-        from .models import Patient, Medecin
-        
-        # Récupérer les résultats de recherche de la session
-        search_results = request.session.get('search_results', [])
-        search_query = request.session.get('search_query', '')
-        patient_id = request.session.get('current_patient_id')
-        medecin_id = request.session.get('current_medecin_id')
-        
-        if not search_results:
-            return render(request, 'pathology_search/index.html', {
-                'error': 'Aucun résultat disponible. Veuillez effectuer une recherche.'
-            })
-        
-        # Préparer les résultats pour l'affichage
-        results_display = []
-        for result in search_results:
-            pathology_name_clean = clean_pathology_name(result.get('pathology_name', ''))
-            similarity_percent = result.get('similarity', 0) * 100
-            preview_text = result.get('best_chunk_text', '')[:300]
-            if len(result.get('best_chunk_text', '')) > 300:
-                preview_text += '...'
-            
-            results_display.append({
-                'pathology_name_clean': pathology_name_clean,
-                'similarity': similarity_percent,
-                'location': result.get('location', 'N/A'),
-                'preview': preview_text,
-                'num_chunks': result.get('num_chunks', 0),
-                'file_name': result.get('file_name', ''),
-                'html_page': result.get('html_page', '')
-            })
-        
-        # Récupérer les informations du patient et du médecin
-        patient = None
-        medecin = None
-        if patient_id:
-            try:
-                patient = Patient.objects.get(id=patient_id)
-            except Patient.DoesNotExist:
-                pass
-        
-        if medecin_id:
-            try:
-                medecin = Medecin.objects.get(id=medecin_id)
-            except Medecin.DoesNotExist:
-                pass
-        
-        context = {
-            'results': results_display,
-            'query': search_query,
-            'patient': patient,
-            'medecin': medecin
-        }
-        
-        return render(request, 'pathology_search/results.html', context)
-        
-    except Exception as e:
-        return render(request, 'pathology_search/index.html', {
-            'error': f'Erreur: {str(e)}'
-        })
-
-
-def show_pathology_form(request, result_index):
-    """
-    Afficher le formulaire HTML d'une pathologie sélectionnée.
-    """
-    try:
-        # Récupérer les résultats de recherche de la session
-        search_results = request.session.get('search_results', [])
-        search_query = request.session.get('search_query', '')
-        
-        if not search_results or result_index >= len(search_results):
-            return render(request, 'pathology_search/index.html', {
-                'error': 'Résultat non trouvé. Veuillez refaire une recherche.'
-            })
-        
-        # Récupérer le résultat sélectionné
-        selected_result = search_results[result_index]
-        pathology_name = selected_result.get('pathology_name', '')
-        html_page = selected_result.get('html_page')
-        similarity = selected_result.get('similarity', 0)
-        
-        # Nettoyer le nom de la pathologie
-        pathology_name_clean = clean_pathology_name(pathology_name)
-        
-        context = {
-            'pathology_name': pathology_name_clean,
-            'html_page': html_page,
-            'similarity': similarity,
-            'search_query': search_query,
-            'result_index': result_index,
-            'total_results': len(search_results)
-        }
-        
-        return render(request, 'pathology_search/show_form.html', context)
-        
-    except Exception as e:
-        return render(request, 'pathology_search/index.html', {
-            'error': f'Erreur: {str(e)}'
-        })
 
 
 def print_report(request, consultation_id):

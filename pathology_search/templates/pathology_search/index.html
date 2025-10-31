@@ -543,9 +543,9 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const query = document.getElementById('query').value.trim();
-    const top_k = 5;  // Toujours 5 résultats
-    const aggregation = 'max';  // Toujours max par défaut
-    const useValidation = false;  // Afficher les résultats, pas le mode validation
+    const top_k = document.getElementById('top_k').value;
+    const aggregation = document.getElementById('aggregation').value;
+    const useValidation = document.getElementById('useValidation').value === 'true';
     
     // Validation de la requête - minimum 3 caractères
     if (query.length < 3) {
@@ -600,8 +600,18 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Rediriger vers la page des résultats
-            window.location.href = '/results/';
+            // Si mode validation, rediriger vers la page de validation
+            if (data.use_validation) {
+                window.location.href = data.redirect_url;
+                return;
+            }
+            
+            // Sinon afficher les résultats normalement
+            // Update files count with actual number
+            if (data.total_files_searched) {
+                document.getElementById('filesProcessed').textContent = data.total_files_searched;
+            }
+            displayResults(data);
         } else {
             // Vérifier si c'est une erreur de requête invalide (validation GPT-4o)
             if (data.error_type === 'invalid_query') {
@@ -807,10 +817,10 @@ function createResultCard(result, rank) {
             
             ${hasHtmlPage ? `
             <div class="mt-4 pt-4 border-t">
-                <a href="/result/${rank - 1}/" class="block w-full text-center gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition duration-200 text-sm sm:text-base">
-                    <i class="fas fa-hand-pointer mr-2"></i>
-                    Sélectionner cette pathologie
-                    <i class="fas fa-arrow-right ml-2"></i>
+                <a href="${htmlLink}" target="_blank" class="block w-full text-center gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition duration-200 text-sm sm:text-base">
+                    <i class="fas fa-file-medical-alt mr-2"></i>
+                    Voir la Page Complète de la Pathologie
+                    <i class="fas fa-external-link-alt ml-2 text-xs"></i>
                 </a>
             </div>
             ` : ''}
@@ -1184,9 +1194,9 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     }
     
     const query = document.getElementById('query').value.trim();
-    const top_k = 5;  // Toujours 5 résultats
-    const aggregation = 'max';  // Toujours max par défaut
-    const useValidation = false;  // Afficher les résultats, pas le mode validation
+    const top_k = document.getElementById('top_k').value;
+    const aggregation = document.getElementById('aggregation').value;
+    const useValidation = document.getElementById('useValidation').value === 'true';
     
     // Validation de la requête - minimum 3 caractères
     if (query.length < 3) {
@@ -1243,8 +1253,18 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Rediriger vers la page des résultats
-            window.location.href = '/results/';
+            // Si mode validation, rediriger vers la page de validation
+            if (data.use_validation) {
+                window.location.href = data.redirect_url;
+                return;
+            }
+            
+            // Sinon afficher les résultats normalement
+            // Update files count with actual number
+            if (data.total_files_searched) {
+                document.getElementById('filesProcessed').textContent = data.total_files_searched;
+            }
+            displayResults(data);
         } else {
             // Vérifier si c'est une erreur de requête invalide (validation GPT-4o)
             if (data.error_type === 'invalid_query') {
