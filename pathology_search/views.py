@@ -163,6 +163,73 @@ def about(request):
     return render(request, 'pathology_search/about.html')
 
 
+def show_results(request):
+    """
+    Afficher les résultats de recherche dans une page dédiée.
+    """
+    try:
+        from .models import Patient, Medecin
+        
+        # Récupérer les résultats de recherche de la session
+        search_results = request.session.get('search_results', [])
+        search_query = request.session.get('search_query', '')
+        patient_id = request.session.get('current_patient_id')
+        medecin_id = request.session.get('current_medecin_id')
+        
+        if not search_results:
+            return render(request, 'pathology_search/index.html', {
+                'error': 'Aucun résultat disponible. Veuillez effectuer une recherche.'
+            })
+        
+        # Préparer les résultats pour l'affichage
+        results_display = []
+        for result in search_results:
+            pathology_name_clean = clean_pathology_name(result.get('pathology_name', ''))
+            similarity_percent = result.get('similarity', 0) * 100
+            preview_text = result.get('best_chunk_text', '')[:300]
+            if len(result.get('best_chunk_text', '')) > 300:
+                preview_text += '...'
+            
+            results_display.append({
+                'pathology_name_clean': pathology_name_clean,
+                'similarity': similarity_percent,
+                'location': result.get('location', 'N/A'),
+                'preview': preview_text,
+                'num_chunks': result.get('num_chunks', 0),
+                'file_name': result.get('file_name', ''),
+                'html_page': result.get('html_page', '')
+            })
+        
+        # Récupérer les informations du patient et du médecin
+        patient = None
+        medecin = None
+        if patient_id:
+            try:
+                patient = Patient.objects.get(id=patient_id)
+            except Patient.DoesNotExist:
+                pass
+        
+        if medecin_id:
+            try:
+                medecin = Medecin.objects.get(id=medecin_id)
+            except Medecin.DoesNotExist:
+                pass
+        
+        context = {
+            'results': results_display,
+            'query': search_query,
+            'patient': patient,
+            'medecin': medecin
+        }
+        
+        return render(request, 'pathology_search/results.html', context)
+        
+    except Exception as e:
+        return render(request, 'pathology_search/index.html', {
+            'error': f'Erreur: {str(e)}'
+        })
+
+
 def show_pathology_form(request, result_index):
     """
     Afficher le formulaire HTML d'une pathologie sélectionnée.

@@ -600,18 +600,8 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Si mode validation, rediriger vers la page de validation
-            if (data.use_validation) {
-                window.location.href = data.redirect_url;
-                return;
-            }
-            
-            // Sinon afficher les résultats normalement
-            // Update files count with actual number
-            if (data.total_files_searched) {
-                document.getElementById('filesProcessed').textContent = data.total_files_searched;
-            }
-            displayResults(data);
+            // Rediriger vers la page des résultats
+            window.location.href = '/results/';
         } else {
             // Vérifier si c'est une erreur de requête invalide (validation GPT-4o)
             if (data.error_type === 'invalid_query') {
@@ -1253,18 +1243,8 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         completeProgress();
         
         if (data.success) {
-            // Si mode validation, rediriger vers la page de validation
-            if (data.use_validation) {
-                window.location.href = data.redirect_url;
-                return;
-            }
-            
-            // Sinon afficher les résultats normalement
-            // Update files count with actual number
-            if (data.total_files_searched) {
-                document.getElementById('filesProcessed').textContent = data.total_files_searched;
-            }
-            displayResults(data);
+            // Rediriger vers la page des résultats
+            window.location.href = '/results/';
         } else {
             // Vérifier si c'est une erreur de requête invalide (validation GPT-4o)
             if (data.error_type === 'invalid_query') {

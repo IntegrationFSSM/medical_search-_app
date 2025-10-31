@@ -9,6 +9,7 @@ app_name = 'pathology_search'
 urlpatterns = [
     path('', views.index, name='index'),
     path('search/', views.search, name='search'),
+    path('results/', views.show_results, name='show_results'),
     path('about/', views.about, name='about'),
     path('result/<int:result_index>/', views.show_pathology_form, name='show_pathology_form'),
     path('validate/', views.validate_results, name='validate_results'),
