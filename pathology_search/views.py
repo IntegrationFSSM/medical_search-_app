@@ -1014,3 +1014,63 @@ def show_diagnosis(request, diagnosis_id):
     }
     
     return render(request, 'pathology_search/diagnosis.html', context)
+
+
+def get_all_pathologies(request):
+    """
+    Récupérer la liste de toutes les pathologies disponibles avec leurs pages HTML.
+    """
+    from pathlib import Path
+    from django.conf import settings
+    import os
+    
+    try:
+        embeddings_folder = settings.EMBEDDINGS_FOLDER
+        
+        if isinstance(embeddings_folder, str):
+            folder_path = Path(embeddings_folder)
+        else:
+            folder_path = embeddings_folder
+        
+        pathologies = []
+        
+        # Parcourir récursivement tous les fichiers JSON
+        for json_file in folder_path.rglob('*.json'):
+            try:
+                with open(json_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    
+                    # Vérifier si le fichier a un html_page
+                    if 'html_page' in data and data['html_page']:
+                        # Extraire le nom de la pathologie depuis hierarchy
+                        pathology_name = data.get('hierarchy', {}).get('parsed_name', '') or \
+                                       data.get('hierarchy', {}).get('file_stem', '')
+                        
+                        if pathology_name:
+                            # Nettoyer le nom de la pathologie
+                            clean_name = clean_pathology_name(pathology_name)
+                            
+                            pathologies.append({
+                                'name': clean_name,
+                                'original_name': pathology_name,
+                                'html_page': data['html_page'],
+                                'location': data.get('hierarchy', {}).get('location', '')
+                            })
+            except Exception as e:
+                # Ignorer les fichiers JSON invalides
+                continue
+        
+        # Trier les pathologies par nom
+        pathologies.sort(key=lambda x: x['name'])
+        
+        return JsonResponse({
+            'success': True,
+            'pathologies': pathologies,
+            'count': len(pathologies)
+        })
+    
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': f'Erreur lors de la récupération des pathologies: {str(e)}'
+        }, status=500)

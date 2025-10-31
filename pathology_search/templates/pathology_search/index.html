@@ -141,6 +141,46 @@
     </div>
 </div>
 
+<!-- Accès Direct aux Pathologies Section -->
+<div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg shadow-md p-4 sm:p-6 mb-6 border-l-4 border-emerald-500">
+    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-list-check text-emerald-600 mr-2"></i>
+        Accès Direct aux Pathologies
+    </h3>
+    <p class="text-sm text-gray-600 mb-4">
+        <i class="fas fa-info-circle mr-1"></i>
+        Sélectionnez directement une pathologie pour accéder à son formulaire d'évaluation
+    </p>
+    
+    <div class="space-y-3">
+        <label for="pathologySelect" class="block text-sm font-medium text-gray-700">
+            <i class="fas fa-search mr-1"></i> Rechercher une pathologie
+        </label>
+        <select 
+            id="pathologySelect" 
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white"
+        >
+            <option value="">-- Sélectionnez une pathologie --</option>
+        </select>
+        
+        <button 
+            type="button" 
+            onclick="accessPathology()"
+            class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition flex items-center justify-center shadow-md"
+        >
+            <i class="fas fa-arrow-right mr-2"></i>
+            Accéder au Formulaire
+        </button>
+        
+        <div id="pathologyInfo" class="hidden mt-3 p-3 bg-white rounded-lg border-l-4 border-emerald-500">
+            <p class="text-sm text-gray-600">
+                <i class="fas fa-map-marker-alt text-emerald-600 mr-2"></i>
+                <span id="pathologyLocation" class="font-medium"></span>
+            </p>
+        </div>
+    </div>
+</div>
+
 <!-- Create Patient Modal -->
 <div id="createPatientModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
     <div class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
@@ -862,10 +902,11 @@ function getCookie(name) {
 let currentPatients = [];
 let selectedPatient = null;
 
-// Charger la liste des patients au chargement de la page
+// Charger la liste des patients, médecins et pathologies au chargement de la page
 document.addEventListener('DOMContentLoaded', async function() {
     await loadPatients();
     await loadMedecins();
+    await loadPathologies();
 });
 
 async function loadPatients() {
@@ -1174,6 +1215,98 @@ document.getElementById('createMedecinForm').addEventListener('submit', async (e
         });
     }
 });
+
+// ============================================
+// Gestion des Pathologies - Accès Direct
+// ============================================
+
+let allPathologies = [];
+
+// Charger toutes les pathologies
+async function loadPathologies() {
+    try {
+        const response = await fetch('/api/pathologies/');
+        const data = await response.json();
+        
+        if (data.success) {
+            allPathologies = data.pathologies;
+            populatePathologySelect();
+        }
+    } catch (error) {
+        console.error('Erreur lors du chargement des pathologies:', error);
+    }
+}
+
+function populatePathologySelect() {
+    const select = document.getElementById('pathologySelect');
+    select.innerHTML = '<option value="">-- Sélectionnez une pathologie --</option>';
+    
+    allPathologies.forEach((pathology, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = pathology.name;
+        option.dataset.pathology = JSON.stringify(pathology);
+        select.appendChild(option);
+    });
+}
+
+// Gérer la sélection d'une pathologie
+document.getElementById('pathologySelect').addEventListener('change', function(e) {
+    const selectedOption = e.target.selectedOptions[0];
+    
+    if (selectedOption.value) {
+        const pathology = JSON.parse(selectedOption.dataset.pathology);
+        
+        // Afficher les informations de localisation
+        document.getElementById('pathologyLocation').textContent = pathology.location;
+        document.getElementById('pathologyInfo').classList.remove('hidden');
+    } else {
+        document.getElementById('pathologyInfo').classList.add('hidden');
+    }
+});
+
+// Accéder directement au formulaire de la pathologie
+function accessPathology() {
+    const select = document.getElementById('pathologySelect');
+    const selectedOption = select.selectedOptions[0];
+    
+    if (!selectedOption.value) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Aucune pathologie sélectionnée',
+            text: 'Veuillez sélectionner une pathologie avant de continuer.',
+            confirmButtonColor: '#10b981'
+        });
+        return;
+    }
+    
+    const pathology = JSON.parse(selectedOption.dataset.pathology);
+    
+    // Construire l'URL vers la page HTML de la pathologie
+    const pathologyUrl = `/pathology/${pathology.html_page}`;
+    
+    // Afficher une confirmation avant redirection
+    Swal.fire({
+        icon: 'info',
+        title: 'Ouverture du formulaire',
+        html: `
+            <p class="mb-2">Vous allez accéder au formulaire d'évaluation pour :</p>
+            <p class="font-bold text-lg text-purple-600">${pathology.name}</p>
+        `,
+        showCancelButton: true,
+        confirmButtonText: '<i class="fas fa-arrow-right mr-2"></i>Continuer',
+        cancelButtonText: 'Annuler',
+        confirmButtonColor: '#10b981',
+        cancelButtonColor: '#6b7280',
+        timer: 5000,
+        timerProgressBar: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Rediriger vers la page de la pathologie
+            window.location.href = pathologyUrl;
+        }
+    });
+}
 
 // Modifier la validation du formulaire de recherche pour inclure le patient et le médecin
 const originalSearchFormSubmit = document.getElementById('searchForm').onsubmit;
