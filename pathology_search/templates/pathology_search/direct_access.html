@@ -1,0 +1,288 @@
+{% extends 'pathology_search/base.html' %}
+
+{% block content %}
+<div class="mb-6">
+    <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg shadow-md p-4 sm:p-6 border-l-4 border-emerald-500">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                    <i class="fas fa-clipboard-list text-emerald-600 mr-2"></i>
+                    {{ pathology_info.name }}
+                </h2>
+                <p class="text-sm text-gray-600">
+                    <i class="fas fa-map-marker-alt text-emerald-600 mr-2"></i>
+                    {{ pathology_info.location }}
+                </p>
+            </div>
+            <a href="{% url 'pathology_search:index' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center text-sm">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Retour
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Affichage du formulaire HTML -->
+<div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6">
+    <div id="pathologyFormContainer">
+        {{ html_content|safe }}
+    </div>
+</div>
+
+<!-- Zone de résultat du diagnostic -->
+<div id="diagnosticResult" class="hidden">
+    <!-- Le diagnostic sera inséré ici -->
+</div>
+
+<script>
+// Variables globales
+const pathologyInfo = {{ pathology_info_json|safe }};
+const patientId = {{ patient_id|default:"null" }};
+const medecinId = {{ medecin_id|default:"null" }};
+
+// Fonction pour obtenir le cookie CSRF
+function getCookie(name) {
+    const metaTag = document.querySelector('meta[name="csrf-token"]');
+    if (metaTag) {
+        return metaTag.getAttribute('content');
+    }
+    
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+// Attendre que le DOM soit complètement chargé
+document.addEventListener('DOMContentLoaded', function() {
+    // Intercepter les boutons VALIDE et NON VALIDE du formulaire HTML
+    const buttons = document.querySelectorAll('button, input[type="button"]');
+    
+    buttons.forEach(button => {
+        const buttonText = (button.textContent || button.value || '').toUpperCase();
+        
+        if (buttonText.includes('VALIDE') && !buttonText.includes('NON')) {
+            // Bouton VALIDE
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleValidation();
+            });
+        } else if (buttonText.includes('NON VALIDE')) {
+            // Bouton NON VALIDE
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleSkip();
+            });
+        }
+    });
+    
+    // Créer des fonctions globales pour la compatibilité
+    window.validerFormulaire = function() {
+        handleValidation();
+    };
+    
+    window.nonValiderFormulaire = function() {
+        handleSkip();
+    };
+});
+
+// Fonction pour collecter les données du formulaire
+function collectFormData() {
+    const formData = {};
+    
+    // Collecter toutes les cases cochées
+    document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        const label = checkbox.nextElementSibling || checkbox.previousElementSibling;
+        const text = label ? label.textContent.trim() : checkbox.value;
+        
+        // Grouper par section si possible
+        const fieldset = checkbox.closest('fieldset');
+        const sectionName = fieldset ? (fieldset.querySelector('legend')?.textContent.trim() || 'Critères') : 'Critères';
+        
+        if (!formData[sectionName]) {
+            formData[sectionName] = [];
+        }
+        formData[sectionName].push(text);
+    });
+    
+    // Collecter les inputs texte
+    document.querySelectorAll('input[type="text"], textarea').forEach(input => {
+        if (input.value.trim()) {
+            const label = input.labels?.[0]?.textContent.trim() || input.name || input.placeholder;
+            if (label) {
+                formData[label] = input.value.trim();
+            }
+        }
+    });
+    
+    // Collecter les select
+    document.querySelectorAll('select').forEach(select => {
+        if (select.value) {
+            const label = select.labels?.[0]?.textContent.trim() || select.name;
+            if (label) {
+                formData[label] = select.options[select.selectedIndex].text;
+            }
+        }
+    });
+    
+    return formData;
+}
+
+// Gérer la validation
+async function handleValidation() {
+    // Vérifier qu'un patient est sélectionné
+    if (!patientId) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Patient requis',
+            text: 'Veuillez sélectionner un patient depuis la page principale avant de valider une pathologie.',
+            confirmButtonColor: '#10b981'
+        }).then(() => {
+            window.location.href = '{% url "pathology_search:index" %}';
+        });
+        return;
+    }
+    
+    // Collecter les données du formulaire
+    const formData = collectFormData();
+    
+    if (Object.keys(formData).length === 0) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Formulaire vide',
+            text: 'Veuillez remplir au moins un critère avant de valider.',
+            confirmButtonColor: '#10b981'
+        });
+        return;
+    }
+    
+    // Afficher le loading avec animation
+    Swal.fire({
+        title: '<i class="fas fa-brain fa-spin text-purple-600 mr-2"></i> Génération du diagnostic IA',
+        html: `
+            <p class="mb-4">Analyse en cours des critères sélectionnés...</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="aiProgressBar"></div>
+            </div>
+            <p class="text-sm text-gray-600 mt-4">Utilisation de GPT-4o-mini pour créer un plan de traitement personnalisé</p>
+        `,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        didOpen: () => {
+            simulateAIProgress();
+        }
+    });
+    
+    try {
+        // Appeler l'API pour générer le diagnostic
+        const response = await fetch('{% url "pathology_search:validate_action" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({
+                action: 'validate',
+                form_data: formData,
+                pathology_name: pathologyInfo.name,
+                patient_id: patientId,
+                medecin_id: medecinId,
+                direct_access: true,
+                html_page: pathologyInfo.html_page
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success && data.diagnosis_id) {
+            // Rediriger vers la page de diagnostic
+            window.location.href = `/diagnosis/${data.diagnosis_id}/`;
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur',
+                text: data.error || 'Une erreur est survenue lors de la génération du diagnostic.',
+                confirmButtonColor: '#10b981'
+            });
+        }
+    } catch (error) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur de connexion',
+            text: 'Impossible de générer le diagnostic: ' + error.message,
+            confirmButtonColor: '#10b981'
+        });
+    }
+}
+
+// Simuler la progression de l'IA
+function simulateAIProgress() {
+    let progress = 0;
+    const progressBar = document.getElementById('aiProgressBar');
+    
+    const interval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress > 90) progress = 90;
+        
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
+    }, 500);
+    
+    // Nettoyer l'intervalle après 30 secondes
+    setTimeout(() => clearInterval(interval), 30000);
+}
+
+// Gérer le skip (retour à la page principale)
+function handleSkip() {
+    Swal.fire({
+        icon: 'info',
+        title: 'Retour à la page principale',
+        text: 'Vous allez être redirigé vers la page de recherche.',
+        timer: 2000,
+        timerProgressBar: true,
+        showConfirmButton: false
+    }).then(() => {
+        window.location.href = '{% url "pathology_search:index" %}';
+    });
+}
+</script>
+
+<style>
+.progress-bar-container {
+    width: 100%;
+    height: 24px;
+    background-color: #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981 0%, #059669 50%, #10b981 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+</style>
+{% endblock %}
+

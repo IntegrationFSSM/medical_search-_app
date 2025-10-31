@@ -1282,8 +1282,19 @@ function accessPathology() {
     
     const pathology = JSON.parse(selectedOption.dataset.pathology);
     
-    // Construire l'URL vers la page HTML de la pathologie
-    const pathologyUrl = `/pathology/${pathology.html_page}`;
+    // Vérifier qu'un patient est sélectionné
+    if (!selectedPatient) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Patient requis',
+            text: 'Veuillez sélectionner un patient avant d\'accéder à une pathologie.',
+            confirmButtonColor: '#10b981'
+        });
+        return;
+    }
+    
+    // Construire l'URL vers la page de la pathologie avec mode direct
+    const pathologyUrl = `/direct-access/?html_page=${encodeURIComponent(pathology.html_page)}&patient_id=${selectedPatient.id}${selectedMedecin ? '&medecin_id=' + selectedMedecin.id : ''}`;
     
     // Afficher une confirmation avant redirection
     Swal.fire({

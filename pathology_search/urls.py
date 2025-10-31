@@ -23,6 +23,7 @@ urlpatterns = [
     path('api/medecins/create/', views.create_medecin, name='create_medecin'),
     # API Pathologies
     path('api/pathologies/', views.get_all_pathologies, name='get_all_pathologies'),
+    path('direct-access/', views.direct_pathology_access, name='direct_pathology_access'),
     # Rapports et historique
     path('print/<uuid:consultation_id>/', views.print_report, name='print_report'),
     path('patient/<int:patient_id>/history/', views.patient_history, name='patient_history'),

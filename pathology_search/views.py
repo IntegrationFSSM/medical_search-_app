@@ -868,17 +868,49 @@ def validate_action(request):
     action = data.get('action')  # 'validate' ou 'skip'
     current_index = int(data.get('current_index', 0))
     form_data = data.get('form_data', {})  # Données du formulaire
+    is_direct_access = data.get('direct_access', False)
     
     results = request.session.get('search_results', [])
     
     if action == 'validate':
-        # L'utilisateur a validé ce résultat
-        result = results[current_index]
-        pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
-        similarity_score = result.get('similarity', 0) * 100
-        
-        # Extraire le texte médical du meilleur chunk
-        best_chunk_text = result.get('best_chunk_text', '')
+        # Gérer l'accès direct (sans recherche préalable)
+        if is_direct_access:
+            pathology_name = data.get('pathology_name', '')
+            html_page = data.get('html_page', '')
+            similarity_score = 100  # Score de 100% pour accès direct
+            
+            # Charger le texte médical depuis le fichier .npy correspondant
+            from django.conf import settings
+            from pathlib import Path
+            
+            best_chunk_text = ''
+            try:
+                # Construire le chemin vers le fichier JSON
+                json_path = Path(settings.EMBEDDINGS_FOLDER) / html_page.replace('.html', '.json')
+                if json_path.exists():
+                    with open(json_path, 'r', encoding='utf-8') as f:
+                        json_data = json.load(f)
+                        # Récupérer le texte du premier chunk
+                        if json_data.get('chunks') and len(json_data['chunks']) > 0:
+                            best_chunk_text = json_data['chunks'][0].get('text_preview', '')
+            except Exception as e:
+                print(f"Erreur lors de la lecture du texte médical: {e}")
+            
+            # Créer un résultat factice pour l'accès direct
+            result = {
+                'file_name': pathology_name + '.txt',
+                'similarity': 1.0,
+                'best_chunk_text': best_chunk_text,
+                'location': html_page
+            }
+        else:
+            # Mode normal (via recherche)
+            result = results[current_index]
+            pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
+            similarity_score = result.get('similarity', 0) * 100
+            
+            # Extraire le texte médical du meilleur chunk
+            best_chunk_text = result.get('best_chunk_text', '')
         
         # Générer le diagnostic IA avec OpenAI en incluant le texte médical
         from .services import PathologySearchService
@@ -913,6 +945,10 @@ def validate_action(request):
             patient_id = request.session.get('current_patient_id')
             medecin_id = request.session.get('current_medecin_id')
             query = request.session.get('search_query', '')
+            
+            # Pour l'accès direct, utiliser une description spécifique
+            if is_direct_access:
+                query = f"Accès direct à la pathologie : {pathology_name}"
             
             if patient_id:
                 patient = Patient.objects.get(id=patient_id)
@@ -1014,6 +1050,76 @@ def show_diagnosis(request, diagnosis_id):
     }
     
     return render(request, 'pathology_search/diagnosis.html', context)
+
+
+def direct_pathology_access(request):
+    """
+    Accès direct à une pathologie avec validation intégrée.
+    """
+    from django.conf import settings
+    from django.http import Http404
+    from pathlib import Path
+    
+    html_path = request.GET.get('html_page', '')
+    patient_id = request.GET.get('patient_id')
+    medecin_id = request.GET.get('medecin_id')
+    
+    # Stocker les IDs dans la session
+    if patient_id:
+        request.session['current_patient_id'] = int(patient_id)
+    if medecin_id:
+        request.session['current_medecin_id'] = int(medecin_id)
+    
+    if not html_path:
+        return render(request, 'pathology_search/index.html', {
+            'error': 'Aucune pathologie spécifiée.'
+        })
+    
+    try:
+        # Construire le chemin complet
+        full_path = Path(settings.EMBEDDINGS_FOLDER) / html_path
+        
+        # Vérifier que le fichier existe
+        if not full_path.exists():
+            raise Http404("Page HTML non trouvée")
+        
+        # Vérifier la sécurité
+        if not str(full_path.resolve()).startswith(str(Path(settings.EMBEDDINGS_FOLDER).resolve())):
+            raise Http404("Accès non autorisé")
+        
+        # Lire le contenu HTML
+        with open(full_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+        
+        # Récupérer les informations de la pathologie depuis le JSON
+        json_path = full_path.with_suffix('.json')
+        pathology_info = {}
+        
+        if json_path.exists():
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                pathology_name = data.get('hierarchy', {}).get('parsed_name', '') or \
+                               data.get('hierarchy', {}).get('file_stem', '')
+                pathology_info = {
+                    'name': clean_pathology_name(pathology_name),
+                    'location': data.get('hierarchy', {}).get('location', ''),
+                    'html_page': html_path
+                }
+        
+        context = {
+            'html_content': html_content,
+            'pathology_info': pathology_info,
+            'pathology_info_json': json.dumps(pathology_info),
+            'patient_id': request.session.get('current_patient_id'),
+            'medecin_id': request.session.get('current_medecin_id')
+        }
+        
+        return render(request, 'pathology_search/direct_access.html', context)
+    
+    except Exception as e:
+        return render(request, 'pathology_search/index.html', {
+            'error': f'Erreur lors du chargement de la pathologie: {str(e)}'
+        })
 
 
 def get_all_pathologies(request):
