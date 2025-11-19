@@ -397,12 +397,33 @@
             
             const data = await response.json();
             console.log('✅ Critères sauvegardés pour NON VALIDE:', data);
+            
+            // Afficher le sweet alert d'enregistrement
+            Swal.fire({
+                icon: 'success',
+                title: 'Enregistrement effectué',
+                text: 'Les symptômes ont été enregistrés. Retour vers les diagnostics...',
+                timer: 2000,
+                showConfirmButton: false,
+                didClose: () => {
+                    // Rediriger vers les diagnostics non visités
+                    window.location.href = '{% url "pathology_search:results_selection" %}';
+                }
+            });
         } catch (error) {
             console.error('❌ Erreur lors de la sauvegarde des critères:', error);
+            // Même en cas d'erreur, rediriger
+            Swal.fire({
+                icon: 'warning',
+                title: 'Attention',
+                text: 'Erreur lors de l\'enregistrement, mais retour aux diagnostics...',
+                timer: 2000,
+                showConfirmButton: false,
+                didClose: () => {
+                    window.location.href = '{% url "pathology_search:results_selection" %}';
+                }
+            });
         }
-        
-        // Rediriger directement sans Sweet Alert
-        window.location.href = '{% url "pathology_search:results_selection" %}';
     }
     </script>
 </body>

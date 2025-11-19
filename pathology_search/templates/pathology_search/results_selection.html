@@ -13,18 +13,25 @@
         <div>
             <h2 class="text-2xl font-bold text-gray-800">
                 <i class="fas fa-search mr-2 text-purple-600"></i>
-                Résultats de la Recherche
+                Diagnostics à Évaluer
             </h2>
             <p class="text-gray-600 mt-1">Requête: <span class="font-semibold">{{ query }}</span></p>
+            {% if total_visited %}
+            <p class="text-sm text-blue-600 mt-2">
+                <i class="fas fa-info-circle mr-1"></i>
+                {{ total_visited }}/{{ total_results }} diagnostics déjà évalués
+            </p>
+            {% endif %}
         </div>
         <div class="text-right">
-            <p class="text-sm text-gray-600">Résultats trouvés</p>
+            <p class="text-sm text-gray-600">Restants à évaluer</p>
             <p class="text-3xl font-bold text-purple-600">{{ results|length }}</p>
         </div>
     </div>
 </div>
 
-<!-- Liste des 5 résultats -->
+<!-- Liste des diagnostics non visités -->
+{% if results %}
 <div class="space-y-4">
     {% for result in results %}
     <div class="bg-white rounded-lg shadow-lg p-6 border-l-4 
@@ -32,13 +39,13 @@
         {% elif result.similarity >= 0.60 %}border-yellow-500
         {% else %}border-red-500{% endif %}
         hover:shadow-xl transition-shadow cursor-pointer"
-        onclick="selectResult({{ forloop.counter0 }})">
+        onclick="selectResult({{ result.index }})">
         
         <div class="flex items-start justify-between mb-4">
             <div class="flex-1">
                 <div class="flex items-center mb-2">
                     <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full mr-3">
-                        #{{ forloop.counter }}
+                        #{{ result.index|add:1 }}
                     </span>
                     <h3 class="text-xl font-bold text-gray-800">
                         {{ result.pathology_name }}
@@ -102,6 +109,23 @@
     </div>
     {% endfor %}
 </div>
+{% else %}
+<!-- Message si tous les diagnostics ont été visités -->
+<div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+    <div class="flex items-center">
+        <i class="fas fa-check-circle text-blue-600 text-3xl mr-4"></i>
+        <div>
+            <h3 class="text-xl font-bold text-blue-800 mb-2">Tous les diagnostics ont été évalués</h3>
+            <p class="text-blue-700 mb-4">Vous avez terminé l'évaluation de tous les diagnostics. Retour à la page principale...</p>
+            <a href="{% url 'pathology_search:index' %}" 
+               class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition inline-flex items-center">
+                <i class="fas fa-home mr-2"></i>
+                Retour à l'accueil
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 <script>
 // Stocker les résultats en JSON

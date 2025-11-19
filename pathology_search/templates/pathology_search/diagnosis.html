@@ -278,6 +278,13 @@
                 <span>Rapport Complet (PDF)</span>
             </a>
             {% endif %}
+            
+            <!-- Bouton pour retourner aux diagnostics non visités -->
+            <a href="{% url 'pathology_search:results_selection' %}" 
+               class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center text-sm sm:text-base">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Retour aux diagnostics</span>
+            </a>
         </div>
     </div>
 </div>

@@ -162,6 +162,9 @@ def search(request):
         if use_validation and search_results.get('success'):
             request.session['search_results'] = search_results['results']
             request.session['search_query'] = query
+            # Réinitialiser la liste des indices visités pour une nouvelle recherche
+            request.session['visited_diagnostic_indices'] = []
+            request.session.modified = True
             return JsonResponse({
                 'success': True,
                 'use_validation': True,
@@ -180,6 +183,7 @@ def search(request):
 def results_selection(request):
     """
     Afficher les 5 résultats de recherche pour que le médecin choisisse lequel valider.
+    Affiche seulement les diagnostics non visités.
     """
     results = request.session.get('search_results', [])
     query = request.session.get('search_query', '')
@@ -189,9 +193,16 @@ def results_selection(request):
             'error': 'Aucun résultat trouvé. Veuillez effectuer une nouvelle recherche.'
         })
     
-    # Préparer les résultats pour l'affichage
+    # Récupérer les indices visités depuis la session
+    visited_indices = set(request.session.get('visited_diagnostic_indices', []))
+    
+    # Préparer les résultats pour l'affichage (seulement les non visités)
     prepared_results = []
     for i, result in enumerate(results):
+        # Ne pas afficher si déjà visité
+        if i in visited_indices:
+            continue
+            
         pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
         similarity = result.get('similarity', 0)
         similarity_percent = int(similarity * 100)
@@ -205,10 +216,20 @@ def results_selection(request):
             'html_page': result.get('html_page', '')
         })
     
+    # Si tous les diagnostics ont été visités, retourner à la page principale
+    if len(visited_indices) >= len(results):
+        # Sauvegarder les symptômes avant de retourner
+        # Les symptômes sont déjà sauvegardés dans les consultations
+        return render(request, 'pathology_search/index.html', {
+            'message': 'Tous les diagnostics ont été évalués. Retour à la page principale.'
+        })
+    
     context = {
         'results': prepared_results,
         'results_json': json.dumps(prepared_results),
-        'query': query
+        'query': query,
+        'total_visited': len(visited_indices),
+        'total_results': len(results)
     }
     
     return render(request, 'pathology_search/results_selection.html', context)
@@ -773,6 +794,14 @@ def validate_results(request):
     print(f"🔎 Query: {query}")
     print(f"👤 Patient ID: {patient_id}")
     
+    # Marquer cet index comme visité
+    if 'visited_diagnostic_indices' not in request.session:
+        request.session['visited_diagnostic_indices'] = []
+    if current_index not in request.session['visited_diagnostic_indices']:
+        request.session['visited_diagnostic_indices'].append(current_index)
+        request.session.modified = True
+        print(f"✅ Index {current_index} marqué comme visité")
+    
     # Récupérer les informations du patient
     patient = None
     if patient_id:
@@ -859,6 +888,15 @@ def validate_action(request):
     results = request.session.get('search_results', [])
     
     if action == 'validate':
+        # Marquer l'index comme visité lors de la validation
+        if not is_direct_access and current_index < len(results):
+            if 'visited_diagnostic_indices' not in request.session:
+                request.session['visited_diagnostic_indices'] = []
+            if current_index not in request.session['visited_diagnostic_indices']:
+                request.session['visited_diagnostic_indices'].append(current_index)
+                request.session.modified = True
+                print(f"✅ Index {current_index} marqué comme visité (validation)")
+        
         # Gérer l'accès direct (sans recherche préalable)
         if is_direct_access:
             pathology_name = data.get('pathology_name', '')
@@ -1042,6 +1080,21 @@ def validate_action(request):
                 )
                 
                 print(f"✅ Consultation NON VALIDÉE sauvegardée (ID: {consultation.id}) avec {len(form_data)} critères")
+                
+                # Extraire les symptômes des critères pour les sauvegarder dans l'historique
+                symptoms = []
+                for key, value in form_data.items():
+                    if isinstance(value, list):
+                        symptoms.extend([f"{key}: {item}" for item in value])
+                    else:
+                        symptoms.append(f"{key}: {value}")
+                
+                # Ajouter les symptômes à l'historique du patient dans la session
+                if 'patient_historical_symptoms' not in request.session:
+                    request.session['patient_historical_symptoms'] = []
+                request.session['patient_historical_symptoms'].extend(symptoms)
+                request.session.modified = True
+                print(f"📊 {len(symptoms)} symptômes ajoutés à l'historique du patient")
         except Exception as e:
             print(f"❌ Erreur lors de la sauvegarde de la consultation non validée: {e}")
         
