@@ -1,0 +1,52 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section4_Attention_Deficit_Hyperactivity_Disorder/SubSection4.1_ADHD.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section4_Attention_Deficit_Hyperactivity_Disorder/SubSection4.1_ADHD.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section4_Attention_Deficit_Hyperactivity_Disorder/ADHD.html",
+  "hierarchy": {
+    "file_name": "SubSection4.1_ADHD.txt",
+    "file_stem": "SubSection4.1_ADHD",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section4_Attention_Deficit_Hyperactivity_Disorder"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section4_Attention_Deficit_Hyperactivity_Disorder/SubSection4.1_ADHD.txt",
+    "parsed_name": "SubSection4.1 ADHD",
+    "location": "Neurodevelopmental_Disorders_out > Section4_Attention_Deficit_Hyperactivity_Disorder > SubSection4.1_ADHD"
+  },
+  "total_word_count": 3990,
+  "num_chunks": 5,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    5,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Attention-Deficit/Hyperactivity Disorder Attention-Deficit/Hyperactivity Disorder Diagnostic Criteria A. A persistent pattern of inattention and/or hyperactivity-impulsivity that interferes with funct..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "or development. Inattention manifests behaviorally in ADHD as wandering off task, failing to follow through on instructions or finishing work or chores, having difficulty sustaining focus, and being d..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "Large-scale genome- wide association studies (GWAS) have identified a number of loci enriched in evolutionarily constrained genomic regions and loss-of-function genes as well as around brain-expressed..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "with ADHD may develop secondary oppositional attitudes toward such tasks and devalue their importance. ADHD and intermittent explosive disorder share high levels of impulsive behavior. However, indivi..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 390,
+      "text_preview": "medication (e.g., bronchodilators, isoniazid, neuroleptics [resulting in akathisia], thyroid replacement medication) are diagnosed as other specified or unspecified other (or unknown) substance\u2013relate..."
+    }
+  ]
+}

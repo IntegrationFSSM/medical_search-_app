@@ -1,0 +1,62 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/SubSection3.1_Autism_Spectrum_Disorder.txt",
+  "relative_path": "Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/SubSection3.1_Autism_Spectrum_Disorder.txt",
+  "html_page": "Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/Autism_Spectrum_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection3.1_Autism_Spectrum_Disorder.txt",
+    "file_stem": "SubSection3.1_Autism_Spectrum_Disorder",
+    "folders": [
+      "Neurodevelopmental_Disorders_out",
+      "Section3_Autism_Spectrum_Disorder"
+    ],
+    "full_path": "Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/SubSection3.1_Autism_Spectrum_Disorder.txt",
+    "parsed_name": "SubSection3.1 Autism Spectrum Disorder",
+    "location": "Neurodevelopmental_Disorders_out > Section3_Autism_Spectrum_Disorder > SubSection3.1_Autism_Spectrum_Disorder"
+  },
+  "total_word_count": 6289,
+  "num_chunks": 7,
+  "max_words_per_chunk": 1000,
+  "overlap_words": 100,
+  "embedding_model": "text-embedding-ada-002",
+  "embedding_shape": [
+    7,
+    1536
+  ],
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "word_count": 1000,
+      "text_preview": "Autism Spectrum Disorder Autism Spectrum Disorder Diagnostic Criteria A. Persistent deficits in social communication and social interaction across multiple contexts, as manifested by all of the follow..."
+    },
+    {
+      "chunk_id": 1,
+      "word_count": 1000,
+      "text_preview": "be helpful to note level of support needed for each of the two core psychopathological domains in Table 2 (e.g., \u201crequiring very substantial support for deficits in social communication and requiring ..."
+    },
+    {
+      "chunk_id": 2,
+      "word_count": 1000,
+      "text_preview": "Criterion B) than individuals with accompanying intellectual or language impairments and may be making great efforts to mask these deficits. Criterion A deficits in social communication will be more s..."
+    },
+    {
+      "chunk_id": 3,
+      "word_count": 1000,
+      "text_preview": "patterns). Excessive adherence to routines and restricted patterns of behavior may be manifest in resistance to change (e.g., distress at apparently small changes, such as taking an alternative route ..."
+    },
+    {
+      "chunk_id": 4,
+      "word_count": 1000,
+      "text_preview": "months. Prospective studies demonstrate that in most cases the onset of autism spectrum disorder is associated with declines in critical social and communication behaviors in the first 2 years of life..."
+    },
+    {
+      "chunk_id": 5,
+      "word_count": 1000,
+      "text_preview": "not appear to be fully penetrant (i.e., not all individuals with that same genetic abnormality will develop autism spectrum disorder). Risk for the majority of cases appears to be polygenic, with perh..."
+    },
+    {
+      "chunk_id": 6,
+      "word_count": 889,
+      "text_preview": "the developmental level of the individual\u2019s nonverbal skills (e.g., fine motor skills, nonverbal problem solving). In contrast, intellectual developmental disorder is the appropriate diagnosis when th..."
+    }
+  ]
+}
