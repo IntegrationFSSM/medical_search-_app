@@ -582,6 +582,27 @@ function completeProgress() {
 document.getElementById('searchForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    // VÉRIFICATION OBLIGATOIRE : Patient et Médecin doivent être sélectionnés
+    if (!selectedPatient) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Patient requis',
+            text: 'Veuillez sélectionner un patient avant de lancer la recherche.',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
+    
+    if (!selectedMedecin) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Médecin requis',
+            text: 'Veuillez sélectionner un médecin avant de lancer la recherche.',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
+    
     const query = document.getElementById('query').value.trim();
     const top_k = document.getElementById('top_k').value;
     const aggregation = document.getElementById('aggregation').value;
@@ -610,6 +631,11 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         return;
     }
     
+    // Logger si historique disponible (l'enrichissement se fait en BACKEND)
+    if (patientHistoricalSymptoms && patientHistoricalSymptoms.length > 0) {
+        console.log(`📊 Envoi de ${patientHistoricalSymptoms.length} symptômes historiques au backend`);
+    }
+    
     // Show loading, hide errors and results
     document.getElementById('loadingIndicator').classList.remove('hidden');
     document.getElementById('errorMessage').classList.add('hidden');
@@ -630,7 +656,10 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
                 query, 
                 top_k, 
                 aggregation,
-                use_validation: useValidation 
+                use_validation: useValidation,
+                patient_id: selectedPatient.id,
+                medecin_id: selectedMedecin.id,
+                historical_symptoms: patientHistoricalSymptoms || []
             })
         });
         
@@ -1360,12 +1389,10 @@ function accessPathology() {
         return;
     }
     
-    const pathology = JSON.parse(selectedOption.dataset.pathology);
-    
     // Vérifier qu'un patient est sélectionné
     if (!selectedPatient) {
         Swal.fire({
-            icon: 'warning',
+            icon: 'error',
             title: 'Patient requis',
             text: 'Veuillez sélectionner un patient avant d\'accéder à une pathologie.',
             confirmButtonColor: '#10b981'
@@ -1373,194 +1400,25 @@ function accessPathology() {
         return;
     }
     
+    // Vérifier qu'un médecin est sélectionné
+    if (!selectedMedecin) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Médecin requis',
+            text: 'Veuillez sélectionner un médecin avant d\'accéder à une pathologie.',
+            confirmButtonColor: '#10b981'
+        });
+        return;
+    }
+    
+    const pathology = JSON.parse(selectedOption.dataset.pathology);
+    
     // Construire l'URL vers la page de la pathologie avec mode direct
-    const pathologyUrl = `/direct-access/?html_page=${encodeURIComponent(pathology.html_page)}&patient_id=${selectedPatient.id}${selectedMedecin ? '&medecin_id=' + selectedMedecin.id : ''}`;
+    const pathologyUrl = `/direct-access/?html_page=${encodeURIComponent(pathology.html_page)}&patient_id=${selectedPatient.id}&medecin_id=${selectedMedecin.id}`;
     
-    // Afficher une confirmation avant redirection
-    Swal.fire({
-        icon: 'info',
-        title: 'Ouverture du formulaire',
-        html: `
-            <p class="mb-2">Vous allez accéder au formulaire d'évaluation pour :</p>
-            <p class="font-bold text-lg text-purple-600">${pathology.name}</p>
-        `,
-        showCancelButton: true,
-        confirmButtonText: '<i class="fas fa-arrow-right mr-2"></i>Continuer',
-        cancelButtonText: 'Annuler',
-        confirmButtonColor: '#10b981',
-        cancelButtonColor: '#6b7280',
-        timer: 5000,
-        timerProgressBar: true
-    }).then((result) => {
-        if (result.isConfirmed) {
-            // Rediriger vers la page de la pathologie
-            window.location.href = pathologyUrl;
-        }
-    });
+    // Rediriger directement sans confirmation
+    window.location.href = pathologyUrl;
 }
-
-// Modifier la validation du formulaire de recherche pour inclure le patient et le médecin
-const originalSearchFormSubmit = document.getElementById('searchForm').onsubmit;
-document.getElementById('searchForm').onsubmit = null;
-
-document.getElementById('searchForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Vérifier qu'un patient est sélectionné
-    if (!selectedPatient) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Patient requis',
-            text: 'Veuillez sélectionner un patient avant de lancer la recherche.',
-            confirmButtonColor: '#667eea'
-        });
-        return;
-    }
-    
-    const query = document.getElementById('query').value.trim();
-    const top_k = document.getElementById('top_k').value;
-    const aggregation = document.getElementById('aggregation').value;
-    const useValidation = document.getElementById('useValidation').value === 'true';
-    
-    // Validation de la requête - minimum 3 caractères
-    if (query.length < 3) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Requête trop courte',
-            text: 'Veuillez entrer au moins 3 caractères.',
-            confirmButtonColor: '#667eea'
-        });
-        return;
-    }
-    
-    // Vérifier que ce n'est pas juste des caractères spéciaux ou symboles
-    const hasLetters = /[a-zA-ZÀ-ÿ]/.test(query);
-    if (!hasLetters) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Requête invalide',
-            text: 'Veuillez entrer des mots (lettres), pas seulement des symboles.',
-            confirmButtonColor: '#667eea'
-        });
-        return;
-    }
-    
-    // 🆕 Afficher notification si historique disponible (l'enrichissement se fait en BACKEND)
-    if (patientHistoricalSymptoms && patientHistoricalSymptoms.length > 0) {
-        console.log(`📊 Envoi de ${patientHistoricalSymptoms.length} symptômes historiques au backend`);
-        Swal.fire({
-            icon: 'info',
-            title: 'Recherche enrichie',
-            html: `La recherche inclut <strong>${patientHistoricalSymptoms.length} symptômes</strong> de l'historique du patient`,
-            timer: 2000,
-            timerProgressBar: true,
-            showConfirmButton: false
-        });
-    }
-    
-    // Show loading, hide errors and results
-    document.getElementById('loadingIndicator').classList.remove('hidden');
-    document.getElementById('errorMessage').classList.add('hidden');
-    document.getElementById('diagnosticSummary').classList.add('hidden');
-    document.getElementById('results').innerHTML = '';
-    
-    // Start progress animation
-    simulateProgress();
-    
-    try {
-        const response = await fetch('{% url "pathology_search:search" %}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken')
-            },
-            body: JSON.stringify({ 
-                query: query,  // 🆕 Envoyer la requête ORIGINALE (enrichissement en backend)
-                top_k, 
-                aggregation,
-                use_validation: useValidation,
-                patient_id: selectedPatient.id,
-                medecin_id: selectedMedecin ? selectedMedecin.id : null,
-                historical_symptoms: patientHistoricalSymptoms  // 🆕 Le backend va enrichir avec ça
-            })
-        });
-        
-        const data = await response.json();
-        
-        // Complete progress and hide loading
-        completeProgress();
-        
-        if (data.success) {
-            // Si mode validation, rediriger vers la page de validation
-            if (data.use_validation) {
-                window.location.href = data.redirect_url;
-                return;
-            }
-            
-            // Sinon afficher les résultats normalement
-            // Update files count with actual number
-            if (data.total_files_searched) {
-                document.getElementById('filesProcessed').textContent = data.total_files_searched;
-            }
-            displayResults(data);
-        } else {
-            // Vérifier si c'est une erreur de requête invalide (validation GPT-4o)
-            if (data.error_type === 'invalid_query') {
-                document.getElementById('loadingIndicator').classList.add('hidden');
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Requête Non Valide',
-                    text: 'Votre requête n\'est pas une description médicale valide. Veuillez décrire des symptômes réels.',
-                    confirmButtonText: 'Réessayer',
-                    confirmButtonColor: '#667eea'
-                });
-            }
-            // Vérifier si c'est une erreur de similarité faible
-            else if (data.error_type === 'low_similarity') {
-                document.getElementById('loadingIndicator').classList.add('hidden');
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Correspondance Insuffisante',
-                    html: `
-                        <div class="text-left p-4">
-                            <p class="text-gray-700 mb-4">
-                                <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
-                                La description fournie ne correspond à aucune pathologie dans notre base de données.
-                            </p>
-                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
-                                <p class="text-sm text-yellow-800">
-                                    <strong>Score de correspondance :</strong> ${data.best_score ? data.best_score.toFixed(1) : 0}%
-                                    <br>
-                                    <strong>Seuil minimum requis :</strong> 60%
-                                </p>
-                            </div>
-                            <p class="text-gray-700 font-semibold mb-2">Votre description pourrait être :</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-1 ml-2">
-                                <li>❌ <strong>Incomplète</strong> : Manque de détails cliniques importants</li>
-                                <li>❌ <strong>Imprécise</strong> : Symptômes trop vagues ou généraux</li>
-                                <li>❌ <strong>Incorrecte</strong> : Ne correspond à aucune pathologie connue</li>
-                            </ul>
-                            <div class="mt-4 p-3 bg-blue-50 rounded-lg">
-                                <p class="text-sm text-blue-800">
-                                    <i class="fas fa-lightbulb mr-2"></i>
-                                    <strong>Conseil :</strong> Décrivez les symptômes de manière précise et détaillée (durée, fréquence, intensité, contexte).
-                                </p>
-                            </div>
-                        </div>
-                    `,
-                    confirmButtonText: 'Réessayer',
-                    confirmButtonColor: '#667eea',
-                    width: '600px'
-                });
-            } else {
-                showError(data.error);
-            }
-        }
-    } catch (error) {
-        document.getElementById('loadingIndicator').classList.add('hidden');
-        showError('Erreur de connexion: ' + error.message);
-    }
-});
 
 </script>
 {% endblock %}

@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -145,16 +96,12 @@
   <label><input type="checkbox" name="critereA" value="Arrachage de cheveux"/> Arrachage de cheveux (hair pulling)</label>
   <label><input type="checkbox" name="critereA" value="Autres comportements répétitifs focalisés sur corps"/> Autres comportements répétitifs focalisés sur le corps</label>
   <label><input type="checkbox" name="critereA" value="Autres symptômes caractéristiques troubles liés au TOC"/> Autres symptômes caractéristiques des troubles liés au TOC</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Preuves issues de l'historique, examen physique ou résultats laboratoire</legend>
   <p class="subtitle">Il existe des preuves de (1) ET (2)</p>
-  <div class="warning-box">
-    ⚠️ Les deux éléments suivants doivent être présents
-  </div>
   
   <p><strong>(1) Développement temporel des symptômes :</strong></p>
   <label><input type="checkbox" name="critereB1" value="Symptômes développés durant intoxication substance"/> Symptômes développés durant intoxication par la substance</label>
@@ -166,44 +113,36 @@
   
   <p style="margin-top: 15px;"><strong>(2) Capacité de la substance/médicament :</strong></p>
   <label><input type="checkbox" name="critereB2" value="Substance/médicament capable produire symptômes"/> La substance/médicament impliqué est capable de produire les symptômes du critère A</label>
-  
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Exclusion d'un trouble lié au TOC non induit</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un trouble lié au TOC non induit par substance/médicament. Preuves d'un trouble indépendant pourraient inclure</p>
+  <p class="subtitle">La perturbation n'est pas mieux expliquée par un trouble lié au TOC non induit par substance/médicament. Preuves d'un trouble indépendant pourraient inclure:</p>
   <label><input type="checkbox" name="critereC" value="Symptômes précèdent début utilisation substance/médicament"/> Les symptômes précèdent le début de l'utilisation de la substance/médicament</label>
   <label><input type="checkbox" name="critereC" value="Symptômes persistent période substantielle après cessation"/> Les symptômes persistent pour une période substantielle (ex: environ 1 mois) après cessation du sevrage aigu ou intoxication sévère</label>
   <label><input type="checkbox" name="critereC" value="Autres preuves trouble indépendant non induit"/> Autres preuves suggérant existence d'un trouble indépendant non induit par substance/médicament (ex: historique d'épisodes récurrents non liés à substance/médicament)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion du delirium</legend>
   <p class="subtitle">La perturbation ne survient pas exclusivement durant le cours d'un delirium</p>
   <label><input type="checkbox" name="critereD" value="Ne survient pas exclusivement durant cours d'un delirium"/> Ne survient pas exclusivement durant le cours d'un delirium</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Détresse ou altération cliniquement significative</legend>
-  <p class="subtitle">La perturbation cause détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</p>
+  <p class="subtitle">La perturbation cause détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants. Note: Ce diagnostic doit être fait en plus d'un diagnostic d'intoxication ou sevrage de substance uniquement quand les symptômes du critère A prédominent et sont suffisamment sévères pour justifier attention clinique.</p>
   <label><input type="checkbox" name="critereE" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
   <label><input type="checkbox" name="critereE" value="Altération fonctionnement social"/> Altération dans le fonctionnement social</label>
   <label><input type="checkbox" name="critereE" value="Altération fonctionnement professionnel"/> Altération dans le fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereE" value="Altération autres domaines importants"/> Altération dans autres domaines importants du fonctionnement</label>
-  <div class="note-box">
-    <strong>Note :</strong> Ce diagnostic doit être fait en plus d'un diagnostic d'intoxication ou sevrage de substance uniquement quand les symptômes du critère A prédominent dans le tableau clinique et sont suffisamment sévères pour justifier attention clinique.
-  </div>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   
   <p style="margin-top: 10px;"><strong>Type de substance/médicament :</strong></p>
@@ -220,145 +159,11 @@
   <label><input type="radio" name="debut" value="Avec début durant intoxication"/> Avec début durant intoxication</label>
   <label><input type="radio" name="debut" value="Avec début durant sevrage"/> Avec début durant sevrage</label>
   <label><input type="radio" name="debut" value="Avec début après utilisation médicament"/> Avec début après utilisation de médicament</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
-
 <script>
-let choix={critereA:[],critereB1:[],critereB2:"",critereC:[],critereD:"",critereE:[],substance:"",comorbidite:"",debut:""};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins un symptôme caractéristique du critère A", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const b1=Array.from(document.querySelectorAll("input[name='critereB1']:checked")).map(e=>e.value);
-  const b2=document.querySelector("input[name='critereB2']:checked");
-  if(b1.length>0&&b2){
-    choix.critereB1=b1;
-    choix.critereB2=b2.value;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else alert("Cochez au moins une option de B(1) ET l'option B(2)");
-}
-
-function validerCritereC(){
-  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereC=c;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereD(){
-  const c=document.querySelector("input[name='critereD']:checked");
-  if(c){
-    choix.critereD=c.value;
-    document.getElementById("critereE").classList.remove("hidden");
-  }else alert("Cochez l'option du critère D");
-}
-
-function validerCritereE(){
-  const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereE=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère E", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const sub=document.querySelector("input[name='substance']:checked");
-  const com=document.querySelector("input[name='comorbidite']:checked");
-  const deb=document.querySelector("input[name='debut']:checked");
-  if(!sub||!com||!deb){
-    Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez substance, comorbidité ET moment de début", confirmButtonColor: "#667eea"});
-    return;
-  }
-  choix.substance=sub.value;
-  choix.comorbidite=com.value;
-  choix.debut=deb.value;
-  genererResume();
-}
-
-function genererResume(){
-  let code="";
-  let substanceName="";
-  
-  if(choix.substance==="Substance type amphétamine (ou autre stimulant)"){
-    substanceName="amphétamine";
-    if(choix.comorbidite==="Avec trouble utilisation léger")code="F15.188";
-    else if(choix.comorbidite==="Avec trouble utilisation modéré ou sévère")code="F15.288";
-    else code="F15.988";
-  }else if(choix.substance==="Cocaïne"){
-    substanceName="cocaïne";
-    if(choix.comorbidite==="Avec trouble utilisation léger")code="F14.188";
-    else if(choix.comorbidite==="Avec trouble utilisation modéré ou sévère")code="F14.288";
-    else code="F14.988";
-  }else{
-    substanceName="autre substance";
-    if(choix.comorbidite==="Avec trouble utilisation léger")code="F19.188";
-    else if(choix.comorbidite==="Avec trouble utilisation modéré ou sévère")code="F19.288";
-    else code="F19.988";
-  }
-  
-  let diag=code+" ";
-  if(choix.comorbidite!=="Sans trouble utilisation"){
-    let severite=choix.comorbidite.includes("léger")?"léger":(choix.comorbidite.includes("modéré")?"modéré":"sévère");
-    diag+="Trouble d'utilisation de "+substanceName+" "+severite+" avec trouble lié au TOC induit par "+substanceName;
-  }else{
-    diag+="Trouble lié au TOC induit par "+substanceName;
-  }
-  diag+=", "+choix.debut.toLowerCase();
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Symptômes caractéristiques prédominants ("+choix.critereA.length+")</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Preuves (1) ET (2)</h4>";
-  h+="<p style='font-weight:bold; color:#3d7a3b;'>B(1) Développement temporel :</p><ul class='choix-list'>";
-  choix.critereB1.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  h+="<p style='font-weight:bold; color:#3d7a3b;'>B(2) Capacité substance/médicament :</p><ul class='choix-list'><li>✓ "+choix.critereB2+"</li></ul>";
-  
-  h+="<h4>Critère C – Exclusion trouble non induit</h4><ul class='choix-list'>";
-  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère D – Exclusion du delirium</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
-  
-  h+="<h4>Critère E – Détresse ou altération cliniquement significative</h4><ul class='choix-list'>";
-  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  h+="<li>✓ Substance: "+choix.substance+"</li>";
-  h+="<li>✓ Comorbidité: "+choix.comorbidite+"</li>";
-  h+="<li>✓ Moment de début: "+choix.debut+"</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Obsessions, compulsions, grattage peau, arrachage cheveux, autres comportements répétitifs focalisés sur corps, ou autres symptômes caractéristiques des troubles liés au TOC prédominent dans le tableau clinique.";
-  h+="<br/><br/><strong>Critère B :</strong> Symptômes développés durant/peu après intoxication ou sevrage de substance, ou après exposition/sevrage de médicament. La substance/médicament est capable de produire les symptômes.";
-  h+="<br/><br/><strong>Codes ICD-10-CM :</strong>";
-  h+="<br/>• Amphétamine/stimulant: F15.188 (léger), F15.288 (modéré/sévère), F15.988 (sans trouble)";
-  h+="<br/>• Cocaïne: F14.188 (léger), F14.288 (modéré/sévère), F14.988 (sans trouble)";
-  h+="<br/>• Autre/inconnue: F19.188 (léger), F19.288 (modéré/sévère), F19.988 (sans trouble)";
-  h+="<br/><br/><strong>Note :</strong> Ce diagnostic fait en plus d'intoxication/sevrage uniquement si symptômes prédominent et suffisamment sévères pour justifier attention clinique. Si trouble d'utilisation comorbide, pas de diagnostic séparé de trouble d'utilisation.";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>

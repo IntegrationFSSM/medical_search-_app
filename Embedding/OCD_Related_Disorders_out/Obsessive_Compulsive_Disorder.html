@@ -121,16 +121,10 @@
   <label><input type="checkbox" name="compulsions" value="En réponse à obsession ou selon règles rigides"/> En réponse à obsession ou selon règles devant être appliquées rigidement</label>
   <label><input type="checkbox" name="compulsions" value="Visent prévenir/réduire anxiété ou prévenir événement redouté"/> Visent à prévenir/réduire anxiété/détresse ou prévenir événement/situation redouté</label>
   <label><input type="checkbox" name="compulsions" value="Non connectés de manière réaliste ou clairement excessifs"/> Non connectés de manière réaliste avec ce qu'ils neutralisent/préviennent, ou clairement excessifs</label>
-  
-  <div class="note-box">
-    <strong>Note :</strong> Les jeunes enfants peuvent ne pas être capables d'articuler les objectifs de ces comportements ou actes mentaux.
-  </div>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Impact temporel ou fonctionnel</legend>
   <p class="subtitle">Les obsessions ou compulsions sont chronophages (ex: prennent >1 heure par jour) ou causent détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</p>
   <label><input type="checkbox" name="critereB" value="Chronophages (>1 heure par jour)"/> Chronophages (prennent plus de 1 heure par jour)</label>
@@ -138,20 +132,18 @@
   <label><input type="checkbox" name="critereB" value="Altération fonctionnement social"/> Altération dans le fonctionnement social</label>
   <label><input type="checkbox" name="critereB" value="Altération fonctionnement professionnel"/> Altération dans le fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereB" value="Altération autres domaines importants"/> Altération dans autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Exclusion effets physiologiques substance ou condition médicale</legend>
   <p class="subtitle">Les symptômes obsessionnels-compulsifs ne sont pas attribuables aux effets physiologiques d'une substance ou autre condition médicale</p>
   <label><input type="checkbox" name="critereC" value="Non attribuables aux effets physiologiques d'une substance"/> Non attribuables aux effets physiologiques d'une substance (drogue, médicament)</label>
   <label><input type="checkbox" name="critereC" value="Non attribuables à autre condition médicale"/> Non attribuables à autre condition médicale</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion d'autres troubles mentaux</legend>
   <p class="subtitle">La perturbation n'est pas mieux expliquée par symptômes d'un autre trouble mental</p>
   <label><input type="checkbox" name="critereD" value="Non mieux expliquée par soucis excessifs (trouble anxieux généralisé)"/> Non mieux expliquée par soucis excessifs (trouble anxieux généralisé)</label>
@@ -168,147 +160,26 @@
   <label><input type="checkbox" name="critereD" value="Non mieux expliquée par ruminations culpabilité (dépression majeure)"/> Non mieux expliquée par ruminations culpabilité (dépression majeure)</label>
   <label><input type="checkbox" name="critereD" value="Non mieux expliquée par insertion pensée/préoccupations délirantes (troubles psychotiques)"/> Non mieux expliquée par insertion pensée/préoccupations délirantes (troubles psychotiques)</label>
   <label><input type="checkbox" name="critereD" value="Non mieux expliquée par patterns comportement répétitifs (trouble spectre autisme)"/> Non mieux expliquée par patterns comportement répétitifs (trouble spectre autisme)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   
   <p style="margin-top: 10px;"><strong>Degré d'insight concernant les croyances du TOC :</strong></p>
+  <p class="subtitle">Note: Beaucoup d'individus ont insight bon/passable. Certains ont insight pauvre, et peu (≤4%) ont insight absent/croyances délirantes. L'insight peut varier chez un individu durant le cours de la maladie. Insight plus pauvre lié à pire résultat à long terme.</p>
   
-  <label><input type="radio" name="insight" value="Avec insight bon ou passable"/> <strong>Avec insight bon ou passable</strong></label>
-  <div class="insight-desc">
-    L'individu reconnaît que les croyances du trouble obsessionnel-compulsif sont définitivement ou probablement fausses ou qu'elles peuvent ou non être vraies.
-  </div>
-  
-  <label><input type="radio" name="insight" value="Avec insight pauvre"/> <strong>Avec insight pauvre</strong></label>
-  <div class="insight-desc">
-    L'individu pense que les croyances du trouble obsessionnel-compulsif sont probablement vraies.
-  </div>
-  
-  <label><input type="radio" name="insight" value="Avec insight absent/croyances délirantes"/> <strong>Avec insight absent/croyances délirantes</strong></label>
-  <div class="insight-desc">
-    L'individu est complètement convaincu que les croyances du trouble obsessionnel-compulsif sont vraies.
-  </div>
-  
-  <div class="note-box">
-    <strong>Note sur l'insight :</strong> Beaucoup d'individus ont insight bon/passable. Certains ont insight pauvre, et peu (≤4%) ont insight absent/croyances délirantes. L'insight peut varier chez un individu durant le cours de la maladie. Insight plus pauvre lié à pire résultat à long terme.
-  </div>
+  <label><input type="radio" name="insight" value="Avec insight bon ou passable"/> Avec insight bon ou passable (reconnaît que croyances sont définitivement ou probablement fausses)</label>
+  <label><input type="radio" name="insight" value="Avec insight pauvre"/> Avec insight pauvre (pense que croyances sont probablement vraies)</label>
+  <label><input type="radio" name="insight" value="Avec insight absent/croyances délirantes"/> Avec insight absent/croyances délirantes (complètement convaincu que croyances sont vraies)</label>
   
   <p style="margin-top: 15px;"><strong>Lié aux tics :</strong></p>
-  <label><input type="checkbox" name="tics" value="Lié aux tics"/> Lié aux tics (historique actuel ou passé de trouble des tics)</label>
-  <div class="note-box">
-    Jusqu'à 30% des individus avec TOC ont trouble des tics à vie. Plus commun chez hommes avec début TOC dans enfance. Ces individus tendent à différer de ceux sans historique de troubles des tics dans thèmes symptômes TOC, comorbidité, cours et pattern transmission familiale.
-  </div>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="checkbox" name="tics" value="Lié aux tics"/> Lié aux tics (historique actuel ou passé de trouble des tics; jusqu'à 30% des individus avec TOC ont trouble des tics à vie)</label>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
-
 <script>
-let choix={obsessions:[],compulsions:[],critereB:[],critereC:[],critereD:[],insight:"",tics:false};
-
-function validerCritereA(){
-  const obs=Array.from(document.querySelectorAll("input[name='obsessions']:checked")).map(e=>e.value);
-  const comp=Array.from(document.querySelectorAll("input[name='compulsions']:checked")).map(e=>e.value);
-  if(obs.length>0||comp.length>0){
-    choix.obsessions=obs;
-    choix.compulsions=comp;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option pour obsessions OU compulsions", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereC(){
-  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereC=c;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const ins=document.querySelector("input[name='insight']:checked");
-  if(!ins){
-    alert("Sélectionnez le degré d'insight");
-    return;
-  }
-  choix.insight=ins.value;
-  choix.tics=document.querySelector("input[name='tics']:checked")!==null;
-  genererResume();
-}
-
-function genererResume(){
-  const code="F42.2";
-  let diag=code+" Trouble Obsessionnel-Compulsif";
-  diag+=", "+choix.insight.toLowerCase();
-  if(choix.tics)diag+=", lié aux tics";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Présence d'obsessions, compulsions ou les deux</h4>";
-  if(choix.obsessions.length>0){
-    h+="<p style='font-weight:bold; color:#3d7a3b;'>OBSESSIONS ("+choix.obsessions.length+") :</p><ul class='choix-list'>";
-    choix.obsessions.forEach(s=>h+="<li>✓ "+s+"</li>");
-    h+="</ul>";
-  }
-  if(choix.compulsions.length>0){
-    h+="<p style='font-weight:bold; color:#3d7a3b;'>COMPULSIONS ("+choix.compulsions.length+") :</p><ul class='choix-list'>";
-    choix.compulsions.forEach(s=>h+="<li>✓ "+s+"</li>");
-    h+="</ul>";
-  }
-  
-  h+="<h4>Critère B – Impact temporel ou fonctionnel</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Exclusion effets physiologiques</h4><ul class='choix-list'>";
-  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère D – Exclusion d'autres troubles mentaux</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  h+="<li>✓ "+choix.insight+"</li>";
-  if(choix.tics)h+="<li>✓ Lié aux tics</li>";
-  else h+="<li>✓ Non lié aux tics</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Obsessions :</strong> Pensées, impulsions ou images récurrentes et persistantes vécues comme intrusives et non désirées, causant anxiété/détresse. Individu tente ignorer/supprimer ou neutraliser.";
-  h+="<br/><br/><strong>Compulsions :</strong> Comportements répétitifs ou actes mentaux que individu se sent poussé à effectuer en réponse à obsession ou selon règles rigides. Visent prévenir/réduire anxiété mais non connectés de manière réaliste ou clairement excessifs.";
-  h+="<br/><br/><strong>Impact :</strong> Chronophages (>1h/jour) ou causent détresse/altération cliniquement significative.";
-  h+="<br/><br/><strong>Insight :</strong> Beaucoup ont insight bon/passable. Certains ont insight pauvre. Peu (≤4%) ont insight absent/croyances délirantes. Insight plus pauvre lié à pire résultat long terme.";
-  if(choix.tics){
-    h+="<br/><br/><strong>Lié aux tics :</strong> Jusqu'à 30% individus avec TOC ont trouble des tics à vie. Plus commun chez hommes avec début TOC dans enfance.";
-  }
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>

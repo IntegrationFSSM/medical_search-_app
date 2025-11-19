@@ -296,13 +296,13 @@
         
         // Afficher le loading avec animation
         Swal.fire({
-            title: '<i class="fas fa-brain fa-spin text-purple-600 mr-2"></i> Génération du diagnostic IA',
+            title: '<i class="fas fa-file-medical fa-spin text-purple-600 mr-2"></i> Génération du Diagnostic Summary',
             html: `
                 <p class="mb-4">Analyse en cours des critères sélectionnés...</p>
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="aiProgressBar"></div>
                 </div>
-                <p class="text-sm text-gray-600 mt-4">Utilisation de GPT-4o-mini pour créer un plan de traitement personnalisé</p>
+                <p class="text-sm text-gray-600 mt-4">Création du résumé diagnostique en cours...</p>
             `,
             allowOutsideClick: false,
             showConfirmButton: false,
@@ -401,39 +401,8 @@
             console.error('❌ Erreur lors de la sauvegarde des critères:', error);
         }
         
-        // Si c'est le dernier résultat, retourner à l'accueil
-        if (isLast) {
-            Swal.fire({
-                icon: 'info',
-                title: 'Tous les résultats examinés',
-                html: `<p class="text-gray-600">Vous avez examiné tous les <strong>${totalResults}</strong> résultats disponibles.</p>
-                       <p class="mt-2 text-gray-700">Critères enregistrés. Retour à la page principale...</p>`,
-                confirmButtonText: 'Retour à l\'accueil',
-                confirmButtonColor: '#667eea',
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
-            }).then(() => {
-                window.location.href = '{% url "pathology_search:index" %}';
-            });
-        } else {
-            // Passer au résultat suivant
-            Swal.fire({
-                icon: 'warning',
-                title: 'Résultat non validé',
-                html: `<p class="text-gray-600">Critères enregistrés. Passage au résultat suivant...</p>
-                       <p class="mt-2 text-sm text-gray-500">Résultat <strong>${currentIndex + 2}/${totalResults}</strong></p>`,
-                timer: 1500,
-                timerProgressBar: true,
-                showConfirmButton: false,
-                willClose: () => {
-                    window.location.href = `/validate/?index=${currentIndex + 1}`;
-                }
-            });
-        }
+        // Rediriger directement sans Sweet Alert
+        window.location.href = '{% url "pathology_search:results_selection" %}';
     }
     </script>
 </body>

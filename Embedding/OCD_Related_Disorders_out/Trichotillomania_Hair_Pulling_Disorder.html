@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -141,128 +92,44 @@
   <p class="subtitle">Arrachage récurrent de ses propres cheveux, résultant en perte de cheveux</p>
   <label><input type="checkbox" name="critereA" value="Arrachage récurrent de ses propres cheveux"/> Arrachage récurrent de ses propres cheveux</label>
   <label><input type="checkbox" name="critereA" value="Résultant en perte de cheveux"/> Résultant en perte de cheveux</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Tentatives répétées pour diminuer ou arrêter</legend>
   <p class="subtitle">Tentatives répétées pour diminuer ou arrêter l'arrachage des cheveux</p>
   <label><input type="checkbox" name="critereB" value="Tentatives répétées pour diminuer ou arrêter arrachage cheveux"/> Tentatives répétées pour diminuer ou arrêter l'arrachage des cheveux</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Détresse ou altération cliniquement significative</legend>
   <p class="subtitle">L'arrachage des cheveux cause détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</p>
   <label><input type="checkbox" name="critereC" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
   <label><input type="checkbox" name="critereC" value="Altération fonctionnement social"/> Altération dans le fonctionnement social</label>
   <label><input type="checkbox" name="critereC" value="Altération fonctionnement professionnel"/> Altération dans le fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereC" value="Altération autres domaines importants"/> Altération dans autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion d'autre condition médicale</legend>
   <p class="subtitle">L'arrachage des cheveux ou la perte de cheveux n'est pas attribuable à une autre condition médicale</p>
   <label><input type="checkbox" name="critereD" value="Non attribuable à condition dermatologique"/> Non attribuable à une condition dermatologique</label>
   <label><input type="checkbox" name="critereD" value="Non attribuable à autre condition médicale"/> Non attribuable à autre condition médicale</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Exclusion d'autres troubles mentaux</legend>
   <p class="subtitle">L'arrachage des cheveux n'est pas mieux expliqué par symptômes d'un autre trouble mental</p>
   <label><input type="checkbox" name="critereE" value="Non mieux expliqué par tentatives améliorer défaut perçu dans trouble dysmorphique corporel"/> Non mieux expliqué par tentatives d'améliorer un défaut ou imperfection perçu dans l'apparence dans le trouble dysmorphique corporel</label>
   <label><input type="checkbox" name="critereE" value="Non mieux expliqué par symptômes autre trouble mental"/> Non mieux expliqué par symptômes d'un autre trouble mental</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
-
 <script>
-let choix={critereA:[],critereB:"",critereC:[],critereD:[],critereE:[]};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=document.querySelector("input[name='critereB']:checked");
-  if(c){
-    choix.critereB=c.value;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else alert("Cochez l'option du critère B");
-}
-
-function validerCritereC(){
-  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereC=c;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("critereE").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereE=c;
-    genererResume();
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère E", confirmButtonColor: "#667eea"});
-}
-
-function genererResume(){
-  const code="F63.3";
-  const diag=code+" Trichotillomanie (Trouble d'Arrachage des Cheveux)";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Arrachage récurrent des cheveux</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Tentatives répétées pour diminuer ou arrêter</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
-  
-  h+="<h4>Critère C – Détresse ou altération cliniquement significative</h4><ul class='choix-list'>";
-  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère D – Exclusion d'autre condition médicale</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère E – Exclusion d'autres troubles mentaux</h4><ul class='choix-list'>";
-  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Arrachage récurrent de ses propres cheveux résultant en perte de cheveux.";
-  h+="<br/><br/><strong>Critère B :</strong> L'individu a fait des tentatives répétées pour diminuer ou arrêter l'arrachage des cheveux.";
-  h+="<br/><br/><strong>Impact fonctionnel :</strong> L'arrachage des cheveux cause détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants.";
-  h+="<br/><br/><strong>Exclusions importantes :</strong> Non attribuable à condition médicale (ex: condition dermatologique). Non mieux expliqué par trouble dysmorphique corporel ou autre trouble mental.";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>

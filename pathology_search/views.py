@@ -1045,21 +1045,11 @@ def validate_action(request):
         except Exception as e:
             print(f"❌ Erreur lors de la sauvegarde de la consultation non validée: {e}")
         
-        # Passer au résultat suivant
-        next_index = current_index + 1
-        
-        if next_index >= len(results):
-            # Plus de résultats
-            return JsonResponse({
-                'success': True,
-                'action': 'completed',
-                'message': 'Tous les résultats ont été examinés.'
-            })
-        
+        # Retourner à la page des résultats au lieu de passer au suivant
         return JsonResponse({
             'success': True,
-            'action': 'next',
-            'next_index': next_index
+            'action': 'back_to_results',
+            'message': 'Pathologie non validée. Retour à la liste des résultats.'
         })
     
     return JsonResponse({

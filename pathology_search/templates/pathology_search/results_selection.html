@@ -108,29 +108,8 @@
 const results = {{ results_json|safe }};
 
 function selectResult(index) {
-    // Afficher une confirmation
-    const result = results[index];
-    
-    Swal.fire({
-        icon: 'question',
-        title: 'Confirmer la sélection',
-        html: `
-            <p class="mb-2">Vous avez sélectionné :</p>
-            <p class="font-bold text-lg text-purple-600 mb-2">${result.pathology_name}</p>
-            <p class="text-sm text-gray-600">Score de correspondance : <span class="font-bold">${result.similarity_percent}%</span></p>
-            <p class="mt-3 text-sm">Voulez-vous accéder au formulaire de validation pour cette pathologie ?</p>
-        `,
-        showCancelButton: true,
-        confirmButtonText: '<i class="fas fa-check mr-2"></i>Oui, valider',
-        cancelButtonText: 'Annuler',
-        confirmButtonColor: '#667eea',
-        cancelButtonColor: '#6b7280'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            // Rediriger vers la page de validation pour ce résultat spécifique
-            window.location.href = `/validate/?index=${index}`;
-        }
-    });
+    // Rediriger directement sans confirmation
+    window.location.href = `/validate/?index=${index}`;
 }
 </script>
 

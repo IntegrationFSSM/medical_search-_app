@@ -283,13 +283,13 @@
         
         // Afficher le loading avec animation
         Swal.fire({
-            title: '<i class="fas fa-brain fa-spin text-purple-600 mr-2"></i> Génération du diagnostic IA',
+            title: '<i class="fas fa-file-medical fa-spin text-purple-600 mr-2"></i> Génération du Diagnostic Summary',
             html: `
                 <p class="mb-4">Analyse en cours des critères sélectionnés...</p>
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="aiProgressBar"></div>
                 </div>
-                <p class="text-sm text-gray-600 mt-4">Utilisation de GPT-4o-mini pour créer un plan de traitement personnalisé</p>
+                <p class="text-sm text-gray-600 mt-4">Création du résumé diagnostique en cours...</p>
             `,
             allowOutsideClick: false,
             showConfirmButton: false,
@@ -389,17 +389,8 @@
             console.error('❌ Erreur lors de la sauvegarde des critères:', error);
         }
         
-        // Rediriger vers la page principale
-        Swal.fire({
-            icon: 'info',
-            title: 'Critères enregistrés',
-            text: 'Les critères cochés ont été sauvegardés. Retour à la page principale...',
-            timer: 2000,
-            timerProgressBar: true,
-            showConfirmButton: false
-        }).then(() => {
-            window.location.href = '{% url "pathology_search:index" %}';
-        });
+        // Rediriger directement sans Sweet Alert
+        window.location.href = '{% url "pathology_search:index" %}';
     }
     </script>
 </body>
