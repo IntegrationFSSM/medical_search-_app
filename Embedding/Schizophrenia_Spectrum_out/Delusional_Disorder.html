@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,55 +89,44 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Présence de délires</legend>
-  <p class="subtitle">La présence d'un (ou plusieurs) délires d'une durée de 1 mois ou plus</p>
-  <div class="warning-box">
-    ⚠️ Durée ≥1 mois requise
-  </div>
+  <p class="subtitle">La présence d'un (ou plusieurs) délires d'une durée de 1 mois ou plus (Durée ≥1 mois requise)</p>
   <label><input type="checkbox" name="critereA" value="Présence d'un ou plusieurs délires"/> Présence d'un (ou plusieurs) délires</label>
   <label><input type="checkbox" name="critereA" value="Durée de 1 mois ou plus"/> Durée de 1 mois ou plus</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Critère A de la schizophrénie jamais rempli</legend>
-  <p class="subtitle">Le critère A de la schizophrénie n'a jamais été rempli</p>
-  <div class="note-box">
-    <strong>Note :</strong> Les hallucinations, si présentes, ne sont pas proéminentes et sont liées au thème délirant (ex: sensation d'être infesté d'insectes associée à des délires d'infestation).
-  </div>
+  <p class="subtitle">Le critère A de la schizophrénie n'a jamais été rempli (Note: Les hallucinations, si présentes, ne sont pas proéminentes et sont liées au thème délirant)</p>
   <label><input type="checkbox" name="critereB" value="Critère A de schizophrénie jamais rempli"/> Le critère A de la schizophrénie n'a jamais été rempli</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Fonctionnement non marquément altéré</legend>
   <p class="subtitle">En dehors de l'impact du/des délire(s) ou de ses ramifications, le fonctionnement n'est pas marquément altéré et le comportement n'est pas manifestement bizarre ou étrange</p>
   <label><input type="checkbox" name="critereC" value="Fonctionnement non marquément altéré en dehors impact délires"/> Fonctionnement non marquément altéré en dehors de l'impact du/des délire(s)</label>
   <label><input type="checkbox" name="critereC" value="Comportement non manifestement bizarre ou étrange"/> Comportement non manifestement bizarre ou étrange</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Épisodes thymiques brefs</legend>
   <p class="subtitle">Si des épisodes maniaques ou dépressifs majeurs sont survenus, ceux-ci ont été brefs par rapport à la durée des périodes délirantes</p>
   <label><input type="checkbox" name="critereD" value="Si épisodes thymiques survenus, ont été brefs par rapport aux périodes délirantes"/> Si des épisodes maniaques ou dépressifs majeurs sont survenus, ils ont été brefs par rapport à la durée des périodes délirantes</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Non attribuable à substance ou autre trouble</legend>
   <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une autre condition médicale et n'est pas mieux expliquée par un autre trouble mental</p>
   <label><input type="checkbox" name="critereE" value="Non attribuable aux effets physiologiques d'une substance"/> Non attribuable aux effets physiologiques d'une substance</label>
   <label><input type="checkbox" name="critereE" value="Non attribuable aux effets physiologiques d'une autre condition médicale"/> Non attribuable aux effets physiologiques d'une autre condition médicale</label>
   <label><input type="checkbox" name="critereE" value="Non mieux expliqué par autre trouble mental (trouble dysmorphique corporel, TOC)"/> Non mieux expliqué par un autre trouble mental (ex: trouble dysmorphique corporel, TOC)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
 </fieldset>
 
 <!-- Sous-types -->
-<fieldset id="soustypes" class="hidden">
+<fieldset id="soustypes">
   <legend>Spécifier le sous-type</legend>
   <p class="subtitle">Sélectionner le sous-type basé sur le thème central du délire</p>
   
@@ -203,12 +143,10 @@
   <label><input type="radio" name="soustype" value="Type mixte"/> <strong>Type mixte :</strong> Aucun thème délirant ne prédomine</label>
   
   <label><input type="radio" name="soustype" value="Type non spécifié"/> <strong>Type non spécifié :</strong> La croyance délirante dominante ne peut être clairement déterminée ou n'est pas décrite dans les types spécifiques</label>
-  
-  <button type="button" onclick="validerSoustype()">✔️ Valider le sous-type</button>
 </fieldset>
 
 <!-- Spécificateurs additionnels -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs additionnels</legend>
   
   <p style="margin-top: 10px;"><strong>Contenu bizarre :</strong></p>
@@ -223,140 +161,40 @@
   <label><input type="radio" name="evolution" value="Épisodes multiples, actuellement en rémission complète"/> Épisodes multiples, actuellement en rémission complète</label>
   <label><input type="radio" name="evolution" value="Continu"/> Continu : Symptômes remplissant les critères diagnostiques présents pour la majorité du cours de la maladie</label>
   <label><input type="radio" name="evolution" value="Non spécifié"/> Non spécifié</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
+<!-- Diagnostic différentiel -->
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Trouble dysmorphique corporel"/> Trouble dysmorphique corporel</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble obsessionnel-compulsif"/> Trouble obsessionnel-compulsif</label>
+  <label><input type="checkbox" name="diff_diag" value="Schizophrénie"/> Schizophrénie</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble bipolaire ou dépressif avec caractéristiques psychotiques"/> Trouble bipolaire ou dépressif avec caractéristiques psychotiques</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble psychotique induit par une substance"/> Trouble psychotique induit par une substance</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble psychotique dû à une condition médicale"/> Trouble psychotique dû à une condition médicale</label>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite" value="Trouble de la personnalité paranoïaque"/> Trouble de la personnalité paranoïaque</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles dépressifs"/> Troubles dépressifs</label>
+  <label><input type="checkbox" name="comorbidite" value="Trouble obsessionnel-compulsif"/> Trouble obsessionnel-compulsif</label>
+  <label><input type="checkbox" name="comorbidite" value="Trouble lié à l'usage de substances"/> Trouble lié à l'usage de substances</label>
+</fieldset>
+
+<!-- Boutons de validation -->
+<div class='boutons-validation'>
+  <button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>
+  <button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>
+</div>
+
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],critereB:"",critereC:[],critereD:"",critereE:[],soustype:"",bizarre:false,evolution:""};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=document.querySelector("input[name='critereB']:checked");
-  if(c){
-    choix.critereB=c.value;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else alert("Cochez l'option du critère B");
-}
-
-function validerCritereC(){
-  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereC=c;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereD(){
-  const c=document.querySelector("input[name='critereD']:checked");
-  if(c){
-    choix.critereD=c.value;
-    document.getElementById("critereE").classList.remove("hidden");
-  }else alert("Cochez l'option du critère D");
-}
-
-function validerCritereE(){
-  const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereE=c;
-    document.getElementById("soustypes").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère E", confirmButtonColor: "#667eea"});
-}
-
-function validerSoustype(){
-  const s=document.querySelector("input[name='soustype']:checked");
-  if(s){
-    choix.soustype=s.value;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un sous-type", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  choix.bizarre=document.querySelector("input[name='bizarre']:checked")!==null;
-  const e=document.querySelector("input[name='evolution']:checked");
-  choix.evolution=e?e.value:"";
-  genererResume();
-}
-
-function genererResume(){
-  const code="F22";
-  let diag=code+" Trouble Délirant, "+choix.soustype.toLowerCase();
-  if(choix.bizarre)diag+=", avec contenu bizarre";
-  if(choix.evolution)diag+=", "+choix.evolution.toLowerCase();
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Présence de délires (≥1 mois)</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Critère A de la schizophrénie jamais rempli</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
-  
-  h+="<h4>Critère C – Fonctionnement non marquément altéré</h4><ul class='choix-list'>";
-  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère D – Épisodes thymiques brefs</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
-  
-  h+="<h4>Critère E – Non attribuable à substance ou autre trouble</h4><ul class='choix-list'>";
-  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Sous-type</h4><ul class='choix-list'><li>✓ "+choix.soustype+"</li></ul>";
-  
-  h+="<h4>Spécificateurs additionnels</h4><ul class='choix-list'>";
-  if(choix.bizarre)h+="<li>✓ Avec contenu bizarre</li>";
-  if(choix.evolution)h+="<li>✓ Évolution: "+choix.evolution+"</li>";
-  if(!choix.bizarre&&!choix.evolution)h+="<li>✓ Aucun spécificateur additionnel</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Présence d'un ou plusieurs délires d'une durée ≥1 mois.";
-  h+="<br/><br/><strong>Critère A :</strong> Délires durant ≥1 mois.";
-  h+="<br/><br/><strong>Critère B :</strong> Critère A de schizophrénie jamais rempli. Hallucinations, si présentes, non proéminentes et liées au thème délirant.";
-  h+="<br/><br/><strong>Critère C :</strong> Fonctionnement non marquément altéré en dehors de l'impact des délires. Comportement non manifestement bizarre.";
-  h+="<br/><br/><strong>Critère D :</strong> Si épisodes thymiques survenus, brefs par rapport aux périodes délirantes.";
-  h+="<br/><br/><strong>Critère E :</strong> Non attribuable à substance, condition médicale ou autre trouble mental.";
-  h+="<br/><br/><strong>Sous-types :</strong>";
-  h+="<br/>• Érotomaniaque: Autre personne amoureuse de l'individu";
-  h+="<br/>• Grandiose: Grand talent/perspicacité/découverte";
-  h+="<br/>• Jaloux: Conjoint/amant infidèle";
-  h+="<br/>• Persécutoire: Conspiré contre, espionné, harcelé";
-  h+="<br/>• Somatique: Fonctions/sensations corporelles";
-  h+="<br/>• Mixte: Aucun thème ne prédomine";
-  h+="<br/>• Non spécifié: Croyance non déterminée";
-  if(choix.bizarre){
-    h+="<br/><br/><strong>Contenu bizarre :</strong> Délires clairement invraisemblables, incompréhensibles, non dérivés d'expériences ordinaires.";
-  }
-  if(choix.evolution){
-    h+="<br/><br/><strong>Évolution :</strong> "+choix.evolution+" (spécificateurs d'évolution utilisés uniquement après 1 an de durée).";
-  }
-  h+="<br/><br/><strong>Sévérité :</strong> Peut être évaluée sur échelle 0-4 pour délires, hallucinations, discours désorganisé, comportement psychomoteur anormal, symptômes négatifs (optionnel).";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

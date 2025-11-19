@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,53 +89,45 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Perturbation persistante de la personnalité</legend>
-  <p class="subtitle">Perturbation persistante de la personnalité qui représente un changement par rapport au pattern de personnalité caractéristique antérieur de l'individu</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants, la perturbation implique une déviation marquée du développement normal ou un changement significatif dans les patterns de comportement habituels de l'enfant, durant au moins 1 an.
-  </div>
+  <p class="subtitle">Perturbation persistante de la personnalité qui représente un changement par rapport au pattern de personnalité caractéristique antérieur de l'individu (Note: Chez les enfants, la perturbation implique une déviation marquée du développement normal ou un changement significatif dans les patterns de comportement habituels de l'enfant, durant au moins 1 an)</p>
   <label><input type="checkbox" name="critereA" value="Perturbation persistante de personnalité représentant changement par rapport au pattern antérieur"/> Perturbation persistante de la personnalité représentant un changement par rapport au pattern de personnalité caractéristique antérieur</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Évidence d'une condition médicale</legend>
   <p class="subtitle">Il existe des preuves provenant de l'histoire, de l'examen physique ou des résultats de laboratoire que la perturbation est la conséquence physiopathologique directe d'une autre condition médicale</p>
   <label><input type="checkbox" name="critereB" value="Preuves de l'histoire que perturbation est conséquence directe d'une condition médicale"/> Preuves de l'histoire que la perturbation est la conséquence directe d'une condition médicale</label>
   <label><input type="checkbox" name="critereB" value="Preuves de l'examen physique que perturbation est conséquence directe d'une condition médicale"/> Preuves de l'examen physique que la perturbation est la conséquence directe d'une condition médicale</label>
   <label><input type="checkbox" name="critereB" value="Preuves des résultats de laboratoire que perturbation est conséquence directe d'une condition médicale"/> Preuves des résultats de laboratoire que la perturbation est la conséquence directe d'une condition médicale</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Non mieux expliqué par un autre trouble mental</legend>
   <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental (y compris un autre trouble mental dû à une autre condition médicale)</p>
   <label><input type="checkbox" name="critereC" value="Perturbation non mieux expliquée par autre trouble mental"/> La perturbation n'est pas mieux expliquée par un autre trouble mental</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Ne survient pas exclusivement durant un delirium</legend>
   <p class="subtitle">La perturbation ne survient pas exclusivement durant le cours d'un delirium</p>
   <label><input type="checkbox" name="critereD" value="Perturbation ne survient pas exclusivement durant cours d'un delirium"/> La perturbation ne survient pas exclusivement durant le cours d'un delirium</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Détresse ou altération cliniquement significative</legend>
   <p class="subtitle">La perturbation cause détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</p>
   <label><input type="checkbox" name="critereE" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
   <label><input type="checkbox" name="critereE" value="Altération dans fonctionnement social"/> Altération dans le fonctionnement social</label>
   <label><input type="checkbox" name="critereE" value="Altération dans fonctionnement professionnel"/> Altération dans le fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereE" value="Altération dans autres domaines importants du fonctionnement"/> Altération dans autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
 </fieldset>
 
 <!-- Sous-types -->
-<fieldset id="soustypes" class="hidden">
+<fieldset id="soustypes">
   <legend>Spécifier le sous-type</legend>
   <p class="subtitle">Sélectionner le sous-type qui caractérise le mieux la présentation clinique</p>
   
@@ -203,120 +146,38 @@
   <label><input type="radio" name="soustype" value="Type combiné"/> <strong>Type combiné :</strong> Si plus d'une caractéristique prédomine dans le tableau clinique</label>
   
   <label><input type="radio" name="soustype" value="Type non spécifié"/> <strong>Type non spécifié</strong></label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
+<!-- Diagnostic différentiel -->
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Delirium"/> Delirium</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
+  <label><input type="checkbox" name="diff_diag" value="Autre trouble mental dû à une condition médicale"/> Autre trouble mental dû à une condition médicale</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble lié à l'usage de substances"/> Trouble lié à l'usage de substances</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble de la personnalité préexistant"/> Trouble de la personnalité préexistant</label>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite" value="Trouble neurocognitif"/> Trouble neurocognitif</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles dépressifs"/> Troubles dépressifs</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles anxieux"/> Troubles anxieux</label>
+</fieldset>
+
+<!-- Boutons de validation -->
+<div class='boutons-validation'>
+  <button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>
+  <button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>
+</div>
+
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:"",critereB:[],critereC:"",critereD:"",critereE:[],soustype:""};
-
-function validerCritereA(){
-  const c=document.querySelector("input[name='critereA']:checked");
-  if(c){
-    choix.critereA=c.value;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else alert("Cochez l'option du critère A");
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
-
-function validerCritereD(){
-  const c=document.querySelector("input[name='critereD']:checked");
-  if(c){
-    choix.critereD=c.value;
-    document.getElementById("critereE").classList.remove("hidden");
-  }else alert("Cochez l'option du critère D");
-}
-
-function validerCritereE(){
-  const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereE=c;
-    document.getElementById("soustypes").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère E", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const s=document.querySelector("input[name='soustype']:checked");
-  if(s){
-    choix.soustype=s.value;
-    genererResume();
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un sous-type", confirmButtonColor: "#667eea"});
-}
-
-function genererResume(){
-  const code="F07.0";
-  let diag=code+" Changement de Personnalité dû à une Autre Condition Médicale";
-  if(choix.soustype)diag+=", "+choix.soustype.toLowerCase();
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Perturbation persistante de la personnalité</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
-  
-  h+="<h4>Critère B – Évidence d'une condition médicale</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Non mieux expliqué par un autre trouble mental</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Ne survient pas exclusivement durant un delirium</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
-  
-  h+="<h4>Critère E – Détresse ou altération cliniquement significative</h4><ul class='choix-list'>";
-  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Sous-type</h4><ul class='choix-list'><li>✓ "+choix.soustype+"</li></ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Perturbation persistante de la personnalité représentant un changement par rapport au pattern de personnalité caractéristique antérieur de l'individu.";
-  h+="<br/><br/><strong>Critère A :</strong> Changement par rapport au pattern de personnalité antérieur. Chez enfants: déviation marquée du développement normal ou changement significatif durant ≥1 an.";
-  h+="<br/><br/><strong>Critère B :</strong> Preuves (histoire, examen physique, laboratoire) que perturbation est conséquence physiopathologique directe d'une condition médicale.";
-  h+="<br/><br/><strong>Critère C :</strong> Non mieux expliqué par autre trouble mental.";
-  h+="<br/><br/><strong>Critère D :</strong> Ne survient pas exclusivement durant delirium.";
-  h+="<br/><br/><strong>Critère E :</strong> Cause détresse ou altération cliniquement significative.";
-  h+="<br/><br/><strong>Sous-type :</strong> "+choix.soustype;
-  h+="<br/><br/><strong>Sous-types disponibles :</strong>";
-  h+="<br/>• Labile: Labilité affective prédominante";
-  h+="<br/>• Désinhibé: Mauvais contrôle impulsions";
-  h+="<br/>• Agressif: Comportement agressif prédominant";
-  h+="<br/>• Apathique: Apathie marquée et indifférence";
-  h+="<br/>• Paranoïde: Méfiance ou idéation paranoïde";
-  h+="<br/>• Autre: Non caractérisé par sous-types ci-dessus";
-  h+="<br/>• Combiné: Plus d'une caractéristique prédomine";
-  h+="<br/>• Non spécifié";
-  h+="<br/><br/><strong>Note de codage :</strong> Inclure le nom de l'autre condition médicale (ex: F07.0 changement de personnalité dû à épilepsie du lobe temporal). L'autre condition médicale doit être codée et listée séparément immédiatement avant le changement de personnalité.";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

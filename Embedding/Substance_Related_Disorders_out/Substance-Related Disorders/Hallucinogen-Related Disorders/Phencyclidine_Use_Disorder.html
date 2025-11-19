@@ -31,40 +31,6 @@
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +55,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,13 +79,7 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Pattern d'usage de phencyclidine</legend>
-  <p class="subtitle">Un pattern d'usage de phencyclidine (ou substance pharmacologiquement similaire) conduisant à une altération ou détresse cliniquement significative, manifesté par au moins deux des éléments suivants, survenant durant une période de 12 mois</p>
-  <div class="warning-box">
-    ⚠️ Au moins 2 des 10 critères doivent être présents durant une période de 12 mois
-  </div>
-  <div class="note-box">
-    <strong>Note :</strong> Pas de critère de sevrage pour la phencyclidine (symptômes de sevrage non établis chez l'humain, bien que rapportés chez les animaux)
-  </div>
+  <p class="subtitle">Un pattern d'usage de phencyclidine (ou substance pharmacologiquement similaire) conduisant à une altération ou détresse cliniquement significative, manifesté par au moins deux des éléments suivants, survenant durant une période de 12 mois. Au moins 2 des 10 critères doivent être présents durant une période de 12 mois. Note: Pas de critère de sevrage pour la phencyclidine (symptômes de sevrage non établis chez l'humain, bien que rapportés chez les animaux)</p>
   
   <label><input type="checkbox" name="critereA" value="1. Phencyclidine souvent prise en quantités plus grandes ou sur période plus longue que prévu"/> <strong>1.</strong> La phencyclidine est souvent prise en quantités plus grandes ou sur une période plus longue que prévu</label>
   
@@ -167,12 +102,10 @@
   <label><input type="checkbox" name="critereA" value="10. Tolérance (besoin de quantités nettement augmentées pour intoxication/effet désiré OU effet nettement diminué avec usage continu de même quantité)"/> <strong>10.</strong> Tolérance, définie par l'un ou l'autre des éléments suivants :<br/>
   &nbsp;&nbsp;&nbsp;&nbsp;a. Besoin de quantités nettement augmentées de la phencyclidine pour atteindre intoxication ou effet désiré<br/>
   &nbsp;&nbsp;&nbsp;&nbsp;b. Effet nettement diminué avec usage continu de la même quantité de la phencyclidine</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider les critères</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   
   <p style="margin-top: 10px;"><strong>Rémission :</strong></p>
@@ -182,135 +115,53 @@
   
   <p style="margin-top: 15px;"><strong>Environnement contrôlé :</strong></p>
   <label><input type="checkbox" name="environnement" value="Dans environnement contrôlé"/> <strong>Dans un environnement contrôlé :</strong> Ce spécificateur additionnel est utilisé si l'individu est dans un environnement où l'accès à la phencyclidine est restreint</label>
+</fieldset>
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier du trouble d'usage de phencyclidine</p>
   
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="checkbox" name="diff_intoxication" value="Intoxication à la phencyclidine - Distinction avec trouble d'usage basée sur pattern d'usage"/> Intoxication à la phencyclidine - Distinction avec trouble d'usage basée sur pattern d'usage</label>
+  
+  <label><input type="checkbox" name="diff_other_substance" value="Troubles d'usage d'autres substances - Distinction avec troubles d'usage d'autres substances psychoactives"/> Troubles d'usage d'autres substances - Distinction avec troubles d'usage d'autres substances psychoactives</label>
+  
+  <label><input type="checkbox" name="diff_psychotic" value="Troubles psychotiques induits - Distinction avec troubles psychotiques induits par phencyclidine"/> Troubles psychotiques induits - Distinction avec troubles psychotiques induits par phencyclidine</label>
+  
+  <label><input type="checkbox" name="diff_mental" value="Troubles mentaux primaires - Distinction avec troubles mentaux primaires présentant des symptômes similaires"/> Troubles mentaux primaires - Distinction avec troubles mentaux primaires présentant des symptômes similaires</label>
+  
+  <label><input type="checkbox" name="diff_occasional" value="Usage occasionnel sans altération - Distinction avec usage occasionnel sans altération significative"/> Usage occasionnel sans altération - Distinction avec usage occasionnel sans altération significative</label>
+  
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Cocher les troubles fréquemment comorbides avec le trouble d'usage de phencyclidine</p>
+  
+  <label><input type="checkbox" name="comorb_intoxication" value="Intoxication à la phencyclidine - Fréquemment comorbide"/> Intoxication à la phencyclidine - Fréquemment comorbide</label>
+  
+  <label><input type="checkbox" name="comorb_psychotic" value="Troubles psychotiques induits - Peuvent survenir avec usage prolongé"/> Troubles psychotiques induits - Peuvent survenir avec usage prolongé</label>
+  
+  <label><input type="checkbox" name="comorb_other_substance" value="Troubles liés à d'autres substances - Usage simultané fréquent"/> Troubles liés à d'autres substances - Usage simultané fréquent</label>
+  
+  <label><input type="checkbox" name="comorb_mental" value="Troubles mentaux primaires - Peuvent être exacerbés par usage"/> Troubles mentaux primaires - Peuvent être exacerbés par usage</label>
+  
+  <label><input type="checkbox" name="comorb_medical" value="Conditions médicales - Usage peut masquer ou exacerber conditions médicales"/> Conditions médicales - Usage peut masquer ou exacerber conditions médicales</label>
+  
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],remission:"",environnement:""};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>=2){
-    choix.critereA=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else alert("Au moins 2 des 10 critères doivent être cochés (actuellement: "+c.length+"/10)");
-}
-
-function afficherResume(){
-  const r=document.querySelector("input[name='remission']:checked");
-  const e=document.querySelector("input[name='environnement']:checked");
-  if(r){
-    choix.remission=r.value;
-    choix.environnement=e?e.value:"";
-    genererResume();
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le statut de rémission", confirmButtonColor: "#667eea"});
-}
-
-function genererResume(){
-  const nbCriteres=choix.critereA.length;
-  let severite="";
-  let code="";
-  
-  if(choix.remission==="Non en rémission"){
-    if(nbCriteres>=2&&nbCriteres<=3){
-      severite="Léger";
-      code="F16.10";
-    }else if(nbCriteres>=4&&nbCriteres<=5){
-      severite="Modéré";
-      code="F16.20";
-    }else if(nbCriteres>=6){
-      severite="Sévère";
-      code="F16.20";
-    }
-  }else{
-    if(nbCriteres>=2&&nbCriteres<=3){
-      severite="Léger";
-      code="F16.11";
-    }else if(nbCriteres>=4&&nbCriteres<=5){
-      severite="Modéré";
-      code="F16.21";
-    }else if(nbCriteres>=6){
-      severite="Sévère";
-      code="F16.21";
-    }
-  }
-  
-  let diag=code+" Trouble d'Usage de Phencyclidine, "+severite.toLowerCase();
-  if(choix.remission!=="Non en rémission")diag+=", "+choix.remission.toLowerCase();
-  if(choix.environnement)diag+=", dans environnement contrôlé";
-  diag+=" ("+nbCriteres+" critères)";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Pattern d'usage (≥2/10 durant 12 mois)</h4>";
-  h+="<p><strong>Nombre de critères remplis: "+nbCriteres+"/10</strong></p>";
-  h+="<ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  h+="<li>✓ Rémission: "+choix.remission+"</li>";
-  if(choix.environnement)h+="<li>✓ "+choix.environnement+"</li>";
-  h+="<li>✓ <strong>Sévérité: "+severite+" ("+nbCriteres+" critères remplis)</strong></li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Pattern d'usage de phencyclidine (ou substance pharmacologiquement similaire) conduisant à altération ou détresse cliniquement significative.";
-  h+="<br/><br/><strong>Critère A :</strong> ≥2 des 10 critères suivants durant période de 12 mois:";
-  h+="<br/>1. Quantités plus grandes ou période plus longue que prévu";
-  h+="<br/>2. Désir persistant ou efforts infructueux pour réduire/contrôler";
-  h+="<br/>3. Beaucoup de temps consacré à obtenir, utiliser ou récupérer";
-  h+="<br/>4. Craving (désir intense ou envie pressante)";
-  h+="<br/>5. Échec à remplir obligations majeures de rôle";
-  h+="<br/>6. Usage continu malgré problèmes sociaux/interpersonnels";
-  h+="<br/>7. Activités importantes abandonnées ou réduites";
-  h+="<br/>8. Usage dans situations physiquement dangereuses";
-  h+="<br/>9. Usage continu malgré problème physique/psychologique";
-  h+="<br/>10. Tolérance (besoin quantités augmentées OU effet diminué)";
-  h+="<br/><br/><strong>Note importante :</strong> Pas de critère de sevrage (symptômes de sevrage non établis chez l'humain, bien que rapportés chez les animaux).";
-  h+="<br/><br/><strong>Rémission :</strong>";
-  h+="<br/>• En rémission précoce: Aucun critère (sauf A4 craving) pendant ≥3 mois mais <12 mois";
-  h+="<br/>• En rémission soutenue: Aucun critère (sauf A4 craving) pendant ≥12 mois";
-  h+="<br/><br/><strong>Environnement contrôlé :</strong>";
-  h+="<br/>Spécificateur additionnel si individu dans environnement où accès à la phencyclidine restreint.";
-  h+="<br/><br/><strong>Sévérité (basée sur nombre de critères) :</strong>";
-  h+="<br/>• <strong>Léger:</strong> 2-3 critères";
-  h+="<br/>• <strong>Modéré:</strong> 4-5 critères";
-  h+="<br/>• <strong>Sévère:</strong> ≥6 critères";
-  h+="<br/><br/><strong>Codage ICD-10-CM :</strong>";
-  h+="<br/>• <strong>F16.10</strong> Léger (actif)";
-  h+="<br/>• <strong>F16.11</strong> Léger, en rémission précoce ou soutenue";
-  h+="<br/>• <strong>F16.20</strong> Modéré ou Sévère (actif)";
-  h+="<br/>• <strong>F16.21</strong> Modéré ou Sévère, en rémission précoce ou soutenue";
-  h+="<br/><br/><strong>Note de codage importante :</strong>";
-  h+="<br/>Si intoxication à la phencyclidine ou autre trouble mental induit par phencyclidine est aussi présent, ne pas utiliser les codes ci-dessus. Le trouble d'usage de phencyclidine comorbide est indiqué dans le 4ème caractère du code du trouble induit.";
-  h+="<br/><br/><strong>Exemple:</strong> Si trouble psychotique induit par phencyclidine comorbide:";
-  h+="<br/>• F16.159 pour trouble d'usage de phencyclidine léger avec trouble psychotique induit";
-  h+="<br/>• F16.259 pour trouble d'usage de phencyclidine modéré ou sévère avec trouble psychotique induit";
-  h+="<br/><br/><strong>Phencyclidine (PCP) :</strong>";
-  h+="<br/>• Aussi connue sous le nom de 'angel dust'";
-  h+="<br/>• Substances pharmacologiquement similaires: kétamine et autres dissociatifs";
-  h+="<br/>• Effets dissociatifs, analgésiques et hallucinogènes";
-  h+="<br/>• Risque élevé de comportement agressif/violent durant intoxication";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
+<div class="boutons-validation">
+  <button class="btn-valide" onclick="validerFormulaire()">✔️ VALIDE</button>
+  <button class="btn-non-valide" onclick="nonValiderFormulaire()">✘ NON VALIDE</button>
+</div>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

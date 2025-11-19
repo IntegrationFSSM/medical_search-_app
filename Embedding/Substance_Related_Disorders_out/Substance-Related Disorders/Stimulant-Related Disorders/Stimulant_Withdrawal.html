@@ -31,40 +31,6 @@
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +55,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -140,16 +81,12 @@
   <legend>Critère A – Cessation ou réduction d'usage prolongé</legend>
   <p class="subtitle">Cessation de (ou réduction dans) l'usage prolongé de substance de type amphétamine, cocaïne ou autre stimulant</p>
   <label><input type="checkbox" name="critereA" value="Cessation de (ou réduction dans) usage prolongé de substance de type amphétamine, cocaïne ou autre stimulant"/> Cessation de (ou réduction dans) l'usage prolongé de substance de type amphétamine, cocaïne ou autre stimulant</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Humeur dysphorique et changements physiologiques</legend>
-  <p class="subtitle">Humeur dysphorique et deux (ou plus) des changements physiologiques suivants, se développant dans les quelques heures à plusieurs jours après le critère A</p>
-  <div class="warning-box">
-    ⚠️ Humeur dysphorique OBLIGATOIRE + au moins 2 des 5 changements physiologiques
-  </div>
+  <p class="subtitle">Humeur dysphorique et deux (ou plus) des changements physiologiques suivants, se développant dans les quelques heures à plusieurs jours après le critère A. Humeur dysphorique OBLIGATOIRE + au moins 2 des 5 changements physiologiques.</p>
   
   <p style="margin-top: 10px;"><strong>Critère obligatoire :</strong></p>
   <label><input type="checkbox" name="dysphorique" value="Humeur dysphorique"/> <strong>Humeur dysphorique</strong> (obligatoire)</label>
@@ -160,35 +97,29 @@
   <label><input type="checkbox" name="critereB" value="3. Insomnie ou hypersomnie"/> <strong>3.</strong> Insomnie ou hypersomnie</label>
   <label><input type="checkbox" name="critereB" value="4. Appétit augmenté"/> <strong>4.</strong> Appétit augmenté</label>
   <label><input type="checkbox" name="critereB" value="5. Retard ou agitation psychomoteur"/> <strong>5.</strong> Retard ou agitation psychomoteur</label>
-  
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Détresse ou altération cliniquement significative</legend>
   <p class="subtitle">Les signes ou symptômes du critère B causent une détresse ou altération cliniquement significative dans le fonctionnement</p>
   <label><input type="checkbox" name="critereC" value="Signes ou symptômes causent détresse ou altération cliniquement significative dans fonctionnement social, professionnel ou autres domaines importants"/> Les signes ou symptômes causent une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Non attribuable à autre condition</legend>
   <p class="subtitle">Les signes ou symptômes ne sont pas attribuables à une autre condition médicale et ne sont pas mieux expliqués par un autre trouble mental</p>
   <label><input type="checkbox" name="critereD" value="Signes ou symptômes non attribuables à autre condition médicale"/> Les signes ou symptômes ne sont pas attribuables à une autre condition médicale</label>
   <label><input type="checkbox" name="critereD" value="Non mieux expliqués par autre trouble mental, incluant intoxication ou sevrage d'autre substance"/> Ne sont pas mieux expliqués par un autre trouble mental, incluant intoxication ou sevrage d'une autre substance</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Spécificateurs et comorbidité -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs et comorbidité</legend>
   
   <p style="margin-top: 10px;"><strong>Type de stimulant :</strong></p>
-  <div class="warning-box">
-    ⚠️ Le code ICD-10-CM dépend du TYPE de stimulant
-  </div>
+  <p class="subtitle">Le code ICD-10-CM dépend du TYPE de stimulant</p>
   <label><input type="radio" name="typeStimulant" value="Amphétamine"/> <strong>Substance de type amphétamine ou autre stimulant</strong></label>
   <label><input type="radio" name="typeStimulant" value="Cocaïne"/> <strong>Cocaïne</strong></label>
   
@@ -197,180 +128,53 @@
   <label><input type="radio" name="comorbidite" value="Avec trouble d'usage léger"/> <strong>Avec trouble d'usage de stimulants léger comorbide</strong></label>
   <label><input type="radio" name="comorbidite" value="Avec trouble d'usage modéré"/> <strong>Avec trouble d'usage de stimulants modéré comorbide</strong></label>
   <label><input type="radio" name="comorbidite" value="Avec trouble d'usage sévère"/> <strong>Avec trouble d'usage de stimulants sévère comorbide</strong></label>
+</fieldset>
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier du sevrage des stimulants</p>
   
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="checkbox" name="diff_medical" value="Sevrage dû à autre condition médicale - Distinction avec effets physiologiques directs d'autres conditions"/> Sevrage dû à autre condition médicale - Distinction avec effets physiologiques directs d'autres conditions</label>
+  
+  <label><input type="checkbox" name="diff_substance" value="Sevrage d'autre substance - Distinction avec sevrage d'autres substances psychoactives"/> Sevrage d'autre substance - Distinction avec sevrage d'autres substances psychoactives</label>
+  
+  <label><input type="checkbox" name="diff_intoxication" value="Intoxication aux stimulants - Distinction avec sevrage basée sur symptômes"/> Intoxication aux stimulants - Distinction avec sevrage basée sur symptômes</label>
+  
+  <label><input type="checkbox" name="diff_other" value="Autres troubles mentaux - Distinction avec troubles mentaux primaires présentant des symptômes similaires"/> Autres troubles mentaux - Distinction avec troubles mentaux primaires présentant des symptômes similaires</label>
+  
+  <label><input type="checkbox" name="diff_medical_use" value="Usage médical approprié - Distinction avec usage médical approprié sans syndrome de sevrage"/> Usage médical approprié - Distinction avec usage médical approprié sans syndrome de sevrage</label>
+  
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite-section">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Cocher les troubles fréquemment comorbides avec le sevrage des stimulants</p>
+  
+  <label><input type="checkbox" name="comorb_use" value="Trouble d'usage de stimulants - Fréquemment comorbide"/> Trouble d'usage de stimulants - Fréquemment comorbide</label>
+  
+  <label><input type="checkbox" name="comorb_intoxication" value="Intoxication aux stimulants - Peut précéder le sevrage"/> Intoxication aux stimulants - Peut précéder le sevrage</label>
+  
+  <label><input type="checkbox" name="comorb_other_substance" value="Troubles liés à d'autres substances - Usage simultané fréquent"/> Troubles liés à d'autres substances - Usage simultané fréquent</label>
+  
+  <label><input type="checkbox" name="comorb_mental" value="Troubles mentaux primaires - Peuvent être exacerbés par sevrage"/> Troubles mentaux primaires - Peuvent être exacerbés par sevrage</label>
+  
+  <label><input type="checkbox" name="comorb_medical" value="Conditions médicales - Sevrage peut masquer ou exacerber conditions médicales"/> Conditions médicales - Sevrage peut masquer ou exacerber conditions médicales</label>
+  
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:"",dysphorique:"",critereB:[],critereC:"",critereD:[],typeStimulant:"",comorbidite:""};
-
-const codesAmphetamine={
-  "Sans trouble d'usage":"F15.93",
-  "Avec trouble d'usage léger":"F15.13",
-  "Avec trouble d'usage modéré":"F15.23",
-  "Avec trouble d'usage sévère":"F15.23"
-};
-
-const codesCocaine={
-  "Sans trouble d'usage":"F14.93",
-  "Avec trouble d'usage léger":"F14.13",
-  "Avec trouble d'usage modéré":"F14.23",
-  "Avec trouble d'usage sévère":"F14.23"
-};
-
-function validerCritereA(){
-  const c=document.querySelector("input[name='critereA']:checked");
-  if(c){
-    choix.critereA=c.value;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else alert("Cochez l'option du critère A");
-}
-
-function validerCritereB(){
-  const dy=document.querySelector("input[name='dysphorique']:checked");
-  const cb=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(dy&&cb.length>=2){
-    choix.dysphorique=dy.value;
-    choix.critereB=cb;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else{
-    if(!dy)alert("L'humeur dysphorique est OBLIGATOIRE");
-    else alert("Au moins 2 des 5 changements physiologiques doivent être cochés (actuellement: "+cb.length+"/5)");
-  }
-}
-
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const ts=document.querySelector("input[name='typeStimulant']:checked");
-  const co=document.querySelector("input[name='comorbidite']:checked");
-  if(ts&&co){
-    choix.typeStimulant=ts.value;
-    choix.comorbidite=co.value;
-    genererResume();
-  }else{
-    if(!ts)Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le type de stimulant", confirmButtonColor: "#667eea"});
-    else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la comorbidité", confirmButtonColor: "#667eea"});
-  }
-}
-
-function genererResume(){
-  const codes=choix.typeStimulant==="Cocaïne"?codesCocaine:codesAmphetamine;
-  const code=codes[choix.comorbidite];
-  const nbSymptomes=choix.critereB.length;
-  
-  let typeStimNom=choix.typeStimulant==="Cocaïne"?"Cocaïne":"Substance de type amphétamine ou autre stimulant";
-  let diag=code+" Sevrage des Stimulants ("+typeStimNom+")";
-  if(choix.comorbidite!=="Sans trouble d'usage"){
-    diag+=", "+choix.comorbidite.toLowerCase();
-  }
-  diag+=" (humeur dysphorique + "+nbSymptomes+" symptômes)";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Cessation ou réduction d'usage prolongé</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
-  
-  h+="<h4>Critère B – Humeur dysphorique + changements physiologiques</h4>";
-  h+="<p><strong>Humeur dysphorique (obligatoire) + "+nbSymptomes+" changements physiologiques</strong></p>";
-  h+="<ul class='choix-list'>";
-  h+="<li>✓ "+choix.dysphorique+" (OBLIGATOIRE)</li>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Détresse ou altération cliniquement significative</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Non attribuable à autre condition</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs et comorbidité</h4><ul class='choix-list'>";
-  h+="<li>✓ Type de stimulant: "+typeStimNom+"</li>";
-  h+="<li>✓ Comorbidité: "+choix.comorbidite+"</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Sevrage des stimulants suite à cessation/réduction d'usage prolongé.";
-  h+="<br/><br/><strong>Critère A :</strong> Cessation de (ou réduction dans) usage prolongé de stimulant.";
-  h+="<br/><br/><strong>Critère B :</strong> Humeur dysphorique (OBLIGATOIRE) + ≥2 des changements physiologiques suivants dans quelques heures à plusieurs jours:";
-  h+="<br/>1. Fatigue";
-  h+="<br/>2. Rêves vifs et déplaisants";
-  h+="<br/>3. Insomnie ou hypersomnie";
-  h+="<br/>4. Appétit augmenté";
-  h+="<br/>5. Retard ou agitation psychomoteur";
-  h+="<br/><br/><strong>Critère C :</strong> Détresse ou altération cliniquement significative.";
-  h+="<br/><br/><strong>Critère D :</strong> Non attribuables à autre condition médicale et non mieux expliqués par autre trouble mental.";
-  h+="<br/><br/><strong>Codage ICD-10-CM (dépend du TYPE de stimulant ET comorbidité) :</strong>";
-  h+="<br/><br/><strong>AMPHÉTAMINES/AUTRE STIMULANT :</strong>";
-  h+="<br/>• F15.93 : Sans trouble d'usage comorbide (ex: usage médical approprié)";
-  h+="<br/>• F15.13 : Avec trouble d'usage léger comorbide";
-  h+="<br/>• F15.23 : Avec trouble d'usage modéré ou sévère comorbide";
-  h+="<br/><br/><strong>COCAÏNE :</strong>";
-  h+="<br/>• F14.93 : Sans trouble d'usage comorbide";
-  h+="<br/>• F14.13 : Avec trouble d'usage léger comorbide";
-  h+="<br/>• F14.23 : Avec trouble d'usage modéré ou sévère comorbide";
-  h+="<br/><br/><strong>Symptômes typiques du sevrage des stimulants :</strong>";
-  h+="<br/>• <strong>Humeur dysphorique</strong> (dépression, irritabilité) - OBLIGATOIRE";
-  h+="<br/>• <strong>Fatigue</strong>, épuisement";
-  h+="<br/>• <strong>Hypersomnie</strong> (sommeil excessif) - très fréquent";
-  h+="<br/>• <strong>Appétit augmenté</strong>";
-  h+="<br/>• <strong>Rêves vifs</strong> et déplaisants";
-  h+="<br/>• <strong>Retard psychomoteur</strong>";
-  h+="<br/><br/><strong>Temporalité :</strong>";
-  h+="<br/>• Début: Quelques heures à plusieurs jours après cessation";
-  h+="<br/>• Pic: 2-4 jours";
-  h+="<br/>• Durée: Variable (jours à semaines)";
-  h+="<br/>• Symptômes peuvent persister plusieurs semaines";
-  h+="<br/><br/><strong>Différence avec intoxication :</strong>";
-  h+="<br/>• Intoxication: Euphorie, énergie, insomnie";
-  h+="<br/>• Sevrage: Dysphorie, fatigue, hypersomnie";
-  h+="<br/>• Effet rebond inverse";
-  h+="<br/><br/><strong>Crash post-stimulant :</strong>";
-  h+="<br/>• Après usage intensif (binge)";
-  h+="<br/>• Épuisement extrême";
-  h+="<br/>• Dépression sévère";
-  h+="<br/>• Hypersomnie marquée";
-  h+="<br/>• Appétit vorace";
-  h+="<br/><br/><strong>Risques :</strong>";
-  h+="<br/>• Idéation suicidaire (dysphorie sévère)";
-  h+="<br/>• Rechute (pour soulager symptômes)";
-  h+="<br/>• Généralement NON mortel (contrairement alcool/sédatifs)";
-  h+="<br/><br/><strong>Traitement :</strong>";
-  h+="<br/>• Support symptomatique";
-  h+="<br/>• Surveillance (risque suicidaire)";
-  h+="<br/>• Pas de substitution pharmacologique standard";
-  h+="<br/>• Antidépresseurs si dépression persistante";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
+<div class="boutons-validation">
+  <button class="btn-valide" onclick="validerFormulaire()">✔️ VALIDE</button>
+  <button class="btn-non-valide" onclick="nonValiderFormulaire()">✘ NON VALIDE</button>
+</div>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,10 +89,7 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Besoin de bouger les jambes</legend>
-  <p class="subtitle">Un besoin de bouger les jambes, habituellement accompagné par ou en réponse à des sensations inconfortables et désagréables dans les jambes, caractérisé par TOUS les éléments suivants</p>
-  <div class="warning-box">
-    ⚠️ Les 3 caractéristiques suivantes doivent TOUTES être présentes
-  </div>
+  <p class="subtitle">Un besoin de bouger les jambes, habituellement accompagné par ou en réponse à des sensations inconfortables et désagréables dans les jambes, caractérisé par TOUS les éléments suivants. Les 3 caractéristiques suivantes doivent TOUTES être présentes</p>
   
   <label><input type="checkbox" name="critereA" value="Besoin de bouger les jambes, accompagné par ou en réponse à sensations inconfortables et désagréables dans jambes"/> Besoin de bouger les jambes, habituellement accompagné par ou en réponse à des sensations inconfortables et désagréables dans les jambes</label>
   
@@ -152,161 +100,70 @@
   <label><input type="checkbox" name="caracteristiques" value="2. Besoin de bouger jambes partiellement ou totalement soulagé par mouvement"/> <strong>2.</strong> Le besoin de bouger les jambes est partiellement ou totalement soulagé par le mouvement</label>
   
   <label><input type="checkbox" name="caracteristiques" value="3. Besoin de bouger jambes pire le soir ou la nuit que durant journée, ou survient uniquement le soir ou la nuit"/> <strong>3.</strong> Le besoin de bouger les jambes est pire le soir ou la nuit que durant la journée, ou survient uniquement le soir ou la nuit</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Fréquence et durée</legend>
-  <p class="subtitle">Les symptômes du critère A surviennent au moins trois fois par semaine et ont persisté pendant au moins 3 mois</p>
-  <div class="warning-box">
-    ⚠️ Fréquence : ≥3 fois/semaine ET Durée : ≥3 mois
-  </div>
+  <p class="subtitle">Les symptômes du critère A surviennent au moins trois fois par semaine et ont persisté pendant au moins 3 mois. Fréquence : ≥3 fois/semaine ET Durée : ≥3 mois</p>
   <label><input type="checkbox" name="critereB" value="Symptômes surviennent au moins 3 fois par semaine"/> Les symptômes surviennent au moins 3 fois par semaine</label>
   <label><input type="checkbox" name="critereB" value="Symptômes ont persisté pendant au moins 3 mois"/> Les symptômes ont persisté pendant au moins 3 mois</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Détresse ou altération significative</legend>
   <p class="subtitle">Les symptômes du critère A sont accompagnés de détresse ou altération significative dans le fonctionnement</p>
   <label><input type="checkbox" name="critereC" value="Symptômes accompagnés de détresse ou altération significative dans fonctionnement social, professionnel, éducatif, académique, comportemental ou autres domaines importants"/> Les symptômes sont accompagnés de détresse ou altération significative dans le fonctionnement social, professionnel, éducatif, académique, comportemental ou autres domaines importants</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Non attribuable à autre trouble ou condition</legend>
   <p class="subtitle">Les symptômes du critère A ne sont pas attribuables à un autre trouble mental ou condition médicale et ne sont pas mieux expliqués par une condition comportementale</p>
   <label><input type="checkbox" name="critereD" value="Symptômes non attribuables à autre trouble mental ou condition médicale (arthrite, œdème jambes, ischémie périphérique, crampes jambes)"/> Les symptômes ne sont pas attribuables à un autre trouble mental ou condition médicale (ex: arthrite, œdème des jambes, ischémie périphérique, crampes des jambes)</label>
   <label><input type="checkbox" name="critereD" value="Symptômes non mieux expliqués par condition comportementale (inconfort positionnel, tapotement habituel du pied)"/> Les symptômes ne sont pas mieux expliqués par une condition comportementale (ex: inconfort positionnel, tapotement habituel du pied)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Non attribuable à substance</legend>
   <p class="subtitle">Les symptômes ne sont pas attribuables aux effets physiologiques d'une drogue ou d'un médicament</p>
   <label><input type="checkbox" name="critereE" value="Symptômes non attribuables aux effets physiologiques d'une drogue ou médicament (akathisie)"/> Les symptômes ne sont pas attribuables aux effets physiologiques d'une drogue ou d'un médicament (ex: akathisie)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
+<!-- Diagnostic différentiel -->
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Akathisie"/> Akathisie (induite par médicaments, pas de rythme circadien)</label>
+  <label><input type="checkbox" name="diff_diag" value="Crampes jambes"/> Crampes des jambes</label>
+  <label><input type="checkbox" name="diff_diag" value="Inconfort positionnel"/> Inconfort positionnel</label>
+  <label><input type="checkbox" name="diff_diag" value="Arthrite"/> Arthrite</label>
+  <label><input type="checkbox" name="diff_diag" value="Neuropathie périphérique"/> Neuropathie périphérique</label>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite" value="Déficience en fer"/> Déficience en fer (ferritine basse)</label>
+  <label><input type="checkbox" name="comorbidite" value="Insuffisance rénale"/> Insuffisance rénale chronique</label>
+  <label><input type="checkbox" name="comorbidite" value="Grossesse"/> Grossesse</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles du sommeil"/> Autres troubles du sommeil (insomnie)</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles de l'humeur"/> Troubles de l'humeur (dépression, anxiété)</label>
+</fieldset>
+
+<!-- Boutons de validation -->
+<div class='boutons-validation'>
+  <button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>
+  <button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>
+</div>
+
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],caracteristiques:[],critereB:[],critereC:"",critereD:[],critereE:""};
-
-function validerCritereA(){
-  const ca=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  const car=Array.from(document.querySelectorAll("input[name='caracteristiques']:checked")).map(e=>e.value);
-  
-  if(ca.length>0&&car.length===3){
-    choix.critereA=ca;
-    choix.caracteristiques=car;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else if(car.length<3){
-    alert("Les 3 caractéristiques doivent TOUTES être cochées (actuellement: "+car.length+"/3)");
-  }else{
-    Swal.fire({icon: "warning", title: "Attention", text: "Cochez le besoin de bouger les jambes ET les 3 caractéristiques", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("critereE").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const c=document.querySelector("input[name='critereE']:checked");
-  if(c){
-    choix.critereE=c.value;
-    genererResume();
-  }else alert("Cochez l'option du critère E");
-}
-
-function genererResume(){
-  const code="G25.81";
-  let diag=code+" Syndrome des Jambes Sans Repos";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Besoin de bouger les jambes + 3 caractéristiques (TOUTES requises)</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="<li><strong>Caractéristiques (3/3 requises) :</strong></li>";
-  choix.caracteristiques.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Fréquence (≥3/semaine) et durée (≥3 mois)</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Détresse ou altération significative</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Non attribuable à autre trouble ou condition</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère E – Non attribuable à substance</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Besoin de bouger les jambes avec sensations inconfortables.";
-  h+="<br/><br/><strong>Critère A :</strong> Besoin de bouger les jambes, accompagné par ou en réponse à sensations inconfortables et désagréables dans les jambes, caractérisé par TOUTES les caractéristiques suivantes:";
-  h+="<br/>1. Commence ou s'aggrave durant périodes de repos ou inactivité";
-  h+="<br/>2. Partiellement ou totalement soulagé par mouvement";
-  h+="<br/>3. Pire le soir/nuit que durant journée, OU survient uniquement le soir/nuit";
-  h+="<br/><br/><strong>Critère B :</strong> Symptômes surviennent ≥3 fois/semaine ET ont persisté ≥3 mois.";
-  h+="<br/><br/><strong>Critère C :</strong> Détresse ou altération significative dans fonctionnement social, professionnel, éducatif, académique, comportemental ou autres domaines.";
-  h+="<br/><br/><strong>Critère D :</strong> Non attribuables à autre trouble mental/condition médicale (arthrite, œdème jambes, ischémie périphérique, crampes) et non mieux expliqués par condition comportementale (inconfort positionnel, tapotement habituel pied).";
-  h+="<br/><br/><strong>Critère E :</strong> Non attribuables à drogue ou médicament (ex: akathisie).";
-  h+="<br/><br/><strong>Caractéristiques essentielles :</strong>";
-  h+="<br/>• Besoin irrésistible de bouger les jambes";
-  h+="<br/>• Sensations inconfortables/désagréables";
-  h+="<br/>• Aggravation au repos/inactivité";
-  h+="<br/>• Soulagement par mouvement";
-  h+="<br/>• Prédominance vespérale/nocturne";
-  h+="<br/><br/><strong>Diagnostic différentiel important :</strong>";
-  h+="<br/>• Akathisie (induite par médicaments)";
-  h+="<br/>• Crampes des jambes";
-  h+="<br/>• Inconfort positionnel";
-  h+="<br/>• Arthrite, œdème, ischémie périphérique";
-  h+="<br/><br/><strong>Note :</strong> Les 3 caractéristiques du critère A doivent TOUTES être présentes pour le diagnostic.";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

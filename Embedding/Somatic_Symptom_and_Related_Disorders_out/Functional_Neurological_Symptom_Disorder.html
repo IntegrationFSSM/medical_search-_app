@@ -31,97 +31,23 @@
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
+    .subtitle { font-size: 0.9em; color: #666; font-style: italic; }
+    .boutons-validation { display: flex; gap: 10px; margin-top: 20px; justify-content: center; }
+    .btn-valide, .btn-non-valide {
+      padding: 12px 30px;
+      font-size: 16px;
       border: none;
-      padding: 8px 12px;
       border-radius: 4px;
-      margin-top: 10px;
+      color: #fff;
       cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
-    .boutons-validation {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      justify-content: center;
-    }
-    .btn-valide {
-      background-color: #28a745;
-      padding: 12px 30px;
-      font-size: 16px;
       flex: 1;
     }
-    .btn-valide:hover {
-      background-color: #218838;
-    }
-    .btn-non-valide {
-      background-color: #dc3545;
-      padding: 12px 30px;
-      font-size: 16px;
-      flex: 1;
-    }
-    .btn-non-valide:hover {
-      background-color: #c82333;
-    }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
+    .btn-valide { background-color: #28a745; }
+    .btn-valide:hover { background-color: #218838; }
+    .btn-non-valide { background-color: #dc3545; }
+    .btn-non-valide:hover { background-color: #c82333; }
   </style>
 
-  <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -129,224 +55,90 @@
 <div class="top-bar">
   <div class="titre-centre">
     <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble à Symptômes Neurologiques Fonctionnels (Trouble de Conversion) – DSM-5-TR</h2>
+    <h2>Trouble à Symptômes Neurologiques Fonctionnels (Trouble de Conversion)</h2>
   </div>
 </div>
 
 <form id="formulaire">
 
-<!-- Critère A -->
-<fieldset id="critereA">
-  <legend>Critère A – Symptômes de fonction motrice ou sensorielle altérée</legend>
-  <p class="subtitle">Un ou plusieurs symptômes de fonction motrice ou sensorielle volontaire altérée</p>
-  <label><input type="checkbox" name="critereA" value="Un ou plusieurs symptômes de fonction motrice volontaire altérée"/> Un ou plusieurs symptômes de fonction motrice volontaire altérée</label>
-  <label><input type="checkbox" name="critereA" value="OU un ou plusieurs symptômes de fonction sensorielle volontaire altérée"/> OU un ou plusieurs symptômes de fonction sensorielle volontaire altérée</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<fieldset>
+  <legend>Critère A – Symptômes moteurs ou sensoriels altérés</legend>
+  <p class="subtitle">Un ou plusieurs symptômes de fonction motrice ou sensorielle volontaire altérée, incompatibles avec une pathologie neurologique reconnue.</p>
+  <label><input type="checkbox" name="critereA" value="Faiblesse ou paralysie fonctionnelle"/> Faiblesse ou paralysie fonctionnelle</label>
+  <label><input type="checkbox" name="critereA" value="Troubles du mouvement (tremblement, dystonie, myoclonie, troubles de la marche)"/> Troubles du mouvement (tremblement, dystonie, myoclonie, marche anormale)</label>
+  <label><input type="checkbox" name="critereA" value="Symptômes sensoriels (anesthésie, perte visuelle, auditive ou olfactive)"/> Symptômes sensoriels (anesthésie, perte sensorielle spéciale, vision tunnel)</label>
+  <label><input type="checkbox" name="critereA" value="Symptômes de déglutition ou de parole"/> Symptoms de déglutition ou de parole (mutisme, dysphonie)</label>
+  <label><input type="checkbox" name="critereA" value="Attaques ou crises non épileptiques"/> Attaques ou crises non épileptiques</label>
 </fieldset>
 
-<!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Incompatibilité avec conditions neurologiques/médicales reconnues</legend>
-  <p class="subtitle">Les résultats cliniques fournissent des preuves d'incompatibilité entre le symptôme et les conditions neurologiques ou médicales reconnues</p>
-  <label><input type="checkbox" name="critereB" value="Résultats cliniques fournissent preuves d'incompatibilité entre symptôme et conditions neurologiques ou médicales reconnues"/> Les résultats cliniques fournissent des preuves d'incompatibilité entre le symptôme et les conditions neurologiques ou médicales reconnues</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset>
+  <legend>Critère B – Incompatibilité clinique</legend>
+  <p class="subtitle">Les résultats cliniques apportent des preuves d'incompatibilité entre le symptôme et des conditions neurologiques/médicales reconnues.</p>
+  <label><input type="checkbox" name="critereB" value="Signes d'incompatibilité positive (Hoover, tremblement distractible, etc.)"/> Signes d'incompatibilité positive (ex: signe de Hoover, tremblement distractible)</label>
+  <label><input type="checkbox" name="critereB" value="Discordance anatomique ou physiologique"/> Discordance anatomique ou physiologique avec les voies neurologiques connues</label>
 </fieldset>
 
-<!-- Critère C -->
-<fieldset id="critereC" class="hidden">
-  <legend>Critère C – Non mieux expliqué par autre trouble</legend>
-  <p class="subtitle">Le symptôme ou déficit n'est pas mieux expliqué par un autre trouble médical ou mental</p>
-  <label><input type="checkbox" name="critereC" value="Symptôme ou déficit non mieux expliqué par autre trouble médical ou mental"/> Le symptôme ou déficit n'est pas mieux expliqué par un autre trouble médical ou mental</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<fieldset>
+  <legend>Critère C – Exclusion d'autres troubles</legend>
+  <label><input type="checkbox" name="critereC" value="Symptômes non mieux expliqués par un trouble neurologique ou médical"/> Symptômes non mieux expliqués par un trouble neurologique ou médical reconnu</label>
+  <label><input type="checkbox" name="critereC" value="Symptômes non entièrement attribuables à un trouble factice ou une simulation"/> Symptômes non entièrement attribuables à un trouble factice ou à une simulation</label>
 </fieldset>
 
-<!-- Critère D -->
-<fieldset id="critereD" class="hidden">
-  <legend>Critère D – Détresse ou altération cliniquement significative</legend>
-  <p class="subtitle">Le symptôme ou déficit cause une détresse ou altération cliniquement significative ou justifie une évaluation médicale</p>
-  <label><input type="checkbox" name="critereD" value="Symptôme ou déficit cause détresse ou altération cliniquement significative dans fonctionnement social, professionnel ou autres domaines importants"/> Le symptôme ou déficit cause une détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</label>
-  <label><input type="checkbox" name="critereD" value="OU justifie évaluation médicale"/> OU justifie une évaluation médicale</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+<fieldset>
+  <legend>Critère D – Retentissement</legend>
+  <label><input type="checkbox" name="critereD" value="Détresse clinique significative"/> Détresse clinique significative</label>
+  <label><input type="checkbox" name="critereD" value="Altération du fonctionnement social, professionnel ou autres domaines importants"/> Altération du fonctionnement social ou professionnel</label>
+  <label><input type="checkbox" name="critereD" value="Nécessite évaluation médicale répétée"/> Nécessite ou a motivé des évaluations médicales répétées</label>
 </fieldset>
 
-<!-- Type de symptôme -->
-<fieldset id="typeSymptome" class="hidden">
-  <legend>Spécifier le type de symptôme</legend>
-  <div class="warning-box">
-    ⚠️ Le code ICD-10-CM dépend du type de symptôme
-  </div>
-  <p style="margin-top: 10px;"><strong>Sélectionner le type de symptôme :</strong></p>
-  <label><input type="checkbox" name="typeSymptome" value="F44.4 Avec faiblesse ou paralysie"/> <strong>F44.4</strong> Avec faiblesse ou paralysie</label>
-  <label><input type="checkbox" name="typeSymptome" value="F44.4 Avec mouvement anormal (tremblement, dystonie, myoclonie, trouble de la marche)"/> <strong>F44.4</strong> Avec mouvement anormal (ex: tremblement, dystonie, myoclonie, trouble de la marche)</label>
-  <label><input type="checkbox" name="typeSymptome" value="F44.4 Avec symptômes de déglutition"/> <strong>F44.4</strong> Avec symptômes de déglutition</label>
-  <label><input type="checkbox" name="typeSymptome" value="F44.4 Avec symptôme de parole (dysphonie, parole indistincte)"/> <strong>F44.4</strong> Avec symptôme de parole (ex: dysphonie, parole indistincte)</label>
-  <label><input type="checkbox" name="typeSymptome" value="F44.5 Avec attaques ou crises"/> <strong>F44.5</strong> Avec attaques ou crises</label>
-  <label><input type="checkbox" name="typeSymptome" value="F44.6 Avec anesthésie ou perte sensorielle"/> <strong>F44.6</strong> Avec anesthésie ou perte sensorielle</label>
-  <label><input type="checkbox" name="typeSymptome" value="F44.6 Avec symptôme sensoriel spécial (perturbation visuelle, olfactive ou auditive)"/> <strong>F44.6</strong> Avec symptôme sensoriel spécial (ex: perturbation visuelle, olfactive ou auditive)</label>
-  <label><input type="checkbox" name="typeSymptome" value="F44.7 Avec symptômes mixtes"/> <strong>F44.7</strong> Avec symptômes mixtes</label>
-  <button type="button" onclick="validerTypeSymptome()">✔️ Valider le type</button>
+<fieldset>
+  <legend>Spécificateurs</legend>
+  <label><input type="radio" name="duree" value="Épisode aigu (&lt;6 mois)"/> Épisode aigu (&lt;6 mois)</label>
+  <label><input type="radio" name="duree" value="Persistant (≥6 mois)"/> Persistant (≥6 mois)</label>
+  <label><input type="radio" name="stresseur" value="Avec stresseur psychologique identifié"/> Avec stresseur psychologique identifié</label>
+  <label><input type="radio" name="stresseur" value="Sans stresseur psychologique"/> Sans stresseur psychologique</label>
 </fieldset>
 
-<!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
-  <legend>Spécifier la durée et le stresseur psychologique</legend>
-  
-  <p style="margin-top: 10px;"><strong>Durée :</strong></p>
-  <label><input type="radio" name="duree" value="Épisode aigu"/> <strong>Épisode aigu :</strong> Symptômes présents depuis moins de 6 mois</label>
-  <label><input type="radio" name="duree" value="Persistant"/> <strong>Persistant :</strong> Symptômes présents depuis 6 mois ou plus</label>
-  
-  <p style="margin-top: 15px;"><strong>Stresseur psychologique :</strong></p>
-  <label><input type="radio" name="stresseur" value="Avec stresseur psychologique"/> <strong>Avec stresseur psychologique</strong> (spécifier le stresseur)</label>
-  <label><input type="radio" name="stresseur" value="Sans stresseur psychologique"/> <strong>Sans stresseur psychologique</strong></label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Troubles neurologiques (épilepsie, sclérose en plaques, AVC, myasthénie)"/> Troubles neurologiques authentiques (épilepsie, SEP, AVC, myasthénie)</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble factice ou simulation"/> Trouble factice ou simulation</label>
+  <label><input type="checkbox" name="diff_diag" value="Troubles dissociatifs"/> Troubles dissociatifs</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble somatique ou hypochondriaque"/> Trouble à symptôme somatique / anxiété de maladie</label>
+  <label><input type="checkbox" name="diff_diag" value="Migraine, vertige ou troubles vestibulaires atypiques"/> Migraine/vertige vestibulaire</label>
 </fieldset>
+
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite" value="Troubles anxieux ou dépressifs"/> Troubles anxieux ou dépressifs</label>
+  <label><input type="checkbox" name="comorbidite" value="Trouble de la personnalité (borderline, évitante)"/> Troubles de la personnalité (borderline, évitante)</label>
+  <label><input type="checkbox" name="comorbidite" value="Antécédents de traumatisme psychologique"/> Antécédents de traumatisme psychologique</label>
+  <label><input type="checkbox" name="comorbidite" value="Douleurs chroniques ou fibromyalgie"/> Douleurs chroniques / fibromyalgie</label>
+  <label><input type="checkbox" name="comorbidite" value="Autres troubles somatiques fonctionnels"/> Autres troubles somatiques fonctionnels</label>
+</fieldset>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaire()">✔️ VALIDE</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaire()">✘ NON VALIDE</button>
+</div>
 
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],critereB:"",critereC:"",critereD:[],typeSymptome:[],duree:"",stresseur:""};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=document.querySelector("input[name='critereB']:checked");
-  if(c){
-    choix.critereB=c.value;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else alert("Cochez l'option du critère B");
-}
-
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("typeSymptome").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
-
-function validerTypeSymptome(){
-  const c=Array.from(document.querySelectorAll("input[name='typeSymptome']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.typeSymptome=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins un type de symptôme", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const d=document.querySelector("input[name='duree']:checked");
-  const s=document.querySelector("input[name='stresseur']:checked");
-  if(d&&s){
-    choix.duree=d.value;
-    choix.stresseur=s.value;
-    genererResume();
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la durée et le stresseur psychologique", confirmButtonColor: "#667eea"});
-}
-
-function genererResume(){
-  // Extraire les codes des types de symptômes
-  let codes=[];
-  choix.typeSymptome.forEach(t=>{
-    const match=t.match(/F\d+\.\d+/);
-    if(match&&!codes.includes(match[0]))codes.push(match[0]);
-  });
-  
-  const code=codes.join(", ");
-  let diag="Trouble à Symptômes Neurologiques Fonctionnels (Trouble de Conversion)";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Symptômes de fonction motrice ou sensorielle altérée</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Incompatibilité avec conditions neurologiques/médicales</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
-  
-  h+="<h4>Critère C – Non mieux expliqué par autre trouble</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Détresse ou altération cliniquement significative</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Type(s) de symptôme</h4><ul class='choix-list'>";
-  choix.typeSymptome.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  h+="<li>✓ Durée: "+choix.duree+"</li>";
-  h+="<li>✓ Stresseur: "+choix.stresseur+"</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code(s):</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Symptômes de fonction motrice ou sensorielle volontaire altérée incompatibles avec conditions neurologiques/médicales reconnues.";
-  h+="<br/><br/><strong>Critère A :</strong> ≥1 symptôme de fonction motrice OU sensorielle volontaire altérée.";
-  h+="<br/><br/><strong>Critère B :</strong> Résultats cliniques fournissent preuves d'incompatibilité entre symptôme et conditions neurologiques/médicales reconnues.";
-  h+="<br/><br/><strong>Critère C :</strong> Symptôme/déficit non mieux expliqué par autre trouble médical ou mental.";
-  h+="<br/><br/><strong>Critère D :</strong> Symptôme/déficit cause détresse ou altération cliniquement significative OU justifie évaluation médicale.";
-  h+="<br/><br/><strong>Types de symptômes (codes ICD-10-CM) :</strong>";
-  h+="<br/>• <strong>F44.4</strong> Avec faiblesse ou paralysie";
-  h+="<br/>• <strong>F44.4</strong> Avec mouvement anormal (tremblement, dystonie, myoclonie, trouble marche)";
-  h+="<br/>• <strong>F44.4</strong> Avec symptômes de déglutition";
-  h+="<br/>• <strong>F44.4</strong> Avec symptôme de parole (dysphonie, parole indistincte)";
-  h+="<br/>• <strong>F44.5</strong> Avec attaques ou crises";
-  h+="<br/>• <strong>F44.6</strong> Avec anesthésie ou perte sensorielle";
-  h+="<br/>• <strong>F44.6</strong> Avec symptôme sensoriel spécial (visuel, olfactif, auditif)";
-  h+="<br/>• <strong>F44.7</strong> Avec symptômes mixtes";
-  h+="<br/><br/><strong>Durée :</strong>";
-  h+="<br/>• Épisode aigu: Symptômes <6 mois";
-  h+="<br/>• Persistant: Symptômes ≥6 mois";
-  h+="<br/><br/><strong>Stresseur psychologique :</strong>";
-  h+="<br/>• Avec stresseur psychologique (spécifier)";
-  h+="<br/>• Sans stresseur psychologique";
-  h+="<br/><br/><strong>Caractéristiques clés :</strong>";
-  h+="<br/>• Symptômes neurologiques sans base neurologique";
-  h+="<br/>• Incompatibilité avec conditions médicales reconnues";
-  h+="<br/>• Fonction motrice ou sensorielle volontaire altérée";
-  h+="<br/>• Peut inclure symptômes moteurs, sensoriels, crises, mixtes";
-  h+="<br/>• Anciennement appelé 'Trouble de Conversion'";
-  h+="<br/>• Diagnostic positif basé sur signes d'incompatibilité (pas seulement exclusion)";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
 
-
-
-
 <script>
 function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
   Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
 }
 
 function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
 
 </body>
 </html>
+

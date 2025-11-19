@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,10 +89,7 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Excitation sexuelle récurrente et intense</legend>
-  <p class="subtitle">Sur une période d'au moins 6 mois, excitation sexuelle récurrente et intense provenant de l'acte d'être humilié, battu, attaché ou autrement fait souffrir, manifestée par fantasmes, impulsions ou comportements</p>
-  <div class="warning-box">
-    ⚠️ Période d'au moins 6 mois requise
-  </div>
+  <p class="subtitle">Sur une période d'au moins 6 mois, excitation sexuelle récurrente et intense provenant de l'acte d'être humilié, battu, attaché ou autrement fait souffrir, manifestée par fantasmes, impulsions ou comportements (période d'au moins 6 mois requise)</p>
   <label><input type="checkbox" name="critereA" value="Excitation sexuelle récurrente et intense"/> Excitation sexuelle récurrente et intense</label>
   <label><input type="checkbox" name="critereA" value="Provenant acte d'être humilié"/> Provenant de l'acte d'être humilié</label>
   <label><input type="checkbox" name="critereA" value="Provenant acte d'être battu"/> Provenant de l'acte d'être battu</label>
@@ -151,125 +99,65 @@
   <label><input type="checkbox" name="critereA" value="Manifestée par impulsions"/> Manifestée par impulsions</label>
   <label><input type="checkbox" name="critereA" value="Manifestée par comportements"/> Manifestée par comportements</label>
   <label><input type="checkbox" name="critereA" value="Période au moins 6 mois"/> Période d'au moins 6 mois</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Détresse ou altération cliniquement significative</legend>
   <p class="subtitle">Les fantasmes, impulsions sexuelles ou comportements causent détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</p>
   <label><input type="checkbox" name="critereB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
   <label><input type="checkbox" name="critereB" value="Altération fonctionnement social"/> Altération dans le fonctionnement social</label>
   <label><input type="checkbox" name="critereB" value="Altération fonctionnement professionnel"/> Altération dans le fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereB" value="Altération autres domaines importants"/> Altération dans autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   
   <p style="margin-top: 10px;"><strong>Asphyxiophilie :</strong></p>
   <label><input type="checkbox" name="asphyxiophilie" value="Avec asphyxiophilie"/> Avec asphyxiophilie</label>
-  <div class="note-box">
-    Si l'individu s'engage dans la pratique d'atteindre l'excitation sexuelle liée à la restriction de la respiration.
-  </div>
+  <p class="subtitle">Si l'individu s'engage dans la pratique d'atteindre l'excitation sexuelle liée à la restriction de la respiration</p>
   
   <p style="margin-top: 15px;"><strong>Environnement :</strong></p>
   <label><input type="checkbox" name="environnement" value="En environnement contrôlé"/> En environnement contrôlé</label>
-  <div class="note-box">
-    Ce spécificateur s'applique principalement aux individus vivant en institutions ou autres contextes où opportunités de s'engager dans comportements sexuels masochistes sont restreintes.
-  </div>
+  <p class="subtitle">S'applique principalement aux individus vivant en institutions ou autres contextes où opportunités de s'engager dans comportements sexuels masochistes sont restreintes</p>
   
   <p style="margin-top: 15px;"><strong>Rémission :</strong></p>
-  <label><input type="checkbox" name="remission" value="En rémission complète"/> En rémission complète</label>
-  <div class="note-box">
-    Il n'y a eu aucune détresse ou altération dans le fonctionnement social, professionnel ou autres domaines pendant au moins 5 ans en environnement non contrôlé.
-  </div>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="checkbox" name="remission" value="En rémission complète"/> En rémission complète (≥5 ans en environnement non contrôlé, sans détresse ni altération)</label>
 </fieldset>
 
+<!-- Diagnostic différentiel -->
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Trouble sadisme sexuel"/> Trouble sadisme sexuel</label>
+  <label><input type="checkbox" name="diff_diag" value="Pratiques sexuelles consensuelles"/> Pratiques sexuelles consensuelles (BDSM non pathologique)</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble de la personnalité"/> Trouble de la personnalité</label>
+  <label><input type="checkbox" name="diff_diag" value="Autres troubles paraphiliques"/> Autres troubles paraphiliques</label>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite" value="Autres troubles paraphiliques"/> Autres troubles paraphiliques</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles de l'humeur"/> Troubles de l'humeur</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles anxieux"/> Troubles anxieux</label>
+  <label><input type="checkbox" name="comorbidite" value="Trouble lié à l'usage de substances"/> Trouble lié à l'usage de substances</label>
+  <label><input type="checkbox" name="comorbidite" value="Dysfonction sexuelle"/> Dysfonction sexuelle</label>
+</fieldset>
+
+<!-- Boutons de validation -->
+<div class='boutons-validation'>
+  <button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>
+  <button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>
+</div>
+
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],critereB:[],asphyxiophilie:false,environnement:false,remission:false};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  choix.asphyxiophilie=document.querySelector("input[name='asphyxiophilie']:checked")!==null;
-  choix.environnement=document.querySelector("input[name='environnement']:checked")!==null;
-  choix.remission=document.querySelector("input[name='remission']:checked")!==null;
-  genererResume();
-}
-
-function genererResume(){
-  const code="F65.51";
-  let diag=code+" Trouble de Masochisme Sexuel";
-  if(choix.asphyxiophilie)diag+=", avec asphyxiophilie";
-  if(choix.environnement)diag+=", en environnement contrôlé";
-  if(choix.remission)diag+=", en rémission complète";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Excitation sexuelle récurrente et intense (≥6 mois)</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Détresse ou altération cliniquement significative</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  if(choix.asphyxiophilie)h+="<li>✓ Avec asphyxiophilie</li>";
-  if(choix.environnement)h+="<li>✓ En environnement contrôlé</li>";
-  if(choix.remission)h+="<li>✓ En rémission complète (≥5 ans en environnement non contrôlé)</li>";
-  if(!choix.asphyxiophilie&&!choix.environnement&&!choix.remission)h+="<li>✓ Aucun spécificateur</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Sur période ≥6 mois, excitation sexuelle récurrente et intense provenant de l'acte d'être humilié, battu, attaché ou autrement fait souffrir, manifestée par fantasmes, impulsions ou comportements.";
-  h+="<br/><br/><strong>Critère B :</strong> Fantasmes, impulsions ou comportements causent détresse ou altération cliniquement significative.";
-  if(choix.asphyxiophilie){
-    h+="<br/><br/><strong>Asphyxiophilie :</strong> L'individu s'engage dans la pratique d'atteindre l'excitation sexuelle liée à la restriction de la respiration.";
-  }
-  if(choix.environnement){
-    h+="<br/><br/><strong>Environnement contrôlé :</strong> S'applique principalement aux individus vivant en institutions ou autres contextes où opportunités de s'engager dans comportements sexuels masochistes sont restreintes.";
-  }
-  if(choix.remission){
-    h+="<br/><br/><strong>Rémission complète :</strong> Aucune détresse ou altération pendant ≥5 ans en environnement non contrôlé.";
-  }
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

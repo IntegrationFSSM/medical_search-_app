@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,10 +89,7 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Excitation sexuelle récurrente et intense</legend>
-  <p class="subtitle">Sur une période d'au moins 6 mois, excitation sexuelle récurrente et intense provenant soit de l'utilisation d'objets inanimés soit d'une focalisation hautement spécifique sur partie(s) du corps non génitale(s), manifestée par fantasmes, impulsions ou comportements</p>
-  <div class="warning-box">
-    ⚠️ Période d'au moins 6 mois requise
-  </div>
+  <p class="subtitle">Sur une période d'au moins 6 mois, excitation sexuelle récurrente et intense provenant soit de l'utilisation d'objets inanimés soit d'une focalisation hautement spécifique sur partie(s) du corps non génitale(s), manifestée par fantasmes, impulsions ou comportements (période d'au moins 6 mois requise)</p>
   <label><input type="checkbox" name="critereA" value="Excitation sexuelle récurrente et intense"/> Excitation sexuelle récurrente et intense</label>
   <label><input type="checkbox" name="critereA" value="Provenant utilisation objets inanimés"/> Provenant de l'utilisation d'objets inanimés</label>
   <label><input type="checkbox" name="critereA" value="Provenant focalisation spécifique sur parties corps non génitales"/> Provenant d'une focalisation hautement spécifique sur partie(s) du corps non génitale(s)</label>
@@ -149,158 +97,74 @@
   <label><input type="checkbox" name="critereA" value="Manifestée par impulsions"/> Manifestée par impulsions</label>
   <label><input type="checkbox" name="critereA" value="Manifestée par comportements"/> Manifestée par comportements</label>
   <label><input type="checkbox" name="critereA" value="Période au moins 6 mois"/> Période d'au moins 6 mois</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Détresse ou altération cliniquement significative</legend>
   <p class="subtitle">Les fantasmes, impulsions sexuelles ou comportements causent détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants</p>
   <label><input type="checkbox" name="critereB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
   <label><input type="checkbox" name="critereB" value="Altération fonctionnement social"/> Altération dans le fonctionnement social</label>
   <label><input type="checkbox" name="critereB" value="Altération fonctionnement professionnel"/> Altération dans le fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereB" value="Altération autres domaines importants"/> Altération dans autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Exclusions</legend>
   <p class="subtitle">Les objets fétiches ne sont pas limités à des articles vestimentaires utilisés dans le travestissement ou à des dispositifs spécifiquement conçus pour stimulation génitale tactile</p>
   <label><input type="checkbox" name="critereC" value="Non limités à articles vestimentaires pour travestissement"/> Non limités à articles vestimentaires utilisés dans le travestissement (comme dans trouble transvestique)</label>
   <label><input type="checkbox" name="critereC" value="Non limités à dispositifs pour stimulation génitale tactile"/> Non limités à dispositifs spécifiquement conçus pour stimulation génitale tactile (ex: vibromasseur)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   
   <p style="margin-top: 10px;"><strong>Type de fétiche (peut sélectionner plusieurs) :</strong></p>
   <label><input type="checkbox" name="typeFetiche" value="Partie(s) du corps"/> Partie(s) du corps</label>
   <label><input type="checkbox" name="typeFetiche" value="Objet(s) inanimé(s)"/> Objet(s) inanimé(s)</label>
   <label><input type="checkbox" name="typeFetiche" value="Autre"/> Autre</label>
-  
-  <div class="note-box">
-    <strong>Note :</strong> Il n'est pas inhabituel que des combinaisons non mutuellement exclusives d'intérêts sexuels fétichistes se produisent. Ainsi, un individu peut avoir trouble fétichiste associé à objet inanimé (ex: sous-vêtements féminins) ou focalisation exclusive sur partie du corps intensément érotisée (ex: pieds, cheveux), ou son intérêt fétichiste peut remplir critères pour diverses combinaisons de ces spécificateurs (ex: chaussettes, chaussures et pieds).
-  </div>
+  <p class="subtitle">Note: Combinaisons non mutuellement exclusives d'intérêts fétichistes fréquentes. Individu peut avoir intérêt pour objet inanimé (ex: sous-vêtements) ou partie du corps (ex: pieds, cheveux), ou combinaisons (ex: chaussettes, chaussures et pieds)</p>
   
   <p style="margin-top: 15px;"><strong>Environnement :</strong></p>
   <label><input type="checkbox" name="environnement" value="En environnement contrôlé"/> En environnement contrôlé</label>
-  <div class="note-box">
-    Ce spécificateur s'applique principalement aux individus vivant en institutions ou autres contextes où opportunités de s'engager dans comportements fétichistes sont restreintes.
-  </div>
+  <p class="subtitle">S'applique principalement aux individus vivant en institutions ou autres contextes où opportunités de s'engager dans comportements fétichistes sont restreintes</p>
   
   <p style="margin-top: 15px;"><strong>Rémission :</strong></p>
-  <label><input type="checkbox" name="remission" value="En rémission complète"/> En rémission complète</label>
-  <div class="note-box">
-    Il n'y a eu aucune détresse ou altération dans le fonctionnement social, professionnel ou autres domaines pendant au moins 5 ans en environnement non contrôlé.
-  </div>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="checkbox" name="remission" value="En rémission complète"/> En rémission complète (≥5 ans en environnement non contrôlé, sans détresse ni altération)</label>
 </fieldset>
 
+<!-- Diagnostic différentiel -->
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Trouble transvestique"/> Trouble transvestique</label>
+  <label><input type="checkbox" name="diff_diag" value="Utilisation normale d'objets sexuels"/> Utilisation normale d'objets sexuels</label>
+  <label><input type="checkbox" name="diff_diag" value="Autres troubles paraphiliques"/> Autres troubles paraphiliques</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble de la personnalité"/> Trouble de la personnalité</label>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite" value="Autres troubles paraphiliques"/> Autres troubles paraphiliques</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles de l'humeur"/> Troubles de l'humeur</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles anxieux"/> Troubles anxieux</label>
+  <label><input type="checkbox" name="comorbidite" value="Dysfonction sexuelle"/> Dysfonction sexuelle</label>
+</fieldset>
+
+<!-- Boutons de validation -->
+<div class='boutons-validation'>
+  <button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>
+  <button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>
+</div>
+
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],critereB:[],critereC:[],typeFetiche:[],environnement:false,remission:false};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereC(){
-  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereC=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère C", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const tf=Array.from(document.querySelectorAll("input[name='typeFetiche']:checked")).map(e=>e.value);
-  if(tf.length===0){
-    Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez au moins un type de fétiche", confirmButtonColor: "#667eea"});
-    return;
-  }
-  choix.typeFetiche=tf;
-  choix.environnement=document.querySelector("input[name='environnement']:checked")!==null;
-  choix.remission=document.querySelector("input[name='remission']:checked")!==null;
-  genererResume();
-}
-
-function genererResume(){
-  const code="F65.0";
-  let diag=code+" Trouble Fétichiste";
-  if(choix.typeFetiche.length>0)diag+=", "+choix.typeFetiche.join(", ").toLowerCase();
-  if(choix.environnement)diag+=", en environnement contrôlé";
-  if(choix.remission)diag+=", en rémission complète";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Excitation sexuelle récurrente et intense (≥6 mois)</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Détresse ou altération cliniquement significative</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Exclusions</h4><ul class='choix-list'>";
-  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs</h4>";
-  h+="<p style='font-weight:bold; color:#3d7a3b;'>Type de fétiche :</p><ul class='choix-list'>";
-  choix.typeFetiche.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  if(choix.environnement||choix.remission){
-    h+="<p style='font-weight:bold; color:#3d7a3b;'>Autres spécificateurs :</p><ul class='choix-list'>";
-    if(choix.environnement)h+="<li>✓ En environnement contrôlé</li>";
-    if(choix.remission)h+="<li>✓ En rémission complète (≥5 ans en environnement non contrôlé)</li>";
-    h+="</ul>";
-  }
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Sur période ≥6 mois, excitation sexuelle récurrente et intense provenant soit de l'utilisation d'objets inanimés soit d'une focalisation hautement spécifique sur partie(s) du corps non génitale(s), manifestée par fantasmes, impulsions ou comportements.";
-  h+="<br/><br/><strong>Critère B :</strong> Fantasmes, impulsions ou comportements causent détresse ou altération cliniquement significative.";
-  h+="<br/><br/><strong>Critère C :</strong> Objets fétiches non limités à articles vestimentaires pour travestissement (trouble transvestique) ou dispositifs pour stimulation génitale tactile (ex: vibromasseur).";
-  h+="<br/><br/><strong>Combinaisons :</strong> Il n'est pas inhabituel que combinaisons non mutuellement exclusives d'intérêts fétichistes se produisent. Individu peut avoir intérêt pour objet inanimé (ex: sous-vêtements féminins) ou partie du corps (ex: pieds, cheveux), ou combinaisons (ex: chaussettes, chaussures et pieds).";
-  if(choix.environnement){
-    h+="<br/><br/><strong>Environnement contrôlé :</strong> S'applique principalement aux individus vivant en institutions ou autres contextes où opportunités de s'engager dans comportements fétichistes sont restreintes.";
-  }
-  if(choix.remission){
-    h+="<br/><br/><strong>Rémission complète :</strong> Aucune détresse ou altération pendant ≥5 ans en environnement non contrôlé.";
-  }
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,10 +89,7 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Somnolence excessive auto-rapportée</legend>
-  <p class="subtitle">Somnolence excessive auto-rapportée (hypersomnolence) malgré une période de sommeil principale d'au moins 7 heures, avec au moins un des symptômes suivants</p>
-  <div class="warning-box">
-    ⚠️ Au moins 1 des 3 symptômes requis
-  </div>
+  <p class="subtitle">Somnolence excessive auto-rapportée (hypersomnolence) malgré une période de sommeil principale d'au moins 7 heures, avec au moins un des symptômes suivants. Au moins 1 des 3 symptômes requis</p>
   
   <label><input type="checkbox" name="critereA" value="Somnolence excessive malgré période sommeil principale ≥7 heures"/> Somnolence excessive (hypersomnolence) malgré une période de sommeil principale d'au moins 7 heures</label>
   
@@ -152,225 +100,95 @@
   <label><input type="checkbox" name="symptomes" value="2. Épisode de sommeil principal prolongé de plus de 9 heures par jour non réparateur (non rafraîchissant)"/> <strong>2.</strong> Épisode de sommeil principal prolongé de plus de 9 heures par jour qui est non réparateur (c'est-à-dire non rafraîchissant)</label>
   
   <label><input type="checkbox" name="symptomes" value="3. Difficulté à être complètement éveillé après réveil abrupt"/> <strong>3.</strong> Difficulté à être complètement éveillé après réveil abrupt</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Fréquence et durée</legend>
-  <p class="subtitle">L'hypersomnolence survient au moins trois fois par semaine, pendant au moins 3 mois</p>
-  <div class="warning-box">
-    ⚠️ Fréquence : ≥3 fois/semaine ET Durée : ≥3 mois
-  </div>
+  <p class="subtitle">L'hypersomnolence survient au moins trois fois par semaine, pendant au moins 3 mois. Fréquence : ≥3 fois/semaine ET Durée : ≥3 mois</p>
   <label><input type="checkbox" name="critereB" value="Hypersomnolence survient au moins 3 fois par semaine"/> L'hypersomnolence survient au moins 3 fois par semaine</label>
   <label><input type="checkbox" name="critereB" value="Pendant au moins 3 mois"/> Pendant au moins 3 mois</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Détresse ou altération significative</legend>
   <p class="subtitle">L'hypersomnolence est accompagnée de détresse ou altération significative dans le fonctionnement cognitif, social, professionnel ou autres domaines importants</p>
   <label><input type="checkbox" name="critereC" value="Accompagnée de détresse ou altération significative dans fonctionnement"/> L'hypersomnolence est accompagnée de détresse ou altération significative dans le fonctionnement cognitif, social, professionnel ou autres domaines importants</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Non mieux expliqué par autre trouble du sommeil</legend>
   <p class="subtitle">L'hypersomnolence n'est pas mieux expliquée par et ne survient pas exclusivement durant le cours d'un autre trouble du sommeil</p>
   <label><input type="checkbox" name="critereD" value="Non mieux expliqué par autre trouble du sommeil (narcolepsie, trouble respiratoire, trouble rythme circadien, parasomnie)"/> Non mieux expliqué par et ne survient pas exclusivement durant un autre trouble du sommeil (ex: narcolepsie, trouble respiratoire du sommeil, trouble du rythme circadien veille-sommeil, parasomnie)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Non attribuable à substance</legend>
   <p class="subtitle">L'hypersomnolence n'est pas attribuable aux effets physiologiques d'une substance</p>
   <label><input type="checkbox" name="critereE" value="Non attribuable aux effets physiologiques d'une substance (drogue, médicament)"/> Non attribuable aux effets physiologiques d'une substance (ex: drogue, médicament)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
 </fieldset>
 
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
+<fieldset id="critereF">
   <legend>Critère F – Troubles mentaux et médicaux coexistants</legend>
   <p class="subtitle">Les troubles mentaux et médicaux coexistants n'expliquent pas adéquatement la plainte prédominante d'hypersomnolence</p>
   <label><input type="checkbox" name="critereF" value="Troubles mentaux et médicaux coexistants n'expliquent pas adéquatement plainte prédominante d'hypersomnolence"/> Les troubles mentaux et médicaux coexistants n'expliquent pas adéquatement la plainte prédominante d'hypersomnolence</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   
-  <p style="margin-top: 10px;"><strong>Comorbidité :</strong></p>
+  <p style="margin-top: 10px;"><strong>Comorbidité (Note de codage: F51.11 s'applique aux trois spécificateurs. Coder également le trouble associé immédiatement après) :</strong></p>
   <label><input type="checkbox" name="comorbidite" value="Avec trouble mental, incluant troubles d'usage de substances"/> Avec trouble mental, incluant troubles d'usage de substances</label>
   <label><input type="checkbox" name="comorbidite" value="Avec condition médicale"/> Avec condition médicale</label>
   <label><input type="checkbox" name="comorbidite" value="Avec autre trouble du sommeil"/> Avec autre trouble du sommeil</label>
-  
-  <div class="note-box">
-    <strong>Note de codage :</strong> Le code F51.11 s'applique aux trois spécificateurs. Coder également le trouble mental, la condition médicale ou l'autre trouble du sommeil associé immédiatement après le code pour le trouble d'hypersomnolence afin d'indiquer l'association.
-  </div>
   
   <p style="margin-top: 15px;"><strong>Durée :</strong></p>
   <label><input type="radio" name="duree" value="Aigu"/> <strong>Aigu :</strong> Durée de moins de 1 mois</label>
   <label><input type="radio" name="duree" value="Subaigu"/> <strong>Subaigu :</strong> Durée de 1-3 mois</label>
   <label><input type="radio" name="duree" value="Persistant"/> <strong>Persistant :</strong> Durée de plus de 3 mois</label>
   
-  <p style="margin-top: 15px;"><strong>Sévérité actuelle :</strong></p>
-  <p class="subtitle">Basée sur le degré de difficulté à maintenir la vigilance diurne</p>
+  <p style="margin-top: 15px;"><strong>Sévérité actuelle (basée sur le degré de difficulté à maintenir la vigilance diurne) :</strong></p>
   <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> Difficulté à maintenir la vigilance diurne 1-2 jours/semaine</label>
   <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> Difficulté à maintenir la vigilance diurne 3-4 jours/semaine</label>
   <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> Difficulté à maintenir la vigilance diurne 5-7 jours/semaine</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
+<!-- Diagnostic différentiel -->
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Narcolepsie"/> Narcolepsie</label>
+  <label><input type="checkbox" name="diff_diag" value="Apnée du sommeil"/> Apnée du sommeil/troubles respiratoires du sommeil</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble rythme circadien"/> Trouble du rythme circadien veille-sommeil</label>
+  <label><input type="checkbox" name="diff_diag" value="Privation de sommeil"/> Privation de sommeil insuffisant</label>
+  <label><input type="checkbox" name="diff_diag" value="Troubles de l'humeur"/> Troubles de l'humeur (dépression)</label>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite_autre" value="Troubles de l'humeur"/> Troubles de l'humeur (dépression)</label>
+  <label><input type="checkbox" name="comorbidite_autre" value="Troubles anxieux"/> Troubles anxieux</label>
+  <label><input type="checkbox" name="comorbidite_autre" value="Autres troubles du sommeil"/> Autres troubles du sommeil</label>
+  <label><input type="checkbox" name="comorbidite_autre" value="Conditions médicales"/> Conditions médicales (neurologiques, endocriniennes)</label>
+</fieldset>
+
+<!-- Boutons de validation -->
+<div class='boutons-validation'>
+  <button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>
+  <button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>
+</div>
+
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],symptomes:[],critereB:[],critereC:"",critereD:"",critereE:"",critereF:"",comorbidite:[],duree:"",severite:""};
-
-function validerCritereA(){
-  const ca=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  const sy=Array.from(document.querySelectorAll("input[name='symptomes']:checked")).map(e=>e.value);
-  if(ca.length>0&&sy.length>0){
-    choix.critereA=ca;
-    choix.symptomes=sy;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez la somnolence excessive ET au moins 1 des 3 symptômes", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
-
-function validerCritereD(){
-  const c=document.querySelector("input[name='critereD']:checked");
-  if(c){
-    choix.critereD=c.value;
-    document.getElementById("critereE").classList.remove("hidden");
-  }else alert("Cochez l'option du critère D");
-}
-
-function validerCritereE(){
-  const c=document.querySelector("input[name='critereE']:checked");
-  if(c){
-    choix.critereE=c.value;
-    document.getElementById("critereF").classList.remove("hidden");
-  }else alert("Cochez l'option du critère E");
-}
-
-function validerCritereF(){
-  const c=document.querySelector("input[name='critereF']:checked");
-  if(c){
-    choix.critereF=c.value;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else alert("Cochez l'option du critère F");
-}
-
-function afficherResume(){
-  const d=document.querySelector("input[name='duree']:checked");
-  const s=document.querySelector("input[name='severite']:checked");
-  if(d&&s){
-    choix.comorbidite=Array.from(document.querySelectorAll("input[name='comorbidite']:checked")).map(e=>e.value);
-    choix.duree=d.value;
-    choix.severite=s.value;
-    genererResume();
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la durée et la sévérité", confirmButtonColor: "#667eea"});
-}
-
-function genererResume(){
-  const code="F51.11";
-  let diag=code+" Trouble d'Hypersomnolence";
-  if(choix.comorbidite.length>0){
-    diag+=", "+choix.comorbidite.join(", ").toLowerCase();
-  }
-  diag+=", "+choix.duree.toLowerCase()+", sévérité "+choix.severite.toLowerCase();
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Somnolence excessive (≥7h sommeil) + symptômes</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="<li><strong>Symptômes ("+choix.symptomes.length+"/3, minimum 1 requis) :</strong></li>";
-  choix.symptomes.forEach(s=>h+="<li style='margin-left:20px;'>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Fréquence (≥3/semaine) et durée (≥3 mois)</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Détresse ou altération significative</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Non mieux expliqué par autre trouble du sommeil</h4><ul class='choix-list'><li>✓ "+choix.critereD+"</li></ul>";
-  
-  h+="<h4>Critère E – Non attribuable à substance</h4><ul class='choix-list'><li>✓ "+choix.critereE+"</li></ul>";
-  
-  h+="<h4>Critère F – Troubles coexistants n'expliquent pas adéquatement</h4><ul class='choix-list'><li>✓ "+choix.critereF+"</li></ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  if(choix.comorbidite.length>0){
-    choix.comorbidite.forEach(s=>h+="<li>✓ "+s+"</li>");
-  }else{
-    h+="<li>✓ Aucune comorbidité spécifiée</li>";
-  }
-  h+="<li>✓ Durée: "+choix.duree+"</li>";
-  h+="<li>✓ Sévérité: "+choix.severite+"</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Somnolence excessive malgré période de sommeil principale ≥7 heures.";
-  h+="<br/><br/><strong>Critère A :</strong> Somnolence excessive auto-rapportée malgré sommeil principal ≥7 heures + au moins 1 des symptômes suivants:";
-  h+="<br/>1. Périodes récurrentes de sommeil/épisodes de sommeil dans même journée";
-  h+="<br/>2. Épisode de sommeil principal prolongé >9 heures/jour non réparateur";
-  h+="<br/>3. Difficulté à être complètement éveillé après réveil abrupt";
-  h+="<br/><br/><strong>Critère B :</strong> Survient ≥3 fois/semaine, pendant ≥3 mois.";
-  h+="<br/><br/><strong>Critère C :</strong> Détresse ou altération significative dans fonctionnement cognitif, social, professionnel ou autres domaines.";
-  h+="<br/><br/><strong>Critère D :</strong> Non mieux expliqué par autre trouble du sommeil (narcolepsie, trouble respiratoire, trouble rythme circadien, parasomnie).";
-  h+="<br/><br/><strong>Critère E :</strong> Non attribuable à substance (drogue, médicament).";
-  h+="<br/><br/><strong>Critère F :</strong> Troubles mentaux/médicaux coexistants n'expliquent pas adéquatement la plainte prédominante.";
-  h+="<br/><br/><strong>Spécificateurs de comorbidité :</strong>";
-  h+="<br/>• Avec trouble mental (incluant troubles d'usage de substances)";
-  h+="<br/>• Avec condition médicale";
-  h+="<br/>• Avec autre trouble du sommeil";
-  h+="<br/><br/><strong>Note de codage :</strong> F51.11 s'applique aux trois spécificateurs. Coder également le trouble associé immédiatement après.";
-  h+="<br/><br/><strong>Durée :</strong>";
-  h+="<br/>• Aigu: <1 mois";
-  h+="<br/>• Subaigu: 1-3 mois";
-  h+="<br/>• Persistant: >3 mois";
-  h+="<br/><br/><strong>Sévérité (basée sur difficulté maintenir vigilance diurne) :</strong>";
-  h+="<br/>• Léger: 1-2 jours/semaine";
-  h+="<br/>• Modéré: 3-4 jours/semaine";
-  h+="<br/>• Sévère: 5-7 jours/semaine";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

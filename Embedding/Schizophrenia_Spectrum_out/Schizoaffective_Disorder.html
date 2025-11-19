@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -138,71 +89,53 @@
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Période ininterrompue de maladie avec épisode thymique majeur</legend>
-  <p class="subtitle">Une période ininterrompue de maladie durant laquelle il y a un épisode thymique majeur (dépressif majeur ou maniaque) concomitant avec le critère A de la schizophrénie</p>
-  <div class="note-box">
-    <strong>Note :</strong> L'épisode dépressif majeur doit inclure le critère A1: Humeur dépressive.
-  </div>
+  <p class="subtitle">Une période ininterrompue de maladie durant laquelle il y a un épisode thymique majeur (dépressif majeur ou maniaque) concomitant avec le critère A de la schizophrénie (Note: L'épisode dépressif majeur doit inclure le critère A1: Humeur dépressive)</p>
   <label><input type="checkbox" name="critereA" value="Période ininterrompue de maladie"/> Période ininterrompue de maladie</label>
   <label><input type="checkbox" name="critereA" value="Épisode thymique majeur présent (dépressif majeur ou maniaque)"/> Épisode thymique majeur présent (dépressif majeur ou maniaque)</label>
   <label><input type="checkbox" name="critereA" value="Concomitant avec critère A de schizophrénie"/> Concomitant avec le critère A de la schizophrénie</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Délires ou hallucinations sans épisode thymique majeur</legend>
-  <p class="subtitle">Délires ou hallucinations pendant 2 semaines ou plus en l'absence d'un épisode thymique majeur (dépressif ou maniaque) durant la durée de vie de la maladie</p>
-  <div class="warning-box">
-    ⚠️ Durée ≥2 semaines requise
-  </div>
+  <p class="subtitle">Délires ou hallucinations pendant 2 semaines ou plus en l'absence d'un épisode thymique majeur (dépressif ou maniaque) durant la durée de vie de la maladie (Durée ≥2 semaines requise)</p>
   <label><input type="checkbox" name="critereB" value="Délires présents"/> Délires présents</label>
   <label><input type="checkbox" name="critereB" value="Hallucinations présentes"/> Hallucinations présentes</label>
   <label><input type="checkbox" name="critereB" value="Durée de 2 semaines ou plus"/> Durée de 2 semaines ou plus</label>
   <label><input type="checkbox" name="critereB" value="En absence d'épisode thymique majeur"/> En l'absence d'un épisode thymique majeur</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Symptômes thymiques présents pour la majorité de la durée</legend>
   <p class="subtitle">Les symptômes qui remplissent les critères d'un épisode thymique majeur sont présents pour la majorité de la durée totale des portions actives et résiduelles de la maladie</p>
   <label><input type="checkbox" name="critereC" value="Symptômes thymiques présents pour majorité de durée totale"/> Les symptômes thymiques sont présents pour la majorité de la durée totale des portions actives et résiduelles de la maladie</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Non attribuable à substance ou condition médicale</legend>
   <p class="subtitle">La perturbation n'est pas attribuable aux effets d'une substance ou d'une autre condition médicale</p>
   <label><input type="checkbox" name="critereD" value="Non attribuable aux effets d'une substance (drogue, médicament)"/> Non attribuable aux effets d'une substance (drogue, médicament)</label>
   <label><input type="checkbox" name="critereD" value="Non attribuable aux effets d'une autre condition médicale"/> Non attribuable aux effets d'une autre condition médicale</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Type -->
-<fieldset id="type" class="hidden">
+<fieldset id="type">
   <legend>Spécifier le type</legend>
-  <p class="subtitle">Sélectionner le type basé sur les épisodes thymiques présents</p>
-  <div class="warning-box">
-    ⚠️ Le code ICD-10-CM dépend du type
-  </div>
+  <p class="subtitle">Sélectionner le type basé sur les épisodes thymiques présents (Le code ICD-10-CM dépend du type)</p>
   
   <label><input type="radio" name="typeSpec" value="Type bipolaire"/> <strong>Type bipolaire (F25.0) :</strong> Ce sous-type s'applique si un épisode maniaque fait partie de la présentation. Des épisodes dépressifs majeurs peuvent également survenir</label>
   
   <label><input type="radio" name="typeSpec" value="Type dépressif"/> <strong>Type dépressif (F25.1) :</strong> Ce sous-type s'applique si seulement des épisodes dépressifs majeurs font partie de la présentation</label>
-  
-  <button type="button" onclick="validerType()">✔️ Valider le type</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs additionnels</legend>
   
   <p style="margin-top: 10px;"><strong>Catatonie :</strong></p>
-  <label><input type="checkbox" name="catatonie" value="Avec catatonie"/> <strong>Avec catatonie</strong></label>
-  <div class="note-box">
-    <strong>Note de codage :</strong> Utiliser code additionnel F06.1 catatonie associée au trouble schizoaffectif pour indiquer la présence de catatonie comorbide.
-  </div>
+  <label><input type="checkbox" name="catatonie" value="Avec catatonie"/> <strong>Avec catatonie</strong> (Note de codage: Utiliser code additionnel F06.1 catatonie associée au trouble schizoaffectif pour indiquer la présence de catatonie comorbide)</label>
   
   <p style="margin-top: 15px;"><strong>Évolution (à utiliser uniquement après 1 an de durée) :</strong></p>
   <label><input type="radio" name="evolution" value="Premier épisode, actuellement en épisode aigu"/> Premier épisode, actuellement en épisode aigu</label>
@@ -213,129 +146,39 @@
   <label><input type="radio" name="evolution" value="Épisodes multiples, actuellement en rémission complète"/> Épisodes multiples, actuellement en rémission complète</label>
   <label><input type="radio" name="evolution" value="Continu"/> Continu : Symptômes remplissant les critères diagnostiques présents pour la majorité du cours de la maladie</label>
   <label><input type="radio" name="evolution" value="Non spécifié"/> Non spécifié</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
+<!-- Diagnostic différentiel -->
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Schizophrénie"/> Schizophrénie</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble bipolaire avec caractéristiques psychotiques"/> Trouble bipolaire avec caractéristiques psychotiques</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble dépressif majeur avec caractéristiques psychotiques"/> Trouble dépressif majeur avec caractéristiques psychotiques</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble psychotique induit par une substance"/> Trouble psychotique induit par une substance</label>
+  <label><input type="checkbox" name="diff_diag" value="Trouble psychotique dû à une condition médicale"/> Trouble psychotique dû à une condition médicale</label>
+</fieldset>
+
+<!-- Comorbidité -->
+<fieldset>
+  <legend>Comorbidité</legend>
+  <label><input type="checkbox" name="comorbidite" value="Troubles liés à l'usage de substances"/> Troubles liés à l'usage de substances</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles anxieux"/> Troubles anxieux</label>
+  <label><input type="checkbox" name="comorbidite" value="Syndrome métabolique"/> Syndrome métabolique</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles de la personnalité"/> Troubles de la personnalité</label>
+</fieldset>
+
+<!-- Boutons de validation -->
+<div class='boutons-validation'>
+  <button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>
+  <button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>
+</div>
+
 </form>
-
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],critereB:[],critereC:"",critereD:[],typeSpec:"",catatonie:false,evolution:""};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("type").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
-
-function validerType(){
-  const t=document.querySelector("input[name='typeSpec']:checked");
-  if(t){
-    choix.typeSpec=t.value;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez le type", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  choix.catatonie=document.querySelector("input[name='catatonie']:checked")!==null;
-  const e=document.querySelector("input[name='evolution']:checked");
-  choix.evolution=e?e.value:"";
-  genererResume();
-}
-
-function genererResume(){
-  let code="";
-  if(choix.typeSpec==="Type bipolaire")code="F25.0";
-  else if(choix.typeSpec==="Type dépressif")code="F25.1";
-  
-  let diag=code+" Trouble Schizoaffectif, "+choix.typeSpec.toLowerCase();
-  if(choix.catatonie)diag+=", avec catatonie (F06.1)";
-  if(choix.evolution)diag+=", "+choix.evolution.toLowerCase();
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Période ininterrompue avec épisode thymique majeur</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Délires/hallucinations sans épisode thymique (≥2 semaines)</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Symptômes thymiques présents pour majorité de durée</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Non attribuable à substance ou condition médicale</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Type</h4><ul class='choix-list'><li>✓ "+choix.typeSpec+"</li></ul>";
-  
-  h+="<h4>Spécificateurs additionnels</h4><ul class='choix-list'>";
-  if(choix.catatonie)h+="<li>✓ Avec catatonie (code additionnel F06.1)</li>";
-  if(choix.evolution)h+="<li>✓ Évolution: "+choix.evolution+"</li>";
-  if(!choix.catatonie&&!choix.evolution)h+="<li>✓ Aucun spécificateur additionnel</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code;
-  if(choix.catatonie)h+=" + F06.1 (catatonie associée)";
-  h+="<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Période ininterrompue de maladie avec épisode thymique majeur concomitant avec critère A de schizophrénie.";
-  h+="<br/><br/><strong>Critère A :</strong> Période ininterrompue avec épisode thymique majeur (dépressif majeur ou maniaque) concomitant avec critère A de schizophrénie. Note: Épisode dépressif majeur doit inclure humeur dépressive.";
-  h+="<br/><br/><strong>Critère B :</strong> Délires ou hallucinations pendant ≥2 semaines en absence d'épisode thymique majeur durant la durée de vie de la maladie.";
-  h+="<br/><br/><strong>Critère C :</strong> Symptômes thymiques présents pour la majorité de la durée totale des portions actives et résiduelles de la maladie.";
-  h+="<br/><br/><strong>Critère D :</strong> Non attribuable aux effets d'une substance ou d'une autre condition médicale.";
-  h+="<br/><br/><strong>Types :</strong>";
-  h+="<br/>• F25.0 Type bipolaire: Si épisode maniaque fait partie de la présentation (épisodes dépressifs majeurs peuvent aussi survenir)";
-  h+="<br/>• F25.1 Type dépressif: Si seulement épisodes dépressifs majeurs font partie de la présentation";
-  if(choix.catatonie){
-    h+="<br/><br/><strong>Catatonie :</strong> Code additionnel F06.1 pour indiquer présence de catatonie comorbide.";
-  }
-  if(choix.evolution){
-    h+="<br/><br/><strong>Évolution :</strong> "+choix.evolution+" (spécificateurs d'évolution utilisés uniquement après 1 an de durée et s'ils ne contredisent pas les critères diagnostiques d'évolution).";
-  }
-  h+="<br/><br/><strong>Sévérité :</strong> Peut être évaluée sur échelle 0-4 pour délires, hallucinations, discours désorganisé, comportement psychomoteur anormal, symptômes négatifs (optionnel).";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
 
 <script>
 function validerFormulaire() {

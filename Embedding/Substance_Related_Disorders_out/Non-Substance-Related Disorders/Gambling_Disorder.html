@@ -2,316 +2,103 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Évaluation Trouble du Jeu d'Argent – DSM-5-TR</title>
+  <title>Trouble du Jeu d’Argent – DSM-5-TR</title>
   <style>
-  .top-bar {
-    display: flex;
-    align-items: center;
-    background-color: #dff0dc;
-    padding: 10px 20px;
-    margin-bottom: 30px;
-    border-radius: 6px;
-  }
-  .titre-centre {
-    flex: 1;
-    text-align: center;
-  }
-  .titre-centre h1 {
-    margin: 0;
-    font-size: 28px;
-    color: #3d7a3b;
-  }
-  .titre-centre h2 {
-    margin: 0;
-    font-size: 16px;
-    color: #3d7a3b;
-  }
-
-    body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
-    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
+    body { font-family: 'Segoe UI', sans-serif; max-width: 1000px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
+    fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #fff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
+    .subtitle { font-size: 0.9em; color: #666; font-style: italic; }
+    .boutons-validation { display: flex; gap: 10px; margin-top: 20px; justify-content: center; }
+    .btn-valide, .btn-non-valide {
+      padding: 12px 30px;
+      font-size: 16px;
       border: none;
-      padding: 8px 12px;
       border-radius: 4px;
-      margin-top: 10px;
+      color: #fff;
       cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
-    .boutons-validation {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      justify-content: center;
-    }
-    .btn-valide {
-      background-color: #28a745;
-      padding: 12px 30px;
-      font-size: 16px;
       flex: 1;
     }
-    .btn-valide:hover {
-      background-color: #218838;
-    }
-    .btn-non-valide {
-      background-color: #dc3545;
-      padding: 12px 30px;
-      font-size: 16px;
-      flex: 1;
-    }
-    .btn-non-valide:hover {
-      background-color: #c82333;
-    }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
+    .btn-valide { background-color: #28a745; }
+    .btn-valide:hover { background-color: #218838; }
+    .btn-non-valide { background-color: #dc3545; }
+    .btn-non-valide:hover { background-color: #c82333; }
   </style>
-
-  <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
-<div class="top-bar">
-  <div class="titre-centre">
-    <h1>CLINIQUE LA VALLÉE</h1>
-    <h2>Évaluation du Trouble du Jeu d'Argent – DSM-5-TR</h2>
-  </div>
+<div style="text-align:center; margin-bottom:30px;">
+  <h1 style="margin:0;color:#3d7a3b;">CLINIQUE LA VALLÉE</h1>
+  <h2 style="margin:0;color:#3d7a3b;">Trouble du Jeu d’Argent</h2>
 </div>
 
-<form id="formulaire">
+<form>
 
-<!-- Critère A -->
-<fieldset id="critereA">
-  <legend>Critère A – Comportement de jeu problématique persistant et récurrent</legend>
-  <p class="subtitle">Comportement de jeu problématique persistant et récurrent conduisant à une altération ou détresse cliniquement significative, indiqué par l'individu présentant quatre (ou plus) des éléments suivants durant une période de 12 mois</p>
-  <div class="warning-box">
-    ⚠️ Au moins 4 des 9 critères doivent être présents durant une période de 12 mois
-  </div>
-  
-  <label><input type="checkbox" name="critereA" value="1. Besoin de jouer avec montants d'argent croissants pour atteindre excitation désirée"/> <strong>1.</strong> Besoin de jouer avec des montants d'argent croissants afin d'atteindre l'excitation désirée</label>
-  
-  <label><input type="checkbox" name="critereA" value="2. Agité ou irritable lors de tentatives de réduire ou arrêter jeu"/> <strong>2.</strong> Est agité ou irritable lors de tentatives de réduire ou d'arrêter le jeu</label>
-  
-  <label><input type="checkbox" name="critereA" value="3. A fait efforts répétés infructueux pour contrôler, réduire ou arrêter jeu"/> <strong>3.</strong> A fait des efforts répétés infructueux pour contrôler, réduire ou arrêter le jeu</label>
-  
-  <label><input type="checkbox" name="critereA" value="4. Souvent préoccupé par jeu (pensées persistantes de revivre expériences de jeu passées, handicapper ou planifier prochaine entreprise, penser à moyens d'obtenir argent pour jouer)"/> <strong>4.</strong> Est souvent préoccupé par le jeu (ex: avoir des pensées persistantes de revivre des expériences de jeu passées, handicapper ou planifier la prochaine entreprise, penser à des moyens d'obtenir de l'argent pour jouer)</label>
-  
-  <label><input type="checkbox" name="critereA" value="5. Joue souvent quand se sent en détresse (impuissant, coupable, anxieux, déprimé)"/> <strong>5.</strong> Joue souvent quand il/elle se sent en détresse (ex: impuissant, coupable, anxieux, déprimé)</label>
-  
-  <label><input type="checkbox" name="critereA" value="6. Après avoir perdu argent au jeu, retourne souvent autre jour pour se refaire (poursuite des pertes)"/> <strong>6.</strong> Après avoir perdu de l'argent au jeu, retourne souvent un autre jour pour se refaire ("poursuite" des pertes)</label>
-  
-  <label><input type="checkbox" name="critereA" value="7. Ment pour dissimuler ampleur de l'implication dans jeu"/> <strong>7.</strong> Ment pour dissimuler l'ampleur de l'implication dans le jeu</label>
-  
-  <label><input type="checkbox" name="critereA" value="8. A mis en péril ou perdu relation significative, emploi, ou opportunité éducative ou de carrière à cause du jeu"/> <strong>8.</strong> A mis en péril ou perdu une relation significative, un emploi, ou une opportunité éducative ou de carrière à cause du jeu</label>
-  
-  <label><input type="checkbox" name="critereA" value="9. Compte sur autres pour fournir argent pour soulager situations financières désespérées causées par jeu"/> <strong>9.</strong> Compte sur les autres pour fournir de l'argent pour soulager des situations financières désespérées causées par le jeu</label>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<fieldset>
+  <legend>Critère A – Comportement de jeu problématique (≥4/12 mois)</legend>
+  <p class="subtitle">Sélectionner les manifestations observées</p>
+  <label><input type="checkbox" name="critereA" value="Besoin de mises croissantes"/> Besoin de mises croissantes pour atteindre l’excitation désirée</label>
+  <label><input type="checkbox" name="critereA" value="Agitation en tentant de réduire"/> Agitation ou irritabilité lors de tentatives de réduire/arrêter</label>
+  <label><input type="checkbox" name="critereA" value="Efforts infructueux de contrôle"/> Efforts répétés infructueux pour contrôler ou arrêter</label>
+  <label><input type="checkbox" name="critereA" value="Préoccupation par le jeu"/> Préoccupation persistante par le jeu (revivre, planifier, trouver des fonds)</label>
+  <label><input type="checkbox" name="critereA" value="Jouer en détresse"/> Joue lorsque ressent détresse (impuissance, anxiété, culpabilité)</label>
+  <label><input type="checkbox" name="critereA" value="Poursuite des pertes"/> Retourne pour se refaire après pertes</label>
+  <label><input type="checkbox" name="critereA" value="Ment pour dissimuler"/> Ment pour dissimuler l’ampleur du jeu</label>
+  <label><input type="checkbox" name="critereA" value="Mise en péril relations/emploi"/> Met en péril relations, emploi ou opportunités</label>
+  <label><input type="checkbox" name="critereA" value="Compte sur aide financière"/> Compte sur autrui pour résoudre les situations financières causées par le jeu</label>
 </fieldset>
 
-<!-- Critère B -->
-<fieldset id="critereB" class="hidden">
-  <legend>Critère B – Non mieux expliqué par épisode maniaque</legend>
-  <p class="subtitle">Le comportement de jeu n'est pas mieux expliqué par un épisode maniaque</p>
-  <label><input type="checkbox" name="critereB" value="Comportement de jeu non mieux expliqué par épisode maniaque"/> Le comportement de jeu n'est pas mieux expliqué par un épisode maniaque</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<fieldset>
+  <legend>Critère B – Exclusion épisode maniaque</legend>
+  <label><input type="checkbox" name="critereB" value="Non expliqué par épisode maniaque"/> Le comportement n’est pas mieux expliqué par un épisode maniaque</label>
 </fieldset>
 
-<!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset>
   <legend>Spécificateurs</legend>
-  
-  <p style="margin-top: 10px;"><strong>Évolution :</strong></p>
-  <label><input type="radio" name="evolution" value="Épisodique"/> <strong>Épisodique :</strong> Remplir les critères diagnostiques à plus d'un moment, avec symptômes s'atténuant entre périodes de trouble du jeu d'argent pendant au moins plusieurs mois</label>
-  <label><input type="radio" name="evolution" value="Persistant"/> <strong>Persistant :</strong> Présenter des symptômes continus, pour remplir les critères diagnostiques pendant plusieurs années</label>
-  <label><input type="radio" name="evolution" value="Non spécifié"/> Non spécifié</label>
-  
-  <p style="margin-top: 15px;"><strong>Rémission :</strong></p>
-  <label><input type="radio" name="remission" value="En rémission précoce"/> <strong>En rémission précoce :</strong> Après que les critères complets pour trouble du jeu d'argent aient été précédemment remplis, aucun des critères n'a été rempli pendant au moins 3 mois mais moins de 12 mois</label>
-  <label><input type="radio" name="remission" value="En rémission soutenue"/> <strong>En rémission soutenue :</strong> Après que les critères complets pour trouble du jeu d'argent aient été précédemment remplis, aucun des critères n'a été rempli pendant une période de 12 mois ou plus</label>
-  <label><input type="radio" name="remission" value="Non en rémission"/> Non en rémission (actif)</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="radio" name="evolution" value="Épisodique"/> Évolution épisodique</label>
+  <label><input type="radio" name="evolution" value="Persistante"/> Évolution persistante</label>
+  <label><input type="radio" name="remission" value="Actif"/> Actif (non en rémission)</label>
+  <label><input type="radio" name="remission" value="Rémission précoce"/> En rémission précoce (3-11 mois sans critères)</label>
+  <label><input type="radio" name="remission" value="Rémission soutenue"/> En rémission soutenue (≥12 mois sans critères)</label>
+  <label><input type="radio" name="severite" value="Léger"/> Sévérité légère (4-5 critères)</label>
+  <label><input type="radio" name="severite" value="Modéré"/> Sévérité modérée (6-7 critères)</label>
+  <label><input type="radio" name="severite" value="Sévère"/> Sévérité sévère (8-9 critères)</label>
 </fieldset>
+
+<fieldset>
+  <legend>Diagnostic différentiel</legend>
+  <label><input type="checkbox" name="diff_diag" value="Episode maniaque"/> Épisode maniaque</label>
+  <label><input type="checkbox" name="diff_diag" value="Troubles liés aux substances"/> Troubles liés aux substances</label>
+  <label><input type="checkbox" name="diff_diag" value="Troubles obsessionnels-compulsifs"/> Trouble obsessionnel-compulsif</label>
+  <label><input type="checkbox" name="diff_diag" value="Troubles de la personnalité"/> Troubles de la personnalité (cluster B)</label>
+</fieldset>
+
+<fieldset>
+  <legend>Comorbidité fréquente</legend>
+  <label><input type="checkbox" name="comorbidite" value="Troubles de l'usage de substances"/> Troubles de l’usage de substances</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles de l'humeur"/> Troubles de l’humeur</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles anxieux"/> Troubles anxieux</label>
+  <label><input type="checkbox" name="comorbidite" value="Troubles du contrôle des impulsions"/> Troubles du contrôle des impulsions</label>
+</fieldset>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaire()">✔️ VALIDE</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaire()">✘ NON VALIDE</button>
+</div>
 
 </form>
 
-<div id="resultat"></div>
-
-<script>
-let choix={critereA:[],critereB:"",evolution:"",remission:""};
-
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>=4){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else alert("Au moins 4 des 9 critères doivent être cochés (actuellement: "+c.length+"/9)");
-}
-
-function validerCritereB(){
-  const c=document.querySelector("input[name='critereB']:checked");
-  if(c){
-    choix.critereB=c.value;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else alert("Cochez l'option du critère B");
-}
-
-function afficherResume(){
-  const e=document.querySelector("input[name='evolution']:checked");
-  const r=document.querySelector("input[name='remission']:checked");
-  if(e&&r){
-    choix.evolution=e.value;
-    choix.remission=r.value;
-    genererResume();
-  }else alert("Sélectionnez l'évolution et la rémission");
-}
-
-function genererResume(){
-  const nbCriteres=choix.critereA.length;
-  let severite="";
-  if(nbCriteres>=4&&nbCriteres<=5)severite="Léger";
-  else if(nbCriteres>=6&&nbCriteres<=7)severite="Modéré";
-  else if(nbCriteres>=8)severite="Sévère";
-  
-  const code="F63.0";
-  let diag=code+" Trouble du Jeu d'Argent";
-  if(choix.evolution!=="Non spécifié")diag+=", "+choix.evolution.toLowerCase();
-  if(choix.remission!=="Non en rémission")diag+=", "+choix.remission.toLowerCase();
-  diag+=", sévérité actuelle: "+severite.toLowerCase()+" ("+nbCriteres+" critères)";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Comportement de jeu problématique (≥4/9 durant 12 mois)</h4>";
-  h+="<p><strong>Nombre de critères remplis: "+nbCriteres+"/9</strong></p>";
-  h+="<ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Non mieux expliqué par épisode maniaque</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  h+="<li>✓ Évolution: "+choix.evolution+"</li>";
-  h+="<li>✓ Rémission: "+choix.remission+"</li>";
-  h+="<li>✓ <strong>Sévérité actuelle: "+severite+" ("+nbCriteres+" critères remplis)</strong></li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Comportement de jeu problématique persistant et récurrent conduisant à altération ou détresse cliniquement significative.";
-  h+="<br/><br/><strong>Critère A :</strong> ≥4 des 9 critères suivants durant période de 12 mois:";
-  h+="<br/>1. Besoin de jouer avec montants croissants pour atteindre excitation désirée (tolérance)";
-  h+="<br/>2. Agité ou irritable lors de tentatives de réduire/arrêter jeu (sevrage)";
-  h+="<br/>3. Efforts répétés infructueux pour contrôler/réduire/arrêter jeu";
-  h+="<br/>4. Souvent préoccupé par jeu (pensées persistantes)";
-  h+="<br/>5. Joue souvent quand en détresse (impuissant, coupable, anxieux, déprimé)";
-  h+="<br/>6. Retourne pour se refaire après pertes (poursuite des pertes)";
-  h+="<br/>7. Ment pour dissimuler ampleur de l'implication";
-  h+="<br/>8. A mis en péril/perdu relation, emploi, opportunité à cause du jeu";
-  h+="<br/>9. Compte sur autres pour argent pour situations financières désespérées";
-  h+="<br/><br/><strong>Critère B :</strong> Non mieux expliqué par épisode maniaque.";
-  h+="<br/><br/><strong>Évolution :</strong>";
-  h+="<br/>• Épisodique: Critères remplis à >1 moment, symptômes s'atténuent entre périodes (≥plusieurs mois)";
-  h+="<br/>• Persistant: Symptômes continus, critères remplis pendant plusieurs années";
-  h+="<br/><br/><strong>Rémission :</strong>";
-  h+="<br/>• En rémission précoce: Aucun critère rempli pendant ≥3 mois mais <12 mois";
-  h+="<br/>• En rémission soutenue: Aucun critère rempli pendant ≥12 mois";
-  h+="<br/><br/><strong>Sévérité actuelle (basée sur nombre de critères) :</strong>";
-  h+="<br/>• <strong>Léger:</strong> 4-5 critères remplis";
-  h+="<br/>• <strong>Modéré:</strong> 6-7 critères remplis";
-  h+="<br/>• <strong>Sévère:</strong> 8-9 critères remplis";
-  h+="<br/><br/><strong>Critères les plus fréquents (formes légères) :</strong>";
-  h+="<br/>• Préoccupation par le jeu (critère 4)";
-  h+="<br/>• Poursuite des pertes (critère 6)";
-  h+="<br/><br/><strong>Critères les moins fréquents (formes sévères) :</strong>";
-  h+="<br/>• Mise en péril relations/carrière (critère 8)";
-  h+="<br/>• Compte sur autres pour argent (critère 9)";
-  h+="<br/><br/><strong>Note :</strong> Seul trouble comportemental sans ingestion de substance avec données suffisantes pour inclusion dans troubles liés aux substances et addictifs.";
-  h+="<br/><br/><strong>Caractéristiques clés :</strong>";
-  h+="<br/>• Comportement persistant et récurrent";
-  h+="<br/>• Altération ou détresse cliniquement significative";
-  h+="<br/>• Période de 12 mois pour évaluation";
-  h+="<br/>• Similitudes avec troubles liés aux substances (tolérance, sevrage, perte de contrôle)";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
-
-<footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
+<footer style="text-align:center; font-size:0.9em; margin-top:40px; padding-top:15px; border-top:1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 16/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
 
-
-
-
 <script>
-function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
+function validerFormulaire(){Swal.fire({icon:'success',title:'Validé !',text:'Formulaire marqué comme VALIDE',timer:2000,showConfirmButton:false});}
+function nonValiderFormulaire(){Swal.fire({icon:'warning',title:'Non validé',text:'Formulaire marqué comme NON VALIDE',timer:2000,showConfirmButton:false});}
 </script>
 
 </body>
 </html>
+
