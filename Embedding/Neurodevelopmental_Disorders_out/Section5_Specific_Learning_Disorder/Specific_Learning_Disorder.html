@@ -26,116 +26,63 @@
     font-size: 16px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
     .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
-    }
-    .resultat-box {
-      margin-top: 30px;
     }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
     }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
-    .severity-desc {
-      background: #f9f9f9;
-      border-left: 3px solid #8cc63f;
-      padding: 8px;
-      margin: 8px 0;
-      font-size: 0.85em;
-    }
-    .domain-section {
-      background: #f5f5f5;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 4px;
-    }
   </style>
 
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -146,64 +93,43 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Difficultés d'apprentissage et d'utilisation des compétences académiques</legend>
   <p class="subtitle">Présence d'au moins 1 des symptômes suivants ayant persisté pendant au moins 6 mois, malgré interventions ciblant ces difficultés</p>
-  <div class="warning-box">
-    ⚠️ Au moins 1 symptôme doit avoir persisté ≥6 mois malgré interventions
-  </div>
-  
-  <label><input type="checkbox" name="critereA" value="1. Lecture de mots inexacte ou lente et laborieuse"/> <strong>1. Lecture de mots inexacte ou lente et laborieuse</strong></label>
-  <div class="subtitle" style="margin-left: 20px;">Ex: lit mots isolés à voix haute incorrectement/lentement/hésitant, devine fréquemment mots, difficulté décoder mots</div>
-  
-  <label><input type="checkbox" name="critereA" value="2. Difficulté à comprendre signification de ce qui est lu"/> <strong>2. Difficulté à comprendre signification de ce qui est lu</strong></label>
-  <div class="subtitle" style="margin-left: 20px;">Ex: peut lire texte avec précision mais ne comprend pas séquence, relations, inférences ou significations profondes</div>
-  
-  <label><input type="checkbox" name="critereA" value="3. Difficultés avec orthographe"/> <strong>3. Difficultés avec orthographe</strong></label>
-  <div class="subtitle" style="margin-left: 20px;">Ex: peut ajouter, omettre ou substituer voyelles ou consonnes</div>
-  
-  <label><input type="checkbox" name="critereA" value="4. Difficultés avec expression écrite"/> <strong>4. Difficultés avec expression écrite</strong></label>
-  <div class="subtitle" style="margin-left: 20px;">Ex: erreurs grammaticales/ponctuation multiples dans phrases, organisation paragraphe pauvre, expression idées manque clarté</div>
-  
-  <label><input type="checkbox" name="critereA" value="5. Difficultés à maîtriser sens numérique, faits numériques ou calcul"/> <strong>5. Difficultés à maîtriser sens numérique, faits numériques ou calcul</strong></label>
-  <div class="subtitle" style="margin-left: 20px;">Ex: compréhension pauvre nombres/magnitude/relations, compte sur doigts pour additionner chiffres uniques, se perd dans calcul arithmétique</div>
-  
-  <label><input type="checkbox" name="critereA" value="6. Difficultés avec raisonnement mathématique"/> <strong>6. Difficultés avec raisonnement mathématique</strong></label>
-  <div class="subtitle" style="margin-left: 20px;">Ex: difficulté sévère appliquer concepts/faits/procédures mathématiques pour résoudre problèmes quantitatifs</div>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+  <label><input type="checkbox" name="critereA" value="1. Lecture de mots inexacte ou lente et laborieuse (lit mots incorrectement/lentement/hésitant, devine mots, difficulté décoder)"/> 1. Lecture de mots inexacte ou lente et laborieuse (lit mots incorrectement/lentement/hésitant, devine mots, difficulté décoder)</label>
+  <label><input type="checkbox" name="critereA" value="2. Difficulté à comprendre signification de ce qui est lu (peut lire avec précision mais ne comprend pas séquence, relations, inférences)"/> 2. Difficulté à comprendre signification de ce qui est lu (peut lire avec précision mais ne comprend pas séquence, relations, inférences)</label>
+  <label><input type="checkbox" name="critereA" value="3. Difficultés avec orthographe (peut ajouter, omettre ou substituer voyelles/consonnes)"/> 3. Difficultés avec orthographe (peut ajouter, omettre ou substituer voyelles/consonnes)</label>
+  <label><input type="checkbox" name="critereA" value="4. Difficultés avec expression écrite (erreurs grammaticales/ponctuation multiples, organisation paragraphe pauvre, expression idées manque clarté)"/> 4. Difficultés avec expression écrite (erreurs grammaticales/ponctuation multiples, organisation paragraphe pauvre, expression idées manque clarté)</label>
+  <label><input type="checkbox" name="critereA" value="5. Difficultés à maîtriser sens numérique, faits numériques ou calcul (compréhension pauvre nombres/magnitude, compte sur doigts, se perd dans calcul)"/> 5. Difficultés à maîtriser sens numérique, faits numériques ou calcul (compréhension pauvre nombres/magnitude, compte sur doigts, se perd dans calcul)</label>
+  <label><input type="checkbox" name="critereA" value="6. Difficultés avec raisonnement mathématique (difficulté sévère appliquer concepts/procédures pour résoudre problèmes quantitatifs)"/> 6. Difficultés avec raisonnement mathématique (difficulté sévère appliquer concepts/procédures pour résoudre problèmes quantitatifs)</label>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Compétences académiques substantiellement en dessous de l'attendu</legend>
   <p class="subtitle">Les compétences académiques affectées sont substantiellement et quantifiablement en dessous de celles attendues pour l'âge chronologique, et causent interférence significative avec performance académique/professionnelle ou activités vie quotidienne, confirmées par mesures standardisées et évaluation clinique complète</p>
   <label><input type="checkbox" name="critereB" value="Compétences substantiellement en dessous attendu pour âge"/> Compétences substantiellement et quantifiablement en dessous de l'attendu pour l'âge chronologique</label>
   <label><input type="checkbox" name="critereB" value="Interférence significative avec performance académique"/> Interférence significative avec performance académique</label>
   <label><input type="checkbox" name="critereB" value="Interférence significative avec performance professionnelle"/> Interférence significative avec performance professionnelle</label>
   <label><input type="checkbox" name="critereB" value="Interférence significative avec activités vie quotidienne"/> Interférence significative avec activités de la vie quotidienne</label>
-  <div class="note-box">
-    <strong>Confirmation :</strong> Par mesures standardisées de réussite administrées individuellement ET évaluation clinique complète. Pour individus ≥17 ans, historique documenté de difficultés d'apprentissage altérant peut substituer évaluation standardisée.
-  </div>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+  <label><input type="checkbox" name="critereB" value="Confirmé par mesures standardisées ET évaluation clinique (≥17 ans: historique documenté peut substituer)"/> Confirmé par mesures standardisées ET évaluation clinique (≥17 ans: historique documenté peut substituer)</label>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Début durant années scolaires</legend>
   <p class="subtitle">Les difficultés d'apprentissage commencent durant les années scolaires mais peuvent ne pas se manifester pleinement jusqu'à ce que les demandes excèdent les capacités limitées</p>
   <label><input type="checkbox" name="critereC" value="Début durant années scolaires"/> Début durant les années scolaires</label>
-  <div class="note-box">
-    Peuvent ne pas se manifester pleinement jusqu'à ce que demandes excèdent capacités (ex: tests chronométrés, rapports longs/complexes avec délais serrés, charges académiques excessivement lourdes)
-  </div>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+  <label><input type="checkbox" name="critereC" value="Peuvent ne pas se manifester jusqu'à ce que demandes excèdent capacités (tests chronométrés, rapports complexes, charges lourdes)"/> Peuvent ne pas se manifester jusqu'à ce que demandes excèdent capacités (tests chronométrés, rapports complexes, charges lourdes)</label>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion d'autres causes</legend>
   <p class="subtitle">Les difficultés d'apprentissage ne sont pas mieux expliquées par d'autres facteurs</p>
   <label><input type="checkbox" name="critereD" value="Non mieux expliquées par déficiences intellectuelles"/> Non mieux expliquées par déficiences intellectuelles</label>
@@ -212,126 +138,196 @@
   <label><input type="checkbox" name="critereD" value="Non mieux expliquées par adversité psychosociale"/> Non mieux expliquées par adversité psychosociale</label>
   <label><input type="checkbox" name="critereD" value="Non mieux expliquées par manque maîtrise langue instruction académique"/> Non mieux expliquées par manque de maîtrise de la langue d'instruction académique</label>
   <label><input type="checkbox" name="critereD" value="Non mieux expliquées par instruction éducative inadéquate"/> Non mieux expliquées par instruction éducative inadéquate</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Domaines altérés -->
-<fieldset id="domaines" class="hidden">
+<fieldset id="domaines">
   <legend>Spécifier tous les domaines académiques et sous-compétences altérés</legend>
+  <p style="margin-top: 10px;"><strong>F81.0 Avec altération en LECTURE :</strong></p>
+  <label><input type="checkbox" name="lecture" value="Précision lecture de mots"/> Précision lecture de mots</label>
+  <label><input type="checkbox" name="lecture" value="Vitesse ou fluence de lecture"/> Vitesse ou fluence de lecture</label>
+  <label><input type="checkbox" name="lecture" value="Compréhension de lecture"/> Compréhension de lecture</label>
+  <label><input type="checkbox" name="lecture" value="Note Dyslexie: terme alternatif pour pattern reconnaissance mots/décodage/orthographe. Spécifier difficultés additionnelles"/> Note Dyslexie: terme alternatif pour pattern reconnaissance mots/décodage/orthographe. Spécifier difficultés additionnelles</label>
   
-  <div class="domain-section">
-    <p><strong>F81.0 Avec altération en LECTURE :</strong></p>
-    <label><input type="checkbox" name="lecture" value="Précision lecture de mots"/> Précision lecture de mots</label>
-    <label><input type="checkbox" name="lecture" value="Vitesse ou fluence de lecture"/> Vitesse ou fluence de lecture</label>
-    <label><input type="checkbox" name="lecture" value="Compréhension de lecture"/> Compréhension de lecture</label>
-    <div class="note-box">
-      <strong>Note Dyslexie :</strong> Terme alternatif pour pattern de difficultés caractérisé par problèmes reconnaissance précise/fluente mots, décodage pauvre, capacités orthographe pauvres. Si utilisé, spécifier aussi difficultés additionnelles présentes.
-    </div>
-  </div>
+  <p style="margin-top: 15px;"><strong>F81.81 Avec altération en EXPRESSION ÉCRITE :</strong></p>
+  <label><input type="checkbox" name="ecriture" value="Précision orthographe"/> Précision orthographe</label>
+  <label><input type="checkbox" name="ecriture" value="Précision grammaire et ponctuation"/> Précision grammaire et ponctuation</label>
+  <label><input type="checkbox" name="ecriture" value="Clarté ou organisation expression écrite"/> Clarté ou organisation de l'expression écrite</label>
   
-  <div class="domain-section">
-    <p><strong>F81.81 Avec altération en EXPRESSION ÉCRITE :</strong></p>
-    <label><input type="checkbox" name="ecriture" value="Précision orthographe"/> Précision orthographe</label>
-    <label><input type="checkbox" name="ecriture" value="Précision grammaire et ponctuation"/> Précision grammaire et ponctuation</label>
-    <label><input type="checkbox" name="ecriture" value="Clarté ou organisation expression écrite"/> Clarté ou organisation de l'expression écrite</label>
-  </div>
-  
-  <div class="domain-section">
-    <p><strong>F81.2 Avec altération en MATHÉMATIQUES :</strong></p>
-    <label><input type="checkbox" name="maths" value="Sens numérique"/> Sens numérique</label>
-    <label><input type="checkbox" name="maths" value="Mémorisation faits arithmétiques"/> Mémorisation des faits arithmétiques</label>
-    <label><input type="checkbox" name="maths" value="Calcul précis ou fluent"/> Calcul précis ou fluent</label>
-    <label><input type="checkbox" name="maths" value="Raisonnement mathématique précis"/> Raisonnement mathématique précis</label>
-    <div class="note-box">
-      <strong>Note Dyscalculie :</strong> Terme alternatif pour pattern de difficultés caractérisé par problèmes traitement information numérique, apprentissage faits arithmétiques, calculs précis/fluents. Si utilisé, spécifier aussi difficultés additionnelles présentes.
-    </div>
-  </div>
-  
-  <button type="button" onclick="validerDomaines()">✔️ Valider les domaines</button>
+  <p style="margin-top: 15px;"><strong>F81.2 Avec altération en MATHÉMATIQUES :</strong></p>
+  <label><input type="checkbox" name="maths" value="Sens numérique"/> Sens numérique</label>
+  <label><input type="checkbox" name="maths" value="Mémorisation faits arithmétiques"/> Mémorisation des faits arithmétiques</label>
+  <label><input type="checkbox" name="maths" value="Calcul précis ou fluent"/> Calcul précis ou fluent</label>
+  <label><input type="checkbox" name="maths" value="Raisonnement mathématique précis"/> Raisonnement mathématique précis</label>
+  <label><input type="checkbox" name="maths" value="Note Dyscalculie: terme alternatif pour pattern traitement numérique/calculs. Spécifier difficultés additionnelles"/> Note Dyscalculie: terme alternatif pour pattern traitement numérique/calculs. Spécifier difficultés additionnelles</label>
 </fieldset>
 
 <!-- Sévérité -->
-<fieldset id="severite" class="hidden">
+<fieldset id="severite">
   <legend>Sévérité actuelle</legend>
-  
-  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger</strong></label>
-  <div class="severity-desc">
-    Quelques difficultés apprentissage compétences dans 1-2 domaines académiques, mais sévérité assez légère pour que individu puisse compenser ou bien fonctionner avec accommodations/services soutien appropriés, surtout durant années scolaires.
-  </div>
-  
-  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré</strong></label>
-  <div class="severity-desc">
-    Difficultés marquées apprentissage compétences dans ≥1 domaines académiques, tel que individu improbable devenir compétent sans intervalles enseignement intensif et spécialisé durant années scolaires. Certains accommodations/services soutien au moins partie journée à école/travail/maison peuvent être nécessaires pour compléter activités avec précision et efficacité.
-  </div>
-  
-  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère</strong></label>
-  <div class="severity-desc">
-    Difficultés sévères apprentissage compétences, affectant plusieurs domaines académiques, tel que individu improbable apprendre ces compétences sans enseignement intensif individualisé et spécialisé continu durant majorité années scolaires. Même avec gamme accommodations/services appropriés à maison/école/travail, individu peut ne pas pouvoir compléter toutes activités efficacement.
-  </div>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
+  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
+  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
 </fieldset>
 
 </form>
+
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier</p>
+  
+  <label><input type="checkbox" name="diff_variation" value="Variations normales attribuables à facteurs externes (manque opportunité éducative, instruction pauvre, apprentissage en 2e langue) persistant malgré opportunité/instruction adéquates"/> Variations normales attribuables à facteurs externes (manque opportunité éducative, instruction pauvre, apprentissage en 2e langue) – Difficultés persistent malgré opportunités adéquates</label>
+  
+  <label><input type="checkbox" name="diff_di" value="Déficience intellectuelle – Difficultés générales vs difficultés spécifiques avec fonctionnement intellectuel normal (QI ≥70±5). Si DI présente, diagnostic SLD seulement si difficultés excèdent celles habituellement associées à la DI"/> Déficience intellectuelle – Différencier difficultés générales vs spécifiques avec QI normal (≥70±5). Si DI, SLD seulement si difficultés en excès</label>
+  
+  <label><input type="checkbox" name="diff_neuro_sensory" value="Troubles neurologiques ou sensoriels (AVC pédiatrique, TC, déficience auditive/visuelle) avec résultats neurologiques anormaux"/> Troubles neurologiques ou sensoriels (AVC pédiatrique, TC, déficience auditive/visuelle) – Résultats neurologiques anormaux</label>
+  
+  <label><input type="checkbox" name="diff_ncd" value="Troubles neurocognitifs – Dans SLD, difficultés manifestées période développementale (parfois en adulte si demandes dépassent capacités) vs déclin marqué état antérieur, début typique adulte"/> Troubles neurocognitifs – Dans SLD: période développementale vs déclin marqué d'un état antérieur, début adulte</label>
+  
+  <label><input type="checkbox" name="diff_adhd" value="TDAH – Mauvaise performance reflète difficultés exécution tâches vs difficultés apprentissage compétences spécifiques. Co-occurrence SLD+TDAH fréquente, les 2 diagnostics si critères remplis"/> TDAH – Mauvaise performance reflète difficultés exécution vs apprentissage spécifique. Co-occurrence fréquente, donner les 2 si critères remplis</label>
+  
+  <label><input type="checkbox" name="diff_psychose" value="Troubles psychotiques (schizophrénie) – Déclin rapide fonctions cognitives vs persistance développementale. Déficits lecture plus sévères dans SLD. Les 2 diagnostics si critères remplis"/> Troubles psychotiques (schizophrénie) – Déclin rapide vs persistance développementale. Les 2 diagnostics si critères remplis</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Conditions associées</p>
+  
+  <label><input type="checkbox" name="comorb_sld_multiple" value="Co-occurrence entre types de SLD (ex: lecture + mathématiques) fréquente"/> Co-occurrence entre types de SLD (ex: lecture + mathématiques) fréquente</label>
+  
+  <label><input type="checkbox" name="comorb_neurodev" value="Autres troubles neurodéveloppementaux: TDAH, troubles communication, coordination développementale, TSA"/> Autres troubles neurodéveloppementaux: TDAH, troubles communication, coordination développementale, TSA</label>
+  
+  <label><input type="checkbox" name="comorb_psy" value="Autres troubles mentaux: anxiété, dépression, TOC, trouble explosif intermittent, TUS (plus fréquent chez adultes)"/> Autres troubles mentaux: anxiété, dépression, TOC, trouble explosif intermittent, TUS (plus fréquent chez adultes)</label>
+  
+  <label><input type="checkbox" name="comorb_perso" value="Troubles de personnalité antisociale et autres peuvent co-survenir chez adultes"/> Troubles de personnalité antisociale et autres peuvent co-survenir chez adultes</label>
+  
+  <label><input type="checkbox" name="comorb_sleep" value="Troubles du sommeil associés à altérations cognitives diurnes (hypersomnolence, insomnie, troubles rythme circadien, respiration sommeil, jambes sans repos)"/> Troubles du sommeil associés à altérations cognitives diurnes (hypersomnolence, insomnie, troubles rythme circadien)</label>
+  
+  <label><input type="checkbox" name="comorb_judgment" value="Jugement clinique requis pour attribuer altération aux difficultés apprentissage car comorbidités interfèrent indépendamment avec activités quotidiennes y compris apprentissage"/> Jugement clinique requis pour attribuer altération – Comorbidités interfèrent indépendamment avec apprentissage</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: rien, 1: diagnostic, 2: comorbidité
+  const scrollOptions = { behavior: 'smooth', block: 'start' };
+
+  const showSection = (titre, formulaire) => {
+    if (titre) {
+      titre.style.display = 'block';
+      titre.scrollIntoView(scrollOptions);
+    }
+    if (formulaire) formulaire.style.display = 'block';
+  };
+
+  const hideSection = (titre, formulaire) => {
+    if (titre) titre.style.display = 'none';
+    if (formulaire) formulaire.style.display = 'none';
+  };
+
+  const callGlobal = (fnName) => {
+    const candidate = globalThis[fnName];
+    if (typeof candidate === 'function') {
+      candidate();
+    }
+  };
+
+  const getSections = () => ({
+    titreDiag: document.getElementById('titre-diagnostic'),
+    formDiag: document.getElementById('formulaire-diff'),
+    titreComorb: document.getElementById('titre-comorbidite'),
+    formComorb: document.getElementById('formulaire-comorb')
+  });
+
+  globalThis.validerFormulaireLocal = function(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+
+    etapeNonValide = 0;
+    const { titreDiag, formDiag, titreComorb, formComorb } = getSections();
+    hideSection(titreDiag, formDiag);
+    hideSection(titreComorb, formComorb);
+    callGlobal('validerFormulaire');
+  };
+
+  globalThis.nonValiderFormulaireLocal = function(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+
+    const { titreDiag, formDiag, titreComorb, formComorb } = getSections();
+    const hasComorbidite = Boolean(titreComorb && formComorb);
+    const actions = {
+      0: () => {
+        showSection(titreDiag, formDiag);
+        etapeNonValide = 1;
+      },
+      1: () => {
+        if (hasComorbidite) {
+          showSection(titreComorb, formComorb);
+          etapeNonValide = 2;
+        } else {
+          hideSection(titreDiag, formDiag);
+          etapeNonValide = 0;
+          callGlobal('nonValiderFormulaire');
+        }
+      },
+      2: () => {
+        hideSection(titreDiag, formDiag);
+        hideSection(titreComorb, formComorb);
+        etapeNonValide = 0;
+        callGlobal('nonValiderFormulaire');
+      }
+    };
+
+    (actions[etapeNonValide] || function() {})();
+  };
+})();
+</script>
 
 <div id="resultat"></div>
 
 <script>
 let choix={critereA:[],critereB:[],critereC:"",critereD:[],lecture:[],ecriture:[],maths:[],severite:""};
 
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>=1){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins 1 symptôme du critère A (ayant persisté ≥6 mois)", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("domaines").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une exclusion du critère D", confirmButtonColor: "#667eea"});
-}
-
-function validerDomaines(){
+function genererResume(){
+  choix.critereA=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
+  choix.critereB=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
+  const c_C=document.querySelector("input[name='critereC']:checked");
+  choix.critereC=c_C?c_C.value:"";
+  choix.critereD=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
   choix.lecture=Array.from(document.querySelectorAll("input[name='lecture']:checked")).map(e=>e.value);
   choix.ecriture=Array.from(document.querySelectorAll("input[name='ecriture']:checked")).map(e=>e.value);
   choix.maths=Array.from(document.querySelectorAll("input[name='maths']:checked")).map(e=>e.value);
-  
-  if(choix.lecture.length>0||choix.ecriture.length>0||choix.maths.length>0){
-    document.getElementById("severite").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins un domaine académique altéré", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
   const sev=document.querySelector("input[name='severite']:checked");
-  if(!sev){
-    Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez un niveau de sévérité", confirmButtonColor: "#667eea"});
-    return;
-  }
-  choix.severite=sev.value;
-  genererResume();
-}
+  choix.severite=sev?sev.value:"";
 
-function genererResume(){
   let codes=[];
   let diags=[];
   
@@ -411,13 +407,11 @@ function genererResume(){
 
 <script>
 function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+  genererResume();
 }
 
 function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+  genererResume();
 }
 </script>
 

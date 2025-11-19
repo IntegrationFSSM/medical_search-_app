@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -133,193 +84,50 @@
   </div>
 </div>
 
-<div class="note-box">
-  <strong>Définition d'un tic :</strong> Un tic est un mouvement moteur ou une vocalisation soudain, rapide, récurrent et non rythmique.
-</div>
-
 <form id="formulaire">
 
 <!-- Type de tics présents -->
 <fieldset id="typeTics">
   <legend>Type de tics présents</legend>
-  <p class="subtitle">Identifier les types de tics présents à un moment quelconque durant la maladie</p>
+  <p class="subtitle">Identifier les types de tics présents à un moment quelconque durant la maladie. Note: Un tic est un mouvement moteur ou une vocalisation soudain, rapide, récurrent et non rythmique.</p>
   <label><input type="checkbox" name="typeTics" value="Tics moteurs multiples"/> Tics moteurs multiples</label>
   <label><input type="checkbox" name="typeTics" value="Un ou plusieurs tics vocaux"/> Un ou plusieurs tics vocaux</label>
-  <button type="button" onclick="validerTypeTics()">✔️ Valider</button>
 </fieldset>
 
 <!-- Durée -->
-<fieldset id="duree" class="hidden">
+<fieldset id="duree">
   <legend>Durée des tics</legend>
   <p class="subtitle">Depuis le premier début des tics</p>
   <label><input type="radio" name="duree" value="Moins de 1 an"/> Moins de 1 an depuis le premier début des tics</label>
   <label><input type="radio" name="duree" value="Plus de 1 an"/> Plus de 1 an depuis le premier début des tics (peuvent fluctuer en fréquence)</label>
-  <button type="button" onclick="validerDuree()">✔️ Valider</button>
 </fieldset>
 
 <!-- Âge de début -->
-<fieldset id="ageDebut" class="hidden">
+<fieldset id="ageDebut">
   <legend>Âge de début</legend>
   <p class="subtitle">L'âge de début des tics</p>
   <label><input type="checkbox" name="ageDebut" value="Début avant 18 ans"/> Début avant l'âge de 18 ans</label>
-  <button type="button" onclick="validerAgeDebut()">✔️ Valider</button>
 </fieldset>
 
 <!-- Exclusions -->
-<fieldset id="exclusions" class="hidden">
+<fieldset id="exclusions">
   <legend>Exclusion d'autres causes</legend>
   <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou autre condition médicale</p>
   <label><input type="checkbox" name="exclusions" value="Non attribuable aux effets physiologiques d'une substance"/> Non attribuable aux effets physiologiques d'une substance (ex: cocaïne)</label>
   <label><input type="checkbox" name="exclusions" value="Non attribuable à autre condition médicale"/> Non attribuable à autre condition médicale (ex: maladie de Huntington, encéphalite post-virale)</label>
-  <button type="button" onclick="validerExclusions()">✔️ Valider</button>
 </fieldset>
 
 <!-- Antécédents -->
-<fieldset id="antecedents" class="hidden">
+<fieldset id="antecedents">
   <legend>Antécédents de troubles des tics</legend>
   <p class="subtitle">Vérifier si les critères ont déjà été remplis pour d'autres troubles des tics</p>
   <label><input type="checkbox" name="antecedents" value="Jamais rempli critères pour Syndrome de Tourette"/> Jamais rempli les critères pour Syndrome de Tourette</label>
   <label><input type="checkbox" name="antecedents" value="Jamais rempli critères pour Trouble Persistant des Tics"/> Jamais rempli les critères pour Trouble Persistant (Chronique) des Tics Moteurs ou Vocaux</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
-
 <script>
-let choix={typeTics:[],duree:"",ageDebut:"",exclusions:[],antecedents:[]};
-
-function validerTypeTics(){
-  const c=Array.from(document.querySelectorAll("input[name='typeTics']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.typeTics=c;
-    document.getElementById("duree").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins un type de tics", confirmButtonColor: "#667eea"});
-}
-
-function validerDuree(){
-  const d=document.querySelector("input[name='duree']:checked");
-  if(d){
-    choix.duree=d.value;
-    document.getElementById("ageDebut").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez la durée", confirmButtonColor: "#667eea"});
-}
-
-function validerAgeDebut(){
-  const a=document.querySelector("input[name='ageDebut']:checked");
-  if(a){
-    choix.ageDebut=a.value;
-    document.getElementById("exclusions").classList.remove("hidden");
-  }else alert("Cochez l'option d'âge de début");
-}
-
-function validerExclusions(){
-  const e=Array.from(document.querySelectorAll("input[name='exclusions']:checked")).map(el=>el.value);
-  if(e.length>0){
-    choix.exclusions=e;
-    document.getElementById("antecedents").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une exclusion", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  choix.antecedents=Array.from(document.querySelectorAll("input[name='antecedents']:checked")).map(e=>e.value);
-  genererResume();
-}
-
-function genererResume(){
-  const aMoteursMultiples=choix.typeTics.includes("Tics moteurs multiples");
-  const aVocaux=choix.typeTics.includes("Un ou plusieurs tics vocaux");
-  const plusDe1An=choix.duree==="Plus de 1 an";
-  const jamaisTourette=choix.antecedents.includes("Jamais rempli critères pour Syndrome de Tourette");
-  const jamaisPersistant=choix.antecedents.includes("Jamais rempli critères pour Trouble Persistant des Tics");
-  
-  let code="";
-  let diag="";
-  let type="";
-  
-  // Détermination du diagnostic
-  if(aMoteursMultiples && aVocaux && plusDe1An){
-    code="F95.2";
-    diag="Syndrome de Tourette (Trouble de la Tourette)";
-    type="Tourette";
-  }else if(plusDe1An && jamaisTourette){
-    if(aMoteursMultiples && !aVocaux){
-      code="F95.1";
-      diag="Trouble Persistant (Chronique) des Tics Moteurs";
-      type="Persistant Moteur";
-    }else if(!aMoteursMultiples && aVocaux){
-      code="F95.1";
-      diag="Trouble Persistant (Chronique) des Tics Vocaux";
-      type="Persistant Vocal";
-    }else{
-      code="F95.1";
-      diag="Trouble Persistant (Chronique) des Tics";
-      type="Persistant";
-    }
-  }else if(!plusDe1An && jamaisTourette && jamaisPersistant){
-    code="F95.0";
-    diag="Trouble Provisoire des Tics";
-    type="Provisoire";
-  }else{
-    code="N/A";
-    diag="Critères insuffisants ou incohérents";
-    type="Indéterminé";
-  }
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Type de tics présents</h4><ul class='choix-list'>";
-  choix.typeTics.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Durée</h4><ul class='choix-list'><li>✓ "+choix.duree+"</li></ul>";
-  
-  h+="<h4>Âge de début</h4><ul class='choix-list'><li>✓ "+choix.ageDebut+"</li></ul>";
-  
-  h+="<h4>Exclusions</h4><ul class='choix-list'>";
-  choix.exclusions.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  if(choix.antecedents.length>0){
-    h+="<h4>Antécédents</h4><ul class='choix-list'>";
-    choix.antecedents.forEach(s=>h+="<li>✓ "+s+"</li>");
-    h+="</ul>";
-  }
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  
-  if(type==="Tourette"){
-    h+="<br/><br/><strong>Critères du Syndrome de Tourette :</strong>";
-    h+="<br/>A. Tics moteurs multiples ET ≥1 tics vocaux présents à un moment durant la maladie (pas nécessairement simultanément)";
-    h+="<br/>B. Tics peuvent fluctuer en fréquence mais ont persisté >1 an depuis premier début";
-    h+="<br/>C. Début avant 18 ans";
-    h+="<br/>D. Non attribuable à substance ou condition médicale";
-  }else if(type==="Persistant Moteur"||type==="Persistant Vocal"||type==="Persistant"){
-    h+="<br/><br/><strong>Critères du Trouble Persistant (Chronique) des Tics :</strong>";
-    h+="<br/>A. Tics moteurs OU vocaux uniques/multiples (mais PAS les deux)";
-    h+="<br/>B. Tics peuvent fluctuer en fréquence mais ont persisté >1 an depuis premier début";
-    h+="<br/>C. Début avant 18 ans";
-    h+="<br/>D. Non attribuable à substance ou condition médicale";
-    h+="<br/>E. Critères jamais remplis pour Syndrome de Tourette";
-    if(type==="Persistant Moteur")h+="<br/><strong>Spécificateur:</strong> Avec tics moteurs uniquement";
-    else if(type==="Persistant Vocal")h+="<br/><strong>Spécificateur:</strong> Avec tics vocaux uniquement";
-  }else if(type==="Provisoire"){
-    h+="<br/><br/><strong>Critères du Trouble Provisoire des Tics :</strong>";
-    h+="<br/>A. Tics moteurs et/ou vocaux uniques/multiples";
-    h+="<br/>B. Tics présents <1 an depuis premier début";
-    h+="<br/>C. Début avant 18 ans";
-    h+="<br/>D. Non attribuable à substance ou condition médicale";
-    h+="<br/>E. Critères jamais remplis pour Syndrome de Tourette ou Trouble Persistant des Tics";
-  }
-  
-  h+="<br/><br/><strong>Définition d'un tic :</strong> Mouvement moteur ou vocalisation soudain, rapide, récurrent et non rythmique.";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>

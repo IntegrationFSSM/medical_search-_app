@@ -964,15 +964,22 @@ document.getElementById('patientSelect').addEventListener('change', async functi
 });
 
 // Charger l'historique d'un patient
+// Variable globale pour stocker les symptômes historiques du patient
+let patientHistoricalSymptoms = [];
+
 async function loadPatientHistory(patientId) {
     try {
         const response = await fetch(`/api/patients/${patientId}/history/`);
         const data = await response.json();
         
         if (data.success && data.consultations.length > 0) {
+            // Stocker les symptômes historiques pour enrichir les futures recherches
+            patientHistoricalSymptoms = data.all_symptoms || [];
+            console.log(`📊 ${patientHistoricalSymptoms.length} symptômes historiques chargés pour ce patient`);
+            
             // Afficher la section d'historique
             document.getElementById('patientHistory').classList.remove('hidden');
-            document.getElementById('historyCount').textContent = `${data.consultations.length} consultation(s)`;
+            document.getElementById('historyCount').textContent = `${data.consultations.length} consultation(s) - ${data.total_symptoms || 0} symptômes enregistrés`;
             
             // Remplir la liste des consultations
             const historyList = document.getElementById('historyList');
@@ -980,41 +987,114 @@ async function loadPatientHistory(patientId) {
             
             data.consultations.forEach(consultation => {
                 const consultationDiv = document.createElement('div');
-                consultationDiv.className = 'bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-gray-100 transition';
+                
+                // Déterminer la couleur du badge selon le statut
+                let statutBadgeClass = 'bg-gray-500';
+                let statutIcon = 'fa-info-circle';
+                if (consultation.statut === 'Validé') {
+                    statutBadgeClass = 'bg-green-500';
+                    statutIcon = 'fa-check-circle';
+                } else if (consultation.statut === 'Non validé') {
+                    statutBadgeClass = 'bg-orange-500';
+                    statutIcon = 'fa-exclamation-circle';
+                } else if (consultation.statut === 'En cours') {
+                    statutBadgeClass = 'bg-blue-500';
+                    statutIcon = 'fa-clock';
+                }
+                
+                consultationDiv.className = 'bg-gray-50 rounded-lg border border-gray-200 overflow-hidden';
+                
+                const hasDetails = consultation.nombre_criteres > 0 || consultation.medecin_specialite;
+                const uniqueId = `consultation_${consultation.id}`;
+                
                 consultationDiv.innerHTML = `
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-2 mb-1">
-                                <i class="fas fa-calendar-alt text-blue-600 text-sm"></i>
-                                <span class="font-semibold text-gray-800 text-sm">${consultation.date_consultation}</span>
+                    <div class="p-3 hover:bg-gray-100 transition ${hasDetails ? 'cursor-pointer' : ''}" ${hasDetails ? `onclick="toggleConsultationDetails('${uniqueId}')"` : ''}>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    ${hasDetails ? '<i class="fas fa-chevron-down text-xs text-gray-400 consultation-toggle" id="toggle_' + uniqueId + '"></i>' : ''}
+                                    <i class="fas fa-calendar-alt text-blue-600 text-sm"></i>
+                                    <span class="font-semibold text-gray-800 text-sm">${consultation.date_consultation}</span>
+                                    <span class="${statutBadgeClass} text-white text-xs px-2 py-1 rounded-full inline-flex items-center gap-1">
+                                        <i class="fas ${statutIcon}"></i>
+                                        ${consultation.statut}
+                                    </span>
+                                </div>
+                                <div class="text-sm text-gray-600 ml-5">
+                                    <i class="fas fa-diagnoses mr-1"></i>
+                                    ${consultation.pathologie_identifiee || 'Non renseigné'}
+                                </div>
+                                <div class="text-xs text-gray-500 ml-5 mt-1">
+                                    <i class="fas fa-user-doctor mr-1"></i>
+                                    ${consultation.medecin}${consultation.medecin_specialite ? ' - ' + consultation.medecin_specialite : ''}
+                                </div>
+                                ${consultation.nombre_criteres > 0 ? `
+                                <div class="text-xs text-purple-600 ml-5 mt-1 font-medium">
+                                    <i class="fas fa-list-check mr-1"></i>
+                                    ${consultation.nombre_criteres} critère(s) enregistré(s)
+                                </div>
+                                ` : ''}
                             </div>
-                            <div class="text-sm text-gray-600 ml-5">
-                                <i class="fas fa-diagnoses mr-1"></i>
-                                ${consultation.pathologie_identifiee || 'Non renseigné'}
-                            </div>
-                            <div class="text-xs text-gray-500 ml-5 mt-1">
-                                <i class="fas fa-user-doctor mr-1"></i>
-                                ${consultation.medecin}
-                            </div>
+                            ${consultation.statut === 'Validé' ? `
+                            <button 
+                                onclick="event.stopPropagation(); viewReport('${consultation.id}')"
+                                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center justify-center gap-2 whitespace-nowrap"
+                            >
+                                <i class="fas fa-file-pdf"></i>
+                                Voir le rapport
+                            </button>
+                            ` : ''}
                         </div>
-                        <button 
-                            onclick="viewReport('${consultation.id}')"
-                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center justify-center gap-2 whitespace-nowrap"
-                        >
-                            <i class="fas fa-file-pdf"></i>
-                            Voir le rapport
-                        </button>
                     </div>
+                    ${hasDetails ? `
+                    <div id="${uniqueId}" class="hidden border-t border-gray-300 bg-white p-3">
+                        ${consultation.description_clinique ? `
+                        <div class="mb-2">
+                            <span class="text-xs font-semibold text-gray-700">Description clinique:</span>
+                            <p class="text-xs text-gray-600 mt-1">${consultation.description_clinique}</p>
+                        </div>
+                        ` : ''}
+                        ${consultation.criteres_valides && consultation.criteres_valides.length > 0 ? `
+                        <div>
+                            <span class="text-xs font-semibold text-gray-700">Critères validés:</span>
+                            <ul class="list-disc list-inside text-xs text-gray-600 mt-1 space-y-1">
+                                ${consultation.criteres_valides.map(c => `<li>${c}</li>`).join('')}
+                            </ul>
+                        </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
                 `;
                 historyList.appendChild(consultationDiv);
             });
         } else {
             // Cacher la section d'historique si aucune consultation
             document.getElementById('patientHistory').classList.add('hidden');
+            patientHistoricalSymptoms = [];
         }
     } catch (error) {
         console.error('Erreur lors du chargement de l\'historique:', error);
         document.getElementById('patientHistory').classList.add('hidden');
+        patientHistoricalSymptoms = [];
+    }
+}
+
+// Fonction pour afficher/masquer les détails d'une consultation (accordéon)
+function toggleConsultationDetails(uniqueId) {
+    const detailsDiv = document.getElementById(uniqueId);
+    const toggleIcon = document.getElementById('toggle_' + uniqueId);
+    
+    if (detailsDiv) {
+        detailsDiv.classList.toggle('hidden');
+        if (toggleIcon) {
+            if (detailsDiv.classList.contains('hidden')) {
+                toggleIcon.classList.remove('fa-chevron-up');
+                toggleIcon.classList.add('fa-chevron-down');
+            } else {
+                toggleIcon.classList.remove('fa-chevron-down');
+                toggleIcon.classList.add('fa-chevron-up');
+            }
+        }
     }
 }
 
@@ -1365,6 +1445,19 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         return;
     }
     
+    // 🆕 Afficher notification si historique disponible (l'enrichissement se fait en BACKEND)
+    if (patientHistoricalSymptoms && patientHistoricalSymptoms.length > 0) {
+        console.log(`📊 Envoi de ${patientHistoricalSymptoms.length} symptômes historiques au backend`);
+        Swal.fire({
+            icon: 'info',
+            title: 'Recherche enrichie',
+            html: `La recherche inclut <strong>${patientHistoricalSymptoms.length} symptômes</strong> de l'historique du patient`,
+            timer: 2000,
+            timerProgressBar: true,
+            showConfirmButton: false
+        });
+    }
+    
     // Show loading, hide errors and results
     document.getElementById('loadingIndicator').classList.remove('hidden');
     document.getElementById('errorMessage').classList.add('hidden');
@@ -1382,12 +1475,13 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
                 'X-CSRFToken': getCookie('csrftoken')
             },
             body: JSON.stringify({ 
-                query, 
+                query: query,  // 🆕 Envoyer la requête ORIGINALE (enrichissement en backend)
                 top_k, 
                 aggregation,
                 use_validation: useValidation,
-                patient_id: selectedPatient.id,  // Ajouter l'ID du patient
-                medecin_id: selectedMedecin ? selectedMedecin.id : null  // Ajouter l'ID du médecin
+                patient_id: selectedPatient.id,
+                medecin_id: selectedMedecin ? selectedMedecin.id : null,
+                historical_symptoms: patientHistoricalSymptoms  // 🆕 Le backend va enrichir avec ça
             })
         });
         

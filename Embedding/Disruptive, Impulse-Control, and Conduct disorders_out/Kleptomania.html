@@ -26,95 +26,64 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -125,6 +94,8 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
@@ -134,167 +105,181 @@
   <label><input type="checkbox" name="critereA" value="Échec récurrent à résister aux impulsions de voler"/> Échec récurrent à résister aux impulsions de voler</label>
   <label><input type="checkbox" name="critereA" value="Objets volés non nécessaires pour usage personnel"/> Objets volés non nécessaires pour usage personnel</label>
   <label><input type="checkbox" name="critereA" value="Objets volés non nécessaires pour leur valeur monétaire"/> Objets volés non nécessaires pour leur valeur monétaire</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Tension croissante avant le vol</legend>
   <p class="subtitle">Sensation croissante de tension immédiatement avant de commettre le vol</p>
   <label><input type="checkbox" id="choixB" value="Sensation croissante de tension immédiatement avant le vol"/> Sensation croissante de tension immédiatement avant de commettre le vol</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Plaisir, gratification ou soulagement au moment du vol</legend>
   <p class="subtitle">Plaisir, gratification ou soulagement au moment de commettre le vol</p>
   <label><input type="checkbox" name="critereC" value="Plaisir au moment du vol"/> Plaisir au moment de commettre le vol</label>
   <label><input type="checkbox" name="critereC" value="Gratification au moment du vol"/> Gratification au moment de commettre le vol</label>
   <label><input type="checkbox" name="critereC" value="Soulagement au moment du vol"/> Soulagement au moment de commettre le vol</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion de motivations spécifiques</legend>
   <p class="subtitle">Le vol n'est pas commis pour exprimer la colère ou la vengeance, et n'est pas en réponse à une idée délirante ou une hallucination</p>
   <label><input type="checkbox" name="critereD" value="Vol non commis pour exprimer la colère"/> Vol non commis pour exprimer la colère</label>
   <label><input type="checkbox" name="critereD" value="Vol non commis pour exprimer la vengeance"/> Vol non commis pour exprimer la vengeance</label>
   <label><input type="checkbox" name="critereD" value="Vol non en réponse à une idée délirante"/> Vol non en réponse à une idée délirante</label>
   <label><input type="checkbox" name="critereD" value="Vol non en réponse à une hallucination"/> Vol non en réponse à une hallucination</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
-</fieldset>
-
-<!-- Critère E -->
-<fieldset id="critereE" class="hidden">
-  <legend>Critère E – Diagnostic différentiel</legend>
-  <p class="subtitle">Le vol n'est pas mieux expliqué par un trouble des conduites, un épisode maniaque ou un trouble de personnalité antisociale</p>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliqué par trouble des conduites"/> Pas mieux expliqué par trouble des conduites</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliqué par épisode maniaque"/> Pas mieux expliqué par épisode maniaque</label>
-  <label><input type="checkbox" name="critereE" value="Pas mieux expliqué par trouble de personnalité antisociale"/> Pas mieux expliqué par trouble de personnalité antisociale</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier de la kleptomanie</p>
+  
+  <label><input type="checkbox" name="diff_theft" value="Vol ordinaire - Vol délibéré motivé par utilité ou valeur monétaire"/> Vol ordinaire - Vol délibéré motivé par utilité ou valeur monétaire</label>
+  
+  <label><input type="checkbox" name="diff_malingering" value="Simulation - Simulation des symptômes pour éviter poursuites pénales"/> Simulation - Simulation des symptômes pour éviter poursuites pénales</label>
+  
+  <label><input type="checkbox" name="diff_antisocial" value="Trouble de personnalité antisociale et trouble des conduites - Pattern général de comportement antisocial"/> Trouble de personnalité antisociale et trouble des conduites - Pattern général de comportement antisocial</label>
+  
+  <label><input type="checkbox" name="diff_manic" value="Épisodes maniaques, épisodes psychotiques, trouble neurocognitif majeur - Vol intentionnel ou non intentionnel pendant épisode"/> Épisodes maniaques, épisodes psychotiques, trouble neurocognitif majeur - Vol intentionnel ou non intentionnel pendant épisode</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles associés</p>
+  
+  <label><input type="checkbox" name="comorb_buying" value="Achat compulsif"/> Achat compulsif</label>
+  
+  <label><input type="checkbox" name="comorb_depressive" value="Troubles dépressifs et bipolaires - Surtout trouble dépressif majeur"/> Troubles dépressifs et bipolaires - Surtout trouble dépressif majeur</label>
+  
+  <label><input type="checkbox" name="comorb_anxiety" value="Troubles anxieux"/> Troubles anxieux</label>
+  
+  <label><input type="checkbox" name="comorb_eating" value="Troubles de l'alimentation - Surtout boulimie nerveuse"/> Troubles de l'alimentation - Surtout boulimie nerveuse</label>
+  
+  <label><input type="checkbox" name="comorb_personality" value="Troubles de personnalité"/> Troubles de personnalité</label>
+  
+  <label><input type="checkbox" name="comorb_substance" value="Troubles liés à l'utilisation de substances - Surtout trouble lié à l'alcool"/> Troubles liés à l'utilisation de substances - Surtout trouble lié à l'alcool</label>
+  
+  <label><input type="checkbox" name="comorb_disruptive" value="Autres troubles disruptifs, du contrôle des impulsions et des conduites"/> Autres troubles disruptifs, du contrôle des impulsions et des conduites</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let tousLesChoix = {
-  critereA: [],
-  critereB: false,
-  critereC: [],
-  critereD: [],
-  critereE: []
-};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-function validerCritereA() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereA = choix;
-    document.getElementById("critereB").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
-  }
-}
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerCritereB() {
-  if (document.getElementById("choixB").checked) {
-    tousLesChoix.critereB = true;
-    document.getElementById("critereC").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère B.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereC() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereC = choix;
-    document.getElementById("critereD").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereD() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereD = choix;
-    document.getElementById("critereE").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function afficherResume() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereE = choix;
-    genererResume();
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère E.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function genererResume() {
-  let html = "<div class='resultat-box'>";
-  html += "<div class='resume-section'>";
-  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
-  
-  html += "<h4>Critère A – Échec récurrent à résister aux impulsions de voler</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère B – Tension croissante avant le vol</h4>";
-  html += "<ul class='choix-list'>";
-  html += "<li>✓ Sensation croissante de tension immédiatement avant le vol</li>";
-  html += "</ul>";
-  
-  html += "<h4>Critère C – Plaisir, gratification ou soulagement</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère D – Exclusion de motivations spécifiques</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère E – Diagnostic différentiel</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereE.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<div class='code-section'>";
-  html += "<strong>Code diagnostique :</strong> F63.2<br/>";
-  html += "<strong>Diagnostic :</strong> F63.2 Kleptomanie";
-  html += "</div>";
-  
-  html += "</div>";
-  
-  html += "<div class='boutons-validation'>";
-  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
-  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
-  html += "</div>";
-  html += "</div>";
-  
-  document.getElementById("resultat").innerHTML = html;
-  document.getElementById("resultat").style.display = "block";
-}
-
-function validerFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">

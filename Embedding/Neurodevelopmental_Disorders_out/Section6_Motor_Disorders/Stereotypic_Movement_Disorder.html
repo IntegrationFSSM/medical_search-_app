@@ -31,40 +31,7 @@
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
     .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,42 +56,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
-    .severity-desc {
-      background: #f9f9f9;
-      border-left: 3px solid #8cc63f;
-      padding: 8px;
-      margin: 8px 0;
-      font-size: 0.85em;
     }
   </style>
 
@@ -198,25 +133,12 @@
   <label><input type="checkbox" name="association" value="Associé à condition génétique ou autre condition médicale connue"/> Associé à condition génétique ou autre condition médicale connue</label>
   <label><input type="checkbox" name="association" value="Associé à trouble neurodéveloppemental"/> Associé à trouble neurodéveloppemental</label>
   <label><input type="checkbox" name="association" value="Associé à facteur environnemental"/> Associé à facteur environnemental</label>
-  <div class="note-box">
-    <strong>Exemples :</strong> Syndrome de Lesch-Nyhan, trouble du développement intellectuel (déficience intellectuelle), exposition intra-utérine à l'alcool
-  </div>
+  <label><input type="checkbox" name="association" value="Exemples: Lesch-Nyhan, déficience intellectuelle, exposition intra-utérine alcool"/> Exemples: Lesch-Nyhan, déficience intellectuelle, exposition intra-utérine alcool</label>
   
   <p style="margin-top: 15px;"><strong>Sévérité actuelle :</strong></p>
-  <label><input type="radio" name="severite" value="Léger"/> <strong>Léger</strong></label>
-  <div class="severity-desc">
-    Symptômes facilement supprimés par stimulus sensoriel ou distraction
-  </div>
-  
-  <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré</strong></label>
-  <div class="severity-desc">
-    Symptômes nécessitent mesures protectrices explicites et modification comportementale
-  </div>
-  
-  <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère</strong></label>
-  <div class="severity-desc">
-    Surveillance continue et mesures protectrices requises pour prévenir lésion sérieuse
-  </div>
+  <label><input type="radio" name="severite" value="Léger"/> Léger</label>
+  <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
+  <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
   
   <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>

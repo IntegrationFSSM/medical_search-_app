@@ -26,95 +26,64 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -124,6 +93,8 @@
     <h2>Évaluation du Trouble de Rumination – DSM-5-TR</h2>
   </div>
 </div>
+
+<h2 class="section-title">Les critères diagnostiques</h2>
 
 <form id="formulaire">
 
@@ -136,178 +107,183 @@
   <label><input type="checkbox" name="critereA" value="Nourriture régurgitée peut être remâchée"/> Nourriture régurgitée peut être remâchée</label>
   <label><input type="checkbox" name="critereA" value="Nourriture régurgitée peut être re-avalée"/> Nourriture régurgitée peut être re-avalée</label>
   <label><input type="checkbox" name="critereA" value="Nourriture régurgitée peut être recrachée"/> Nourriture régurgitée peut être recrachée</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Exclusion des affections gastro-intestinales ou médicales</legend>
   <p class="subtitle">La régurgitation répétée n'est pas attribuable à une affection gastro-intestinale associée ou à une autre affection médicale</p>
   <label><input type="checkbox" name="critereB" value="Pas attribuable à reflux gastro-œsophagien"/> Pas attribuable à reflux gastro-œsophagien</label>
   <label><input type="checkbox" name="critereB" value="Pas attribuable à sténose pylorique"/> Pas attribuable à sténose pylorique</label>
   <label><input type="checkbox" name="critereB" value="Pas attribuable à autre affection gastro-intestinale"/> Pas attribuable à autre affection gastro-intestinale</label>
   <label><input type="checkbox" name="critereB" value="Pas attribuable à autre affection médicale"/> Pas attribuable à autre affection médicale</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Exclusion des troubles alimentaires</legend>
   <p class="subtitle">La perturbation alimentaire ne survient pas exclusivement au cours d'autres troubles alimentaires</p>
   <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de l'anorexie mentale"/> Ne survient pas exclusivement au cours de l'anorexie mentale</label>
   <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours de la boulimie"/> Ne survient pas exclusivement au cours de la boulimie</label>
   <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours du trouble de l'hyperphagie boulimique"/> Ne survient pas exclusivement au cours du trouble de l'hyperphagie boulimique</label>
   <label><input type="checkbox" name="critereC" value="Ne survient pas exclusivement au cours du trouble de restriction/évitement de l'apport alimentaire"/> Ne survient pas exclusivement au cours du trouble de restriction/évitement de l'apport alimentaire</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Sévérité suffisante si dans contexte d'autre trouble mental</legend>
   <p class="subtitle">Si les symptômes surviennent dans le contexte d'un autre trouble mental, ils sont suffisamment sévères pour justifier une attention clinique additionnelle</p>
-  <div class="note-box">
-    <strong>Note :</strong> Si les symptômes surviennent dans le contexte d'un autre trouble mental (déficience intellectuelle ou autre trouble neurodéveloppemental), ils doivent être suffisamment sévères pour justifier une attention clinique additionnelle.
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;"><strong>Note :</strong> Si les symptômes surviennent dans le contexte d'un autre trouble mental (déficience intellectuelle ou autre trouble neurodéveloppemental), ils doivent être suffisamment sévères pour justifier une attention clinique additionnelle.</p>
   <label><input type="checkbox" name="critereD" value="Si contexte d'autre trouble mental : sévérité suffisante pour attention additionnelle"/> Si dans le contexte d'un autre trouble mental : sévérité suffisante pour justifier attention clinique additionnelle</label>
   <label><input type="checkbox" name="critereD" value="Pas dans le contexte d'un autre trouble mental"/> Pas dans le contexte d'un autre trouble mental</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Rémission -->
-<fieldset id="remission" class="hidden">
+<fieldset id="remission">
   <legend>Rémission (optionnel)</legend>
   <p class="subtitle">Préciser si applicable</p>
   <label><input type="radio" name="remission" value="En rémission"/> En rémission : Après que les critères complets aient été remplis, les critères n'ont pas été remplis pendant une période prolongée</label>
   <label><input type="radio" name="remission" value="Non applicable"/> Non applicable (trouble actif)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier</p>
+  
+  <label><input type="checkbox" name="diff_gastrointestinal" value="Affections gastro-intestinales - Reflux gastro-œsophagien, gastroparesie, sténose pylorique, hernie hiatale, syndrome de Sandifer"/> Affections gastro-intestinales - Reflux gastro-œsophagien, gastroparesie, sténose pylorique, hernie hiatale, syndrome de Sandifer</label>
+  
+  <label><input type="checkbox" name="diff_anorexia" value="Anorexie mentale et boulimie nerveuse - Régurgitation avec recrachage de nourriture comme moyen d'éliminer calories ingérées"/> Anorexie mentale et boulimie nerveuse - Régurgitation avec recrachage de nourriture comme moyen d'éliminer calories ingérées</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles associés</p>
+  
+  <label><input type="checkbox" name="comorb_medical" value="Affection médicale concomitante - Régurgitation avec rumination associée peut survenir"/> Affection médicale concomitante - Régurgitation avec rumination associée peut survenir</label>
+  
+  <label><input type="checkbox" name="comorb_mental" value="Autre trouble mental - Trouble d'anxiété généralisée, autres troubles mentaux"/> Autre trouble mental - Trouble d'anxiété généralisée, autres troubles mentaux</label>
+  
+  <label><input type="checkbox" name="comorb_severity" value="Sévérité suffisante - Si dans contexte d'autre trouble, sévérité doit dépasser celle habituellement associée"/> Sévérité suffisante - Si dans contexte d'autre trouble, sévérité doit dépasser celle habituellement associée</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let tousLesChoix = {
-  critereA: [],
-  critereB: [],
-  critereC: [],
-  critereD: [],
-  remission: ""
-};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-function validerCritereA() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereA = choix;
-    document.getElementById("critereB").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
-  }
-}
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerCritereB() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereB = choix;
-    document.getElementById("critereC").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereC() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereC = choix;
-    document.getElementById("critereD").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereD() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereD = choix;
-    document.getElementById("remission").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function afficherResume() {
-  const remission = document.querySelector("input[name='remission']:checked");
-  if (!remission) {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez sélectionner une option de rémission.", confirmButtonColor: "#667eea"});
-    return;
-  }
-  tousLesChoix.remission = remission.value;
-  genererResume();
-}
-
-function genererResume() {
-  let html = "<div class='resultat-box'>";
-  html += "<div class='resume-section'>";
-  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
-  
-  html += "<h4>Critère A – Régurgitation répétée de nourriture</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère B – Exclusion des affections gastro-intestinales/médicales</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère C – Exclusion des troubles alimentaires</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère D – Sévérité suffisante si dans contexte d'autre trouble</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  if (tousLesChoix.remission !== "Non applicable") {
-    html += "<h4>Rémission</h4>";
-    html += "<ul class='choix-list'>";
-    html += "<li>✓ " + tousLesChoix.remission + "</li>";
-    html += "</ul>";
-  }
-  
-  html += "<div class='code-section'>";
-  html += "<strong>Code diagnostique :</strong> F98.21<br/>";
-  html += "<strong>Diagnostic :</strong> F98.21 Trouble de rumination";
-  if (tousLesChoix.remission !== "Non applicable") {
-    html += ", " + tousLesChoix.remission.toLowerCase();
-  }
-  html += "</div>";
-  
-  html += "</div>";
-  
-  html += "<div class='boutons-validation'>";
-  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
-  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
-  html += "</div>";
-  html += "</div>";
-  
-  document.getElementById("resultat").innerHTML = html;
-  document.getElementById("resultat").style.display = "block";
-}
-
-function validerFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
+
+<div id="resultat"></div>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>

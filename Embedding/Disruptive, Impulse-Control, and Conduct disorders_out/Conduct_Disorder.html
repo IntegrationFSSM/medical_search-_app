@@ -26,97 +26,62 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
-    }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
     }
     .category-title {
       font-weight: bold;
@@ -125,9 +90,6 @@
       margin-bottom: 5px;
     }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -138,15 +100,15 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Pattern répétitif et persistant (≥3 sur 15 dans les 12 derniers mois, ≥1 dans les 6 derniers mois)</legend>
   <p class="subtitle">Violation des droits fondamentaux d'autrui ou des normes/règles sociétales majeures appropriées à l'âge</p>
-  <div class="warning-box">
-    ⚠️ <strong>Important :</strong> Au moins 3 critères dans les 12 derniers mois, dont au moins 1 dans les 6 derniers mois.
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-weight: bold; margin: 10px 0;">⚠️ Important : Au moins 3 critères dans les 12 derniers mois, dont au moins 1 dans les 6 derniers mois.</p>
   
   <p class="category-title">AGRESSION ENVERS LES PERSONNES ET LES ANIMAUX</p>
   <label><input type="checkbox" name="critereA" value="1. Brutalise, menace ou intimide souvent autrui"/> 1. Brutalise, menace ou intimide souvent autrui</label>
@@ -171,104 +133,203 @@
   <label><input type="checkbox" name="critereA" value="14. A fugué au moins 2 fois ou 1 fois sans retour pendant longue période"/> 14. A fugué au moins 2 fois du domicile parental, ou 1 fois sans retour pendant longue période</label>
   <label><input type="checkbox" name="critereA" value="15. Fait souvent l'école buissonnière (début avant 13 ans)"/> 15. Fait souvent l'école buissonnière (début avant 13 ans)</label>
   
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Altération du fonctionnement</legend>
   <p class="subtitle">La perturbation du comportement cause une altération cliniquement significative</p>
   <label><input type="checkbox" name="critereB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
   <label><input type="checkbox" name="critereB" value="Altération du fonctionnement académique"/> Altération du fonctionnement académique</label>
   <label><input type="checkbox" name="critereB" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Exclusion du trouble de personnalité antisociale</legend>
   <p class="subtitle">Si l'individu a 18 ans ou plus, les critères du trouble de personnalité antisociale ne sont pas remplis</p>
   <label><input type="checkbox" id="choixC" value="Critères trouble personnalité antisociale non remplis"/> Si ≥18 ans, les critères du trouble de personnalité antisociale ne sont pas remplis</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Type de début -->
-<fieldset id="typeDebut" class="hidden">
+<fieldset id="typeDebut">
   <legend>Type de début (sous-type)</legend>
   <p class="subtitle">Préciser l'âge de début des symptômes</p>
   <label><input type="radio" name="typeDebut" value="F91.1 - Début dans l'enfance"/> <strong>F91.1</strong> - Début dans l'enfance : Au moins un symptôme avant 10 ans</label>
   <label><input type="radio" name="typeDebut" value="F91.2 - Début à l'adolescence"/> <strong>F91.2</strong> - Début à l'adolescence : Aucun symptôme avant 10 ans</label>
   <label><input type="radio" name="typeDebut" value="F91.9 - Début non spécifié"/> <strong>F91.9</strong> - Début non spécifié : Informations insuffisantes pour déterminer si début avant ou après 10 ans</label>
-  <button type="button" onclick="validerTypeDebut()">✔️ Valider le type de début</button>
 </fieldset>
 
 <!-- Émotions prosociales limitées -->
-<fieldset id="prosocial" class="hidden">
+<fieldset id="prosocial">
   <legend>Spécificateur : Avec émotions prosociales limitées (optionnel)</legend>
   <p class="subtitle">Au moins 2 des 4 caractéristiques suivantes de manière persistante pendant ≥12 mois, dans plusieurs relations et contextes</p>
-  <div class="note-box">
-    <strong>Note :</strong> Ces caractéristiques reflètent le pattern typique de fonctionnement interpersonnel et émotionnel, pas seulement des occurrences occasionnelles. Sources d'information multiples nécessaires (parents, enseignants, collègues, pairs).
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;">Note : Ces caractéristiques reflètent le pattern typique de fonctionnement interpersonnel et émotionnel, pas seulement des occurrences occasionnelles. Sources d'information multiples nécessaires (parents, enseignants, collègues, pairs).
+  </p>
   <label><input type="checkbox" name="prosocial" value="Absence de remords ou de culpabilité"/> <strong>Absence de remords ou de culpabilité :</strong> Ne se sent pas mal ou coupable après avoir fait quelque chose de mal (exclure remords exprimé seulement quand pris/puni). Manque général de préoccupation pour les conséquences négatives</label>
   <label><input type="checkbox" name="prosocial" value="Insensible - manque d'empathie"/> <strong>Insensible - manque d'empathie :</strong> Ignore et ne se soucie pas des sentiments d'autrui. Décrit comme froid et indifférent. Plus préoccupé par les effets sur soi que sur autrui</label>
   <label><input type="checkbox" name="prosocial" value="Indifférent à la performance"/> <strong>Indifférent à la performance :</strong> Ne montre pas de préoccupation pour une performance médiocre/problématique (école, travail). Ne fournit pas l'effort nécessaire, blâme autrui</label>
   <label><input type="checkbox" name="prosocial" value="Affect superficiel ou déficient"/> <strong>Affect superficiel ou déficient :</strong> N'exprime pas de sentiments ou émotions sauf de manière superficielle, non sincère (peut activer/désactiver émotions rapidement, ou utilise émotions pour manipuler/intimider)</label>
-  <button type="button" onclick="validerProsocial()">✔️ Valider le spécificateur</button>
 </fieldset>
 
 <!-- Sévérité -->
-<fieldset id="severite" class="hidden">
+<fieldset id="severite">
   <legend>Sévérité actuelle</legend>
   <p class="subtitle">Préciser la sévérité actuelle du trouble</p>
   <label><input type="radio" name="severite" value="Léger"/> <strong>Léger :</strong> Peu ou pas de problèmes de conduite au-delà de ceux requis pour le diagnostic, dommages relativement mineurs (mensonges, absentéisme, sorties nocturnes sans permission)</label>
   <label><input type="radio" name="severite" value="Modéré"/> <strong>Modéré :</strong> Nombre de problèmes et effets sur autrui intermédiaires entre léger et sévère (vol sans confrontation, vandalisme)</label>
   <label><input type="radio" name="severite" value="Sévère"/> <strong>Sévère :</strong> Nombreux problèmes au-delà de ceux requis, ou dommages considérables (activité sexuelle forcée, cruauté physique, arme, vol avec confrontation, effraction)</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier du trouble des conduites</p>
+  
+  <label><input type="checkbox" name="diff_oppositional" value="Trouble oppositionnel avec provocation - Comportements de nature moins sévère, problèmes de dysrégulation émotionnelle"/> Trouble oppositionnel avec provocation - Comportements de nature moins sévère, problèmes de dysrégulation émotionnelle</label>
+  
+  <label><input type="checkbox" name="diff_adhd" value="TDAH - Comportement hyperactif/impulsif ne viole pas normes sociétales ou droits d'autrui"/> TDAH - Comportement hyperactif/impulsif ne viole pas normes sociétales ou droits d'autrui</label>
+  
+  <label><input type="checkbox" name="diff_depressive" value="Troubles dépressifs et bipolaires - Distinction basée sur évolution (conduites présentes sans trouble de l'humeur)"/> Troubles dépressifs et bipolaires - Distinction basée sur évolution (conduites présentes sans trouble de l'humeur)</label>
+  
+  <label><input type="checkbox" name="diff_explosive" value="Trouble explosif intermittent - Agression limitée à agression impulsive, non préméditée"/> Trouble explosif intermittent - Agression limitée à agression impulsive, non préméditée</label>
+  
+  <label><input type="checkbox" name="diff_adjustment" value="Troubles de l'adaptation - Développement en association avec facteur de stress psychosocial"/> Troubles de l'adaptation - Développement en association avec facteur de stress psychosocial</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles associés</p>
+  
+  <label><input type="checkbox" name="comorb_adhd" value="TDAH et trouble oppositionnel avec provocation - Présentation comorbide prédit pires résultats"/> TDAH et trouble oppositionnel avec provocation - Présentation comorbide prédit pires résultats</label>
+  
+  <label><input type="checkbox" name="comorb_personality" value="Troubles de personnalité - Caractéristiques associées à personnalité antisociale"/> Troubles de personnalité - Caractéristiques associées à personnalité antisociale</label>
+  
+  <label><input type="checkbox" name="comorb_learning" value="Trouble d'apprentissage spécifique"/> Trouble d'apprentissage spécifique</label>
+  
+  <label><input type="checkbox" name="comorb_anxiety" value="Troubles anxieux"/> Troubles anxieux</label>
+  
+  <label><input type="checkbox" name="comorb_depressive" value="Troubles dépressifs ou bipolaires"/> Troubles dépressifs ou bipolaires</label>
+  
+  <label><input type="checkbox" name="comorb_substance" value="Troubles liés à l'utilisation de substances"/> Troubles liés à l'utilisation de substances</label>
+  
+  <label><input type="checkbox" name="comorb_achievement" value="Rendement scolaire - Souvent inférieur au niveau attendu en lecture et autres compétences verbales"/> Rendement scolaire - Souvent inférieur au niveau attendu en lecture et autres compétences verbales</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let choix={critereA:[],critereB:[],critereC:false,typeDebut:"",prosocial:[],severite:""};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-function validerCritereA(){const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);if(c.length>=3){choix.critereA=c;document.getElementById("critereB").classList.remove("hidden")}else alert("Cochez au moins 3 critères (dont au moins 1 dans les 6 derniers mois)")}
-function validerCritereB(){const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);if(c.length>0){choix.critereB=c;document.getElementById("critereC").classList.remove("hidden")}else alert("Cochez au moins une option")}
-function validerCritereC(){if(document.getElementById("choixC").checked){choix.critereC=true;document.getElementById("typeDebut").classList.remove("hidden")}else alert("Cochez la case")}
-function validerTypeDebut(){const t=document.querySelector("input[name='typeDebut']:checked");if(t){choix.typeDebut=t.value;document.getElementById("prosocial").classList.remove("hidden")}else alert("Sélectionnez un type de début")}
-function validerProsocial(){choix.prosocial=Array.from(document.querySelectorAll("input[name='prosocial']:checked")).map(e=>e.value);document.getElementById("severite").classList.remove("hidden")}
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function afficherResume(){
-  const s=document.querySelector("input[name='severite']:checked");
-  if(!s){Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez une sévérité", confirmButtonColor: "#667eea"});return}
-  choix.severite=s.value;
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  h+="<h4>Critère A – Pattern de comportements ("+choix.critereA.length+" sur 15)</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  h+="<h4>Critère B – Altération du fonctionnement</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  h+="<h4>Critère C – Exclusion</h4><ul class='choix-list'><li>✓ Critères trouble personnalité antisociale non remplis (si ≥18 ans)</li></ul>";
-  
-  const code=choix.typeDebut.split(" - ")[0];
-  const typeLabel=choix.typeDebut.split(" - ")[1];
-  
-  h+="<h4>Type de début</h4><ul class='choix-list'><li>✓ "+code+" - "+typeLabel+"</li></ul>";
-  
-  if(choix.prosocial.length>0){
-    h+="<h4>Spécificateur : Avec émotions prosociales limitées ("+choix.prosocial.length+" sur 4)</h4><ul class='choix-list'>";
-    choix.prosocial.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  }
-  
-  h+="<h4>Sévérité</h4><ul class='choix-list'><li>✓ "+choix.severite+"</li></ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+code+" Trouble des conduites, "+typeLabel.toLowerCase()+", sévérité "+choix.severite.toLowerCase();
-  if(choix.prosocial.length>=2)h+=", avec émotions prosociales limitées";
-  h+="</div></div>";
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
@@ -277,19 +338,6 @@ function afficherResume(){
 </footer>
 
 
-
-
-<script>
-function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-</script>
 
 </body>
 </html>

@@ -26,95 +26,66 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+        .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-    }
   </style>
 
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 
@@ -125,6 +96,8 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
@@ -134,11 +107,11 @@
   <label><input type="checkbox" name="critereA" value="Mictions répétées dans le lit ou les vêtements"/> Mictions répétées dans le lit ou les vêtements</label>
   <label><input type="checkbox" name="critereA" value="Involontaire"/> Involontaire</label>
   <label><input type="checkbox" name="critereA" value="Intentionnel"/> Intentionnel</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+  
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Signification clinique</legend>
   <p class="subtitle">Manifestée par une fréquence d'au moins 2 fois par semaine pendant au moins 3 mois consécutifs OU présence de détresse/altération cliniquement significative</p>
   <label><input type="checkbox" name="critereB" value="Fréquence d'au moins 2 fois par semaine"/> Fréquence d'au moins 2 fois par semaine</label>
@@ -147,161 +120,190 @@
   <label><input type="checkbox" name="critereB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
   <label><input type="checkbox" name="critereB" value="Altération du fonctionnement académique (professionnel)"/> Altération du fonctionnement académique (professionnel)</label>
   <label><input type="checkbox" name="critereB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+  
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Âge chronologique</legend>
   <p class="subtitle">L'âge chronologique est d'au moins 5 ans (ou niveau de développement équivalent)</p>
   <label><input type="checkbox" id="choixC" value="Âge chronologique ≥5 ans"/> Âge chronologique ≥5 ans (ou niveau de développement équivalent)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+  
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion des causes organiques</legend>
   <p class="subtitle">Le comportement n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
   <label><input type="checkbox" name="critereD" value="Pas attribuable à une substance (diurétique, médicament antipsychotique)"/> Pas attribuable à une substance (ex: diurétique, médicament antipsychotique)</label>
   <label><input type="checkbox" name="critereD" value="Pas attribuable à une affection médicale (diabète, spina bifida, trouble convulsif)"/> Pas attribuable à une affection médicale (ex: diabète, spina bifida, trouble convulsif)</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
+  
 </fieldset>
 
 <!-- Sous-type -->
-<fieldset id="soustype" class="hidden">
+<fieldset id="soustype">
   <legend>Sous-type</legend>
   <p class="subtitle">Préciser le sous-type basé sur le moment des mictions</p>
-  <div class="note-box">
-    <strong>Nocturne seulement (énurésie monosymptomatique) :</strong> Sous-type le plus fréquent. Incontinence uniquement pendant le sommeil nocturne, typiquement durant le premier tiers de la nuit.<br/><br/>
-    <strong>Diurne seulement (incontinence urinaire) :</strong> Se produit en l'absence d'énurésie nocturne. Deux groupes : (1) "incontinence d'urgence" avec symptômes d'urgence soudaine et instabilité du détrusor, (2) "report de miction" où l'individu diffère consciemment les envies de miction jusqu'à l'incontinence.<br/><br/>
-    <strong>Nocturne et diurne (énurésie non-monosymptomatique) :</strong> Combinaison des deux sous-types ci-dessus.
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;"><strong>Nocturne seulement (énurésie monosymptomatique) :</strong> Sous-type le plus fréquent. Incontinence uniquement pendant le sommeil nocturne, typiquement durant le premier tiers de la nuit.</p>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;"><strong>Diurne seulement (incontinence urinaire) :</strong> Se produit en l'absence d'énurésie nocturne. Deux groupes : (1) "incontinence d'urgence" avec symptômes d'urgence soudaine et instabilité du détrusor, (2) "report de miction" où l'individu diffère consciemment les envies de miction jusqu'à l'incontinence.</p>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;"><strong>Nocturne et diurne (énurésie non-monosymptomatique) :</strong> Combinaison des deux sous-types ci-dessus.</p>
   <label><input type="radio" name="soustype" value="F98.0 - Nocturne seulement"/> <strong>F98.0</strong> - Nocturne seulement : Miction uniquement pendant le sommeil nocturne</label>
   <label><input type="radio" name="soustype" value="F98.0 - Diurne seulement"/> <strong>F98.0</strong> - Diurne seulement : Miction pendant les heures d'éveil</label>
   <label><input type="radio" name="soustype" value="F98.0 - Nocturne et diurne"/> <strong>F98.0</strong> - Nocturne et diurne : Combinaison des deux sous-types</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  
+</fieldset>
+
+
+
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier</p>
+  
+  <label><input type="checkbox" name="diff_Vessie_neurog_ne_ou_autre_affection_m_dicale___Dia_0" value="Vessie neurogène ou autre affection médicale - Diagnostic d'énurésie non fait en présence de vessie neurogène ou autre condition structurelle (valve urétrale postérieure, uretère ectopique) ou autre a"/> Vessie neurogène ou autre affection médicale - Diagnostic d'énurésie non fait en présence de vessie neurogène ou autre condition structurelle (valve urétrale postérieure, uretère ectopique) ou autre affection médicale causant polyurie ou urgence</label>
+  
+  <label><input type="checkbox" name="diff_Diab_te_non_trait__ou_diab_te_insipide___Peut_caus_1" value="Diabète non traité ou diabète insipide - Peut causer polyurie ou urgence, diagnostic d'énurésie compatible si incontinence urinaire régulièrement présente avant développement de l'affection médicale"/> Diabète non traité ou diabète insipide - Peut causer polyurie ou urgence, diagnostic d'énurésie compatible si incontinence urinaire régulièrement présente avant développement de l'affection médicale</label>
+  
+  <label><input type="checkbox" name="diff_Infection_urinaire_aigu____Diagnostic_d__nur_sie_n_2" value="Infection urinaire aiguë - Diagnostic d'énurésie non fait pendant infection urinaire aiguë"/> Infection urinaire aiguë - Diagnostic d'énurésie non fait pendant infection urinaire aiguë</label>
+  
+  <label><input type="checkbox" name="diff_Effets_secondaires_de_m_dicaments____nur_sie_peut__3" value="Effets secondaires de médicaments - Énurésie peut survenir pendant traitement avec médicaments antipsychotiques, diurétiques ou autres médicaments induisant constipation, polyurie ou altérations du fo"/> Effets secondaires de médicaments - Énurésie peut survenir pendant traitement avec médicaments antipsychotiques, diurétiques ou autres médicaments induisant constipation, polyurie ou altérations du fonctionnement exécutif</label>
+  
+  <label><input type="checkbox" name="diff_Diagnostic_d__nur_sie_peut__tre_fait_si_incontinen_4" value="Diagnostic d'énurésie peut être fait si incontinence urinaire régulièrement présente avant traitement avec médicament"/> Diagnostic d'énurésie peut être fait si incontinence urinaire régulièrement présente avant traitement avec médicament</label>
+  
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles associés</p>
+  
+  <label><input type="checkbox" name="comorb_Retards_de_d_veloppement___Retards_de_parole__lang_0" value="Retards de développement - Retards de parole, langage, apprentissage et habiletés motrices présents chez portion d'enfants avec énurésie"/> Retards de développement - Retards de parole, langage, apprentissage et habiletés motrices présents chez portion d'enfants avec énurésie</label>
+  
+  <label><input type="checkbox" name="comorb_Encopr_sie_et_constipation___Pr_sentes_dans_incont_1" value="Encoprésie et constipation - Présentes dans incontinence diurne et nocturne"/> Encoprésie et constipation - Présentes dans incontinence diurne et nocturne</label>
+  
+  <label><input type="checkbox" name="comorb_Syndrome_des_jambes_sans_repos_et_parasomnies___Tr_2" value="Syndrome des jambes sans repos et parasomnies - Troubles d'éveil du sommeil non-REM (somnambulisme et terreurs nocturnes) associés à énurésie nocturne"/> Syndrome des jambes sans repos et parasomnies - Troubles d'éveil du sommeil non-REM (somnambulisme et terreurs nocturnes) associés à énurésie nocturne</label>
+  
+  <label><input type="checkbox" name="comorb_Ronflement_lourd_ou_apn_es_du_sommeil___Lien_entre_3" value="Ronflement lourd ou apnées du sommeil - Lien entre énurésie nocturne et troubles respiratoires du sommeil"/> Ronflement lourd ou apnées du sommeil - Lien entre énurésie nocturne et troubles respiratoires du sommeil</label>
+  
+  <label><input type="checkbox" name="comorb_Infections_urinaires___Plus_fr_quentes_chez_enfant_4" value="Infections urinaires - Plus fréquentes chez enfants avec incontinence urinaire diurne et énurésie nocturne non-monosymptomatique, surtout sous-type diurne"/> Infections urinaires - Plus fréquentes chez enfants avec incontinence urinaire diurne et énurésie nocturne non-monosymptomatique, surtout sous-type diurne</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let tousLesChoix = {
-  critereA: [],
-  critereB: [],
-  critereC: false,
-  critereD: [],
-  soustype: ""
-};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-function validerCritereA() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereA = choix;
-    document.getElementById("critereB").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
-  }
-}
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerCritereB() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereB = choix;
-    document.getElementById("critereC").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereC() {
-  if (document.getElementById("choixC").checked) {
-    tousLesChoix.critereC = true;
-    document.getElementById("critereD").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère C.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereD() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereD = choix;
-    document.getElementById("soustype").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function afficherResume() {
-  const soustype = document.querySelector("input[name='soustype']:checked");
-  if (!soustype) {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez sélectionner un sous-type.", confirmButtonColor: "#667eea"});
-    return;
-  }
-  tousLesChoix.soustype = soustype.value;
-  genererResume();
-}
-
-function genererResume() {
-  let html = "<div class='resultat-box'>";
-  html += "<div class='resume-section'>";
-  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
-  
-  html += "<h4>Critère A – Mictions répétées dans le lit ou les vêtements</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère B – Signification clinique</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère C – Âge chronologique</h4>";
-  html += "<ul class='choix-list'>";
-  html += "<li>✓ Âge chronologique ≥5 ans</li>";
-  html += "</ul>";
-  
-  html += "<h4>Critère D – Exclusion des causes organiques</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Sous-type</h4>";
-  html += "<ul class='choix-list'>";
-  html += "<li>✓ " + tousLesChoix.soustype + "</li>";
-  html += "</ul>";
-  
-  html += "<div class='code-section'>";
-  html += "<strong>Code diagnostique :</strong> F98.0<br/>";
-  html += "<strong>Diagnostic :</strong> " + tousLesChoix.soustype;
-  html += "</div>";
-  
-  html += "</div>";
-  
-  html += "<div class='boutons-validation'>";
-  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
-  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
-  html += "</div>";
-  html += "</div>";
-  
-  document.getElementById("resultat").innerHTML = html;
-  document.getElementById("resultat").style.display = "block";
-}
-
-function validerFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
+</form>
+
+<div id="resultat"></div>
+
+
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>

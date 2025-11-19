@@ -279,12 +279,13 @@ Réponds UNIQUEMENT par un JSON:
             'message': message
         }
     
-    def generate_ai_diagnosis(self, pathology_name, form_data, similarity_score, medical_text=""):
+    def generate_ai_diagnosis(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
         """
-        Générer un plan de traitement détaillé avec OpenAI basé sur les données du formulaire et le texte médical.
+        Générer un plan de traitement détaillé avec OpenAI basé sur les données du formulaire, le texte médical, et l'historique.
         
         Args:
             pathology_name: Nom de la pathologie validée
+            historical_symptoms: Liste des symptômes/critères des consultations précédentes (optionnel)
             form_data: Données du formulaire (dict avec tous les critères cochés)
             similarity_score: Score de similarité de la recherche
             medical_text: Texte médical extrait du fichier source (documentation DSM-5-TR)
@@ -293,8 +294,8 @@ Réponds UNIQUEMENT par un JSON:
             dict: Plan de traitement généré par l'IA
         """
         try:
-            # Construire le prompt pour OpenAI avec le texte médical
-            prompt = self._build_diagnosis_prompt(pathology_name, form_data, similarity_score, medical_text)
+            # Construire le prompt pour OpenAI avec le texte médical et l'historique
+            prompt = self._build_diagnosis_prompt(pathology_name, form_data, similarity_score, medical_text, historical_symptoms)
             
             # Appeler OpenAI GPT-4
             response = self.client.chat.completions.create(
@@ -330,8 +331,8 @@ Réponds UNIQUEMENT par un JSON:
                 'pathology': pathology_name
             }
     
-    def _build_diagnosis_prompt(self, pathology_name, form_data, similarity_score, medical_text=""):
-        """Construire le prompt pour OpenAI avec le texte médical."""
+    def _build_diagnosis_prompt(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
+        """Construire le prompt pour OpenAI avec le texte médical et l'historique du patient."""
         
         prompt = f"""En tant qu'expert psychiatre et médecin traitant, établissez un PLAN DE TRAITEMENT MÉDICAL COMPLET pour le patient.
 
@@ -344,7 +345,20 @@ Réponds UNIQUEMENT par un JSON:
 
 🩺 SYMPTÔMES ET CRITÈRES PRÉSENTS CHEZ LE PATIENT
 
-**Critères validés lors de l'évaluation clinique :**
+**Critères validés lors de l'évaluation clinique actuelle :**
+"""
+        
+        # 🆕 AJOUTER L'HISTORIQUE MÉDICAL
+        if historical_symptoms and len(historical_symptoms) > 0:
+            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX DU PATIENT ({len(historical_symptoms)} symptômes enregistrés):**\n"
+            prompt += "Le patient présente également les antécédents cliniques suivants, issus de consultations précédentes:\n"
+            for i, symptom in enumerate(historical_symptoms[:15], 1):  # Limiter à 15 pour ne pas surcharger
+                prompt += f"  • {symptom}\n"
+            if len(historical_symptoms) > 15:
+                prompt += f"  • ... et {len(historical_symptoms) - 15} autres symptômes enregistrés\n"
+            prompt += "\n**⚠️ IMPORTANT : Tenez compte de ces antécédents dans votre plan de traitement.**\n\n"
+        
+        prompt += """
 """
         
         # Ajouter les données du formulaire

@@ -1,0 +1,20 @@
+Differential Diagnosis
+ Independent mental disorders.
+ Caffeine intoxication may be characterized by symptoms (e.g.,
+ panic attacks) that resemble independent mental disorders. To meet criteria for caffeine
+ intoxication, the symptoms must not be associated with another medical condition or another
+ mental disorder, such as an anxiety disorder, that could better explain them. Manic episodes;
+ panic disorder; generalized anxiety disorder; amphetamine intoxication; sedative, hypnotic, or
+ anxiolytic withdrawal or tobacco withdrawal; sleep disorders; and medication-induced side
+ effects (e.g., akathisia) can cause a clinical picture that is similar to that of caffeine intoxication.
+Caffeine-induced mental disorders.
+ F15.93
+ The temporal relationship of the symptoms to increased
+ caffeine use or to abstinence from caffeine helps to establish the diagnosis. Caffeine intoxication
+ is differentiated from caffeine-induced anxiety disorder, with onset during intoxication (see
+ “Substance/Medication-Induced Anxiety Disorder” in the chapter “Anxiety Disorders”), and
+ caffeine-induced sleep disorder, with onset during intoxication (see “Substance/Medication
+Induced Sleep Disorder” in the chapter “Sleep-Wake Disorders”), because the symptoms (e.g.,
+ anxiety and insomnia, respectively) in these latter disorders are in excess of those usually
+ associated with caffeine intoxication, predominate in the clinical presentation, and are severe
+ enough to warrant independent clinical attention.

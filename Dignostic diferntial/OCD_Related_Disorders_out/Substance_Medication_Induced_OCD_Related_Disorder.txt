@@ -1,0 +1,48 @@
+Differential Diagnosis
+ Substance intoxication and substance withdrawal.
+ Obsessive-compulsive and related disorder
+ symptoms may occur in the context of substance intoxication and substance withdrawal. The
+ diagnosis of the substance-specific intoxication or substance-specific withdrawal will usually
+ suffice to categorize the symptom presentation. A diagnosis of substance/medication-induced
+ obsessive-compulsive and related disorder either with onset during intoxication or with onset
+ during withdrawal should be made instead of a diagnosis of substance intoxication or substance
+ withdrawal if the obsessive-compulsive and related disorder symptoms are judged to be in excess
+ of those usually associated with intoxication or withdrawal and are sufficiently severe to warrant
+ clinical attention.
+ Obsessive-compulsive and related disorder (i.e., not induced by a substance).
+ Substance/medication
+induced obsessive-compulsive and related disorder is distinguished from a primary obsessive
+compulsive and related disorder by considering the onset, course, and other factors with respect
+ to substances/medications. For drugs of abuse, there must be evidence from the history, physical
+ examination, or laboratory findings for use or intoxication. Substance/medication-induced
+ obsessive-compulsive and related disorder arises only in association with intoxication, whereas a
+ primary obsessive-compulsive and related disorder may precede the onset of
+ substance/medication use. The presence of features that are atypical of a primary obsessive
+compulsive and related disorder, such as atypical age at onset of symptoms, may suggest a
+ substance-induced etiology. A primary obsessive-compulsive and related disorder diagnosis is
+ warranted if the symptoms persist for a substantial period of time (about 1 month or longer) after
+Obsessive-compulsive and related disorder due to another medical condition.
+ Delirium.
+ F06.8
+ the end of the substance intoxication or the individual has a history of an obsessive-compulsive
+ and related disorder.
+ If the obsessive
+compulsive and related symptoms are attributable to another medical condition (i.e., rather than
+ to the medication taken for the other medical condition), obsessive-compulsive and related
+ disorder due to another medical condition should be diagnosed. The history often provides the
+ basis for judgment. At times, a change in the treatment for the other medical condition (e.g.,
+ medication substitution or discontinuation) may be needed to determine whether the medication
+ is the causative agent (in which case the symptoms may be better explained by
+ substance/medication-induced obsessive-compulsive and related disorder). If the disturbance is
+ attributable to both another medical condition and substance use, both diagnoses (i.e., obsessive
+compulsive and related disorder due to another medical condition and substance/medication
+induced obsessive-compulsive and related disorder) may be given. When there is insufficient
+ evidence to determine whether the symptoms are attributable to a substance/medication or to
+ another medical condition or are primary (i.e., attributable to neither a substance/medication nor
+ another medical condition), a diagnosis of other specified or unspecified obsessive-compulsive
+ and related disorder would be indicated.
+ 291
+ If obsessive-compulsive and related disorder symptoms occur exclusively during the
+ course of delirium, they are considered to be an associated feature of the delirium and are not
+ diagnosed separately.
+ 

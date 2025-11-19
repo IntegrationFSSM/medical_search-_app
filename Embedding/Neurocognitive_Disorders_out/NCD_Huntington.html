@@ -26,96 +26,64 @@
     font-size: 16px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -126,6 +94,8 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
@@ -134,39 +104,35 @@
   <p class="subtitle">Les critères sont remplis pour un trouble neurocognitif majeur ou léger</p>
   <label><input type="radio" name="critereA" value="Trouble neurocognitif majeur"/> Trouble neurocognitif majeur</label>
   <label><input type="radio" name="critereA" value="Trouble neurocognitif léger"/> Trouble neurocognitif léger</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Début insidieux et progression graduelle</legend>
   <p class="subtitle">Il y a un début insidieux et une progression graduelle</p>
   <label><input type="checkbox" name="critereB" value="Début insidieux"/> Début insidieux</label>
   <label><input type="checkbox" name="critereB" value="Progression graduelle"/> Progression graduelle</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Maladie de Huntington établie cliniquement ou risque</legend>
   <p class="subtitle">Il y a une maladie de Huntington cliniquement établie, ou un risque basé sur l'histoire familiale ou le test génétique</p>
   <label><input type="checkbox" name="critereC" value="Maladie de Huntington cliniquement établie"/> Maladie de Huntington cliniquement établie</label>
   <label><input type="checkbox" name="critereC" value="Risque basé sur histoire familiale"/> Risque basé sur histoire familiale</label>
   <label><input type="checkbox" name="critereC" value="Risque basé sur test génétique"/> Risque basé sur test génétique</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Diagnostic différentiel</legend>
   <p class="subtitle">Le trouble neurocognitif n'est pas attribuable à une autre affection médicale et n'est pas mieux expliqué par un autre trouble mental</p>
   <label><input type="checkbox" name="critereD" value="Pas attribuable à autre affection médicale"/> Pas attribuable à autre affection médicale</label>
   <label><input type="checkbox" name="critereD" value="Pas mieux expliqué par autre trouble mental"/> Pas mieux expliqué par autre trouble mental</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   <p class="subtitle">Préciser les caractéristiques additionnelles</p>
   
@@ -179,87 +145,118 @@
   <label><input type="radio" name="severite" value="Modéré"/> Modéré</label>
   <label><input type="radio" name="severite" value="Sévère"/> Sévère</label>
   <label><input type="radio" name="severite" value="Non applicable"/> Non applicable (trouble neurocognitif léger)</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier</p>
+  
+  <label><input type="checkbox" name="diff_mental" value="Autres troubles mentaux - Symptômes précoces peuvent inclure instabilité d'humeur, irritabilité ou comportements compulsifs suggérant autre trouble mental"/> Autres troubles mentaux - Symptômes précoces peuvent inclure instabilité d'humeur, irritabilité ou comportements compulsifs suggérant autre trouble mental</label>
+  
+  <label><input type="checkbox" name="diff_neurocognitive" value="Autres troubles neurocognitifs - Symptômes précoces, particulièrement dysfonction exécutive et vitesse psychomotrice altérée, peuvent ressembler à autres troubles neurocognitifs"/> Autres troubles neurocognitifs - Symptômes précoces, particulièrement dysfonction exécutive et vitesse psychomotrice altérée, peuvent ressembler à autres troubles neurocognitifs</label>
+  
+  <label><input type="checkbox" name="diff_movement" value="Autres troubles du mouvement - Doit être différenciée d'autres troubles ou conditions associés à chorée (ex: maladie de Wilson, dyskinésie tardive, chorée de Sydenham, lupus érythémateux systémique, chorée sénile)"/> Autres troubles du mouvement - Doit être différenciée d'autres troubles ou conditions associés à chorée (ex: maladie de Wilson, dyskinésie tardive, chorée de Sydenham, lupus érythémateux systémique, chorée sénile)</label>
+  
+  <label><input type="checkbox" name="diff_phenocopy" value="Phénocopie de la maladie de Huntington - Présentation similaire mais sans test génétique positif, résultant de divers facteurs génétiques potentiels"/> Phénocopie de la maladie de Huntington - Présentation similaire mais sans test génétique positif, résultant de divers facteurs génétiques potentiels</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let choix={critereA:"",critereB:[],critereC:[],critereD:[],comportement:"",severite:""};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché
 
-function validerCritereA(){const c=document.querySelector("input[name='critereA']:checked");if(c){choix.critereA=c.value;document.getElementById("critereB").classList.remove("hidden")}else alert("Sélectionnez un type")}
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerCritereB(){const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);if(c.length>0){choix.critereB=c;document.getElementById("critereC").classList.remove("hidden")}else alert("Cochez au moins une option")}
-
-function validerCritereC(){const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);if(c.length>0){choix.critereC=c;document.getElementById("critereD").classList.remove("hidden")}else alert("Cochez au moins une option")}
-
-function validerCritereD(){const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);if(c.length>0){choix.critereD=c;document.getElementById("specificateurs").classList.remove("hidden")}else alert("Cochez au moins une option")}
-
-function afficherResume(){
-  const comp=document.querySelector("input[name='comportement']:checked");
-  const sev=document.querySelector("input[name='severite']:checked");
-  if(!comp||!sev){Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez comportement ET sévérité", confirmButtonColor: "#667eea"});return}
-  choix.comportement=comp.value;
-  choix.severite=sev.value;
-  genererResume();
-}
-
-function genererResume(){
-  let code="";
-  let diag="";
-  const isMajeur=choix.critereA==="Trouble neurocognitif majeur";
-  const avecComp=choix.comportement==="Avec perturbation comportementale";
-  
-  if(isMajeur){
-    code="G10 + "+(avecComp?"F02.81":"F02.80");
-    diag=code+" Trouble neurocognitif majeur dû à la maladie de Huntington, "+choix.comportement.toLowerCase();
-  }else{
-    code="G31.84";
-    diag=code+" Trouble neurocognitif léger dû à la maladie de Huntington, "+choix.comportement.toLowerCase();
-  }
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  h+="<h4>Type de trouble</h4><ul class='choix-list'><li>✓ "+choix.critereA+"</li></ul>";
-  h+="<h4>Critère B – Début et progression</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  h+="<h4>Critère C – Maladie de Huntington</h4><ul class='choix-list'>";
-  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  h+="<h4>Critère D – Diagnostic différentiel</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'><li>✓ "+choix.comportement+"</li>";
-  if(isMajeur&&choix.severite!=="Non applicable")h+="<li>✓ Sévérité: "+choix.severite+"</li>";
-  h+="</ul>";
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  if(isMajeur&&choix.severite!=="Non applicable")h+=" (sévérité "+choix.severite.toLowerCase()+" - à enregistrer mais non codable)";
-  h+="<br/><br/><strong>Note de codage :</strong> Pour trouble majeur, coder d'abord G10 maladie de Huntington, puis le trouble neurocognitif. Pour trouble léger, utiliser uniquement G31.84.";
-  h+="</div></div>";
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
+
+<div id="resultat"></div>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
-
-<script>
-function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-</script>
 
 </body>
 </html>

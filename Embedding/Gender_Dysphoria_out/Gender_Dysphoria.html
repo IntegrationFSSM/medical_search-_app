@@ -26,102 +26,64 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -132,6 +94,8 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Sélection version -->
@@ -140,17 +104,14 @@
   <p class="subtitle">Choisir selon l'âge de l'individu</p>
   <label><input type="radio" name="version" value="enfant"/> Dysphorie de Genre chez les Enfants</label>
   <label><input type="radio" name="version" value="adulte"/> Dysphorie de Genre chez les Adolescents et Adultes</label>
-  <button type="button" onclick="validerVersion()">✔️ Valider</button>
 </fieldset>
 
 <!-- VERSION ENFANTS -->
-<div id="enfant-section" class="hidden">
+<div id="enfant-section">
   <fieldset id="enfantA">
     <legend>Critère A – Incongruence marquée (≥6 mois, ≥6 critères dont A1 obligatoire)</legend>
     <p class="subtitle">Incongruence marquée entre genre vécu/exprimé et genre assigné, durée ≥6 mois</p>
-    <div class="warning-box">
-      ⚠️ <strong>Important :</strong> Au moins 6 des 8 critères suivants, dont le critère A1 est OBLIGATOIRE.
-    </div>
+    <p style="font-size: 0.9em; color: #666; font-weight: bold; margin: 10px 0;">⚠️ <strong>Important :</strong> Au moins 6 des 8 critères suivants, dont le critère A1 est OBLIGATOIRE.</p>
     <label><input type="checkbox" name="enfantA" value="A1. Désir fort d'être de l'autre genre ou insistance qu'on est de l'autre genre (OBLIGATOIRE)"/> <strong>A1.</strong> Désir fort d'être de l'autre genre ou insistance qu'on est de l'autre genre (ou genre alternatif) <strong>[OBLIGATOIRE]</strong></label>
     <label><input type="checkbox" name="enfantA" value="A2. Garçons : préférence forte pour travestissement ou simulation vêtements féminins / Filles : préférence forte pour vêtements masculins et résistance aux vêtements féminins"/> A2. Garçons : préférence forte pour travestissement ou simulation vêtements féminins / Filles : préférence forte pour vêtements masculins et résistance aux vêtements féminins</label>
     <label><input type="checkbox" name="enfantA" value="A3. Préférence forte pour rôles de genre croisé dans jeu de simulation ou fantaisie"/> A3. Préférence forte pour rôles de genre croisé dans jeu de simulation ou fantaisie</label>
@@ -159,120 +120,203 @@
     <label><input type="checkbox" name="enfantA" value="A6. Garçons : rejet fort de jouets/jeux/activités masculins et évitement jeu brutal / Filles : rejet fort de jouets/jeux/activités féminins"/> A6. Garçons : rejet fort de jouets/jeux/activités masculins et évitement jeu brutal / Filles : rejet fort de jouets/jeux/activités féminins</label>
     <label><input type="checkbox" name="enfantA" value="A7. Aversion forte pour son anatomie sexuelle"/> A7. Aversion forte pour son anatomie sexuelle</label>
     <label><input type="checkbox" name="enfantA" value="A8. Désir fort pour caractéristiques sexuelles primaires/secondaires correspondant au genre vécu"/> A8. Désir fort pour caractéristiques sexuelles primaires et/ou secondaires correspondant au genre vécu</label>
-    <button type="button" onclick="validerEnfantA()">✔️ Valider le critère A</button>
   </fieldset>
 
-  <fieldset id="enfantB" class="hidden">
+  <fieldset id="enfantB">
     <legend>Critère B – Détresse ou altération du fonctionnement</legend>
     <p class="subtitle">La condition est associée à une détresse ou altération cliniquement significative</p>
     <label><input type="checkbox" name="enfantB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
     <label><input type="checkbox" name="enfantB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
     <label><input type="checkbox" name="enfantB" value="Altération du fonctionnement scolaire"/> Altération du fonctionnement scolaire</label>
     <label><input type="checkbox" name="enfantB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-    <button type="button" onclick="validerEnfantB()">✔️ Valider le critère B</button>
   </fieldset>
 </div>
 
 <!-- VERSION ADOLESCENTS/ADULTES -->
-<div id="adulte-section" class="hidden">
+<div id="adulte-section">
   <fieldset id="adulteA">
     <legend>Critère A – Incongruence marquée (≥6 mois, ≥2 critères)</legend>
     <p class="subtitle">Incongruence marquée entre genre vécu/exprimé et genre assigné, durée ≥6 mois</p>
-    <div class="warning-box">
-      ⚠️ <strong>Important :</strong> Au moins 2 des 6 critères suivants.
-    </div>
+    <p style="font-size: 0.9em; color: #666; font-weight: bold; margin: 10px 0;">⚠️ <strong>Important :</strong> Au moins 2 des 6 critères suivants.</p>
     <label><input type="checkbox" name="adulteA" value="A1. Incongruence marquée entre genre vécu/exprimé et caractéristiques sexuelles primaires/secondaires"/> A1. Incongruence marquée entre genre vécu/exprimé et caractéristiques sexuelles primaires et/ou secondaires (ou chez jeunes adolescents, caractéristiques secondaires anticipées)</label>
     <label><input type="checkbox" name="adulteA" value="A2. Désir fort de se débarrasser de ses caractéristiques sexuelles primaires/secondaires"/> A2. Désir fort de se débarrasser de ses caractéristiques sexuelles primaires et/ou secondaires en raison d'incongruence marquée (ou chez jeunes adolescents, désir de prévenir développement)</label>
     <label><input type="checkbox" name="adulteA" value="A3. Désir fort pour caractéristiques sexuelles primaires/secondaires de l'autre genre"/> A3. Désir fort pour les caractéristiques sexuelles primaires et/ou secondaires de l'autre genre</label>
     <label><input type="checkbox" name="adulteA" value="A4. Désir fort d'être de l'autre genre (ou genre alternatif)"/> A4. Désir fort d'être de l'autre genre (ou genre alternatif différent du genre assigné)</label>
     <label><input type="checkbox" name="adulteA" value="A5. Désir fort d'être traité comme l'autre genre (ou genre alternatif)"/> A5. Désir fort d'être traité comme l'autre genre (ou genre alternatif différent du genre assigné)</label>
     <label><input type="checkbox" name="adulteA" value="A6. Conviction forte d'avoir sentiments et réactions typiques de l'autre genre"/> A6. Conviction forte d'avoir les sentiments et réactions typiques de l'autre genre (ou genre alternatif différent du genre assigné)</label>
-    <button type="button" onclick="validerAdulteA()">✔️ Valider le critère A</button>
   </fieldset>
 
-  <fieldset id="adulteB" class="hidden">
+  <fieldset id="adulteB">
     <legend>Critère B – Détresse ou altération du fonctionnement</legend>
     <p class="subtitle">La condition est associée à une détresse ou altération cliniquement significative</p>
     <label><input type="checkbox" name="adulteB" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
     <label><input type="checkbox" name="adulteB" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
     <label><input type="checkbox" name="adulteB" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
     <label><input type="checkbox" name="adulteB" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-    <button type="button" onclick="validerAdulteB()">✔️ Valider le critère B</button>
   </fieldset>
 </div>
 
 <!-- Spécificateurs communs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   <p class="subtitle">Préciser si applicable</p>
   <label><input type="checkbox" name="specs" value="Avec trouble/différence du développement sexuel"/> Avec trouble/différence du développement sexuel (ex: hyperplasie congénitale des surrénales E25.0, syndrome d'insensibilité aux androgènes E34.50)</label>
   <label><input type="checkbox" name="specs" value="Post-transition (adolescents/adultes uniquement)"/> Post-transition (adolescents/adultes uniquement) : Transition vers vie à temps plein dans genre vécu avec ≥1 procédure/traitement médical d'affirmation de genre</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier</p>
+  
+  <label><input type="checkbox" name="diff_nonconformity" value="Non-conformité aux rôles de genre - Distinguée par désir fort d'être d'un autre genre et étendue/pervasivité des activités variant selon le genre"/> Non-conformité aux rôles de genre - Distinguée par désir fort d'être d'un autre genre et étendue/pervasivité des activités variant selon le genre</label>
+  
+  <label><input type="checkbox" name="diff_transvestic" value="Trouble transvestique - Diagnostiqué chez hommes hétérosexuels/bisexuels pour qui vêtements féminins génèrent excitation sexuelle"/> Trouble transvestique - Diagnostiqué chez hommes hétérosexuels/bisexuels pour qui vêtements féminins génèrent excitation sexuelle</label>
+  
+  <label><input type="checkbox" name="diff_bodydysmorphic" value="Trouble dysmorphique corporel - Focus sur altération/retrait de partie corporelle spécifique perçue comme anormalement formée"/> Trouble dysmorphique corporel - Focus sur altération/retrait de partie corporelle spécifique perçue comme anormalement formée</label>
+  
+  <label><input type="checkbox" name="diff_autism" value="Trouble du spectre de l'autisme - Diagnostic de dysphorie de genre peut être difficile à différencier de préoccupation autistique"/> Trouble du spectre de l'autisme - Diagnostic de dysphorie de genre peut être difficile à différencier de préoccupation autistique</label>
+  
+  <label><input type="checkbox" name="diff_schizophrenia" value="Schizophrénie et autres troubles psychotiques - Délires rares d'appartenir à un autre genre, différenciés par contenu bizarre et évolution avec épisodes psychotiques"/> Schizophrénie et autres troubles psychotiques - Délires rares d'appartenir à un autre genre, différenciés par contenu bizarre et évolution avec épisodes psychotiques</label>
+  
+  <label><input type="checkbox" name="diff_other" value="Autres présentations cliniques - Certains individus avec désir d'émasculinisation développent identité de genre alternative"/> Autres présentations cliniques - Certains individus avec désir d'émasculinisation développent identité de genre alternative</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles associés</p>
+  
+  <label><input type="checkbox" name="comorb_children" value="Enfants - Niveaux élevés de troubles anxieux, troubles disruptifs/impulsifs/contrôle, troubles dépressifs"/> Enfants - Niveaux élevés de troubles anxieux, troubles disruptifs/impulsifs/contrôle, troubles dépressifs</label>
+  
+  <label><input type="checkbox" name="comorb_autism" value="Trouble du spectre de l'autisme - Plus prévalent chez adolescents et adultes avec dysphorie de genre que dans population générale"/> Trouble du spectre de l'autisme - Plus prévalent chez adolescents et adultes avec dysphorie de genre que dans population générale</label>
+  
+  <label><input type="checkbox" name="comorb_adolescents" value="Adolescents et adultes - Taux élevés de troubles mentaux associés, troubles anxieux et dépressifs les plus communs"/> Adolescents et adultes - Taux élevés de troubles mentaux associés, troubles anxieux et dépressifs les plus communs</label>
+  
+  <label><input type="checkbox" name="comorb_ptsd" value="Trouble de stress post-traumatique - Peut se développer chez individus ayant subi harcèlement et violence"/> Trouble de stress post-traumatique - Peut se développer chez individus ayant subi harcèlement et violence</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let choix={version:"",enfantA:[],enfantB:[],adulteA:[],adulteB:[],specs:[]};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-function validerVersion(){const v=document.querySelector("input[name='version']:checked");if(v){choix.version=v.value;if(v.value==="enfant"){document.getElementById("enfant-section").classList.remove("hidden");document.getElementById("adulte-section").classList.add("hidden")}else{document.getElementById("adulte-section").classList.remove("hidden");document.getElementById("enfant-section").classList.add("hidden")}}else alert("Sélectionnez une version")}
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerEnfantA(){const c=Array.from(document.querySelectorAll("input[name='enfantA']:checked")).map(e=>e.value);const a1=c.some(x=>x.startsWith("A1."));if(c.length>=6&&a1){choix.enfantA=c;document.getElementById("enfantB").classList.remove("hidden")}else alert("Cochez au moins 6 critères dont A1 (OBLIGATOIRE)")}
-
-function validerEnfantB(){const c=Array.from(document.querySelectorAll("input[name='enfantB']:checked")).map(e=>e.value);if(c.length>0){choix.enfantB=c;document.getElementById("specificateurs").classList.remove("hidden")}else alert("Cochez au moins une option")}
-
-function validerAdulteA(){const c=Array.from(document.querySelectorAll("input[name='adulteA']:checked")).map(e=>e.value);if(c.length>=2){choix.adulteA=c;document.getElementById("adulteB").classList.remove("hidden")}else alert("Cochez au moins 2 critères")}
-
-function validerAdulteB(){const c=Array.from(document.querySelectorAll("input[name='adulteB']:checked")).map(e=>e.value);if(c.length>0){choix.adulteB=c;document.getElementById("specificateurs").classList.remove("hidden")}else alert("Cochez au moins une option")}
-
-function afficherResume(){
-  choix.specs=Array.from(document.querySelectorAll("input[name='specs']:checked")).map(e=>e.value);
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  h+="<h4>Version : "+(choix.version==="enfant"?"Enfants":"Adolescents et Adultes")+"</h4>";
-  
-  if(choix.version==="enfant"){
-    h+="<h4>Critère A – Incongruence marquée ("+choix.enfantA.length+" sur 8)</h4><ul class='choix-list'>";
-    choix.enfantA.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-    h+="<h4>Critère B – Détresse/altération</h4><ul class='choix-list'>";
-    choix.enfantB.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  }else{
-    h+="<h4>Critère A – Incongruence marquée ("+choix.adulteA.length+" sur 6)</h4><ul class='choix-list'>";
-    choix.adulteA.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-    h+="<h4>Critère B – Détresse/altération</h4><ul class='choix-list'>";
-    choix.adulteB.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>";
-  }
-  
-  if(choix.specs.length>0){h+="<h4>Spécificateurs</h4><ul class='choix-list'>";choix.specs.forEach(s=>h+="<li>✓ "+s+"</li>");h+="</ul>"}
-  
-  h+="<div class='code-section'><strong>Code:</strong> F64.0<br/><strong>Diagnostic:</strong> F64.0 Dysphorie de genre chez les "+(choix.version==="enfant"?"enfants":"adolescents et adultes");
-  if(choix.specs.length>0)h+="<br/><strong>Spécificateurs:</strong> "+choix.specs.join(", ").toLowerCase();
-  h+="</div></div>";
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
+
+<div id="resultat"></div>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
-
-<script>
-function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-</script>
 
 </body>
 </html>

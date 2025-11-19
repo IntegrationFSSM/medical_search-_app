@@ -26,103 +26,65 @@
     font-size: 16px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
-    }
-    .resultat-box {
-      margin-top: 30px;
     }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
     }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
   </style>
 
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -133,116 +95,173 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Difficulté persistante avec production des sons de la parole</legend>
   <p class="subtitle">Difficulté persistante avec la production des sons de la parole qui interfère avec l'intelligibilité de la parole ou empêche la communication verbale de messages</p>
-  <label><input type="checkbox" name="critereA" value="Interfère avec intelligibilité de la parole"/> Interfère avec l'intelligibilité de la parole</label>
-  <label><input type="checkbox" name="critereA" value="Empêche communication verbale de messages"/> Empêche la communication verbale de messages</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+<label><input type="checkbox" name="critereA" value="Interfère avec intelligibilité de la parole"/> Interfère avec l'intelligibilité de la parole</label>
+<label><input type="checkbox" name="critereA" value="Empêche communication verbale de messages"/> Empêche la communication verbale de messages</label>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Limitations dans communication efficace</legend>
   <p class="subtitle">La perturbation cause des limitations dans la communication efficace qui interfèrent avec la participation sociale, réussite académique ou performance professionnelle, individuellement ou en toute combinaison</p>
-  <label><input type="checkbox" name="critereB" value="Limitations interfèrent avec participation sociale"/> Limitations interfèrent avec la participation sociale</label>
-  <label><input type="checkbox" name="critereB" value="Limitations interfèrent avec réussite académique"/> Limitations interfèrent avec la réussite académique</label>
-  <label><input type="checkbox" name="critereB" value="Limitations interfèrent avec performance professionnelle"/> Limitations interfèrent avec la performance professionnelle</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
+<label><input type="checkbox" name="critereB" value="Limitations interfèrent avec participation sociale"/> Limitations interfèrent avec la participation sociale</label>
+<label><input type="checkbox" name="critereB" value="Limitations interfèrent avec réussite académique"/> Limitations interfèrent avec la réussite académique</label>
+<label><input type="checkbox" name="critereB" value="Limitations interfèrent avec performance professionnelle"/> Limitations interfèrent avec la performance professionnelle</label>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Début précoce</legend>
   <p class="subtitle">Le début des symptômes se situe dans la période développementale précoce</p>
-  <label><input type="checkbox" name="critereC" value="Début des symptômes dans période développementale précoce"/> Début des symptômes dans la période développementale précoce</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
+<label><input type="checkbox" name="critereC" value="Début des symptômes dans période développementale précoce"/> Début des symptômes dans la période développementale précoce</label>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion de conditions congénitales ou acquises</legend>
   <p class="subtitle">Les difficultés ne sont pas attribuables à des conditions congénitales ou acquises</p>
-  <label><input type="checkbox" name="critereD" value="Non attribuables à paralysie cérébrale"/> Non attribuables à paralysie cérébrale</label>
-  <label><input type="checkbox" name="critereD" value="Non attribuables à fente palatine"/> Non attribuables à fente palatine</label>
-  <label><input type="checkbox" name="critereD" value="Non attribuables à surdité ou perte auditive"/> Non attribuables à surdité ou perte auditive</label>
-  <label><input type="checkbox" name="critereD" value="Non attribuables à traumatisme crânien"/> Non attribuables à traumatisme crânien</label>
-  <label><input type="checkbox" name="critereD" value="Non attribuables à autres conditions médicales ou neurologiques"/> Non attribuables à autres conditions médicales ou neurologiques</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+<label><input type="checkbox" name="critereD" value="Non attribuables à paralysie cérébrale"/> Non attribuables à paralysie cérébrale</label>
+<label><input type="checkbox" name="critereD" value="Non attribuables à fente palatine"/> Non attribuables à fente palatine</label>
+<label><input type="checkbox" name="critereD" value="Non attribuables à surdité ou perte auditive"/> Non attribuables à surdité ou perte auditive</label>
+<label><input type="checkbox" name="critereD" value="Non attribuables à traumatisme crânien"/> Non attribuables à traumatisme crânien</label>
+<label><input type="checkbox" name="critereD" value="Non attribuables à autres conditions médicales ou neurologiques"/> Non attribuables à autres conditions médicales ou neurologiques</label>
 </fieldset>
 
-</form>
+ </form>
 
-<div id="resultat"></div>
+ <h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
 
-<script>
-let choix={critereA:[],critereB:[],critereC:"",critereD:[]};
+ <form id="formulaire-diff" style="display: none;">
+ 
+ <!-- Diagnostic différentiel -->
+ <fieldset id="diagnostic-differentiel">
+   <legend>Diagnostic différentiel</legend>
+   <p class="subtitle">Cocher les troubles à différencier</p>
+   
+   <label><input type="checkbox" name="diff_variations" value="Variations régionales, sociales ou culturelles de la parole, y compris le bilinguisme, pouvant expliquer les particularités articulatoires"/> Variations régionales, sociales ou culturelles (y compris bilinguisme) pouvant expliquer les particularités articulatoires</label>
+   
+   <label><input type="checkbox" name="diff_surdite" value="Déficience auditive ou sensorielle provoquant des erreurs de production dépassant ce qui est attendu"/> Déficience auditive ou sensorielle – Surdité/perte auditive causant des erreurs de production au-delà de ce qui est attendu</label>
+   
+   <label><input type="checkbox" name="diff_structural" value="Anomalies structurales (ex. fente palatine) responsables de la mauvaise articulation"/> Anomalies structurales (ex. fente palatine) responsables de la mauvaise articulation</label>
+   
+   <label><input type="checkbox" name="diff_dysarthrie" value="Dysarthrie ou autre trouble moteur (p. ex. paralysie cérébrale) distingué par des signes neurologiques"/> Dysarthrie ou autre trouble moteur (ex. paralysie cérébrale) avec signes neurologiques distinctifs</label>
+   
+   <label><input type="checkbox" name="diff_mutisme" value="Mutisme sélectif où la capacité de parole existe mais n'est pas utilisée dans certains contextes par anxiété"/> Mutisme sélectif – Capacité de parole intacte mais non utilisée dans certains contextes par anxiété</label>
+   
+ </fieldset>
+ 
+ </form>
 
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère A", confirmButtonColor: "#667eea"});
-}
+ <h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
 
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
+ <form id="formulaire-comorb" style="display: none;">
+ 
+ <!-- Comorbidité -->
+ <fieldset id="comorbidite">
+   <legend>Comorbidité</legend>
+   <p class="subtitle">Conditions associées</p>
+   
+   <label><input type="checkbox" name="comorb_genetique" value="Altérations génétiques (trisomie 21, microdélétion 22q, mutation FoxP2) pouvant comporter un profil phonologique spécifique"/> Altérations génétiques (trisomie 21, délétion 22q11.2, mutation du gène FoxP2) avec profil phonologique particulier à coder séparément</label>
+   
+ </fieldset>
+ 
+ </form>
 
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
+ <div class="boutons-validation">
+   <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+   <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+ </div>
 
-function afficherResume(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    genererResume();
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
+ <script>
+ (function() {
+   'use strict';
+   let etapeNonValide = 0; // 0: rien, 1: diagnostic, 2: comorbidité
+   const scrollOptions = { behavior: 'smooth', block: 'start' };
 
-function genererResume(){
-  const code="F80.0";
-  const diag=code+" Trouble des Sons de la Parole (Trouble Phonologique)";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Difficulté persistante avec production des sons de la parole</h4><ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Limitations dans communication efficace ("+choix.critereB.length+" domaine(s))</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Début précoce</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Exclusion de conditions congénitales ou acquises</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Difficulté persistante avec la production des sons de la parole qui interfère avec l'intelligibilité de la parole ou empêche la communication verbale de messages.";
-  h+="<br/><br/><strong>Impact fonctionnel :</strong> La perturbation cause des limitations dans la communication efficace qui interfèrent avec la participation sociale, réussite académique ou performance professionnelle.";
-  h+="<br/><br/><strong>Exclusions importantes :</strong> Les difficultés ne doivent pas être attribuables à des conditions congénitales ou acquises telles que paralysie cérébrale, fente palatine, surdité/perte auditive, traumatisme crânien, ou autres conditions médicales/neurologiques.";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
+   const showSection = (titre, formulaire) => {
+     if (titre) {
+       titre.style.display = 'block';
+       titre.scrollIntoView(scrollOptions);
+     }
+     if (formulaire) formulaire.style.display = 'block';
+   };
+
+   const hideSection = (titre, formulaire) => {
+     if (titre) titre.style.display = 'none';
+     if (formulaire) formulaire.style.display = 'none';
+   };
+
+   const callGlobal = (fnName) => {
+     const candidate = globalThis[fnName];
+     if (typeof candidate === 'function') {
+       candidate();
+     }
+   };
+
+   const getSections = () => ({
+     titreDiag: document.getElementById('titre-diagnostic'),
+     formDiag: document.getElementById('formulaire-diff'),
+     titreComorb: document.getElementById('titre-comorbidite'),
+     formComorb: document.getElementById('formulaire-comorb')
+   });
+
+   globalThis.validerFormulaireLocal = function(event) {
+     if (event) {
+       event.preventDefault();
+       event.stopPropagation();
+       event.stopImmediatePropagation();
+     }
+
+     etapeNonValide = 0;
+     const { titreDiag, formDiag, titreComorb, formComorb } = getSections();
+     hideSection(titreDiag, formDiag);
+     hideSection(titreComorb, formComorb);
+     callGlobal('validerFormulaire');
+   };
+
+   globalThis.nonValiderFormulaireLocal = function(event) {
+     if (event) {
+       event.preventDefault();
+       event.stopPropagation();
+       event.stopImmediatePropagation();
+     }
+
+     const { titreDiag, formDiag, titreComorb, formComorb } = getSections();
+     const hasComorbidite = Boolean(titreComorb && formComorb);
+     const actions = {
+       0: () => {
+         showSection(titreDiag, formDiag);
+         etapeNonValide = 1;
+       },
+       1: () => {
+         if (hasComorbidite) {
+           showSection(titreComorb, formComorb);
+           etapeNonValide = 2;
+         } else {
+           hideSection(titreDiag, formDiag);
+           etapeNonValide = 0;
+           callGlobal('nonValiderFormulaire');
+         }
+       },
+       2: () => {
+         hideSection(titreDiag, formDiag);
+         hideSection(titreComorb, formComorb);
+         etapeNonValide = 0;
+         callGlobal('nonValiderFormulaire');
+       }
+     };
+
+     (actions[etapeNonValide] || function() {})();
+   };
+ })();
+ </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
@@ -251,18 +270,6 @@ function genererResume(){
 
 
 
-
-<script>
-function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-</script>
 
 </body>
 </html>

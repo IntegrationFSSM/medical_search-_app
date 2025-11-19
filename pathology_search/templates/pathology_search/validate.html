@@ -1,258 +1,440 @@
-{% extends 'pathology_search/base.html' %}
-
-{% block content %}
-<div class="mb-6">
-    <a href="{% url 'pathology_search:index' %}" class="text-purple-600 hover:text-purple-800 font-medium">
-        <i class="fas fa-arrow-left mr-2"></i>Nouvelle recherche
-    </a>
-</div>
-
-<!-- Progress Indicator -->
-<div class="bg-white rounded-lg shadow-md p-6 mb-6">
-    <div class="flex items-center justify-between mb-4">
-        <div>
-            <h2 class="text-2xl font-bold text-gray-800">
-                <i class="fas fa-clipboard-check mr-2 text-purple-600"></i>
-                Validation des Résultats
-            </h2>
-            <p class="text-gray-600 mt-1">Requête: <span class="font-semibold">{{ query }}</span></p>
-        </div>
-        <div class="text-right">
-            <p class="text-sm text-gray-600">Résultat</p>
-            <p class="text-3xl font-bold text-purple-600">{{ current_index|add:1 }} / {{ total_results }}</p>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Validation - {{ pathology_info.name|default:"Pathologie" }}</title>
     
-    <!-- Progress Bar -->
-    <div class="w-full bg-gray-200 rounded-full h-3">
-        {% widthratio current_index|add:1 total_results 100 as progress_width %}
-        <div class="bg-gradient-to-r from-purple-500 to-blue-500 h-3 rounded-full transition-all duration-500" 
-             style="width: {{ progress_width }}%">
-        </div>
-    </div>
-    <div class="flex justify-between mt-2 text-xs text-gray-500">
-        {% for i in "12345"|make_list %}
-            <span class="{% if forloop.counter0 == current_index %}font-bold text-purple-600{% endif %}">
-                {% if forloop.counter0 < total_results %}#{{ forloop.counter }}{% endif %}
-            </span>
-        {% endfor %}
-    </div>
-</div>
-
-<!-- Result Card -->
-<div class="bg-white rounded-lg shadow-lg p-6 mb-6 border-l-4 {% if result.similarity >= 0.75 %}border-green-500{% elif result.similarity >= 0.60 %}border-yellow-500{% else %}border-red-500{% endif %}">
-    <div class="flex items-center justify-between mb-4">
-        <div>
-            <h3 class="text-2xl font-bold text-gray-800">
-                {{ pathology_name }}
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-                <i class="fas fa-map-marker-alt mr-1"></i>
-                {{ result.location }}
-            </p>
-        </div>
-        <div class="text-right">
-            {% if result.similarity >= 0.75 %}
-                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-green-100 text-green-800">
-                    <i class="fas fa-check-circle mr-2"></i>
-                    Forte correspondance
-                </span>
-            {% elif result.similarity >= 0.60 %}
-                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-yellow-100 text-yellow-800">
-                    <i class="fas fa-exclamation-circle mr-2"></i>
-                    Correspondance modérée
-                </span>
-            {% else %}
-                <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-red-100 text-red-800">
-                    <i class="fas fa-times-circle mr-2"></i>
-                    Correspondance faible
-                </span>
-            {% endif %}
-        </div>
-    </div>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Similarity Score -->
-    <div class="mb-6">
-        <div class="flex items-center justify-between mb-2">
-            <span class="text-sm font-medium text-gray-700">Score de similarité</span>
-            {% widthratio result.similarity 1 100 as similarity_percent %}
-            <span class="text-2xl font-bold text-purple-600">{{ similarity_percent }}%</span>
-        </div>
-        <div class="w-full bg-gray-200 rounded-full h-4">
-            <div class="h-4 rounded-full {% if result.similarity >= 0.75 %}bg-green-500{% elif result.similarity >= 0.60 %}bg-yellow-500{% else %}bg-red-500{% endif %}" 
-                 style="width: {{ similarity_percent }}%">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <style>
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            font-family: system-ui, -apple-system, sans-serif;
+            height: 100%;
+            width: 100vw !important;
+            max-width: 100vw !important;
+            overflow-x: hidden;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Forcer le contenu à prendre toute la largeur */
+        .min-h-screen {
+            width: 100vw !important;
+            max-width: 100vw !important;
+        }
+        
+        #pathologyFormContainer {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        /* Forcer tous les conteneurs, divs, sections, etc. à prendre toute la largeur */
+        div, section, fieldset, form, main, article, header, footer {
+            max-width: 100vw !important;
+        }
+        
+        /* Si les HTML ont des classes avec max-width */
+        .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl, .mx-auto {
+            max-width: 100vw !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100vw !important;
+        }
+        
+        /* Override tout style inline avec width */
+        [style*="width"] {
+            width: 100vw !important;
+        }
+        
+        .progress-bar-container {
+            width: 100%;
+            height: 24px;
+            background-color: #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 50%, #10b981 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-gray-50">
+    <!-- Page Full Width - No Container -->
+    <div class="min-h-screen m-0 p-0">
+        <!-- Header violet sticky compact et professionnel -->
+        {% if patient %}
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-3 sticky top-0 z-50 shadow-md">
+            <div class="w-full">
+                <div class="flex flex-col gap-1.5">
+                    <!-- Ligne 1: Titre, Info patient et Boutons d'action sur une seule ligne -->
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <!-- Titre et Score -->
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-base font-semibold flex items-center">
+                                <i class="fas fa-clipboard-check text-sm mr-1.5"></i>
+                                Validation {{ current_index|add:1 }}/{{ total_results }}
+                            </h3>
+                            {% if pathology_info.similarity %}
+                            <span class="bg-white bg-opacity-20 px-2 py-0.5 rounded text-xs font-medium">
+                                {{ pathology_info.similarity|floatformat:1 }}%
+                            </span>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Info Patient compacte -->
+                        <div class="flex items-center gap-3 text-xs">
+                            <span><i class="fas fa-user text-xs mr-1"></i><strong>{{ patient.nom }} {{ patient.prenom }}</strong></span>
+                            <span><i class="fas fa-id-card text-xs mr-1"></i>{{ patient.numero_dossier }}</span>
+                            {% if patient.date_naissance %}
+                            <span><i class="fas fa-calendar text-xs mr-1"></i>{{ patient.date_naissance|date:"d/m/Y" }}</span>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Boutons d'action -->
+                        <div class="flex items-center gap-2">
+                            <button 
+                                onclick="window.validerFormulaire()"
+                                class="bg-green-500 hover:bg-green-600 text-white font-semibold py-1.5 px-4 rounded transition shadow-sm flex items-center text-sm"
+                            >
+                                <i class="fas fa-check text-xs mr-1.5"></i>
+                                VALIDER
+                            </button>
+                            <button 
+                                onclick="window.nonValiderFormulaire()"
+                                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-1.5 px-4 rounded transition shadow-sm flex items-center text-sm"
+                            >
+                                <i class="fas fa-times text-xs mr-1.5"></i>
+                                NON VALIDER
+                            </button>
+                            <button 
+                                onclick="window.location.href='{% url 'pathology_search:index' %}'"
+                                class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-medium py-1.5 px-3 rounded transition text-xs"
+                            >
+                                <i class="fas fa-home text-xs mr-1"></i>Accueil
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ligne 2: Requête et Pathologie (si disponibles) -->
+                    {% if query or pathology_info.name %}
+                    <div class="flex items-center gap-4 text-xs opacity-90 pt-1 border-t border-white border-opacity-20">
+                        {% if query %}
+                        <span><i class="fas fa-search text-xs mr-1"></i><span class="font-medium">{{ query }}</span></span>
+                        {% endif %}
+                        {% if pathology_info.name %}
+                        <span><i class="fas fa-disease text-xs mr-1"></i><span class="font-medium">{{ pathology_info.name }}</span></span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
-<!-- HTML Content Iframe Full Screen -->
-{% if result.html_page %}
-<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
-    <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-3 sm:p-4">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <h3 class="text-lg sm:text-xl font-bold flex items-center">
+        {% else %}
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 sticky top-0 z-50 shadow-lg">
+            <h3 class="text-xl font-bold flex items-center">
                 <i class="fas fa-file-medical-alt mr-2"></i>
-                <span class="break-words">Page Complète de la Pathologie - {{ pathology_name }}</span>
+                <span>Formulaire d'Évaluation{% if pathology_info.name %} - {{ pathology_info.name }}{% endif %}</span>
             </h3>
-            {% if not is_last %}
-            <button 
-                onclick="skipResult()"
-                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center whitespace-nowrap"
-            >
-                <i class="fas fa-forward mr-2"></i>
-                Passer au suivant
-            </button>
-            {% endif %}
         </div>
-    </div>
-    <div class="bg-gray-50">
-        <iframe 
-            src="{% url 'pathology_search:view_pathology' result.html_page %}?mode=validation"
-            class="w-full border-0 bg-white"
-            style="height: 120vh; min-height: 900px;"
-            id="pathologyIframe"
-        ></iframe>
-    </div>
-    <div class="bg-purple-50 border-t-4 border-purple-600 p-3 sm:p-4">
-        <p class="text-center text-gray-700 text-sm sm:text-base">
-            <i class="fas fa-info-circle mr-2 text-purple-600"></i>
-            <strong>Remplissez le formulaire ci-dessus et cliquez sur "VALIDE" ou "NON VALIDE" à la fin</strong>
-        </p>
-    </div>
-</div>
-{% endif %}
-
-<!-- Success Modal -->
-<div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white rounded-lg p-8 max-w-md mx-4 shadow-2xl transform transition-all">
-        <div class="text-center">
-            <div class="mb-4">
-                <i class="fas fa-check-circle text-6xl text-green-500"></i>
+        {% endif %}
+        
+        <!-- Contenu du formulaire - Avec marges -->
+        <div class="w-full bg-white">
+            <div id="pathologyFormContainer" class="px-4 py-3">
+                {{ html_content|safe }}
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">Pathologie Validée !</h3>
-            <p class="text-gray-600 mb-6" id="validatedPathology"></p>
-            <button 
-                onclick="window.location.href='{% url 'pathology_search:index' %}'"
-                class="gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
-            >
-                <i class="fas fa-search mr-2"></i>
-                Nouvelle Recherche
-            </button>
         </div>
     </div>
-</div>
 
-<!-- Completed Modal -->
-<div id="completedModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white rounded-lg p-8 max-w-md mx-4 shadow-2xl transform transition-all">
-        <div class="text-center">
-            <div class="mb-4">
-                <i class="fas fa-info-circle text-6xl text-blue-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">Tous les résultats examinés</h3>
-            <p class="text-gray-600 mb-6">Vous avez parcouru tous les résultats disponibles.</p>
-            <button 
-                onclick="window.location.href='{% url 'pathology_search:index' %}'"
-                class="gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
-            >
-                <i class="fas fa-search mr-2"></i>
-                Nouvelle Recherche
-            </button>
-        </div>
-    </div>
-</div>
+    <script>
+    // Variables globales
+    const pathologyInfo = {{ pathology_info_json|safe }};
+    const patientId = {{ patient_id|default:"null" }};
+    const medecinId = {{ medecin_id|default:"null" }};
+    const currentIndex = {{ current_index|default:"0" }};
+    const totalResults = {{ total_results|default:"1" }};
+    const isLast = {{ is_last|default:"false"|lower }};
 
-{% endblock %}
-
-{% block extra_js %}
-<script>
-const currentIndex = {{ current_index }};
-
-// Écouter les messages de l'iframe (quand l'utilisateur clique sur VALIDE ou NON VALIDE dans le formulaire)
-window.addEventListener('message', function(event) {
-    // Vérifier que le message vient bien de notre iframe
-    if (event.data.source === 'pathology') {
-        if (event.data.action === 'validate') {
-            console.log('✅ Utilisateur a cliqué sur VALIDE dans le formulaire');
-            validateResult();
-        } else if (event.data.action === 'not_validate') {
-            console.log('❌ Utilisateur a cliqué sur NON VALIDE dans le formulaire');
-            skipResult();
+    // Fonction pour obtenir le cookie CSRF
+    function getCookie(name) {
+        const metaTag = document.querySelector('meta[name="csrf-token"]');
+        if (metaTag) {
+            return metaTag.getAttribute('content');
         }
-    }
-});
-
-async function validateResult() {
-    try {
-        const response = await fetch('{% url "pathology_search:validate_action" %}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken')
-            },
-            body: JSON.stringify({
-                action: 'validate',
-                current_index: currentIndex
-            })
-        });
         
-        const data = await response.json();
-        
-        if (data.success && data.action === 'validated') {
-            // Afficher le modal de succès
-            document.getElementById('validatedPathology').textContent = data.message;
-            document.getElementById('successModal').classList.remove('hidden');
-        }
-    } catch (error) {
-        alert('Erreur: ' + error.message);
-    }
-}
-
-async function skipResult() {
-    try {
-        const response = await fetch('{% url "pathology_search:validate_action" %}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken')
-            },
-            body: JSON.stringify({
-                action: 'skip',
-                current_index: currentIndex
-            })
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            if (data.action === 'next') {
-                // Aller au résultat suivant
-                window.location.href = '{% url "pathology_search:validate_results" %}?index=' + data.next_index;
-            } else if (data.action === 'completed') {
-                // Afficher le modal de fin
-                document.getElementById('completedModal').classList.remove('hidden');
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
             }
         }
-    } catch (error) {
-        alert('Erreur: ' + error.message);
+        return cookieValue;
     }
-}
 
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
+    // Attendre que le DOM soit complètement chargé
+    document.addEventListener('DOMContentLoaded', function() {
+        // Créer les fonctions globales pour les boutons principaux VALIDE/NON VALIDE
+        
+        window.validerFormulaire = function() {
+            console.log('validerFormulaire() appelée - Génération du diagnostic');
+            handleValidation();
+        };
+        
+        window.nonValiderFormulaire = function() {
+            console.log('nonValiderFormulaire() appelée - Passage au suivant ou retour');
+            handleSkip();
+        };
+        
+        console.log('✅ Fonctions de validation globales créées pour validate.html');
+    });
+
+    // Fonction pour collecter les données du formulaire
+    function collectFormData() {
+        const formData = {};
+        
+        // Collecter toutes les cases cochées
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+            const label = checkbox.nextElementSibling || checkbox.previousElementSibling;
+            const text = label ? label.textContent.trim() : checkbox.value;
+            
+            // Grouper par section si possible
+            const fieldset = checkbox.closest('fieldset');
+            const sectionName = fieldset ? (fieldset.querySelector('legend')?.textContent.trim() || 'Critères') : 'Critères';
+            
+            if (!formData[sectionName]) {
+                formData[sectionName] = [];
             }
+            formData[sectionName].push(text);
+        });
+        
+        // Collecter les inputs texte
+        document.querySelectorAll('input[type="text"], textarea').forEach(input => {
+            if (input.value.trim()) {
+                const label = input.labels?.[0]?.textContent.trim() || input.name || input.placeholder;
+                if (label) {
+                    formData[label] = input.value.trim();
+                }
+            }
+        });
+        
+        // Collecter les select
+        document.querySelectorAll('select').forEach(select => {
+            if (select.value) {
+                const label = select.labels?.[0]?.textContent.trim() || select.name;
+                if (label) {
+                    formData[label] = select.options[select.selectedIndex].text;
+                }
+            }
+        });
+        
+        return formData;
+    }
+
+    // Gérer la validation
+    async function handleValidation() {
+        // Vérifier qu'un patient est sélectionné
+        if (!patientId) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Patient requis',
+                text: 'Veuillez sélectionner un patient depuis la page principale avant de valider une pathologie.',
+                confirmButtonColor: '#10b981'
+            }).then(() => {
+                window.location.href = '{% url "pathology_search:index" %}';
+            });
+            return;
+        }
+        
+        // Collecter les données du formulaire
+        const formData = collectFormData();
+        
+        if (Object.keys(formData).length === 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Formulaire vide',
+                text: 'Veuillez remplir au moins un critère avant de valider.',
+                confirmButtonColor: '#10b981'
+            });
+            return;
+        }
+        
+        // Afficher le loading avec animation
+        Swal.fire({
+            title: '<i class="fas fa-brain fa-spin text-purple-600 mr-2"></i> Génération du diagnostic IA',
+            html: `
+                <p class="mb-4">Analyse en cours des critères sélectionnés...</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="aiProgressBar"></div>
+                </div>
+                <p class="text-sm text-gray-600 mt-4">Utilisation de GPT-4o-mini pour créer un plan de traitement personnalisé</p>
+            `,
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            didOpen: () => {
+                simulateAIProgress();
+            }
+        });
+        
+        try {
+            // Appeler l'API pour générer le diagnostic
+            const response = await fetch('{% url "pathology_search:validate_action" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({
+                    action: 'validate',
+                    form_data: formData,
+                    pathology_name: pathologyInfo.name,
+                    patient_id: patientId,
+                    medecin_id: medecinId,
+                    direct_access: false,  // C'est une validation depuis la recherche
+                    current_index: currentIndex
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (data.success && data.diagnosis_id) {
+                // Rediriger vers la page de diagnostic
+                window.location.href = `/diagnosis/${data.diagnosis_id}/`;
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur',
+                    text: data.error || 'Une erreur est survenue lors de la génération du diagnostic.',
+                    confirmButtonColor: '#10b981'
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur de connexion',
+                text: 'Impossible de générer le diagnostic: ' + error.message,
+                confirmButtonColor: '#10b981'
+            });
         }
     }
-    return cookieValue;
-}
-</script>
-{% endblock %}
 
+    // Simuler la progression de l'IA
+    function simulateAIProgress() {
+        let progress = 0;
+        const progressBar = document.getElementById('aiProgressBar');
+        
+        const interval = setInterval(() => {
+            progress += Math.random() * 15;
+            if (progress > 90) progress = 90;
+            
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+        }, 500);
+        
+        // Nettoyer l'intervalle après 30 secondes
+        setTimeout(() => clearInterval(interval), 30000);
+    }
+
+    // Gérer le skip (ne pas valider et passer au suivant ou retourner)
+    async function handleSkip() {
+        // Collecter les critères cochés avant de partir
+        const formData = collectFormData();
+        
+        console.log('📊 Critères cochés avant NON VALIDE:', formData);
+        
+        // Sauvegarder les critères même si on ne valide pas
+        try {
+            const response = await fetch('{% url "pathology_search:validate_action" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({
+                    action: 'skip',
+                    current_index: currentIndex,
+                    form_data: formData,
+                    direct_access: false,
+                    pathology_name: pathologyInfo.name || ''
+                })
+            });
+            
+            const data = await response.json();
+            console.log('✅ Critères sauvegardés pour NON VALIDE:', data);
+        } catch (error) {
+            console.error('❌ Erreur lors de la sauvegarde des critères:', error);
+        }
+        
+        // Si c'est le dernier résultat, retourner à l'accueil
+        if (isLast) {
+            Swal.fire({
+                icon: 'info',
+                title: 'Tous les résultats examinés',
+                html: `<p class="text-gray-600">Vous avez examiné tous les <strong>${totalResults}</strong> résultats disponibles.</p>
+                       <p class="mt-2 text-gray-700">Critères enregistrés. Retour à la page principale...</p>`,
+                confirmButtonText: 'Retour à l\'accueil',
+                confirmButtonColor: '#667eea',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then(() => {
+                window.location.href = '{% url "pathology_search:index" %}';
+            });
+        } else {
+            // Passer au résultat suivant
+            Swal.fire({
+                icon: 'warning',
+                title: 'Résultat non validé',
+                html: `<p class="text-gray-600">Critères enregistrés. Passage au résultat suivant...</p>
+                       <p class="mt-2 text-sm text-gray-500">Résultat <strong>${currentIndex + 2}/${totalResults}</strong></p>`,
+                timer: 1500,
+                timerProgressBar: true,
+                showConfirmButton: false,
+                willClose: () => {
+                    window.location.href = `/validate/?index=${currentIndex + 1}`;
+                }
+            });
+        }
+    }
+    </script>
+</body>
+</html>

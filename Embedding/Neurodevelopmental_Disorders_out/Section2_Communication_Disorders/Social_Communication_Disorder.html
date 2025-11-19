@@ -26,112 +26,65 @@
     font-size: 16px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
-    }
-    .resultat-box {
-      margin-top: 30px;
     }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
     }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
-    .sub-item {
-      margin-left: 20px;
-      padding: 8px;
-      background: #f9f9f9;
-      border-left: 3px solid #8cc63f;
-      margin-top: 5px;
-      font-size: 0.9em;
-      color: #555;
-    }
   </style>
 
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -142,41 +95,22 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Difficultés persistantes dans l'utilisation sociale de la communication</legend>
   <p class="subtitle">Difficultés persistantes dans l'utilisation sociale de la communication verbale et non verbale manifestées par TOUS les éléments suivants</p>
-  <div class="warning-box">
-    ⚠️ LES 4 ÉLÉMENTS SUIVANTS DOIVENT ÊTRE PRÉSENTS
-  </div>
-  
-  <label><input type="checkbox" name="critereA" value="1. Déficits dans utilisation communication pour buts sociaux"/> <strong>1. Déficits dans l'utilisation de la communication pour buts sociaux</strong></label>
-  <div class="sub-item">
-    Tels que saluer et partager informations, de manière appropriée au contexte social
-  </div>
-  
-  <label><input type="checkbox" name="critereA" value="2. Altération capacité à changer communication selon contexte ou besoins interlocuteur"/> <strong>2. Altération de la capacité à changer la communication selon contexte ou besoins de l'interlocuteur</strong></label>
-  <div class="sub-item">
-    Tels que parler différemment en classe vs terrain de jeu, parler différemment à enfant vs adulte, éviter langage trop formel
-  </div>
-  
-  <label><input type="checkbox" name="critereA" value="3. Difficultés à suivre règles de conversation et narration"/> <strong>3. Difficultés à suivre les règles de conversation et narration</strong></label>
-  <div class="sub-item">
-    Tels que prendre tours de parole, reformuler quand incompris, savoir utiliser signaux verbaux/non verbaux pour réguler interaction
-  </div>
-  
-  <label><input type="checkbox" name="critereA" value="4. Difficultés à comprendre ce qui n'est pas explicitement dit et significations non littérales/ambiguës"/> <strong>4. Difficultés à comprendre ce qui n'est pas explicitement dit et significations non littérales/ambiguës</strong></label>
-  <div class="sub-item">
-    Tels que faire inférences, comprendre idiomes, humour, métaphores, significations multiples dépendant du contexte
-  </div>
-  
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+  <label><input type="checkbox" name="critereA" value="1. Déficits dans utilisation communication pour buts sociaux (saluer, partager informations)"/> 1. Déficits dans l'utilisation de la communication pour buts sociaux (saluer, partager informations, de manière appropriée au contexte)</label>
+  <label><input type="checkbox" name="critereA" value="2. Altération capacité à changer communication selon contexte ou besoins interlocuteur"/> 2. Altération de la capacité à changer la communication selon contexte ou besoins de l'interlocuteur (parler différemment en classe vs terrain de jeu, à enfant vs adulte, éviter langage trop formel)</label>
+  <label><input type="checkbox" name="critereA" value="3. Difficultés à suivre règles de conversation et narration"/> 3. Difficultés à suivre les règles de conversation et narration (prendre tours de parole, reformuler quand incompris, utiliser signaux verbaux/non verbaux pour réguler interaction)</label>
+  <label><input type="checkbox" name="critereA" value="4. Difficultés à comprendre ce qui n'est pas explicitement dit et significations non littérales/ambiguës"/> 4. Difficultés à comprendre ce qui n'est pas explicitement dit et significations non littérales/ambiguës (inférences, idiomes, humour, métaphores, significations multiples)</label>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Limitations fonctionnelles résultant des déficits</legend>
   <p class="subtitle">Les déficits résultent en limitations fonctionnelles dans la communication efficace, participation sociale, relations sociales, réussite académique ou performance professionnelle, individuellement ou en combinaison</p>
   <label><input type="checkbox" name="critereB" value="Limitations dans communication efficace"/> Limitations dans la communication efficace</label>
@@ -184,19 +118,17 @@
   <label><input type="checkbox" name="critereB" value="Limitations dans relations sociales"/> Limitations dans les relations sociales</label>
   <label><input type="checkbox" name="critereB" value="Limitations dans réussite académique"/> Limitations dans la réussite académique</label>
   <label><input type="checkbox" name="critereB" value="Limitations dans performance professionnelle"/> Limitations dans la performance professionnelle</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Début précoce</legend>
   <p class="subtitle">Le début des symptômes se situe dans la période développementale précoce (mais les déficits peuvent ne pas se manifester pleinement jusqu'à ce que les demandes de communication sociale excèdent les capacités limitées)</p>
   <label><input type="checkbox" name="critereC" value="Début des symptômes dans période développementale précoce"/> Début des symptômes dans la période développementale précoce</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Exclusion d'autres causes</legend>
   <p class="subtitle">Les symptômes ne sont pas attribuables à une autre condition médicale ou neurologique ou à faibles capacités dans les domaines de structure de mots et grammaire, et ne sont pas mieux expliqués par trouble du spectre de l'autisme, trouble du développement intellectuel (déficience intellectuelle), retard global du développement, ou autre trouble mental</p>
   <label><input type="checkbox" name="critereD" value="Non attribuables à autre condition médicale ou neurologique"/> Non attribuables à autre condition médicale ou neurologique</label>
@@ -204,102 +136,124 @@
   <label><input type="checkbox" name="critereD" value="Non mieux expliqués par trouble spectre autisme"/> Non mieux expliqués par trouble du spectre de l'autisme</label>
   <label><input type="checkbox" name="critereD" value="Non mieux expliqués par trouble développement intellectuel ou retard global"/> Non mieux expliqués par trouble du développement intellectuel (déficience intellectuelle) ou retard global du développement</label>
   <label><input type="checkbox" name="critereD" value="Non mieux expliqués par autre trouble mental"/> Non mieux expliqués par autre trouble mental</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier</p>
+  
+  <label><input type="checkbox" name="diff_autisme" value="Autisme (TSA) – Se distingue par la présence d'intérêts ou de comportements restreints et répétitifs (critère B) absents dans le trouble de la communication sociale"/> Autisme (TSA) – Présence d'intérêts ou de comportements restreints et répétitifs (critère B) absente ici, d'où nécessité d'une anamnèse détaillée</label>
+  
+  <label><input type="checkbox" name="diff_tdah" value="TDAH – Les déficits primaires d'attention et d'hyperactivité peuvent altérer la communication sociale et expliquer les limitations fonctionnelles"/> TDAH – Les déficits primaires d'attention/hyperactivité peuvent expliquer les difficultés de communication sociale et les limitations fonctionnelles</label>
+  
+  <label><input type="checkbox" name="diff_anxiete_sociale" value="Trouble d'anxiété sociale – Les compétences de communication ont été acquises mais ne sont pas utilisées en raison de l'anxiété ou de la peur des interactions"/> Trouble d'anxiété sociale – Les compétences ont été acquises mais ne sont pas utilisées à cause de l'anxiété ou de la détresse sociale</label>
+  
+  <label><input type="checkbox" name="diff_deficience" value="Déficience intellectuelle / retard global – Poser ce diagnostic séparé seulement si les déficits pragmatiques excèdent ce que l'on attend du niveau intellectuel"/> Déficience intellectuelle / retard global – Diagnostic séparé seulement si les déficits de communication sociale excèdent les limitations intellectuelles</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let choix={critereA:[],critereB:[],critereC:"",critereD:[]};
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: rien, 1: diagnostic, 2: comorbidité
+  const scrollOptions = { behavior: 'smooth', block: 'start' };
 
-function validerCritereA(){
-  const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
-  if(c.length===4){
-    choix.critereA=c;
-    document.getElementById("critereB").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Les 4 éléments du critère A doivent être cochés", confirmButtonColor: "#667eea"});
-}
+  const showSection = (titre, formulaire) => {
+    if (titre) {
+      titre.style.display = 'block';
+      titre.scrollIntoView(scrollOptions);
+    }
+    if (formulaire) formulaire.style.display = 'block';
+  };
 
-function validerCritereB(){
-  const c=Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereB=c;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère B", confirmButtonColor: "#667eea"});
-}
+  const hideSection = (titre, formulaire) => {
+    if (titre) titre.style.display = 'none';
+    if (formulaire) formulaire.style.display = 'none';
+  };
 
-function validerCritereC(){
-  const c=document.querySelector("input[name='critereC']:checked");
-  if(c){
-    choix.critereC=c.value;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else alert("Cochez l'option du critère C");
-}
+  const callGlobal = (fnName) => {
+    const candidate = globalThis[fnName];
+    if (typeof candidate === 'function') {
+      candidate();
+    }
+  };
 
-function afficherResume(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    genererResume();
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option du critère D", confirmButtonColor: "#667eea"});
-}
+  const getSections = () => ({
+    titreDiag: document.getElementById('titre-diagnostic'),
+    formDiag: document.getElementById('formulaire-diff'),
+    titreComorb: document.getElementById('titre-comorbidite'),
+    formComorb: document.getElementById('formulaire-comorb')
+  });
 
-function genererResume(){
-  const code="F80.82";
-  const diag=code+" Trouble de la Communication Sociale (Pragmatique)";
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  
-  h+="<h4>Critère A – Difficultés persistantes dans utilisation sociale de la communication (4/4 requis)</h4>";
-  if(choix.critereA.length===4)h+="<p style='color:green; font-weight:bold;'>✓ Critère rempli (4/4 éléments présents)</p>";
-  else h+="<p style='color:red; font-weight:bold;'>✗ Critère non rempli ("+choix.critereA.length+"/4 éléments)</p>";
-  h+="<ul class='choix-list'>";
-  choix.critereA.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Limitations fonctionnelles ("+choix.critereB.length+" domaine(s))</h4><ul class='choix-list'>";
-  choix.critereB.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère C – Début précoce</h4><ul class='choix-list'><li>✓ "+choix.critereC+"</li></ul>";
-  
-  h+="<h4>Critère D – Exclusion d'autres causes</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Caractéristiques :</strong> Difficultés persistantes dans l'utilisation sociale de la communication verbale et non verbale.";
-  h+="<br/><br/><strong>Critère A :</strong> Inclut déficits dans utilisation pour buts sociaux, altération capacité à adapter communication, difficultés avec règles de conversation, et difficultés à comprendre significations non littérales/ambiguës.";
-  h+="<br/><br/><strong>Note importante :</strong> Les déficits peuvent ne pas se manifester pleinement jusqu'à ce que les demandes de communication sociale excèdent les capacités limitées.";
-  h+="<br/><br/><strong>Distinction avec TSA :</strong> Ce trouble se distingue du trouble du spectre de l'autisme par l'absence de patterns restreints et répétitifs de comportements, intérêts ou activités.";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
+  globalThis.validerFormulaireLocal = function(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+
+    etapeNonValide = 0;
+    const { titreDiag, formDiag, titreComorb, formComorb } = getSections();
+    hideSection(titreDiag, formDiag);
+    hideSection(titreComorb, formComorb);
+    callGlobal('validerFormulaire');
+  };
+
+  globalThis.nonValiderFormulaireLocal = function(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+
+    const { titreDiag, formDiag, titreComorb, formComorb } = getSections();
+    const hasComorbidite = Boolean(titreComorb && formComorb);
+    const actions = {
+      0: () => {
+        showSection(titreDiag, formDiag);
+        etapeNonValide = 1;
+      },
+      1: () => {
+        if (hasComorbidite) {
+          showSection(titreComorb, formComorb);
+          etapeNonValide = 2;
+        } else {
+          hideSection(titreDiag, formDiag);
+          etapeNonValide = 0;
+          callGlobal('nonValiderFormulaire');
+        }
+      },
+      2: () => {
+        hideSection(titreDiag, formDiag);
+        hideSection(titreComorb, formComorb);
+        etapeNonValide = 0;
+        callGlobal('nonValiderFormulaire');
+      }
+    };
+
+    (actions[etapeNonValide] || function() {})();
+  };
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
   <p>CLINIQUE LA VALLÉE – RIAD AL ANDALOUSSE VILLA 39, AV. ABDERRAHIM BOUABID, HAY RIAD 1, Rabat</p>
   <p>Date : 15/10/2025 — <strong style="color:darkred;">DOCUMENT CONFIDENTIEL</strong></p>
 </footer>
-
-
-
-
-<script>
-function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-</script>
 
 </body>
 </html>

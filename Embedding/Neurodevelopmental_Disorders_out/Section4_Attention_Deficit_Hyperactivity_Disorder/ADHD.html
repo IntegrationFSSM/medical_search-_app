@@ -26,112 +26,58 @@
     font-size: 16px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
+    }
+    .btn-valide,
+    .btn-non-valide {
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      flex: 1;
+      max-width: 300px;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
-      font-size: 16px;
-      flex: 1;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
-      font-size: 16px;
-      flex: 1;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
-    }
-    .resultat-box {
-      margin-top: 30px;
     }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
     }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
-    .counter {
-      display: inline-block;
-      background: #8cc63f;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-weight: bold;
-      margin-left: 10px;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -142,6 +88,8 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Âge du patient -->
@@ -150,91 +98,77 @@
   <p class="subtitle">Nécessaire pour déterminer le nombre de symptômes requis</p>
   <label><input type="radio" name="age" value="enfant"/> Enfant/Adolescent (moins de 17 ans) – 6 symptômes requis</label>
   <label><input type="radio" name="age" value="adulte"/> Adolescent âgé/Adulte (17 ans et plus) – 5 symptômes requis</label>
-  <button type="button" onclick="validerAge()">✔️ Valider l'âge</button>
 </fieldset>
 
 <!-- Critère A1 - Inattention -->
-<fieldset id="critereA1" class="hidden">
-  <legend>Critère A1 – Inattention <span id="counterA1" class="counter">0/6</span></legend>
-  <p class="subtitle">Symptômes persistant depuis ≥6 mois, incompatibles avec le niveau développemental et impactant négativement les activités sociales/académiques/professionnelles</p>
-  <div class="note-box">
-    <strong>Note :</strong> Les symptômes ne sont pas uniquement une manifestation de comportement oppositionnel, défi, hostilité ou échec à comprendre les tâches/instructions.
-  </div>
+<fieldset id="critereA1">
+  <legend>Critère A1 – Inattention</legend>
+  <p class="subtitle">Symptômes persistant depuis ≥6 mois, incompatibles avec le niveau développemental et impactant négativement les activités sociales/académiques/professionnelles. Les symptômes ne sont pas uniquement une manifestation de comportement oppositionnel, défi, hostilité ou échec à comprendre les tâches/instructions</p>
   
-  <label><input type="checkbox" name="inattention" value="a. Échoue souvent à prêter attention aux détails ou fait des erreurs d'inattention" onchange="updateCounterA1()"/> a. Échoue souvent à prêter attention aux détails ou fait des erreurs d'inattention (travail imprécis)</label>
-  <label><input type="checkbox" name="inattention" value="b. A souvent du mal à soutenir son attention dans les tâches ou jeux" onchange="updateCounterA1()"/> b. A souvent du mal à soutenir son attention dans les tâches ou jeux (difficulté à rester concentré)</label>
-  <label><input type="checkbox" name="inattention" value="c. Semble souvent ne pas écouter quand on lui parle directement" onchange="updateCounterA1()"/> c. Semble souvent ne pas écouter quand on lui parle directement (esprit ailleurs)</label>
-  <label><input type="checkbox" name="inattention" value="d. Ne suit souvent pas les instructions et échoue à finir le travail" onchange="updateCounterA1()"/> d. Ne suit souvent pas les instructions et échoue à finir le travail (perd facilement le focus)</label>
-  <label><input type="checkbox" name="inattention" value="e. A souvent du mal à organiser les tâches et activités" onchange="updateCounterA1()"/> e. A souvent du mal à organiser les tâches et activités (gestion séquentielle, désordre, mauvaise gestion du temps)</label>
-  <label><input type="checkbox" name="inattention" value="f. Évite, n'aime pas ou est réticent aux tâches nécessitant effort mental soutenu" onchange="updateCounterA1()"/> f. Évite, n'aime pas ou est réticent aux tâches nécessitant effort mental soutenu (devoirs, rapports, formulaires)</label>
-  <label><input type="checkbox" name="inattention" value="g. Perd souvent les objets nécessaires aux tâches ou activités" onchange="updateCounterA1()"/> g. Perd souvent les objets nécessaires aux tâches ou activités (matériel scolaire, clés, portefeuille, téléphone)</label>
-  <label><input type="checkbox" name="inattention" value="h. Est souvent facilement distrait par des stimuli externes" onchange="updateCounterA1()"/> h. Est souvent facilement distrait par des stimuli externes (ou pensées non liées pour adultes)</label>
-  <label><input type="checkbox" name="inattention" value="i. A des oublis fréquents dans les activités quotidiennes" onchange="updateCounterA1()"/> i. A des oublis fréquents dans les activités quotidiennes (corvées, courses, rappeler, payer factures, rendez-vous)</label>
+  <label><input type="checkbox" name="inattention" value="a. Échoue souvent à prêter attention aux détails ou fait des erreurs d'inattention (travail imprécis)"/> a. Échoue souvent à prêter attention aux détails ou fait des erreurs d'inattention (travail imprécis)</label>
+  <label><input type="checkbox" name="inattention" value="b. A souvent du mal à soutenir son attention dans les tâches ou jeux (difficulté à rester concentré)"/> b. A souvent du mal à soutenir son attention dans les tâches ou jeux (difficulté à rester concentré)</label>
+  <label><input type="checkbox" name="inattention" value="c. Semble souvent ne pas écouter quand on lui parle directement (esprit ailleurs)"/> c. Semble souvent ne pas écouter quand on lui parle directement (esprit ailleurs)</label>
+  <label><input type="checkbox" name="inattention" value="d. Ne suit souvent pas les instructions et échoue à finir le travail (perd facilement le focus)"/> d. Ne suit souvent pas les instructions et échoue à finir le travail (perd facilement le focus)</label>
+  <label><input type="checkbox" name="inattention" value="e. A souvent du mal à organiser les tâches et activités (gestion séquentielle, désordre, mauvaise gestion du temps)"/> e. A souvent du mal à organiser les tâches et activités (gestion séquentielle, désordre, mauvaise gestion du temps)</label>
+  <label><input type="checkbox" name="inattention" value="f. Évite, n'aime pas ou est réticent aux tâches nécessitant effort mental soutenu (devoirs, rapports, formulaires)"/> f. Évite, n'aime pas ou est réticent aux tâches nécessitant effort mental soutenu (devoirs, rapports, formulaires)</label>
+  <label><input type="checkbox" name="inattention" value="g. Perd souvent les objets nécessaires aux tâches ou activités (matériel scolaire, clés, portefeuille, téléphone)"/> g. Perd souvent les objets nécessaires aux tâches ou activités (matériel scolaire, clés, portefeuille, téléphone)</label>
+  <label><input type="checkbox" name="inattention" value="h. Est souvent facilement distrait par des stimuli externes (ou pensées non liées pour adultes)"/> h. Est souvent facilement distrait par des stimuli externes (ou pensées non liées pour adultes)</label>
+  <label><input type="checkbox" name="inattention" value="i. A des oublis fréquents dans les activités quotidiennes (corvées, courses, rappeler, payer factures, rendez-vous)"/> i. A des oublis fréquents dans les activités quotidiennes (corvées, courses, rappeler, payer factures, rendez-vous)</label>
   
-  <button type="button" onclick="validerCritereA1()">✔️ Valider le critère A1</button>
 </fieldset>
 
 <!-- Critère A2 - Hyperactivité/Impulsivité -->
-<fieldset id="critereA2" class="hidden">
-  <legend>Critère A2 – Hyperactivité et Impulsivité <span id="counterA2" class="counter">0/6</span></legend>
-  <p class="subtitle">Symptômes persistant depuis ≥6 mois, incompatibles avec le niveau développemental et impactant négativement les activités sociales/académiques/professionnelles</p>
-  <div class="note-box">
-    <strong>Note :</strong> Les symptômes ne sont pas uniquement une manifestation de comportement oppositionnel, défi, hostilité ou échec à comprendre les tâches/instructions.
-  </div>
+<fieldset id="critereA2">
+  <legend>Critère A2 – Hyperactivité et Impulsivité</legend>
+  <p class="subtitle">Symptômes persistant depuis ≥6 mois, incompatibles avec le niveau développemental et impactant négativement les activités sociales/académiques/professionnelles. Les symptômes ne sont pas uniquement une manifestation de comportement oppositionnel, défi, hostilité ou échec à comprendre les tâches/instructions</p>
+  <label><input type="checkbox" name="hyperactivite" value="a. Remue souvent les mains/pieds ou se tortille sur son siège"/> a. Remue souvent les mains/pieds ou se tortille sur son siège</label>
+  <label><input type="checkbox" name="hyperactivite" value="b. Quitte souvent son siège dans des situations où rester assis est attendu (classe, bureau, lieu de travail)"/> b. Quitte souvent son siège dans des situations où rester assis est attendu (classe, bureau, lieu de travail)</label>
+  <label><input type="checkbox" name="hyperactivite" value="c. Court ou grimpe souvent dans des situations inappropriées (agitation chez adolescents/adultes)"/> c. Court ou grimpe souvent dans des situations inappropriées (agitation chez adolescents/adultes)</label>
+  <label><input type="checkbox" name="hyperactivite" value="d. Incapable souvent de jouer ou s'engager dans des loisirs calmement"/> d. Incapable souvent de jouer ou s'engager dans des loisirs calmement</label>
+  <label><input type="checkbox" name="hyperactivite" value="e. Est souvent 'sur la brèche', agit comme 'monté sur ressorts' (inconfortable d'être immobile longtemps)"/> e. Est souvent "sur la brèche", agit comme "monté sur ressorts" (inconfortable d'être immobile longtemps)</label>
+  <label><input type="checkbox" name="hyperactivite" value="f. Parle souvent excessivement"/> f. Parle souvent excessivement</label>
+  <label><input type="checkbox" name="hyperactivite" value="g. Laisse souvent échapper une réponse avant que la question soit terminée (complète phrases des autres)"/> g. Laisse souvent échapper une réponse avant que la question soit terminée (complète phrases des autres)</label>
+  <label><input type="checkbox" name="hyperactivite" value="h. A souvent du mal à attendre son tour (ex: file d'attente)"/> h. A souvent du mal à attendre son tour (ex: file d'attente)</label>
+  <label><input type="checkbox" name="hyperactivite" value="i. Interrompt ou s'impose souvent aux autres (conversations, jeux, activités, utilise affaires d'autrui sans permission)"/> i. Interrompt ou s'impose souvent aux autres (conversations, jeux, activités, utilise affaires d'autrui sans permission)</label>
   
-  <label><input type="checkbox" name="hyperactivite" value="a. Remue souvent les mains/pieds ou se tortille sur son siège" onchange="updateCounterA2()"/> a. Remue souvent les mains/pieds ou se tortille sur son siège</label>
-  <label><input type="checkbox" name="hyperactivite" value="b. Quitte souvent son siège dans des situations où rester assis est attendu" onchange="updateCounterA2()"/> b. Quitte souvent son siège dans des situations où rester assis est attendu (classe, bureau, lieu de travail)</label>
-  <label><input type="checkbox" name="hyperactivite" value="c. Court ou grimpe souvent dans des situations inappropriées" onchange="updateCounterA2()"/> c. Court ou grimpe souvent dans des situations inappropriées (agitation chez adolescents/adultes)</label>
-  <label><input type="checkbox" name="hyperactivite" value="d. Incapable souvent de jouer ou s'engager dans des loisirs calmement" onchange="updateCounterA2()"/> d. Incapable souvent de jouer ou s'engager dans des loisirs calmement</label>
-  <label><input type="checkbox" name="hyperactivite" value="e. Est souvent 'sur la brèche', agit comme 'monté sur ressorts'" onchange="updateCounterA2()"/> e. Est souvent "sur la brèche", agit comme "monté sur ressorts" (inconfortable d'être immobile longtemps)</label>
-  <label><input type="checkbox" name="hyperactivite" value="f. Parle souvent excessivement" onchange="updateCounterA2()"/> f. Parle souvent excessivement</label>
-  <label><input type="checkbox" name="hyperactivite" value="g. Laisse souvent échapper une réponse avant que la question soit terminée" onchange="updateCounterA2()"/> g. Laisse souvent échapper une réponse avant que la question soit terminée (complète phrases des autres)</label>
-  <label><input type="checkbox" name="hyperactivite" value="h. A souvent du mal à attendre son tour" onchange="updateCounterA2()"/> h. A souvent du mal à attendre son tour (ex: file d'attente)</label>
-  <label><input type="checkbox" name="hyperactivite" value="i. Interrompt ou s'impose souvent aux autres" onchange="updateCounterA2()"/> i. Interrompt ou s'impose souvent aux autres (conversations, jeux, activités, utilise affaires d'autrui sans permission)</label>
-  
-  <button type="button" onclick="validerCritereA2()">✔️ Valider le critère A2</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Début précoce</legend>
   <p class="subtitle">Plusieurs symptômes d'inattention ou d'hyperactivité-impulsivité étaient présents avant l'âge de 12 ans</p>
   <label><input type="checkbox" name="critereB" value="Symptômes présents avant 12 ans"/> Plusieurs symptômes d'inattention ou d'hyperactivité-impulsivité étaient présents avant l'âge de 12 ans</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Présence dans multiples contextes</legend>
   <p class="subtitle">Plusieurs symptômes d'inattention ou d'hyperactivité-impulsivité sont présents dans ≥2 contextes</p>
   <label><input type="checkbox" name="critereC" value="À la maison"/> À la maison</label>
   <label><input type="checkbox" name="critereC" value="À l'école ou au travail"/> À l'école ou au travail</label>
   <label><input type="checkbox" name="critereC" value="Avec amis ou famille"/> Avec amis ou famille</label>
   <label><input type="checkbox" name="critereC" value="Dans d'autres activités"/> Dans d'autres activités</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Interférence fonctionnelle</legend>
   <p class="subtitle">Preuve claire que les symptômes interfèrent avec ou réduisent la qualité du fonctionnement social, académique ou professionnel</p>
   <label><input type="checkbox" name="critereD" value="Interférence avec fonctionnement social"/> Interférence avec fonctionnement social</label>
   <label><input type="checkbox" name="critereD" value="Interférence avec fonctionnement académique"/> Interférence avec fonctionnement académique</label>
   <label><input type="checkbox" name="critereD" value="Interférence avec fonctionnement professionnel"/> Interférence avec fonctionnement professionnel</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Exclusion d'autres troubles</legend>
   <p class="subtitle">Les symptômes ne surviennent pas exclusivement durant le cours d'une schizophrénie ou autre trouble psychotique et ne sont pas mieux expliqués par un autre trouble mental</p>
   <label><input type="checkbox" name="critereE" value="Non exclusivement durant schizophrénie/trouble psychotique"/> Non exclusivement durant schizophrénie ou autre trouble psychotique</label>
   <label><input type="checkbox" name="critereE" value="Non mieux expliqués par autre trouble mental"/> Non mieux expliqués par autre trouble mental (trouble de l'humeur, anxieux, dissociatif, personnalité, intoxication/sevrage)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   <p class="subtitle">Préciser la présentation, rémission et sévérité</p>
   
@@ -252,6 +186,103 @@
 
 </form>
 
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier</p>
+  
+  <label><input type="checkbox" name="diff_odd" value="Trouble oppositionnel avec provocation – Hostilité motivée par la défiance, sans déficit d'attention persistant"/> Trouble oppositionnel avec provocation – Résistance liée à la défiance, sans déficits attentionnels persistants</label>
+  
+  <label><input type="checkbox" name="diff_ied" value="Trouble explosif intermittent – Agressivité sévère sans difficultés attentionnelles centrales"/> Trouble explosif intermittent – Agressivité sévère sans atteinte attentionnelle majeure</label>
+  
+  <label><input type="checkbox" name="diff_ndd" value="Autres troubles neurodéveloppementaux (mouvements stéréotypés, tic/Tourette) – Mouvements répétitifs spécifiques"/> Troubles neurodéveloppementaux (mouvements stéréotypés, tics/Tourette) – Mouvements répétitifs spécifiques vs agitation généralisée</label>
+  
+  <label><input type="checkbox" name="diff_learning" value="Trouble spécifique des apprentissages – Inattention limitée aux tâches impliquant la fonction cognitive altérée"/> Trouble spécifique des apprentissages – Inattention limitée aux tâches exigeant la fonction déficitaire</label>
+  
+  <label><input type="checkbox" name="diff_id" value="Déficience intellectuelle – Hyperactivité/inattention proportionnelles à l'âge mental"/> Déficience intellectuelle – Symptômes proportionnels à l'âge mental</label>
+  
+  <label><input type="checkbox" name="diff_asd" value="Trouble du spectre de l'autisme – Retrait social, intérêts restreints et résistance aux changements"/> Trouble du spectre de l'autisme – Retrait social qualitatif et intérêts restreints</label>
+  
+  <label><input type="checkbox" name="diff_reactive" value="Trouble réactionnel de l'attachement – Désinhibition sociale sans cluster complet ADHD"/> Trouble réactionnel de l'attachement – Désinhibition sociale sans triade TDAH</label>
+  
+  <label><input type="checkbox" name="diff_anxiete" value="Troubles anxieux – Inattention liée aux ruminations et à la peur"/> Troubles anxieux – Inattention liée aux ruminations, agitation motivée par la peur</label>
+  
+  <label><input type="checkbox" name="diff_ptsd" value="État de stress post-traumatique – Difficultés de concentration post-traumatiques"/> État de stress post-traumatique – Inattention post-traumatique et irritabilité</label>
+  
+  <label><input type="checkbox" name="diff_depressif" value="Troubles dépressifs – Difficultés de concentration limitées aux épisodes thymiques"/> Troubles dépressifs – Inattention limitée aux épisodes thymiques</label>
+  
+  <label><input type="checkbox" name="diff_bipolaire" value="Trouble bipolaire – Symptômes épisodiques avec humeur élevée/grandiosité"/> Trouble bipolaire – Symptômes épisodiques accompagnés d'humeur élevée/grandiosité</label>
+  
+  <label><input type="checkbox" name="diff_dmdd" value="Trouble disruptif avec dysrégulation de l'humeur – Irritabilité persistante sans impulsivité centrale"/> Trouble disruptif avec dysrégulation de l'humeur – Irritabilité persistante sans impulsivité centrale</label>
+  
+  <label><input type="checkbox" name="diff_sud" value="Troubles liés aux substances – Symptômes apparus après usage intensif"/> Troubles liés aux substances – Symptômes apparus après consommation</label>
+  
+  <label><input type="checkbox" name="diff_personnalite" value="Troubles de la personnalité (borderline, narcissique, etc.) – Instabilité relationnelle, peur d'abandon"/> Troubles de la personnalité (borderline, narcissique, etc.) – Caractéristiques relationnelles spécifiques</label>
+  
+  <label><input type="checkbox" name="diff_psychotique" value="Troubles psychotiques – Symptômes exclusivement pendant épisode psychotique"/> Troubles psychotiques – Symptômes limités aux épisodes psychotiques</label>
+  
+  <label><input type="checkbox" name="diff_medication" value="Symptômes induits par médicament (bronchodilatateurs, thyroïde, etc.)"/> Symptômes induits par médicaments (bronchodilatateurs, thyroïde, neuroleptiques, etc.)</label>
+  
+  <label><input type="checkbox" name="diff_neurocognitif" value="Troubles neurocognitifs majeurs/légers – Déclin acquis à l'âge adulte"/> Troubles neurocognitifs – Déclin acquis débutant à l'âge adulte</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Conditions associées</p>
+  
+  <label><input type="checkbox" name="comorb_odd" value="Trouble oppositionnel avec provocation (≈50 % des présentations combinées)"/> Trouble oppositionnel avec provocation</label>
+  
+  <label><input type="checkbox" name="comorb_cd" value="Trouble des conduites (≈25 % selon l'âge et le cadre)"/> Trouble des conduites</label>
+  
+  <label><input type="checkbox" name="comorb_dmdd" value="Trouble disruptif avec dysrégulation de l'humeur"/> Trouble disruptif avec dysrégulation de l'humeur</label>
+  
+  <label><input type="checkbox" name="comorb_anxiete" value="Troubles anxieux (p. ex. anxiété généralisée, phobies)"/> Troubles anxieux (généralisée, phobies, etc.)</label>
+  
+  <label><input type="checkbox" name="comorb_depression" value="Épisodes dépressifs majeurs"/> Trouble dépressif majeur</label>
+  
+  <label><input type="checkbox" name="comorb_ocd" value="Trouble obsessionnel-compulsif"/> Trouble obsessionnel-compulsif</label>
+  
+  <label><input type="checkbox" name="comorb_ied" value="Trouble explosif intermittent"/> Trouble explosif intermittent</label>
+  
+  <label><input type="checkbox" name="comorb_sud" value="Troubles liés aux substances (surtout à l'âge adulte)"/> Troubles liés aux substances (adolescents/adultes)</label>
+  
+  <label><input type="checkbox" name="comorb_personnalite" value="Troubles de la personnalité (antisocial, borderline, etc.)"/> Troubles de la personnalité (antisocial, borderline, etc.)</label>
+  
+  <label><input type="checkbox" name="comorb_asd" value="Trouble du spectre de l'autisme"/> Trouble du spectre de l'autisme</label>
+  
+  <label><input type="checkbox" name="comorb_sld" value="Troubles spécifiques des apprentissages"/> Troubles spécifiques des apprentissages</label>
+  
+  <label><input type="checkbox" name="comorb_id" value="Déficience intellectuelle"/> Déficience intellectuelle</label>
+  
+  <label><input type="checkbox" name="comorb_langage" value="Troubles du langage"/> Troubles du langage</label>
+  
+  <label><input type="checkbox" name="comorb_coordination" value="Trouble développemental de la coordination"/> Trouble développemental de la coordination</label>
+  
+  <label><input type="checkbox" name="comorb_tic" value="Troubles tics/Tourette"/> Troubles tics / syndrome de Gilles de la Tourette</label>
+  
+  <label><input type="checkbox" name="comorb_sommeil" value="Troubles du sommeil (insomnie, troubles du rythme circadien, apnées, jambes sans repos)"/> Troubles du sommeil (insomnie, circadien, apnées, jambes sans repos)</label>
+  
+  <label><input type="checkbox" name="comorb_hypersomnolence" value="Hypersomnolence / somnolence diurne importante"/> Hypersomnolence / somnolence diurne</label>
+  
+  <label><input type="checkbox" name="comorb_epilepsie" value="Épilepsie"/> Épilepsie</label>
+  
+  <label><input type="checkbox" name="comorb_allergie" value="Allergies / troubles auto-immuns"/> Allergies et troubles auto-immuns</label>
+  
+</fieldset>
+
+</form>
 <div id="resultat"></div>
 
 <script>

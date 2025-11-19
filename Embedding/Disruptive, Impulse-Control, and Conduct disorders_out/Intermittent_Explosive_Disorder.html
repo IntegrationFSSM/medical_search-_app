@@ -26,102 +26,64 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -132,15 +94,15 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Explosions comportementales récurrentes (échec à contrôler les impulsions agressives)</legend>
   <p class="subtitle">Manifestées par l'une OU l'autre des options suivantes</p>
-  <div class="warning-box">
-    ⚠️ <strong>Important :</strong> Sélectionner l'option (1) OU l'option (2), ou les deux si applicables.
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-weight: bold; margin: 10px 0;">⚠️ Important : Sélectionner l'option (1) OU l'option (2), ou les deux si applicables.</p>
   
   <p style="margin-top: 10px;"><strong>Option (1) - Agression fréquente de faible intensité :</strong></p>
   <label><input type="checkbox" name="critereA1" value="Agression verbale (crises de colère, tirades, disputes verbales ou bagarres)"/> Agression verbale (crises de colère, tirades, disputes verbales ou bagarres)</label>
@@ -153,29 +115,26 @@
   <label><input type="checkbox" name="critereA2" value="ET/OU agression physique causant blessures à animaux ou individus"/> ET/OU agression physique causant blessures à animaux ou individus</label>
   <label><input type="checkbox" name="critereA2" value="Survenant dans une période de 12 mois"/> Survenant dans une période de 12 mois</label>
   
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Magnitude de l'agressivité disproportionnée</legend>
   <p class="subtitle">L'ampleur de l'agressivité exprimée est totalement disproportionnée par rapport à la provocation ou aux facteurs de stress</p>
   <label><input type="checkbox" name="critereB" value="Totalement disproportionnée par rapport à la provocation"/> Totalement disproportionnée par rapport à la provocation</label>
   <label><input type="checkbox" name="critereB" value="Totalement disproportionnée par rapport aux facteurs de stress psychosociaux"/> Totalement disproportionnée par rapport aux facteurs de stress psychosociaux</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Explosions impulsives et non préméditées</legend>
   <p class="subtitle">Les explosions agressives récurrentes ne sont pas préméditées et ne visent pas un objectif tangible</p>
   <label><input type="checkbox" name="critereC" value="Impulsives et/ou basées sur la colère"/> Impulsives et/ou basées sur la colère</label>
   <label><input type="checkbox" name="critereC" value="Non commises pour obtenir un objectif tangible (argent, pouvoir, intimidation)"/> Non commises pour obtenir un objectif tangible (argent, pouvoir, intimidation)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Détresse ou altération du fonctionnement</legend>
   <p class="subtitle">Les explosions agressives récurrentes causent une détresse marquée ou une altération du fonctionnement, ou sont associées à des conséquences financières/légales</p>
   <label><input type="checkbox" name="critereD" value="Détresse marquée chez l'individu"/> Détresse marquée chez l'individu</label>
@@ -183,185 +142,166 @@
   <label><input type="checkbox" name="critereD" value="Altération du fonctionnement interpersonnel"/> Altération du fonctionnement interpersonnel</label>
   <label><input type="checkbox" name="critereD" value="Conséquences financières"/> Conséquences financières</label>
   <label><input type="checkbox" name="critereD" value="Conséquences légales"/> Conséquences légales</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Âge chronologique</legend>
   <p class="subtitle">L'âge chronologique est d'au moins 6 ans (ou niveau de développement équivalent)</p>
   <label><input type="checkbox" id="choixE" value="Âge chronologique ≥6 ans"/> Âge chronologique ≥6 ans (ou niveau de développement équivalent)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
-</fieldset>
-
-<!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Diagnostic différentiel et exclusions</legend>
-  <p class="subtitle">Les explosions agressives récurrentes ne sont pas mieux expliquées par un autre trouble mental et ne sont pas attribuables à une affection médicale ou à une substance</p>
-  <div class="note-box">
-    <strong>Note :</strong> Ce diagnostic PEUT être posé en plus du TDAH, trouble des conduites, trouble oppositionnel avec provocation ou trouble du spectre de l'autisme lorsque les explosions agressives impulsives sont EN EXCÈS de celles habituellement observées dans ces troubles et justifient une attention clinique indépendante.
-  </div>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble dépressif majeur"/> Pas mieux expliqué par trouble dépressif majeur</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble bipolaire"/> Pas mieux expliqué par trouble bipolaire</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble dysrégulation de l'humeur explosive"/> Pas mieux expliqué par trouble dysrégulation de l'humeur explosive</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble psychotique"/> Pas mieux expliqué par trouble psychotique</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble de personnalité antisociale"/> Pas mieux expliqué par trouble de personnalité antisociale</label>
-  <label><input type="checkbox" name="critereF" value="Pas mieux expliqué par trouble de personnalité borderline"/> Pas mieux expliqué par trouble de personnalité borderline</label>
-  <label><input type="checkbox" name="critereF" value="Pas attribuable à traumatisme crânien"/> Pas attribuable à traumatisme crânien</label>
-  <label><input type="checkbox" name="critereF" value="Pas attribuable à maladie d'Alzheimer"/> Pas attribuable à maladie d'Alzheimer</label>
-  <label><input type="checkbox" name="critereF" value="Pas attribuable aux effets physiologiques d'une substance"/> Pas attribuable aux effets physiologiques d'une substance (drogue, médicament)</label>
-  <label><input type="checkbox" name="critereF" value="Pour enfants 6-18 ans : pas un trouble de l'adaptation"/> Pour enfants 6-18 ans : comportement agressif ne fait pas partie d'un trouble de l'adaptation</label>
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier du trouble explosif intermittent</p>
+  
+  <label><input type="checkbox" name="diff_dysregulation" value="Trouble de dysrégulation de l'humeur explosive - Humeur négative persistante entre éclats, début avant 10 ans"/> Trouble de dysrégulation de l'humeur explosive - Humeur négative persistante entre éclats, début avant 10 ans</label>
+  
+  <label><input type="checkbox" name="diff_personality" value="Troubles de personnalité antisociale ou limite - Niveau d'agression impulsive plus faible"/> Troubles de personnalité antisociale ou limite - Niveau d'agression impulsive plus faible</label>
+  
+  <label><input type="checkbox" name="diff_delirium" value="Délirium, trouble neurocognitif majeur, personnalité modifiée due à affection médicale - Agression résultant d'effets physiologiques d'affection médicale"/> Délirium, trouble neurocognitif majeur, personnalité modifiée due à affection médicale - Agression résultant d'effets physiologiques d'affection médicale</label>
+  
+  <label><input type="checkbox" name="diff_substance" value="Intoxication par substance ou sevrage de substance - Éclats presque toujours associés à intoxication/sevrage"/> Intoxication par substance ou sevrage de substance - Éclats presque toujours associés à intoxication/sevrage</label>
+  
+  <label><input type="checkbox" name="diff_adhd" value="TDAH, trouble des conduites, trouble oppositionnel avec provocation, trouble du spectre de l'autisme - Peut coexister si éclats en excès"/> TDAH, trouble des conduites, trouble oppositionnel avec provocation, trouble du spectre de l'autisme - Peut coexister si éclats en excès</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles associés</p>
+  
+  <label><input type="checkbox" name="comorb_depressive" value="Troubles dépressifs"/> Troubles dépressifs</label>
+  
+  <label><input type="checkbox" name="comorb_anxiety" value="Troubles anxieux"/> Troubles anxieux</label>
+  
+  <label><input type="checkbox" name="comorb_ptsd" value="Trouble de stress post-traumatique"/> Trouble de stress post-traumatique</label>
+  
+  <label><input type="checkbox" name="comorb_bulimia" value="Boulimie nerveuse"/> Boulimie nerveuse</label>
+  
+  <label><input type="checkbox" name="comorb_binge" value="Trouble de l'alimentation compulsive"/> Trouble de l'alimentation compulsive</label>
+  
+  <label><input type="checkbox" name="comorb_substance" value="Troubles liés à l'utilisation de substances"/> Troubles liés à l'utilisation de substances</label>
+  
+  <label><input type="checkbox" name="comorb_personality" value="Troubles de personnalité antisociale ou limite - Risque plus élevé"/> Troubles de personnalité antisociale ou limite - Risque plus élevé</label>
+  
+  <label><input type="checkbox" name="comorb_disruptive" value="Troubles avec comportements perturbateurs - Antécédents de TDAH, trouble des conduites, trouble oppositionnel avec provocation"/> Troubles avec comportements perturbateurs - Antécédents de TDAH, trouble des conduites, trouble oppositionnel avec provocation</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let tousLesChoix = {
-  critereA1: [],
-  critereA2: [],
-  critereB: [],
-  critereC: [],
-  critereD: [],
-  critereE: false,
-  critereF: []
-};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-function validerCritereA() {
-  const choix1 = Array.from(document.querySelectorAll("input[name='critereA1']:checked")).map(el => el.value);
-  const choix2 = Array.from(document.querySelectorAll("input[name='critereA2']:checked")).map(el => el.value);
-  
-  if (choix1.length > 0 || choix2.length > 0) {
-    tousLesChoix.critereA1 = choix1;
-    tousLesChoix.critereA2 = choix2;
-    document.getElementById("critereB").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option dans (1) OU (2).", confirmButtonColor: "#667eea"});
-  }
-}
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerCritereB() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereB = choix;
-    document.getElementById("critereC").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereC() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereC = choix;
-    document.getElementById("critereD").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère C.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereD() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereD = choix;
-    document.getElementById("critereE").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereE() {
-  if (document.getElementById("choixE").checked) {
-    tousLesChoix.critereE = true;
-    document.getElementById("critereF").classList.remove("hidden");
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère E.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function afficherResume() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereF']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereF = choix;
-    genererResume();
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère F.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function genererResume() {
-  let html = "<div class='resultat-box'>";
-  html += "<div class='resume-section'>";
-  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
-  
-  html += "<h4>Critère A – Explosions comportementales récurrentes</h4>";
-  if (tousLesChoix.critereA1.length > 0) {
-    html += "<p style='margin-left: 10px;'><strong>Option (1) - Agression fréquente de faible intensité :</strong></p>";
-    html += "<ul class='choix-list'>";
-    tousLesChoix.critereA1.forEach(s => html += "<li>✓ " + s + "</li>");
-    html += "</ul>";
-  }
-  if (tousLesChoix.critereA2.length > 0) {
-    html += "<p style='margin-left: 10px;'><strong>Option (2) - Explosions graves avec dommages/blessures :</strong></p>";
-    html += "<ul class='choix-list'>";
-    tousLesChoix.critereA2.forEach(s => html += "<li>✓ " + s + "</li>");
-    html += "</ul>";
-  }
-  
-  html += "<h4>Critère B – Magnitude disproportionnée</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère C – Explosions impulsives</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère D – Détresse ou altération</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère E – Âge chronologique</h4>";
-  html += "<ul class='choix-list'>";
-  html += "<li>✓ Âge chronologique ≥6 ans</li>";
-  html += "</ul>";
-  
-  html += "<h4>Critère F – Diagnostic différentiel et exclusions</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereF.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<div class='code-section'>";
-  html += "<strong>Code diagnostique :</strong> F63.81<br/>";
-  html += "<strong>Diagnostic :</strong> F63.81 Trouble explosif intermittent";
-  html += "</div>";
-  
-  html += "</div>";
-  
-  html += "<div class='boutons-validation'>";
-  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
-  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
-  html += "</div>";
-  html += "</div>";
-  
-  document.getElementById("resultat").innerHTML = html;
-  document.getElementById("resultat").style.display = "block";
-}
-
-function validerFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">

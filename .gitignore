@@ -35,3 +35,8 @@ Thumbs.db
 
 # Node (si vous utilisez npm)
 node_modules/
+
+# Virtual environment
+venv/
+env/
+ENV/

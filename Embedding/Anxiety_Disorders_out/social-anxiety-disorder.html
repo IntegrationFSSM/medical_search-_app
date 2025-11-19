@@ -26,88 +26,64 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -118,336 +94,260 @@
   </div>
 </div>
 
+<h2 class="section-title">Les critères diagnostiques</h2>
+
 <form id="formulaire">
 
 <!-- Critère A -->
 <fieldset id="critereA">
   <legend>Critère A – Peur ou anxiété marquée dans des situations sociales</legend>
   <p class="subtitle">Peur ou anxiété marquée à propos d'une ou plusieurs situations sociales dans lesquelles la personne est exposée à l'observation attentive d'autrui</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants, l'anxiété doit survenir en présence de pairs et pas seulement lors d'interactions avec des adultes.
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;">Note : Chez les enfants, l'anxiété doit survenir en présence de pairs et pas seulement lors d'interactions avec des adultes.</p>
   <label><input type="checkbox" name="critereA" value="Interactions sociales (avoir une conversation, rencontrer des personnes non familières)"/> Interactions sociales (avoir une conversation, rencontrer des personnes non familières)</label>
   <label><input type="checkbox" name="critereA" value="Être observé(e) (manger ou boire)"/> Être observé(e) (manger ou boire)</label>
   <label><input type="checkbox" name="critereA" value="Performer devant d'autres personnes (faire un discours)"/> Performer devant d'autres personnes (faire un discours)</label>
   <label><input type="checkbox" name="critereA" value="Autres situations sociales avec observation possible"/> Autres situations sociales avec observation possible</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Peur d'être évalué(e) négativement</legend>
   <p class="subtitle">La personne craint d'agir ou de montrer des symptômes d'anxiété qui seront évalués négativement</p>
   <label><input type="checkbox" name="critereB" value="Peur d'être humilié(e)"/> Peur d'être humilié(e)</label>
   <label><input type="checkbox" name="critereB" value="Peur d'être embarrassé(e)"/> Peur d'être embarrassé(e)</label>
   <label><input type="checkbox" name="critereB" value="Peur d'être rejeté(e)"/> Peur d'être rejeté(e)</label>
   <label><input type="checkbox" name="critereB" value="Peur d'offenser les autres"/> Peur d'offenser les autres</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Provocation constante de peur ou d'anxiété</legend>
   <p class="subtitle">Les situations sociales provoquent presque toujours la peur ou l'anxiété</p>
-  <div class="note-box">
-    <strong>Note :</strong> Chez les enfants, la peur ou l'anxiété peut s'exprimer par des pleurs, des crises de colère, un figement, un agrippement, un retrait ou l'incapacité de parler dans les situations sociales.
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;">Note : Chez les enfants, la peur ou l'anxiété peut s'exprimer par des pleurs, des crises de colère, un figement, un agrippement, un retrait ou l'incapacité de parler dans les situations sociales.</p>
   <label><input type="checkbox" id="choixC" value="Les situations sociales provoquent presque toujours peur ou anxiété"/> Les situations sociales provoquent presque toujours peur ou anxiété</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Évitement ou endurance avec détresse</legend>
   <p class="subtitle">Les situations sociales sont évitées ou endurées avec peur ou anxiété intense</p>
   <label><input type="checkbox" name="critereD" value="Les situations sont évitées"/> Les situations sont évitées</label>
   <label><input type="checkbox" name="critereD" value="Les situations sont endurées avec peur ou anxiété intense"/> Les situations sont endurées avec peur ou anxiété intense</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Peur ou anxiété disproportionnée</legend>
   <p class="subtitle">La peur ou l'anxiété est disproportionnée par rapport à la menace réelle</p>
   <label><input type="checkbox" name="critereE" value="Disproportionnée par rapport à la menace réelle posée par la situation sociale"/> Disproportionnée par rapport à la menace réelle posée par la situation sociale</label>
   <label><input type="checkbox" name="critereE" value="Disproportionnée par rapport au contexte socioculturel"/> Disproportionnée par rapport au contexte socioculturel</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
 </fieldset>
 
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
+<fieldset id="critereF">
   <legend>Critère F – Durée (6 mois ou plus)</legend>
   <p class="subtitle">La peur, l'anxiété ou l'évitement est persistant, durant typiquement 6 mois ou plus</p>
   <label><input type="checkbox" id="choixF" value="Symptômes persistants depuis 6 mois ou plus"/> Symptômes persistants depuis 6 mois ou plus</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
 </fieldset>
 
 <!-- Critère G -->
-<fieldset id="critereG" class="hidden">
+<fieldset id="critereG">
   <legend>Critère G – Détresse ou altération du fonctionnement</legend>
   <p class="subtitle">La peur, l'anxiété ou l'évitement cause une détresse ou altération cliniquement significative</p>
   <label><input type="checkbox" name="critereG" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
   <label><input type="checkbox" name="critereG" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
   <label><input type="checkbox" name="critereG" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereG" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereG()">✔️ Valider le critère G</button>
 </fieldset>
 
 <!-- Critère H -->
-<fieldset id="critereH" class="hidden">
+<fieldset id="critereH">
   <legend>Critère H – Exclusion des causes organiques</legend>
   <p class="subtitle">La peur, l'anxiété ou l'évitement n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
   <label><input type="checkbox" name="critereH" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
   <label><input type="checkbox" name="critereH" value="Pas attribuable à une affection médicale"/> Pas attribuable à une affection médicale</label>
-  <button type="button" onclick="validerCritereH()">✔️ Valider le critère H</button>
-</fieldset>
-
-<!-- Critère I -->
-<fieldset id="critereI" class="hidden">
-  <legend>Critère I – Diagnostic différentiel</legend>
-  <p class="subtitle">La peur, l'anxiété ou l'évitement n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereI" value="Pas mieux expliqué par le trouble panique"/> Pas mieux expliqué par le trouble panique</label>
-  <label><input type="checkbox" name="critereI" value="Pas mieux expliqué par la dysmorphophobie"/> Pas mieux expliqué par la dysmorphophobie (trouble dysmorphique corporel)</label>
-  <label><input type="checkbox" name="critereI" value="Pas mieux expliqué par le trouble du spectre de l'autisme"/> Pas mieux expliqué par le trouble du spectre de l'autisme</label>
-  <button type="button" onclick="validerCritereI()">✔️ Valider le critère I</button>
-</fieldset>
-
-<!-- Critère J -->
-<fieldset id="critereJ" class="hidden">
-  <legend>Critère J – Affection médicale concomitante</legend>
-  <p class="subtitle">Si une autre affection médicale est présente, la peur/anxiété/évitement est clairement non liée ou excessive</p>
-  <label><input type="checkbox" name="critereJ" value="Pas d'affection médicale présente"/> Pas d'affection médicale présente</label>
-  <label><input type="checkbox" name="critereJ" value="Affection médicale présente mais peur/anxiété clairement non liée ou excessive"/> Affection médicale présente (maladie de Parkinson, obésité, défiguration) mais peur/anxiété clairement non liée ou excessive</label>
-  <button type="button" onclick="validerCritereJ()">✔️ Valider le critère J</button>
 </fieldset>
 
 <!-- Spécificateur -->
-<fieldset id="specificateur" class="hidden">
+<fieldset id="specificateur">
   <legend>Spécificateur</legend>
   <p class="subtitle">Préciser si la peur est limitée à la performance</p>
   <label><input type="checkbox" name="specificateur" value="Performance uniquement"/> <strong>Performance uniquement :</strong> Si la peur est limitée à parler ou performer en public</label>
-  <button type="button" onclick="validerSpecificateur()">✔️ Valider le spécificateur</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier du trouble anxiété sociale</p>
+  
+  <label><input type="checkbox" name="diff_shyness" value="Timidité normative - Trait de personnalité commun, pas pathologique sauf impact significatif"/> Timidité normative - Trait de personnalité commun, pas pathologique sauf impact significatif</label>
+  
+  <label><input type="checkbox" name="diff_agoraphobie" value="Agoraphobie - Peur de l'échappement vs peur du jugement, calme quand seul"/> Agoraphobie - Peur de l'échappement vs peur du jugement, calme quand seul</label>
+  
+  <label><input type="checkbox" name="diff_panique" value="Trouble panique - Attaques toujours liées aux situations sociales vs inattendues"/> Trouble panique - Attaques toujours liées aux situations sociales vs inattendues</label>
+  
+  <label><input type="checkbox" name="diff_tag" value="Trouble anxieux généralisé - Focus sur qualité des relations vs peur d'évaluation"/> Trouble anxieux généralisé - Focus sur qualité des relations vs peur d'évaluation</label>
+  
+  <label><input type="checkbox" name="diff_separation" value="Trouble anxiété de séparation - Évitement dû à séparation vs peur d'évaluation"/> Trouble anxiété de séparation - Évitement dû à séparation vs peur d'évaluation</label>
+  
+  <label><input type="checkbox" name="diff_phobia" value="Phobies spécifiques - Peur d'embarras limitée vs peur d'évaluation générale"/> Phobies spécifiques - Peur d'embarras limitée vs peur d'évaluation générale</label>
+  
+  <label><input type="checkbox" name="diff_mutism" value="Mutisme sélectif - Peur de parler vs peur d'évaluation en situations non verbales"/> Mutisme sélectif - Peur de parler vs peur d'évaluation en situations non verbales</label>
+  
+  <label><input type="checkbox" name="diff_depression" value="Trouble dépressif majeur - Préoccupation d'être mauvais vs comportements sociaux"/> Trouble dépressif majeur - Préoccupation d'être mauvais vs comportements sociaux</label>
+  
+  <label><input type="checkbox" name="diff_dysmorphia" value="Trouble dysmorphique corporel - Préoccupation d'apparence vs peur d'évaluation générale"/> Trouble dysmorphique corporel - Préoccupation d'apparence vs peur d'évaluation générale</label>
+  
+  <label><input type="checkbox" name="diff_delusional" value="Trouble délirant - Délusions de rejet vs croyances avec bon insight"/> Trouble délirant - Délusions de rejet vs croyances avec bon insight</label>
+  
+  <label><input type="checkbox" name="diff_autism" value="Trouble du spectre de l'autisme - Déficits de communication vs capacité sociale adéquate"/> Trouble du spectre de l'autisme - Déficits de communication vs capacité sociale adéquate</label>
+  
+  <label><input type="checkbox" name="diff_personality" value="Troubles de la personnalité - Évitement plus large et pervasif vs trouble anxieux"/> Troubles de la personnalité - Évitement plus large et pervasif vs trouble anxieux</label>
+  
+  <label><input type="checkbox" name="diff_other" value="Autres troubles mentaux - Schizophrénie, troubles alimentaires, TOC"/> Autres troubles mentaux - Schizophrénie, troubles alimentaires, TOC</label>
+  
+  <label><input type="checkbox" name="diff_medical" value="Affections médicales - Symptômes embarrassants vs peur excessive d'évaluation"/> Affections médicales - Symptômes embarrassants vs peur excessive d'évaluation</label>
+  
+  <label><input type="checkbox" name="diff_oppositional" value="Trouble oppositionnel avec provocation - Refus d'autorité vs peur d'évaluation"/> Trouble oppositionnel avec provocation - Refus d'autorité vs peur d'évaluation</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Le trouble anxiété sociale est souvent associé à d'autres troubles</p>
+  
+  <p style="margin-bottom: 10px; font-weight: bold;">Troubles souvent associés :</p>
+  <label><input type="checkbox" name="comorb_anxiety" value="Autres troubles anxieux"/> Autres troubles anxieux</label>
+  <label><input type="checkbox" name="comorb_depression" value="Trouble dépressif majeur"/> Trouble dépressif majeur</label>
+  <label><input type="checkbox" name="comorb_substance" value="Troubles liés à l'utilisation de substances"/> Troubles liés à l'utilisation de substances</label>
+  
+  <p style="margin: 15px 0 10px 0; font-weight: bold;">Autres troubles :</p>
+  <label><input type="checkbox" name="comorb_dysmorphia" value="Trouble dysmorphique corporel"/> Trouble dysmorphique corporel</label>
+  <label><input type="checkbox" name="comorb_personality" value="Trouble de la personnalité évitante"/> Trouble de la personnalité évitante</label>
+  
+  <p style="margin: 15px 0 10px 0; font-weight: bold;">Chez les enfants :</p>
+  <label><input type="checkbox" name="comorb_autism" value="Trouble du spectre de l'autisme de haut niveau"/> Trouble du spectre de l'autisme de haut niveau</label>
+  <label><input type="checkbox" name="comorb_mutism" value="Mutisme sélectif"/> Mutisme sélectif</label>
+  
+  <p style="margin: 15px 0 10px 0; font-weight: bold;">Évolution :</p>
+  <label><input type="checkbox" name="comorb_onset" value="L'apparition du trouble anxiété sociale précède généralement celle des autres troubles (sauf phobie spécifique et anxiété de séparation)"/> L'apparition du trouble anxiété sociale précède généralement celle des autres troubles (sauf phobie spécifique et anxiété de séparation)</label>
+  <label><input type="checkbox" name="comorb_isolation" value="L'isolation sociale chronique peut mener à un trouble dépressif majeur"/> L'isolation sociale chronique peut mener à un trouble dépressif majeur</label>
+  <label><input type="checkbox" name="comorb_self_medication" value="Les substances peuvent être utilisées comme auto-traitement des peurs sociales"/> Les substances peuvent être utilisées comme auto-traitement des peurs sociales</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let tousLesChoix = {
-  critereA: [],
-  critereB: [],
-  critereC: false,
-  critereD: [],
-  critereE: [],
-  critereF: false,
-  critereG: [],
-  critereH: [],
-  critereI: [],
-  critereJ: [],
-  specificateur: []
-};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-let etapeActuelle = 'A';
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerCritereA() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereA = choix;
-    document.getElementById("critereB").classList.remove("hidden");
-    etapeActuelle = 'B';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereB() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereB']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereB = choix;
-    document.getElementById("critereC").classList.remove("hidden");
-    etapeActuelle = 'C';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère B.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereC() {
-  if (document.getElementById("choixC").checked) {
-    tousLesChoix.critereC = true;
-    document.getElementById("critereD").classList.remove("hidden");
-    etapeActuelle = 'D';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère C.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereD() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereD = choix;
-    document.getElementById("critereE").classList.remove("hidden");
-    etapeActuelle = 'E';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereE() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereE = choix;
-    document.getElementById("critereF").classList.remove("hidden");
-    etapeActuelle = 'F';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère E.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereF() {
-  if (document.getElementById("choixF").checked) {
-    tousLesChoix.critereF = true;
-    document.getElementById("critereG").classList.remove("hidden");
-    etapeActuelle = 'G';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère F.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereG() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereG']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereG = choix;
-    document.getElementById("critereH").classList.remove("hidden");
-    etapeActuelle = 'H';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère G.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereH() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereH']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereH = choix;
-    document.getElementById("critereI").classList.remove("hidden");
-    etapeActuelle = 'I';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère H.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereI() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereI']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereI = choix;
-    document.getElementById("critereJ").classList.remove("hidden");
-    etapeActuelle = 'J';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère I.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereJ() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereJ']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereJ = choix;
-    document.getElementById("specificateur").classList.remove("hidden");
-    etapeActuelle = 'Spec';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère J.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerSpecificateur() {
-  const choix = Array.from(document.querySelectorAll("input[name='specificateur']:checked")).map(el => el.value);
-  tousLesChoix.specificateur = choix;
-  afficherResume();
-}
-
-function afficherResume() {
-  let html = "<div class='resultat-box'>";
-  html += "<div class='resume-section'>";
-  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
-  
-  html += "<h4>Critère A – Peur ou anxiété marquée</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère B – Peur d'être évalué(e) négativement</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereB.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère C – Provocation constante</h4>";
-  html += "<ul class='choix-list'>";
-  html += "<li>" + (tousLesChoix.critereC ? "✓" : "✗") + " Provocation presque toujours de peur ou anxiété</li>";
-  html += "</ul>";
-  
-  html += "<h4>Critère D – Évitement ou endurance</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère E – Peur disproportionnée</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereE.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère F – Durée</h4>";
-  html += "<ul class='choix-list'>";
-  html += "<li>" + (tousLesChoix.critereF ? "✓" : "✗") + " Persistant depuis 6 mois ou plus</li>";
-  html += "</ul>";
-  
-  html += "<h4>Critère G – Détresse ou altération</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereG.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère H – Exclusion causes organiques</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereH.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère I – Diagnostic différentiel</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereI.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère J – Affection médicale concomitante</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereJ.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  if (tousLesChoix.specificateur.length > 0) {
-    html += "<h4>Spécificateur</h4>";
-    html += "<ul class='choix-list'>";
-    tousLesChoix.specificateur.forEach(s => html += "<li>✓ " + s + "</li>");
-    html += "</ul>";
-  }
-  
-  html += "</div>";
-  
-  html += "<div class='boutons-validation'>";
-  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
-  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
-  html += "</div>";
-  html += "</div>";
-  
-  document.getElementById("resultat").innerHTML = html;
-  document.getElementById("resultat").style.display = "block";
-}
-
-function validerFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">

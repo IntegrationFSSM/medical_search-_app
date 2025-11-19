@@ -41,30 +41,6 @@
       cursor: pointer;
     }
     button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,42 +65,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
-    }
-    .insight-desc {
-      background: #f9f9f9;
-      border-left: 3px solid #8cc63f;
-      padding: 8px;
-      margin: 8px 0;
-      font-size: 0.85em;
     }
   </style>
 
@@ -148,33 +92,27 @@
   <p class="subtitle">Difficulté persistante à jeter ou se séparer des possessions, indépendamment de leur valeur réelle</p>
   <label><input type="checkbox" name="critereA" value="Difficulté persistante à jeter ou se séparer des possessions"/> Difficulté persistante à jeter ou se séparer des possessions</label>
   <label><input type="checkbox" name="critereA" value="Indépendamment de leur valeur réelle"/> Indépendamment de leur valeur réelle</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Raison de la difficulté</legend>
   <p class="subtitle">Cette difficulté est due à un besoin perçu de conserver les objets et à la détresse associée au fait de les jeter</p>
   <label><input type="checkbox" name="critereB" value="Besoin perçu de conserver les objets"/> Besoin perçu de conserver les objets</label>
   <label><input type="checkbox" name="critereB" value="Détresse associée au fait de les jeter"/> Détresse associée au fait de les jeter</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Accumulation et encombrement des espaces de vie</legend>
-  <p class="subtitle">La difficulté à jeter les possessions résulte en accumulation de possessions qui encombrent et encombrissent les espaces de vie actifs et compromettent substantiellement leur utilisation prévue. Si les espaces de vie ne sont pas encombrés, c'est uniquement en raison d'interventions de tierces parties</p>
+  <p class="subtitle">La difficulté à jeter les possessions résulte en accumulation de possessions qui encombrent et encombrissent les espaces de vie actifs et compromettent substantiellement leur utilisation prévue. Si les espaces de vie ne sont pas encombrés, c'est uniquement en raison d'interventions de tierces parties (ex: membres famille, nettoyeurs, autorités)</p>
   <label><input type="checkbox" name="critereC" value="Accumulation de possessions"/> Accumulation de possessions</label>
   <label><input type="checkbox" name="critereC" value="Encombrement et encombrissement des espaces de vie actifs"/> Encombrement et encombrissement des espaces de vie actifs</label>
   <label><input type="checkbox" name="critereC" value="Compromet substantiellement utilisation prévue des espaces"/> Compromet substantiellement l'utilisation prévue des espaces</label>
-  <div class="note-box">
-    Si les espaces de vie ne sont pas encombrés, c'est uniquement en raison d'interventions de tierces parties (ex: membres famille, nettoyeurs, autorités)
-  </div>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Détresse ou altération cliniquement significative</legend>
   <p class="subtitle">L'accumulation cause détresse ou altération cliniquement significative dans le fonctionnement social, professionnel ou autres domaines importants (incluant maintien environnement sûr pour soi et autres)</p>
   <label><input type="checkbox" name="critereD" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
@@ -182,22 +120,20 @@
   <label><input type="checkbox" name="critereD" value="Altération fonctionnement professionnel"/> Altération dans le fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereD" value="Altération autres domaines importants"/> Altération dans autres domaines importants du fonctionnement</label>
   <label><input type="checkbox" name="critereD" value="Difficulté maintenir environnement sûr pour soi et autres"/> Difficulté à maintenir un environnement sûr pour soi et autres</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Exclusion d'autre condition médicale</legend>
   <p class="subtitle">L'accumulation n'est pas attribuable à une autre condition médicale</p>
   <label><input type="checkbox" name="critereE" value="Non attribuable à lésion cérébrale"/> Non attribuable à lésion cérébrale</label>
   <label><input type="checkbox" name="critereE" value="Non attribuable à maladie cérébrovasculaire"/> Non attribuable à maladie cérébrovasculaire</label>
   <label><input type="checkbox" name="critereE" value="Non attribuable à syndrome de Prader-Willi"/> Non attribuable au syndrome de Prader-Willi</label>
   <label><input type="checkbox" name="critereE" value="Non attribuable à autre condition médicale"/> Non attribuable à autre condition médicale</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
 </fieldset>
 
 <!-- Critère F -->
-<fieldset id="critereF" class="hidden">
+<fieldset id="critereF">
   <legend>Critère F – Exclusion d'autres troubles mentaux</legend>
   <p class="subtitle">L'accumulation n'est pas mieux expliquée par symptômes d'un autre trouble mental</p>
   <label><input type="checkbox" name="critereF" value="Non mieux expliquée par obsessions dans trouble obsessionnel-compulsif"/> Non mieux expliquée par obsessions dans le trouble obsessionnel-compulsif</label>
@@ -205,47 +141,25 @@
   <label><input type="checkbox" name="critereF" value="Non mieux expliquée par délires dans schizophrénie ou autre trouble psychotique"/> Non mieux expliquée par délires dans la schizophrénie ou autre trouble psychotique</label>
   <label><input type="checkbox" name="critereF" value="Non mieux expliquée par déficits cognitifs dans trouble neurocognitif majeur"/> Non mieux expliquée par déficits cognitifs dans le trouble neurocognitif majeur</label>
   <label><input type="checkbox" name="critereF" value="Non mieux expliquée par intérêts restreints dans trouble spectre autisme"/> Non mieux expliquée par intérêts restreints dans le trouble du spectre de l'autisme</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
 </fieldset>
 
 <!-- Spécificateurs -->
-<fieldset id="specificateurs" class="hidden">
+<fieldset id="specificateurs">
   <legend>Spécificateurs</legend>
   
   <p style="margin-top: 10px;"><strong>Acquisition excessive :</strong></p>
-  <label><input type="checkbox" name="acquisition" value="Avec acquisition excessive"/> Avec acquisition excessive</label>
-  <div class="note-box">
-    Si la difficulté à jeter les possessions est accompagnée d'acquisition excessive d'objets qui ne sont pas nécessaires ou pour lesquels il n'y a pas d'espace disponible. Approximativement 80-90% des individus avec trouble d'accumulation présentent acquisition excessive. Forme la plus fréquente: achat excessif, suivi par acquisition d'objets gratuits.
-  </div>
+  <label><input type="checkbox" name="acquisition" value="Avec acquisition excessive"/> Avec acquisition excessive (approximativement 80-90% des individus; formes: achat excessif, acquisition objets gratuits)</label>
   
   <p style="margin-top: 15px;"><strong>Degré d'insight concernant les croyances et comportements liés à l'accumulation :</strong></p>
   
-  <label><input type="radio" name="insight" value="Avec insight bon ou passable"/> <strong>Avec insight bon ou passable</strong></label>
-  <div class="insight-desc">
-    L'individu reconnaît que les croyances et comportements liés à l'accumulation (concernant difficulté jeter objets, encombrement ou acquisition excessive) sont problématiques.
-  </div>
-  
-  <label><input type="radio" name="insight" value="Avec insight pauvre"/> <strong>Avec insight pauvre</strong></label>
-  <div class="insight-desc">
-    L'individu est principalement convaincu que les croyances et comportements liés à l'accumulation (concernant difficulté jeter objets, encombrement ou acquisition excessive) ne sont pas problématiques malgré preuves du contraire.
-  </div>
-  
-  <label><input type="radio" name="insight" value="Avec insight absent/croyances délirantes"/> <strong>Avec insight absent/croyances délirantes</strong></label>
-  <div class="insight-desc">
-    L'individu est complètement convaincu que les croyances et comportements liés à l'accumulation (concernant difficulté jeter objets, encombrement ou acquisition excessive) ne sont pas problématiques malgré preuves du contraire.
-  </div>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
+  <label><input type="radio" name="insight" value="Avec insight bon ou passable"/> Avec insight bon ou passable (reconnaît que croyances/comportements sont problématiques)</label>
+  <label><input type="radio" name="insight" value="Avec insight pauvre"/> Avec insight pauvre (principalement convaincu que croyances/comportements ne sont pas problématiques malgré preuves contraire)</label>
+  <label><input type="radio" name="insight" value="Avec insight absent/croyances délirantes"/> Avec insight absent/croyances délirantes (complètement convaincu que croyances/comportements ne sont pas problématiques malgré preuves contraire)</label>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
-
 <script>
-let choix={critereA:[],critereB:[],critereC:[],critereD:[],critereE:[],critereF:[],acquisition:false,insight:""};
-
-function validerCritereA(){
   const c=Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(e=>e.value);
   if(c.length>0){
     choix.critereA=c;

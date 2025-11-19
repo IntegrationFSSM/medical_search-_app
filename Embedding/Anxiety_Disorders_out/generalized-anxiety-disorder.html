@@ -26,88 +26,64 @@
     font-size: 20px;
     color: #3d7a3b;
   }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
 
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
+    .subtitle {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
     }
-    button:hover { background-color: #76b42f; }
-    .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
+    .hidden {
+      display: none;
     }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
+      color: white;
+      border: none;
+      padding: 15px 40px;
       font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
       flex: 1;
+      max-width: 300px;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
-    .subtitle {
-      font-size: 0.9em;
-      color: #666;
-      font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
   </style>
-
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -117,6 +93,8 @@
     <h2>Évaluation du Trouble Anxieux Généralisé (TAG) – DSM-5-TR</h2>
   </div>
 </div>
+
+<h2 class="section-title">Les critères diagnostiques</h2>
 
 <form id="formulaire">
 
@@ -128,207 +106,198 @@
   <label><input type="checkbox" name="critereA" value="Présentes plus d'un jour sur deux"/> Présentes plus d'un jour sur deux</label>
   <label><input type="checkbox" name="critereA" value="Depuis au moins 6 mois"/> Depuis au moins 6 mois</label>
   <label><input type="checkbox" name="critereA" value="Concernant plusieurs événements ou activités"/> Concernant plusieurs événements ou activités (travail, école, etc.)</label>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
 </fieldset>
 
 <!-- Critère B -->
-<fieldset id="critereB" class="hidden">
+<fieldset id="critereB">
   <legend>Critère B – Difficulté à contrôler l'inquiétude</legend>
   <p class="subtitle">La personne éprouve de la difficulté à contrôler cette inquiétude</p>
   <label><input type="checkbox" id="choixB" value="Difficulté à contrôler l'inquiétude"/> Difficulté à contrôler l'inquiétude</label>
-  <button type="button" onclick="validerCritereB()">✔️ Valider le critère B</button>
 </fieldset>
 
 <!-- Critère C -->
-<fieldset id="critereC" class="hidden">
+<fieldset id="critereC">
   <legend>Critère C – Symptômes associés (au moins 3 sur 6)</legend>
   <p class="subtitle">L'anxiété et l'inquiétude sont associées à au moins 3 des 6 symptômes suivants (présents plus d'un jour sur deux pendant les 6 derniers mois)</p>
-  <div class="note-box">
-    <strong>Note :</strong> Un seul symptôme est requis chez les enfants.
-  </div>
+  <p style="font-size: 0.9em; color: #666; font-style: italic; margin: 10px 0;">Note : Un seul symptôme est requis chez les enfants.</p>
   <label><input type="checkbox" name="critereC" value="Agitation ou sensation d'être survolté ou à bout"/> 1. Agitation ou sensation d'être survolté ou à bout</label>
   <label><input type="checkbox" name="critereC" value="Fatigabilité"/> 2. Fatigabilité</label>
   <label><input type="checkbox" name="critereC" value="Difficultés de concentration ou trous de mémoire"/> 3. Difficultés de concentration ou trous de mémoire</label>
   <label><input type="checkbox" name="critereC" value="Irritabilité"/> 4. Irritabilité</label>
   <label><input type="checkbox" name="critereC" value="Tension musculaire"/> 5. Tension musculaire</label>
   <label><input type="checkbox" name="critereC" value="Perturbation du sommeil (difficultés d'endormissement, sommeil interrompu ou agité et non satisfaisant)"/> 6. Perturbation du sommeil (difficultés d'endormissement, sommeil interrompu ou agité et non satisfaisant)</label>
-  <button type="button" onclick="validerCritereC()">✔️ Valider le critère C</button>
 </fieldset>
 
 <!-- Critère D -->
-<fieldset id="critereD" class="hidden">
+<fieldset id="critereD">
   <legend>Critère D – Détresse ou altération du fonctionnement</legend>
   <p class="subtitle">L'anxiété, l'inquiétude ou les symptômes physiques causent une détresse ou altération cliniquement significative</p>
   <label><input type="checkbox" name="critereD" value="Détresse cliniquement significative"/> Détresse cliniquement significative</label>
   <label><input type="checkbox" name="critereD" value="Altération du fonctionnement social"/> Altération du fonctionnement social</label>
   <label><input type="checkbox" name="critereD" value="Altération du fonctionnement professionnel"/> Altération du fonctionnement professionnel</label>
   <label><input type="checkbox" name="critereD" value="Altération dans d'autres domaines importants"/> Altération dans d'autres domaines importants du fonctionnement</label>
-  <button type="button" onclick="validerCritereD()">✔️ Valider le critère D</button>
 </fieldset>
 
 <!-- Critère E -->
-<fieldset id="critereE" class="hidden">
+<fieldset id="critereE">
   <legend>Critère E – Exclusion des causes organiques</legend>
   <p class="subtitle">La perturbation n'est pas attribuable aux effets physiologiques d'une substance ou d'une affection médicale</p>
   <label><input type="checkbox" name="critereE" value="Pas attribuable à une substance (drogue, médicament)"/> Pas attribuable à une substance (drogue, médicament)</label>
   <label><input type="checkbox" name="critereE" value="Pas attribuable à une affection médicale (hyperthyroïdie, etc.)"/> Pas attribuable à une affection médicale (hyperthyroïdie, etc.)</label>
-  <button type="button" onclick="validerCritereE()">✔️ Valider le critère E</button>
-</fieldset>
-
-<!-- Critère F -->
-<fieldset id="critereF" class="hidden">
-  <legend>Critère F – Diagnostic différentiel</legend>
-  <p class="subtitle">La perturbation n'est pas mieux expliquée par un autre trouble mental</p>
-  <label><input type="checkbox" name="critereF" value="Pas anxiété concernant les attaques de panique (trouble panique)"/> Pas anxiété concernant les attaques de panique (trouble panique)</label>
-  <label><input type="checkbox" name="critereF" value="Pas peur de l'évaluation négative (anxiété sociale)"/> Pas peur de l'évaluation négative (anxiété sociale)</label>
-  <label><input type="checkbox" name="critereF" value="Pas contamination ou autres obsessions (TOC)"/> Pas contamination ou autres obsessions (TOC)</label>
-  <label><input type="checkbox" name="critereF" value="Pas séparation des figures d'attachement (anxiété de séparation)"/> Pas séparation des figures d'attachement (anxiété de séparation)</label>
-  <label><input type="checkbox" name="critereF" value="Pas rappels d'événements traumatiques (TSPT)"/> Pas rappels d'événements traumatiques (TSPT)</label>
-  <label><input type="checkbox" name="critereF" value="Pas prise de poids (anorexie mentale)"/> Pas prise de poids (anorexie mentale)</label>
-  <label><input type="checkbox" name="critereF" value="Pas plaintes physiques (trouble à symptomatologie somatique)"/> Pas plaintes physiques (trouble à symptomatologie somatique)</label>
-  <label><input type="checkbox" name="critereF" value="Pas défauts d'apparence perçus (dysmorphophobie)"/> Pas défauts d'apparence perçus (dysmorphophobie)</label>
-  <label><input type="checkbox" name="critereF" value="Pas peur d'avoir une maladie grave (anxiété liée à la maladie)"/> Pas peur d'avoir une maladie grave (anxiété liée à la maladie)</label>
-  <label><input type="checkbox" name="critereF" value="Pas contenu de croyances délirantes (schizophrénie ou trouble délirant)"/> Pas contenu de croyances délirantes (schizophrénie ou trouble délirant)</label>
-  <button type="button" onclick="validerCritereF()">✔️ Valider le critère F</button>
 </fieldset>
 
 </form>
 
-<div id="resultat"></div>
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
+<!-- Diagnostic différentiel -->
+<fieldset id="diagnostic-differentiel">
+  <legend>Diagnostic différentiel</legend>
+  <p class="subtitle">Cocher les troubles à différencier du trouble anxieux généralisé</p>
+  
+  <label><input type="checkbox" name="diff_medical" value="Trouble anxieux dû à une affection médicale - Anxiété jugée comme effet physiologique d'une affection médicale spécifique"/> Trouble anxieux dû à une affection médicale - Anxiété jugée comme effet physiologique d'une affection médicale spécifique</label>
+  
+  <label><input type="checkbox" name="diff_substance" value="Trouble anxieux induit par une substance/médicament - Substance ou médicament jugé étiologiquement lié à l'anxiété"/> Trouble anxieux induit par une substance/médicament - Substance ou médicament jugé étiologiquement lié à l'anxiété</label>
+  
+  <label><input type="checkbox" name="diff_social" value="Trouble anxiété sociale - Anxiété anticipatoire focalisée sur des situations sociales d'évaluation"/> Trouble anxiété sociale - Anxiété anticipatoire focalisée sur des situations sociales d'évaluation</label>
+  
+  <label><input type="checkbox" name="diff_separation" value="Trouble anxiété de séparation - Inquiétude excessive uniquement concernant la séparation des figures d'attachement"/> Trouble anxiété de séparation - Inquiétude excessive uniquement concernant la séparation des figures d'attachement</label>
+  
+  <label><input type="checkbox" name="diff_panique" value="Trouble panique - Attaques de panique inattendues avec préoccupation persistante"/> Trouble panique - Attaques de panique inattendues avec préoccupation persistante</label>
+  
+  <label><input type="checkbox" name="diff_illness" value="Trouble d'anxiété lié à la maladie et trouble à symptomatologie somatique - Inquiétude focalisée uniquement sur la santé"/> Trouble d'anxiété lié à la maladie et trouble à symptomatologie somatique - Inquiétude focalisée uniquement sur la santé</label>
+  
+  <label><input type="checkbox" name="diff_ocd" value="Trouble obsessionnel-compulsif - Obsessions sous forme de pensées intrusives et indésirables"/> Trouble obsessionnel-compulsif - Obsessions sous forme de pensées intrusives et indésirables</label>
+  
+  <label><input type="checkbox" name="diff_ptsd" value="Trouble de stress post-traumatique et troubles de l'adaptation - Anxiété mieux expliquée par des symptômes de TSPT ou stress identifié"/> Trouble de stress post-traumatique et troubles de l'adaptation - Anxiété mieux expliquée par des symptômes de TSPT ou stress identifié</label>
+  
+  <label><input type="checkbox" name="diff_depression" value="Troubles dépressifs, bipolaires et psychotiques - Anxiété/inquiétude sévère justifiant une attention clinique"/> Troubles dépressifs, bipolaires et psychotiques - Anxiété/inquiétude sévère justifiant une attention clinique</label>
+  
+</fieldset>
+
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Le trouble anxieux généralisé est souvent associé à d'autres troubles</p>
+  
+  <p style="margin-bottom: 10px; font-weight: bold;">Troubles souvent associés :</p>
+  <label><input type="checkbox" name="comorb_anxiety" value="Autres troubles anxieux"/> Autres troubles anxieux</label>
+  <label><input type="checkbox" name="comorb_depression" value="Troubles dépressifs unipolaires"/> Troubles dépressifs unipolaires</label>
+  <label><input type="checkbox" name="comorb_substance" value="Troubles liés à l'utilisation de substances"/> Troubles liés à l'utilisation de substances</label>
+  <label><input type="checkbox" name="comorb_conduct" value="Troubles des conduites"/> Troubles des conduites</label>
+  <label><input type="checkbox" name="comorb_psychotic" value="Troubles psychotiques"/> Troubles psychotiques</label>
+  <label><input type="checkbox" name="comorb_neurodev" value="Troubles neurodéveloppementaux"/> Troubles neurodéveloppementaux</label>
+  <label><input type="checkbox" name="comorb_neurocog" value="Troubles neurocognitifs"/> Troubles neurocognitifs</label>
+  
+</fieldset>
+
+</form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
-let tousLesChoix = {
-  critereA: [],
-  critereB: false,
-  critereC: [],
-  critereD: [],
-  critereE: [],
-  critereF: []
-};
+// Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
-let etapeActuelle = 'A';
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
 
-function validerCritereA() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereA']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereA = choix;
-    document.getElementById("critereB").classList.remove("hidden");
-    etapeActuelle = 'B';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère A.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereB() {
-  if (document.getElementById("choixB").checked) {
-    tousLesChoix.critereB = true;
-    document.getElementById("critereC").classList.remove("hidden");
-    etapeActuelle = 'C';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher la case pour le critère B.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereC() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(el => el.value);
-  if (choix.length >= 3) {
-    tousLesChoix.critereC = choix;
-    document.getElementById("critereD").classList.remove("hidden");
-    etapeActuelle = 'D';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins 3 symptômes pour le critère C (1 seul pour les enfants).", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereD() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereD = choix;
-    document.getElementById("critereE").classList.remove("hidden");
-    etapeActuelle = 'E';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère D.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereE() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereE = choix;
-    document.getElementById("critereF").classList.remove("hidden");
-    etapeActuelle = 'F';
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère E.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function validerCritereF() {
-  const choix = Array.from(document.querySelectorAll("input[name='critereF']:checked")).map(el => el.value);
-  if (choix.length > 0) {
-    tousLesChoix.critereF = choix;
-    afficherResume();
-  } else {
-    Swal.fire({icon: "warning", title: "Attention", text: "Veuillez cocher au moins une option pour le critère F.", confirmButtonColor: "#667eea"});
-  }
-}
-
-function afficherResume() {
-  let html = "<div class='resultat-box'>";
-  html += "<div class='resume-section'>";
-  html += "<h3>📋 RÉSUMÉ DE VOS CHOIX</h3>";
-  
-  html += "<h4>Critère A – Anxiété et inquiétude excessives</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereA.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère B – Difficulté à contrôler l'inquiétude</h4>";
-  html += "<ul class='choix-list'>";
-  html += "<li>" + (tousLesChoix.critereB ? "✓" : "✗") + " Difficulté à contrôler l'inquiétude</li>";
-  html += "</ul>";
-  
-  html += "<h4>Critère C – Symptômes associés (au moins 3)</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereC.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère D – Détresse ou altération</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereD.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère E – Exclusion causes organiques</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereE.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "<h4>Critère F – Diagnostic différentiel</h4>";
-  html += "<ul class='choix-list'>";
-  tousLesChoix.critereF.forEach(s => html += "<li>✓ " + s + "</li>");
-  html += "</ul>";
-  
-  html += "</div>";
-  
-  html += "<div class='boutons-validation'>";
-  html += "<button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button>";
-  html += "<button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button>";
-  html += "</div>";
-  html += "</div>";
-  
-  document.getElementById("resultat").innerHTML = html;
-  document.getElementById("resultat").style.display = "block";
-}
-
-function validerFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
-}
-
-function nonValiderFormulaire() {
-  // Cette fonction sera remplacée dynamiquement par Django en mode validation
-  Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
-}
-
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">

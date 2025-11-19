@@ -1,288 +1,406 @@
-{% extends 'pathology_search/base.html' %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Accès Direct - {{ pathology_info.name|default:"Pathologie" }}</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <style>
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            font-family: system-ui, -apple-system, sans-serif;
+            height: 100%;
+            width: 100vw !important;
+            max-width: 100vw !important;
+            overflow-x: hidden;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Forcer le contenu à prendre toute la largeur */
+        .min-h-screen {
+            width: 100vw !important;
+            max-width: 100vw !important;
+        }
+        
+        #pathologyFormContainer {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        /* Forcer tous les conteneurs, divs, sections, etc. à prendre toute la largeur */
+        div, section, fieldset, form, main, article, header, footer {
+            max-width: 100vw !important;
+        }
+        
+        /* Si les HTML ont des classes avec max-width */
+        .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl, .mx-auto {
+            max-width: 100vw !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100vw !important;
+        }
+        
+        /* Override tout style inline avec width */
+        [style*="width"] {
+            width: 100vw !important;
+        }
+        
+        .progress-bar-container {
+            width: 100%;
+            height: 24px;
+            background-color: #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-{% block content %}
-<div class="mb-6">
-    <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg shadow-md p-4 sm:p-6 border-l-4 border-emerald-500">
-        <div class="flex items-center justify-between mb-4">
-            <div>
-                <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
-                    <i class="fas fa-clipboard-list text-emerald-600 mr-2"></i>
-                    {{ pathology_info.name }}
-                </h2>
-                <p class="text-sm text-gray-600">
-                    <i class="fas fa-map-marker-alt text-emerald-600 mr-2"></i>
-                    {{ pathology_info.location }}
-                </p>
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 50%, #10b981 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-gray-50">
+    <!-- Page Full Width - No Container -->
+    <div class="min-h-screen m-0 p-0">
+        <!-- Header violet sticky compact et professionnel -->
+        {% if patient %}
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-3 sticky top-0 z-50 shadow-md">
+            <div class="w-full">
+                <div class="flex flex-col gap-1.5">
+                    <!-- Ligne 1: Titre, Info patient et Boutons d'action sur une seule ligne -->
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <!-- Titre -->
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-base font-semibold flex items-center">
+                                <i class="fas fa-file-medical-alt text-sm mr-1.5"></i>
+                                Accès Direct
+                            </h3>
+                        </div>
+                        
+                        <!-- Info Patient compacte -->
+                        <div class="flex items-center gap-3 text-xs">
+                            <span><i class="fas fa-user text-xs mr-1"></i><strong>{{ patient.nom }} {{ patient.prenom }}</strong></span>
+                            <span><i class="fas fa-id-card text-xs mr-1"></i>{{ patient.numero_dossier }}</span>
+                            {% if patient.date_naissance %}
+                            <span><i class="fas fa-calendar text-xs mr-1"></i>{{ patient.date_naissance|date:"d/m/Y" }}</span>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Boutons d'action -->
+                        <div class="flex items-center gap-2">
+                            <button 
+                                onclick="window.validerFormulaire()"
+                                class="bg-green-500 hover:bg-green-600 text-white font-semibold py-1.5 px-4 rounded transition shadow-sm flex items-center text-sm"
+                            >
+                                <i class="fas fa-check text-xs mr-1.5"></i>
+                                VALIDER
+                            </button>
+                            <button 
+                                onclick="window.nonValiderFormulaire()"
+                                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-1.5 px-4 rounded transition shadow-sm flex items-center text-sm"
+                            >
+                                <i class="fas fa-times text-xs mr-1.5"></i>
+                                NON VALIDER
+                            </button>
+                            <button 
+                                onclick="window.location.href='{% url 'pathology_search:index' %}'"
+                                class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-medium py-1.5 px-3 rounded transition text-xs"
+                            >
+                                <i class="fas fa-home text-xs mr-1"></i>Accueil
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ligne 2: Pathologie -->
+                    {% if pathology_info.name %}
+                    <div class="flex items-center gap-4 text-xs opacity-90 pt-1 border-t border-white border-opacity-20">
+                        <span><i class="fas fa-disease text-xs mr-1"></i><span class="font-medium">{{ pathology_info.name }}</span></span>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
-            <a href="{% url 'pathology_search:index' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center text-sm">
-                <i class="fas fa-arrow-left mr-2"></i>
-                Retour
-            </a>
+        </div>
+        {% else %}
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 sticky top-0 z-50 shadow-lg">
+            <h3 class="text-xl font-bold flex items-center">
+                <i class="fas fa-file-medical-alt mr-2"></i>
+                <span>Formulaire d'Évaluation{% if pathology_info.name %} - {{ pathology_info.name }}{% endif %}</span>
+            </h3>
+        </div>
+        {% endif %}
+        
+        <!-- Contenu du formulaire - Avec marges -->
+        <div class="w-full bg-white">
+            <div id="pathologyFormContainer" class="px-4 py-3">
+                {{ html_content|safe }}
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Affichage du formulaire HTML -->
-<div class="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6">
-    <div id="pathologyFormContainer">
-        {{ html_content|safe }}
-    </div>
-</div>
+    <script>
+    // Variables globales
+    const pathologyInfo = {{ pathology_info_json|safe }};
+    const patientId = {{ patient_id|default:"null" }};
+    const medecinId = {{ medecin_id|default:"null" }};
 
-<!-- Zone de résultat du diagnostic -->
-<div id="diagnosticResult" class="hidden">
-    <!-- Le diagnostic sera inséré ici -->
-</div>
-
-<script>
-// Variables globales
-const pathologyInfo = {{ pathology_info_json|safe }};
-const patientId = {{ patient_id|default:"null" }};
-const medecinId = {{ medecin_id|default:"null" }};
-
-// Fonction pour obtenir le cookie CSRF
-function getCookie(name) {
-    const metaTag = document.querySelector('meta[name="csrf-token"]');
-    if (metaTag) {
-        return metaTag.getAttribute('content');
-    }
-    
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
+    // Fonction pour obtenir le cookie CSRF
+    function getCookie(name) {
+        const metaTag = document.querySelector('meta[name="csrf-token"]');
+        if (metaTag) {
+            return metaTag.getAttribute('content');
+        }
+        
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
             }
         }
+        return cookieValue;
     }
-    return cookieValue;
-}
 
-// Attendre que le DOM soit complètement chargé
-document.addEventListener('DOMContentLoaded', function() {
-    // Intercepter les boutons VALIDE et NON VALIDE du formulaire HTML
-    const buttons = document.querySelectorAll('button, input[type="button"]');
-    
-    buttons.forEach(button => {
-        const buttonText = (button.textContent || button.value || '').toUpperCase();
+    // Attendre que le DOM soit complètement chargé
+    document.addEventListener('DOMContentLoaded', function() {
+        // Créer les fonctions globales pour les boutons principaux VALIDE/NON VALIDE
         
-        if (buttonText.includes('VALIDE') && !buttonText.includes('NON')) {
-            // Bouton VALIDE
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                handleValidation();
+        window.validerFormulaire = function() {
+            console.log('validerFormulaire() appelée - Génération du diagnostic');
+            handleValidation();
+        };
+        
+        window.nonValiderFormulaire = function() {
+            console.log('nonValiderFormulaire() appelée - Retour à la page principale');
+            handleSkip();
+        };
+        
+        console.log('✅ Fonctions de validation globales créées');
+    });
+
+    // Fonction pour collecter les données du formulaire
+    function collectFormData() {
+        const formData = {};
+        
+        // Collecter toutes les cases cochées
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+            const label = checkbox.nextElementSibling || checkbox.previousElementSibling;
+            const text = label ? label.textContent.trim() : checkbox.value;
+            
+            // Grouper par section si possible
+            const fieldset = checkbox.closest('fieldset');
+            const sectionName = fieldset ? (fieldset.querySelector('legend')?.textContent.trim() || 'Critères') : 'Critères';
+            
+            if (!formData[sectionName]) {
+                formData[sectionName] = [];
+            }
+            formData[sectionName].push(text);
+        });
+        
+        // Collecter les inputs texte
+        document.querySelectorAll('input[type="text"], textarea').forEach(input => {
+            if (input.value.trim()) {
+                const label = input.labels?.[0]?.textContent.trim() || input.name || input.placeholder;
+                if (label) {
+                    formData[label] = input.value.trim();
+                }
+            }
+        });
+        
+        // Collecter les select
+        document.querySelectorAll('select').forEach(select => {
+            if (select.value) {
+                const label = select.labels?.[0]?.textContent.trim() || select.name;
+                if (label) {
+                    formData[label] = select.options[select.selectedIndex].text;
+                }
+            }
+        });
+        
+        return formData;
+    }
+
+    // Gérer la validation
+    async function handleValidation() {
+        // Vérifier qu'un patient est sélectionné
+        if (!patientId) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Patient requis',
+                text: 'Veuillez sélectionner un patient depuis la page principale avant de valider une pathologie.',
+                confirmButtonColor: '#10b981'
+            }).then(() => {
+                window.location.href = '{% url "pathology_search:index" %}';
             });
-        } else if (buttonText.includes('NON VALIDE')) {
-            // Bouton NON VALIDE
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                handleSkip();
+            return;
+        }
+        
+        // Collecter les données du formulaire
+        const formData = collectFormData();
+        
+        if (Object.keys(formData).length === 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Formulaire vide',
+                text: 'Veuillez remplir au moins un critère avant de valider.',
+                confirmButtonColor: '#10b981'
             });
+            return;
         }
-    });
-    
-    // Créer des fonctions globales pour la compatibilité
-    window.validerFormulaire = function() {
-        handleValidation();
-    };
-    
-    window.nonValiderFormulaire = function() {
-        handleSkip();
-    };
-});
-
-// Fonction pour collecter les données du formulaire
-function collectFormData() {
-    const formData = {};
-    
-    // Collecter toutes les cases cochées
-    document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-        const label = checkbox.nextElementSibling || checkbox.previousElementSibling;
-        const text = label ? label.textContent.trim() : checkbox.value;
         
-        // Grouper par section si possible
-        const fieldset = checkbox.closest('fieldset');
-        const sectionName = fieldset ? (fieldset.querySelector('legend')?.textContent.trim() || 'Critères') : 'Critères';
-        
-        if (!formData[sectionName]) {
-            formData[sectionName] = [];
-        }
-        formData[sectionName].push(text);
-    });
-    
-    // Collecter les inputs texte
-    document.querySelectorAll('input[type="text"], textarea').forEach(input => {
-        if (input.value.trim()) {
-            const label = input.labels?.[0]?.textContent.trim() || input.name || input.placeholder;
-            if (label) {
-                formData[label] = input.value.trim();
-            }
-        }
-    });
-    
-    // Collecter les select
-    document.querySelectorAll('select').forEach(select => {
-        if (select.value) {
-            const label = select.labels?.[0]?.textContent.trim() || select.name;
-            if (label) {
-                formData[label] = select.options[select.selectedIndex].text;
-            }
-        }
-    });
-    
-    return formData;
-}
-
-// Gérer la validation
-async function handleValidation() {
-    // Vérifier qu'un patient est sélectionné
-    if (!patientId) {
+        // Afficher le loading avec animation
         Swal.fire({
-            icon: 'warning',
-            title: 'Patient requis',
-            text: 'Veuillez sélectionner un patient depuis la page principale avant de valider une pathologie.',
-            confirmButtonColor: '#10b981'
-        }).then(() => {
-            window.location.href = '{% url "pathology_search:index" %}';
-        });
-        return;
-    }
-    
-    // Collecter les données du formulaire
-    const formData = collectFormData();
-    
-    if (Object.keys(formData).length === 0) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Formulaire vide',
-            text: 'Veuillez remplir au moins un critère avant de valider.',
-            confirmButtonColor: '#10b981'
-        });
-        return;
-    }
-    
-    // Afficher le loading avec animation
-    Swal.fire({
-        title: '<i class="fas fa-brain fa-spin text-purple-600 mr-2"></i> Génération du diagnostic IA',
-        html: `
-            <p class="mb-4">Analyse en cours des critères sélectionnés...</p>
-            <div class="progress-bar-container">
-                <div class="progress-bar" id="aiProgressBar"></div>
-            </div>
-            <p class="text-sm text-gray-600 mt-4">Utilisation de GPT-4o-mini pour créer un plan de traitement personnalisé</p>
-        `,
-        allowOutsideClick: false,
-        showConfirmButton: false,
-        didOpen: () => {
-            simulateAIProgress();
-        }
-    });
-    
-    try {
-        // Appeler l'API pour générer le diagnostic
-        const response = await fetch('{% url "pathology_search:validate_action" %}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken')
-            },
-            body: JSON.stringify({
-                action: 'validate',
-                form_data: formData,
-                pathology_name: pathologyInfo.name,
-                patient_id: patientId,
-                medecin_id: medecinId,
-                direct_access: true,
-                html_page: pathologyInfo.html_page
-            })
+            title: '<i class="fas fa-brain fa-spin text-purple-600 mr-2"></i> Génération du diagnostic IA',
+            html: `
+                <p class="mb-4">Analyse en cours des critères sélectionnés...</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="aiProgressBar"></div>
+                </div>
+                <p class="text-sm text-gray-600 mt-4">Utilisation de GPT-4o-mini pour créer un plan de traitement personnalisé</p>
+            `,
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            didOpen: () => {
+                simulateAIProgress();
+            }
         });
         
-        const data = await response.json();
-        
-        if (data.success && data.diagnosis_id) {
-            // Rediriger vers la page de diagnostic
-            window.location.href = `/diagnosis/${data.diagnosis_id}/`;
-        } else {
+        try {
+            // Appeler l'API pour générer le diagnostic
+            const response = await fetch('{% url "pathology_search:validate_action" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({
+                    action: 'validate',
+                    form_data: formData,
+                    pathology_name: pathologyInfo.name,
+                    patient_id: patientId,
+                    medecin_id: medecinId,
+                    direct_access: true,
+                    html_page: pathologyInfo.html_page
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (data.success && data.diagnosis_id) {
+                // Rediriger vers la page de diagnostic
+                window.location.href = `/diagnosis/${data.diagnosis_id}/`;
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur',
+                    text: data.error || 'Une erreur est survenue lors de la génération du diagnostic.',
+                    confirmButtonColor: '#10b981'
+                });
+            }
+        } catch (error) {
             Swal.fire({
                 icon: 'error',
-                title: 'Erreur',
-                text: data.error || 'Une erreur est survenue lors de la génération du diagnostic.',
+                title: 'Erreur de connexion',
+                text: 'Impossible de générer le diagnostic: ' + error.message,
                 confirmButtonColor: '#10b981'
             });
         }
-    } catch (error) {
+    }
+
+    // Simuler la progression de l'IA
+    function simulateAIProgress() {
+        let progress = 0;
+        const progressBar = document.getElementById('aiProgressBar');
+        
+        const interval = setInterval(() => {
+            progress += Math.random() * 15;
+            if (progress > 90) progress = 90;
+            
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+        }, 500);
+        
+        // Nettoyer l'intervalle après 30 secondes
+        setTimeout(() => clearInterval(interval), 30000);
+    }
+
+    // Gérer le skip (retour à la page principale)
+    async function handleSkip() {
+        // Collecter les critères cochés avant de partir
+        const formData = collectFormData();
+        
+        console.log('📊 Critères cochés avant NON VALIDE:', formData);
+        
+        // Sauvegarder les critères même si on ne valide pas
+        try {
+            const response = await fetch('{% url "pathology_search:validate_action" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({
+                    action: 'skip',
+                    current_index: 0,
+                    form_data: formData,
+                    direct_access: true,
+                    pathology_name: '{{ pathology_info.name }}',
+                    html_page: '{{ pathology_info.html_page }}'
+                })
+            });
+            
+            const data = await response.json();
+            console.log('✅ Critères sauvegardés pour NON VALIDE:', data);
+        } catch (error) {
+            console.error('❌ Erreur lors de la sauvegarde des critères:', error);
+        }
+        
+        // Rediriger vers la page principale
         Swal.fire({
-            icon: 'error',
-            title: 'Erreur de connexion',
-            text: 'Impossible de générer le diagnostic: ' + error.message,
-            confirmButtonColor: '#10b981'
+            icon: 'info',
+            title: 'Critères enregistrés',
+            text: 'Les critères cochés ont été sauvegardés. Retour à la page principale...',
+            timer: 2000,
+            timerProgressBar: true,
+            showConfirmButton: false
+        }).then(() => {
+            window.location.href = '{% url "pathology_search:index" %}';
         });
     }
-}
-
-// Simuler la progression de l'IA
-function simulateAIProgress() {
-    let progress = 0;
-    const progressBar = document.getElementById('aiProgressBar');
-    
-    const interval = setInterval(() => {
-        progress += Math.random() * 15;
-        if (progress > 90) progress = 90;
-        
-        if (progressBar) {
-            progressBar.style.width = progress + '%';
-        }
-    }, 500);
-    
-    // Nettoyer l'intervalle après 30 secondes
-    setTimeout(() => clearInterval(interval), 30000);
-}
-
-// Gérer le skip (retour à la page principale)
-function handleSkip() {
-    Swal.fire({
-        icon: 'info',
-        title: 'Retour à la page principale',
-        text: 'Vous allez être redirigé vers la page de recherche.',
-        timer: 2000,
-        timerProgressBar: true,
-        showConfirmButton: false
-    }).then(() => {
-        window.location.href = '{% url "pathology_search:index" %}';
-    });
-}
-</script>
-
-<style>
-.progress-bar-container {
-    width: 100%;
-    height: 24px;
-    background-color: #e5e7eb;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #10b981 0%, #059669 50%, #10b981 100%);
-    background-size: 200% 100%;
-    animation: shimmer 2s linear infinite;
-    transition: width 0.5s ease;
-    width: 0%;
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
-</style>
-{% endblock %}
-
+    </script>
+</body>
+</html>

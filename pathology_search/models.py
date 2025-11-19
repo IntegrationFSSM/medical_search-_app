@@ -76,6 +76,7 @@ class Consultation(models.Model):
         choices=[
             ('en_cours', 'En cours'),
             ('valide', 'Validé'),
+            ('non_valide', 'Non validé'),
             ('archive', 'Archivé')
         ],
         default='en_cours'

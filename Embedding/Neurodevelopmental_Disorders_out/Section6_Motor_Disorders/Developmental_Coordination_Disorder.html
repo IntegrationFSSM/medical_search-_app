@@ -31,40 +31,7 @@
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
-    button {
-      background-color: #8cc63f;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #76b42f; }
     .hidden { display: none; }
-    .resume-section {
-      background: #f0f8f0;
-      border-left: 4px solid #8cc63f;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-    .resume-section h4 {
-      margin-top: 0;
-      color: #3d7a3b;
-    }
-    .choix-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .choix-list li {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-left: 3px solid #8cc63f;
-      padding-left: 10px;
-    }
     .boutons-validation {
       display: flex;
       gap: 10px;
@@ -89,35 +56,10 @@
     .btn-non-valide:hover {
       background-color: #c82333;
     }
-    .resultat-box {
-      margin-top: 30px;
-    }
     .subtitle {
       font-size: 0.9em;
       color: #666;
       font-style: italic;
-    }
-    .note-box {
-      background: #e8f4fd;
-      border-left: 4px solid #2196f3;
-      padding: 10px;
-      margin: 15px 0;
-      font-style: italic;
-    }
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
-    .code-section {
-      background: #fff9e6;
-      border-left: 4px solid #ffc107;
-      padding: 10px;
-      margin: 10px 0;
-      font-family: monospace;
-      font-size: 0.85em;
     }
   </style>
 
@@ -142,10 +84,7 @@
   <label><input type="checkbox" name="critereA" value="Maladresse (laisser tomber ou se cogner contre objets)"/> Maladresse (ex: laisser tomber ou se cogner contre objets)</label>
   <label><input type="checkbox" name="critereA" value="Lenteur de performance des compétences motrices"/> Lenteur de performance des compétences motrices</label>
   <label><input type="checkbox" name="critereA" value="Imprécision de performance des compétences motrices"/> Imprécision de performance des compétences motrices</label>
-  <div class="note-box">
-    <strong>Exemples de compétences motrices affectées :</strong> attraper un objet, utiliser ciseaux ou couverts, écriture manuscrite, faire du vélo, participer aux sports
-  </div>
-  <button type="button" onclick="validerCritereA()">✔️ Valider le critère A</button>
+  <label><input type="checkbox" name="critereA" value="Exemples: attraper objet, utiliser ciseaux/couverts, écriture, vélo, sports"/> Exemples: attraper objet, utiliser ciseaux/couverts, écriture, vélo, sports</label>
 </fieldset>
 
 <!-- Critère B -->
