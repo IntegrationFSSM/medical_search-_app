@@ -180,11 +180,14 @@
   <label><input type="radio" name="severite" value="Léger"/> Léger (peu de symptômes au-delà du requis, altérations mineures)</label>
   <label><input type="radio" name="severite" value="Modéré"/> Modéré (symptômes ou altération entre léger et sévère)</label>
   <label><input type="radio" name="severite" value="Sévère"/> Sévère (nombreux symptômes au-delà du requis ou symptômes particulièrement sévères, altération marquée)</label>
-  
-  <button type="button" onclick="afficherResume()">✔️ Terminer</button>
 </fieldset>
 
 </form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
 
@@ -283,162 +286,6 @@
 </fieldset>
 
 </form>
-<div id="resultat"></div>
-
-<script>
-let choix={age:"",ageRequis:6,inattention:[],hyperactivite:[],critereB:"",critereC:[],critereD:[],critereE:[],remission:"",severite:""};
-
-function updateCounterA1(){
-  const count=document.querySelectorAll("input[name='inattention']:checked").length;
-  document.getElementById("counterA1").textContent=count+"/"+choix.ageRequis;
-}
-
-function updateCounterA2(){
-  const count=document.querySelectorAll("input[name='hyperactivite']:checked").length;
-  document.getElementById("counterA2").textContent=count+"/"+choix.ageRequis;
-}
-
-function validerAge(){
-  const a=document.querySelector("input[name='age']:checked");
-  if(a){
-    choix.age=a.value;
-    choix.ageRequis=(a.value==="enfant")?6:5;
-    document.getElementById("counterA1").textContent="0/"+choix.ageRequis;
-    document.getElementById("counterA2").textContent="0/"+choix.ageRequis;
-    document.getElementById("critereA1").classList.remove("hidden");
-  }else alert("Sélectionnez l'âge du patient");
-}
-
-function validerCritereA1(){
-  const c=Array.from(document.querySelectorAll("input[name='inattention']:checked")).map(e=>e.value);
-  choix.inattention=c;
-  document.getElementById("critereA2").classList.remove("hidden");
-}
-
-function validerCritereA2(){
-  const c=Array.from(document.querySelectorAll("input[name='hyperactivite']:checked")).map(e=>e.value);
-  choix.hyperactivite=c;
-  document.getElementById("critereB").classList.remove("hidden");
-}
-
-function validerCritereB(){
-  const c=document.querySelector("input[name='critereB']:checked");
-  if(c){
-    choix.critereB=c.value;
-    document.getElementById("critereC").classList.remove("hidden");
-  }else alert("Cochez l'option du critère B");
-}
-
-function validerCritereC(){
-  const c=Array.from(document.querySelectorAll("input[name='critereC']:checked")).map(e=>e.value);
-  if(c.length>=2){
-    choix.critereC=c;
-    document.getElementById("critereD").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins 2 contextes", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereD(){
-  const c=Array.from(document.querySelectorAll("input[name='critereD']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereD=c;
-    document.getElementById("critereE").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option", confirmButtonColor: "#667eea"});
-}
-
-function validerCritereE(){
-  const c=Array.from(document.querySelectorAll("input[name='critereE']:checked")).map(e=>e.value);
-  if(c.length>0){
-    choix.critereE=c;
-    document.getElementById("specificateurs").classList.remove("hidden");
-  }else Swal.fire({icon: "warning", title: "Attention", text: "Cochez au moins une option", confirmButtonColor: "#667eea"});
-}
-
-function afficherResume(){
-  const rem=document.querySelector("input[name='remission']:checked");
-  const sev=document.querySelector("input[name='severite']:checked");
-  if(!rem||!sev){
-    Swal.fire({icon: "warning", title: "Attention", text: "Sélectionnez rémission ET sévérité", confirmButtonColor: "#667eea"});
-    return;
-  }
-  choix.remission=rem.value;
-  choix.severite=sev.value;
-  genererResume();
-}
-
-function genererResume(){
-  const nInatt=choix.inattention.length;
-  const nHyper=choix.hyperactivite.length;
-  const requis=choix.ageRequis;
-  
-  let presentation="";
-  let code="";
-  
-  if(nInatt>=requis && nHyper>=requis){
-    presentation="Présentation combinée";
-    code="F90.2";
-  }else if(nInatt>=requis && nHyper<requis){
-    presentation="Présentation inattentive prédominante";
-    code="F90.0";
-  }else if(nInatt<requis && nHyper>=requis){
-    presentation="Présentation hyperactive/impulsive prédominante";
-    code="F90.1";
-  }else{
-    presentation="Critères insuffisants";
-    code="N/A";
-  }
-  
-  let diag=code+" TDAH, "+presentation.toLowerCase();
-  if(choix.remission==="En rémission partielle")diag+=", en rémission partielle";
-  diag+=", sévérité "+choix.severite.toLowerCase();
-  
-  let h="<div class='resultat-box'><div class='resume-section'><h3>📋 RÉSUMÉ</h3>";
-  h+="<h4>Âge du patient</h4><ul class='choix-list'><li>✓ "+(choix.age==="enfant"?"Enfant/Adolescent (<17 ans) – 6 symptômes requis":"Adolescent âgé/Adulte (≥17 ans) – 5 symptômes requis")+"</li></ul>";
-  
-  h+="<h4>Critère A1 – Inattention ("+nInatt+"/"+requis+" symptômes)</h4>";
-  if(nInatt>=requis)h+="<p style='color:green; font-weight:bold;'>✓ Critère rempli (≥"+requis+" symptômes)</p>";
-  else h+="<p style='color:red; font-weight:bold;'>✗ Critère non rempli (<"+requis+" symptômes)</p>";
-  h+="<ul class='choix-list'>";
-  choix.inattention.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère A2 – Hyperactivité/Impulsivité ("+nHyper+"/"+requis+" symptômes)</h4>";
-  if(nHyper>=requis)h+="<p style='color:green; font-weight:bold;'>✓ Critère rempli (≥"+requis+" symptômes)</p>";
-  else h+="<p style='color:red; font-weight:bold;'>✗ Critère non rempli (<"+requis+" symptômes)</p>";
-  h+="<ul class='choix-list'>";
-  choix.hyperactivite.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère B – Début précoce</h4><ul class='choix-list'><li>✓ "+choix.critereB+"</li></ul>";
-  
-  h+="<h4>Critère C – Multiples contextes ("+choix.critereC.length+" contextes)</h4><ul class='choix-list'>";
-  choix.critereC.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère D – Interférence fonctionnelle</h4><ul class='choix-list'>";
-  choix.critereD.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Critère E – Exclusion</h4><ul class='choix-list'>";
-  choix.critereE.forEach(s=>h+="<li>✓ "+s+"</li>");
-  h+="</ul>";
-  
-  h+="<h4>Spécificateurs</h4><ul class='choix-list'>";
-  h+="<li>✓ <strong>Présentation:</strong> "+presentation+"</li>";
-  h+="<li>✓ <strong>Rémission:</strong> "+choix.remission+"</li>";
-  h+="<li>✓ <strong>Sévérité:</strong> "+choix.severite+"</li>";
-  h+="</ul>";
-  
-  h+="<div class='code-section'><strong>Code:</strong> "+code+"<br/><strong>Diagnostic:</strong> "+diag;
-  h+="<br/><br/><strong>Détermination de la présentation :</strong><br/>";
-  h+="• F90.2 Présentation combinée : Si A1 (inattention) ET A2 (hyperactivité-impulsivité) remplis pour les 6 derniers mois<br/>";
-  h+="• F90.0 Présentation inattentive prédominante : Si A1 rempli mais PAS A2 pour les 6 derniers mois<br/>";
-  h+="• F90.1 Présentation hyperactive/impulsive prédominante : Si A2 rempli mais PAS A1 pour les 6 derniers mois";
-  h+="</div></div>";
-  
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaireLocal(event)'>✔️ VALIDER</button><button class='btn-non-valide' onclick='nonValiderFormulaireLocal(event)'>✘ NON VALIDER</button></div></div>";
-  document.getElementById("resultat").innerHTML=h;
-}
-</script>
 
 <script>
 // Gestion locale des boutons pour révéler progressivement Diagnostic différentiel et Comorbidité
