@@ -281,7 +281,8 @@ Réponds UNIQUEMENT par un JSON:
     
     def generate_ai_diagnosis(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
         """
-        Générer un plan de traitement détaillé avec OpenAI basé sur les données du formulaire, le texte médical, et l'historique.
+        Générer un résumé diagnostique structuré (sans plan de traitement) avec OpenAI
+        basé sur les données du formulaire, le texte médical et l'historique.
         
         Args:
             pathology_name: Nom de la pathologie validée
@@ -299,19 +300,24 @@ Réponds UNIQUEMENT par un JSON:
             
             # Appeler OpenAI GPT-4
             response = self.client.chat.completions.create(
-                model="gpt-4o-mini",  # ou "gpt-4" si vous avez accès
+                model="gpt-4o-mini",
                 messages=[
                     {
                         "role": "system",
-                        "content": "Vous êtes un expert psychiatre et pharmacologue spécialisé dans le traitement des troubles mentaux selon le DSM-5-TR. Vous élaborez des plans de traitement médicaux complets, précis et pratiques en français. Vous devez TOUJOURS vous baser sur la documentation médicale fournie et donner des noms de médicaments PRÉCIS avec dosages EXACTS."
+                        "content": (
+                            "Vous êtes un psychiatre clinicien expert du DSM-5-TR. "
+                            "Vous rédigez des résumés diagnostiques structurés et concis en français, "
+                            "en citant uniquement les critères réellement cochés. "
+                            "INTERDIT : prescrire ou détailler un plan de traitement ou des posologies."
+                        )
                     },
                     {
                         "role": "user",
                         "content": prompt
                     }
                 ],
-                temperature=0.7,
-                max_tokens=2500
+                temperature=0.4,
+                max_tokens=1800
             )
             
             diagnosis_text = response.choices[0].message.content
@@ -334,18 +340,21 @@ Réponds UNIQUEMENT par un JSON:
     def _build_diagnosis_prompt(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
         """Construire le prompt pour OpenAI avec le texte médical et l'historique du patient."""
         
-        prompt = f"""En tant qu'expert psychiatre et médecin traitant, établissez un PLAN DE TRAITEMENT MÉDICAL COMPLET pour le patient.
+        prompt = f"""Élabore un RÉSUMÉ DIAGNOSTIQUE (sans plan thérapeutique) pour un patient évalué selon le DSM-5-TR.
 
-**Pathologie diagnostiquée :** {pathology_name}
-**Niveau de correspondance :** {similarity_score:.1f}%
+Consignes obligatoires :
+- Baser l'analyse UNIQUEMENT sur les critères cochés ci-dessous et sur l'extrait médical fourni.
+- Ne jamais prescrire ni décrire un traitement médicamenteux ou une posologie.
+- Utiliser un ton clinique, structuré et concis en français.
 
-📚 DOCUMENTATION MÉDICALE DE RÉFÉRENCE (DSM-5-TR)
+Informations de référence :
+• Pathologie suspectée : {pathology_name}
+• Niveau de correspondance : {similarity_score:.1f}%
 
-{medical_text if medical_text else "Documentation non disponible - Utilisez vos connaissances médicales."}
+Extrait DSM-5-TR disponible :
+{medical_text if medical_text else "Aucun extrait supplémentaire. S'appuyer uniquement sur les critères cochés."}
 
-🩺 SYMPTÔMES ET CRITÈRES PRÉSENTS CHEZ LE PATIENT
-
-**Critères validés lors de l'évaluation clinique actuelle :**
+Critères et éléments cliniques déclarés :
 """
         
         # 🆕 AJOUTER L'HISTORIQUE MÉDICAL
@@ -356,7 +365,7 @@ Réponds UNIQUEMENT par un JSON:
                 prompt += f"  • {symptom}\n"
             if len(historical_symptoms) > 15:
                 prompt += f"  • ... et {len(historical_symptoms) - 15} autres symptômes enregistrés\n"
-            prompt += "\n**⚠️ IMPORTANT : Tenez compte de ces antécédents dans votre plan de traitement.**\n\n"
+            prompt += "\n**⚠️ IMPORTANT : Intégrer ces antécédents dans l'analyse diagnostique.**\n\n"
         
         prompt += """
 """
@@ -374,106 +383,23 @@ Réponds UNIQUEMENT par un JSON:
         
         prompt += """
 
-**VEUILLEZ FOURNIR UN PLAN DE TRAITEMENT COMPLET ET PRATIQUE :**
+Structure attendue (respecter EXACTEMENT ces titres) :
 
-## 1. 💊 TRAITEMENT MÉDICAMENTEUX (Pharmacothérapie)
+## 1. Synthèse clinique
+- 2 à 3 phrases résumant la présentation clinique et le niveau de confiance.
 
-**Médicaments de première ligne :**
-- Nom du médicament (DCI)
-- Dosage initial recommandé
-- Posologie (nombre de prises par jour)
-- Durée du traitement
-- Ajustements progressifs si nécessaire
+## 2. Critères DSM-5 confirmés
+- Reprendre les critères cochés (par blocs si possible) avec le nombre total validé.
 
-**Médicaments complémentaires (si nécessaire) :**
-- Anxiolytiques / Hypnotiques (court terme)
-- Autres adjuvants thérapeutiques
+## 3. Diagnostic différentiel prioritaire
+- 3 à 5 hypothèses maximum, chacune justifiée brièvement.
 
-**⚠️ Précautions et surveillance :**
-- Effets secondaires à surveiller
-- Interactions médicamenteuses
-- Examens biologiques de suivi
+## 4. Comorbidités / facteurs associés
+- Éléments issus du formulaire ou traditionnellement liés à la pathologie, avec lien clinique.
 
-2. 📋 ÉTAPES THÉRAPEUTIQUES À SUIVRE
-
-**Semaine 1-2 : Phase d'initiation**
-- Début du traitement médicamenteux
-- Actions concrètes à entreprendre
-- Objectifs immédiats
-
-**Semaine 3-4 : Phase d'ajustement**
-- Évaluation de la réponse
-- Ajustements nécessaires
-- Objectifs à court terme
-
-**Mois 2-3 : Phase de stabilisation**
-- Consolidation des acquis
-- Maintien du traitement
-- Objectifs à moyen terme
-
-**Mois 4-6+ : Phase de maintenance**
-- Surveillance continue
-- Prévention des rechutes
-- Objectifs à long terme
-
-3. 🎯 PSYCHOTHÉRAPIE ET INTERVENTIONS NON-MÉDICAMENTEUSES
-
-**Approches recommandées :**
-- Type de psychothérapie (TCC, psychodynamique, etc.)
-- Fréquence des séances
-- Durée estimée
-
-**Techniques complémentaires :**
-- Relaxation, mindfulness
-- Activité physique
-- Hygiène de vie
-
-4. 📊 SUIVI ET ÉVALUATION
-
-**Consultations de suivi :**
-- J+15 : Première réévaluation
-- J+30 : Ajustement du traitement
-- Puis tous les mois pendant 6 mois
-
-**Indicateurs de réussite :**
-- Critères d'amélioration à observer
-- Quand envisager une réduction de traitement
-
-5. ⚡ GESTION DES SITUATIONS D'URGENCE
-
-**Que faire en cas de :**
-- Crise aiguë
-- Effets secondaires importants
-- Absence de réponse au traitement
-
-**Numéros d'urgence et ressources**
-
-6. 💡 CONSEILS PRATIQUES POUR LE PATIENT
-
-**À faire :**
-- Recommandations quotidiennes
-- Habitudes à adopter
-
-**À éviter :**
-- Comportements contre-productifs
-- Facteurs aggravants
-
-**IMPORTANT :** 
-1. ⚠️ Basez-vous STRICTEMENT sur la DOCUMENTATION MÉDICALE fournie ci-dessus (DSM-5-TR)
-2. 💊 Donnez des noms de médicaments PRÉCIS (DCI - Dénomination Commune Internationale)
-3. 📊 Spécifiez les dosages EXACTS (mg, posologie, fréquence)
-4. 📋 Détaillez les ÉTAPES CHRONOLOGIQUES du traitement
-5. 🇫🇷 Répondez en français médical professionnel mais compréhensible
-6. 🎯 Ce plan sera utilisé DIRECTEMENT par le médecin traitant avec le patient
-7. ❌ N'AJOUTEZ PAS de phrases générales d'avertissement ou de disclaimer à la fin (comme "ce plan doit être adapté", "consultez un médecin", etc.)
-
-**Format de réponse attendu :**
-- Organisé par sections numérotées (1. 2. 3. etc.)
-- Sous-titres avec emojis (💊 🎯 📋 etc.)
-- Listes à puces claires
-- Médicaments avec dosages précis
-- Timeline thérapeutique détaillée
-- NE PAS inclure de phrases d'avertissement générales à la fin
+## 5. Recommandations cliniques immédiates
+- Étapes de suivi, examens complémentaires, coordination interdisciplinaire ou psychoéducation.
+- INTERDIT : citer des molécules, dosages, ou protocoles thérapeutiques.
 """
         
         return prompt
