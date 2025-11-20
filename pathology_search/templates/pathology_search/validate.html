@@ -181,7 +181,6 @@
     // Variables globales
     const pathologyInfo = {{ pathology_info_json|safe }};
     const patientId = {{ patient_id|default:"null" }};
-    const medecinId = {{ medecin_id|default:"null" }};
     const currentIndex = {{ current_index|default:"0" }};
     const totalResults = {{ total_results|default:"1" }};
     const isLast = {{ is_last|default:"false"|lower }};
@@ -324,7 +323,6 @@
                     form_data: formData,
                     pathology_name: pathologyInfo.name,
                     patient_id: patientId,
-                    medecin_id: medecinId,
                     direct_access: false,  // C'est une validation depuis la recherche
                     current_index: currentIndex
                 })

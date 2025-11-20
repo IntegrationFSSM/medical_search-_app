@@ -84,63 +84,6 @@
     </div>
 </div>
 
-<!-- Médecin Selection Section -->
-<div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-md p-4 sm:p-6 mb-6 border-l-4 border-blue-500">
-    <div class="flex items-center justify-between mb-4">
-        <h3 class="text-lg font-bold text-gray-800 flex items-center">
-            <i class="fas fa-user-doctor text-blue-600 mr-2"></i>
-            Sélection du Médecin
-        </h3>
-        <button 
-            type="button" 
-            onclick="openCreateMedecinModal()"
-            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center text-sm"
-        >
-            <i class="fas fa-user-plus mr-2"></i>
-            Nouveau Médecin
-        </button>
-    </div>
-    
-    <div class="space-y-3">
-        <label for="medecinSelect" class="block text-sm font-medium text-gray-700">
-            <i class="fas fa-search mr-1"></i> Rechercher et sélectionner un médecin
-        </label>
-        <select 
-            id="medecinSelect" 
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
-            required
-        >
-            <option value="">-- Sélectionnez un médecin --</option>
-        </select>
-        
-        <!-- Médecin Info Display -->
-        <div id="medecinInfo" class="hidden mt-3 p-4 bg-white rounded-lg border-l-4 border-blue-500">
-            <h4 class="font-semibold text-gray-800 mb-2">
-                <i class="fas fa-info-circle text-blue-600 mr-2"></i>
-                Informations du médecin
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                <div>
-                    <span class="text-gray-600">Nom complet :</span>
-                    <span class="font-semibold ml-2" id="medecinNomComplet"></span>
-                </div>
-                <div>
-                    <span class="text-gray-600">Spécialité :</span>
-                    <span class="font-semibold ml-2" id="medecinSpecialiteDisplay"></span>
-                </div>
-                <div>
-                    <span class="text-gray-600">N° Ordre :</span>
-                    <span class="font-semibold ml-2" id="medecinNumeroOrdreDisplay"></span>
-                </div>
-                <div>
-                    <span class="text-gray-600">Téléphone :</span>
-                    <span class="font-semibold ml-2" id="medecinTelephoneDisplay"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Accès Direct aux Pathologies Section -->
 <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg shadow-md p-4 sm:p-6 mb-6 border-l-4 border-emerald-500">
     <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
@@ -270,108 +213,10 @@
     </div>
 </div>
 
-<!-- Create Médecin Modal -->
-<div id="createMedecinModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 sm:p-6 rounded-t-lg">
-            <h3 class="text-xl font-bold flex items-center">
-                <i class="fas fa-user-plus mr-2"></i>
-                Nouveau Médecin
-            </h3>
-        </div>
-        
-        <form id="createMedecinForm" class="p-4 sm:p-6 space-y-4">
-            <div>
-                <label for="medecinNom" class="block text-sm font-medium text-gray-700 mb-1">
-                    Nom <span class="text-red-500">*</span>
-                </label>
-                <input 
-                    type="text" 
-                    id="medecinNom" 
-                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    required
-                />
-            </div>
-            
-            <div>
-                <label for="medecinPrenom" class="block text-sm font-medium text-gray-700 mb-1">
-                    Prénom <span class="text-red-500">*</span>
-                </label>
-                <input 
-                    type="text" 
-                    id="medecinPrenom" 
-                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    required
-                />
-            </div>
-            
-            <div>
-                <label for="medecinSpecialite" class="block text-sm font-medium text-gray-700 mb-1">
-                    Spécialité <span class="text-red-500">*</span>
-                </label>
-                <select 
-                    id="medecinSpecialite" 
-                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    required
-                >
-                    <option value="">-- Sélectionnez --</option>
-                    <option value="Psychiatrie">Psychiatrie</option>
-                    <option value="Psychologie Clinique">Psychologie Clinique</option>
-                    <option value="Neuropsychiatrie">Neuropsychiatrie</option>
-                    <option value="Pédopsychiatrie">Pédopsychiatrie</option>
-                    <option value="Psychothérapie">Psychothérapie</option>
-                </select>
-            </div>
-            
-            <div>
-                <label for="medecinTelephoneMod" class="block text-sm font-medium text-gray-700 mb-1">
-                    Téléphone
-                </label>
-                <input 
-                    type="tel" 
-                    id="medecinTelephoneMod" 
-                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    placeholder="+212 6XXXXXXXX"
-                />
-            </div>
-            
-            <div>
-                <label for="medecinEmailMod" class="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                </label>
-                <input 
-                    type="email" 
-                    id="medecinEmailMod" 
-                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    placeholder="medecin@clinique-lavallee.ma"
-                />
-            </div>
-            
-            <div class="flex gap-3 pt-4">
-                <button 
-                    type="button" 
-                    onclick="closeCreateMedecinModal()"
-                    class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-4 rounded-lg transition"
-                >
-                    Annuler
-                </button>
-                <button 
-                    type="submit" 
-                    class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition"
-                >
-                    <i class="fas fa-save mr-2"></i>
-                    Créer
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-
 <!-- Search Form -->
 <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
     <form id="searchForm" class="space-y-3 sm:space-y-4">
         <input type="hidden" id="selectedPatientId" value="">
-        <input type="hidden" id="selectedMedecinId" value="">
         
         <div>
             <label for="query" class="block text-sm font-medium text-gray-700 mb-2">
@@ -582,22 +427,12 @@ function completeProgress() {
 document.getElementById('searchForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // VÉRIFICATION OBLIGATOIRE : Patient et Médecin doivent être sélectionnés
+// VÉRIFICATION OBLIGATOIRE : un patient doit être sélectionné
     if (!selectedPatient) {
         Swal.fire({
             icon: 'error',
             title: 'Patient requis',
             text: 'Veuillez sélectionner un patient avant de lancer la recherche.',
-            confirmButtonColor: '#667eea'
-        });
-        return;
-    }
-    
-    if (!selectedMedecin) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Médecin requis',
-            text: 'Veuillez sélectionner un médecin avant de lancer la recherche.',
             confirmButtonColor: '#667eea'
         });
         return;
@@ -658,7 +493,6 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
                 aggregation,
                 use_validation: useValidation,
                 patient_id: selectedPatient.id,
-                medecin_id: selectedMedecin.id,
                 historical_symptoms: patientHistoricalSymptoms || []
             })
         });
@@ -934,7 +768,6 @@ let selectedPatient = null;
 // Charger la liste des patients, médecins et pathologies au chargement de la page
 document.addEventListener('DOMContentLoaded', async function() {
     await loadPatients();
-    await loadMedecins();
     await loadPathologies();
 });
 
@@ -1202,129 +1035,6 @@ document.getElementById('createPatientForm').addEventListener('submit', async fu
     }
 });
 
-// ===== GESTION DES MÉDECINS =====
-let currentMedecins = [];
-let selectedMedecin = null;
-
-async function loadMedecins() {
-    try {
-        const response = await fetch('/api/medecins/');
-        const data = await response.json();
-        
-        if (data.success) {
-            currentMedecins = data.medecins;
-            populateMedecinSelect();
-        }
-    } catch (error) {
-        console.error('Erreur lors du chargement des médecins:', error);
-    }
-}
-
-function populateMedecinSelect() {
-    const select = document.getElementById('medecinSelect');
-    select.innerHTML = '<option value="">-- Sélectionnez un médecin --</option>';
-    
-    currentMedecins.forEach(medecin => {
-        const option = document.createElement('option');
-        option.value = medecin.id;
-        option.textContent = `${medecin.nom_complet} - ${medecin.specialite}`;
-        option.dataset.medecin = JSON.stringify(medecin);
-        select.appendChild(option);
-    });
-}
-
-// Gérer la sélection d'un médecin
-document.getElementById('medecinSelect').addEventListener('change', function(e) {
-    const selectedOption = e.target.selectedOptions[0];
-    
-    if (selectedOption.value) {
-        selectedMedecin = JSON.parse(selectedOption.dataset.medecin);
-        document.getElementById('selectedMedecinId').value = selectedMedecin.id;
-        
-        // Afficher les informations du médecin
-        document.getElementById('medecinNomComplet').textContent = selectedMedecin.nom_complet;
-        document.getElementById('medecinSpecialiteDisplay').textContent = selectedMedecin.specialite;
-        document.getElementById('medecinNumeroOrdreDisplay').textContent = selectedMedecin.numero_ordre;
-        document.getElementById('medecinTelephoneDisplay').textContent = selectedMedecin.telephone || 'Non renseigné';
-        document.getElementById('medecinInfo').classList.remove('hidden');
-    } else {
-        selectedMedecin = null;
-        document.getElementById('selectedMedecinId').value = '';
-        document.getElementById('medecinInfo').classList.add('hidden');
-    }
-});
-
-// Modal de création de médecin
-function openCreateMedecinModal() {
-    document.getElementById('createMedecinModal').classList.remove('hidden');
-}
-
-function closeCreateMedecinModal() {
-    document.getElementById('createMedecinModal').classList.add('hidden');
-    document.getElementById('createMedecinForm').reset();
-}
-
-// Gérer la création d'un médecin
-document.getElementById('createMedecinForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const medecinData = {
-        nom: document.getElementById('medecinNom').value,
-        prenom: document.getElementById('medecinPrenom').value,
-        specialite: document.getElementById('medecinSpecialite').value,
-        telephone: document.getElementById('medecinTelephoneMod').value,
-        email: document.getElementById('medecinEmailMod').value
-    };
-    
-    try {
-        const response = await fetch('/api/medecins/create/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCookie('csrftoken')
-            },
-            body: JSON.stringify(medecinData)
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            Swal.fire({
-                icon: 'success',
-                title: 'Médecin créé !',
-                text: `${data.medecin.nom_complet} a été créé avec succès.`,
-                confirmButtonColor: '#667eea',
-                timer: 2000,
-                timerProgressBar: true
-            });
-            
-            // Recharger la liste des médecins
-            await loadMedecins();
-            
-            // Sélectionner automatiquement le nouveau médecin
-            document.getElementById('medecinSelect').value = data.medecin.id;
-            document.getElementById('medecinSelect').dispatchEvent(new Event('change'));
-            
-            // Fermer le modal
-            closeCreateMedecinModal();
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Erreur',
-                text: data.error,
-                confirmButtonColor: '#667eea'
-            });
-        }
-    } catch (error) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Erreur',
-            text: 'Erreur lors de la création du médecin: ' + error.message,
-            confirmButtonColor: '#667eea'
-        });
-    }
-});
-
 // ============================================
 // Gestion des Pathologies - Accès Direct
 // ============================================
@@ -1400,21 +1110,10 @@ function accessPathology() {
         return;
     }
     
-    // Vérifier qu'un médecin est sélectionné
-    if (!selectedMedecin) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Médecin requis',
-            text: 'Veuillez sélectionner un médecin avant d\'accéder à une pathologie.',
-            confirmButtonColor: '#10b981'
-        });
-        return;
-    }
-    
     const pathology = JSON.parse(selectedOption.dataset.pathology);
     
     // Construire l'URL vers la page de la pathologie avec mode direct
-    const pathologyUrl = `/direct-access/?html_page=${encodeURIComponent(pathology.html_page)}&patient_id=${selectedPatient.id}&medecin_id=${selectedMedecin.id}`;
+    const pathologyUrl = `/direct-access/?html_page=${encodeURIComponent(pathology.html_page)}&patient_id=${selectedPatient.id}`;
     
     // Rediriger directement sans confirmation
     window.location.href = pathologyUrl;
