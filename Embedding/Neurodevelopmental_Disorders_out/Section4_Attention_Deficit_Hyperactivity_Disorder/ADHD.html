@@ -184,11 +184,6 @@
 
 </form>
 
-<div class="boutons-validation">
-  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
-  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
-</div>
-
 <h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
 
 <form id="formulaire-diff" style="display: none;">
@@ -286,6 +281,11 @@
 </fieldset>
 
 </form>
+
+<div class="boutons-validation">
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
+</div>
 
 <script>
 // Gestion locale des boutons pour révéler progressivement Diagnostic différentiel et Comorbidité
