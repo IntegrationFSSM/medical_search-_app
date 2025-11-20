@@ -435,9 +435,89 @@ function genererResume(){
   h+="• F90.1 Présentation hyperactive/impulsive prédominante : Si A2 rempli mais PAS A1 pour les 6 derniers mois";
   h+="</div></div>";
   
-  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
+  h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaireLocal(event)'>✔️ VALIDER</button><button class='btn-non-valide' onclick='nonValiderFormulaireLocal(event)'>✘ NON VALIDER</button></div></div>";
   document.getElementById("resultat").innerHTML=h;
 }
+</script>
+
+<script>
+// Gestion locale des boutons pour révéler progressivement Diagnostic différentiel et Comorbidité
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
+
+  window.validerFormulaireLocal = function(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+
+    etapeNonValide = 0;
+
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+
+    return false;
+  };
+
+  window.nonValiderFormulaireLocal = function(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+
+    if (etapeNonValide === 0) {
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+    } else if (etapeNonValide === 1) {
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+    } else if (etapeNonValide === 2) {
+      etapeNonValide = 0;
+
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+
+      return false;
+    }
+
+    return false;
+  };
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
@@ -450,12 +530,10 @@ function genererResume(){
 
 <script>
 function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
   Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
 }
 
 function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
