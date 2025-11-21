@@ -1,3 +1,0 @@
-Comorbidity
- Speech may be differentially impaired in certain genetic conditions (e.g., Down syndrome, 22q
- deletion, FoxP2 gene mutation). If present, these should also be coded.

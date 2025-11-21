@@ -1,7 +1,0 @@
- Panic Attack Specifier
- Comorbidity
- Panic attacks are associated with increased likelihood of various comorbid mental disorders,
- including anxiety disorders, depressive disorders, bipolar disorders, impulse-control disorders,
- and substance use disorders. Panic attacks are associated with increased likelihood of later
- developing anxiety disorders, depressive disorders, bipolar disorders, alcohol use disorder, and
- possibly other disorders.
