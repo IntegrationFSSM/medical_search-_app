@@ -106,7 +106,10 @@
     
   </style>
 
-  
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+ 
 </head>
 <body>
 
@@ -319,6 +322,21 @@ else alert("Sélectionnez type ET sévérité")}
   h+="<div class='boutons-validation'><button class='btn-valide' onclick='validerFormulaire()'>✔️ VALIDE</button><button class='btn-non-valide' onclick='nonValiderFormulaire()'>✘ NON VALIDE</button></div></div>";
   document.getElementById("resultat").innerHTML=h;
 }
+</script>
+
+<script>
+(function() {
+  if (typeof globalThis.validerFormulaire !== 'function') {
+    globalThis.validerFormulaire = function() {
+      Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
+  if (typeof globalThis.nonValiderFormulaire !== 'function') {
+    globalThis.nonValiderFormulaire = function() {
+      Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
+})();
 </script>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">

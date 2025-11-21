@@ -84,6 +84,9 @@
       background-color: #c82333;
     }
   </style>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -168,6 +171,38 @@
 
 </form>
 
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<!-- Comorbidité -->
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles et affections fréquemment associés au trouble anxieux dû à une affection médicale</p>
+
+  <p style="margin-bottom: 10px; font-weight: bold;">Troubles mentaux associés :</p>
+  <label><input type="checkbox" name="comorb_anxiety" value="Autres troubles anxieux (panique, agoraphobie, TAG)"/> Autres troubles anxieux (panique, agoraphobie, TAG)</label>
+  <label><input type="checkbox" name="comorb_depression" value="Troubles dépressifs (épisode dépressif majeur, dysthymie)"/> Troubles dépressifs (épisode dépressif majeur, dysthymie)</label>
+  <label><input type="checkbox" name="comorb_adjustment" value="Troubles de l'adaptation avec anxiété"/> Troubles de l'adaptation avec anxiété</label>
+  <label><input type="checkbox" name="comorb_substance" value="Troubles liés à l'utilisation de substances (notamment benzodiazépines, alcool)"/> Troubles liés à l'utilisation de substances (notamment benzodiazépines, alcool)</label>
+  <label><input type="checkbox" name="comorb_somatic" value="Trouble à symptomatologie somatique / anxiété liée à la maladie"/> Trouble à symptomatologie somatique / anxiété liée à la maladie</label>
+
+  <p style="margin: 15px 0 10px 0; font-weight: bold;">Affections médicales concomitantes :</p>
+  <label><input type="checkbox" name="comorb_endocrine" value="Affections endocriniennes (thyroïde, parathyroïde, surrénales, diabète)"/> Affections endocriniennes (thyroïde, parathyroïde, surrénales, diabète)</label>
+  <label><input type="checkbox" name="comorb_cardio" value="Affections cardiovasculaires (arythmies, cardiopathies)"/> Affections cardiovasculaires (arythmies, cardiopathies)</label>
+  <label><input type="checkbox" name="comorb_respiratory" value="Affections respiratoires (asthme, MPOC, embolie pulmonaire)"/> Affections respiratoires (asthme, MPOC, embolie pulmonaire)</label>
+  <label><input type="checkbox" name="comorb_metabolic" value="Troubles métaboliques (hypoglycémie, désordres électrolytiques)"/> Troubles métaboliques (hypoglycémie, désordres électrolytiques)</label>
+  <label><input type="checkbox" name="comorb_neuro" value="Troubles neurologiques (épilepsie, tumeurs, AVC)"/> Troubles neurologiques (épilepsie, tumeurs, AVC)</label>
+  <label><input type="checkbox" name="comorb_pain" value="Douleurs chroniques ou conditions inflammatoires"/> Douleurs chroniques ou conditions inflammatoires</label>
+
+  <p style="margin: 15px 0 10px 0; font-weight: bold;">Conséquences et évolution :</p>
+  <label><input type="checkbox" name="comorb_sleep" value="Troubles du sommeil (insomnie, sommeil non réparateur)"/> Troubles du sommeil (insomnie, sommeil non réparateur)</label>
+  <label><input type="checkbox" name="comorb_function" value="Retentissement fonctionnel accru (absentéisme, limitation des activités)"/> Retentissement fonctionnel accru (absentéisme, limitation des activités)</label>
+  <label><input type="checkbox" name="comorb_chronicity" value="Course chronique liée à la persistance de l'affection médicale"/> Course chronique liée à la persistance de l'affection médicale</label>
+</fieldset>
+
+</form>
+
 <div class="boutons-validation">
   <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
   <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
@@ -182,7 +217,7 @@
 // Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
 (function() {
   'use strict';
-  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: fin (enregistrement)
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
   // Fonction locale pour valider (ne pas redéfinir la fonction globale)
   window.validerFormulaireLocal = function(event) {
@@ -199,9 +234,13 @@
     // Cacher toutes les sections
     const titreDiag = document.getElementById("titre-diagnostic");
     const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
     
     if (titreDiag) titreDiag.style.display = "none";
     if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
     
     // Appeler la fonction globale Django si elle existe
     if (typeof window.validerFormulaire === 'function') {
@@ -222,6 +261,8 @@
     
     const titreDiag = document.getElementById("titre-diagnostic");
     const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
     
     if (etapeNonValide === 0) {
       // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
@@ -234,12 +275,24 @@
       return false;
       
     } else if (etapeNonValide === 1) {
-      // Deuxième clic : Enregistrer les critères et retourner à l'accueil
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
       etapeNonValide = 0;
       
       // Réinitialiser l'affichage
       if (titreDiag) titreDiag.style.display = "none";
       if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
       
       // Appeler la fonction globale Django pour enregistrer
       if (typeof window.nonValiderFormulaire === 'function') {
@@ -251,6 +304,21 @@
     
     return false;
   };
+})();
+</script>
+
+<script>
+(function() {
+  if (typeof globalThis.validerFormulaire !== 'function') {
+    globalThis.validerFormulaire = function() {
+      Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
+  if (typeof globalThis.nonValiderFormulaire !== 'function') {
+    globalThis.nonValiderFormulaire = function() {
+      Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
 })();
 </script>
 

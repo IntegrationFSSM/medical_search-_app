@@ -161,6 +161,24 @@
 
 </form>
 
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
+<fieldset id="comorbidite">
+  <legend>Comorbidité</legend>
+  <p class="subtitle">Troubles fréquemment associés</p>
+
+  <label><input type="checkbox" name="comorb_adhd" value="Trouble déficit de l'attention/hyperactivité (TDAH)"/> Trouble déficit de l'attention/hyperactivité (TDAH)</label>
+  <label><input type="checkbox" name="comorb_sld" value="Trouble spécifique des apprentissages (lecture, écriture, mathématiques)"/> Troubles spécifiques des apprentissages (lecture, écriture, mathématiques)</label>
+  <label><input type="checkbox" name="comorb_language" value="Trouble du langage expressif/réceptif concomitant"/> Troubles du langage expressif/réceptif concomitants</label>
+  <label><input type="checkbox" name="comorb_speech" value="Trouble des sons de la parole ou antécédents familiaux de troubles de la parole"/> Trouble des sons de la parole / antécédents familiaux de troubles de la parole</label>
+  <label><input type="checkbox" name="comorb_anxiete" value="Troubles anxieux ou de l'humeur liés aux interactions sociales"/> Troubles anxieux ou de l'humeur liés aux interactions sociales</label>
+  <label><input type="checkbox" name="comorb_tic" value="Autres troubles neurodéveloppementaux (tics, coordination, planification motrice)"/> Autres troubles neurodéveloppementaux (tics, coordination, planification motrice)</label>
+</fieldset>
+
+</form>
+
 <div class="boutons-validation">
   <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
   <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
@@ -247,6 +265,21 @@
 
     (actions[etapeNonValide] || function() {})();
   };
+})();
+</script>
+
+<script>
+(function() {
+  if (typeof globalThis.validerFormulaire !== 'function') {
+    globalThis.validerFormulaire = function() {
+      Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
+  if (typeof globalThis.nonValiderFormulaire !== 'function') {
+    globalThis.nonValiderFormulaire = function() {
+      Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
 })();
 </script>
 

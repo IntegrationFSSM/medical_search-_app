@@ -1274,7 +1274,8 @@ def get_all_pathologies(request):
                 # Ignorer les fichiers JSON invalides
                 continue
         
-        # Garder l'ordre des fichiers tel qu'il apparaît dans les dossiers (pas de tri alphabétique)
+        # Trier les pathologies par nom
+        pathologies.sort(key=lambda x: x['name'])
         
         return JsonResponse({
             'success': True,

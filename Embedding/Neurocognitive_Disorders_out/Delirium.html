@@ -220,6 +220,21 @@
 
 </form>
 
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+  <fieldset id="comorbidite">
+    <legend>Comorbidité</legend>
+    <p class="subtitle">Conditions/facteurs déclencheurs fréquemment associés au delirium</p>
+    <label><input type="checkbox" name="comorb" value="Infections systémiques (pneumonie, infection urinaire, sepsis)"/> Infections systémiques (pneumonie, infection urinaire, sepsis)</label>
+    <label><input type="checkbox" name="comorb" value="Troubles métaboliques (désordres électrolytiques, hypoglycémie, hypoxie)"/> Troubles métaboliques (désordres électrolytiques, hypoglycémie, hypoxie)</label>
+    <label><input type="checkbox" name="comorb" value="Troubles d'usage de substances / intoxication ou sevrage (alcool, sédatifs, opioïdes, stimulants)"/> Troubles d'usage de substances / intoxication ou sevrage (alcool, sédatifs, opioïdes, stimulants)</label>
+    <label><input type="checkbox" name="comorb" value="Démence ou autres troubles neurocognitifs préexistants"/> Démence ou autres troubles neurocognitifs préexistants</label>
+    <label><input type="checkbox" name="comorb" value="Polymédication / médicaments à risque (anticholinergiques, corticostéroïdes, benzodiazépines)"/> Polymédication / médicaments à risque (anticholinergiques, corticostéroïdes, benzodiazépines)</label>
+    <label><input type="checkbox" name="comorb" value="Troubles du sommeil, privation sensorielle, immobilisation prolongée"/> Troubles du sommeil, privation sensorielle, immobilisation prolongée</label>
+  </fieldset>
+</form>
+
 <div class="boutons-validation">
   <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
   <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
@@ -229,7 +244,7 @@
 // Fonctions locales pour gérer l'affichage progressif (indépendantes des fonctions globales Django)
 (function() {
   'use strict';
-  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
 
   // Fonction locale pour valider (ne pas redéfinir la fonction globale)
   window.validerFormulaireLocal = function(event) {
@@ -246,9 +261,13 @@
     // Cacher toutes les sections
     const titreDiag = document.getElementById("titre-diagnostic");
     const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
     
     if (titreDiag) titreDiag.style.display = "none";
     if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
     
     // Appeler la fonction globale Django si elle existe
     if (typeof window.validerFormulaire === 'function') {
@@ -269,9 +288,10 @@
     
     const titreDiag = document.getElementById("titre-diagnostic");
     const formDiag = document.getElementById("formulaire-diff");
-    
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+
     if (etapeNonValide === 0) {
-      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
       if (titreDiag) {
         titreDiag.style.display = "block";
         titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -279,25 +299,48 @@
       if (formDiag) formDiag.style.display = "block";
       etapeNonValide = 1;
       return false;
-      
+
     } else if (etapeNonValide === 1) {
-      // Deuxième clic : Réinitialiser et appeler la fonction globale Django
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+
+    } else if (etapeNonValide === 2) {
       etapeNonValide = 0;
-      
-      // Réinitialiser l'affichage
+
       if (titreDiag) titreDiag.style.display = "none";
       if (formDiag) formDiag.style.display = "none";
-      
-      // Appeler la fonction globale Django pour enregistrer
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+
       if (typeof window.nonValiderFormulaire === 'function') {
         window.nonValiderFormulaire();
       }
-      
+
       return false;
     }
-    
+
     return false;
   };
+})();
+</script>
+
+<script>
+(function() {
+  if (typeof globalThis.validerFormulaire !== 'function') {
+    globalThis.validerFormulaire = function() {
+      Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
+  if (typeof globalThis.nonValiderFormulaire !== 'function') {
+    globalThis.nonValiderFormulaire = function() {
+      Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
+    };
+  }
 })();
 </script>
 

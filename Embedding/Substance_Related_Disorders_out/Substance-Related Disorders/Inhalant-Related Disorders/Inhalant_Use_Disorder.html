@@ -23,35 +23,49 @@
   }
   .titre-centre h2 {
     margin: 0;
-    font-size: 16px;
+    font-size: 20px;
     color: #3d7a3b;
   }
-
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3d7a3b;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #8cc63f;
+  }
     body { font-family: 'Segoe UI', sans-serif; max-width: 960px; margin: auto; padding: 20px; background: #f5fff8; color: #2e3b2c; }
     fieldset { border: 2px solid #8cc63f; padding: 15px; margin-bottom: 20px; background: #ffffff; }
     legend { font-weight: bold; color: #3d7a3b; }
     label { display: block; margin-bottom: 5px; }
     input[type="text"] { width: 100%; padding: 8px; margin-top: 5px; }
+    .hidden { display: none; }
     .boutons-validation {
       display: flex;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 15px;
+      margin: 40px 0 20px 0;
       justify-content: center;
+    }
+    .btn-valide,
+    .btn-non-valide {
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      flex: 1;
+      max-width: 300px;
     }
     .btn-valide {
       background-color: #28a745;
-      padding: 12px 30px;
-      font-size: 16px;
-      flex: 1;
     }
     .btn-valide:hover {
       background-color: #218838;
     }
     .btn-non-valide {
       background-color: #dc3545;
-      padding: 12px 30px;
-      font-size: 16px;
-      flex: 1;
     }
     .btn-non-valide:hover {
       background-color: #c82333;
@@ -74,6 +88,8 @@
     <h2>Évaluation du Trouble d'Usage d'Inhalants – DSM-5-TR</h2>
   </div>
 </div>
+
+<h2 class="section-title">Les critères diagnostiques</h2>
 
 <form id="formulaire">
 
@@ -124,7 +140,12 @@
   <label><input type="checkbox" name="environnement" value="Dans environnement contrôlé"/> <strong>Dans un environnement contrôlé :</strong> Ce spécificateur additionnel est utilisé si l'individu est dans un environnement où l'accès aux substances inhalantes est restreint</label>
 </fieldset>
 
-<!-- Diagnostic différentiel -->
+</form>
+
+<h2 class="section-title" id="titre-diagnostic" style="display: none;">Diagnostic différentiel</h2>
+
+<form id="formulaire-diff" style="display: none;">
+
 <fieldset id="diagnostic-differentiel">
   <legend>Diagnostic différentiel</legend>
   <p class="subtitle">Cocher les troubles à différencier du trouble d'usage d'inhalants</p>
@@ -141,7 +162,12 @@
   
 </fieldset>
 
-<!-- Comorbidité -->
+</form>
+
+<h2 class="section-title" id="titre-comorbidite" style="display: none;">Comorbidité</h2>
+
+<form id="formulaire-comorb" style="display: none;">
+
 <fieldset id="comorbidite">
   <legend>Comorbidité</legend>
   <p class="subtitle">Cocher les troubles fréquemment comorbides avec le trouble d'usage d'inhalants</p>
@@ -161,8 +187,8 @@
 </form>
 
 <div class="boutons-validation">
-  <button class="btn-valide" onclick="validerFormulaire()">✔️ VALIDE</button>
-  <button class="btn-non-valide" onclick="nonValiderFormulaire()">✘ NON VALIDE</button>
+  <button type="button" class="btn-valide" onclick="validerFormulaireLocal(event)">✔️ VALIDER</button>
+  <button type="button" class="btn-non-valide" onclick="nonValiderFormulaireLocal(event)">✘ NON VALIDER</button>
 </div>
 
 <footer style="text-align:center; font-size:0.9em; margin-top: 40px; padding-top: 15px; border-top: 1px solid #ccc;">
@@ -171,16 +197,110 @@
 </footer>
 
 <script>
+// Gestion locale des boutons pour révéler progressivement Diagnostic différentiel et Comorbidité
+(function() {
+  'use strict';
+  let etapeNonValide = 0; // 0: début, 1: diagnostic affiché, 2: comorbidité affichée
+
+  // Fonction locale pour valider (ne pas redéfinir la fonction globale)
+  window.validerFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    // Réinitialiser l'état local
+    etapeNonValide = 0;
+    
+    // Cacher toutes les sections
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (titreDiag) titreDiag.style.display = "none";
+    if (formDiag) formDiag.style.display = "none";
+    if (titreComorb) titreComorb.style.display = "none";
+    if (formComorb) formComorb.style.display = "none";
+    
+    // Appeler la fonction globale Django si elle existe
+    if (typeof window.validerFormulaire === 'function') {
+      window.validerFormulaire();
+    }
+    
+    return false;
+  };
+
+  // Fonction locale pour non valider (ne pas redéfinir la fonction globale)
+  window.nonValiderFormulaireLocal = function(event) {
+    // Empêcher le comportement par défaut et la propagation IMMÉDIATEMENT
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+    
+    const titreDiag = document.getElementById("titre-diagnostic");
+    const formDiag = document.getElementById("formulaire-diff");
+    const titreComorb = document.getElementById("titre-comorbidite");
+    const formComorb = document.getElementById("formulaire-comorb");
+    
+    if (etapeNonValide === 0) {
+      // Premier clic : Afficher seulement Diagnostic différentiel (PAS d'enregistrement, PAS d'alerte)
+      if (titreDiag) {
+        titreDiag.style.display = "block";
+        titreDiag.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formDiag) formDiag.style.display = "block";
+      etapeNonValide = 1;
+      return false;
+      
+    } else if (etapeNonValide === 1) {
+      // Deuxième clic : Afficher aussi Comorbidité (PAS d'enregistrement, PAS d'alerte)
+      if (titreComorb) {
+        titreComorb.style.display = "block";
+        titreComorb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (formComorb) formComorb.style.display = "block";
+      etapeNonValide = 2;
+      return false;
+      
+    } else if (etapeNonValide === 2) {
+      // Troisième clic : Réinitialiser et appeler la fonction globale Django
+      etapeNonValide = 0;
+      
+      // Réinitialiser l'affichage
+      if (titreDiag) titreDiag.style.display = "none";
+      if (formDiag) formDiag.style.display = "none";
+      if (titreComorb) titreComorb.style.display = "none";
+      if (formComorb) formComorb.style.display = "none";
+      
+      // Appeler la fonction globale Django pour enregistrer
+      if (typeof window.nonValiderFormulaire === 'function') {
+        window.nonValiderFormulaire();
+      }
+      
+      return false;
+    }
+    
+    return false;
+  };
+})();
+</script>
+
+<script>
+// Fonctions de fallback pour compatibilité standalone
 function validerFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
   Swal.fire({icon: 'success', title: 'Validé !', text: 'Formulaire marqué comme VALIDE', timer: 2000, showConfirmButton: false});
 }
 
 function nonValiderFormulaire() {
-  // Cette fonction sera remplacee dynamiquement par Django en mode validation
   Swal.fire({icon: 'warning', title: 'Non validé', text: 'Formulaire marqué comme NON VALIDE', timer: 2000, showConfirmButton: false});
 }
 </script>
 
 </body>
 </html>
+
