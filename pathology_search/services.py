@@ -488,15 +488,30 @@ Réponds UNIQUEMENT par un JSON valide:
                     ],
                     max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
+                # Debug: afficher la réponse complète
+                print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
+                print(f"🔍 DEBUG ChatGPT response.choices: {response.choices if hasattr(response, 'choices') else 'N/A'}")
+                if hasattr(response, 'choices') and response.choices:
+                    print(f"🔍 DEBUG ChatGPT response.choices[0]: {response.choices[0]}")
+                    if hasattr(response.choices[0], 'message'):
+                        print(f"🔍 DEBUG ChatGPT response.choices[0].message: {response.choices[0].message}")
+                        if hasattr(response.choices[0].message, 'content'):
+                            print(f"🔍 DEBUG ChatGPT content type: {type(response.choices[0].message.content)}")
+                            print(f"🔍 DEBUG ChatGPT content length: {len(response.choices[0].message.content) if response.choices[0].message.content else 0}")
+                
                 # Extraire le contenu de la réponse
                 if response.choices and len(response.choices) > 0:
                     treatment_plan_text = response.choices[0].message.content
                     if not treatment_plan_text:
                         treatment_plan_text = ""
                         print(f"⚠️ Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
+                        # Afficher plus de détails pour le débogage
+                        print(f"🔍 DEBUG - response.choices[0].message: {response.choices[0].message}")
+                        print(f"🔍 DEBUG - response.choices[0].finish_reason: {response.choices[0].finish_reason if hasattr(response.choices[0], 'finish_reason') else 'N/A'}")
                 else:
                     treatment_plan_text = ""
                     print(f"⚠️ Réponse ChatGPT sans choix - response.choices est vide")
+                    print(f"🔍 DEBUG - response complet: {response}")
                 
             elif self.model == 'claude-4.5':
                 # Claude Sonnet 4.5 - utilisation directe (sans embeddings)
@@ -687,15 +702,30 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                     ],
                     max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
+                # Debug: afficher la réponse complète
+                print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
+                print(f"🔍 DEBUG ChatGPT response.choices: {response.choices if hasattr(response, 'choices') else 'N/A'}")
+                if hasattr(response, 'choices') and response.choices:
+                    print(f"🔍 DEBUG ChatGPT response.choices[0]: {response.choices[0]}")
+                    if hasattr(response.choices[0], 'message'):
+                        print(f"🔍 DEBUG ChatGPT response.choices[0].message: {response.choices[0].message}")
+                        if hasattr(response.choices[0].message, 'content'):
+                            print(f"🔍 DEBUG ChatGPT content type: {type(response.choices[0].message.content)}")
+                            print(f"🔍 DEBUG ChatGPT content length: {len(response.choices[0].message.content) if response.choices[0].message.content else 0}")
+                
                 # Extraire le contenu de la réponse
                 if response.choices and len(response.choices) > 0:
                     treatment_plan_text = response.choices[0].message.content
                     if not treatment_plan_text:
                         treatment_plan_text = ""
                         print(f"⚠️ Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
+                        # Afficher plus de détails pour le débogage
+                        print(f"🔍 DEBUG - response.choices[0].message: {response.choices[0].message}")
+                        print(f"🔍 DEBUG - response.choices[0].finish_reason: {response.choices[0].finish_reason if hasattr(response.choices[0], 'finish_reason') else 'N/A'}")
                 else:
                     treatment_plan_text = ""
                     print(f"⚠️ Réponse ChatGPT sans choix - response.choices est vide")
+                    print(f"🔍 DEBUG - response complet: {response}")
                 
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(

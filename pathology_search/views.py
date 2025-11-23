@@ -1129,6 +1129,9 @@ def validate_action(request):
             if is_direct_access:
                 pathology_name = data.get('pathology_name', '')
                 html_page = data.get('html_page', '')
+                print(f"🔍 DEBUG accès direct - pathology_name: {pathology_name}")
+                print(f"🔍 DEBUG accès direct - html_page: {html_page}")
+                print(f"🔍 DEBUG accès direct - data complet: {data}")
                 similarity_score = 100  # Score de 100% pour accès direct
                 
                 # Charger le texte médical depuis le fichier .npy correspondant

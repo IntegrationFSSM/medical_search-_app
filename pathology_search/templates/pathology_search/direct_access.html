@@ -343,10 +343,10 @@
                 body: JSON.stringify({
                     action: 'validate',
                     form_data: formData,
-                    pathology_name: pathologyInfo.name,
+                    pathology_name: pathologyInfo.name || '{{ pathology_info.name }}',
                     patient_id: patientId,
                     direct_access: true,
-                    html_page: pathologyInfo.html_page,
+                    html_page: pathologyInfo.html_page || '{{ pathology_info.html_page }}',
                     model: selectedModel  // 🆕 Modèle choisi par l'utilisateur
                 })
             });
