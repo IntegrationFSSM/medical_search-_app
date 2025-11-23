@@ -1,5 +1,5 @@
 """
-Service pour la recherche de pathologies basée sur les embeddings OpenAI
+Service pour la recherche de pathologies basée sur les embeddings OpenAI et Claude
 """
 import numpy as np
 from pathlib import Path
@@ -11,14 +11,50 @@ from django.conf import settings
 class PathologySearchService:
     """Service de recherche de pathologies médicales via embeddings."""
     
-    def __init__(self):
-        self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
-        self.embedding_model = settings.EMBEDDING_MODEL
+    def __init__(self, model='chatgpt-5.1'):
+        """
+        Initialiser le service avec le modèle spécifié.
+        
+        Args:
+            model: Modèle à utiliser ('chatgpt-5.1', 'claude-4.5')
+        """
+        self.model = model
         self.embeddings_folder = settings.EMBEDDINGS_FOLDER
+        
+        # Initialiser le client selon le modèle choisi
+        if model == 'chatgpt-5.1':
+            self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            self.embedding_model = settings.EMBEDDING_MODEL
+        elif model == 'claude-4.5':
+            try:
+                from anthropic import Anthropic
+                if not settings.CLAUDE_API_KEY:
+                    raise ValueError(
+                        "CLAUDE_API_KEY n'est pas configuré dans le fichier .env. "
+                        "Ajoutez votre clé API Claude dans le fichier .env : CLAUDE_API_KEY=votre_clé_ici"
+                    )
+                if len(settings.CLAUDE_API_KEY.strip()) == 0:
+                    raise ValueError("CLAUDE_API_KEY est vide dans le fichier .env")
+                
+                # Vérifier le format de la clé (doit commencer par sk-ant-)
+                if not settings.CLAUDE_API_KEY.startswith('sk-ant-'):
+                    print(f"⚠️ ATTENTION: La clé API Claude ne semble pas avoir le bon format (devrait commencer par 'sk-ant-')")
+                
+                self.client = Anthropic(api_key=settings.CLAUDE_API_KEY)
+                # Claude Sonnet 4.5 - modèle pour la génération de texte
+                # Par défaut: claude-sonnet-4-5-20250929 (Claude Sonnet 4.5)
+                self.claude_model = getattr(settings, 'CLAUDE_MODEL', 'claude-sonnet-4-5-20250929')
+                self.embedding_model = 'claude-sonnet-4-5-20250929'  # Modèle Claude pour embeddings (fallback OpenAI)
+                print(f"✅ Client Claude initialisé avec modèle: {self.claude_model}")
+            except ImportError:
+                raise ImportError("La bibliothèque 'anthropic' n'est pas installée. Installez-la avec: pip install anthropic")
+        else:
+            raise ValueError(f"Modèle non supporté: {model}")
     
     def validate_medical_query(self, query):
         """
         Valider si une requête est une description médicale valide en utilisant GPT-4o.
+        Note: La validation utilise toujours OpenAI (ChatGPT) pour des raisons de cohérence.
         
         Args:
             query: Texte de la requête à valider
@@ -29,6 +65,9 @@ class PathologySearchService:
                 'reason': str (si non valide)
             }
         """
+        # Toujours utiliser OpenAI pour la validation, indépendamment du modèle d'embedding
+        validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+        
         try:
             prompt = f"""Tu es un validateur médical. Analyse la requête suivante et détermine si elle contient un réel contenu médical OU du texte sans sens.
 
@@ -55,7 +94,7 @@ Réponds UNIQUEMENT par un JSON:
     "reason": "Explication courte si non valide (sinon null)"
 }}"""
 
-            response = self.client.chat.completions.create(
+            response = validation_client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
@@ -106,15 +145,50 @@ Réponds UNIQUEMENT par un JSON:
             }
     
     def get_embedding(self, text):
-        """Obtenir l'embedding d'un texte via l'API OpenAI."""
+        """
+        Obtenir l'embedding d'un texte via l'API du modèle sélectionné.
+        
+        Args:
+            text: Texte à convertir en embedding
+            
+        Returns:
+            np.array: Vecteur d'embedding
+        """
         text = text.replace("\n", " ")
-        response = self.client.embeddings.create(
-            input=[text], 
-            model=self.embedding_model
-        )
-        return np.array(response.data[0].embedding)
+        
+        if self.model == 'chatgpt-5.1':
+            # OpenAI / ChatGPT
+            response = self.client.embeddings.create(
+                input=[text], 
+                model=self.embedding_model
+            )
+            return np.array(response.data[0].embedding)
+            
+        elif self.model == 'claude-4.5':
+            # IMPORTANT: Anthropic Claude ne supporte pas actuellement d'API d'embeddings directe
+            # Pour les embeddings, on utilise OpenAI (fallback)
+            # Mais Claude peut être utilisé directement pour la génération de texte (generate_ai_diagnosis)
+            try:
+                # Utiliser OpenAI pour les embeddings même si le modèle choisi est Claude
+                # (Claude est utilisé uniquement pour la génération de texte)
+                openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+                response = openai_client.embeddings.create(
+                    input=[text], 
+                    model=settings.EMBEDDING_MODEL
+                )
+                return np.array(response.data[0].embedding)
+            except Exception as e:
+                raise RuntimeError(
+                    f"Erreur lors de la génération de l'embedding (fallback OpenAI): {str(e)}. "
+                    f"Claude ne supporte pas les embeddings, donc OpenAI est utilisé pour cette partie."
+                )
+            
+        else:
+            raise ValueError(f"Modèle non supporté pour les embeddings: {self.model}")
     
-    def find_best_match(self, query, top_k=5, aggregation='max'):
+    def find_best_match(self, query, top_k=5, aggregation='max', model=None):
+        # Note: paramètre 'model' conservé pour compatibilité mais non utilisé
+        # (le modèle est déjà défini dans __init__)
         """
         Trouver les meilleurs fichiers correspondant à une requête.
         
@@ -164,6 +238,29 @@ Réponds UNIQUEMENT par un JSON:
         
         # Obtenir l'embedding de la requête
         query_embedding = self.get_embedding(query)
+        query_dimension = len(query_embedding)
+        
+        # Vérifier la dimension des embeddings stockés (prendre le premier fichier comme référence)
+        stored_dimension = None
+        if len(npy_files) > 0:
+            sample_embeddings = np.load(npy_files[0])
+            if len(sample_embeddings) > 0:
+                stored_dimension = len(sample_embeddings[0])
+        
+        # Si les dimensions ne correspondent pas, utiliser OpenAI en fallback
+        if stored_dimension and query_dimension != stored_dimension:
+            print(f"⚠️ Dimension incompatible: requête={query_dimension}, stocké={stored_dimension}")
+            print(f"⚠️ Utilisation d'OpenAI en fallback pour les embeddings (modèle sélectionné: {self.model})")
+            
+            # Utiliser OpenAI pour les embeddings même si un autre modèle est sélectionné
+            openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            response = openai_client.embeddings.create(
+                input=[query], 
+                model=settings.EMBEDDING_MODEL
+            )
+            query_embedding = np.array(response.data[0].embedding)
+            query_dimension = len(query_embedding)
+            print(f"✅ Embedding OpenAI généré avec dimension: {query_dimension}")
         
         # Rechercher dans tous les fichiers
         file_results = {}
@@ -171,6 +268,11 @@ Réponds UNIQUEMENT par un JSON:
         for emb_file in npy_files:
             # Charger les embeddings
             embeddings = np.load(emb_file)
+            
+            # Vérifier que la dimension correspond toujours
+            if len(embeddings) > 0 and len(embeddings[0]) != query_dimension:
+                print(f"⚠️ Fichier {emb_file} ignoré: dimension {len(embeddings[0])} != {query_dimension}")
+                continue
             
             # Charger les métadonnées
             metadata_file = str(Path(emb_file).with_suffix('.json'))
@@ -187,6 +289,10 @@ Réponds UNIQUEMENT par un JSON:
             best_similarity = 0
             
             for i, chunk_emb in enumerate(embeddings):
+                # Vérification supplémentaire de la dimension
+                if len(chunk_emb) != query_dimension:
+                    continue
+                    
                 similarity = np.dot(query_embedding, chunk_emb) / (
                     np.linalg.norm(query_embedding) * np.linalg.norm(chunk_emb)
                 )
@@ -281,7 +387,7 @@ Réponds UNIQUEMENT par un JSON:
     
     def generate_ai_diagnosis(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
         """
-        Générer un résumé diagnostique structuré (sans plan de traitement) avec OpenAI
+        Générer uniquement le plan de traitement avec OpenAI ou Claude
         basé sur les données du formulaire, le texte médical et l'historique.
         
         Args:
@@ -295,46 +401,127 @@ Réponds UNIQUEMENT par un JSON:
             dict: Plan de traitement généré par l'IA
         """
         try:
-            # Construire le prompt pour OpenAI avec le texte médical et l'historique
-            prompt = self._build_diagnosis_prompt(pathology_name, form_data, similarity_score, medical_text, historical_symptoms)
-            
-            # Appeler OpenAI GPT-4
-            response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {
-                        "role": "system",
-                        "content": (
-                            "Vous êtes un psychiatre clinicien expert du DSM-5-TR. "
-                            "Vous rédigez des résumés diagnostiques structurés et concis en français, "
-                            "en citant uniquement les critères réellement cochés. "
-                            "INTERDIT : prescrire ou détailler un plan de traitement ou des posologies."
-                        )
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                temperature=0.4,
-                max_tokens=1800
+            # Message système pour le PLAN DE TRAITEMENT
+            system_message_treatment = (
+                "Vous êtes un psychiatre clinicien expert du DSM-5-TR. "
+                "Vous rédigez un plan de traitement détaillé et structuré en français pour le patient. "
+                "Incluez : activités thérapeutiques (suivi thérapeutique), prise en charge médicale si nécessaire, "
+                "recommandations psychothérapeutiques, et suivi à long terme. "
+                "Basez-vous sur les recommandations officielles (HAS, OMS, sociétés savantes). "
+                "Si une information manque pour établir un plan sûr, indiquez-le clairement."
             )
             
-            diagnosis_text = response.choices[0].message.content
+            # 🆕 Construire le prompt pour le plan de traitement directement
+            treatment_prompt = self._build_treatment_prompt(
+                pathology_name, 
+                form_data, 
+                "",  # Pas de diagnostic text, on génère directement le plan
+                medical_text, 
+                historical_symptoms
+            )
+            
+            # 🆕 GÉNÉRER UNIQUEMENT LE PLAN DE TRAITEMENT
+            print("🔄 Génération du plan de traitement...")
+            
+            # Appeler l'API selon le modèle sélectionné
+            if self.model == 'chatgpt-5.1':
+                # OpenAI / ChatGPT
+                response = self.client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": system_message_treatment
+                        },
+                        {
+                            "role": "user",
+                            "content": treatment_prompt
+                        }
+                    ],
+                    temperature=0.4,
+                    max_tokens=2000
+                )
+                treatment_plan_text = response.choices[0].message.content
+                
+            elif self.model == 'claude-4.5':
+                # Claude Sonnet 4.5 - utilisation directe (sans embeddings)
+                try:
+                    # Vérifier que la clé API est configurée
+                    if not settings.CLAUDE_API_KEY:
+                        raise ValueError("CLAUDE_API_KEY n'est pas configuré dans le fichier .env")
+                    
+                    print(f"🔍 Appel API Claude avec modèle: {self.claude_model}")
+                    print(f"🔍 Clé API présente: {'Oui' if settings.CLAUDE_API_KEY else 'Non'}")
+                    
+                    response = self.client.messages.create(
+                        model=self.claude_model,  # Claude Sonnet 4.5
+                        max_tokens=2000,
+                        temperature=0.4,
+                        system=system_message_treatment,
+                        messages=[
+                            {
+                                "role": "user",
+                                "content": treatment_prompt
+                            }
+                        ]
+                    )
+                    
+                    print(f"✅ Réponse Claude reçue: type={type(response)}")
+                    print(f"✅ Response.content: {response.content if hasattr(response, 'content') else 'N/A'}")
+                    
+                    # Claude retourne response.content qui est une liste de TextBlock
+                    # Le premier bloc contient le texte (format: TextBlock avec attribut .text)
+                    if hasattr(response, 'content') and response.content and len(response.content) > 0:
+                        first_content = response.content[0]
+                        
+                        # Claude SDK retourne un objet TextBlock avec attribut .text
+                        if hasattr(first_content, 'text'):
+                            treatment_plan_text = first_content.text
+                            print(f"✅ Plan de traitement extrait: {len(treatment_plan_text)} caractères")
+                        else:
+                            # Fallback si format différent
+                            treatment_plan_text = str(first_content)
+                            print(f"⚠️ Format inattendu, conversion en string: {len(treatment_plan_text)} caractères")
+                    else:
+                        error_msg = f"Réponse Claude vide - response.content: {getattr(response, 'content', 'N/A')}"
+                        print(f"❌ {error_msg}")
+                        raise ValueError(error_msg)
+                    
+                    if not treatment_plan_text or len(treatment_plan_text.strip()) == 0:
+                        raise ValueError("Le plan de traitement généré par Claude est vide")
+                    
+                except Exception as claude_error:
+                    # Afficher l'erreur détaillée pour le débogage
+                    import traceback
+                    error_detail = traceback.format_exc()
+                    error_msg = f"Erreur API Claude: {str(claude_error)}"
+                    print(f"❌ {error_msg}")
+                    print(f"❌ Modèle utilisé: {self.claude_model}")
+                    print(f"❌ Clé API configurée: {'Oui' if settings.CLAUDE_API_KEY else 'Non'}")
+                    print(f"❌ Détails de l'erreur:\n{error_detail}")
+                    raise RuntimeError(f"{error_msg}\n\nDétails: {error_detail}")
+                
+            else:
+                raise ValueError(f"Modèle non supporté pour la génération: {self.model}")
+            
+            print(f"✅ Plan de traitement généré: {len(treatment_plan_text)} caractères")
             
             return {
                 'success': True,
                 'pathology': pathology_name,
-                'diagnosis': diagnosis_text,
+                'diagnosis': '',  # Pas de diagnostic summary
+                'treatment_plan': treatment_plan_text,  # Uniquement le plan de traitement
                 'confidence': similarity_score,
-                'timestamp': self._get_timestamp()
+                'timestamp': self._get_timestamp(),
+                'model_used': self.model
             }
             
         except Exception as e:
             return {
                 'success': False,
                 'error': str(e),
-                'pathology': pathology_name
+                'pathology': pathology_name,
+                'model_used': self.model
             }
     
     def _build_diagnosis_prompt(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
@@ -400,6 +587,142 @@ Structure attendue (respecter EXACTEMENT ces titres) :
 ## 5. Recommandations cliniques immédiates
 - Étapes de suivi, examens complémentaires, coordination interdisciplinaire ou psychoéducation.
 - INTERDIT : citer des molécules, dosages, ou protocoles thérapeutiques.
+"""
+        
+        return prompt
+    
+    def _generate_treatment_plan(self, pathology_name, form_data, diagnosis_text, medical_text="", historical_symptoms=None, system_message=None):
+        """
+        Générer un plan de traitement détaillé pour le patient.
+        
+        Args:
+            pathology_name: Nom de la pathologie
+            form_data: Données du formulaire
+            diagnosis_text: Texte du diagnostic généré
+            medical_text: Texte médical extrait
+            historical_symptoms: Historique des symptômes
+            system_message: Message système pour le plan de traitement
+            
+        Returns:
+            str: Plan de traitement généré
+        """
+        try:
+            # Construire le prompt pour le plan de traitement
+            treatment_prompt = self._build_treatment_prompt(
+                pathology_name, 
+                form_data, 
+                diagnosis_text, 
+                medical_text, 
+                historical_symptoms
+            )
+            
+            # Générer le plan de traitement avec le même modèle
+            if self.model == 'chatgpt-5.1':
+                response = self.client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": system_message
+                        },
+                        {
+                            "role": "user",
+                            "content": treatment_prompt
+                        }
+                    ],
+                    temperature=0.4,
+                    max_tokens=2000  # Plus de tokens pour un plan détaillé
+                )
+                treatment_plan_text = response.choices[0].message.content
+                
+            elif self.model == 'claude-4.5':
+                response = self.client.messages.create(
+                    model=self.claude_model,
+                    max_tokens=2000,
+                    temperature=0.4,
+                    system=system_message,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": treatment_prompt
+                        }
+                    ]
+                )
+                if hasattr(response, 'content') and response.content and len(response.content) > 0:
+                    treatment_plan_text = response.content[0].text
+                else:
+                    raise ValueError("Réponse Claude vide pour le plan de traitement")
+            else:
+                raise ValueError(f"Modèle non supporté pour le plan de traitement: {self.model}")
+            
+            print(f"✅ Plan de traitement généré: {len(treatment_plan_text)} caractères")
+            return treatment_plan_text
+            
+        except Exception as e:
+            print(f"⚠️ Erreur lors de la génération du plan de traitement: {str(e)}")
+            return f"Erreur lors de la génération du plan de traitement: {str(e)}"
+    
+    def _build_treatment_prompt(self, pathology_name, form_data, diagnosis_text="", medical_text="", historical_symptoms=None):
+        """
+        Construire le prompt pour générer le plan de traitement.
+        """
+        prompt = f"""Génère un PLAN DE TRAITEMENT détaillé et structuré en français pour un patient.
+
+INFORMATIONS DU PATIENT :
+• Pathologie identifiée : {pathology_name}
+
+TEXTE MÉDICAL DE RÉFÉRENCE :
+{medical_text if medical_text else "Aucun extrait supplémentaire."}
+
+CRITÈRES VALIDÉS :
+"""
+        
+        # Ajouter les données du formulaire
+        if isinstance(form_data, dict):
+            for key, value in form_data.items():
+                if key != '_metadata' and value:  # Exclure les métadonnées
+                    if isinstance(value, list):
+                        prompt += f"\n**{key}:**\n"
+                        for item in value:
+                            prompt += f"  ✓ {item}\n"
+                    else:
+                        prompt += f"\n**{key}:** {value}\n"
+        
+        # Ajouter l'historique si disponible
+        if historical_symptoms and len(historical_symptoms) > 0:
+            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX ({len(historical_symptoms)} symptômes enregistrés):**\n"
+            for symptom in historical_symptoms[:10]:  # Limiter à 10
+                prompt += f"  • {symptom}\n"
+        
+        prompt += """
+
+STRUCTURE ATTENDUE DU PLAN DE TRAITEMENT :
+
+## 1. Suivi Thérapeutique (Activités Thérapeutiques)
+- Indiquer le type de suivi recommandé (fréquence, durée)
+- Modalités de suivi (consultations, téléconsultations, etc.)
+
+## 2. Prise en Charge Médicale (si nécessaire)
+- Recommandations médicales générales
+- Suivi des comorbidités physiques si présentes
+
+## 3. Interventions Psychothérapeutiques
+- Type de psychothérapie recommandée
+- Objectifs thérapeutiques
+- Durée et fréquence
+
+## 4. Suivi à Long Terme
+- Planification du suivi sur plusieurs mois
+- Points de vigilance
+- Critères d'amélioration attendus
+
+IMPORTANT : 
+- Base-toi uniquement sur les informations fournies
+- Utilise un langage médical professionnel
+- Inclus le suivi thérapeutique (activités thérapeutiques) comme demandé
+- Sois précis mais adapté au cas du patient
+- NE PAS ajouter de phrases de conclusion, de disclaimer ou de note sur l'ajustement du plan
+- Terminer directement après la section 4 sans phrase de clôture
 """
         
         return prompt

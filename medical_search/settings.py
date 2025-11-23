@@ -168,9 +168,24 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ============= CONFIGURATION EMBEDDINGS =============
-# Configuration OpenAI
+# Configuration OpenAI (ChatGPT 5.1)
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
 EMBEDDING_MODEL = os.getenv('EMBEDDING_MODEL', 'text-embedding-ada-002')
+
+# Configuration Claude 4.5 (Sonnet)
+# Modèle Claude Sonnet 4.5 pour la génération de texte
+CLAUDE_API_KEY = os.getenv('CLAUDE_API_KEY', '')
+# Modèle Claude à utiliser (par défaut: Claude Sonnet 4.5)
+# Options disponibles: claude-sonnet-4-5-20250929, claude-3-opus-20240229, claude-3-sonnet-20240229, claude-3-haiku-20240307
+CLAUDE_MODEL = os.getenv('CLAUDE_MODEL', 'claude-sonnet-4-5-20250929')
+
+# Configuration Gemini 3
+# TODO: Ajouter votre clé API Gemini ici
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
+# Modèle Gemini à utiliser (par défaut: gemini-3-pro-preview)
+# Options disponibles: gemini-3-pro-preview, gemini-2.5-pro, gemini-2.5-flash, gemini-2.0-flash
+# Note: Le nom doit inclure le préfixe 'models/' dans le code (ajouté automatiquement)
+GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-3-pro-preview')
 
 # Chemin vers le dossier contenant les embeddings
 # Par défaut, utiliser le chemin local, sur Heroku utiliser /app/Embedding

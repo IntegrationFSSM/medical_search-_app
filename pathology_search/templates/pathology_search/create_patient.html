@@ -1,0 +1,403 @@
+{% extends "pathology_search/base.html" %}
+
+{% block title %}Nouveau Patient{% endblock %}
+
+{% block extra_css %}
+<style>
+    .form-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+    }
+    
+    .form-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+    }
+    
+    .form-section-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #667eea;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .form-section-title i {
+        margin-right: 0.5rem;
+    }
+    
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-group.full-width {
+        grid-column: 1 / -1;
+    }
+    
+    label {
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .required {
+        color: #ef4444;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+        padding: 0.75rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: all 0.3s;
+    }
+    
+    input:focus,
+    select:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    
+    .form-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 2px solid #e5e7eb;
+    }
+    
+    .btn {
+        padding: 0.75rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-secondary {
+        background: #6b7280;
+        color: white;
+    }
+    
+    .btn-secondary:hover {
+        background: #4b5563;
+    }
+    
+    .help-text {
+        font-size: 0.8rem;
+        color: #6b7280;
+        margin-top: 0.25rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2 flex items-center">
+            <i class="fas fa-user-plus text-purple-600 mr-3"></i>
+            Nouveau Patient
+        </h1>
+        <p class="text-gray-600">Remplissez tous les champs pour créer un nouveau dossier patient</p>
+    </div>
+    
+    <form id="createPatientForm" method="POST" action="{% url 'pathology_search:create_patient_submit' %}">
+        {% csrf_token %}
+        
+        <!-- Section: Identifiants -->
+        <div class="form-section">
+            <div class="form-section-title">
+                <i class="fas fa-id-card"></i>
+                Identifiants
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="patient_identifier">Identifiant patient</label>
+                    <input type="text" id="patient_identifier" name="patient_identifier" maxlength="50" />
+                    <span class="help-text">Code / matricule interne du patient</span>
+                </div>
+                <div class="form-group">
+                    <label for="cin">N° CIN</label>
+                    <input type="text" id="cin" name="cin" maxlength="20" pattern="[A-Z]{1,2}\d{5,10}" />
+                    <span class="help-text">Format: AB123456</span>
+                </div>
+                <div class="form-group">
+                    <label for="passport_number">N° de passeport</label>
+                    <input type="text" id="passport_number" name="passport_number" maxlength="20" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section: Informations personnelles -->
+        <div class="form-section">
+            <div class="form-section-title">
+                <i class="fas fa-user"></i>
+                Informations Personnelles
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="last_name">Nom <span class="required">*</span></label>
+                    <input type="text" id="last_name" name="last_name" maxlength="100" required />
+                </div>
+                <div class="form-group">
+                    <label for="first_name">Prénom <span class="required">*</span></label>
+                    <input type="text" id="first_name" name="first_name" maxlength="100" required />
+                </div>
+                <div class="form-group">
+                    <label for="gender">Sexe</label>
+                    <select id="gender" name="gender">
+                        <option value="">-- Sélectionner --</option>
+                        <option value="M">Masculin</option>
+                        <option value="F">Féminin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="birth_date">Date de naissance</label>
+                    <input type="date" id="birth_date" name="birth_date" />
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationalité</label>
+                    <input type="text" id="nationality" name="nationality" maxlength="2" value="MA" placeholder="MA" />
+                    <span class="help-text">Code pays ISO (ex: MA, FR, DZ)</span>
+                </div>
+                <div class="form-group">
+                    <label for="profession">Profession</label>
+                    <input type="text" id="profession" name="profession" maxlength="100" />
+                </div>
+                <div class="form-group full-width">
+                    <label for="city">Ville</label>
+                    <input type="text" id="city" name="city" maxlength="100" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section: Contact -->
+        <div class="form-section">
+            <div class="form-section-title">
+                <i class="fas fa-phone"></i>
+                Coordonnées
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" maxlength="254" />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone fixe</label>
+                    <input type="tel" id="phone" name="phone" maxlength="20" />
+                </div>
+                <div class="form-group">
+                    <label for="mobile_number">GSM</label>
+                    <input type="tel" id="mobile_number" name="mobile_number" maxlength="20" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section: Informations familiales -->
+        <div class="form-section">
+            <div class="form-section-title">
+                <i class="fas fa-users"></i>
+                Informations Familiales
+            </div>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label for="spouse_name">Conjoint(e)</label>
+                    <input type="text" id="spouse_name" name="spouse_name" maxlength="100" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section: Informations médicales -->
+        <div class="form-section">
+            <div class="form-section-title">
+                <i class="fas fa-stethoscope"></i>
+                Informations Médicales
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="treating_physician">Médecin traitant</label>
+                    <input type="text" id="treating_physician" name="treating_physician" maxlength="100" />
+                </div>
+                <div class="form-group">
+                    <label for="referring_physician">Médecin correspondant</label>
+                    <input type="text" id="referring_physician" name="referring_physician" maxlength="100" />
+                </div>
+                <div class="form-group full-width">
+                    <label for="disease_speciality">Type maladie</label>
+                    <input type="text" id="disease_speciality" name="disease_speciality" maxlength="100" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section: Assurance -->
+        <div class="form-section">
+            <div class="form-section-title">
+                <i class="fas fa-shield-alt"></i>
+                Assurance / Mutuelle
+            </div>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="has_insurance" name="has_insurance" />
+                        <label for="has_insurance" style="margin-bottom: 0;">A une mutuelle/assurance</label>
+                    </div>
+                </div>
+                <div class="form-group" id="insurance_fields" style="display: none;">
+                    <label for="insurance_number">N° immatriculation</label>
+                    <input type="text" id="insurance_number" name="insurance_number" maxlength="50" />
+                </div>
+                <div class="form-group" id="affiliation_fields" style="display: none;">
+                    <label for="affiliation_number">N° affiliation</label>
+                    <input type="text" id="affiliation_number" name="affiliation_number" maxlength="50" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- Actions -->
+        <div class="form-actions">
+            <a href="{% url 'pathology_search:index' %}" class="btn btn-secondary">
+                <i class="fas fa-times"></i>
+                Annuler
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i>
+                Créer le Patient
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Afficher/masquer les champs d'assurance
+    document.getElementById('has_insurance').addEventListener('change', function() {
+        const insuranceFields = document.getElementById('insurance_fields');
+        const affiliationFields = document.getElementById('affiliation_fields');
+        if (this.checked) {
+            insuranceFields.style.display = 'block';
+            affiliationFields.style.display = 'block';
+        } else {
+            insuranceFields.style.display = 'none';
+            affiliationFields.style.display = 'none';
+        }
+    });
+    
+    // Gestion de la soumission du formulaire
+    document.getElementById('createPatientForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+            if (value) {
+                data[key] = value;
+            }
+        });
+        
+        // Convertir checkbox
+        data.has_insurance = document.getElementById('has_insurance').checked;
+        
+        try {
+            // Récupérer le token CSRF
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+            
+            const response = await fetch('{% url "pathology_search:create_patient_submit" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Patient créé !',
+                    text: `Le patient ${result.patient.first_name} ${result.patient.last_name} a été créé avec succès.`,
+                    confirmButtonColor: '#667eea'
+                }).then(() => {
+                    window.location.href = '{% url "pathology_search:index" %}';
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur',
+                    text: result.error || 'Une erreur est survenue lors de la création du patient',
+                    confirmButtonColor: '#667eea'
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur',
+                text: 'Une erreur est survenue lors de la création du patient',
+                confirmButtonColor: '#667eea'
+            });
+        }
+    });
+</script>
+{% endblock %}
+

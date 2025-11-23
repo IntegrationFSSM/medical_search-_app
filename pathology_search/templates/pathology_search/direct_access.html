@@ -280,15 +280,50 @@
             return;
         }
         
+        // 🆕 ÉTAPE 1: Demander à l'utilisateur de choisir le modèle pour la génération du diagnostic
+        const { value: selectedModel } = await Swal.fire({
+            title: '<i class="fas fa-brain text-purple-600 mr-2"></i> Choisir le Modèle IA',
+            html: `
+                <p class="mb-4 text-gray-700">Sélectionnez le modèle pour générer le <strong>Diagnostic Summary et Traitement</strong> :</p>
+                <select id="modelSelect" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white text-base font-medium">
+                    <option value="chatgpt-5.1" selected>ChatGPT 5.1</option>
+                    <option value="claude-4.5">Claude Sonnet 4.5</option>
+                </select>
+                <p class="text-xs text-gray-500 mt-3">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    Ce modèle sera utilisé uniquement pour générer le diagnostic et le plan de traitement.
+                </p>
+            `,
+            showCancelButton: true,
+            confirmButtonText: 'Générer le Diagnostic',
+            cancelButtonText: 'Annuler',
+            confirmButtonColor: '#10b981',
+            cancelButtonColor: '#6b7280',
+            focusConfirm: false,
+            didOpen: () => {
+                const select = document.getElementById('modelSelect');
+                select.focus();
+            },
+            preConfirm: () => {
+                const select = document.getElementById('modelSelect');
+                return select.value;
+            }
+        });
+        
+        // Si l'utilisateur a annulé
+        if (!selectedModel) {
+            return;
+        }
+        
         // Afficher le loading avec animation
         Swal.fire({
-            title: '<i class="fas fa-file-medical fa-spin text-purple-600 mr-2"></i> Génération du Diagnostic Summary',
+            title: '<i class="fas fa-prescription-bottle-alt fa-spin text-green-600 mr-2"></i> Génération du Plan de Traitement',
             html: `
                 <p class="mb-4">Analyse en cours des critères sélectionnés...</p>
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="aiProgressBar"></div>
                 </div>
-                <p class="text-sm text-gray-600 mt-4">Création du résumé diagnostique en cours...</p>
+                <p class="text-sm text-gray-600 mt-4">Création du plan de traitement en cours avec ${selectedModel === 'chatgpt-5.1' ? 'ChatGPT 5.1' : 'Claude Sonnet 4.5'}...</p>
             `,
             allowOutsideClick: false,
             showConfirmButton: false,
@@ -298,7 +333,7 @@
         });
         
         try {
-            // Appeler l'API pour générer le diagnostic
+            // Appeler l'API pour générer le diagnostic avec le modèle choisi
             const response = await fetch('{% url "pathology_search:validate_action" %}', {
                 method: 'POST',
                 headers: {
@@ -311,7 +346,8 @@
                     pathology_name: pathologyInfo.name,
                     patient_id: patientId,
                     direct_access: true,
-                    html_page: pathologyInfo.html_page
+                    html_page: pathologyInfo.html_page,
+                    model: selectedModel  // 🆕 Modèle choisi par l'utilisateur
                 })
             });
             

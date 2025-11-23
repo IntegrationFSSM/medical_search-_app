@@ -97,6 +97,24 @@
         }
         
         .plan-traitement {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+        
+        .notes-medecin {
+            background-color: #fff9e6;
+            padding: 15px;
+            border-left: 4px solid #f39c12;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-style: italic;
+            color: #7d6608;
+        }
+        
+        .plan-traitement-old {
             background-color: #ffffff;
             padding: 20px;
             border: 2px solid #667eea;
@@ -251,7 +269,7 @@
             </tr>
             <tr>
                 <td class="info-label">Pathologie identifiée</td>
-                <td class="info-value">{{ pathologie_clean }}</td>
+                <td class="info-value"><strong>{{ pathologie_clean }}</strong></td>
             </tr>
         </table>
     </div>
@@ -275,11 +293,19 @@
         {% endfor %}
     </div>
     
-    <!-- Diagnostic Summary -->
+    <!-- Plan de Traitement -->
     <div class="section">
-        <div class="section-title">DIAGNOSTIC SUMMARY</div>
+        <div class="section-title">PLAN DE TRAITEMENT</div>
         <div class="plan-traitement">{{ plan_traitement_clean|safe }}</div>
     </div>
+    
+    <!-- Notes du médecin -->
+    {% if notes_medecin %}
+    <div class="section">
+        <div class="section-title">NOTES DU MÉDECIN</div>
+        <div class="notes-medecin">{{ notes_medecin|linebreaks }}</div>
+    </div>
+    {% endif %}
     
     <!-- Pied de page -->
     <div class="footer">

@@ -135,6 +135,38 @@ function selectResult(index) {
     // Rediriger directement sans confirmation
     window.location.href = `/validate/?index=${index}`;
 }
+
+// 🆕 Gestion du bouton retour du navigateur avec confirmation
+(function() {
+    const backUrl = '{% url "pathology_search:index" %}';
+    
+    // Ajouter une entrée dans l'historique pour permettre le retour vers la page principale
+    history.pushState({ page: 'results_selection', backUrl: backUrl }, '', window.location.href);
+    
+    // Gérer le bouton retour du navigateur
+    window.addEventListener('popstate', async function(event) {
+        // Empêcher le retour immédiat pour demander confirmation
+        history.pushState({ page: 'results_selection', backUrl: backUrl }, '', window.location.href);
+        
+        // Demander confirmation avant de quitter
+        const result = await Swal.fire({
+            icon: 'question',
+            title: 'Retour à la page principale ?',
+            text: 'Voulez-vous vraiment retourner à la page principale ? Les diagnostics non évalués seront conservés.',
+            showCancelButton: true,
+            confirmButtonText: 'Oui, retourner',
+            cancelButtonText: 'Rester ici',
+            confirmButtonColor: '#667eea',
+            cancelButtonColor: '#6b7280'
+        });
+        
+        if (result.isConfirmed) {
+            // Retourner à la page principale
+            window.location.href = backUrl;
+        }
+        // Si annulé, on reste sur la page (l'historique a déjà été restauré)
+    });
+})();
 </script>
 
 <style>

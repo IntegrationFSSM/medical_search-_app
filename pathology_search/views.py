@@ -125,23 +125,77 @@ def search(request):
             request.session['current_patient_id'] = patient_id
         if medecin_id:
             request.session['current_medecin_id'] = medecin_id
-        if historical_symptoms:
-            request.session['patient_historical_symptoms'] = historical_symptoms
-            print(f"📊 {len(historical_symptoms)} symptômes historiques sauvegardés dans la session")
+        
+        # 🆕 Récupérer automatiquement TOUS les antécédents du patient depuis la base de données
+        all_historical_symptoms = []
+        if patient_id:
+            try:
+                from .models import Patient, Consultation
+                patient = Patient.objects.get(id=patient_id)
+                consultations = Consultation.objects.filter(patient=patient).order_by('-date_consultation')
+                
+                # Collecter TOUS les symptômes/critères de toutes les consultations
+                for consultation in consultations:
+                    if consultation.criteres_valides:
+                        for key, value in consultation.criteres_valides.items():
+                            # Ignorer les métadonnées
+                            if key == '_metadata':
+                                continue
+                            # Extraire les symptômes selon le type de valeur
+                            if isinstance(value, list):
+                                # Si c'est une liste, ajouter tous les éléments non vides
+                                for item in value:
+                                    if item and str(item).strip():
+                                        all_historical_symptoms.append(str(item).strip())
+                            elif isinstance(value, dict):
+                                # Si c'est un dictionnaire, extraire les valeurs
+                                for sub_key, sub_value in value.items():
+                                    if sub_value and str(sub_value).strip():
+                                        all_historical_symptoms.append(str(sub_value).strip())
+                            elif value and str(value).strip():
+                                # Si c'est une valeur simple
+                                all_historical_symptoms.append(str(value).strip())
+                        
+                        # Aussi extraire la description clinique comme contexte
+                        if consultation.description_clinique:
+                            all_historical_symptoms.append(consultation.description_clinique.strip())
+                
+                # Dédupliquer les symptômes
+                all_historical_symptoms = list(set(all_historical_symptoms))
+                
+                # Si des symptômes ont été envoyés depuis le frontend, les fusionner
+                if historical_symptoms:
+                    all_historical_symptoms.extend(historical_symptoms)
+                    all_historical_symptoms = list(set(all_historical_symptoms))
+                
+                # Sauvegarder dans la session
+                request.session['patient_historical_symptoms'] = all_historical_symptoms
+                print(f"📊 {len(all_historical_symptoms)} antécédents récupérés automatiquement depuis la base de données")
+            except Exception as e:
+                print(f"⚠️ Erreur lors de la récupération de l'historique: {e}")
+                # Utiliser les symptômes envoyés depuis le frontend si disponibles
+                if historical_symptoms:
+                    all_historical_symptoms = historical_symptoms
+                    request.session['patient_historical_symptoms'] = all_historical_symptoms
+        elif historical_symptoms:
+            # Si pas de patient_id mais des symptômes envoyés
+            all_historical_symptoms = historical_symptoms
+            request.session['patient_historical_symptoms'] = all_historical_symptoms
+        
         request.session.modified = True
         
-        # 🆕 ÉTAPE 1: ENRICHIR LA REQUÊTE AVEC L'HISTORIQUE DU PATIENT (BACKEND)
+        # 🆕 ÉTAPE 1: ENRICHIR LA REQUÊTE AVEC TOUS LES ANTÉCÉDENTS DU PATIENT
         enriched_query = query
-        if patient_id and historical_symptoms and len(historical_symptoms) > 0:
-            # Limiter à 10 symptômes pour ne pas surcharger la recherche
-            symptoms_for_search = historical_symptoms[:10]
-            symptoms_text = ', '.join(symptoms_for_search)
-            enriched_query = f"{query}. Antécédents patient: {symptoms_text}"
-            print(f"🔍 Requête enrichie avec {len(symptoms_for_search)} symptômes: {enriched_query[:100]}...")
+        if all_historical_symptoms and len(all_historical_symptoms) > 0:
+            # Inclure TOUS les antécédents (pas de limite)
+            symptoms_text = ', '.join(all_historical_symptoms)
+            enriched_query = f"{query}. Antécédents complets du patient: {symptoms_text}"
+            print(f"🔍 Requête enrichie avec {len(all_historical_symptoms)} antécédents: {enriched_query[:200]}...")
         
         # ÉTAPE 2: Valider la requête ORIGINALE avec GPT-4o (pas la requête enrichie)
-        service = PathologySearchService()
-        validation_result = service.validate_medical_query(query)
+        # Pour la validation, on utilise toujours OpenAI (ChatGPT)
+        service_validation = PathologySearchService(model='chatgpt-5.1')
+        validation_result = service_validation.validate_medical_query(query)
         
         if not validation_result['is_valid']:
             return JsonResponse({
@@ -152,6 +206,8 @@ def search(request):
             })
         
         # ÉTAPE 3: Effectuer la recherche avec la REQUÊTE ENRICHIE
+        # Toujours utiliser OpenAI pour les embeddings (similarité)
+        service = PathologySearchService(model='chatgpt-5.1')
         search_results = service.find_best_match(
             query=enriched_query,  # 🆕 Utiliser la requête enrichie
             top_k=top_k,
@@ -240,6 +296,117 @@ def about(request):
     return render(request, 'pathology_search/about.html')
 
 
+def create_patient_page(request):
+    """Page dédiée pour créer un nouveau patient."""
+    return render(request, 'pathology_search/create_patient.html')
+
+
+@require_http_methods(["POST"])
+def create_patient_submit(request):
+    """Traiter la soumission du formulaire de création de patient."""
+    from .models import Patient
+    from datetime import datetime
+    import json
+    
+    try:
+        if request.content_type == 'application/json':
+            data = json.loads(request.body)
+        else:
+            data = request.POST.dict()
+        
+        # Générer un identifiant patient unique si non fourni
+        patient_identifier = data.get('patient_identifier', '').strip()
+        if not patient_identifier:
+            last_patient = Patient.objects.order_by('-id').first()
+            if last_patient and last_patient.patient_identifier and last_patient.patient_identifier.startswith('EE-2025-'):
+                try:
+                    last_num = int(last_patient.patient_identifier.split('-')[-1])
+                    new_num = last_num + 1
+                except:
+                    new_num = 1
+            else:
+                new_num = 1
+            patient_identifier = f'EE-2025-{new_num:03d}'
+        
+        # Vérifier l'unicité
+        if Patient.objects.filter(patient_identifier=patient_identifier).exists():
+            return JsonResponse({
+                'success': False,
+                'error': f'L\'identifiant patient {patient_identifier} existe déjà'
+            }, status=400)
+        
+        # Convertir la date de naissance
+        birth_date = None
+        if data.get('birth_date'):
+            try:
+                birth_date = datetime.strptime(data['birth_date'], '%Y-%m-%d').date()
+            except:
+                pass
+        
+        # Créer le patient avec tous les champs
+        patient = Patient.objects.create(
+            # Identifiants
+            patient_identifier=patient_identifier,
+            cin=data.get('cin', '').strip() or None,
+            passport_number=data.get('passport_number', '').strip() or None,
+            
+            # Informations personnelles
+            last_name=data.get('last_name', '').strip().upper() or None,
+            first_name=data.get('first_name', '').strip().capitalize() or None,
+            gender=data.get('gender', '') or None,
+            birth_date=birth_date,
+            nationality=data.get('nationality', 'MA').strip() or 'MA',
+            profession=data.get('profession', '').strip() or '',
+            city=data.get('city', '').strip() or '',
+            
+            # Contact
+            email=data.get('email', '').strip() or '',
+            phone=data.get('phone', '').strip() or '',
+            mobile_number=data.get('mobile_number', '').strip() or '',
+            
+            # Informations familiales
+            spouse_name=data.get('spouse_name', '').strip() or '',
+            
+            # Informations médicales
+            treating_physician=data.get('treating_physician', '').strip() or None,
+            referring_physician=data.get('referring_physician', '').strip() or None,
+            disease_speciality=data.get('disease_speciality', '').strip() or None,
+            
+            # Assurance
+            has_insurance=data.get('has_insurance', False) == True or data.get('has_insurance') == 'true',
+            insurance_number=data.get('insurance_number', '').strip() or None,
+            affiliation_number=data.get('affiliation_number', '').strip() or None,
+            
+            # Compatibilité (anciens champs)
+            nom=data.get('last_name', '').strip().upper() or None,
+            prenom=data.get('first_name', '').strip().capitalize() or None,
+            date_naissance=birth_date,
+            numero_dossier=patient_identifier,
+            telephone=data.get('mobile_number', '').strip() or data.get('phone', '').strip() or ''
+        )
+        
+        return JsonResponse({
+            'success': True,
+            'patient': {
+                'id': patient.id,
+                'patient_identifier': patient.patient_identifier,
+                'last_name': patient.last_name,
+                'first_name': patient.first_name,
+                'nom_complet': patient.nom_complet,
+                'cin': patient.cin,
+                'passport_number': patient.passport_number
+            }
+        })
+    except Exception as e:
+        import traceback
+        error_detail = traceback.format_exc()
+        return JsonResponse({
+            'success': False,
+            'error': f'Erreur lors de la création du patient: {str(e)}',
+            'detail': error_detail
+        }, status=500)
+
+
 def print_report(request, consultation_id):
     """
     Générer un rapport PDF de la consultation avec en-tête CLINIQUE LA VALLÉE.
@@ -261,18 +428,34 @@ def print_report(request, consultation_id):
         if not consultation.criteres_valides:
             consultation.criteres_valides = {}
         
+        # 🆕 Récupérer le modèle utilisé depuis les métadonnées
+        model_used = 'chatgpt-5.1'  # Par défaut
+        model_display_name = 'ChatGPT 5.1'
+        if consultation.criteres_valides and '_metadata' in consultation.criteres_valides:
+            metadata = consultation.criteres_valides['_metadata']
+            model_used = metadata.get('model_used', 'chatgpt-5.1')
+            model_display_name = metadata.get('model_display_name', model_display_name)
+        
+        # 🆕 Utiliser le plan validé si disponible, sinon le plan initial
+        plan_traitement_a_utiliser = consultation.plan_traitement_valide if consultation.plan_traitement_valide else consultation.plan_traitement
+        
         # Formater le plan de traitement de manière sophistiquée
-        plan_traitement_clean = format_plan_traitement_html(consultation.plan_traitement)
+        plan_traitement_clean = format_plan_traitement_html(plan_traitement_a_utiliser)
         
         # Nettoyer le nom de la pathologie (enlever sections/sous-sections)
         pathologie_clean = clean_pathology_name(consultation.pathologie_identifiee)
         
-        # Nettoyer les critères validés
+        # Nettoyer les critères validés (exclure les métadonnées)
         criteres_valides_clean = {}
         for key, value in consultation.criteres_valides.items():
+            if key == '_metadata':  # Exclure les métadonnées de l'affichage
+                continue
             clean_key = clean_text_for_pdf(key)
             clean_value = clean_text_for_pdf(value)
             criteres_valides_clean[clean_key] = clean_value
+        
+        # 🆕 Récupérer les notes du médecin
+        notes_medecin_clean = consultation.notes_medecin if consultation.notes_medecin else ''
         
         context = {
             'consultation': consultation,
@@ -281,7 +464,10 @@ def print_report(request, consultation_id):
             'date_impression': timezone.now(),
             'plan_traitement_clean': plan_traitement_clean,
             'pathologie_clean': pathologie_clean,
+            'notes_medecin': notes_medecin_clean,  # 🆕 Notes du médecin
             'criteres_valides_clean': criteres_valides_clean,
+            'model_used': model_used,  # 🆕 Modèle utilisé
+            'model_display_name': model_display_name,  # 🆕 Nom formaté pour affichage
         }
         
         try:
@@ -936,9 +1122,12 @@ def validate_action(request):
             # Extraire le texte médical du meilleur chunk
             best_chunk_text = result.get('best_chunk_text', '')
         
-        # Générer le diagnostic IA avec OpenAI en incluant le texte médical ET l'historique
+        # 🆕 Récupérer le modèle choisi par l'utilisateur (pour la génération du diagnostic)
+        selected_model = data.get('model', 'chatgpt-5.1')
+        
+        # Générer le diagnostic IA avec le modèle choisi en incluant le texte médical ET l'historique
         from .services import PathologySearchService
-        service = PathologySearchService()
+        service = PathologySearchService(model=selected_model)
         
         # 🆕 Récupérer les symptômes historiques depuis la session
         historical_symptoms = request.session.get('patient_historical_symptoms', [])
@@ -961,7 +1150,8 @@ def validate_action(request):
         request.session['diagnoses'][diagnosis_id] = {
             'diagnosis': diagnosis_result,
             'result': result,
-            'form_data': form_data
+            'form_data': form_data,
+            'model_used': selected_model  # 🆕 Sauvegarder le modèle utilisé
         }
         request.session.modified = True
         
@@ -981,14 +1171,25 @@ def validate_action(request):
             if patient_id:
                 patient = Patient.objects.get(id=patient_id)
                 
-                # Récupérer le médecin si disponible
+                # Le nom du médecin est directement dans patient.treating_physician (champ texte)
+                # Le champ medecin dans Consultation est une ForeignKey optionnelle, on la laisse à None
+                # car le nom du médecin est déjà stocké dans le patient
                 medecin = None
-                if medecin_id:
-                    try:
-                        from .models import Medecin
-                        medecin = Medecin.objects.get(id=medecin_id)
-                    except Medecin.DoesNotExist:
-                        pass
+                if patient.treating_physician:
+                    print(f"✅ Médecin principal du patient: {patient.treating_physician}")
+                
+                # 🆕 Stocker le modèle utilisé dans les critères validés (métadonnées)
+                form_data_with_model = form_data.copy() if form_data else {}
+                form_data_with_model['_metadata'] = {
+                    'model_used': selected_model,
+                    'model_display_name': {
+                        'chatgpt-5.1': 'ChatGPT 5.1',
+                        'claude-4.5': 'Claude Sonnet 4.5',
+                    }.get(selected_model, selected_model)
+                }
+                
+                # 🆕 Récupérer uniquement le plan de traitement (pas de diagnostic summary)
+                treatment_plan = diagnosis_result.get('treatment_plan', '')
                 
                 # Créer la consultation
                 consultation = Consultation.objects.create(
@@ -998,8 +1199,8 @@ def validate_action(request):
                     pathologie_identifiee=pathology_name,
                     score_similarite=similarity_score / 100,  # Convertir en décimal (0-1)
                     fichier_source=result.get('file_name', ''),
-                    criteres_valides=form_data,
-                    plan_traitement=diagnosis_result.get('diagnosis', ''),
+                    criteres_valides=form_data_with_model,  # 🆕 Inclure le modèle dans les métadonnées
+                    plan_traitement=treatment_plan,  # 🆕 Uniquement le plan de traitement
                     statut='valide'
                 )
                 
@@ -1019,6 +1220,15 @@ def validate_action(request):
     
     elif action == 'skip':
         # IMPORTANT: Même si NON VALIDE, sauvegarder les critères cochés pour les antécédents
+        
+        # 🆕 Marquer l'index comme visité pour l'exclure des résultats suivants
+        if not is_direct_access and current_index < len(results):
+            if 'visited_diagnostic_indices' not in request.session:
+                request.session['visited_diagnostic_indices'] = []
+            if current_index not in request.session['visited_diagnostic_indices']:
+                request.session['visited_diagnostic_indices'].append(current_index)
+                request.session.modified = True
+                print(f"✅ Index {current_index} marqué comme visité (non validé) - sera exclu des résultats")
         
         # Gérer l'accès direct vs recherche normale
         if is_direct_access:
@@ -1054,19 +1264,18 @@ def validate_action(request):
             if is_direct_access:
                 query = f"Accès direct à la pathologie (non validée) : {pathology_name}"
             
-            if patient_id and form_data:  # Sauvegarder seulement s'il y a des critères cochés
+            # 🆕 Sauvegarder même s'il n'y a pas de critères cochés (enregistrer quand même)
+            if patient_id:
                 patient = Patient.objects.get(id=patient_id)
                 
-                # Récupérer le médecin si disponible
+                # Le nom du médecin est directement dans patient.treating_physician (champ texte)
+                # Le champ medecin dans Consultation est une ForeignKey optionnelle, on la laisse à None
+                # car le nom du médecin est déjà stocké dans le patient
                 medecin = None
-                if medecin_id:
-                    try:
-                        from .models import Medecin
-                        medecin = Medecin.objects.get(id=medecin_id)
-                    except Medecin.DoesNotExist:
-                        pass
+                if patient.treating_physician:
+                    print(f"✅ Médecin principal du patient: {patient.treating_physician}")
                 
-                # Créer la consultation avec statut "non_valide"
+                # Créer la consultation avec statut "non_valide" même si pas de critères
                 consultation = Consultation.objects.create(
                     patient=patient,
                     medecin=medecin,
@@ -1074,35 +1283,70 @@ def validate_action(request):
                     pathologie_identifiee=pathology_name,
                     score_similarite=similarity_score / 100,
                     fichier_source=result.get('file_name', ''),
-                    criteres_valides=form_data,  # Sauvegarder les critères cochés même si non validé
+                    criteres_valides=form_data if form_data else {},  # Sauvegarder les critères même si vide
                     plan_traitement='',  # Pas de plan de traitement car non validé
                     statut='non_valide'  # Statut spécial pour les pathologies rejetées
                 )
                 
-                print(f"✅ Consultation NON VALIDÉE sauvegardée (ID: {consultation.id}) avec {len(form_data)} critères")
+                print(f"✅ Consultation NON VALIDÉE sauvegardée (ID: {consultation.id}) avec {len(form_data) if form_data else 0} critères")
                 
-                # Extraire les symptômes des critères pour les sauvegarder dans l'historique
+                # 🆕 Extraire TOUS les symptômes des critères cochés pour les sauvegarder dans l'historique
                 symptoms = []
-                for key, value in form_data.items():
-                    if isinstance(value, list):
-                        symptoms.extend([f"{key}: {item}" for item in value])
-                    else:
-                        symptoms.append(f"{key}: {value}")
-                
-                # Ajouter les symptômes à l'historique du patient dans la session
-                if 'patient_historical_symptoms' not in request.session:
-                    request.session['patient_historical_symptoms'] = []
-                request.session['patient_historical_symptoms'].extend(symptoms)
-                request.session.modified = True
-                print(f"📊 {len(symptoms)} symptômes ajoutés à l'historique du patient")
+                if form_data:
+                    for key, value in form_data.items():
+                        # Ignorer les métadonnées
+                        if key == '_metadata':
+                            continue
+                        if isinstance(value, list):
+                            # Si c'est une liste, extraire chaque symptôme
+                            for item in value:
+                                if item and str(item).strip():
+                                    # Ajouter le symptôme directement (sans préfixe de section si c'est déjà clair)
+                                    symptom_text = str(item).strip()
+                                    symptoms.append(symptom_text)
+                        elif isinstance(value, dict):
+                            # Si c'est un dictionnaire, extraire les valeurs
+                            for sub_key, sub_value in value.items():
+                                if sub_value and str(sub_value).strip():
+                                    symptoms.append(str(sub_value).strip())
+                        elif value and str(value).strip():
+                            # Si c'est une valeur simple, l'ajouter comme symptôme
+                            symptom_text = str(value).strip()
+                            symptoms.append(symptom_text)
+                    
+                    # Dédupliquer les symptômes
+                    symptoms = list(set(symptoms))
+                    
+                    # Ajouter les symptômes à l'historique du patient dans la session
+                    if 'patient_historical_symptoms' not in request.session:
+                        request.session['patient_historical_symptoms'] = []
+                    request.session['patient_historical_symptoms'].extend(symptoms)
+                    # Dédupliquer l'historique complet
+                    request.session['patient_historical_symptoms'] = list(set(request.session['patient_historical_symptoms']))
+                    request.session.modified = True
+                    print(f"📊 {len(symptoms)} symptômes (critères cochés) ajoutés à l'historique du patient: {symptoms[:5]}...")
         except Exception as e:
             print(f"❌ Erreur lors de la sauvegarde de la consultation non validée: {e}")
         
-        # Retourner à la page des résultats au lieu de passer au suivant
+        # 🆕 Retourner aux résultats (excluant celui non validé) ou à la page principale si tous sont consommés
+        visited_indices = set(request.session.get('visited_diagnostic_indices', []))
+        total_results = len(results) if not is_direct_access else 0
+        
+        # Si tous les résultats ont été visités, retourner à la page principale
+        if not is_direct_access and len(visited_indices) >= total_results:
+            return JsonResponse({
+                'success': True,
+                'action': 'back_to_index',
+                'message': 'Tous les diagnostics ont été évalués. Retour à la page principale.',
+                'redirect_url': '/'
+            })
+        
+        # Sinon, retourner aux résultats (celui non validé sera exclu)
         return JsonResponse({
             'success': True,
             'action': 'back_to_results',
-            'message': 'Pathologie non validée. Retour à la liste des résultats.'
+            'message': 'Pathologie non validée. Retour aux résultats de similarité.',
+            'redirect_url': '/results-selection/'
         })
     
     return JsonResponse({
@@ -1126,17 +1370,65 @@ def show_diagnosis(request, diagnosis_id):
     diagnosis_result = diagnosis_data['diagnosis']
     result = diagnosis_data['result']
     form_data = diagnosis_data['form_data']
+    model_used = diagnosis_data.get('model_used', 'chatgpt-5.1')  # 🆕 Récupérer le modèle utilisé
     
-    # Formater le diagnostic pour l'affichage
-    diagnosis_text = diagnosis_result.get('diagnosis', '')
+    # 🆕 Récupérer uniquement le plan de traitement (pas de diagnostic summary)
+    treatment_plan = diagnosis_result.get('treatment_plan', '')
     
     # Récupérer l'ID de consultation et du patient depuis la session
     consultation_id = diagnosis_data.get('consultation_id')
     patient_id = request.session.get('current_patient_id')
     
+    # 🆕 Récupérer les informations du patient
+    patient_nom = ''
+    patient_prenom = ''
+    patient_identite = ''
+    if consultation_id:
+        try:
+            from .models import Consultation
+            consultation = Consultation.objects.select_related('patient').get(id=consultation_id)
+            patient = consultation.patient
+            patient_nom = patient.last_name or patient.nom or ''
+            patient_prenom = patient.first_name or patient.prenom or ''
+            patient_identite = patient.patient_identifier or patient.numero_dossier or ''
+        except Exception as e:
+            print(f"Erreur lors de la récupération du patient depuis la consultation: {e}")
+    elif patient_id:
+        try:
+            from .models import Patient
+            patient = Patient.objects.get(id=patient_id)
+            patient_nom = patient.last_name or patient.nom or ''
+            patient_prenom = patient.first_name or patient.prenom or ''
+            patient_identite = patient.patient_identifier or patient.numero_dossier or ''
+        except Exception as e:
+            print(f"Erreur lors de la récupération du patient: {e}")
+    
+    # 🆕 Nom du modèle formaté pour l'affichage
+    model_names = {
+        'chatgpt-5.1': 'ChatGPT 5.1',
+        'claude-4.5': 'Claude Sonnet 4.5'
+    }
+    model_display_name = model_names.get(model_used, model_used)
+    
+    # 🆕 Récupérer le statut de la consultation, le plan validé et les notes
+    consultation_statut = 'en_cours'
+    plan_valide = ''
+    notes_medecin = ''  # Initialiser par défaut
+    if consultation_id:
+        try:
+            from .models import Consultation
+            consultation = Consultation.objects.get(id=consultation_id)
+            consultation_statut = consultation.statut
+            plan_valide = consultation.plan_traitement_valide if consultation.plan_traitement_valide else ''
+            notes_medecin = consultation.notes_medecin if consultation.notes_medecin else ''
+        except Exception as e:
+            print(f"Erreur lors de la récupération de la consultation: {e}")
+            notes_medecin = ''  # S'assurer que notes_medecin est défini même en cas d'erreur
+    
     context = {
         'diagnosis_id': diagnosis_id,
-        'diagnosis': diagnosis_text,
+        'diagnosis': '',  # Pas de diagnostic summary
+        'treatment_plan': treatment_plan,  # 🆕 Uniquement le plan de traitement
         'pathology_name': diagnosis_result.get('pathology', ''),
         'confidence': diagnosis_result.get('confidence', 0),
         'timestamp': diagnosis_result.get('timestamp', ''),
@@ -1144,10 +1436,114 @@ def show_diagnosis(request, diagnosis_id):
         'form_data': form_data,
         'success': diagnosis_result.get('success', False),
         'consultation_id': consultation_id,
-        'patient_id': patient_id
+        'patient_id': patient_id,
+        'patient_nom': patient_nom,  # 🆕 Nom du patient
+        'patient_prenom': patient_prenom,  # 🆕 Prénom du patient
+        'patient_identite': patient_identite,  # 🆕 Identité du patient
+        'model_used': model_used,  # 🆕 Modèle utilisé
+        'model_display_name': model_display_name,  # 🆕 Nom formaté pour affichage
+        'diagnosis_result': diagnosis_result,  # 🆕 Pour accéder à error et error_detail
+        'consultation_statut': consultation_statut,  # 🆕 Statut de la consultation
+        'plan_valide': plan_valide,  # 🆕 Plan validé
+        'notes_medecin': notes_medecin  # 🆕 Notes du médecin
     }
     
     return render(request, 'pathology_search/diagnosis.html', context)
+
+
+@require_http_methods(["POST"])
+def validate_treatment_plan(request, consultation_id):
+    """
+    Valider le plan de traitement - sauvegarder la version validée.
+    """
+    try:
+        import json
+        from .models import Consultation
+        data = json.loads(request.body)
+        notes_medecin = data.get('notes_medecin', '')
+        
+        consultation = Consultation.objects.get(id=consultation_id)
+        
+        # Sauvegarder le plan actuel comme plan validé
+        consultation.plan_traitement_valide = consultation.plan_traitement
+        consultation.notes_medecin = notes_medecin  # Sauvegarder aussi les notes
+        consultation.statut = 'valide'
+        consultation.save()
+        
+        return JsonResponse({
+            'success': True,
+            'message': 'Plan de traitement validé avec succès'
+        })
+    except Consultation.DoesNotExist:
+        return JsonResponse({
+            'success': False,
+            'error': 'Consultation non trouvée'
+        }, status=404)
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        }, status=500)
+
+
+@require_http_methods(["POST"])
+def modify_treatment_plan(request, consultation_id):
+    """
+    Modifier le plan de traitement et les notes du médecin.
+    """
+    try:
+        import json
+        from .models import Consultation
+        data = json.loads(request.body)
+        new_plan = data.get('plan_traitement', '')
+        notes_medecin = data.get('notes_medecin', '')
+        
+        consultation = Consultation.objects.get(id=consultation_id)
+        consultation.plan_traitement = new_plan
+        consultation.notes_medecin = notes_medecin
+        consultation.statut = 'en_cours'  # Remettre en cours après modification
+        consultation.save()
+        
+        return JsonResponse({
+            'success': True,
+            'message': 'Plan de traitement et notes modifiés avec succès'
+        })
+    except Consultation.DoesNotExist:
+        return JsonResponse({
+            'success': False,
+            'error': 'Consultation non trouvée'
+        }, status=404)
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        }, status=500)
+
+
+@require_http_methods(["POST"])
+def delete_consultation(request, consultation_id):
+    """
+    Supprimer la consultation.
+    """
+    try:
+        from .models import Consultation
+        consultation = Consultation.objects.get(id=consultation_id)
+        consultation.delete()
+        
+        return JsonResponse({
+            'success': True,
+            'message': 'Consultation supprimée avec succès'
+        })
+    except Consultation.DoesNotExist:
+        return JsonResponse({
+            'success': False,
+            'error': 'Consultation non trouvée'
+        }, status=404)
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        }, status=500)
 
 
 def direct_pathology_access(request):

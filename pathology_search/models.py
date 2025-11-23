@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import RegexValidator
 import uuid
 
 
@@ -28,25 +29,180 @@ class Medecin(models.Model):
 
 class Patient(models.Model):
     """Modèle pour stocker les informations des patients"""
-    nom = models.CharField(max_length=100, verbose_name="Nom")
-    prenom = models.CharField(max_length=100, verbose_name="Prénom")
-    date_naissance = models.DateField(null=True, blank=True, verbose_name="Date de naissance")
-    numero_dossier = models.CharField(max_length=50, unique=True, verbose_name="Numéro de dossier")
-    telephone = models.CharField(max_length=20, blank=True, verbose_name="Téléphone")
-    email = models.EmailField(blank=True, verbose_name="Email")
+    
+    # Identifiants
+    patient_identifier = models.CharField(
+        max_length=50, 
+        unique=True, 
+        null=True, 
+        blank=True, 
+        verbose_name="Identifiant patient"
+    )
+    
+    cin_validator = RegexValidator(
+        regex=r'^[A-Z]{1,2}\d{5,10}$',
+        message="Format CIN invalide (ex: AB123456)"
+    )
+    cin = models.CharField(
+        max_length=20, 
+        unique=True, 
+        null=True, 
+        blank=True, 
+        validators=[cin_validator],
+        verbose_name="N° CIN"
+    )
+    
+    passport_number = models.CharField(
+        max_length=20, 
+        unique=True, 
+        null=True, 
+        blank=True, 
+        verbose_name="N° de passeport"
+    )
+    
+    # Informations personnelles
+    last_name = models.CharField(
+        max_length=100, 
+        null=True, 
+        blank=True, 
+        verbose_name="Nom"
+    )
+    
+    first_name = models.CharField(
+        max_length=100, 
+        null=True, 
+        blank=True, 
+        verbose_name="Prénom"
+    )
+    
+    GENDER_CHOICES = [
+        ('M', 'Masculin'),
+        ('F', 'Féminin'),
+    ]
+    gender = models.CharField(
+        max_length=1, 
+        choices=GENDER_CHOICES, 
+        null=True, 
+        blank=True, 
+        verbose_name="Sexe"
+    )
+    
+    birth_date = models.DateField(
+        null=True, 
+        blank=True, 
+        verbose_name="Date de naissance"
+    )
+    
+    nationality = models.CharField(
+        max_length=2, 
+        blank=True, 
+        default='MA',
+        verbose_name="Nationalité (code ISO)"
+    )
+    
+    profession = models.CharField(
+        max_length=100, 
+        blank=True, 
+        verbose_name="Profession"
+    )
+    
+    city = models.CharField(
+        max_length=100, 
+        blank=True, 
+        verbose_name="Ville"
+    )
+    
+    email = models.EmailField(
+        max_length=254, 
+        blank=True, 
+        verbose_name="Email"
+    )
+    
+    phone = models.CharField(
+        max_length=20, 
+        blank=True, 
+        verbose_name="Téléphone fixe"
+    )
+    
+    mobile_number = models.CharField(
+        max_length=20, 
+        blank=True, 
+        verbose_name="GSM"
+    )
+    
+    spouse_name = models.CharField(
+        max_length=100, 
+        blank=True, 
+        verbose_name="Conjoint(e)"
+    )
+    
+    # Informations médicales
+    treating_physician = models.CharField(
+        max_length=100, 
+        null=True, 
+        blank=True, 
+        verbose_name="Médecin traitant"
+    )
+    
+    referring_physician = models.CharField(
+        max_length=100, 
+        null=True, 
+        blank=True, 
+        verbose_name="Médecin correspondant"
+    )
+    
+    disease_speciality = models.CharField(
+        max_length=100, 
+        null=True, 
+        blank=True, 
+        verbose_name="Type maladie"
+    )
+    
+    # Assurance
+    has_insurance = models.BooleanField(
+        default=False, 
+        verbose_name="A une mutuelle/assurance"
+    )
+    
+    insurance_number = models.CharField(
+        max_length=50, 
+        null=True, 
+        blank=True, 
+        verbose_name="N° immatriculation"
+    )
+    
+    affiliation_number = models.CharField(
+        max_length=50, 
+        null=True, 
+        blank=True, 
+        verbose_name="N° affiliation"
+    )
+    
+    # Champs de compatibilité (anciens noms)
+    nom = models.CharField(max_length=100, null=True, blank=True, verbose_name="Nom (compatibilité)")
+    prenom = models.CharField(max_length=100, null=True, blank=True, verbose_name="Prénom (compatibilité)")
+    date_naissance = models.DateField(null=True, blank=True, verbose_name="Date de naissance (compatibilité)")
+    numero_dossier = models.CharField(max_length=50, null=True, blank=True, verbose_name="Numéro de dossier (compatibilité)")
+    telephone = models.CharField(max_length=20, blank=True, verbose_name="Téléphone (compatibilité)")
+    
     date_creation = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
     
     class Meta:
         verbose_name = "Patient"
         verbose_name_plural = "Patients"
-        ordering = ['nom', 'prenom']
+        ordering = ['last_name', 'first_name']
     
     def __str__(self):
-        return f"{self.nom} {self.prenom} ({self.numero_dossier})"
+        nom = self.last_name or self.nom or ''
+        prenom = self.first_name or self.prenom or ''
+        dossier = self.patient_identifier or self.numero_dossier or 'N/A'
+        return f"{prenom} {nom} ({dossier})"
     
     @property
     def nom_complet(self):
-        return f"{self.prenom} {self.nom}"
+        nom = self.last_name or self.nom or ''
+        prenom = self.first_name or self.prenom or ''
+        return f"{prenom} {nom}"
 
 
 class Consultation(models.Model):
@@ -67,6 +223,12 @@ class Consultation(models.Model):
     
     # Plan de traitement généré par IA
     plan_traitement = models.TextField(blank=True, verbose_name="Plan de traitement")
+    
+    # Plan de traitement validé par le médecin (version finale pour le rapport)
+    plan_traitement_valide = models.TextField(blank=True, verbose_name="Plan de traitement validé")
+    
+    # Notes optionnelles du médecin pour le rapport
+    notes_medecin = models.TextField(blank=True, verbose_name="Notes du médecin")
     
     # Métadonnées
     date_creation = models.DateTimeField(auto_now_add=True)
