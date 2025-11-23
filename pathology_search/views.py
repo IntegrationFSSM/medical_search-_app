@@ -164,7 +164,7 @@ def search(request):
                 all_historical_symptoms = list(set(all_historical_symptoms))
                 
                 # Si des symptômes ont été envoyés depuis le frontend, les fusionner
-        if historical_symptoms:
+                if historical_symptoms:
                     all_historical_symptoms.extend(historical_symptoms)
                     all_historical_symptoms = list(set(all_historical_symptoms))
                 
