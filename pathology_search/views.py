@@ -1127,18 +1127,35 @@ def validate_action(request):
         
         # Générer le diagnostic IA avec le modèle choisi en incluant le texte médical ET l'historique
         from .services import PathologySearchService
-        service = PathologySearchService(model=selected_model)
         
-        # 🆕 Récupérer les symptômes historiques depuis la session
-        historical_symptoms = request.session.get('patient_historical_symptoms', [])
-        
-        diagnosis_result = service.generate_ai_diagnosis(
-            pathology_name=pathology_name,
-            form_data=form_data,
-            similarity_score=similarity_score,
-            medical_text=best_chunk_text,
-            historical_symptoms=historical_symptoms  # 🆕 Inclure l'historique
-        )
+        try:
+            service = PathologySearchService(model=selected_model)
+            
+            # 🆕 Récupérer les symptômes historiques depuis la session
+            historical_symptoms = request.session.get('patient_historical_symptoms', [])
+            
+            diagnosis_result = service.generate_ai_diagnosis(
+                pathology_name=pathology_name,
+                form_data=form_data,
+                similarity_score=similarity_score,
+                medical_text=best_chunk_text,
+                historical_symptoms=historical_symptoms  # 🆕 Inclure l'historique
+            )
+        except Exception as e:
+            # Gérer les erreurs de l'API (Claude, ChatGPT, etc.) et retourner du JSON
+            import traceback
+            error_detail = str(e)
+            error_traceback = traceback.format_exc()
+            print(f"❌ Erreur lors de la génération du diagnostic avec {selected_model}: {error_detail}")
+            print(f"❌ Traceback complet:\n{error_traceback}")
+            
+            # Retourner une erreur JSON au lieu d'une page HTML
+            return JsonResponse({
+                'success': False,
+                'error': f'Erreur lors de la génération du plan de traitement avec {selected_model}: {error_detail}',
+                'error_type': 'api_error',
+                'model': selected_model
+            }, status=500)
         
         # Sauvegarder le diagnostic en session
         import uuid

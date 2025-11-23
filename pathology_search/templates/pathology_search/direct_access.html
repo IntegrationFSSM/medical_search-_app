@@ -351,7 +351,19 @@
                 })
             });
             
+            // Vérifier le Content-Type avant de parser
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                const text = await response.text();
+                console.error('Réponse non-JSON reçue:', text.substring(0, 200));
+                throw new Error('Le serveur a retourné une réponse non-JSON. Vérifiez les logs du serveur.');
+            }
+            
             const data = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(data.error || `Erreur HTTP ${response.status}`);
+            }
             
             if (data.success && data.diagnosis_id) {
                 // Rediriger vers la page de diagnostic
@@ -365,6 +377,7 @@
                 });
             }
         } catch (error) {
+            console.error('Erreur lors de la génération du diagnostic:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Erreur de connexion',
