@@ -306,7 +306,7 @@ def create_patient_submit(request):
     """Traiter la soumission du formulaire de création de patient."""
     from .models import Patient
     from datetime import datetime
-    import json
+    # json already imported at module level (line 9)
     
     try:
         if request.content_type == 'application/json':
