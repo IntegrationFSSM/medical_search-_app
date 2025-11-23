@@ -489,8 +489,7 @@ Réponds UNIQUEMENT par un JSON valide:
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=3000,  # Augmenté pour éviter finish_reason='length' avec contenu vide
-                    truncation='auto'  # Permettre la troncature automatique si le prompt est trop long�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=3000  # Augmenté pour éviter finish_reason='length' avec contenu vide�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 # Debug: afficher la réponse complète
                 print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
@@ -704,8 +703,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=3000,  # Augmenté pour éviter finish_reason='length' avec contenu vide
-                    truncation='auto'  # Permettre la troncature automatique si le prompt est trop long�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=3000  # Augmenté pour éviter finish_reason='length' avec contenu vide�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 # Debug: afficher la réponse complète
                 print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
@@ -769,7 +767,7 @@ INFORMATIONS DU PATIENT :
 • Pathologie identifiée : {pathology_name}
 
 TEXTE MÉDICAL DE RÉFÉRENCE :
-{medical_text[:2000] + "..." if medical_text and len(medical_text) > 2000 else (medical_text if medical_text else "Aucun extrait supplémentaire.")}
+{medical_text[:1000] + "..." if medical_text and len(medical_text) > 1000 else (medical_text if medical_text else "Aucun extrait supplémentaire.")}
 
 CRITÈRES VALIDÉS :
 """
@@ -785,14 +783,14 @@ CRITÈRES VALIDÉS :
                     else:
                         prompt += f"\n**{key}:** {value}\n"
         
-        # Ajouter l'historique si disponible (limiter pour éviter les prompts trop longs)
+        # Ajouter l'historique si disponible (limiter pour éviter les prompts trop longs - réduit à 3 pour GPT-5)
         if historical_symptoms and len(historical_symptoms) > 0:
-            # Limiter à 5 symptômes les plus récents pour éviter les prompts trop longs
-            limited_symptoms = historical_symptoms[:5]
-            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX (5 symptômes les plus récents sur {len(historical_symptoms)}):**\n"
+            # Limiter à 3 symptômes les plus récents pour éviter les prompts trop longs avec GPT-5
+            limited_symptoms = historical_symptoms[:3]
+            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX (3 symptômes les plus récents sur {len(historical_symptoms)}):**\n"
             for symptom in limited_symptoms:
-                # Limiter la longueur de chaque symptôme à 100 caractères
-                symptom_short = symptom[:100] + "..." if len(symptom) > 100 else symptom
+                # Limiter la longueur de chaque symptôme à 50 caractères pour GPT-5
+                symptom_short = symptom[:50] + "..." if len(symptom) > 50 else symptom
                 prompt += f"  • {symptom_short}\n"
         
         prompt += """
