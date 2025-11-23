@@ -551,7 +551,7 @@ Réponds UNIQUEMENT par un JSON valide:
                                 "content": treatment_prompt
                             }
                         ],
-                        max_completion_tokens=600
+                        max_completion_tokens=300
                     )
                     treatment_plan_text = response.choices[0].message.content
                 except Exception as e:
@@ -570,7 +570,7 @@ Réponds UNIQUEMENT par un JSON valide:
                                     "content": treatment_prompt
                                 }
                             ],
-                            max_completion_tokens=600
+                            max_completion_tokens=300
                         )
                         treatment_plan_text = response.choices[0].message.content
                     except Exception as e2:
@@ -787,7 +787,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                                 "content": treatment_prompt
                             }
                         ],
-                        max_completion_tokens=600
+                        max_completion_tokens=300
                     )
                     treatment_plan_text = response.choices[0].message.content
                 except Exception as e:
@@ -806,7 +806,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                                     "content": treatment_prompt
                                 }
                             ],
-                            max_completion_tokens=600
+                            max_completion_tokens=300
                         )
                         treatment_plan_text = response.choices[0].message.content
                     except Exception as e2:
