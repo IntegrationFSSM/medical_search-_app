@@ -1073,8 +1073,8 @@ def validate_action(request):
         is_direct_access = data.get('direct_access', False)
         
         results = request.session.get('search_results', [])
-    
-    if action == 'validate':
+        
+        if action == 'validate':
         # Marquer l'index comme visité lors de la validation
         if not is_direct_access and current_index < len(results):
             if 'visited_diagnostic_indices' not in request.session:
