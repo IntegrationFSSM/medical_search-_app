@@ -40,11 +40,11 @@ class PathologySearchService:
                 if not settings.CLAUDE_API_KEY.startswith('sk-ant-'):
                     print(f"‚ö†Ô∏è ATTENTION: La cl√© API Claude ne semble pas avoir le bon format (devrait commencer par 'sk-ant-')")
                 
-                # Configurer le client Claude avec un timeout de 90 secondes
+                # Configurer le client Claude avec un timeout de 25 secondes (sous la limite Heroku de 30s)
                 import httpx
                 self.client = Anthropic(
                     api_key=settings.CLAUDE_API_KEY,
-                    timeout=httpx.Timeout(90.0, connect=10.0)  # 90s total, 10s pour la connexion
+                    timeout=httpx.Timeout(25.0, connect=5.0)  # 90s total, 10s pour la connexion
                 )
                 # Claude Sonnet 4.5 - mod√®le pour la g√©n√©ration de texte
                 # Par d√©faut: claude-sonnet-4-5-20250929 (Claude Sonnet 4.5)
@@ -444,7 +444,7 @@ R√©ponds UNIQUEMENT par un JSON:
                         }
                     ],
                     temperature=0.4,
-                    max_tokens=2000
+                    max_tokens=1200  # RÈduit pour des rÈponses plus rapides (Heroku timeout 30s)
                 )
                 treatment_plan_text = response.choices[0].message.content
                 
@@ -460,7 +460,7 @@ R√©ponds UNIQUEMENT par un JSON:
                     
                     response = self.client.messages.create(
                         model=self.claude_model,  # Claude Sonnet 4.5
-                        max_tokens=2000,
+                        max_tokens=1200  # RÈduit pour des rÈponses plus rapides (Heroku timeout 30s),
                         temperature=0.4,
                         system=system_message_treatment,
                         messages=[
@@ -636,14 +636,14 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                         }
                     ],
                     temperature=0.4,
-                    max_tokens=2000  # Plus de tokens pour un plan d√©taill√©
+                    max_tokens=1200  # RÈduit pour des rÈponses plus rapides (Heroku timeout 30s)
                 )
                 treatment_plan_text = response.choices[0].message.content
                 
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(
                     model=self.claude_model,
-                    max_tokens=2000,
+                    max_tokens=1200  # RÈduit pour des rÈponses plus rapides (Heroku timeout 30s),
                     temperature=0.4,
                     system=system_message,
                     messages=[
