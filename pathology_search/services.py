@@ -470,6 +470,9 @@ Réponds UNIQUEMENT par un JSON valide:
             
             # 🆕 GÉNÉRER UNIQUEMENT LE PLAN DE TRAITEMENT
             print("🔄 Génération du plan de traitement...")
+            print(f"🔍 DEBUG - Longueur du prompt: {len(treatment_prompt)} caractères")
+            print(f"🔍 DEBUG - Longueur du medical_text: {len(medical_text) if medical_text else 0} caractères")
+            print(f"🔍 DEBUG - Nombre de historical_symptoms: {len(historical_symptoms) if historical_symptoms else 0}")
             
             # Appeler l'API selon le modèle sélectionné
             if self.model == 'chatgpt-5.1':
@@ -764,7 +767,7 @@ INFORMATIONS DU PATIENT :
 • Pathologie identifiée : {pathology_name}
 
 TEXTE MÉDICAL DE RÉFÉRENCE :
-{medical_text if medical_text else "Aucun extrait supplémentaire."}
+{medical_text[:2000] + "..." if medical_text and len(medical_text) > 2000 else (medical_text if medical_text else "Aucun extrait supplémentaire.")}
 
 CRITÈRES VALIDÉS :
 """
@@ -780,11 +783,15 @@ CRITÈRES VALIDÉS :
                     else:
                         prompt += f"\n**{key}:** {value}\n"
         
-        # Ajouter l'historique si disponible
+        # Ajouter l'historique si disponible (limiter pour éviter les prompts trop longs)
         if historical_symptoms and len(historical_symptoms) > 0:
-            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX ({len(historical_symptoms)} symptômes enregistrés):**\n"
-            for symptom in historical_symptoms[:10]:  # Limiter à 10
-                prompt += f"  • {symptom}\n"
+            # Limiter à 5 symptômes les plus récents pour éviter les prompts trop longs
+            limited_symptoms = historical_symptoms[:5]
+            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX (5 symptômes les plus récents sur {len(historical_symptoms)}):**\n"
+            for symptom in limited_symptoms:
+                # Limiter la longueur de chaque symptôme à 100 caractères
+                symptom_short = symptom[:100] + "..." if len(symptom) > 100 else symptom
+                prompt += f"  • {symptom_short}\n"
         
         prompt += """
 

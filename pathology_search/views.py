@@ -1129,6 +1129,18 @@ def validate_action(request):
             if is_direct_access:
                 pathology_name = data.get('pathology_name', '')
                 html_page = data.get('html_page', '')
+                
+                # 🆕 Si html_page est vide, essayer de le récupérer depuis l'URL de la requête
+                if not html_page:
+                    referer = request.META.get('HTTP_REFERER', '')
+                    if 'html_page=' in referer:
+                        import urllib.parse
+                        parsed = urllib.parse.urlparse(referer)
+                        params = urllib.parse.parse_qs(parsed.query)
+                        if 'html_page' in params:
+                            html_page = params['html_page'][0]
+                            print(f"🔍 html_page récupéré depuis le referer: {html_page}")
+                
                 print(f"🔍 DEBUG accès direct - pathology_name: {pathology_name}")
                 print(f"🔍 DEBUG accès direct - html_page: {html_page}")
                 print(f"🔍 DEBUG accès direct - data complet: {data}")
