@@ -170,19 +170,6 @@
         <!-- Plan de Traitement -->
         {% if success %}
         <div class="diagnosis-section">
-            <!-- Badge de statut -->
-            {% if consultation_statut == 'valide' %}
-            <div class="mb-4 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                <div class="flex items-center">
-                    <i class="fas fa-check-circle text-green-600 text-xl mr-3"></i>
-                    <div>
-                        <p class="font-bold text-green-800">Plan de traitement validé</p>
-                        <p class="text-sm text-green-600">Ce plan a été validé par le médecin et sera utilisé pour le rapport PDF.</p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            
             <!-- Zone éditable pour le plan de traitement -->
             <div class="relative">
                 <div id="treatment-content" class="diagnosis-text" style="line-height: 2; font-size: 15px; min-height: 200px; padding: 1.5rem; background: white; border-radius: 8px; border: 2px solid #e5e7eb;" contenteditable="true"></div>
@@ -468,6 +455,9 @@
             }
             
             const notesMedecin = document.getElementById('notes-medecin').value;
+            // 🆕 Récupérer le contenu modifié du plan de traitement depuis l'interface
+            const treatmentContent = document.getElementById('treatment-content');
+            const planTraitementModifie = treatmentContent ? treatmentContent.innerText.trim() : '';
             
             try {
                 const response = await fetch(`/consultation/${consultationId}/validate/`, {
@@ -477,6 +467,7 @@
                         'X-CSRFToken': getCookie('csrftoken')
                     },
                     body: JSON.stringify({
+                        plan_traitement: planTraitementModifie,  // 🆕 Envoyer le plan modifié
                         notes_medecin: notesMedecin
                     })
                 });

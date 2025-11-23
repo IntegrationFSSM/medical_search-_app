@@ -477,7 +477,9 @@ def print_report(request, consultation_id):
             }
             model_display_name = model_names.get(model_used, metadata.get('model_display_name', 'Model 1'))
         
-        # 🆕 Utiliser le plan validé si disponible, sinon le plan initial
+        # 🆕 Utiliser le plan validé par le médecin pour le rapport
+        # Priorité: plan_traitement_valide (version validée) > plan_traitement (version modifiée mais pas encore validée)
+        # Le rapport doit toujours utiliser la version validée si disponible
         plan_traitement_a_utiliser = consultation.plan_traitement_valide if consultation.plan_traitement_valide else consultation.plan_traitement
         
         # Formater le plan de traitement de manière sophistiquée
@@ -1588,18 +1590,28 @@ def show_diagnosis(request, diagnosis_id):
 @require_http_methods(["POST"])
 def validate_treatment_plan(request, consultation_id):
     """
-    Valider le plan de traitement - sauvegarder la version validée.
+    Valider le plan de traitement - sauvegarder la version validée (modifiée par le médecin).
     """
     try:
         import json
         from .models import Consultation
         data = json.loads(request.body)
         notes_medecin = data.get('notes_medecin', '')
+        plan_traitement_modifie = data.get('plan_traitement', '')  # 🆕 Récupérer le plan modifié depuis l'interface
         
         consultation = Consultation.objects.get(id=consultation_id)
         
-        # Sauvegarder le plan actuel comme plan validé
-        consultation.plan_traitement_valide = consultation.plan_traitement
+        # 🆕 Si le plan modifié est fourni, l'utiliser, sinon utiliser le plan actuel
+        if plan_traitement_modifie:
+            # Sauvegarder le plan modifié dans plan_traitement ET plan_traitement_valide
+            consultation.plan_traitement = plan_traitement_modifie
+            consultation.plan_traitement_valide = plan_traitement_modifie
+            print(f"✅ Plan de traitement modifié validé - Longueur: {len(plan_traitement_modifie)} caractères")
+        else:
+            # Si pas de plan modifié fourni, utiliser le plan actuel
+            consultation.plan_traitement_valide = consultation.plan_traitement
+            print(f"✅ Plan de traitement actuel validé - Longueur: {len(consultation.plan_traitement)} caractères")
+        
         consultation.notes_medecin = notes_medecin  # Sauvegarder aussi les notes
         consultation.statut = 'valide'
         consultation.save()
