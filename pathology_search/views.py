@@ -1138,15 +1138,26 @@ def validate_action(request):
                 best_chunk_text = ''
                 try:
                     # Construire le chemin vers le fichier JSON
-                    json_path = Path(settings.EMBEDDINGS_FOLDER) / html_page.replace('.html', '.json')
-                    if json_path.exists():
-                        with open(json_path, 'r', encoding='utf-8') as f:
-                            json_data = json.load(f)
-                            # Récupérer le texte du premier chunk
-                            if json_data.get('chunks') and len(json_data['chunks']) > 0:
-                                best_chunk_text = json_data['chunks'][0].get('text_preview', '')
+                    if html_page:
+                        # S'assurer que html_page est un chemin relatif, pas absolu
+                        html_page_clean = html_page.lstrip('/')
+                        json_path = Path(settings.EMBEDDINGS_FOLDER) / html_page_clean.replace('.html', '.json')
+                        
+                        # Vérifier que c'est un fichier, pas un répertoire
+                        if json_path.exists() and json_path.is_file():
+                            with open(json_path, 'r', encoding='utf-8') as f:
+                                json_data = json.load(f)
+                                # Récupérer le texte du premier chunk
+                                if json_data.get('chunks') and len(json_data['chunks']) > 0:
+                                    best_chunk_text = json_data['chunks'][0].get('text_preview', '')
+                        else:
+                            print(f"⚠️ Fichier JSON non trouvé ou est un répertoire: {json_path}")
+                    else:
+                        print(f"⚠️ html_page est vide")
                 except Exception as e:
                     print(f"Erreur lors de la lecture du texte médical: {e}")
+                    import traceback
+                    print(f"Traceback: {traceback.format_exc()}")
                 
                 # Créer un résultat factice pour l'accès direct
                 result = {

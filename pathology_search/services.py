@@ -488,7 +488,15 @@ Réponds UNIQUEMENT par un JSON valide:
                     ],
                     max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
-                treatment_plan_text = response.choices[0].message.content
+                # Extraire le contenu de la réponse
+                if response.choices and len(response.choices) > 0:
+                    treatment_plan_text = response.choices[0].message.content
+                    if not treatment_plan_text:
+                        treatment_plan_text = ""
+                        print(f"⚠️ Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
+                else:
+                    treatment_plan_text = ""
+                    print(f"⚠️ Réponse ChatGPT sans choix - response.choices est vide")
                 
             elif self.model == 'claude-4.5':
                 # Claude Sonnet 4.5 - utilisation directe (sans embeddings)
@@ -679,7 +687,15 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                     ],
                     max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
-                treatment_plan_text = response.choices[0].message.content
+                # Extraire le contenu de la réponse
+                if response.choices and len(response.choices) > 0:
+                    treatment_plan_text = response.choices[0].message.content
+                    if not treatment_plan_text:
+                        treatment_plan_text = ""
+                        print(f"⚠️ Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
+                else:
+                    treatment_plan_text = ""
+                    print(f"⚠️ Réponse ChatGPT sans choix - response.choices est vide")
                 
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(
