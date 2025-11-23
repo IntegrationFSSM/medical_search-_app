@@ -1156,7 +1156,13 @@ def validate_action(request):
                     if html_page:
                         # S'assurer que html_page est un chemin relatif, pas absolu
                         html_page_clean = html_page.lstrip('/')
+                        # Corriger les problèmes d'encodage URL (décode %2F en /)
+                        import urllib.parse
+                        html_page_clean = urllib.parse.unquote(html_page_clean)
+                        # Remplacer .html par .json
                         json_path = Path(settings.EMBEDDINGS_FOLDER) / html_page_clean.replace('.html', '.json')
+                        print(f"🔍 DEBUG - html_page_clean: {html_page_clean}")
+                        print(f"🔍 DEBUG - json_path: {json_path}")
                         
                         # Vérifier que c'est un fichier, pas un répertoire
                         if json_path.exists() and json_path.is_file():

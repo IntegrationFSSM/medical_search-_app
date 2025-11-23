@@ -489,7 +489,8 @@ Réponds UNIQUEMENT par un JSON valide:
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=3000,  # Augmenté pour éviter finish_reason='length' avec contenu vide
+                    truncation='auto'  # Permettre la troncature automatique si le prompt est trop long�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 # Debug: afficher la réponse complète
                 print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
@@ -703,7 +704,8 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=3000,  # Augmenté pour éviter finish_reason='length' avec contenu vide
+                    truncation='auto'  # Permettre la troncature automatique si le prompt est trop long�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 # Debug: afficher la réponse complète
                 print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
