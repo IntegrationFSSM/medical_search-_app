@@ -460,7 +460,7 @@ RÃ©ponds UNIQUEMENT par un JSON:
                     
                     response = self.client.messages.create(
                         model=self.claude_model,  # Claude Sonnet 4.5
-                        max_tokens=1200  # Réduit pour des réponses plus rapides (Heroku timeout 30s),
+                        max_tokens=1200,  # Réduit pour des réponses plus rapides (Heroku timeout 30s)
                         temperature=0.4,
                         system=system_message_treatment,
                         messages=[
@@ -643,7 +643,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(
                     model=self.claude_model,
-                    max_tokens=1200  # Réduit pour des réponses plus rapides (Heroku timeout 30s),
+                    max_tokens=1200,  # Réduit pour des réponses plus rapides (Heroku timeout 30s)
                     temperature=0.4,
                     system=system_message,
                     messages=[
