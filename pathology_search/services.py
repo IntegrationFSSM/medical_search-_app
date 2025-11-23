@@ -4,7 +4,6 @@ Service pour la recherche de pathologies basée sur les embeddings OpenAI et Cla
 import numpy as np
 from pathlib import Path
 import json
-import httpx
 from openai import OpenAI
 from django.conf import settings
 
@@ -24,11 +23,7 @@ class PathologySearchService:
         
         # Initialiser le client selon le modèle choisi
         if model == 'chatgpt-5.1':
-            # Configurer le client OpenAI avec un timeout de 25 secondes (sous la limite Heroku de 30s)
-            self.client = OpenAI(
-                api_key=settings.OPENAI_API_KEY,
-                timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
-            )
+            self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
             self.embedding_model = settings.EMBEDDING_MODEL
         elif model == 'claude-4.5':
             try:
@@ -46,9 +41,10 @@ class PathologySearchService:
                     print(f"⚠️ ATTENTION: La clé API Claude ne semble pas avoir le bon format (devrait commencer par 'sk-ant-')")
                 
                 # Configurer le client Claude avec un timeout de 25 secondes (sous la limite Heroku de 30s)
+                import httpx
                 self.client = Anthropic(
                     api_key=settings.CLAUDE_API_KEY,
-                    timeout=httpx.Timeout(90.0, connect=10.0)  # 90s total, 10s pour la connexion
+                    timeout=httpx.Timeout(25.0, connect=5.0)  # 90s total, 10s pour la connexion
                 )
                 # Claude Sonnet 4.5 - modèle pour la génération de texte
                 # Par défaut: claude-sonnet-4-5-20250929 (Claude Sonnet 4.5)
@@ -99,11 +95,7 @@ class PathologySearchService:
             }
         
         # Toujours utiliser OpenAI pour la validation, indépendamment du modèle d'embedding
-        # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
-        validation_client = OpenAI(
-            api_key=settings.OPENAI_API_KEY,
-            timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
-        )
+        validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
         
         try:
             prompt = f"""Tu es un validateur médical EXPERT. Analyse la requête suivante et détermine si elle contient un réel contenu médical.
@@ -151,48 +143,17 @@ Réponds UNIQUEMENT par un JSON valide:
     "reason": "Explication courte si non valide (sinon null)"
 }}"""
 
-            # Essayer d'abord la nouvelle API responses.create() si disponible, sinon utiliser chat.completions.create()
-            try:
-                # Vérifier si l'API responses existe
-                if hasattr(validation_client, 'responses') and hasattr(validation_client.responses, 'create'):
-                    # Nouvelle API avec format simplifié
-                    full_prompt = f"Tu es un validateur médical expert. Réponds uniquement en JSON.\n\n{prompt}"
-                    response = validation_client.responses.create(
-                        model="gpt-5",
-                        input=full_prompt
-                    )
-                    result_text = response.output_text.strip()
-                    print("✅ Utilisation de l'API responses.create() pour validation")
-                else:
-                    raise AttributeError("API responses.create() non disponible")
-            except (AttributeError, TypeError) as e:
-                # L'API responses.create() n'existe pas, utiliser l'ancienne API
-                print(f"⚠️ API responses.create() non disponible pour validation, utilisation de chat.completions.create(): {e}")
-                response = validation_client.chat.completions.create(
-                    model="gpt-5",
-                    messages=[
-                        {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    max_completion_tokens=200
-                )
-                result_text = response.choices[0].message.content.strip()
-            except Exception as e:
-                # Autre erreur avec responses.create(), essayer l'ancienne API
-                print(f"⚠️ Erreur avec responses.create() pour validation, fallback vers chat.completions.create(): {e}")
-                try:
-                    response = validation_client.chat.completions.create(
-                        model="gpt-5",
-                        messages=[
-                            {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
-                            {"role": "user", "content": prompt}
-                        ],
-                        max_completion_tokens=200
-                    )
-                    result_text = response.choices[0].message.content.strip()
-                except Exception as e2:
-                    # Si les deux APIs échouent, lever l'erreur
-                    raise Exception(f"Erreur avec les deux APIs OpenAI pour validation: responses.create()={e}, chat.completions.create()={e2}")
+            response = validation_client.chat.completions.create(
+                model="gpt-5",
+                messages=[
+                    {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3,
+                max_completion_tokens=200
+            )
+            
+            result_text = response.choices[0].message.content.strip()
             print(f"🔍 Validation GPT-4o response: {result_text}")
             
             # Extraire le JSON si le texte contient du texte avant/après
@@ -259,11 +220,7 @@ Réponds UNIQUEMENT par un JSON valide:
             try:
                 # Utiliser OpenAI pour les embeddings même si le modèle choisi est Claude
                 # (Claude est utilisé uniquement pour la génération de texte)
-                # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
-                openai_client = OpenAI(
-                    api_key=settings.OPENAI_API_KEY,
-                    timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
-                )
+                openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
                 response = openai_client.embeddings.create(
                     input=[text], 
                     model=settings.EMBEDDING_MODEL
@@ -345,11 +302,7 @@ Réponds UNIQUEMENT par un JSON valide:
             print(f"⚠️ Utilisation d'OpenAI en fallback pour les embeddings (modèle sélectionné: {self.model})")
             
             # Utiliser OpenAI pour les embeddings même si un autre modèle est sélectionné
-            # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
-            openai_client = OpenAI(
-                api_key=settings.OPENAI_API_KEY,
-                timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
-            )
+            openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
             response = openai_client.embeddings.create(
                 input=[query], 
                 model=settings.EMBEDDING_MODEL
@@ -522,60 +475,22 @@ Réponds UNIQUEMENT par un JSON valide:
             # Appeler l'API selon le modèle sélectionné
             if self.model == 'chatgpt-5.1':
                 # OpenAI / ChatGPT
-                # Note: L'API responses.create() n'existe peut-être pas encore, utiliser directement chat.completions.create()
-                # Essayer d'abord la nouvelle API responses.create() si disponible
-                try:
-                    # Vérifier si l'API responses existe
-                    if False and hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):  # D�sactiver responses.create()
-                        full_prompt = f"{system_message_treatment}\n\n{treatment_prompt}"
-                        response = self.client.responses.create(
-                            model="gpt-5",
-                            input=full_prompt
-                        )
-                        treatment_plan_text = response.output_text
-                        print("✅ Utilisation de l'API responses.create()")
-                    else:
-                        raise AttributeError("API responses.create() non disponible")
-                except (AttributeError, TypeError) as e:
-                    # L'API responses.create() n'existe pas, utiliser l'ancienne API
-                    print(f"⚠️ API responses.create() non disponible, utilisation de chat.completions.create(): {e}")
-                    response = self.client.chat.completions.create(
-                        model="gpt-5",
-                        messages=[
-                            {
-                                "role": "system",
-                                "content": system_message_treatment
-                            },
-                            {
-                                "role": "user",
-                                "content": treatment_prompt
-                            }
-                        ],
-                        max_completion_tokens=300
-                    )
-                    treatment_plan_text = response.choices[0].message.content
-                except Exception as e:
-                    # Autre erreur avec responses.create(), essayer l'ancienne API
-                    print(f"⚠️ Erreur avec responses.create(), fallback vers chat.completions.create(): {e}")
-                    try:
-                        response = self.client.chat.completions.create(
-                            model="gpt-5",
-                            messages=[
-                                {
-                                    "role": "system",
-                                    "content": system_message_treatment
-                                },
-                                {
-                                    "role": "user",
-                                    "content": treatment_prompt
-                                }
-                            ],
-                            max_completion_tokens=300
-                        )
-                        treatment_plan_text = response.choices[0].message.content
-                    except Exception as e2:
-                        # Si les deux APIs échouent, lever l'erreur
-                        raise Exception(f"Erreur avec les deux APIs OpenAI: responses.create()={e}, chat.completions.create()={e2}")
+                response = self.client.chat.completions.create(
+                    model="gpt-5",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": system_message_treatment
+                        },
+                        {
+                            "role": "user",
+                            "content": treatment_prompt
+                        }
+                    ],
+                    temperature=0.4,
+                    max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                )
+                treatment_plan_text = response.choices[0].message.content
                 
             elif self.model == 'claude-4.5':
                 # Claude Sonnet 4.5 - utilisation directe (sans embeddings)
@@ -651,15 +566,9 @@ Réponds UNIQUEMENT par un JSON valide:
             }
             
         except Exception as e:
-            # Capturer toutes les exceptions et retourner un dict avec l'erreur
-            import traceback
-            error_detail = traceback.format_exc()
-            print(f"❌ Erreur dans generate_ai_diagnosis: {str(e)}")
-            print(f"❌ Traceback complet:\n{error_detail}")
             return {
                 'success': False,
                 'error': str(e),
-                'error_detail': error_detail,
                 'pathology': pathology_name,
                 'model_used': self.model
             }
@@ -758,60 +667,22 @@ Structure attendue (respecter EXACTEMENT ces titres) :
             
             # Générer le plan de traitement avec le même modèle
             if self.model == 'chatgpt-5.1':
-                # Note: L'API responses.create() n'existe peut-être pas encore, utiliser directement chat.completions.create()
-                # Essayer d'abord la nouvelle API responses.create() si disponible
-                try:
-                    # Vérifier si l'API responses existe
-                    if False and hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):  # D�sactiver responses.create()
-                        full_prompt = f"{system_message}\n\n{treatment_prompt}"
-                        response = self.client.responses.create(
-                            model="gpt-5",
-                            input=full_prompt
-                        )
-                        treatment_plan_text = response.output_text
-                        print("✅ Utilisation de l'API responses.create()")
-                    else:
-                        raise AttributeError("API responses.create() non disponible")
-                except (AttributeError, TypeError) as e:
-                    # L'API responses.create() n'existe pas, utiliser l'ancienne API
-                    print(f"⚠️ API responses.create() non disponible, utilisation de chat.completions.create(): {e}")
-                    response = self.client.chat.completions.create(
-                        model="gpt-5",
-                        messages=[
-                            {
-                                "role": "system",
-                                "content": system_message
-                            },
-                            {
-                                "role": "user",
-                                "content": treatment_prompt
-                            }
-                        ],
-                        max_completion_tokens=300
-                    )
-                    treatment_plan_text = response.choices[0].message.content
-                except Exception as e:
-                    # Autre erreur avec responses.create(), essayer l'ancienne API
-                    print(f"⚠️ Erreur avec responses.create(), fallback vers chat.completions.create(): {e}")
-                    try:
-                        response = self.client.chat.completions.create(
-                            model="gpt-5",
-                            messages=[
-                                {
-                                    "role": "system",
-                                    "content": system_message
-                                },
-                                {
-                                    "role": "user",
-                                    "content": treatment_prompt
-                                }
-                            ],
-                            max_completion_tokens=300
-                        )
-                        treatment_plan_text = response.choices[0].message.content
-                    except Exception as e2:
-                        # Si les deux APIs échouent, lever l'erreur
-                        raise Exception(f"Erreur avec les deux APIs OpenAI: responses.create()={e}, chat.completions.create()={e2}")
+                response = self.client.chat.completions.create(
+                    model="gpt-5",
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": system_message
+                        },
+                        {
+                            "role": "user",
+                            "content": treatment_prompt
+                        }
+                    ],
+                    temperature=0.4,
+                    max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                )
+                treatment_plan_text = response.choices[0].message.content
                 
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(
