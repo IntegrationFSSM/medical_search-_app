@@ -144,7 +144,7 @@ Réponds UNIQUEMENT par un JSON valide:
 }}"""
 
             response = validation_client.chat.completions.create(
-                model="gpt-5",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
                     {"role": "user", "content": prompt}
@@ -478,7 +478,7 @@ Réponds UNIQUEMENT par un JSON valide:
             if self.model == 'chatgpt-5.1':
                 # OpenAI / ChatGPT
                 response = self.client.chat.completions.create(
-                    model="gpt-5",
+                    model="gpt-4o",
                     messages=[
                         {
                             "role": "system",
@@ -489,7 +489,7 @@ Réponds UNIQUEMENT par un JSON valide:
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=3000  # Augmenté pour éviter finish_reason='length' avec contenu vide�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=2000  # Limité pour éviter les timeouts Heroku (30s) avec GPT-4o�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 # Debug: afficher la réponse complète
                 print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
@@ -692,7 +692,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
             # Générer le plan de traitement avec le même modèle
             if self.model == 'chatgpt-5.1':
                 response = self.client.chat.completions.create(
-                    model="gpt-5",
+                    model="gpt-4o",
                     messages=[
                         {
                             "role": "system",
@@ -703,7 +703,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=3000  # Augmenté pour éviter finish_reason='length' avec contenu vide�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=2000  # Limité pour éviter les timeouts Heroku (30s) avec GPT-4o�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 # Debug: afficher la réponse complète
                 print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
