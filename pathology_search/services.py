@@ -70,30 +70,74 @@ class PathologySearchService:
                 'reason': str (si non valide)
             }
         """
+        # Validation préalable simple pour les termes médicaux courants
+        query_lower = query.lower().strip()
+        medical_keywords = [
+            'alcool', 'alcoolique', 'alcoolisme', 'dépendance', 'addiction',
+            'anxieux', 'anxiété', 'anxieté', 'panique', 'phobie',
+            'dépression', 'dépressif', 'déprime', 'tristesse',
+            'trouble', 'symptôme', 'symptome', 'pathologie', 'maladie',
+            'patient', 'personne', 'homme', 'femme', 'enfant',
+            'sommeil', 'insomnie', 'agressif', 'agression', 'violence',
+            'psychiatrie', 'psychologique', 'mental', 'comportement',
+            'hallucination', 'délire', 'paranoïa', 'paranoia',
+            'bipolaire', 'schizophrénie', 'schizophrenie', 'autisme',
+            'toc', 'obsession', 'compulsion', 'trauma', 'stress',
+            'suicide', 'suicidaire', 'automutilation', 'mutilation'
+        ]
+        
+        # Si la requête contient un mot-clé médical, accepter directement
+        if any(keyword in query_lower for keyword in medical_keywords):
+            print(f"✅ Validation préalable: requête acceptée (contient mot-clé médical)")
+            return {
+                'is_valid': True,
+                'reason': None
+            }
+        
         # Toujours utiliser OpenAI pour la validation, indépendamment du modèle d'embedding
         validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
         
         try:
-            prompt = f"""Tu es un validateur médical. Analyse la requête suivante et détermine si elle contient un réel contenu médical OU du texte sans sens.
+            prompt = f"""Tu es un validateur médical EXPERT. Analyse la requête suivante et détermine si elle contient un réel contenu médical.
 
 Requête: "{query}"
 
-ACCEPTE (is_valid = true) si la requête:
-- Mentionne des symptômes, troubles, comportements ou conditions médicales
-- Décrit une situation clinique (même simple)
-- Est liée à la santé mentale ou comportementale
-- Contient des mots français/anglais normaux avec du sens médical
-- Exemples VALIDES: "homme alcoolique", "enfant anxieux", "troubles du sommeil", "dépression", "patient agressif"
+RÈGLE PRINCIPALE: SOIS TRÈS PERMISSIF ! Accepte TOUTE description qui mentionne un problème de santé, un comportement, un symptôme ou une condition médicale, même de manière simple ou informelle.
 
-REJETTE (is_valid = false) SEULEMENT si:
+ACCEPTE (is_valid = true) si la requête:
+- Mentionne des symptômes, troubles, comportements ou conditions médicales (même un seul mot)
+- Décrit une situation clinique (même très simple ou courte)
+- Est liée à la santé mentale, comportementale, ou physique
+- Contient des termes médicaux, psychologiques ou psychiatriques
+- Décrit un patient, une personne avec un problème de santé
+- Exemples VALIDES (accepte TOUS ces cas):
+  * "personne trop alcoolique" ✅
+  * "homme alcoolique" ✅
+  * "alcoolique" ✅
+  * "personne alcoolique" ✅
+  * "enfant anxieux" ✅
+  * "troubles du sommeil" ✅
+  * "dépression" ✅
+  * "patient agressif" ✅
+  * "anxiété" ✅
+  * "dépendance alcool" ✅
+  * "trop alcoolique" ✅
+  * Toute description contenant "alcool", "anxieux", "dépression", "trouble", "symptôme", etc. ✅
+
+REJETTE (is_valid = false) UNIQUEMENT si:
 - Mots répétitifs sans sens: "blabla blabla", "test test test", "aaaa aaaa"
 - Uniquement des symboles: ".....", "????", "!!!!"
 - Mots aléatoires sans rapport médical: "voiture maison arbre"
 - Texte incohérent ou spam évident
+- Chaîne de caractères aléatoires: "asdfghjkl", "qwerty"
 
-IMPORTANT: Si la requête mentionne un terme médical/psychologique réel (même court), accepte-la !
+IMPORTANT: 
+- Si la requête contient UN SEUL terme médical valide, ACCEPTE-la !
+- Les descriptions courtes sont acceptables: "alcoolique", "anxieux", "dépression"
+- Les descriptions informelles sont acceptables: "personne trop alcoolique", "trop anxieux"
+- En cas de doute, ACCEPTE plutôt que de rejeter
 
-Réponds UNIQUEMENT par un JSON:
+Réponds UNIQUEMENT par un JSON valide:
 {{
     "is_valid": true/false,
     "reason": "Explication courte si non valide (sinon null)"
@@ -444,7 +488,7 @@ Réponds UNIQUEMENT par un JSON:
                         }
                     ],
                     temperature=0.4,
-                    max_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 treatment_plan_text = response.choices[0].message.content
                 
@@ -460,7 +504,7 @@ Réponds UNIQUEMENT par un JSON:
                     
                     response = self.client.messages.create(
                         model=self.claude_model,  # Claude Sonnet 4.5
-                        max_tokens=1200,  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                        max_tokens=1200,  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                         temperature=0.4,
                         system=system_message_treatment,
                         messages=[
@@ -636,14 +680,14 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                         }
                     ],
                     temperature=0.4,
-                    max_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 treatment_plan_text = response.choices[0].message.content
                 
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(
                     model=self.claude_model,
-                    max_tokens=1200,  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_tokens=1200,  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                     temperature=0.4,
                     system=system_message,
                     messages=[

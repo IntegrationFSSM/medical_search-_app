@@ -126,6 +126,33 @@ def search(request):
         if medecin_id:
             request.session['current_medecin_id'] = medecin_id
         
+        # Fonction pour nettoyer et valider un symptôme
+        def clean_and_validate_symptom(symptom_text):
+            """Nettoyer et valider un symptôme avant de l'ajouter à l'historique"""
+            if not symptom_text:
+                return None
+            
+            symptom_text = str(symptom_text).strip()
+            
+            # Ignorer les chaînes trop courtes (moins de 2 caractères)
+            if len(symptom_text) < 2:
+                return None
+            
+            # Ignorer les chaînes qui ne contiennent que des symboles
+            if not re.search(r'[a-zA-ZÀ-ÿ]', symptom_text):
+                return None
+            
+            # Ignorer les chaînes répétitives (comme "aaaa", "test test test")
+            words = symptom_text.split()
+            if len(words) > 1 and len(set(words)) == 1:
+                return None
+            
+            # Ignorer les chaînes qui sont clairement des métadonnées
+            if symptom_text.lower().startswith('_metadata') or symptom_text.lower() == '_metadata':
+                return None
+            
+            return symptom_text
+        
         # 🆕 Récupérer automatiquement TOUS les antécédents du patient depuis la base de données
         all_historical_symptoms = []
         if patient_id:
@@ -145,41 +172,50 @@ def search(request):
                             if isinstance(value, list):
                                 # Si c'est une liste, ajouter tous les éléments non vides
                                 for item in value:
-                                    if item and str(item).strip():
-                                        all_historical_symptoms.append(str(item).strip())
+                                    cleaned = clean_and_validate_symptom(item)
+                                    if cleaned:
+                                        all_historical_symptoms.append(cleaned)
                             elif isinstance(value, dict):
                                 # Si c'est un dictionnaire, extraire les valeurs
                                 for sub_key, sub_value in value.items():
-                                    if sub_value and str(sub_value).strip():
-                                        all_historical_symptoms.append(str(sub_value).strip())
-                            elif value and str(value).strip():
-                                # Si c'est une valeur simple
-                                all_historical_symptoms.append(str(value).strip())
+                                    cleaned = clean_and_validate_symptom(sub_value)
+                                    if cleaned:
+                                        all_historical_symptoms.append(cleaned)
+                            else:
+                                cleaned = clean_and_validate_symptom(value)
+                                if cleaned:
+                                    all_historical_symptoms.append(cleaned)
                         
-                        # Aussi extraire la description clinique comme contexte
+                        # Aussi extraire la description clinique comme contexte (si valide)
                         if consultation.description_clinique:
-                            all_historical_symptoms.append(consultation.description_clinique.strip())
+                            cleaned = clean_and_validate_symptom(consultation.description_clinique)
+                            if cleaned:
+                                all_historical_symptoms.append(cleaned)
                 
                 # Dédupliquer les symptômes
                 all_historical_symptoms = list(set(all_historical_symptoms))
                 
-                # Si des symptômes ont été envoyés depuis le frontend, les fusionner
+                # Si des symptômes ont été envoyés depuis le frontend, les fusionner (après nettoyage)
                 if historical_symptoms:
-                    all_historical_symptoms.extend(historical_symptoms)
+                    cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
+                    cleaned_historical = [s for s in cleaned_historical if s]  # Enlever les None
+                    all_historical_symptoms.extend(cleaned_historical)
                     all_historical_symptoms = list(set(all_historical_symptoms))
                 
                 # Sauvegarder dans la session
                 request.session['patient_historical_symptoms'] = all_historical_symptoms
-                print(f"📊 {len(all_historical_symptoms)} antécédents récupérés automatiquement depuis la base de données")
+                print(f"📊 {len(all_historical_symptoms)} antécédents récupérés automatiquement depuis la base de données (après nettoyage)")
             except Exception as e:
                 print(f"⚠️ Erreur lors de la récupération de l'historique: {e}")
-                # Utiliser les symptômes envoyés depuis le frontend si disponibles
+                # Utiliser les symptômes envoyés depuis le frontend si disponibles (après nettoyage)
                 if historical_symptoms:
-                    all_historical_symptoms = historical_symptoms
+                    cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
+                    all_historical_symptoms = [s for s in cleaned_historical if s]
                     request.session['patient_historical_symptoms'] = all_historical_symptoms
         elif historical_symptoms:
-            # Si pas de patient_id mais des symptômes envoyés
-            all_historical_symptoms = historical_symptoms
+            # Si pas de patient_id mais des symptômes envoyés (après nettoyage)
+            cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
+            all_historical_symptoms = [s for s in cleaned_historical if s]
             request.session['patient_historical_symptoms'] = all_historical_symptoms
         
         request.session.modified = True
@@ -1309,6 +1345,33 @@ def validate_action(request):
                     print(f"✅ Consultation NON VALIDÉE sauvegardée (ID: {consultation.id}) avec {len(form_data) if form_data else 0} critères")
                     
                     # 🆕 Extraire TOUS les symptômes des critères cochés pour les sauvegarder dans l'historique
+                    # Fonction pour nettoyer et valider un symptôme (réutilisée)
+                    def clean_and_validate_symptom(symptom_text):
+                        """Nettoyer et valider un symptôme avant de l'ajouter à l'historique"""
+                        if not symptom_text:
+                            return None
+                        
+                        symptom_text = str(symptom_text).strip()
+                        
+                        # Ignorer les chaînes trop courtes (moins de 2 caractères)
+                        if len(symptom_text) < 2:
+                            return None
+                        
+                        # Ignorer les chaînes qui ne contiennent que des symboles
+                        if not re.search(r'[a-zA-ZÀ-ÿ]', symptom_text):
+                            return None
+                        
+                        # Ignorer les chaînes répétitives (comme "aaaa", "test test test")
+                        words = symptom_text.split()
+                        if len(words) > 1 and len(set(words)) == 1:
+                            return None
+                        
+                        # Ignorer les chaînes qui sont clairement des métadonnées
+                        if symptom_text.lower().startswith('_metadata') or symptom_text.lower() == '_metadata':
+                            return None
+                        
+                        return symptom_text
+                    
                     symptoms = []
                     if form_data:
                         for key, value in form_data.items():
@@ -1318,24 +1381,24 @@ def validate_action(request):
                             if isinstance(value, list):
                                 # Si c'est une liste, extraire chaque symptôme
                                 for item in value:
-                                    if item and str(item).strip():
-                                        # Ajouter le symptôme directement (sans préfixe de section si c'est déjà clair)
-                                        symptom_text = str(item).strip()
-                                        symptoms.append(symptom_text)
+                                    cleaned = clean_and_validate_symptom(item)
+                                    if cleaned:
+                                        symptoms.append(cleaned)
                             elif isinstance(value, dict):
                                 # Si c'est un dictionnaire, extraire les valeurs
                                 for sub_key, sub_value in value.items():
-                                    if sub_value and str(sub_value).strip():
-                                        symptoms.append(str(sub_value).strip())
-                            elif value and str(value).strip():
-                                # Si c'est une valeur simple, l'ajouter comme symptôme
-                                symptom_text = str(value).strip()
-                                symptoms.append(symptom_text)
+                                    cleaned = clean_and_validate_symptom(sub_value)
+                                    if cleaned:
+                                        symptoms.append(cleaned)
+                            else:
+                                cleaned = clean_and_validate_symptom(value)
+                                if cleaned:
+                                    symptoms.append(cleaned)
                     
                     # Dédupliquer les symptômes
                     symptoms = list(set(symptoms))
                     
-                    # Ajouter les symptômes à l'historique du patient dans la session
+                    # Ajouter les symptômes à l'historique du patient dans la session (seulement les valides)
                     if 'patient_historical_symptoms' not in request.session:
                         request.session['patient_historical_symptoms'] = []
                     request.session['patient_historical_symptoms'].extend(symptoms)
