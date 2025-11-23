@@ -27,7 +27,7 @@ class PathologySearchService:
             # Configurer le client OpenAI avec un timeout de 25 secondes (sous la limite Heroku de 30s)
             self.client = OpenAI(
                 api_key=settings.OPENAI_API_KEY,
-                timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+                timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
             )
             self.embedding_model = settings.EMBEDDING_MODEL
         elif model == 'claude-4.5':
@@ -48,7 +48,7 @@ class PathologySearchService:
                 # Configurer le client Claude avec un timeout de 25 secondes (sous la limite Heroku de 30s)
                 self.client = Anthropic(
                     api_key=settings.CLAUDE_API_KEY,
-                    timeout=httpx.Timeout(25.0, connect=5.0)  # 90s total, 10s pour la connexion
+                    timeout=httpx.Timeout(90.0, connect=10.0)  # 90s total, 10s pour la connexion
                 )
                 # Claude Sonnet 4.5 - modèle pour la génération de texte
                 # Par défaut: claude-sonnet-4-5-20250929 (Claude Sonnet 4.5)
@@ -102,7 +102,7 @@ class PathologySearchService:
         # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
         validation_client = OpenAI(
             api_key=settings.OPENAI_API_KEY,
-            timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+            timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
         )
         
         try:
@@ -262,7 +262,7 @@ Réponds UNIQUEMENT par un JSON valide:
                 # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
                 openai_client = OpenAI(
                     api_key=settings.OPENAI_API_KEY,
-                    timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+                    timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
                 )
                 response = openai_client.embeddings.create(
                     input=[text], 
@@ -348,7 +348,7 @@ Réponds UNIQUEMENT par un JSON valide:
             # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
             openai_client = OpenAI(
                 api_key=settings.OPENAI_API_KEY,
-                timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+                timeout=httpx.Timeout(90.0, connect=10.0)  # 25s total, 5s pour la connexion
             )
             response = openai_client.embeddings.create(
                 input=[query], 
