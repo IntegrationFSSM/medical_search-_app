@@ -4,6 +4,7 @@ Service pour la recherche de pathologies basée sur les embeddings OpenAI et Cla
 import numpy as np
 from pathlib import Path
 import json
+import httpx
 from openai import OpenAI
 from django.conf import settings
 
@@ -23,7 +24,11 @@ class PathologySearchService:
         
         # Initialiser le client selon le modèle choisi
         if model == 'chatgpt-5.1':
-            self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            # Configurer le client OpenAI avec un timeout de 25 secondes (sous la limite Heroku de 30s)
+            self.client = OpenAI(
+                api_key=settings.OPENAI_API_KEY,
+                timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+            )
             self.embedding_model = settings.EMBEDDING_MODEL
         elif model == 'claude-4.5':
             try:
@@ -41,7 +46,6 @@ class PathologySearchService:
                     print(f"⚠️ ATTENTION: La clé API Claude ne semble pas avoir le bon format (devrait commencer par 'sk-ant-')")
                 
                 # Configurer le client Claude avec un timeout de 25 secondes (sous la limite Heroku de 30s)
-                import httpx
                 self.client = Anthropic(
                     api_key=settings.CLAUDE_API_KEY,
                     timeout=httpx.Timeout(25.0, connect=5.0)  # 90s total, 10s pour la connexion
@@ -95,7 +99,11 @@ class PathologySearchService:
             }
         
         # Toujours utiliser OpenAI pour la validation, indépendamment du modèle d'embedding
-        validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+        # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
+        validation_client = OpenAI(
+            api_key=settings.OPENAI_API_KEY,
+            timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+        )
         
         try:
             prompt = f"""Tu es un validateur médical EXPERT. Analyse la requête suivante et détermine si elle contient un réel contenu médical.
@@ -251,7 +259,11 @@ Réponds UNIQUEMENT par un JSON valide:
             try:
                 # Utiliser OpenAI pour les embeddings même si le modèle choisi est Claude
                 # (Claude est utilisé uniquement pour la génération de texte)
-                openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+                # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
+                openai_client = OpenAI(
+                    api_key=settings.OPENAI_API_KEY,
+                    timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+                )
                 response = openai_client.embeddings.create(
                     input=[text], 
                     model=settings.EMBEDDING_MODEL
@@ -333,7 +345,11 @@ Réponds UNIQUEMENT par un JSON valide:
             print(f"⚠️ Utilisation d'OpenAI en fallback pour les embeddings (modèle sélectionné: {self.model})")
             
             # Utiliser OpenAI pour les embeddings même si un autre modèle est sélectionné
-            openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            # Configurer avec un timeout de 25 secondes (sous la limite Heroku de 30s)
+            openai_client = OpenAI(
+                api_key=settings.OPENAI_API_KEY,
+                timeout=httpx.Timeout(25.0, connect=5.0)  # 25s total, 5s pour la connexion
+            )
             response = openai_client.embeddings.create(
                 input=[query], 
                 model=settings.EMBEDDING_MODEL
