@@ -1075,73 +1075,73 @@ def validate_action(request):
         results = request.session.get('search_results', [])
         
         if action == 'validate':
-        # Marquer l'index comme visité lors de la validation
-        if not is_direct_access and current_index < len(results):
-            if 'visited_diagnostic_indices' not in request.session:
-                request.session['visited_diagnostic_indices'] = []
-            if current_index not in request.session['visited_diagnostic_indices']:
-                request.session['visited_diagnostic_indices'].append(current_index)
-                request.session.modified = True
-                print(f"✅ Index {current_index} marqué comme visité (validation)")
-        
-        # Gérer l'accès direct (sans recherche préalable)
-        if is_direct_access:
-            pathology_name = data.get('pathology_name', '')
-            html_page = data.get('html_page', '')
-            similarity_score = 100  # Score de 100% pour accès direct
+            # Marquer l'index comme visité lors de la validation
+            if not is_direct_access and current_index < len(results):
+                if 'visited_diagnostic_indices' not in request.session:
+                    request.session['visited_diagnostic_indices'] = []
+                if current_index not in request.session['visited_diagnostic_indices']:
+                    request.session['visited_diagnostic_indices'].append(current_index)
+                    request.session.modified = True
+                    print(f"✅ Index {current_index} marqué comme visité (validation)")
             
-            # Charger le texte médical depuis le fichier .npy correspondant
-            from django.conf import settings
-            from pathlib import Path
+            # Gérer l'accès direct (sans recherche préalable)
+            if is_direct_access:
+                pathology_name = data.get('pathology_name', '')
+                html_page = data.get('html_page', '')
+                similarity_score = 100  # Score de 100% pour accès direct
+                
+                # Charger le texte médical depuis le fichier .npy correspondant
+                from django.conf import settings
+                from pathlib import Path
+                
+                best_chunk_text = ''
+                try:
+                    # Construire le chemin vers le fichier JSON
+                    json_path = Path(settings.EMBEDDINGS_FOLDER) / html_page.replace('.html', '.json')
+                    if json_path.exists():
+                        with open(json_path, 'r', encoding='utf-8') as f:
+                            json_data = json.load(f)
+                            # Récupérer le texte du premier chunk
+                            if json_data.get('chunks') and len(json_data['chunks']) > 0:
+                                best_chunk_text = json_data['chunks'][0].get('text_preview', '')
+                except Exception as e:
+                    print(f"Erreur lors de la lecture du texte médical: {e}")
+                
+                # Créer un résultat factice pour l'accès direct
+                result = {
+                    'file_name': pathology_name + '.txt',
+                    'similarity': 1.0,
+                    'best_chunk_text': best_chunk_text,
+                    'location': html_page
+                }
+            else:
+                # Mode normal (via recherche)
+                result = results[current_index]
+                pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
+                similarity_score = result.get('similarity', 0) * 100
+                
+                # Extraire le texte médical du meilleur chunk
+                best_chunk_text = result.get('best_chunk_text', '')
             
-            best_chunk_text = ''
-            try:
-                # Construire le chemin vers le fichier JSON
-                json_path = Path(settings.EMBEDDINGS_FOLDER) / html_page.replace('.html', '.json')
-                if json_path.exists():
-                    with open(json_path, 'r', encoding='utf-8') as f:
-                        json_data = json.load(f)
-                        # Récupérer le texte du premier chunk
-                        if json_data.get('chunks') and len(json_data['chunks']) > 0:
-                            best_chunk_text = json_data['chunks'][0].get('text_preview', '')
-            except Exception as e:
-                print(f"Erreur lors de la lecture du texte médical: {e}")
-            
-            # Créer un résultat factice pour l'accès direct
-            result = {
-                'file_name': pathology_name + '.txt',
-                'similarity': 1.0,
-                'best_chunk_text': best_chunk_text,
-                'location': html_page
-            }
-        else:
-            # Mode normal (via recherche)
-            result = results[current_index]
-            pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
-            similarity_score = result.get('similarity', 0) * 100
-            
-            # Extraire le texte médical du meilleur chunk
-            best_chunk_text = result.get('best_chunk_text', '')
-        
             # 🆕 Récupérer le modèle choisi par l'utilisateur (pour la génération du diagnostic)
             selected_model = data.get('model', 'chatgpt-5.1')
             
             # Générer le diagnostic IA avec le modèle choisi en incluant le texte médical ET l'historique
-        from .services import PathologySearchService
+            from .services import PathologySearchService
             
             try:
                 service = PathologySearchService(model=selected_model)
-        
-        # 🆕 Récupérer les symptômes historiques depuis la session
-        historical_symptoms = request.session.get('patient_historical_symptoms', [])
-        
-        diagnosis_result = service.generate_ai_diagnosis(
-            pathology_name=pathology_name,
-            form_data=form_data,
-            similarity_score=similarity_score,
-            medical_text=best_chunk_text,
-            historical_symptoms=historical_symptoms  # 🆕 Inclure l'historique
-        )
+                
+                # 🆕 Récupérer les symptômes historiques depuis la session
+                historical_symptoms = request.session.get('patient_historical_symptoms', [])
+                
+                diagnosis_result = service.generate_ai_diagnosis(
+                    pathology_name=pathology_name,
+                    form_data=form_data,
+                    similarity_score=similarity_score,
+                    medical_text=best_chunk_text,
+                    historical_symptoms=historical_symptoms  # 🆕 Inclure l'historique
+                )
             except Exception as e:
                 # Gérer les erreurs de l'API (Claude, ChatGPT, etc.) et retourner du JSON
                 import traceback
@@ -1157,88 +1157,88 @@ def validate_action(request):
                     'error_type': 'api_error',
                     'model': selected_model
                 }, status=500)
-        
-        # Sauvegarder le diagnostic en session
-        import uuid
-        diagnosis_id = str(uuid.uuid4())
-        
-        if 'diagnoses' not in request.session:
-            request.session['diagnoses'] = {}
-        
-        request.session['diagnoses'][diagnosis_id] = {
-            'diagnosis': diagnosis_result,
-            'result': result,
-                    'form_data': form_data,
-                    'model_used': selected_model  # 🆕 Sauvegarder le modèle utilisé
-        }
-        request.session.modified = True
-        
-        # Sauvegarder la consultation dans la base de données PostgreSQL
-        try:
-            from .models import Patient, Consultation
             
-            # Récupérer l'ID du patient depuis la session
-            patient_id = request.session.get('current_patient_id')
-            medecin_id = request.session.get('current_medecin_id')
-            query = request.session.get('search_query', '')
+            # Sauvegarder le diagnostic en session
+            import uuid
+            diagnosis_id = str(uuid.uuid4())
             
-            # Pour l'accès direct, utiliser une description spécifique
-            if is_direct_access:
-                query = f"Accès direct à la pathologie : {pathology_name}"
+            if 'diagnoses' not in request.session:
+                request.session['diagnoses'] = {}
             
-            if patient_id:
-                patient = Patient.objects.get(id=patient_id)
+            request.session['diagnoses'][diagnosis_id] = {
+                'diagnosis': diagnosis_result,
+                'result': result,
+                'form_data': form_data,
+                'model_used': selected_model  # 🆕 Sauvegarder le modèle utilisé
+            }
+            request.session.modified = True
+            
+            # Sauvegarder la consultation dans la base de données PostgreSQL
+            try:
+                from .models import Patient, Consultation
                 
-                        # Le nom du médecin est directement dans patient.treating_physician (champ texte)
-                        # Le champ medecin dans Consultation est une ForeignKey optionnelle, on la laisse à None
-                        # car le nom du médecin est déjà stocké dans le patient
-                medecin = None
-                        if patient.treating_physician:
-                            print(f"✅ Médecin principal du patient: {patient.treating_physician}")
-                        
-                        # 🆕 Stocker le modèle utilisé dans les critères validés (métadonnées)
-                        form_data_with_model = form_data.copy() if form_data else {}
-                        form_data_with_model['_metadata'] = {
-                            'model_used': selected_model,
-                            'model_display_name': {
-                                'chatgpt-5.1': 'ChatGPT 5.1',
-                                'claude-4.5': 'Claude Sonnet 4.5',
-                            }.get(selected_model, selected_model)
-                        }
-                        
-                        # 🆕 Récupérer uniquement le plan de traitement (pas de diagnostic summary)
-                        treatment_plan = diagnosis_result.get('treatment_plan', '')
+                # Récupérer l'ID du patient depuis la session
+                patient_id = request.session.get('current_patient_id')
+                medecin_id = request.session.get('current_medecin_id')
+                query = request.session.get('search_query', '')
                 
-                # Créer la consultation
-                consultation = Consultation.objects.create(
-                    patient=patient,
-                    medecin=medecin,
-                    description_clinique=query,
-                    pathologie_identifiee=pathology_name,
-                    score_similarite=similarity_score / 100,  # Convertir en décimal (0-1)
-                    fichier_source=result.get('file_name', ''),
-                            criteres_valides=form_data_with_model,  # 🆕 Inclure le modèle dans les métadonnées
-                            plan_traitement=treatment_plan,  # 🆕 Uniquement le plan de traitement
-                    statut='valide'
-                )
-                
-                # Stocker l'ID de la consultation dans la session pour le rapport
-                request.session['diagnoses'][diagnosis_id]['consultation_id'] = str(consultation.id)
-                request.session.modified = True
-        except Exception as e:
-            # Si erreur, continuer quand même (ne pas bloquer l'utilisateur)
-            print(f"Erreur lors de la sauvegarde de la consultation: {e}")
+                # Pour l'accès direct, utiliser une description spécifique
+                if is_direct_access:
+                    query = f"Accès direct à la pathologie : {pathology_name}"
+            
+                if patient_id:
+                    patient = Patient.objects.get(id=patient_id)
+                    
+                    # Le nom du médecin est directement dans patient.treating_physician (champ texte)
+                    # Le champ medecin dans Consultation est une ForeignKey optionnelle, on la laisse à None
+                    # car le nom du médecin est déjà stocké dans le patient
+                    medecin = None
+                    if patient.treating_physician:
+                        print(f"✅ Médecin principal du patient: {patient.treating_physician}")
+                    
+                    # 🆕 Stocker le modèle utilisé dans les critères validés (métadonnées)
+                    form_data_with_model = form_data.copy() if form_data else {}
+                    form_data_with_model['_metadata'] = {
+                        'model_used': selected_model,
+                        'model_display_name': {
+                            'chatgpt-5.1': 'ChatGPT 5.1',
+                            'claude-4.5': 'Claude Sonnet 4.5',
+                        }.get(selected_model, selected_model)
+                    }
+                    
+                    # 🆕 Récupérer uniquement le plan de traitement (pas de diagnostic summary)
+                    treatment_plan = diagnosis_result.get('treatment_plan', '')
+                    
+                    # Créer la consultation
+                    consultation = Consultation.objects.create(
+                        patient=patient,
+                        medecin=medecin,
+                        description_clinique=query,
+                        pathologie_identifiee=pathology_name,
+                        score_similarite=similarity_score / 100,  # Convertir en décimal (0-1)
+                        fichier_source=result.get('file_name', ''),
+                        criteres_valides=form_data_with_model,  # 🆕 Inclure le modèle dans les métadonnées
+                        plan_traitement=treatment_plan,  # 🆕 Uniquement le plan de traitement
+                        statut='valide'
+                    )
+                    
+                    # Stocker l'ID de la consultation dans la session pour le rapport
+                    request.session['diagnoses'][diagnosis_id]['consultation_id'] = str(consultation.id)
+                    request.session.modified = True
+            except Exception as e:
+                # Si erreur, continuer quand même (ne pas bloquer l'utilisateur)
+                print(f"Erreur lors de la sauvegarde de la consultation: {e}")
+            
+            return JsonResponse({
+                'success': True,
+                'action': 'validated',
+                'message': f"Pathologie validée : {pathology_name}",
+                'diagnosis_id': diagnosis_id
+            })
         
-        return JsonResponse({
-            'success': True,
-            'action': 'validated',
-            'message': f"Pathologie validée : {pathology_name}",
-            'diagnosis_id': diagnosis_id
-        })
-    
-    elif action == 'skip':
-        # IMPORTANT: Même si NON VALIDE, sauvegarder les critères cochés pour les antécédents
-        
+        elif action == 'skip':
+            # IMPORTANT: Même si NON VALIDE, sauvegarder les critères cochés pour les antécédents
+            
             # 🆕 Marquer l'index comme visité pour l'exclure des résultats suivants
             if not is_direct_access and current_index < len(results):
                 if 'visited_diagnostic_indices' not in request.session:
@@ -1248,74 +1248,74 @@ def validate_action(request):
                     request.session.modified = True
                     print(f"✅ Index {current_index} marqué comme visité (non validé) - sera exclu des résultats")
             
-        # Gérer l'accès direct vs recherche normale
-        if is_direct_access:
-            pathology_name = data.get('pathology_name', '')
-            html_page = data.get('html_page', '')
-            similarity_score = 100
-            
-            result = {
-                'file_name': pathology_name + '.txt',
-                'similarity': 1.0,
-                'location': html_page
-            }
-        else:
-            # Mode normal (via recherche)
-            if current_index < len(results):
-                result = results[current_index]
-                pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
-                similarity_score = result.get('similarity', 0) * 100
-            else:
-                pathology_name = "Inconnue"
-                similarity_score = 0
-                result = {}
-        
-        # Sauvegarder la consultation NON VALIDÉE dans la base de données
-        try:
-            from .models import Patient, Consultation
-            
-            patient_id = request.session.get('current_patient_id')
-            medecin_id = request.session.get('current_medecin_id')
-            query = request.session.get('search_query', '')
-            
-            # Pour l'accès direct, utiliser une description spécifique
+            # Gérer l'accès direct vs recherche normale
             if is_direct_access:
-                query = f"Accès direct à la pathologie (non validée) : {pathology_name}"
+                pathology_name = data.get('pathology_name', '')
+                html_page = data.get('html_page', '')
+                similarity_score = 100
+                
+                result = {
+                    'file_name': pathology_name + '.txt',
+                    'similarity': 1.0,
+                    'location': html_page
+                }
+            else:
+                # Mode normal (via recherche)
+                if current_index < len(results):
+                    result = results[current_index]
+                    pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
+                    similarity_score = result.get('similarity', 0) * 100
+                else:
+                    pathology_name = "Inconnue"
+                    similarity_score = 0
+                    result = {}
             
+            # Sauvegarder la consultation NON VALIDÉE dans la base de données
+            try:
+                from .models import Patient, Consultation
+                
+                patient_id = request.session.get('current_patient_id')
+                medecin_id = request.session.get('current_medecin_id')
+                query = request.session.get('search_query', '')
+                
+                # Pour l'accès direct, utiliser une description spécifique
+                if is_direct_access:
+                    query = f"Accès direct à la pathologie (non validée) : {pathology_name}"
+                
                 # 🆕 Sauvegarder même s'il n'y a pas de critères cochés (enregistrer quand même)
                 if patient_id:
-                patient = Patient.objects.get(id=patient_id)
-                
+                    patient = Patient.objects.get(id=patient_id)
+                    
                     # Le nom du médecin est directement dans patient.treating_physician (champ texte)
                     # Le champ medecin dans Consultation est une ForeignKey optionnelle, on la laisse à None
                     # car le nom du médecin est déjà stocké dans le patient
-                medecin = None
+                    medecin = None
                     if patient.treating_physician:
                         print(f"✅ Médecin principal du patient: {patient.treating_physician}")
-                
+                    
                     # Créer la consultation avec statut "non_valide" même si pas de critères
-                consultation = Consultation.objects.create(
-                    patient=patient,
-                    medecin=medecin,
-                    description_clinique=query,
-                    pathologie_identifiee=pathology_name,
-                    score_similarite=similarity_score / 100,
-                    fichier_source=result.get('file_name', ''),
+                    consultation = Consultation.objects.create(
+                        patient=patient,
+                        medecin=medecin,
+                        description_clinique=query,
+                        pathologie_identifiee=pathology_name,
+                        score_similarite=similarity_score / 100,
+                        fichier_source=result.get('file_name', ''),
                         criteres_valides=form_data if form_data else {},  # Sauvegarder les critères même si vide
-                    plan_traitement='',  # Pas de plan de traitement car non validé
-                    statut='non_valide'  # Statut spécial pour les pathologies rejetées
-                )
-                
+                        plan_traitement='',  # Pas de plan de traitement car non validé
+                        statut='non_valide'  # Statut spécial pour les pathologies rejetées
+                    )
+                    
                     print(f"✅ Consultation NON VALIDÉE sauvegardée (ID: {consultation.id}) avec {len(form_data) if form_data else 0} critères")
-                
+                    
                     # 🆕 Extraire TOUS les symptômes des critères cochés pour les sauvegarder dans l'historique
-                symptoms = []
+                    symptoms = []
                     if form_data:
-                for key, value in form_data.items():
+                        for key, value in form_data.items():
                             # Ignorer les métadonnées
                             if key == '_metadata':
                                 continue
-                    if isinstance(value, list):
+                            if isinstance(value, list):
                                 # Si c'est une liste, extraire chaque symptôme
                                 for item in value:
                                     if item and str(item).strip():
@@ -1331,29 +1331,29 @@ def validate_action(request):
                                 # Si c'est une valeur simple, l'ajouter comme symptôme
                                 symptom_text = str(value).strip()
                                 symptoms.append(symptom_text)
-                        
-                        # Dédupliquer les symptômes
-                        symptoms = list(set(symptoms))
-                
-                # Ajouter les symptômes à l'historique du patient dans la session
-                if 'patient_historical_symptoms' not in request.session:
-                    request.session['patient_historical_symptoms'] = []
-                request.session['patient_historical_symptoms'].extend(symptoms)
+                    
+                    # Dédupliquer les symptômes
+                    symptoms = list(set(symptoms))
+                    
+                    # Ajouter les symptômes à l'historique du patient dans la session
+                    if 'patient_historical_symptoms' not in request.session:
+                        request.session['patient_historical_symptoms'] = []
+                    request.session['patient_historical_symptoms'].extend(symptoms)
                     # Dédupliquer l'historique complet
                     request.session['patient_historical_symptoms'] = list(set(request.session['patient_historical_symptoms']))
-                request.session.modified = True
+                    request.session.modified = True
                     print(f"📊 {len(symptoms)} symptômes (critères cochés) ajoutés à l'historique du patient: {symptoms[:5]}...")
-        except Exception as e:
-            print(f"❌ Erreur lors de la sauvegarde de la consultation non validée: {e}")
-        
+            except Exception as e:
+                print(f"❌ Erreur lors de la sauvegarde de la consultation non validée: {e}")
+            
             # 🆕 Retourner aux résultats (excluant celui non validé) ou à la page principale si tous sont consommés
             visited_indices = set(request.session.get('visited_diagnostic_indices', []))
             total_results = len(results) if not is_direct_access else 0
             
             # Si tous les résultats ont été visités, retourner à la page principale
             if not is_direct_access and len(visited_indices) >= total_results:
-        return JsonResponse({
-            'success': True,
+                return JsonResponse({
+                    'success': True,
                     'action': 'back_to_index',
                     'message': 'Tous les diagnostics ont été évalués. Retour à la page principale.',
                     'redirect_url': '/'
@@ -1362,15 +1362,15 @@ def validate_action(request):
             # Sinon, retourner aux résultats (celui non validé sera exclu)
             return JsonResponse({
                 'success': True,
-            'action': 'back_to_results',
+                'action': 'back_to_results',
                 'message': 'Pathologie non validée. Retour aux résultats de similarité.',
                 'redirect_url': '/results-selection/'
-        })
+            })
         else:
-    return JsonResponse({
-        'success': False,
-        'error': 'Action invalide'
-    }, status=400)
+            return JsonResponse({
+                'success': False,
+                'error': 'Action invalide'
+            }, status=400)
     
     except Exception as global_error:
         # Gérer TOUTES les erreurs non capturées (timeout, erreurs système, etc.)
