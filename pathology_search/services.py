@@ -95,7 +95,7 @@ Réponds UNIQUEMENT par un JSON:
 }}"""
 
             response = validation_client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="gpt-5",
                 messages=[
                     {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
                     {"role": "user", "content": prompt}
@@ -163,7 +163,7 @@ Réponds UNIQUEMENT par un JSON:
                 model=self.embedding_model
             )
             return np.array(response.data[0].embedding)
-            
+        
         elif self.model == 'claude-4.5':
             # IMPORTANT: Anthropic Claude ne supporte pas actuellement d'API d'embeddings directe
             # Pour les embeddings, on utilise OpenAI (fallback)
@@ -427,7 +427,7 @@ Réponds UNIQUEMENT par un JSON:
             if self.model == 'chatgpt-5.1':
                 # OpenAI / ChatGPT
                 response = self.client.chat.completions.create(
-                    model="gpt-4o-mini",
+                    model="gpt-5",
                     messages=[
                         {
                             "role": "system",
@@ -619,7 +619,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
             # Générer le plan de traitement avec le même modèle
             if self.model == 'chatgpt-5.1':
                 response = self.client.chat.completions.create(
-                    model="gpt-4o-mini",
+                    model="gpt-5",
                     messages=[
                         {
                             "role": "system",

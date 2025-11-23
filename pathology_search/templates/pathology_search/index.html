@@ -503,51 +503,51 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     
     // Fonction pour effectuer la recherche
     async function performSearch() {
-        // Show loading, hide errors and results
-        document.getElementById('loadingIndicator').classList.remove('hidden');
-        document.getElementById('errorMessage').classList.add('hidden');
-        document.getElementById('diagnosticSummary').classList.add('hidden');
-        document.getElementById('results').innerHTML = '';
+    // Show loading, hide errors and results
+    document.getElementById('loadingIndicator').classList.remove('hidden');
+    document.getElementById('errorMessage').classList.add('hidden');
+    document.getElementById('diagnosticSummary').classList.add('hidden');
+    document.getElementById('results').innerHTML = '';
+    
+    // Start progress animation
+    simulateProgress();
+    
+    try {
+        const response = await fetch('{% url "pathology_search:search" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({ 
+                query, 
+                top_k, 
+                aggregation,
+                use_validation: useValidation,
+                patient_id: selectedPatient.id,
+                historical_symptoms: patientHistoricalSymptoms || []
+            })
+        });
         
-        // Start progress animation
-        simulateProgress();
+        const data = await response.json();
         
-        try {
-            const response = await fetch('{% url "pathology_search:search" %}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': getCookie('csrftoken')
-                },
-                body: JSON.stringify({ 
-                    query, 
-                    top_k, 
-                    aggregation,
-                    use_validation: useValidation,
-                    patient_id: selectedPatient.id,
-                    historical_symptoms: patientHistoricalSymptoms || []
-                })
-            });
+        // Complete progress and hide loading
+        completeProgress();
+        
+        if (data.success) {
+            // Si mode validation, rediriger vers la page de validation
+            if (data.use_validation) {
+                window.location.href = data.redirect_url;
+                return;
+            }
             
-            const data = await response.json();
-            
-            // Complete progress and hide loading
-            completeProgress();
-            
-            if (data.success) {
-                // Si mode validation, rediriger vers la page de validation
-                if (data.use_validation) {
-                    window.location.href = data.redirect_url;
-                    return;
-                }
-                
-                // Sinon afficher les résultats normalement
-                // Update files count with actual number
-                if (data.total_files_searched) {
-                    document.getElementById('filesProcessed').textContent = data.total_files_searched;
-                }
-                displayResults(data);
-            } else {
+            // Sinon afficher les résultats normalement
+            // Update files count with actual number
+            if (data.total_files_searched) {
+                document.getElementById('filesProcessed').textContent = data.total_files_searched;
+            }
+            displayResults(data);
+        } else {
             // Vérifier si c'est une erreur de requête invalide (validation GPT-4o)
             if (data.error_type === 'invalid_query') {
                 document.getElementById('loadingIndicator').classList.add('hidden');
@@ -600,9 +600,9 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
             showError(data.error);
             }
         }
-        } catch (error) {
-            document.getElementById('loadingIndicator').classList.add('hidden');
-            showError('Erreur de connexion: ' + error.message);
+    } catch (error) {
+        document.getElementById('loadingIndicator').classList.add('hidden');
+        showError('Erreur de connexion: ' + error.message);
         }
     }
 });

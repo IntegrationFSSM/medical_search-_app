@@ -63,9 +63,52 @@ heroku config:set SECRET_KEY="votre-secret-key"
 heroku config:set DEBUG="False"
 heroku config:set ALLOWED_HOSTS="votre-app.herokuapp.com"
 heroku config:set OPENAI_API_KEY="votre-clé-openai"
-heroku config:set CLAUDE_API_KEY="votre-clé-claude"
+heroku config:set CLAUDE_API_KEY="sk-ant-votre-clé-claude"
+heroku config:set CLAUDE_MODEL="claude-sonnet-4-5-20250929"
 heroku config:set DATABASE_URL="(configuré automatiquement par Heroku)"
 ```
+
+### 🔍 Vérifier la Configuration Claude sur Heroku
+
+Pour diagnostiquer les problèmes avec Claude sur Heroku, exécutez :
+
+```bash
+# Vérifier si la clé API est configurée
+heroku config:get CLAUDE_API_KEY
+
+# Vérifier toutes les variables d'environnement
+heroku config
+
+# Exécuter le script de diagnostic
+heroku run python check_claude_heroku.py
+```
+
+### ⚠️ Problème Courant : Claude ne fonctionne pas sur Heroku
+
+Si Claude fonctionne en local mais pas sur Heroku, vérifiez :
+
+1. **La clé API est-elle configurée ?**
+   ```bash
+   heroku config:get CLAUDE_API_KEY
+   ```
+   Si vide, configurez-la :
+   ```bash
+   heroku config:set CLAUDE_API_KEY=sk-ant-votre_clé_ici
+   ```
+
+2. **Le format de la clé est-il correct ?**
+   - La clé Claude doit commencer par `sk-ant-`
+   - Obtenez votre clé depuis : https://console.anthropic.com/
+
+3. **Redémarrer l'application après configuration**
+   ```bash
+   heroku restart
+   ```
+
+4. **Vérifier les logs pour les erreurs**
+   ```bash
+   heroku logs --tail
+   ```
 
 ## 📝 Notes Importantes
 
