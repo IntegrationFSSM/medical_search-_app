@@ -158,7 +158,7 @@ Réponds UNIQUEMENT par un JSON valide:
                     # Nouvelle API avec format simplifié
                     full_prompt = f"Tu es un validateur médical expert. Réponds uniquement en JSON.\n\n{prompt}"
                     response = validation_client.responses.create(
-                        model="gpt-5.1",
+                        model="gpt-5",
                         input=full_prompt
                     )
                     result_text = response.output_text.strip()
@@ -169,7 +169,7 @@ Réponds UNIQUEMENT par un JSON valide:
                 # L'API responses.create() n'existe pas, utiliser l'ancienne API
                 print(f"⚠️ API responses.create() non disponible pour validation, utilisation de chat.completions.create(): {e}")
                 response = validation_client.chat.completions.create(
-                    model="gpt-5.1",
+                    model="gpt-5",
                     messages=[
                         {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
                         {"role": "user", "content": prompt}
@@ -182,7 +182,7 @@ Réponds UNIQUEMENT par un JSON valide:
                 print(f"⚠️ Erreur avec responses.create() pour validation, fallback vers chat.completions.create(): {e}")
                 try:
                     response = validation_client.chat.completions.create(
-                        model="gpt-5.1",
+                        model="gpt-5",
                         messages=[
                             {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
                             {"role": "user", "content": prompt}
@@ -529,7 +529,7 @@ Réponds UNIQUEMENT par un JSON valide:
                     if hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):
                         full_prompt = f"{system_message_treatment}\n\n{treatment_prompt}"
                         response = self.client.responses.create(
-                            model="gpt-5.1",
+                            model="gpt-5",
                             input=full_prompt
                         )
                         treatment_plan_text = response.output_text
@@ -540,7 +540,7 @@ Réponds UNIQUEMENT par un JSON valide:
                     # L'API responses.create() n'existe pas, utiliser l'ancienne API
                     print(f"⚠️ API responses.create() non disponible, utilisation de chat.completions.create(): {e}")
                     response = self.client.chat.completions.create(
-                        model="gpt-5.1",
+                        model="gpt-5",
                         messages=[
                             {
                                 "role": "system",
@@ -559,7 +559,7 @@ Réponds UNIQUEMENT par un JSON valide:
                     print(f"⚠️ Erreur avec responses.create(), fallback vers chat.completions.create(): {e}")
                     try:
                         response = self.client.chat.completions.create(
-                            model="gpt-5.1",
+                            model="gpt-5",
                             messages=[
                                 {
                                     "role": "system",
@@ -765,7 +765,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                     if hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):
                         full_prompt = f"{system_message}\n\n{treatment_prompt}"
                         response = self.client.responses.create(
-                            model="gpt-5.1",
+                            model="gpt-5",
                             input=full_prompt
                         )
                         treatment_plan_text = response.output_text
@@ -776,7 +776,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                     # L'API responses.create() n'existe pas, utiliser l'ancienne API
                     print(f"⚠️ API responses.create() non disponible, utilisation de chat.completions.create(): {e}")
                     response = self.client.chat.completions.create(
-                        model="gpt-5.1",
+                        model="gpt-5",
                         messages=[
                             {
                                 "role": "system",
@@ -795,7 +795,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                     print(f"⚠️ Erreur avec responses.create(), fallback vers chat.completions.create(): {e}")
                     try:
                         response = self.client.chat.completions.create(
-                            model="gpt-5.1",
+                            model="gpt-5",
                             messages=[
                                 {
                                     "role": "system",
