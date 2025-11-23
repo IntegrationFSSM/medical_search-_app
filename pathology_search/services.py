@@ -40,7 +40,12 @@ class PathologySearchService:
                 if not settings.CLAUDE_API_KEY.startswith('sk-ant-'):
                     print(f"⚠️ ATTENTION: La clé API Claude ne semble pas avoir le bon format (devrait commencer par 'sk-ant-')")
                 
-                self.client = Anthropic(api_key=settings.CLAUDE_API_KEY)
+                # Configurer le client Claude avec un timeout de 90 secondes
+                import httpx
+                self.client = Anthropic(
+                    api_key=settings.CLAUDE_API_KEY,
+                    timeout=httpx.Timeout(90.0, connect=10.0)  # 90s total, 10s pour la connexion
+                )
                 # Claude Sonnet 4.5 - modèle pour la génération de texte
                 # Par défaut: claude-sonnet-4-5-20250929 (Claude Sonnet 4.5)
                 self.claude_model = getattr(settings, 'CLAUDE_MODEL', 'claude-sonnet-4-5-20250929')
