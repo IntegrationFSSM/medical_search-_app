@@ -1107,7 +1107,16 @@ def validate_action(request):
     Gérer les actions de validation (valider ou ne pas valider).
     """
     try:
-        data = json.loads(request.body)
+        # Parser le JSON avec gestion d'erreur
+        try:
+            data = json.loads(request.body)
+        except json.JSONDecodeError as json_error:
+            return JsonResponse({
+                'success': False,
+                'error': f'Erreur de parsing JSON: {str(json_error)}',
+                'error_type': 'json_error'
+            }, status=400)
+        
         action = data.get('action')  # 'validate' ou 'skip'
         current_index = int(data.get('current_index', 0))
         form_data = data.get('form_data', {})  # Données du formulaire
@@ -1183,6 +1192,17 @@ def validate_action(request):
                     medical_text=best_chunk_text,
                     historical_symptoms=historical_symptoms  # 🆕 Inclure l'historique
                 )
+                
+                # Vérifier si la génération a échoué
+                if not diagnosis_result.get('success', False):
+                    error_msg = diagnosis_result.get('error', 'Erreur inconnue lors de la génération')
+                    return JsonResponse({
+                        'success': False,
+                        'error': f'Erreur lors de la génération du plan de traitement avec {selected_model}: {error_msg}',
+                        'error_type': 'api_error',
+                        'model': selected_model,
+                        'error_detail': diagnosis_result.get('error_detail', '')
+                    }, status=500)
             except Exception as e:
                 # Gérer les erreurs de l'API (Claude, ChatGPT, etc.) et retourner du JSON
                 import traceback

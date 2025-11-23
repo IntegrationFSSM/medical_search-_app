@@ -145,15 +145,21 @@ Réponds UNIQUEMENT par un JSON valide:
 
             # Essayer d'abord la nouvelle API responses.create() si disponible, sinon utiliser chat.completions.create()
             try:
-                # Nouvelle API avec format simplifié
-                full_prompt = f"Tu es un validateur médical expert. Réponds uniquement en JSON.\n\n{prompt}"
-                response = validation_client.responses.create(
-                    model="gpt-5.1",
-                    input=full_prompt
-                )
-                result_text = response.output_text.strip()
-            except (AttributeError, TypeError):
-                # Fallback vers l'ancienne API chat.completions.create()
+                # Vérifier si l'API responses existe
+                if hasattr(validation_client, 'responses') and hasattr(validation_client.responses, 'create'):
+                    # Nouvelle API avec format simplifié
+                    full_prompt = f"Tu es un validateur médical expert. Réponds uniquement en JSON.\n\n{prompt}"
+                    response = validation_client.responses.create(
+                        model="gpt-5.1",
+                        input=full_prompt
+                    )
+                    result_text = response.output_text.strip()
+                    print("✅ Utilisation de l'API responses.create() pour validation")
+                else:
+                    raise AttributeError("API responses.create() non disponible")
+            except (AttributeError, TypeError) as e:
+                # L'API responses.create() n'existe pas, utiliser l'ancienne API
+                print(f"⚠️ API responses.create() non disponible pour validation, utilisation de chat.completions.create(): {e}")
                 response = validation_client.chat.completions.create(
                     model="gpt-5.1",
                     messages=[
@@ -163,6 +169,22 @@ Réponds UNIQUEMENT par un JSON valide:
                     max_completion_tokens=200
                 )
                 result_text = response.choices[0].message.content.strip()
+            except Exception as e:
+                # Autre erreur avec responses.create(), essayer l'ancienne API
+                print(f"⚠️ Erreur avec responses.create() pour validation, fallback vers chat.completions.create(): {e}")
+                try:
+                    response = validation_client.chat.completions.create(
+                        model="gpt-5.1",
+                        messages=[
+                            {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
+                            {"role": "user", "content": prompt}
+                        ],
+                        max_completion_tokens=200
+                    )
+                    result_text = response.choices[0].message.content.strip()
+                except Exception as e2:
+                    # Si les deux APIs échouent, lever l'erreur
+                    raise Exception(f"Erreur avec les deux APIs OpenAI pour validation: responses.create()={e}, chat.completions.create()={e2}")
             print(f"🔍 Validation GPT-4o response: {result_text}")
             
             # Extraire le JSON si le texte contient du texte avant/après
@@ -484,16 +506,23 @@ Réponds UNIQUEMENT par un JSON valide:
             # Appeler l'API selon le modèle sélectionné
             if self.model == 'chatgpt-5.1':
                 # OpenAI / ChatGPT
+                # Note: L'API responses.create() n'existe peut-être pas encore, utiliser directement chat.completions.create()
                 # Essayer d'abord la nouvelle API responses.create() si disponible
                 try:
-                    full_prompt = f"{system_message_treatment}\n\n{treatment_prompt}"
-                    response = self.client.responses.create(
-                        model="gpt-5.1",
-                        input=full_prompt
-                    )
-                    treatment_plan_text = response.output_text
-                except (AttributeError, TypeError):
-                    # Fallback vers l'ancienne API chat.completions.create()
+                    # Vérifier si l'API responses existe
+                    if hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):
+                        full_prompt = f"{system_message_treatment}\n\n{treatment_prompt}"
+                        response = self.client.responses.create(
+                            model="gpt-5.1",
+                            input=full_prompt
+                        )
+                        treatment_plan_text = response.output_text
+                        print("✅ Utilisation de l'API responses.create()")
+                    else:
+                        raise AttributeError("API responses.create() non disponible")
+                except (AttributeError, TypeError) as e:
+                    # L'API responses.create() n'existe pas, utiliser l'ancienne API
+                    print(f"⚠️ API responses.create() non disponible, utilisation de chat.completions.create(): {e}")
                     response = self.client.chat.completions.create(
                         model="gpt-5.1",
                         messages=[
@@ -509,6 +538,28 @@ Réponds UNIQUEMENT par un JSON valide:
                         max_completion_tokens=1200
                     )
                     treatment_plan_text = response.choices[0].message.content
+                except Exception as e:
+                    # Autre erreur avec responses.create(), essayer l'ancienne API
+                    print(f"⚠️ Erreur avec responses.create(), fallback vers chat.completions.create(): {e}")
+                    try:
+                        response = self.client.chat.completions.create(
+                            model="gpt-5.1",
+                            messages=[
+                                {
+                                    "role": "system",
+                                    "content": system_message_treatment
+                                },
+                                {
+                                    "role": "user",
+                                    "content": treatment_prompt
+                                }
+                            ],
+                            max_completion_tokens=1200
+                        )
+                        treatment_plan_text = response.choices[0].message.content
+                    except Exception as e2:
+                        # Si les deux APIs échouent, lever l'erreur
+                        raise Exception(f"Erreur avec les deux APIs OpenAI: responses.create()={e}, chat.completions.create()={e2}")
                 
             elif self.model == 'claude-4.5':
                 # Claude Sonnet 4.5 - utilisation directe (sans embeddings)
@@ -584,9 +635,15 @@ Réponds UNIQUEMENT par un JSON valide:
             }
             
         except Exception as e:
+            # Capturer toutes les exceptions et retourner un dict avec l'erreur
+            import traceback
+            error_detail = traceback.format_exc()
+            print(f"❌ Erreur dans generate_ai_diagnosis: {str(e)}")
+            print(f"❌ Traceback complet:\n{error_detail}")
             return {
                 'success': False,
                 'error': str(e),
+                'error_detail': error_detail,
                 'pathology': pathology_name,
                 'model_used': self.model
             }
@@ -685,16 +742,23 @@ Structure attendue (respecter EXACTEMENT ces titres) :
             
             # Générer le plan de traitement avec le même modèle
             if self.model == 'chatgpt-5.1':
+                # Note: L'API responses.create() n'existe peut-être pas encore, utiliser directement chat.completions.create()
                 # Essayer d'abord la nouvelle API responses.create() si disponible
                 try:
-                    full_prompt = f"{system_message}\n\n{treatment_prompt}"
-                    response = self.client.responses.create(
-                        model="gpt-5.1",
-                        input=full_prompt
-                    )
-                    treatment_plan_text = response.output_text
-                except (AttributeError, TypeError):
-                    # Fallback vers l'ancienne API chat.completions.create()
+                    # Vérifier si l'API responses existe
+                    if hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):
+                        full_prompt = f"{system_message}\n\n{treatment_prompt}"
+                        response = self.client.responses.create(
+                            model="gpt-5.1",
+                            input=full_prompt
+                        )
+                        treatment_plan_text = response.output_text
+                        print("✅ Utilisation de l'API responses.create()")
+                    else:
+                        raise AttributeError("API responses.create() non disponible")
+                except (AttributeError, TypeError) as e:
+                    # L'API responses.create() n'existe pas, utiliser l'ancienne API
+                    print(f"⚠️ API responses.create() non disponible, utilisation de chat.completions.create(): {e}")
                     response = self.client.chat.completions.create(
                         model="gpt-5.1",
                         messages=[
@@ -710,6 +774,28 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                         max_completion_tokens=1200
                     )
                     treatment_plan_text = response.choices[0].message.content
+                except Exception as e:
+                    # Autre erreur avec responses.create(), essayer l'ancienne API
+                    print(f"⚠️ Erreur avec responses.create(), fallback vers chat.completions.create(): {e}")
+                    try:
+                        response = self.client.chat.completions.create(
+                            model="gpt-5.1",
+                            messages=[
+                                {
+                                    "role": "system",
+                                    "content": system_message
+                                },
+                                {
+                                    "role": "user",
+                                    "content": treatment_prompt
+                                }
+                            ],
+                            max_completion_tokens=1200
+                        )
+                        treatment_plan_text = response.choices[0].message.content
+                    except Exception as e2:
+                        # Si les deux APIs échouent, lever l'erreur
+                        raise Exception(f"Erreur avec les deux APIs OpenAI: responses.create()={e}, chat.completions.create()={e2}")
                 
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(
