@@ -1066,13 +1066,13 @@ def validate_action(request):
     Gérer les actions de validation (valider ou ne pas valider).
     """
     try:
-    data = json.loads(request.body)
-    action = data.get('action')  # 'validate' ou 'skip'
-    current_index = int(data.get('current_index', 0))
-    form_data = data.get('form_data', {})  # Données du formulaire
-    is_direct_access = data.get('direct_access', False)
-    
-    results = request.session.get('search_results', [])
+        data = json.loads(request.body)
+        action = data.get('action')  # 'validate' ou 'skip'
+        current_index = int(data.get('current_index', 0))
+        form_data = data.get('form_data', {})  # Données du formulaire
+        is_direct_access = data.get('direct_access', False)
+        
+        results = request.session.get('search_results', [])
     
     if action == 'validate':
         # Marquer l'index comme visité lors de la validation
