@@ -113,7 +113,7 @@ Réponds UNIQUEMENT par un JSON:
             print(f"🔍 Validation GPT-4o response: {result_text}")
             
             # Extraire le JSON si le texte contient du texte avant/après
-            import json
+            # json already imported at module level (line 6)
             import re
             
             # Essayer de trouver un JSON dans le texte
