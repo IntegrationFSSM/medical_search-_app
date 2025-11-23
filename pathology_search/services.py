@@ -149,7 +149,6 @@ Réponds UNIQUEMENT par un JSON valide:
                     {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.3,
                 max_completion_tokens=200
             )
             
@@ -487,7 +486,6 @@ Réponds UNIQUEMENT par un JSON valide:
                             "content": treatment_prompt
                         }
                     ],
-                    temperature=0.4,
                     max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 treatment_plan_text = response.choices[0].message.content
@@ -679,7 +677,6 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                             "content": treatment_prompt
                         }
                     ],
-                    temperature=0.4,
                     max_completion_tokens=1200  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
                 )
                 treatment_plan_text = response.choices[0].message.content
