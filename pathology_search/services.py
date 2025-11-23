@@ -526,7 +526,7 @@ RÃ©ponds UNIQUEMENT par un JSON valide:
                 # Essayer d'abord la nouvelle API responses.create() si disponible
                 try:
                     # VÃ©rifier si l'API responses existe
-                    if hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):
+                    if False:  # Désactiver responses.create() - trop lent
                         full_prompt = f"{system_message_treatment}\n\n{treatment_prompt}"
                         response = self.client.responses.create(
                             model="gpt-5",
@@ -762,7 +762,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                 # Essayer d'abord la nouvelle API responses.create() si disponible
                 try:
                     # VÃ©rifier si l'API responses existe
-                    if hasattr(self.client, 'responses') and hasattr(self.client.responses, 'create'):
+                    if False:  # Désactiver responses.create() - trop lent
                         full_prompt = f"{system_message}\n\n{treatment_prompt}"
                         response = self.client.responses.create(
                             model="gpt-5",
