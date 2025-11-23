@@ -466,11 +466,16 @@ def print_report(request, consultation_id):
         
         # 🆕 Récupérer le modèle utilisé depuis les métadonnées
         model_used = 'chatgpt-5.1'  # Par défaut
-        model_display_name = 'ChatGPT 5.1'
+        model_display_name = 'Model 1'
         if consultation.criteres_valides and '_metadata' in consultation.criteres_valides:
             metadata = consultation.criteres_valides['_metadata']
             model_used = metadata.get('model_used', 'chatgpt-5.1')
-            model_display_name = metadata.get('model_display_name', model_display_name)
+            # Convertir le nom du modèle pour l'affichage
+            model_names = {
+                'chatgpt-5.1': 'Model 1',
+                'claude-4.5': 'Model 2'
+            }
+            model_display_name = model_names.get(model_used, metadata.get('model_display_name', 'Model 1'))
         
         # 🆕 Utiliser le plan validé si disponible, sinon le plan initial
         plan_traitement_a_utiliser = consultation.plan_traitement_valide if consultation.plan_traitement_valide else consultation.plan_traitement
@@ -1237,8 +1242,8 @@ def validate_action(request):
                     form_data_with_model['_metadata'] = {
                         'model_used': selected_model,
                         'model_display_name': {
-                            'chatgpt-5.1': 'ChatGPT 5.1',
-                            'claude-4.5': 'Claude Sonnet 4.5',
+                            'chatgpt-5.1': 'Model 1',
+                            'claude-4.5': 'Model 2',
                         }.get(selected_model, selected_model)
                     }
                     
@@ -1502,8 +1507,8 @@ def show_diagnosis(request, diagnosis_id):
     
     # 🆕 Nom du modèle formaté pour l'affichage
     model_names = {
-        'chatgpt-5.1': 'ChatGPT 5.1',
-        'claude-4.5': 'Claude Sonnet 4.5'
+        'chatgpt-5.1': 'Model 1',
+        'claude-4.5': 'Model 2'
     }
     model_display_name = model_names.get(model_used, model_used)
     
