@@ -500,6 +500,9 @@ def print_report(request, consultation_id):
         # 🆕 Récupérer les notes du médecin
         notes_medecin_clean = consultation.notes_medecin if consultation.notes_medecin else ''
         
+        # 🆕 Détecter si c'est un accès direct (description commence par "Accès direct")
+        is_direct_access = consultation.description_clinique.startswith('Accès direct à la pathologie')
+        
         context = {
             'consultation': consultation,
             'patient': consultation.patient,
@@ -511,6 +514,7 @@ def print_report(request, consultation_id):
             'criteres_valides_clean': criteres_valides_clean,
             'model_used': model_used,  # 🆕 Modèle utilisé
             'model_display_name': model_display_name,  # 🆕 Nom formaté pour affichage
+            'is_direct_access': is_direct_access,  # 🆕 Flag pour masquer la description clinique
         }
         
         try:
@@ -1129,7 +1133,9 @@ def validate_action(request):
             
             # Gérer l'accès direct (sans recherche préalable)
             if is_direct_access:
-                pathology_name = data.get('pathology_name', '')
+                pathology_name_raw = data.get('pathology_name', '')
+                # 🆕 Nettoyer le nom de la pathologie pour l'accès direct
+                pathology_name = clean_pathology_name(pathology_name_raw) if pathology_name_raw else ''
                 html_page = data.get('html_page', '')
                 
                 # 🆕 Si html_page est vide, essayer de le récupérer depuis l'URL de la requête
@@ -1325,7 +1331,9 @@ def validate_action(request):
             
             # Gérer l'accès direct vs recherche normale
             if is_direct_access:
-                pathology_name = data.get('pathology_name', '')
+                pathology_name_raw = data.get('pathology_name', '')
+                # 🆕 Nettoyer le nom de la pathologie pour l'accès direct
+                pathology_name = clean_pathology_name(pathology_name_raw) if pathology_name_raw else ''
                 html_page = data.get('html_page', '')
                 similarity_score = 100
                 

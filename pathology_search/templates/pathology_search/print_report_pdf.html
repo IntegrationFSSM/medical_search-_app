@@ -274,11 +274,13 @@
         </table>
     </div>
     
-    <!-- Description clinique -->
+    <!-- Description clinique (masquée pour accès direct) -->
+    {% if not is_direct_access %}
     <div class="section">
         <div class="section-title">DESCRIPTION CLINIQUE</div>
         <div class="text-content">{{ consultation.description_clinique }}</div>
     </div>
+    {% endif %}
     
     <!-- Critères diagnostiques validés -->
     <div class="section">
