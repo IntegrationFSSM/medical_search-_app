@@ -668,23 +668,6 @@ function displayDiagnosticSummary(info) {
 }
 
 function createResultCard(result, rank) {
-    const similarity = result.similarity * 100;
-    let confidenceClass, confidenceIcon, confidenceText;
-    
-    if (similarity >= 75) {
-        confidenceClass = 'high';
-        confidenceIcon = 'fa-check-circle text-green-500';
-        confidenceText = 'FORTE CORRESPONDANCE';
-    } else if (similarity >= 60) {
-        confidenceClass = 'moderate';
-        confidenceIcon = 'fa-exclamation-circle text-yellow-500';
-        confidenceText = 'CORRESPONDANCE MODÉRÉE';
-    } else {
-        confidenceClass = 'low';
-        confidenceIcon = 'fa-times-circle text-red-500';
-        confidenceText = 'CORRESPONDANCE FAIBLE';
-    }
-    
     const pathologyName = result.file_name.replace('.txt', '').replace(/_/g, ' ');
     const preview = result.best_chunk_text.substring(0, 300) + (result.best_chunk_text.length > 300 ? '...' : '');
     
@@ -693,40 +676,23 @@ function createResultCard(result, rank) {
     const hasHtmlPage = result.html_page && result.html_page !== '';
     
     return `
-        <div class="result-card ${confidenceClass} bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 card-hover">
+        <div class="result-card bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 card-hover">
             <!-- Mobile: Stack vertically, Desktop: Side by side -->
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-3">
-                <div class="flex items-start flex-1 gap-3">
-                    <div class="bg-purple-100 text-purple-700 rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
-                        ${rank}
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        ${hasHtmlPage ? `
-                        <a href="${htmlLink}" target="_blank" class="group">
-                            <h3 class="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors flex items-center flex-wrap break-words">
-                                <span class="break-words mr-2">${pathologyName}</span>
-                                <i class="fas fa-external-link-alt text-xs sm:text-sm text-purple-500 group-hover:text-purple-700 flex-shrink-0"></i>
-                            </h3>
-                        </a>
-                        ` : `
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 break-words">${pathologyName}</h3>
-                        `}
-                    </div>
+            <div class="flex items-start gap-3 mb-4">
+                <div class="bg-purple-100 text-purple-700 rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                    ${rank}
                 </div>
-                <div class="flex sm:flex-col items-center sm:items-end gap-2 sm:gap-1 justify-end sm:justify-start">
-                    <i class="fas ${confidenceIcon} text-xl sm:text-2xl"></i>
-                    <p class="text-xs font-semibold text-gray-600 uppercase text-right">${confidenceText}</p>
-                </div>
-            </div>
-            
-            <!-- Score de similarité -->
-            <div class="mb-4">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs sm:text-sm text-gray-600">Score de similarité</span>
-                    <span class="text-base sm:text-lg font-bold text-purple-700">${similarity.toFixed(1)}%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2 sm:h-3">
-                    <div class="h-2 sm:h-3 rounded-full ${confidenceClass === 'high' ? 'bg-green-500' : confidenceClass === 'moderate' ? 'bg-yellow-500' : 'bg-red-500'}" style="width: ${Math.min(similarity, 100)}%"></div>
+                <div class="flex-1 min-w-0">
+                    ${hasHtmlPage ? `
+                    <a href="${htmlLink}" target="_blank" class="group">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors flex items-center flex-wrap break-words">
+                            <span class="break-words mr-2">${pathologyName}</span>
+                            <i class="fas fa-external-link-alt text-xs sm:text-sm text-purple-500 group-hover:text-purple-700 flex-shrink-0"></i>
+                        </h3>
+                    </a>
+                    ` : `
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 break-words">${pathologyName}</h3>
+                    `}
                 </div>
             </div>
             
@@ -742,15 +708,23 @@ function createResultCard(result, rank) {
             </div>
             
             <!-- Informations fichier -->
-            <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs sm:text-sm text-gray-500">
-                <span class="flex items-center">
-                    <i class="fas fa-book mr-1"></i>
-                    ${result.num_chunks} sections analysées
-                </span>
-                <span class="flex items-center truncate">
-                    <i class="fas fa-file-alt mr-1 flex-shrink-0"></i>
-                    <span class="truncate">${result.file_name}</span>
-                </span>
+            <div class="mt-4 flex flex-col gap-2 text-xs sm:text-sm text-gray-500">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <span class="flex items-center">
+                        <i class="fas fa-book mr-1"></i>
+                        ${result.num_chunks} sections analysées
+                    </span>
+                    <span class="flex items-center truncate">
+                        <i class="fas fa-file-alt mr-1 flex-shrink-0"></i>
+                        <span class="truncate">${result.file_name}</span>
+                    </span>
+                </div>
+                ${result.location ? `
+                <div class="flex items-center truncate">
+                    <i class="fas fa-map-marker-alt mr-1 flex-shrink-0"></i>
+                    <span class="truncate" title="${result.location}">${result.location}</span>
+                </div>
+                ` : ''}
             </div>
             
             ${hasHtmlPage ? `

@@ -388,7 +388,39 @@ Réponds UNIQUEMENT au format JSON:
             
             # 🆕 Gérer le cas où 'hierarchy' n'existe pas dans les métadonnées
             hierarchy = metadata.get('hierarchy', {})
-            location = hierarchy.get('location', 'N/A') if isinstance(hierarchy, dict) else 'N/A'
+            location = None
+            
+            # Essayer de récupérer le location depuis hierarchy
+            if isinstance(hierarchy, dict) and 'location' in hierarchy:
+                location = hierarchy.get('location')
+            
+            # Si location n'est pas disponible, le construire à partir du chemin du fichier
+            if not location or location == 'N/A':
+                try:
+                    # Obtenir le chemin relatif du fichier JSON par rapport au dossier embeddings
+                    emb_file_path = Path(emb_file)
+                    embeddings_folder_path = Path(self.embeddings_folder)
+                    
+                    # Calculer le chemin relatif
+                    try:
+                        relative_path = emb_file_path.relative_to(embeddings_folder_path)
+                    except ValueError:
+                        # Si le fichier n'est pas dans le dossier embeddings, utiliser le nom du fichier
+                        relative_path = emb_file_path.name
+                    
+                    # Construire le location à partir du chemin relatif
+                    # Exemple: "Anxiety_Disorders_out/SubSection1_Separation_Anxiety_Disorder.json" 
+                    # -> "Anxiety_Disorders_out > SubSection1_Separation_Anxiety_Disorder"
+                    path_parts = relative_path.parts[:-1]  # Exclure le nom du fichier
+                    file_stem = relative_path.stem  # Nom sans extension
+                    
+                    if path_parts:
+                        location = ' > '.join(path_parts) + ' > ' + file_stem
+                    else:
+                        location = file_stem
+                except Exception as e:
+                    # En dernier recours, utiliser le nom du fichier
+                    location = Path(metadata.get('source_file', emb_file)).stem
             
             file_results[str(emb_file)] = {
                 'file': metadata['source_file'],

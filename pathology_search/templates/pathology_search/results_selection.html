@@ -51,51 +51,12 @@
                         {{ result.pathology_name }}
                     </h3>
                 </div>
+                {% if result.location %}
                 <p class="text-sm text-gray-500 mt-1 mb-3">
                     <i class="fas fa-map-marker-alt mr-1"></i>
                     {{ result.location }}
                 </p>
-                
-                <!-- Score de similarité -->
-                <div class="mb-3">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-sm font-medium text-gray-700">Score de correspondance</span>
-                        <span class="text-xl font-bold 
-                            {% if result.similarity >= 0.75 %}text-green-600
-                            {% elif result.similarity >= 0.60 %}text-yellow-600
-                            {% else %}text-red-600{% endif %}">
-                            {{ result.similarity_percent }}%
-                        </span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-3">
-                        <div class="h-3 rounded-full 
-                            {% if result.similarity >= 0.75 %}bg-green-500
-                            {% elif result.similarity >= 0.60 %}bg-yellow-500
-                            {% else %}bg-red-500{% endif %}" 
-                            style="width: {{ result.similarity_percent }}%">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Badge de correspondance -->
-                <div class="mt-3">
-                    {% if result.similarity >= 0.75 %}
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
-                            <i class="fas fa-check-circle mr-1"></i>
-                            Forte correspondance
-                        </span>
-                    {% elif result.similarity >= 0.60 %}
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">
-                            <i class="fas fa-exclamation-circle mr-1"></i>
-                            Correspondance modérée
-                        </span>
-                    {% else %}
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
-                            <i class="fas fa-times-circle mr-1"></i>
-                            Correspondance faible
-                        </span>
-                    {% endif %}
-                </div>
+                {% endif %}
             </div>
             
             <!-- Bouton sélectionner -->
