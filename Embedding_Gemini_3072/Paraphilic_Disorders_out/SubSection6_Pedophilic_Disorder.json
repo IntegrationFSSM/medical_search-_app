@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection6_Pedophilic_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection6_Pedophilic_Disorder.txt",
+    "location": "Paraphilic_Disorders_out > SubSection6_Pedophilic_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Pedophilic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent, intense se"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "a lifelong condition. Pedophilic disorder, however, necessarily includes other elements that may cha"
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Pedophilic_Disorder.html"
+}

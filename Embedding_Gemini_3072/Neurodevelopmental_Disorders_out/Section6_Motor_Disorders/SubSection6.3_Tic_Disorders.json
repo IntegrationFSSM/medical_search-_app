@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.3_Tic_Disorders.txt",
+  "hierarchy": {
+    "file_name": "SubSection6.3_Tic_Disorders.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section6_Motor_Disorders > SubSection6.3_Tic_Disorders"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Tic Disorders Diagnostic Criteria Note: A tic is a sudden, rapid, recurrent, nonrhythmic motor movem"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "wane in severity, and some individuals may have tic-free intervals of weeks to months; however, an i"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "is increasingly evident that the immune system and neuroinflammation play important roles in the pat"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "Functional disorders should also be considered when an individual presents with “tic attacks” that c"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Tic_Disorders.html"
+}

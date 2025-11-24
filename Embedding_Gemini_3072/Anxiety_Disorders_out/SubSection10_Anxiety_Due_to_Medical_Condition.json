@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection10_Anxiety_Due_to_Medical_Condition.txt",
+  "html_page": "Embedding/Anxiety_Disorders_out/anxiety-disorder-medical.html",
+  "hierarchy": {
+    "file_name": "SubSection10_Anxiety_Due_to_Medical_Condition.txt",
+    "location": "Anxiety_Disorders_out > SubSection10_Anxiety_Due_to_Medical_Condition"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Anxiety Disorder Due to Another Medical Condition Diagnostic Criteria A. Panic attacks or anxiety is"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "medications or to the medical illness itself. When a diagnosis of substance-induced anxiety is being"
+    }
+  ]
+}

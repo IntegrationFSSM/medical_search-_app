@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+  "original_path": "Feeding_Eating_Disorders_out/SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Avoidant/Restrictive Food Intake Disorder Diagnostic Criteria A. An eating or feeding disturbance (e.g., apparent lack of interest in eating or food; avoidance based on the sensory characteristics of ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "life but may persist into adulthood. Avoidance related to aversive consequences can arise at any age. The scant literature regarding long-term outcomes suggests that food avoidance or restriction base...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "in the level of impairment that would be required for a diagnosis of avoidant/restrictive food intake disorder. Avoidant/restrictive food intake disorder should be diagnosed concurrently only if all c...",
+      "word_count": 859
+    }
+  ],
+  "html_page": "Embedding/Feeding_Eating_Disorders_out/Avoidant_Restrictive_Food_Intake_Disorder.html"
+}

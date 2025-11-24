@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection7_NCD_Vascular.txt",
+  "hierarchy": {
+    "file_name": "SubSection7_NCD_Vascular.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection7_NCD_Vascular"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Vascular Neurocognitive Disorder Diagnostic Criteria A. The criteria are met for major"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "relate the vascular lesions to the cognitive syndrome. The neurocognitive symptoms must not be bette"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "are not typical of vascular etiology. Other medical conditions. A diagnosis of major or mild vascula"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Vascular.html"
+}

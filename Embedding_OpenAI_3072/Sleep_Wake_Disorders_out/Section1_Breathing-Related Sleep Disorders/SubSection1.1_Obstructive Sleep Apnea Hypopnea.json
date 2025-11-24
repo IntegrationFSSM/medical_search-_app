@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Obstructive Sleep Apnea Hypopnea Diagnostic Criteria A. Either (1) or (2): 1. Evidence by polysomnography of at least five obstructive apneas or hypopneas per hour of sleep and either of the following...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "this disorder. In the United States, 13% of men and 6% of women have polysomnographic evidence of 15 or more obstructive apneas or hypopneas per hour of sleep, and 14% of men and 5% of women have more...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "a strong genetic basis, as evidenced by the significant familial aggregation of the apnea hypopnea index. The prevalence of obstructive sleep apnea hypopnea is approximately twice as high among the fi...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "or oxygen desaturation indicative of obstructive apnea. Nevertheless, nocturnal asthma and obstructive sleep apnea can coexist, and this can make it difficult to determine the relative contributions o...",
+      "word_count": 498
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Obstructive_Sleep_Apnea_Hypopnea.html"
+}

@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Sedative-Hypnotic-or-Anxiolytic-Use-Disorder > Sedative, Hypnotic, or Anxiolytic Withdrawal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Withdrawal Diagnostic Criteria A. Cessation of (or reduction in) s"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "of diazepam (or its equivalent in other benzodiazepines) when taken daily for several months. Doses "
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative_Hypnotic_or_Anxiolytic_Intoxication.html"
+}

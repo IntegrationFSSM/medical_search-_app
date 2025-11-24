@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.3_Schizotypal Personality Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1.3_Schizotypal Personality Disorder.txt",
+    "location": "Personality_Disorders_out > Section1_Cluster A Personality Disorders > SubSection1.3_Schizotypal Personality Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Schizotypal Personality Disorder Diagnostic Criteria A. A pervasive pattern of social and interperso"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "studies (three in the United States) found a median prevalence of 0.6%. Genetic and physiological. O"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "disorders, so that making such distinctions is not always feasible. Schizotypal features during F60."
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section1_Cluster A Personality Disorders/Schizotypal_Personality_Disorder.html"
+}

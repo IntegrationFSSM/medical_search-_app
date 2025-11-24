@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Dissociative_Disorders_out/SubSection2_Dissociative_Amnesia.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Dissociative_Amnesia.txt",
+    "location": "Dissociative_Disorders_out > SubSection2_Dissociative_Amnesia"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Dissociative Amnesia Diagnostic Criteria A. An inability to recall important autobiographical inform"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "posttraumatic stress disorder (PTSD) intrusive symptoms and less externalizing behavior. Dissociativ"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "individuals with PTSD cannot recall part or all of a specific traumatic event (e.g., a rape victim w"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "and typically last less than 1 month. Amnestic episodes that occur as part of these reactions are ac"
+    }
+  ],
+  "html_page": "Embedding/Dissociative_Disorders_out/Dissociative_Amnesia.html"
+}

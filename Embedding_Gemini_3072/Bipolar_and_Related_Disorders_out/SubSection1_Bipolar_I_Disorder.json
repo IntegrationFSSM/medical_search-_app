@@ -1,0 +1,40 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection1_Bipolar_I_Disorder.txt",
+  "html_page": "Embedding/Bipolar_and_Related_Disorders_out/Bipolar_I_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Bipolar_I_Disorder.txt",
+    "location": "Bipolar_and_Related_Disorders_out > SubSection1_Bipolar_I_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Bipolar I Disorder Diagnostic Criteria For a diagnosis of bipolar I disorder, it is necessary to mee"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "day (observable by others, not merely subjective feelings of restlessness or being slowed down). 6. "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "shifts in mood over brief periods of time may occur and are referred to as lability (i.e., the alter"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "The individual may purchase many unneeded items without the money to pay for them and, in some cases"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "and 47.3% without polarity predominance. The course of bipolar I disorder is highly heterogeneous. S"
+    },
+    {
+      "chunk_id": 5,
+      "text_preview": "with both disorders are at greater risk for suicide attempt and suicide death. Functional Consequenc"
+    },
+    {
+      "chunk_id": 6,
+      "text_preview": "common in both conditions. In order to make a diagnosis of bipolar I disorder, symptoms of mood labi"
+    }
+  ]
+}

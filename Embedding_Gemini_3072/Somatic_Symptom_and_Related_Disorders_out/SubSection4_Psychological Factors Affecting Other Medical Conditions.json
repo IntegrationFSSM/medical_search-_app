@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection4_Psychological Factors Affecting Other Medical Conditions"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Psychological Factors Affecting Other Medical Conditions Diagnostic Criteria A. A medical symptom or"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "an individual with angina that is precipitated whenever he becomes enraged would be diagnosed as hav"
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Psychological_Factors_Affecting_Other_Medical_Conditions.html"
+}

@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Caffeine Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Caffeine-Related Disorders > Caffeine Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Caffeine Intoxication Diagnostic Criteria A. Recent consumption of caffeine (typically a high dose w"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "of caffeine intoxication. Caffeine-induced mental disorders. F15.93 The temporal relationship of the"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine_Intoxication.html"
+}

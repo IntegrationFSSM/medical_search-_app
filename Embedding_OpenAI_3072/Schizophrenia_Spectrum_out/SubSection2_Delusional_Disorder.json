@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection2_Delusional_Disorder.txt",
+  "original_path": "Schizophrenia_Spectrum_out/SubSection2_Delusional_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Delusional Disorder Diagnostic Criteria A. The presence of one (or more) delusions with a duration of 1 month or longer. B. Criterion A for schizophrenia has never been met. Note: Hallucinations, if p...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "the belief that the individual emits a foul odor; that there is an infestation of insects on or in the skin; that there is an internal parasite; or that parts of the body are not functioning. Diagnost...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "absence of the other characteristic symptoms of the active phase of schizophrenia. Furthermore, the quality of delusions can help distinguish between schizophrenia and delusional disorder. In schizoph...",
+      "word_count": 229
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Delusional_Disorder.html"
+}

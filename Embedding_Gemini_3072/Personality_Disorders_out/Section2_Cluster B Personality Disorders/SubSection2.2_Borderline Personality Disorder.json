@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.2_Borderline Personality Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2.2_Borderline Personality Disorder.txt",
+    "location": "Personality_Disorders_out > Section2_Cluster B Personality Disorders > SubSection2.2_Borderline Personality Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Borderline Personality Disorder Diagnostic Criteria A pervasive pattern of instability of interperso"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "despair and is rarely relieved by periods of well-being or satisfaction. These episodes may reflect "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "traits that suggest the presence of borderline personality disorder (e.g., number of sexual partners"
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section2_Cluster B Personality Disorders/Borderline_Personality_Disorder.html"
+}

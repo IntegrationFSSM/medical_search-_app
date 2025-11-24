@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection3_Brief_Psychotic_Disorder.txt",
+  "original_path": "Schizophrenia_Spectrum_out/SubSection3_Brief_Psychotic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Brief Psychotic Disorder Diagnostic Criteria A. Presence of one (or more) of the following symptoms. At least one of these must be (1), (2), or (3): 1. Delusions. 2. Hallucinations. 3. Disorganized sp...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "the direct physiological consequence of a specific medical condition (e.g., Cushing’s syndrome, brain tumor) (see “Psychotic Disorder Due to Another Medical Condition” later in this chapter). Substanc...",
+      "word_count": 378
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Brief_Psychotic_Disorder.html"
+}

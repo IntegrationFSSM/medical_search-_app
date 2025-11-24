@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection5_Schizophrenia.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Schizophrenia.txt",
+    "location": "Schizophrenia_Spectrum_out > SubSection5_Schizophrenia"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Schizophrenia Diagnostic Criteria A. Two (or more) of the following, each present for a significant "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "the social dysfunction described under Criterion B. There is also strong evidence for a relationship"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "which was based on a range of definitions of schizophrenia, found no difference in prevalence betwee"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "diagnosed with schizophrenia have no family history of psychosis. Liability is conferred by a spectr"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "outside of their family. Differential Diagnosis Major depressive or bipolar disorder with psychotic "
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Schizophrenia.html"
+}

@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.2_Speech_Sound_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.2_Speech_Sound_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Speech Sound Disorder\nDiagnostic Criteria\nA. Persistent difficulty with speech sound production that interferes with speech\nintelligibility or prevents verbal communication of messages.\nB. The disturb...",
+      "word_count": 901
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Speech_Sound_Disorder.html"
+}

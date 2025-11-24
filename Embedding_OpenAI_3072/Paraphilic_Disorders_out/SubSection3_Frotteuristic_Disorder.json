@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection3_Frotteuristic_Disorder.txt",
+  "original_path": "Paraphilic_Disorders_out/SubSection3_Frotteuristic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Frotteuristic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and intense sexual arousal from touching or rubbing against a nonconsenting person, as manifested by fantasi...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "with a nonconsenting person (e.g., rubbing his genitals against a passenger on a crowded subway car) or unless there is accompanying clinically significant distress or impairment in social, occupation...",
+      "word_count": 263
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Frotteuristic_Disorder.html"
+}

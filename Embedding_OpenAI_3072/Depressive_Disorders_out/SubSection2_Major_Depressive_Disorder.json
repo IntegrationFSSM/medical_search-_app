@@ -1,0 +1,39 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection2_Major_Depressive_Disorder.txt",
+  "original_path": "Depressive_Disorders_out/SubSection2_Major_Depressive_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Major Depressive Disorder Diagnostic Criteria A. Five (or more) of the following symptoms have been present during the same 2 week period and represent a change from previous functioning; at least one...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "2-week period, drawn from a list that includes changes in appetite or weight, sleep, and psychomotor activity; decreased energy; feelings of worthlessness or guilt; difficulty thinking, concentrating,...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "a result of the depression is very common and, unless delusional, is not considered sufficient to meet this criterion. Many individuals report impaired ability to think, concentrate, or make even mino...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "eight- to ninefold across global geographic regions. In the United States, prevalence increased from 2005 to 2015, with steeper rates of increase for youth compared with older groups. After stratifica...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "the background of another disorder often follow a more refractory course. Substance use, anxiety, and borderline personality disorders are among the most common of these, and the presenting depressive...",
+      "word_count": 1000
+    },
+    {
+      "id": 5,
+      "text_preview": "may be best considered other specified bipolar and related disorder because of the clinical significance of the subthreshold hypomanic symptoms, or the presentation may be best considered a case of ma...",
+      "word_count": 880
+    }
+  ],
+  "html_page": "Embedding/Depressive_Disorders_out/Major_Depressive_Disorder.html"
+}

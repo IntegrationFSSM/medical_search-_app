@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection8_Generalized_Anxiety_Disorder.txt",
+  "original_path": "Anxiety_Disorders_out/SubSection8_Generalized_Anxiety_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Generalized Anxiety Disorder Diagnostic Criteria A. Excessive anxiety and worry (apprehensive expectation), occurring more days than not for at least 6 months, about a number of events or activities (...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "age at onset is spread over a very broad range and tends to be older in lower-income countries worldwide. The symptoms of excessive worry and anxiety may occur early in life but are then manifested as...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "that occurs only in the context of heavy coffee consumption would be diagnosed as caffeine-induced anxiety disorder. Social anxiety disorder. Individuals with social anxiety disorder often have antici...",
+      "word_count": 480
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/generalized-anxiety-disorder.html"
+}

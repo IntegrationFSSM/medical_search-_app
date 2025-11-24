@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection7_Substance_Medication_Induced_Sexual_Dysfunction.txt",
+  "hierarchy": {
+    "file_name": "SubSection7_Substance_Medication_Induced_Sexual_Dysfunction.txt",
+    "location": "Sexual_Dysfunctions_out > SubSection7_Substance_Medication_Induced_Sexual_Dysfunction"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Substance/Medication-Induced Sexual Dysfunction Diagnostic Criteria A. A clinically significant dist"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "Features The essential features of substance/medication-induced sexual dysfunction are clinically si"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "alcohol may not appear until after years of use. Premature (early) ejaculation can sometimes occur a"
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Substance_Medication_Induced_Sexual_Dysfunction.html"
+}

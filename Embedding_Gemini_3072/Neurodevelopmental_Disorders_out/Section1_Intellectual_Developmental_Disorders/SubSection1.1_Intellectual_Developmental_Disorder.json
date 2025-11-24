@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/SubSection1.1_Intellectual_Developmental_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1.1_Intellectual_Developmental_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section1_Intellectual_Developmental_Disorders > SubSection1.1_Intellectual_Developmental_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Intellectual Developmental Disorder (Intellectual Disability) Diagnostic Criteria Intellectual devel"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "individual generally has little understanding of written language or of concepts involving numbers, "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "refer to how well a person meets community standards of personal independence and social responsibil"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "at high risk for developing neurocognitive disorder due to Alzheimer’s disease in adulthood). In thi"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "childhood. Comorbidity Co-occurring neurodevelopmental and other mental and medical conditions are f"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/Intellectual_Developmental_Disorder.html"
+}

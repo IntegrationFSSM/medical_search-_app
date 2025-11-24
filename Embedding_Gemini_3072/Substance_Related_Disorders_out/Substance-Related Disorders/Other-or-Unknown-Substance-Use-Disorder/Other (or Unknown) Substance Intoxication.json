@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Other (or Unknown) Substance Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Other-or-Unknown-Substance-Use-Disorder > Other (or Unknown) Substance Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Other (or Unknown) Substance Intoxication\n Diagnostic Criteria\n A. The development of a reversible s"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Intoxication.html"
+}

@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection1_Voyeuristic_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Voyeuristic_Disorder.txt",
+    "location": "Paraphilic_Disorders_out > SubSection1_Voyeuristic_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Voyeuristic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and intens"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "as psychiatric morbidity, hypersexuality, and sexual impulsivity. Thus, the severity and course may "
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Voyeuristic_Disorder.html"
+}

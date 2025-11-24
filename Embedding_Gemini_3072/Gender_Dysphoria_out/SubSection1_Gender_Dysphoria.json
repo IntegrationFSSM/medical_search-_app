@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Gender_Dysphoria_out/SubSection1_Gender_Dysphoria.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Gender_Dysphoria.txt",
+    "location": "Gender_Dysphoria_out > SubSection1_Gender_Dysphoria"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Gender Dysphoria Diagnostic Criteria Gender Dysphoria in Children A. A marked incongruence between o"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "interest in stereotypically feminine toys (e.g., dolls) or activities (e.g., feminine dress-up or ro"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "birth. Because many adults with gender dysphoria do not seek care at specialty treatment programs, p"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "of childhood gender dysphoria. Parents of individuals with gender dysphoria of pubertal/postpubertal"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "shift to a greater number of individuals assigned female at birth in adolescents and young adults th"
+    },
+    {
+      "chunk_id": 5,
+      "text_preview": "gender dysphoria. However, some males seek genital surgery for either aesthetic reasons or to remove"
+    }
+  ],
+  "html_page": "Embedding/Gender_Dysphoria_out/Gender_Dysphoria.html"
+}

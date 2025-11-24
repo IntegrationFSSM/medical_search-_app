@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection4_Acute_Stress_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_Acute_Stress_Disorder.txt",
+    "location": "Trauma_Stress_Disorders_out > SubSection4_Acute_Stress_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Acute Stress Disorder Diagnostic Criteria A. Exposure to actual or threatened death, serious injury,"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "use, to avoid internal reminders) (Criterion B8), and to avoid activities, conversations, objects, s"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "even excessively bright positive affect, in young children who are traumatized. Although children ma"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "hallucinations, and other perceptual disturbances that may occur in schizophrenia, other psychotic d"
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Acute_Stress_Disorder.html"
+}

@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.2_Dependent Personality Disorder.txt",
+  "original_path": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.2_Dependent Personality Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Dependent Personality Disorder Diagnostic Criteria A pervasive and excessive need to be taken care of that leads to submissive and clinging behavior and fears of separation, beginning by early adultho...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "unable to function in the absence of a close relationship motivates these individuals to become quickly and indiscriminately attached to another individual. Individuals with this disorder are often pr...",
+      "word_count": 991
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section3_Cluster C Personality Disorders/Dependent_Personality_Disorder.html"
+}

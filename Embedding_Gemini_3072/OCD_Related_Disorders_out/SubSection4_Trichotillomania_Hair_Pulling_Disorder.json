@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection4_Trichotillomania_Hair_Pulling_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_Trichotillomania_Hair_Pulling_Disorder.txt",
+    "location": "OCD_Related_Disorders_out > SubSection4_Trichotillomania_Hair_Pulling_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Trichotillomania (Hair-Pulling Disorder) Diagnostic Criteria F63.3 A. Recurrent pulling out of one’s"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "of trichotillomania is chronic, with some waxing and waning if the disorder is untreated. Symptoms m"
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Trichotillomania_Hair_Pulling_Disorder.html"
+}

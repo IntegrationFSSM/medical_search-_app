@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection2_Illness Anxiety Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Illness Anxiety Disorder.txt",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection2_Illness Anxiety Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Illness Anxiety Disorder Diagnostic Criteria A. Preoccupation with having or acquiring a serious ill"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "about one-fifth of individuals reported illness anxiety. The prevalence of the disorder is similar i"
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Illness_Anxiety_Disorder.html"
+}

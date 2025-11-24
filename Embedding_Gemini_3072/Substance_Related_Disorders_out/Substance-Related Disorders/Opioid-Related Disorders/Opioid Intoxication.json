@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Opioid Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Opioid-Related Disorders > Opioid Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Opioid Use Disorder Diagnostic Criteria A. A problematic pattern of opioid use leading to clinically"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "cough suppressants. Heroin is one of the most commonly misused drugs of this class and is usually ta"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "Vietnam War; over 90% had long-term abstinence from opioids after returning to the United States, al"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "and individuals switch to injecting in veins in the legs, neck, or groin. When these veins become un"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "are less common in prescription opioid use disorder. Research with nationally representative samples"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid_Intoxication.html"
+}

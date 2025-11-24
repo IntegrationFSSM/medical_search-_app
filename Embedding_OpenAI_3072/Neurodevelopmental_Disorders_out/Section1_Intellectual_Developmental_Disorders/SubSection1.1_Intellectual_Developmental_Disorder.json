@@ -1,0 +1,34 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/SubSection1.1_Intellectual_Developmental_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/SubSection1.1_Intellectual_Developmental_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Intellectual Developmental Disorder (Intellectual Disability) Diagnostic Criteria Intellectual developmental disorder (intellectual disability) is a disorder with onset during the developmental period...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "individual generally has little understanding of written language or of concepts involving numbers, quantity, time, and Spoken language is quite limited in terms of vocabulary and grammar. Speech may ...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "refer to how well a person meets community standards of personal independence and social responsibility, in comparison to others of similar age and sociocultural background. Adaptive functioning invol...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "at high risk for developing neurocognitive disorder due to Alzheimer’s disease in adulthood). In this situation, both diagnoses, intellectual developmental disorder and neurocognitive disorder, are gi...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "childhood. Comorbidity Co-occurring neurodevelopmental and other mental and medical conditions are frequent in intellectual developmental disorder, with rates of some conditions (e.g., mental disorder...",
+      "word_count": 347
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section1_Intellectual_Developmental_Disorders/Intellectual_Developmental_Disorder.html"
+}

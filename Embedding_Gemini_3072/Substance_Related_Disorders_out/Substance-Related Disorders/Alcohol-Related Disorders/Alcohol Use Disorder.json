@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Alcohol Use Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Alcohol-Related Disorders > Alcohol Use Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Alcohol Use Disorder Diagnostic Criteria A. A problematic pattern of alcohol use leading to clinical"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "neglected; and alcohol-related absences may occur from school or work. The individual may use alcoho"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "likely that consumption will rapidly escalate and that severe problems will once again develop. Alco"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "women’s drinking. Despite small variations regarding individual criterion items, the diagnostic crit"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "alcohol and sedatives had an even stronger association with suicide attempt compared with alcohol us"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol_Intoxication.html"
+}

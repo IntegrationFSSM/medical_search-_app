@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+    "location": "Depressive_Disorders_out > SubSection5_Substance_Medication_Induced_Depressive_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Substance/Medication-Induced Depressive Disorder Diagnostic Criteria A. A prominent and persistent d"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "in all, or almost all, activities (Criterion A) that is due to the direct physiological effects of a"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "symptoms with use of a prescribed medication, but most reports on this topic involve retrospective s"
+    }
+  ],
+  "html_page": "Embedding/Depressive_Disorders_out/Substance_Medication_Induced_Depressive_Disorder.html"
+}

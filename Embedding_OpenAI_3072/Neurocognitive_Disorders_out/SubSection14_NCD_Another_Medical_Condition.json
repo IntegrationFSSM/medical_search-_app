@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection14_NCD_Another_Medical_Condition.txt",
+  "original_path": "Neurocognitive_Disorders_out/SubSection14_NCD_Another_Medical_Condition.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": " Major or Mild Neurocognitive Disorder Due to Another\n Medical Condition\n Diagnostic Criteria\n A. The criteria are met for major or mild neurocognitive disorder.\n B. There is evidence from the history...",
+      "word_count": 609
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Another_Medical_Condition.html"
+}

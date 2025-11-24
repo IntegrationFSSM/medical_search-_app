@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.4_Social_Communication_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.4_Social_Communication_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Social (Pragmatic) Communication Disorder\nDiagnostic Criteria\nA. Persistent difficulties in the social use of verbal and nonverbal communication as\nmanifested by all of the following:\n1. Deficits in u...",
+      "word_count": 911
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Social_Communication_Disorder.html"
+}

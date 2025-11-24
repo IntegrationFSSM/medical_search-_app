@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection1_Reactive_Attachment_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Reactive_Attachment_Disorder.txt",
+    "location": "Trauma_Stress_Disorders_out > SubSection1_Reactive_Attachment_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Reactive Attachment Disorder Diagnostic Criteria A. A consistent pattern of inhibited, emotionally w"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "been studied. Symptoms of reactive attachment disorder may be more common in situations where attach"
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Reactive_Attachment_Disorder.html"
+}

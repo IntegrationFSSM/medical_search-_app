@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Intoxication.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Intoxication.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Stimulant Intoxication Diagnostic Criteria A. Recent use of an amphetamine-type substance, cocaine, or other stimulant. B. Clinically significant problematic behavioral or psychological changes (e.g.,...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "26 and older); 3% of men/boys and 1.4% of women/girls used cocaine in the last 12 months. Twelve-month prevalence of cocaine use is 2.3% among Whites, 2.2% among Hispanics, 1.7% among African American...",
+      "word_count": 238
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant_Intoxication.html"
+}

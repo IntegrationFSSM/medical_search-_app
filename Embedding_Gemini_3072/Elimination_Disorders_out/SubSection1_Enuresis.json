@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Elimination_Disorders_out/SubSection1_Enuresis.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Enuresis.txt",
+    "location": "Elimination_Disorders_out > SubSection1_Enuresis"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Enuresis Diagnostic Criteria A. Repeated voiding of urine into bed or clothes, whether involuntary o"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "signal processing and the default mode network. The increased arousal thresholds do not, however, me"
+    }
+  ],
+  "html_page": "Embedding/Elimination_Disorders_out/Enuresis.html"
+}

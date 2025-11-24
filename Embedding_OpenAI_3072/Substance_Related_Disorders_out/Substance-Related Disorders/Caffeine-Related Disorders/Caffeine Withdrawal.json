@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Caffeine Withdrawal Diagnostic Criteria A. Prolonged daily use of caffeine. B. Abrupt cessation of or reduction in caffeine use, followed within 24 hours by three (or more) of the following signs or s...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "caffeine withdrawal. Risk and Prognostic Factors Temperamental. Heavy caffeine use has been observed among individuals with mental disorders, including eating disorders and alcohol and other substance...",
+      "word_count": 517
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine_Intoxication.html"
+}

@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection6_Depressive_Due_to_Medical_Condition.txt",
+  "original_path": "Depressive_Disorders_out/SubSection6_Depressive_Due_to_Medical_Condition.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Depressive Disorder Due to Another Medical Condition Diagnostic Criteria A. A prominent and persistent disturbance in mood that predominates in the clinical picture and is characterized by depressed m...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "risk associated with left frontal strokes and least risk apparently associated with right frontal lesions 208 in those individuals who present within days of the stroke. The association with frontal r...",
+      "word_count": 766
+    }
+  ],
+  "html_page": "Embedding/Depressive_Disorders_out/Depressive_Due_to_Medical_Condition.html"
+}

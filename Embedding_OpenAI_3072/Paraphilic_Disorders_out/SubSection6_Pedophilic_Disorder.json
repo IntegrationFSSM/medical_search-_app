@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection6_Pedophilic_Disorder.txt",
+  "original_path": "Paraphilic_Disorders_out/SubSection6_Pedophilic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Pedophilic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent, intense sexually arousing fantasies, sexual urges, or behaviors involving sexual activity with a prepubescent ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "a lifelong condition. Pedophilic disorder, however, necessarily includes other elements that may change over time with or without treatment: subjective distress (e.g., guilt, shame, intense sexual fru...",
+      "word_count": 900
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Pedophilic_Disorder.html"
+}

@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection1_Disruptive_Mood_Dysregulation_Disorder.txt",
+  "html_page": "Embedding/Depressive_Disorders_out/Disruptive_Mood_Dysregulation_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection1_Disruptive_Mood_Dysregulation_Disorder.txt",
+    "location": "Depressive_Disorders_out > SubSection1_Disruptive_Mood_Dysregulation_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Disruptive Mood Dysregulation Disorder Diagnostic Criteria A. Severe recurrent temper outbursts mani"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "of disruptive mood dysregulation disorder must be before age 10 years, and the diagnosis should not "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "change in mood must be accompanied by the onset, or worsening, of associated cognitive, behavioral, "
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "present to the clinic with a wide range of disruptive behavior, mood, anxiety, and even autism spect"
+    }
+  ]
+}

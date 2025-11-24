@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection2_Major_Depressive_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Major_Depressive_Disorder.txt",
+    "location": "Depressive_Disorders_out > SubSection2_Major_Depressive_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major Depressive Disorder Diagnostic Criteria A. Five (or more) of the following symptoms have been "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "2-week period, drawn from a list that includes changes in appetite or weight, sleep, and psychomotor"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "a result of the depression is very common and, unless delusional, is not considered sufficient to me"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "eight- to ninefold across global geographic regions. In the United States, prevalence increased from"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "the background of another disorder often follow a more refractory course. Substance use, anxiety, an"
+    },
+    {
+      "chunk_id": 5,
+      "text_preview": "may be best considered other specified bipolar and related disorder because of the clinical signific"
+    }
+  ],
+  "html_page": "Embedding/Depressive_Disorders_out/Major_Depressive_Disorder.html"
+}

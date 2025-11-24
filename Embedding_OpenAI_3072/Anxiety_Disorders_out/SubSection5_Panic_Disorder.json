@@ -1,0 +1,34 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection5_Panic_Disorder.txt",
+  "original_path": "Anxiety_Disorders_out/SubSection5_Panic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Panic Disorder Diagnostic Criteria A. Recurrent unexpected panic attacks. A panic attack is an abrupt surge of intense fear or intense discomfort that reaches a peak within minutes, and during which t...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "panic disorder (e.g., panic attacks involving more symptoms). The maladaptive changes in behavior represent attempts to minimize or avoid panic attacks or their consequences. Examples include avoiding...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "in adolescents, much as they do in adults, and be attuned to this possibility when encountering adolescents presenting with episodes of intense fear or distress. Risk and Prognostic Factors Temperamen...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "than in those without it. There is considerable interest in the relationship between panic disorder and sensitivity to these panic-provoking agents. While none of the data suggest diagnostic utility, ...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "disorders (and especially agoraphobia), major depressive disorder, bipolar I and bipolar II disorder, and possibly mild alcohol use disorder. While panic disorder occasionally has an earlier age at on...",
+      "word_count": 218
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/panic-disorder.html"
+}

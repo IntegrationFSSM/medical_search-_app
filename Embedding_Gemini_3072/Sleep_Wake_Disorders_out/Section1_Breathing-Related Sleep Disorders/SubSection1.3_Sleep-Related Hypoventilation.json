@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.3_Sleep-Related Hypoventilation.txt",
+  "hierarchy": {
+    "file_name": "SubSection1.3_Sleep-Related Hypoventilation.txt",
+    "location": "Sleep_Wake_Disorders_out > Section1_Breathing-Related Sleep Disorders > SubSection1.3_Sleep-Related Hypoventilation"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Sleep-Related Hypoventilation Diagnostic Criteria A. Polysomnograpy demonstrates episodes of decreas"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "such as amyotrophic lateral sclerosis, spinal cord injury, diaphragmatic paralysis, myasthenia gravi"
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Sleep_Related_Hypoventilation.html"
+}

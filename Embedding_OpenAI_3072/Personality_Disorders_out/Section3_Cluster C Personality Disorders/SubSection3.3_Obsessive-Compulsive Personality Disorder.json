@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+  "original_path": "Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Obsessive-Compulsive Personality Disorder F60.5 Diagnostic Criteria A pervasive pattern of preoccupation with orderliness, perfectionism, and mental and interpersonal control, at the expense of flexib...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "5). Often these individuals will admit to being “pack rats.” They regard discarding objects as wasteful because “you never know when you might need something.” The clutter may also result from an accu...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "presence of true obsessions and compulsions in OCD. When criteria for both obsessive-compulsive personality disorder and OCD are met, both diagnoses should be recorded. A diagnosis of hoarding disorde...",
+      "word_count": 464
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section3_Cluster C Personality Disorders/Obsessive_Compulsive_Personality_Disorder.html"
+}

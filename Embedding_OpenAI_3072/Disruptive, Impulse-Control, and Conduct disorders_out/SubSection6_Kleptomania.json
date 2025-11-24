@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection6_Kleptomania.txt",
+  "original_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection6_Kleptomania.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": " Diagnostic Criteria\n Kleptomania\n A. Recurrent failure to resist impulses to steal objects that are not needed for\n personal use or for their monetary value.\n B. Increasing sense of tension immediate...",
+      "word_count": 734
+    }
+  ],
+  "html_page": "Embedding/Disruptive, Impulse-Control, and Conduct disorders_out/Kleptomania.html"
+}

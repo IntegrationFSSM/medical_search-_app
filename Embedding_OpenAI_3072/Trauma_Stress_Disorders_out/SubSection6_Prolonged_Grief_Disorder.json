@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection6_Prolonged_Grief_Disorder.txt",
+  "original_path": "Trauma_Stress_Disorders_out/SubSection6_Prolonged_Grief_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Prolonged Grief Disorder Diagnostic Criteria A. The death, at least 12 months ago, of a person who was close to the bereaved individual (for children and adolescents, at least 6 months ago). 323 B. Si...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "for the death; and decreased sleep quantity and quality. Prevalence The prevalence of DSM-5 prolonged grief disorder in adults is unknown. Meta-analysis of studies across four continents that used a d...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "drinking or poor self-care) may be more prevalent than direct expressions of grief. The inability to carry out funerary rituals in some cultures may worsen symptoms of prolonged grief disorder, possib...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "whereas prolonged grief disorder involves distress about separation from a deceased person. Psychotic disorder. Hallucinations about the deceased (e.g., seeing the deceased in a favorite chair) or tra...",
+      "word_count": 146
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Prolonged_Grief_Disorder.html"
+}

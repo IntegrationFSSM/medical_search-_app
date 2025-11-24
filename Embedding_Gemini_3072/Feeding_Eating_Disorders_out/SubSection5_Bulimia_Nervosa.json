@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection5_Bulimia_Nervosa.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Bulimia_Nervosa.txt",
+    "location": "Feeding_Eating_Disorders_out > SubSection5_Bulimia_Nervosa"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Bulimia Nervosa Diagnostic Criteria A. Recurrent episodes of binge eating. An episode of binge eatin"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "amount of food. Individuals with bulimia nervosa may use a variety of methods to induce vomiting, in"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "childhood generalized anxiety disorder are associated with increased risk for the development of bul"
+    }
+  ],
+  "html_page": "Embedding/Feeding_Eating_Disorders_out/Bulimia_Nervosa.html"
+}

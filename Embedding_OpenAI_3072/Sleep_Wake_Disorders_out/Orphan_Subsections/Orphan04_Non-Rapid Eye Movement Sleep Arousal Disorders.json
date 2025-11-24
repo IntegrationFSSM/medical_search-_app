@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Non–Rapid Eye Movement Sleep Arousal Disorders Diagnostic Criteria A. Recurrent episodes of incomplete awakening from sleep, usually occurring during the first third of the major sleep episode, accomp...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "ability to avoid or stop eating. During these episodes, inappropriate foods or even nonfood items (i.e., candy wrappers, small food boxes, or even small toys) may be ingested. Individuals with sleep-r...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "overlap in findings with persons who do not sleepwalk is great enough to preclude use of this indicator in establishing a diagnosis. Unlike arousals from REM sleep associated with nightmares, in which...",
+      "word_count": 979
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Non_Rapid_Eye_Movement_Sleep_Arousal_Disorders.html"
+}

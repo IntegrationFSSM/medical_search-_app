@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection3_Female_Sexual_Interest_Arousal_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Female_Sexual_Interest_Arousal_Disorder.txt",
+    "location": "Sexual_Dysfunctions_out > SubSection3_Female_Sexual_Interest_Arousal_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Female Sexual Interest/Arousal Disorder Diagnostic Criteria A. Lack of, or significantly reduced, se"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "as a result of significant interference in a woman’s life and well-being. If a lifelong lack of sexu"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "Interest/Arousal Disorder Difficulties in sexual interest/arousal are often associated with decrease"
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Female_Sexual_Interest_Arousal_Disorder.html"
+}

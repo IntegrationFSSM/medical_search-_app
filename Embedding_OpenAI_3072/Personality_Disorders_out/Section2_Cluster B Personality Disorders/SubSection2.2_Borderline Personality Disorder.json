@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.2_Borderline Personality Disorder.txt",
+  "original_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.2_Borderline Personality Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Borderline Personality Disorder Diagnostic Criteria A pervasive pattern of instability of interpersonal relationships, self-image, and affects, and marked impulsivity, beginning by early adulthood and...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "despair and is rarely relieved by periods of well-being or satisfaction. These episodes may reflect the individual’s extreme reactivity to interpersonal stresses. Individuals with borderline personali...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "traits that suggest the presence of borderline personality disorder (e.g., number of sexual partners, shifting between relationships, substance use) must be evaluated in light of cultural norms to mak...",
+      "word_count": 815
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section2_Cluster B Personality Disorders/Borderline_Personality_Disorder.html"
+}

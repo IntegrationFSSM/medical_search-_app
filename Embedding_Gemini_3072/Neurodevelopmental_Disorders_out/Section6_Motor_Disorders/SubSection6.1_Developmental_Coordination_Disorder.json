@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.1_Developmental_Coordination_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection6.1_Developmental_Coordination_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section6_Motor_Disorders > SubSection6.1_Developmental_Coordination_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Developmental Coordination Disorder Diagnostic Criteria A. The acquisition and execution of coordina"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "performance in the workplace. Co-occurrence with other disorders (see the section “Comorbidity” for "
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Developmental_Coordination_Disorder.html"
+}

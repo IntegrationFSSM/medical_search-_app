@@ -1,0 +1,44 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection3_Posttraumatic_Stress_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Posttraumatic_Stress_Disorder.txt",
+    "location": "Trauma_Stress_Disorders_out > SubSection3_Posttraumatic_Stress_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Posttraumatic Stress Disorder Diagnostic Criteria Posttraumatic Stress Disorder in Individuals Older"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "sexual violence in one (or more) of the following ways: 1. Directly experiencing the traumatic event"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "being taken hostage, terrorist attack, torture, incarceration as a prisoner of war, natural or human"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "a hurricane, seeing someone who resembles one’s perpetrator). The triggering cue could also be a phy"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "world around them). This can be indicated by using the “with dissociative symptoms” specifier. Assoc"
+    },
+    {
+      "chunk_id": 5,
+      "text_preview": "and adolescents can interfere with peer relationships and school behavior. Reckless behavior may lea"
+    },
+    {
+      "chunk_id": 6,
+      "text_preview": "self. In many populations around the world, there are cultural concepts of distress that resemble PT"
+    },
+    {
+      "chunk_id": 7,
+      "text_preview": "of PTSD, rather than a personality disorder, in which such difficulties would be expected independen"
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Posttraumatic_Stress_Disorder.html"
+}

@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection5_Panic_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Panic_Disorder.txt",
+    "location": "Anxiety_Disorders_out > SubSection5_Panic_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Panic Disorder Diagnostic Criteria A. Recurrent unexpected panic attacks. A panic attack is an abrup"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "panic disorder (e.g., panic attacks involving more symptoms). The maladaptive changes in behavior re"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "in adolescents, much as they do in adults, and be attuned to this possibility when encountering adol"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "than in those without it. There is considerable interest in the relationship between panic disorder "
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "disorders (and especially agoraphobia), major depressive disorder, bipolar I and bipolar II disorder"
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/panic-disorder.html"
+}

@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Other Hallucinogen Use Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Other Hallucinogen Use Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Other Hallucinogen Use Disorder Diagnostic Criteria A. A problematic pattern of hallucinogen (other "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "been reported to have both autonomic and psychological effects. MDMA/ecstasy as a hallucinogen may h"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "hallucinogen use disorder describes a problematic pattern of hallucinogen use that involves impaired"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html"
+}

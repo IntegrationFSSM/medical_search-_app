@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+  "original_path": "Depressive_Disorders_out/SubSection5_Substance_Medication_Induced_Depressive_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Substance/Medication-Induced Depressive Disorder Diagnostic Criteria A. A prominent and persistent disturbance in mood that predominates in the clinical picture and is characterized by depressed mood ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "in all, or almost all, activities (Criterion A) that is due to the direct physiological effects of a substance (e.g., a drug of abuse, a medication, or a toxin exposure) (Criterion B). In order to mee...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "symptoms with use of a prescribed medication, but most reports on this topic involve retrospective series of individuals entering treatment, or participants in large cross-sectional studies. More stud...",
+      "word_count": 834
+    }
+  ],
+  "html_page": "Embedding/Depressive_Disorders_out/Substance_Medication_Induced_Depressive_Disorder.html"
+}

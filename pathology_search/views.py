@@ -114,6 +114,8 @@ def search(request):
         medecin_id = data.get('medecin_id')  # Récupérer l'ID du médecin
         historical_symptoms = data.get('historical_symptoms', [])  # 🆕 Symptômes historiques
         
+        embedding_model = data.get('embedding_model', 'openai-ada')  # 🆕 Modèle d'embedding choisi
+        
         if not query:
             return JsonResponse({
                 'success': False,
@@ -154,84 +156,179 @@ def search(request):
             return symptom_text
         
         # 🆕 Récupérer automatiquement TOUS les antécédents du patient depuis la base de données
+        # DÉSACTIVÉ: L'enrichissement avec les antécédents est désactivé temporairement
+        # TODO: Réactiver plus tard si nécessaire
         all_historical_symptoms = []
-        if patient_id:
-            try:
-                from .models import Patient, Consultation
-                patient = Patient.objects.get(id=patient_id)
-                consultations = Consultation.objects.filter(patient=patient).order_by('-date_consultation')
-                
-                # Collecter TOUS les symptômes/critères de toutes les consultations
-                for consultation in consultations:
-                    if consultation.criteres_valides:
-                        for key, value in consultation.criteres_valides.items():
-                            # Ignorer les métadonnées
-                            if key == '_metadata':
-                                continue
-                            # Extraire les symptômes selon le type de valeur
-                            if isinstance(value, list):
-                                # Si c'est une liste, ajouter tous les éléments non vides
-                                for item in value:
-                                    cleaned = clean_and_validate_symptom(item)
-                                    if cleaned:
-                                        all_historical_symptoms.append(cleaned)
-                            elif isinstance(value, dict):
-                                # Si c'est un dictionnaire, extraire les valeurs
-                                for sub_key, sub_value in value.items():
-                                    cleaned = clean_and_validate_symptom(sub_value)
-                                    if cleaned:
-                                        all_historical_symptoms.append(cleaned)
-                            else:
-                                cleaned = clean_and_validate_symptom(value)
-                                if cleaned:
-                                    all_historical_symptoms.append(cleaned)
-                        
-                        # Aussi extraire la description clinique comme contexte (si valide)
-                        if consultation.description_clinique:
-                            cleaned = clean_and_validate_symptom(consultation.description_clinique)
-                            if cleaned:
-                                all_historical_symptoms.append(cleaned)
-                
-                # Dédupliquer les symptômes
-                all_historical_symptoms = list(set(all_historical_symptoms))
-                
-                # Si des symptômes ont été envoyés depuis le frontend, les fusionner (après nettoyage)
-                if historical_symptoms:
-                    cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
-                    cleaned_historical = [s for s in cleaned_historical if s]  # Enlever les None
-                    all_historical_symptoms.extend(cleaned_historical)
-                    all_historical_symptoms = list(set(all_historical_symptoms))
-                
-                # Sauvegarder dans la session
-                request.session['patient_historical_symptoms'] = all_historical_symptoms
-                print(f"📊 {len(all_historical_symptoms)} antécédents récupérés automatiquement depuis la base de données (après nettoyage)")
-            except Exception as e:
-                print(f"⚠️ Erreur lors de la récupération de l'historique: {e}")
-                # Utiliser les symptômes envoyés depuis le frontend si disponibles (après nettoyage)
-                if historical_symptoms:
-                    cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
-                    all_historical_symptoms = [s for s in cleaned_historical if s]
-                    request.session['patient_historical_symptoms'] = all_historical_symptoms
-        elif historical_symptoms:
-            # Si pas de patient_id mais des symptômes envoyés (après nettoyage)
-            cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
-            all_historical_symptoms = [s for s in cleaned_historical if s]
-            request.session['patient_historical_symptoms'] = all_historical_symptoms
+        # Code commenté pour désactiver la récupération des antécédents
+        # if patient_id:
+        #     try:
+        #         from .models import Patient, Consultation
+        #         patient = Patient.objects.get(id=patient_id)
+        #         consultations = Consultation.objects.filter(patient=patient).order_by('-date_consultation')
+        #         
+        #         # Collecter TOUS les symptômes/critères de toutes les consultations
+        #         for consultation in consultations:
+        #             if consultation.criteres_valides:
+        #                 for key, value in consultation.criteres_valides.items():
+        #                     # Ignorer les métadonnées
+        #                     if key == '_metadata':
+        #                         continue
+        #                     # Extraire les symptômes selon le type de valeur
+        #                     if isinstance(value, list):
+        #                         # Si c'est une liste, ajouter tous les éléments non vides
+        #                         for item in value:
+        #                             cleaned = clean_and_validate_symptom(item)
+        #                             if cleaned:
+        #                                 all_historical_symptoms.append(cleaned)
+        #                     elif isinstance(value, dict):
+        #                         # Si c'est un dictionnaire, extraire les valeurs
+        #                         for sub_key, sub_value in value.items():
+        #                             cleaned = clean_and_validate_symptom(sub_value)
+        #                             if cleaned:
+        #                                 all_historical_symptoms.append(cleaned)
+        #                     else:
+        #                         cleaned = clean_and_validate_symptom(value)
+        #                         if cleaned:
+        #                             all_historical_symptoms.append(cleaned)
+        #                 
+        #                 # Aussi extraire la description clinique comme contexte (si valide)
+        #                 if consultation.description_clinique:
+        #                     cleaned = clean_and_validate_symptom(consultation.description_clinique)
+        #                     if cleaned:
+        #                         all_historical_symptoms.append(cleaned)
+        #         
+        #         # Dédupliquer les symptômes
+        #         all_historical_symptoms = list(set(all_historical_symptoms))
+        #         
+        #         # Si des symptômes ont été envoyés depuis le frontend, les fusionner (après nettoyage)
+        #         if historical_symptoms:
+        #             cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
+        #             cleaned_historical = [s for s in cleaned_historical if s]  # Enlever les None
+        #             all_historical_symptoms.extend(cleaned_historical)
+        #             all_historical_symptoms = list(set(all_historical_symptoms))
+        #         
+        #         # Sauvegarder dans la session
+        #         request.session['patient_historical_symptoms'] = all_historical_symptoms
+        #         print(f"📊 {len(all_historical_symptoms)} antécédents récupérés automatiquement depuis la base de données (après nettoyage)")
+        #     except Exception as e:
+        #         print(f"⚠️ Erreur lors de la récupération de l'historique: {e}")
+        #         # Utiliser les symptômes envoyés depuis le frontend si disponibles (après nettoyage)
+        #         if historical_symptoms:
+        #             cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
+        #             all_historical_symptoms = [s for s in cleaned_historical if s]
+        #             request.session['patient_historical_symptoms'] = all_historical_symptoms
+        # elif historical_symptoms:
+        #     # Si pas de patient_id mais des symptômes envoyés (après nettoyage)
+        #     cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
+        #     all_historical_symptoms = [s for s in cleaned_historical if s]
+        #     request.session['patient_historical_symptoms'] = all_historical_symptoms
         
         request.session.modified = True
         
-        # 🆕 ÉTAPE 1: ENRICHIR LA REQUÊTE AVEC TOUS LES ANTÉCÉDENTS DU PATIENT
-        enriched_query = query
-        if all_historical_symptoms and len(all_historical_symptoms) > 0:
-            # Inclure TOUS les antécédents (pas de limite)
-            symptoms_text = ', '.join(all_historical_symptoms)
-            enriched_query = f"{query}. Antécédents complets du patient: {symptoms_text}"
-            print(f"🔍 Requête enrichie avec {len(all_historical_symptoms)} antécédents: {enriched_query[:200]}...")
+        # 🆕 ÉTAPE 1: ENRICHIR LA REQUÊTE AVEC LES ANTÉCÉDENTS DU PATIENT (DÉSACTIVÉ TEMPORAIREMENT)
+        # Code commenté pour désactiver l'enrichissement avec les antécédents
+        # TODO: Réactiver plus tard si nécessaire
+        # enriched_query = query
+        # if all_historical_symptoms and len(all_historical_symptoms) > 0:
+        #     # 🆕 Limiter à 10 antécédents les plus pertinents pour éviter de diluer la requête
+        #     # Les antécédents sont déjà triés par ordre de pertinence (les plus récents en premier)
+        #     limited_symptoms = all_historical_symptoms[:10]
+        #     symptoms_text = ', '.join(limited_symptoms)
+        #     enriched_query = f"{query}. Antécédents pertinents: {symptoms_text}"
+        #     if len(all_historical_symptoms) > 10:
+        #         print(f"🔍 Requête enrichie avec {len(limited_symptoms)} antécédents (sur {len(all_historical_symptoms)} disponibles): {enriched_query[:200]}...")
+        #     else:
+        #         print(f"🔍 Requête enrichie avec {len(all_historical_symptoms)} antécédents: {enriched_query[:200]}...")
         
-        # ÉTAPE 2: Valider la requête ORIGINALE avec GPT-4o (pas la requête enrichie)
-        # Pour la validation, on utilise toujours OpenAI (ChatGPT)
-        service_validation = PathologySearchService(model='chatgpt-5.1')
-        validation_result = service_validation.validate_medical_query(query)
+        # 🆕 Utiliser la requête originale sans enrichissement
+        enriched_query = query
+        
+        # ÉTAPE 2: Valider la requête ORIGINALE avec GPT-4o
+        # Pour la validation, on utilise toujours OpenAI (ChatGPT) - PAS besoin d'embeddings
+        # Créer un client OpenAI directement pour la validation (sans initialiser les embeddings)
+        from openai import OpenAI
+        from django.conf import settings
+        validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+        
+        # Validation simple avec mots-clés médicaux
+        query_lower = query.lower().strip()
+        medical_keywords = [
+            'alcool', 'alcoolique', 'alcoolisme', 'dépendance', 'addiction',
+            'drogue', 'cannabis', 'cocaïne', 'héroïne', 'opiacés',
+            'anxiété', 'anxieux', 'peur', 'panique', 'stress', 'phobie',
+            'dépression', 'déprimé', 'triste', 'suicide', 'humeur',
+            'bipolaire', 'manie', 'maniaque',
+            'schizophrénie', 'psychose', 'hallucination', 'délire',
+            'trouble', 'syndrome', 'maladie', 'pathologie', 'symptôme',
+            'douleur', 'fatigue', 'insomnie', 'sommeil',
+            'manger', 'appétit', 'poids', 'boulimie', 'anorexie',
+            'mémoire', 'concentration', 'attention', 'hyperactif', 'tdah',
+            'toc', 'obsession', 'compulsion',
+            'trauma', 'ptsd', 'stress post-traumatique',
+            'personnalité', 'bordeline', 'limite', 'antisocial',
+            'sexuel', 'sexuelle', 'libido', 'érection', 'éjaculation',
+            'enfant', 'adolescent', 'adulte', 'femme', 'homme',
+            'patient', 'patiente', 'sujet', 'cas',
+            'diagnostic', 'traitement', 'médicament', 'thérapie'
+        ]
+        
+        # Validation préalable simple
+        if len(query.split()) < 5 and any(keyword in query_lower for keyword in medical_keywords):
+            validation_result = {'is_valid': True, 'reason': 'Terme médical détecté'}
+        else:
+            # Validation avec GPT-4o
+            try:
+                # json et re sont déjà importés au niveau du module, pas besoin de les réimporter
+                prompt = f"""Tu es un validateur médical EXPERT. Analyse la requête suivante et détermine si elle contient un réel contenu médical.
+
+Requête: "{query}"
+
+RÈGLE PRINCIPALE: SOIS TRÈS PERMISSIF ! Accepte TOUTE description qui mentionne un problème de santé, un comportement, un symptôme ou une condition médicale, même de manière simple ou informelle.
+
+ACCEPTE (is_valid = true) si la requête:
+- Mentionne des symptômes, troubles, comportements ou conditions médicales (même vagues)
+- Décrit un état psychologique ou physique problématique
+- Raconte une histoire de patient ou un cas clinique
+- Pose une question sur une maladie ou un traitement
+- Contient des mots-clés médicaux ou psychologiques
+
+REFUSE (is_valid = false) UNIQUEMENT si la requête est:
+- Totalement incohérente ou vide de sens (gibberish)
+- Clairement du spam ou du contenu malveillant
+- Une demande de code informatique, de recette de cuisine, ou autre sujet 100% non médical
+- Une simple salutation sans suite ("bonjour", "salut")
+
+Réponds UNIQUEMENT au format JSON:
+{{
+    "is_valid": true/false,
+    "reason": "Explication très brève (1 phrase)"
+}}
+"""
+                response = validation_client.chat.completions.create(
+                    model="gpt-4o",
+                    messages=[
+                        {"role": "system", "content": "Tu es un assistant de validation strict qui répond uniquement en JSON."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0,
+                    response_format={"type": "json_object"}
+                )
+                
+                result_text = response.choices[0].message.content
+                json_match = re.search(r'\{[^}]*"is_valid"[^}]*\}', result_text)
+                if json_match:
+                    result_text = json_match.group(0)
+                
+                result = json.loads(result_text)
+                validation_result = {
+                    'is_valid': result.get('is_valid', False),
+                    'reason': result.get('reason', 'Requête invalide')
+                }
+                print(f"✅ Validation result: is_valid={validation_result['is_valid']}, reason={validation_result['reason']}")
+            except Exception as e:
+                print(f"⚠️ Erreur lors de la validation médicale: {e}")
+                # En cas d'erreur, on est permissif pour ne pas bloquer l'utilisateur
+                validation_result = {'is_valid': True, 'reason': 'Erreur de validation (fallback)'}
         
         if not validation_result['is_valid']:
             return JsonResponse({
@@ -241,11 +338,11 @@ def search(request):
                 'reason': validation_result['reason']
             })
         
-        # ÉTAPE 3: Effectuer la recherche avec la REQUÊTE ENRICHIE
+        # ÉTAPE 3: Effectuer la recherche avec la REQUÊTE ORIGINALE (sans enrichissement)
         # Toujours utiliser OpenAI pour les embeddings (similarité)
-        service = PathologySearchService(model='chatgpt-5.1')
+        service = PathologySearchService(model='chatgpt-5.1', embedding_model_type=embedding_model)
         search_results = service.find_best_match(
-            query=enriched_query,  # 🆕 Utiliser la requête enrichie
+            query=enriched_query,  # Utiliser la requête originale (sans antécédents)
             top_k=top_k,
             aggregation=aggregation
         )
@@ -1057,23 +1154,70 @@ def validate_results(request):
     
     print(f"📄 Résultat actuel: {current_result.get('file_name', 'N/A')}")
     print(f"🏁 Est dernier: {is_last}")
+    print(f"🔍 DEBUG - current_result keys: {list(current_result.keys())}")
+    print(f"🔍 DEBUG - html_page dans résultat: {current_result.get('html_page', 'VIDE')}")
     
     # Charger le contenu HTML de la pathologie
     html_path = current_result.get('html_page', '')
     html_content = ''
     pathology_info = {}
+    
+    # 🆕 Si html_page est vide, essayer de le construire depuis file_name
+    if not html_path and current_result.get('file_name'):
+        # Essayer de construire le chemin HTML depuis le nom du fichier
+        file_name = current_result.get('file_name', '').replace('.txt', '')
+        # Chercher dans les métadonnées JSON pour trouver le html_page
+        try:
+            from pathlib import Path
+            # json est déjà importé au niveau du module, pas besoin de le réimporter
+            # Chercher tous les fichiers JSON dans le dossier embeddings
+            embeddings_folder = Path(settings.EMBEDDINGS_FOLDER)
+            for json_file in embeddings_folder.rglob('*.json'):
+                try:
+                    with open(json_file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        source_file = data.get('source_file', '')
+                        if file_name in source_file or source_file.endswith(file_name + '.txt'):
+                            html_page = data.get('html_page', '')
+                            if html_page:
+                                html_path = html_page
+                                print(f"✅ html_page trouvé depuis JSON: {html_path}")
+                                break
+                except:
+                    continue
+        except Exception as e:
+            print(f"⚠️ Erreur lors de la recherche de html_page: {e}")
+    
     if html_path:
         try:
             from pathlib import Path
-            full_path = Path(settings.EMBEDDINGS_FOLDER) / html_path
+            # 🆕 Nettoyer html_path pour enlever le préfixe Embedding/ s'il est présent
+            html_path_clean = html_path.lstrip('/')
+            # Si html_path commence par EMBEDDINGS_FOLDER, l'enlever
+            if html_path_clean.startswith(settings.EMBEDDINGS_FOLDER + '/'):
+                html_path_clean = html_path_clean[len(settings.EMBEDDINGS_FOLDER) + 1:]
+            elif html_path_clean.startswith(settings.EMBEDDINGS_FOLDER + '\\'):
+                html_path_clean = html_path_clean[len(settings.EMBEDDINGS_FOLDER) + 1:]
+            
+            full_path = Path(settings.EMBEDDINGS_FOLDER) / html_path_clean
+            
+            print(f"🔍 DEBUG - html_path original: {html_path}")
+            print(f"🔍 DEBUG - html_path_clean: {html_path_clean}")
+            print(f"🔍 DEBUG - full_path: {full_path}")
+            print(f"🔍 DEBUG - full_path existe: {full_path.exists()}")
+            print(f"🔍 DEBUG - EMBEDDINGS_FOLDER: {settings.EMBEDDINGS_FOLDER}")
             
             if full_path.exists():
                 # Lire le contenu HTML
                 with open(full_path, 'r', encoding='utf-8') as f:
                     html_content = f.read()
+                print(f"✅ HTML lu - Longueur: {len(html_content)} caractères")
                 
                 # Récupérer les informations de la pathologie depuis le JSON
                 json_path = full_path.with_suffix('.json')
+                print(f"🔍 DEBUG - json_path: {json_path}")
+                print(f"🔍 DEBUG - json_path existe: {json_path.exists()}")
+                
                 if json_path.exists():
                     with open(json_path, 'r', encoding='utf-8') as f:
                         data = json.load(f)
@@ -1085,10 +1229,26 @@ def validate_results(request):
                             'html_page': html_path,
                             'similarity': current_result.get('similarity', 0)
                         }
+                    print(f"✅ Pathologie info: {pathology_info.get('name', 'N/A')}")
+                else:
+                    print(f"⚠️ JSON non trouvé: {json_path}")
+                    # Utiliser les informations du résultat actuel si JSON non trouvé
+                    pathology_info = {
+                        'name': clean_pathology_name(current_result.get('file_name', '').replace('.txt', '')),
+                        'location': current_result.get('location', ''),
+                        'html_page': html_path,
+                        'similarity': current_result.get('similarity', 0)
+                    }
                 print(f"✅ HTML chargé: {html_path}")
+            else:
+                print(f"❌ Fichier HTML non trouvé: {full_path}")
         except Exception as e:
             print(f"❌ Erreur chargement HTML: {e}")
+            import traceback
+            print(f"Traceback: {traceback.format_exc()}")
             pass
+    else:
+        print(f"⚠️ html_path est vide - impossible de charger le HTML")
     
     # Préparer le contexte pour le template
     context = {
@@ -1211,7 +1371,11 @@ def validate_action(request):
             from .services import PathologySearchService
             
             try:
-                service = PathologySearchService(model=selected_model)
+                # Pour la génération de plan de traitement, on n'a pas besoin d'embeddings
+                # Mais on doit quand même initialiser le service avec un embedding_model_type
+                # On utilise 'openai-ada' par défaut car on ne fait pas de recherche ici
+                # (les embeddings ne sont utilisés que pour la recherche, pas pour la génération)
+                service = PathologySearchService(model=selected_model, embedding_model_type='openai-ada')
                 
                 # 🆕 Récupérer les symptômes historiques depuis la session
                 historical_symptoms = request.session.get('patient_historical_symptoms', [])

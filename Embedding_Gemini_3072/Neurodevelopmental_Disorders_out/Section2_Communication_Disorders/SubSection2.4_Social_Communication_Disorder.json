@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.4_Social_Communication_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2.4_Social_Communication_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.4_Social_Communication_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Social (Pragmatic) Communication Disorder\nDiagnostic Criteria\nA. Persistent difficulties in the soci"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Social_Communication_Disorder.html"
+}

@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Sedative-Hypnotic-or-Anxiolytic-Use-Disorder > Sedative, Hypnotic, or Anxiolytic Use Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Use Disorder Diagnostic Criteria A. A problematic pattern of sedat"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "glutethimide, methaqualone, propofol). This class of substances includes most prescription sleeping "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "(e.g., at parties) can lead to daily use and high levels of tolerance. Once this occurs, an increasi"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "like alcohol, may potentially contribute to overly aggressive behavior and arguments or fights, with"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative_Hypnotic_or_Anxiolytic_Intoxication.html"
+}

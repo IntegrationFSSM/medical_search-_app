@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan07_Restless Legs Syndrome.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan07_Restless Legs Syndrome.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Restless Legs Syndrome Diagnostic Criteria A. An urge to move the legs, usually accompanied by or in response to uncomfortable and unpleasant sensations in the legs, characterized by all of the follow...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "Risk and Prognostic Factors Genetic and physiological. Predisposing factors include female sex, advancing age, genetic risk variants, and family history of RLS. Precipitating factors such as iron defi...",
+      "word_count": 862
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Restless_Legs_Syndrome.html"
+}

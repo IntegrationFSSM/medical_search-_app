@@ -1,0 +1,49 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection3_Posttraumatic_Stress_Disorder.txt",
+  "original_path": "Trauma_Stress_Disorders_out/SubSection3_Posttraumatic_Stress_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Posttraumatic Stress Disorder Diagnostic Criteria Posttraumatic Stress Disorder in Individuals Older Than 6 Years Note: The following criteria apply to adults, adolescents, and children older than 6 y...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "sexual violence in one (or more) of the following ways: 1. Directly experiencing the traumatic event(s). 2. Witnessing, in person, the event(s) as it occurred to others, especially primary caregivers....",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "being taken hostage, terrorist attack, torture, incarceration as a prisoner of war, natural or human-made disasters, and severe motor vehicle accidents. Sexual trauma includes, but is not limited to, ...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "a hurricane, seeing someone who resembles one’s perpetrator). The triggering cue could also be a physical sensation (e.g., dizziness for survivors of head trauma, rapid heartbeat for a previously trau...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "world around them). This can be indicated by using the “with dissociative symptoms” specifier. Associated Features Developmental regression, such as loss of language in young children, may occur. Audi...",
+      "word_count": 1000
+    },
+    {
+      "id": 5,
+      "text_preview": "and adolescents can interfere with peer relationships and school behavior. Reckless behavior may lead to accidental injury to self or others, thrill seeking, or high-risk behaviors. In older individua...",
+      "word_count": 1000
+    },
+    {
+      "id": 6,
+      "text_preview": "self. In many populations around the world, there are cultural concepts of distress that resemble PTSD and are characterized by diverse manifestations of psychological distress attributed to frighteni...",
+      "word_count": 1000
+    },
+    {
+      "id": 7,
+      "text_preview": "of PTSD, rather than a personality disorder, in which such difficulties would be expected independently of any traumatic exposure. 313 Dissociative disorders. Dissociative amnesia, dissociative identi...",
+      "word_count": 458
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Posttraumatic_Stress_Disorder.html"
+}

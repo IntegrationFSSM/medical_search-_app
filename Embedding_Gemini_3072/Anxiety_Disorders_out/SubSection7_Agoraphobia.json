@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection7_Agoraphobia.txt",
+  "hierarchy": {
+    "file_name": "SubSection7_Agoraphobia.txt",
+    "location": "Anxiety_Disorders_out > SubSection7_Agoraphobia"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Agoraphobia Diagnostic Criteria A. Marked fear or anxiety about two (or more) of the following five "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "contexts (e.g., it is socioculturally appropriate for orthodox Muslim women in certain parts of the "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "Diagnostic Issues Women have different patterns of comorbid disorders than men. Consistent with gend"
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/agoraphobia.html"
+}

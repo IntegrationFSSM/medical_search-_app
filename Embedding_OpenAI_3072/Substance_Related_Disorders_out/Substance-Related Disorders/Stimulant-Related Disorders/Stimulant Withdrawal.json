@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Stimulant Withdrawal\n Diagnostic Criteria\n A. Cessation of (or reduction in) prolonged amphetamine-type substance, cocaine,\n or other stimulant use.\n B. Dysphoric mood and two (or more) of the followi...",
+      "word_count": 591
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant_Intoxication.html"
+}

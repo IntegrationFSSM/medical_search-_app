@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Use Disorder.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Use Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Other (or Unknown) Substance Use Disorder Diagnostic Criteria A. A problematic pattern of use of an intoxicating substance not able to be classified within the alcohol; caffeine; cannabis; hallucinoge...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "unknown) substance category. Unknown substance–related disorders are associated with unidentified substances, such as intoxications in which the individual cannot identify the ingested drug, or substa...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "impaired control over the use of the substance, social impairment attributable to use of the substance, risky use of the substance (e.g., continued use despite medical complications), and pharmacologi...",
+      "word_count": 169
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Intoxication.html"
+}

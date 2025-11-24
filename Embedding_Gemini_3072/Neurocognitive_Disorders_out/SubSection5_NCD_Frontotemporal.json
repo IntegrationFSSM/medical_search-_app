@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection5_NCD_Frontotemporal.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_NCD_Frontotemporal.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection5_NCD_Frontotemporal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Frontotemporal Neurocognitive Disorder Diagnostic Criteria A. The criteria are met for"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "with major or mild frontotemporal NCD have a family history of early-onset NCD, and approximately 10"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Frontotemporal.html"
+}

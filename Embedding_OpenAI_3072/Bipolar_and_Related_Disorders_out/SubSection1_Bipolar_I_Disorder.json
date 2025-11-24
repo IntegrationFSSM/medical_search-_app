@@ -1,0 +1,44 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection1_Bipolar_I_Disorder.txt",
+  "original_path": "Bipolar_and_Related_Disorders_out/SubSection1_Bipolar_I_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Bipolar I Disorder Diagnostic Criteria For a diagnosis of bipolar I disorder, it is necessary to meet the following criteria for a manic episode. The manic episode may have been preceded by and may be...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "day (observable by others, not merely subjective feelings of restlessness or being slowed down). 6. Fatigue or loss of energy nearly every day. 7. Feelings of worthlessness or excessive or inappropria...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "shifts in mood over brief periods of time may occur and are referred to as lability (i.e., the alternation among euphoria, dysphoria, and irritability). In children, happiness, silliness, and “goofine...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "The individual may purchase many unneeded items without the money to pay for them and, in some cases, give them away. Sexual indiscretions may include infidelity or indiscriminate sexual encounters wi...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "and 47.3% without polarity predominance. The course of bipolar I disorder is highly heterogeneous. Some patterns have been noted across episodes (e.g., a manic episode with psychotic features may be a...",
+      "word_count": 1000
+    },
+    {
+      "id": 5,
+      "text_preview": "with both disorders are at greater risk for suicide attempt and suicide death. Functional Consequences of Bipolar I Disorder Approximately 30% of individuals with bipolar disorder show severe impairme...",
+      "word_count": 1000
+    },
+    {
+      "id": 6,
+      "text_preview": "common in both conditions. In order to make a diagnosis of bipolar I disorder, symptoms of mood lability and impulsivity must represent a distinct episode of illness, or there must be a noticeable inc...",
+      "word_count": 290
+    }
+  ],
+  "html_page": "Embedding/Bipolar_and_Related_Disorders_out/Bipolar_I_Disorder.html"
+}

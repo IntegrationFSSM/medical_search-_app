@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection12_NCD_Parkinson.txt",
+  "hierarchy": {
+    "file_name": "SubSection12_NCD_Parkinson.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection12_NCD_Parkinson"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Parkinson’s Disease Diagnostic Criteria A. The criteria"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "lateral sclerosis. An association has been found with processing and eating fadang made with cycad s"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Parkinson.html"
+}

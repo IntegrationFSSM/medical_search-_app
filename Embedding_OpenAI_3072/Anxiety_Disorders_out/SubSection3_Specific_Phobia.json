@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection3_Specific_Phobia.txt",
+  "original_path": "Anxiety_Disorders_out/SubSection3_Specific_Phobia.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Specific Phobia Diagnostic Criteria A. Marked fear or anxiety about a specific object or situation (e.g., flying, heights, animals, receiving an injection, seeing blood). Note: In children, the fear o...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "instances, avoidance behaviors or ongoing refusal to engage in activities that would involve exposure to the phobic object or situation (e.g., repeated refusal to accept offers for work-related travel...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "a risk factor for major neurocognitive disorder. Although most specific phobias develop in childhood and adolescence, it is possible for a specific phobia to develop at any age, often as the result of...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "harming others), and if other diagnostic criteria for obsessive-compulsive disorder are met, then obsessive-compulsive disorder should be diagnosed. Trauma- and stressor-related disorders. Eating diso...",
+      "word_count": 232
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/specific-phobia.html"
+}

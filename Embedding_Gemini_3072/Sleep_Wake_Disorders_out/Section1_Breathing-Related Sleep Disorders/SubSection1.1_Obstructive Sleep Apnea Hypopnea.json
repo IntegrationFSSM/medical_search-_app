@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+  "hierarchy": {
+    "file_name": "SubSection1.1_Obstructive Sleep Apnea Hypopnea.txt",
+    "location": "Sleep_Wake_Disorders_out > Section1_Breathing-Related Sleep Disorders > SubSection1.1_Obstructive Sleep Apnea Hypopnea"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Obstructive Sleep Apnea Hypopnea Diagnostic Criteria A. Either (1) or (2): 1. Evidence by polysomnog"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "this disorder. In the United States, 13% of men and 6% of women have polysomnographic evidence of 15"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "a strong genetic basis, as evidenced by the significant familial aggregation of the apnea hypopnea i"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "or oxygen desaturation indicative of obstructive apnea. Nevertheless, nocturnal asthma and obstructi"
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Obstructive_Sleep_Apnea_Hypopnea.html"
+}

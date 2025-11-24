@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection2_Exhibitionistic_Disorder.txt",
+  "original_path": "Paraphilic_Disorders_out/SubSection2_Exhibitionistic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Exhibitionistic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and intense sexual arousal from the exposure of one’s genitals to an unsuspecting person, as manifested by...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "or impairment from the disorder may change over time, as may a number of factors that may potentially affect the course of the disorder, such as psychiatric morbidity, hypersexuality, and sexual impul...",
+      "word_count": 423
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Exhibitionistic_Disorder.html"
+}

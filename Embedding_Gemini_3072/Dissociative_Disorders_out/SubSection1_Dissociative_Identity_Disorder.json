@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Dissociative_Disorders_out/SubSection1_Dissociative_Identity_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Dissociative_Identity_Disorder.txt",
+    "location": "Dissociative_Disorders_out > SubSection1_Dissociative_Identity_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Dissociative Identity Disorder Diagnostic Criteria A. Disruption of identity characterized by two or"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "cannot remember his or her own name, or may fail to recognize spouse, children, or close friends). M"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "dysfunctional family dynamics (e.g., overcontrolling parenting, insecure attachment, emotional abuse"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "are associated with activation of specific identity states. Elevated or depressed mood may be experi"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "their symptoms, deny the diagnosis, underreport their symptoms, and display minimization and avoidan"
+    }
+  ],
+  "html_page": "Embedding/Dissociative_Disorders_out/Dissociative_Identity_Disorder.html"
+}

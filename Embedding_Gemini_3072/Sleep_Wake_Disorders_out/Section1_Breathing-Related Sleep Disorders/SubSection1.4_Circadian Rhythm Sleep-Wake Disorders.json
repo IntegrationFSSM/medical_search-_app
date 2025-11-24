@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+  "hierarchy": {
+    "file_name": "SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+    "location": "Sleep_Wake_Disorders_out > Section1_Breathing-Related Sleep Disorders > SubSection1.4_Circadian Rhythm Sleep-Wake Disorders"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Circadian Rhythm Sleep-Wake Disorders Diagnostic Criteria A. A persistent or recurrent pattern of sl"
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Circadian_Rhythm_Sleep_Wake_Disorders.html"
+}

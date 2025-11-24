@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection9_NCD_Substance_Medication.txt",
+  "hierarchy": {
+    "file_name": "SubSection9_NCD_Substance_Medication.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection9_NCD_Substance_Medication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Substance/Medication-Induced Major or Mild\nNeurocognitive Disorder.” For unspecified mild neurocogni"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Substance_Medication.html"
+}

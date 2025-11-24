@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection1_Pica.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Pica.txt",
+    "location": "Feeding_Eating_Disorders_out > SubSection1_Pica"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Pica Diagnostic Criteria A. Persistent eating of nonnutritive, nonfood substances over a period of a"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "weight control, anorexia nervosa should be the primary diagnosis. Factitious disorder. Some individu"
+    }
+  ],
+  "html_page": "Embedding/Feeding_Eating_Disorders_out/Pica.html"
+}

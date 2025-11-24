@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection14_NCD_Another_Medical_Condition.txt",
+  "hierarchy": {
+    "file_name": "SubSection14_NCD_Another_Medical_Condition.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection14_NCD_Another_Medical_Condition"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": " Major or Mild Neurocognitive Disorder Due to Another\n Medical Condition\n Diagnostic Criteria\n A. Th"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Another_Medical_Condition.html"
+}

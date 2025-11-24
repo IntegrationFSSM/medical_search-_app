@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection1_Delirium.txt",
+  "original_path": "Neurocognitive_Disorders_out/SubSection1_Delirium.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Delirium Diagnostic Criteria A. A disturbance in attention (i.e., reduced ability to direct, focus, sustain, and shift attention) accompanied by reduced awareness of the environment. B. The disturbanc...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "into any of the classes, taken as prescribed). F05 Delirium due to another medical condition: There is evidence from the history, physical examination, or laboratory findings that the disturbance is a...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "during the course of the day, often with worsening in the evening and night when external orienting stimuli decrease (Criterion B). There is evidence from the history, physical examination, or laborat...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "sensory impairment (e.g., vision/hearing), increasing age, illness severity or comorbidity, infection, depression, history of stroke, and history of alcohol use. Both major and mild NCDs can increase ...",
+      "word_count": 513
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/Delirium.html"
+}

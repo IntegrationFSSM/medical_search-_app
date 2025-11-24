@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection2_Female_Orgasmic_Disorder.txt",
+  "original_path": "Sexual_Dysfunctions_out/SubSection2_Female_Orgasmic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Female Orgasmic Disorder Diagnostic Criteria A. Presence of either of the following symptoms and experienced on almost all or all (approximately 75%–100%) occasions of sexual activity (in identified s...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "a more variable pattern in age at first orgasm than do men, and women’s reports of having experienced orgasm increase with age. Many women learn to experience orgasm as they experience a wide variety ...",
+      "word_count": 785
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Female_Orgasmic_Disorder.html"
+}

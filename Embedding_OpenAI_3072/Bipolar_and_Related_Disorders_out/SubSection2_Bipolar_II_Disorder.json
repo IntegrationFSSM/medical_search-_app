@@ -1,0 +1,39 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection2_Bipolar_II_Disorder.txt",
+  "original_path": "Bipolar_and_Related_Disorders_out/SubSection2_Bipolar_II_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Bipolar II Disorder Diagnostic Criteria For a diagnosis of bipolar II disorder, it is necessary to meet the following criteria for a current or past hypomanic episode and the following criteria for a ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "or the unpredictability caused by frequent alternation between periods of depression and hypomania causes clinically significant distress or impairment in social, occupational, or other important area...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "significant impairment. Instead, the impairment results from the major depressive episodes or from a persistent pattern of unpredictable mood changes and fluctuating, unreliable interpersonal or occup...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "altered mood). Nonepisodic irritability in youth is associated with an elevated risk for anxiety disorders and major depressive disorder, but not bipolar disorder, in adulthood. Persistently irritable...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "tests. Cognitive impairments associated with bipolar II disorder may contribute to vocational difficulties. Prolonged unemployment in individuals with bipolar disorder is associated with more episodes...",
+      "word_count": 1000
+    },
+    {
+      "id": 5,
+      "text_preview": "comorbid anxiety disorder does not differ between bipolar I and bipolar II disorders but is associated with a worse course of illness. Children and adolescents with bipolar II disorder have a higher r...",
+      "word_count": 311
+    }
+  ],
+  "html_page": "Embedding/Bipolar_and_Related_Disorders_out/Bipolar_II_Disorder.html"
+}

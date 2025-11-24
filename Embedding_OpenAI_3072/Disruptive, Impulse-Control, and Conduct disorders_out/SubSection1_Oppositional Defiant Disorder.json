@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection1_Oppositional Defiant Disorder.txt",
+  "original_path": "Disruptive, Impulse-Control, and Conduct disorders_out/SubSection1_Oppositional Defiant Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Oppositional Defiant Disorder Diagnostic Criteria A. A pattern of angry/irritable mood, argumentative/defiant behavior, or vindictiveness lasting at least 6 months as evidenced by at least four sympto...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "if there was some combination of both. Whether or not the clinician can separate the relative contributions of potential causal factors should not influence whether the diagnosis is made. In the event...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "even greater levels of impairment than conduct disorder. Furthermore, oppositional defiant disorder includes problems of emotion dysregulation (i.e., angry and irritable mood) that are not included in...",
+      "word_count": 610
+    }
+  ],
+  "html_page": "Embedding/Disruptive, Impulse-Control, and Conduct disorders_out/Oppositional_Defiant_Disorder.html"
+}

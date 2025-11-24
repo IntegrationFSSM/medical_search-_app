@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.2_Speech_Sound_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2.2_Speech_Sound_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.2_Speech_Sound_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Speech Sound Disorder\nDiagnostic Criteria\nA. Persistent difficulty with speech sound production that"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Speech_Sound_Disorder.html"
+}

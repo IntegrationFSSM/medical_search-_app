@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Intoxication.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Intoxication.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Intoxication\n Diagnostic Criteria\n A. Recent use of a sedative, hypnotic, or anxiolytic.\n B. Clinically significant maladaptive behavioral or psychological changes (e...",
+      "word_count": 856
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative_Hypnotic_or_Anxiolytic_Intoxication.html"
+}

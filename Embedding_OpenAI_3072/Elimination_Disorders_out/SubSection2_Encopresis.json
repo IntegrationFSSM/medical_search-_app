@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Elimination_Disorders_out/SubSection2_Encopresis.txt",
+  "original_path": "Elimination_Disorders_out/SubSection2_Encopresis.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Encopresis Diagnostic Criteria A. Repeated passage of feces into inappropriate places (e.g., clothing, floor), whether involuntary or intentional. B. At least one such event occurs each month for at l...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "seek health services for encopresis because of sociocultural reasons. For example, Turkish and Moroccan parents in the Netherlands may not report encopresis because of religious concerns about the imp...",
+      "word_count": 378
+    }
+  ],
+  "html_page": "Embedding/Elimination_Disorders_out/Encopresis.html"
+}

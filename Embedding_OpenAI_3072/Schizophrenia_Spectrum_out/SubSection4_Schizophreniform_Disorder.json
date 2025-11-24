@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection4_Schizophreniform_Disorder.txt",
+  "original_path": "Schizophrenia_Spectrum_out/SubSection4_Schizophreniform_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Schizophreniform Disorder Diagnostic Criteria A. Two (or more) of the following, each present for a significant portion of time during a 1-month period (or less if successfully treated). At least one ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "who recover from schizophreniform disorder have better functional outcomes. Differential Diagnosis A wide variety of mental disorders and medical conditions can manifest with psychotic symptoms that m...",
+      "word_count": 172
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Schizophreniform_Disorder.html"
+}

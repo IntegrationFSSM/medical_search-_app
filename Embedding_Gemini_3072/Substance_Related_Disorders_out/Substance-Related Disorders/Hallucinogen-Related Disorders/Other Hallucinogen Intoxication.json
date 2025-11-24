@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Other Hallucinogen Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Other Hallucinogen Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Other Hallucinogen Intoxication\nDiagnostic Criteria\n A. Recent use of a hallucinogen (other than phe"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html"
+}

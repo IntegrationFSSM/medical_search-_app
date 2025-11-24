@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.2_Central Sleep Apnea.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.2_Central Sleep Apnea.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Central Sleep Apnea Diagnostic Criteria A. Evidence by polysomnography of five or more central apneas per hour of sleep. B. The disorder is not better explained by another current sleep disorder. Spec...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "be present. Prevalence The prevalence of idiopathic central sleep apnea is unknown but thought to be rare. The prevalence of Cheyne-Stokes breathing is high in individuals with depressed cardiac ventr...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "methadone. Individuals taking these medications have a breathing-related sleep disorder that could contribute to sleep disturbances and symptoms such as sleepiness, 439 confusion, and depression. Whil...",
+      "word_count": 286
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Central_Sleep_Apnea.html"
+}

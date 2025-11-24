@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+  "original_path": "Schizophrenia_Spectrum_out/SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Psychotic Disorder Due to Another Medical Condition Diagnostic Criteria A. Prominent hallucinations or delusions. B. There is evidence from the history, physical examination, or laboratory findings th...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "age groups in Finland. Rates of psychosis also vary according to the underlying medical condition; conditions most commonly associated with psychosis include untreated endocrine and metabolic disorder...",
+      "word_count": 973
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Psychotic_Disorder_Due_to_Another_Medical_Condition.html"
+}

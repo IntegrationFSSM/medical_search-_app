@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section3_Cluster C Personality Disorders/SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3.3_Obsessive-Compulsive Personality Disorder.txt",
+    "location": "Personality_Disorders_out > Section3_Cluster C Personality Disorders > SubSection3.3_Obsessive-Compulsive Personality Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Obsessive-Compulsive Personality Disorder F60.5 Diagnostic Criteria A pervasive pattern of preoccupa"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "5). Often these individuals will admit to being “pack rats.” They regard discarding objects as waste"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "presence of true obsessions and compulsions in OCD. When criteria for both obsessive-compulsive pers"
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section3_Cluster C Personality Disorders/Obsessive_Compulsive_Personality_Disorder.html"
+}

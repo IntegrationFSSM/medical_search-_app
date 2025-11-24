@@ -1,0 +1,13 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/Description.txt",
+  "original_path": "Bipolar_and_Related_Disorders_out/Description.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Bipolar and related disorders are found between the chapters on schizophrenia\n spectrum and other psychotic disorders and depressive disorders in DSM-5-TR in recognition of\n their place as a bridge be...",
+      "word_count": 385
+    }
+  ]
+}

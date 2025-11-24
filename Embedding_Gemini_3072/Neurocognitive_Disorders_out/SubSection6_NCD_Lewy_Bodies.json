@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection6_NCD_Lewy_Bodies.txt",
+  "hierarchy": {
+    "file_name": "SubSection6_NCD_Lewy_Bodies.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection6_NCD_Lewy_Bodies"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder With Lewy Bodies Diagnostic Criteria A. The criteria are met f"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "and motor symptoms emerge. In NCDLB, the cognitive decline is manifested early in the course of illn"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Lewy_Bodies.html"
+}

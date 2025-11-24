@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection8_NCD_TBI.txt",
+  "original_path": "Neurocognitive_Disorders_out/SubSection8_NCD_TBI.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Traumatic Brain Injury Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. There is evidence of a traumatic brain inj...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "be supported by posttraumatic epilepsy with focal onset in a location that corresponds to the anatomy of a cognitive domain in which an individual demonstrates impairment (e.g., medial temporal lobe–o...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "studies (i.e., traumatic epidural or subdural hematoma, subarachnoid or intracerebral hemorrhage, cerebral contusions or laceration, diffuse axonal injury) and neurogenetic profile (e.g., APOE*E4 alle...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "frustration, tension and anxiety, affective lability). Other specified or 712 unspecified personality disorders may also occur as a result of symptoms such as disinhibition, apathy, suspiciousness, or...",
+      "word_count": 193
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_TBI.html"
+}

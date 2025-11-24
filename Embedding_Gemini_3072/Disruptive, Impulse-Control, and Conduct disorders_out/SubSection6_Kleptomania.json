@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection6_Kleptomania.txt",
+  "hierarchy": {
+    "file_name": "SubSection6_Kleptomania.txt",
+    "location": "Disruptive, Impulse-Control, and Conduct disorders_out > SubSection6_Kleptomania"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": " Diagnostic Criteria\n Kleptomania\n A. Recurrent failure to resist impulses to steal objects that are"
+    }
+  ],
+  "html_page": "Embedding/Disruptive, Impulse-Control, and Conduct disorders_out/Kleptomania.html"
+}

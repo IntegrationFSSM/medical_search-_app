@@ -1,0 +1,34 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan01_Insomnia Disorder.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan01_Insomnia Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Insomnia Disorder Diagnostic Criteria A. A predominant complaint of dissatisfaction with sleep quantity or quality, associated with one (or more) of the following symptoms: 1. Difficulty initiating sl...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "a role. Nonrestorative sleep, a complaint of poor sleep quality that does not leave the individual rested upon awakening despite adequate duration, is a common sleep complaint usually occurring in ass...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "and psychiatric populations are significantly higher than those in the general population, 413 especially among individuals with mood, anxiety, and substance use disorders. Forty to fifty percent of i...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "relatives (most commonly, the mother) with a history of insomnia. Heritability may be highest for insomnia disorder without comorbidities. The prevalence of insomnia is higher among monozygotic twins ...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "report sleep-onset insomnia only when they try to sleep at socially normal times, but they do not report difficulty falling asleep or staying asleep when their bed and rising times are delayed and coi...",
+      "word_count": 577
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Insomnia_Disorder.html"
+}

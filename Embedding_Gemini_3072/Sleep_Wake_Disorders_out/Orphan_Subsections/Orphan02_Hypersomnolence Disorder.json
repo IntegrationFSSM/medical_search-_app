@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan02_Hypersomnolence Disorder.txt",
+  "hierarchy": {
+    "file_name": "Orphan02_Hypersomnolence Disorder.txt",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan02_Hypersomnolence Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Hypersomnolence Disorder Diagnostic Criteria A. Self-reported excessive sleepiness (hypersomnolence)"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "sleep disorder clinics with complaints of daytime sleepiness are diagnosed as having hypersomnolence"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "often reveals obesity, a small airway, and large neck diameter. Hypertension is common, and some ind"
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Hypersomnolence_Disorder.html"
+}

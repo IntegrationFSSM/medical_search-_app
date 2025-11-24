@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section4_Other Personality Disorders/SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+  "original_path": "Personality_Disorders_out/Section4_Other Personality Disorders/SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Personality Change Due to Another Medical Condition Diagnostic Criteria A. A persistent personality disturbance that represents a change from the individual’s previous characteristic personality patte...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "if the personality change is judged to be a physiological consequence of the pathological process causing the neurocognitive disorder and if the personality change is a prominent part of the clinical ...",
+      "word_count": 220
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section4_Other Personality Disorders/Personality_Change_Due_to_Another_Medical_Condition.html"
+}

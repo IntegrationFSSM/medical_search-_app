@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection3_Female_Sexual_Interest_Arousal_Disorder.txt",
+  "original_path": "Sexual_Dysfunctions_out/SubSection3_Female_Sexual_Interest_Arousal_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Female Sexual Interest/Arousal Disorder Diagnostic Criteria A. Lack of, or significantly reduced, sexual interest/arousal, as manifested by at least three of the following: 1. Absent/reduced interest ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "as a result of significant interference in a woman’s life and well-being. If a lifelong lack of sexual desire is better explained by one’s self-identification as “asexual,” then a diagnosis of female ...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "Interest/Arousal Disorder Difficulties in sexual interest/arousal are often associated with decreased relationship satisfaction. Differential Diagnosis Nonsexual mental disorders. Nonsexual mental dis...",
+      "word_count": 447
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Female_Sexual_Interest_Arousal_Disorder.html"
+}

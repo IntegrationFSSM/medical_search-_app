@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection1_Somatic Symptom Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Somatic Symptom Disorder.txt",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection1_Somatic Symptom Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Somatic Symptom Disorder Diagnostic Criteria A. One or more somatic symptoms that are distressing or"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "disorder, individuals with somatic symptom disorder typically present to general medical health serv"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "distress” because somatic symptoms may have special meanings and shape patient-clinician interaction"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "appropriate to consider illness anxiety disorder. In functional neurological symptom Functional neur"
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Somatic_Symptom_Disorder.html"
+}

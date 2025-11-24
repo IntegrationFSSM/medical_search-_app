@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection5_Pyromania.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Pyromania.txt",
+    "location": "Disruptive, Impulse-Control, and Conduct disorders_out > SubSection5_Pyromania"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Pyromania\n Diagnostic Criteria\n F63.1\n A. Deliberate and purposeful fire setting on more than one oc"
+    }
+  ],
+  "html_page": "Embedding/Disruptive, Impulse-Control, and Conduct disorders_out/Pyromania.html"
+}

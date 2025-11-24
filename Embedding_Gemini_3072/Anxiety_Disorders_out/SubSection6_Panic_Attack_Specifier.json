@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection6_Panic_Attack_Specifier.txt",
+  "hierarchy": {
+    "file_name": "SubSection6_Panic_Attack_Specifier.txt",
+    "location": "Anxiety_Disorders_out > SubSection6_Panic_Attack_Specifier"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Panic Attack Specifier Note: Symptoms are presented for the purpose of identifying a panic attack; h"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "weaker autonomic response to emotional states relative to younger individuals. Older individuals may"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "supraventricular tachycardia, asthma, chronic obstructive pulmonary disease). Appropriate laboratory"
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/panic-attack-specifier.html"
+}

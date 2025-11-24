@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection2_Disinhibited_Social_Engagement_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Disinhibited_Social_Engagement_Disorder.txt",
+    "location": "Trauma_Stress_Disorders_out > SubSection2_Disinhibited_Social_Engagement_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Disinhibited Social Engagement Disorder Diagnostic Criteria A. A pattern of behavior in which a chil"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "majority of severely neglected children do not develop the disorder. The disorder has not been ident"
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Disinhibited_Social_Engagement_Disorder.html"
+}

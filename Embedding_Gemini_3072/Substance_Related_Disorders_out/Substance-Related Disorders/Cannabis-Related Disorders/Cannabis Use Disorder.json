@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Cannabis Use Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Cannabis-Related Disorders > Cannabis Use Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Cannabis Use Disorder Diagnostic Criteria A. A problematic pattern of cannabis use leading to clinic"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "plant material, 30%–40% in hashish, and 50% 55% in hash oil. During the past two decades, the potenc"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "lowest in Western Sub-Saharan Africa and highest in North America. According to age, the prevalence "
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "includes cannabis use disorder. Culture-Related Diagnostic Issues The acceptability of cannabis for "
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "(e.g., opioids or cocaine). Among adults seeking treatment for a cannabis use disorder, many (63%) r"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis_Intoxication.html"
+}

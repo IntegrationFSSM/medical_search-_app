@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Opioid Withdrawal Diagnostic Criteria A. Presence of either of the following: 1. Cessation of (or reduction in) opioid use that has been heavy and prolonged (i.e., several weeks or longer). 2. Adminis...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "in hallucinogen intoxication and Opioid-induced mental disorders. stimulant intoxication. However, other signs or symptoms of opioid withdrawal, such as nausea, vomiting, diarrhea, abdominal cramps, r...",
+      "word_count": 109
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid_Intoxication.html"
+}

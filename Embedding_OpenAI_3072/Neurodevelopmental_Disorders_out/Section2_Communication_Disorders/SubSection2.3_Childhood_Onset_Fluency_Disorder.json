@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Childhood-Onset Fluency Disorder (Stuttering) Diagnostic Criteria A. Disturbances in the normal fluency and time patterning of speech that are inappropriate for the individual’s age and language skill...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "dysfluencies resulting from attempts to learn a new language and dysfluencies that indicate a fluency disorder, which typically appear in both languages. Stuttering may occur as a side effect of medic...",
+      "word_count": 159
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Childhood_Onset_Fluency_Disorder.html"
+}

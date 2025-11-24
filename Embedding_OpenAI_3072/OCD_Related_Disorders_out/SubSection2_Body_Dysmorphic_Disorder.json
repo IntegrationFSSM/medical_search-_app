@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection2_Body_Dysmorphic_Disorder.txt",
+  "original_path": "OCD_Related_Disorders_out/SubSection2_Body_Dysmorphic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "body dysmorphic disorder,...",
+      "word_count": 3
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Body_Dysmorphic_Disorder.html"
+}

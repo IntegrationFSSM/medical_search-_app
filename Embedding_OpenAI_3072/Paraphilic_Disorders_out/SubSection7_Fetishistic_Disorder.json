@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection7_Fetishistic_Disorder.txt",
+  "original_path": "Paraphilic_Disorders_out/SubSection7_Fetishistic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Fetishistic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and intense sexual arousal from either the use of nonliving objects or a highly specific focus on nongenital b...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "with such fantasy or repetitive activity, and experiences distress or functional impairment, the diagnosis of sexual masochism disorder should be made. Fetishism. Use of a fetish object for sexual aro...",
+      "word_count": 143
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Fetishistic_Disorder.html"
+}

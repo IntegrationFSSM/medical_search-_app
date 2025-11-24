@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen Persisting Perception Disorder.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen Persisting Perception Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Hallucinogen Persisting Perception Disorder\n Diagnostic Criteria\n A. Following cessation of use of a hallucinogen, the reexperiencing of one or more\n of the perceptual symptoms that were experienced w...",
+      "word_count": 671
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html"
+}

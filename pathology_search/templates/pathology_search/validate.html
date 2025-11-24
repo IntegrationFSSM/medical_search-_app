@@ -172,7 +172,20 @@
         <!-- Contenu du formulaire - Avec marges -->
         <div class="w-full bg-white">
             <div id="pathologyFormContainer" class="px-4 py-3">
-                {{ html_content|safe }}
+                {% if html_content %}
+                    {{ html_content|safe }}
+                {% else %}
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                        <p class="text-yellow-800">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            <strong>Attention :</strong> Le contenu HTML de la pathologie n'a pas pu être chargé.
+                        </p>
+                        <p class="text-sm text-yellow-700 mt-2">
+                            Pathologie : {{ pathology_info.name|default:"Non disponible" }}<br>
+                            Index : {{ current_index|add:1 }}/{{ total_results }}
+                        </p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -336,7 +349,9 @@
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="aiProgressBar"></div>
                 </div>
-                <p class="text-sm text-gray-600 mt-4">Création du plan de traitement en cours avec ${selectedModel === 'chatgpt-5.1' ? 'Model 1' : 'Model 2'}...</p>
+                <p class="text-sm text-gray-600 mt-4">Création du plan de traitement en cours avec ${
+                    selectedModel === 'chatgpt-5.1' ? 'Model 1' : 'Model 2'
+                }...</p>
             `,
             allowOutsideClick: false,
             showConfirmButton: false,

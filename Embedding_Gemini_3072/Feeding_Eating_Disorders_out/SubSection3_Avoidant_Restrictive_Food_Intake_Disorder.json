@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Avoidant_Restrictive_Food_Intake_Disorder.txt",
+    "location": "Feeding_Eating_Disorders_out > SubSection3_Avoidant_Restrictive_Food_Intake_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Avoidant/Restrictive Food Intake Disorder Diagnostic Criteria A. An eating or feeding disturbance (e"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "life but may persist into adulthood. Avoidance related to aversive consequences can arise at any age"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "in the level of impairment that would be required for a diagnosis of avoidant/restrictive food intak"
+    }
+  ],
+  "html_page": "Embedding/Feeding_Eating_Disorders_out/Avoidant_Restrictive_Food_Intake_Disorder.html"
+}

@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection1_Obsessive_Compulsive_Disorder.txt",
+  "original_path": "OCD_Related_Disorders_out/SubSection1_Obsessive_Compulsive_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Obsessive-Compulsive Disorder Diagnostic Criteria A. Presence of obsessions, compulsions, or both: Obsessions are defined by (1) and (2): 1. Recurrent and persistent thoughts, urges, or images that ar...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "and counting compulsions); forbidden or taboo thoughts (e.g., aggressive, sexual, or religious obsessions and related compulsions); and harm (e.g., fears of harm to self or others and checking compuls...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "concordance rate of 0.57 for monozygotic vs. 0.22 for dizygotic twins). Twin studies suggest that additive genetic effects account for ~40% of the variance in obsessive-compulsive symptoms. Dysfunctio...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "that is odd, irrational, or of a seemingly magical nature; moreover, compulsions are usually present and usually linked to the obsessions. Like individuals with OCD, individuals with specific phobia c...",
+      "word_count": 892
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Obsessive_Compulsive_Disorder.html"
+}

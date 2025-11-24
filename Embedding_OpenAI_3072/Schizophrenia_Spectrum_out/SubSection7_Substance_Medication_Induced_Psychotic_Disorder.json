@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection7_Substance_Medication_Induced_Psychotic_Disorder.txt",
+  "original_path": "Schizophrenia_Spectrum_out/SubSection7_Substance_Medication_Induced_Psychotic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Substance/Medication-Induced Psychotic Disorder Diagnostic Criteria A. Presence of one or both of the following symptoms: 1. Delusions. 2. Hallucinations. B. There is evidence from the history, physic...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "should be listed separately (e.g., F12.259 severe cannabis use disorder with cannabis-induced psychotic disorder, with onset during intoxication; F16.159 mild phencyclidine use disorder with phencycli...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "the highest rate (44%) for cannabis-induced psychotic disorder. 130 Diagnostic Markers With substances for which relevant blood levels are available (e.g., blood alcohol level, other quantifiable bloo...",
+      "word_count": 545
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Substance_Medication_Induced_Psychotic_Disorder.html"
+}

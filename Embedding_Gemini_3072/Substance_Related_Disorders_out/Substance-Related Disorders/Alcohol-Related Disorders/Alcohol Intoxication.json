@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Alcohol Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Alcohol-Related Disorders > Alcohol Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Alcohol Intoxication Diagnostic Criteria A. Recent ingestion of alcohol. B. Clinically significant p"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "cope with stress. Culture-Related Diagnostic Issues The major issues parallel the cultural differenc"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol_Intoxication.html"
+}

@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Tobacco Withdrawal.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Tobacco-Related Disorders > Tobacco Withdrawal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Tobacco Withdrawal\n Diagnostic Criteria\n A. Daily use of tobacco for at least several weeks.\n B. Abr"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco_Use_Disorder.html"
+}

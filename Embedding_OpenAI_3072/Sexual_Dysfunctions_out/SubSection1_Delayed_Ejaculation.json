@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection1_Delayed_Ejaculation.txt",
+  "original_path": "Sexual_Dysfunctions_out/SubSection1_Delayed_Ejaculation.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Delayed Ejaculation Diagnostic Criteria A. Either of the following symptoms must be experienced on almost all or all occasions (approximately 75%–100%) of partnered sexual activity (in identified situ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "The prevalence of delayed ejaculation increases with age. As males age, they are more likely to have progressively more of the following changes in ejaculatory function, including, but not limited to,...",
+      "word_count": 587
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Delayed_Ejaculation.html"
+}

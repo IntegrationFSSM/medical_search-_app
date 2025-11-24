@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Use Disorder.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Other Hallucinogen Use Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Other Hallucinogen Use Disorder Diagnostic Criteria A. A problematic pattern of hallucinogen (other than phencyclidine) use leading to clinically significant impairment or distress, as manifested by a...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "been reported to have both autonomic and psychological effects. MDMA/ecstasy as a hallucinogen may have distinctive effects attributable to both its hallucinogenic and its stimulant properties. Ecstas...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "hallucinogen use disorder describes a problematic pattern of hallucinogen use that involves impaired control over hallucinogen use, social impairment attributable to hallucinogen use, risky hallucinog...",
+      "word_count": 210
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html"
+}

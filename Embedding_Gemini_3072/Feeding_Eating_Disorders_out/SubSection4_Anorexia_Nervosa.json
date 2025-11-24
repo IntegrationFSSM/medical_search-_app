@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection4_Anorexia_Nervosa.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_Anorexia_Nervosa.txt",
+    "location": "Feeding_Eating_Disorders_out > SubSection4_Anorexia_Nervosa"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Anorexia Nervosa Diagnostic Criteria A. Restriction of energy intake relative to requirements, leadi"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "to be significantly underweight in light of failure to maintain their expected growth trajectory. Ho"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "be most prevalent in postindustrialized, high-income countries such as in the United States, many Eu"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "develop peripheral edema, especially during weight restoration or upon cessation of laxative and diu"
+    }
+  ],
+  "html_page": "Embedding/Feeding_Eating_Disorders_out/Anorexia_Nervosa.html"
+}

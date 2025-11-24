@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.3_Histrionic Personality Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2.3_Histrionic Personality Disorder.txt",
+    "location": "Personality_Disorders_out > Section2_Cluster B Personality Disorders > SubSection2.3_Histrionic Personality Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Histrionic Personality Disorder Diagnostic Criteria A pervasive pattern of excessive emotionality an"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "their interest may lag quickly. Longer-term relationships may be neglected to make way for the excit"
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section2_Cluster B Personality Disorders/Histrionic_Personality_Disorder.html"
+}

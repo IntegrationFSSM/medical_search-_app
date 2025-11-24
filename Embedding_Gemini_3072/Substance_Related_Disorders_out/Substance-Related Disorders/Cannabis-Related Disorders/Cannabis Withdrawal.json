@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Cannabis Withdrawal.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Cannabis-Related Disorders > Cannabis Withdrawal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": " Cannabis Withdrawal\nDiagnostic Criteria\n A. Cessation of cannabis use that has been heavy and prolo"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis_Intoxication.html"
+}

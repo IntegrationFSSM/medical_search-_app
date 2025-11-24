@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection7_Substance_Medication_Induced_Sexual_Dysfunction.txt",
+  "original_path": "Sexual_Dysfunctions_out/SubSection7_Substance_Medication_Induced_Sexual_Dysfunction.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Substance/Medication-Induced Sexual Dysfunction Diagnostic Criteria A. A clinically significant disturbance in sexual function is predominant in the clinical picture. B. There is evidence from the his...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "Features The essential features of substance/medication-induced sexual dysfunction are clinically significant disturbances in sexual function that are predominant in the clinical picture (Criterion A)...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "alcohol may not appear until after years of use. Premature (early) ejaculation can sometimes occur after cessation of opioid use. There is some evidence that disturbances in sexual function related to...",
+      "word_count": 251
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Substance_Medication_Induced_Sexual_Dysfunction.html"
+}

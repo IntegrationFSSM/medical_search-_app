@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant Intoxication.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant Intoxication.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Inhalant Intoxication\n Diagnostic Criteria\n A. Recent intended or unintended short-term, high-dose exposure to inhalant\n substances, including volatile hydrocarbons such as toluene or gasoline.\n B. Cl...",
+      "word_count": 894
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant_Intoxication.html"
+}

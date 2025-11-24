@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Alcohol Withdrawal Diagnostic Criteria A. Cessation of (or reduction in) alcohol use that has been heavy and prolonged. B. Two (or more) of the following, developing within several hours to a few days...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "per day) for multiple days. However, there are large inter-individual differences, with enhanced risks for individuals with concurrent medical conditions, those with family histories of alcohol withdr...",
+      "word_count": 275
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol_Intoxication.html"
+}

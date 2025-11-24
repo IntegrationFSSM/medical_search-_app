@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Use Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Use Disorder Diagnostic Criteria A. A problematic pattern of sedative, hypnotic, or anxiolytic use leading to clinically significant impairment or distress, as manife...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "glutethimide, methaqualone, propofol). This class of substances includes most prescription sleeping medications and most prescription antianxiety medications. Nonbenzodiazepine antianxiety agents (e.g...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "(e.g., at parties) can lead to daily use and high levels of tolerance. Once this occurs, an increasing level of interpersonal difficulties can be expected, as well as increasingly severe episodes of c...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "like alcohol, may potentially contribute to overly aggressive behavior and arguments or fights, with subsequent interpersonal and legal problems. Physical examination is likely to reveal evidence of a...",
+      "word_count": 794
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative_Hypnotic_or_Anxiolytic_Intoxication.html"
+}

@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection4_Schizophreniform_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_Schizophreniform_Disorder.txt",
+    "location": "Schizophrenia_Spectrum_out > SubSection4_Schizophreniform_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Schizophreniform Disorder Diagnostic Criteria A. Two (or more) of the following, each present for a "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "who recover from schizophreniform disorder have better functional outcomes. Differential Diagnosis A"
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Schizophreniform_Disorder.html"
+}

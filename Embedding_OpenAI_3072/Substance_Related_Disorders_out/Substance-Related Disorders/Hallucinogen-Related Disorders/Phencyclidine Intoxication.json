@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Intoxication.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Intoxication.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": " Phencyclidine Intoxication\n Diagnostic Criteria\n A. Recent use of phencyclidine (or a pharmacologically similar substance).\n B. Clinically significant problematic behavioral changes (e.g., belligeren...",
+      "word_count": 651
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html"
+}

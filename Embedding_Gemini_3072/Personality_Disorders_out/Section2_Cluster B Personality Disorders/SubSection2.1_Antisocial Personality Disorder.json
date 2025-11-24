@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.1_Antisocial Personality Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2.1_Antisocial Personality Disorder.txt",
+    "location": "Personality_Disorders_out > Section2_Cluster B Personality Disorders > SubSection2.1_Antisocial Personality Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Antisocial Personality Disorder Diagnostic Criteria A. A pervasive pattern of disregard for and viol"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "glib, superficial charm and can be quite voluble and verbally facile (e.g., using technical terms or"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "years and is given only if there is evidence of conduct disorder before age 15 years. For individual"
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section2_Cluster B Personality Disorders/Antisocial_Personality_Disorder.html"
+}

@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection3_Functional Neurological Symptom Disorder (Conversion Disorder) .txt",
+  "original_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection3_Functional Neurological Symptom Disorder (Conversion Disorder) .txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Functional Neurological Symptom Disorder (Conversion Disorder) Diagnostic Criteria A. One or more symptoms of altered voluntary motor or sensory function. B. Clinical findings provide evidence of inco...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "particularly at symptom onset or during attacks. The phenomenon of la belle indifférence (i.e., lack of concern about the nature or implications of the symptom) has been associated with functional neu...",
+      "word_count": 997
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Functional_Neurological_Symptom_Disorder.html"
+}

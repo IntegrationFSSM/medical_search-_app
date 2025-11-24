@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection3_Specific_Phobia.txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Specific_Phobia.txt",
+    "location": "Anxiety_Disorders_out > SubSection3_Specific_Phobia"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Specific Phobia Diagnostic Criteria A. Marked fear or anxiety about a specific object or situation ("
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "instances, avoidance behaviors or ongoing refusal to engage in activities that would involve exposur"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "a risk factor for major neurocognitive disorder. Although most specific phobias develop in childhood"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "harming others), and if other diagnostic criteria for obsessive-compulsive disorder are met, then ob"
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/specific-phobia.html"
+}

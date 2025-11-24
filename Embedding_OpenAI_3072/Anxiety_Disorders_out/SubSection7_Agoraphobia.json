@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection7_Agoraphobia.txt",
+  "original_path": "Anxiety_Disorders_out/SubSection7_Agoraphobia.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Agoraphobia Diagnostic Criteria A. Marked fear or anxiety about two (or more) of the following five situations: 1. Using public transportation (e.g., automobiles, buses, trains, ships, planes). 2. Bei...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "contexts (e.g., it is socioculturally appropriate for orthodox Muslim women in certain parts of the world to avoid leaving the house alone, and thus such avoidance would not be considered indicative o...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "Diagnostic Issues Women have different patterns of comorbid disorders than men. Consistent with gender differences in the prevalence of mental disorders, men have higher rates of comorbid substance us...",
+      "word_count": 699
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/agoraphobia.html"
+}

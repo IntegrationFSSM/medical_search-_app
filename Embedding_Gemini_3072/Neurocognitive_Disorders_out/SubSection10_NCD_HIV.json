@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection10_NCD_HIV.txt",
+  "hierarchy": {
+    "file_name": "SubSection10_NCD_HIV.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection10_NCD_HIV"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to HIV Infection Diagnostic Criteria A. The criteria are m"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "to HIV, individuals may have neurocognitive impairment when the HIV infection is asymptomatic; the C"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "such preexisting or comorbid conditions. Among older adults, onset of neurocognitive decline related"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_HIV.html"
+}

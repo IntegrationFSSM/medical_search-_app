@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+  "hierarchy": {
+    "file_name": "SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition.txt",
+    "location": "Schizophrenia_Spectrum_out > SubSection8_Psychotic_Disorder_Due_to_Another_Medical_Condition"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Psychotic Disorder Due to Another Medical Condition Diagnostic Criteria A. Prominent hallucinations "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "age groups in Finland. Rates of psychosis also vary according to the underlying medical condition; c"
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Psychotic_Disorder_Due_to_Another_Medical_Condition.html"
+}

@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection6_Schizoaffective_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection6_Schizoaffective_Disorder.txt",
+    "location": "Schizophrenia_Spectrum_out > SubSection6_Schizoaffective_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Schizoaffective Disorder Diagnostic Criteria A. An uninterrupted period of illness during which ther"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "to the five symptom domain areas identified in the diagnostic criteria, the assessment of cognition,"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "Diagnostic Issues Cultural and socioeconomic factors must be considered, particularly when the indiv"
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Schizoaffective_Disorder.html"
+}

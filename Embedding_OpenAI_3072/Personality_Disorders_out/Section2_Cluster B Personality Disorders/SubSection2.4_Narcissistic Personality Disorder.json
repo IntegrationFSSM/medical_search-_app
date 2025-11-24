@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.4_Narcissistic Personality Disorder.txt",
+  "original_path": "Personality_Disorders_out/Section2_Cluster B Personality Disorders/SubSection2.4_Narcissistic Personality Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Narcissistic Personality Disorder F60.81 Diagnostic Criteria A pervasive pattern of grandiosity (in fantasy or behavior), need for admiration, and lack of empathy, beginning by early adulthood and pre...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "recognized, the needs, desires, or feelings of others are likely to be viewed disparagingly as signs of weakness or vulnerability. Those who relate to individuals with narcissistic personality disorde...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "tendency to be tough-minded, glib, superficial, exploitative, and unempathic. However, narcissistic personality disorder does not necessarily include characteristics of impulsive aggressivity and dece...",
+      "word_count": 368
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section2_Cluster B Personality Disorders/Narcissistic_Personality_Disorder.html"
+}

@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection4_NCD_Alzheimer.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_NCD_Alzheimer.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection4_NCD_Alzheimer"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Alzheimer’s Disease Diagnostic Criteria A. The criteria"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "due to multiple etiologies. Associated Features For individuals with NCD due to Alzheimer's disease,"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "this association has not been consistently found across all ethnic and racialized groups. For exampl"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "pathology is present alone or in combination with vascular pathologies. It should be noted that whit"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Alzheimer.html"
+}

@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection3_Hoarding_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Hoarding_Disorder.txt",
+    "location": "OCD_Related_Disorders_out > SubSection3_Hoarding_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Hoarding Disorder Diagnostic Criteria A. Persistent difficulty discarding or parting with possession"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "for self and others (Criterion D). In some cases, particularly when there is poor insight, the indiv"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "discard anything. Neurodevelopmental disorders. Hoarding disorder is not diagnosed if the accumulati"
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Hoarding_Disorder.html"
+}

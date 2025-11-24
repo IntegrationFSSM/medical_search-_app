@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection6_Prolonged_Grief_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection6_Prolonged_Grief_Disorder.txt",
+    "location": "Trauma_Stress_Disorders_out > SubSection6_Prolonged_Grief_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Prolonged Grief Disorder Diagnostic Criteria A. The death, at least 12 months ago, of a person who w"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "for the death; and decreased sleep quantity and quality. Prevalence The prevalence of DSM-5 prolonge"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "drinking or poor self-care) may be more prevalent than direct expressions of grief. The inability to"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "whereas prolonged grief disorder involves distress about separation from a deceased person. Psychoti"
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Prolonged_Grief_Disorder.html"
+}

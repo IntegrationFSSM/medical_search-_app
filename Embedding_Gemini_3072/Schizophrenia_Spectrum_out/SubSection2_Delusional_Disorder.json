@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection2_Delusional_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Delusional_Disorder.txt",
+    "location": "Schizophrenia_Spectrum_out > SubSection2_Delusional_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Delusional Disorder Diagnostic Criteria A. The presence of one (or more) delusions with a duration o"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "the belief that the individual emits a foul odor; that there is an infestation of insects on or in t"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "absence of the other characteristic symptoms of the active phase of schizophrenia. Furthermore, the "
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Delusional_Disorder.html"
+}

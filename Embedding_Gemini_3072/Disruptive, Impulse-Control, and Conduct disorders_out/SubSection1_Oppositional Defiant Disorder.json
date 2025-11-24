@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Disruptive, Impulse-Control, and Conduct disorders_out/SubSection1_Oppositional Defiant Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Oppositional Defiant Disorder.txt",
+    "location": "Disruptive, Impulse-Control, and Conduct disorders_out > SubSection1_Oppositional Defiant Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Oppositional Defiant Disorder Diagnostic Criteria A. A pattern of angry/irritable mood, argumentativ"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "if there was some combination of both. Whether or not the clinician can separate the relative contri"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "even greater levels of impairment than conduct disorder. Furthermore, oppositional defiant disorder "
+    }
+  ],
+  "html_page": "Embedding/Disruptive, Impulse-Control, and Conduct disorders_out/Oppositional_Defiant_Disorder.html"
+}

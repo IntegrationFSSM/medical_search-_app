@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Tobacco Withdrawal\n Diagnostic Criteria\n A. Daily use of tobacco for at least several weeks.\n B. Abrupt cessation of tobacco use, or reduction in the amount of tobacco used,\n followed within 24 hours ...",
+      "word_count": 812
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco_Use_Disorder.html"
+}

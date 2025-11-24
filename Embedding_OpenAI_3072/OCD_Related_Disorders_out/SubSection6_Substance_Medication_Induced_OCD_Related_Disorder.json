@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection6_Substance_Medication_Induced_OCD_Related_Disorder.txt",
+  "original_path": "OCD_Related_Disorders_out/SubSection6_Substance_Medication_Induced_OCD_Related_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Substance/Medication-Induced Obsessive-Compulsive and Related Disorder Diagnostic Criteria A. Obsessions, compulsions, skin picking, hair pulling, other body-focused repetitive behaviors, or other sym...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "substance intoxication or withdrawal or after exposure to or withdrawal from a medication or toxin, and the substance/medication must be capable of producing the symptoms (Criterion B). Substance/medi...",
+      "word_count": 715
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Substance_Medication_Induced_OCD_Related_Disorder.html"
+}

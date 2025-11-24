@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection5_Excoriation_Skin_Picking_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Excoriation_Skin_Picking_Disorder.txt",
+    "location": "OCD_Related_Disorders_out > SubSection5_Excoriation_Skin_Picking_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Excoriation (Skin-Picking) Disorder F42.4 Diagnostic Criteria A. Recurrent skin picking resulting in"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "synovitis of the wrists resulting from chronic picking has been reported. Skin picking often results"
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Excoriation_Skin_Picking_Disorder.html"
+}

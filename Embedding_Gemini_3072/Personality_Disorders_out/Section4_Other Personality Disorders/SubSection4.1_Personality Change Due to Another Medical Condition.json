@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section4_Other Personality Disorders/SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+  "hierarchy": {
+    "file_name": "SubSection4.1_Personality Change Due to Another Medical Condition.txt",
+    "location": "Personality_Disorders_out > Section4_Other Personality Disorders > SubSection4.1_Personality Change Due to Another Medical Condition"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Personality Change Due to Another Medical Condition Diagnostic Criteria A. A persistent personality "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "if the personality change is judged to be a physiological consequence of the pathological process ca"
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section4_Other Personality Disorders/Personality_Change_Due_to_Another_Medical_Condition.html"
+}

@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Phencyclidine Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Phencyclidine Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": " Phencyclidine Intoxication\n Diagnostic Criteria\n A. Recent use of phencyclidine (or a pharmacologic"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html"
+}

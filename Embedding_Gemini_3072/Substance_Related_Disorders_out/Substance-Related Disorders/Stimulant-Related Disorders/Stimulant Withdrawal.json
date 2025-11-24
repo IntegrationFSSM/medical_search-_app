@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Stimulant Withdrawal.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Stimulant-Related Disorders > Stimulant Withdrawal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Stimulant Withdrawal\n Diagnostic Criteria\n A. Cessation of (or reduction in) prolonged amphetamine-t"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant_Intoxication.html"
+}

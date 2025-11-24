@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection2_Bipolar_II_Disorder.txt",
+  "html_page": "Embedding/Bipolar_and_Related_Disorders_out/Bipolar_II_Disorder.html",
+  "hierarchy": {
+    "file_name": "SubSection2_Bipolar_II_Disorder.txt",
+    "location": "Bipolar_and_Related_Disorders_out > SubSection2_Bipolar_II_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Bipolar II Disorder Diagnostic Criteria For a diagnosis of bipolar II disorder, it is necessary to m"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "or the unpredictability caused by frequent alternation between periods of depression and hypomania c"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "significant impairment. Instead, the impairment results from the major depressive episodes or from a"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "altered mood). Nonepisodic irritability in youth is associated with an elevated risk for anxiety dis"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "tests. Cognitive impairments associated with bipolar II disorder may contribute to vocational diffic"
+    },
+    {
+      "chunk_id": 5,
+      "text_preview": "comorbid anxiety disorder does not differ between bipolar I and bipolar II disorders but is associat"
+    }
+  ]
+}

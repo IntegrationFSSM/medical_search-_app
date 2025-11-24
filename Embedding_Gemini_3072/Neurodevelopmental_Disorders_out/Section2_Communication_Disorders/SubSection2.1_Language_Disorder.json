@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.1_Language_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2.1_Language_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.1_Language_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Language Disorder Diagnostic Criteria A. Persistent difficulties in the acquisition and use of langu"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "disorder needs to be distinguished from normal developmental variations, and this distinction may be"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Language_Disorder.html"
+}

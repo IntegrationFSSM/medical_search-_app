@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection2_Selective_Mutism.txt",
+  "original_path": "Anxiety_Disorders_out/SubSection2_Selective_Mutism.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Selective Mutism F94.0 A. Consistent failure to speak in specific social situations in which there is an expectation for speaking (e.g., at school) despite speaking in other situations. B. The disturb...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "mutism may serve as a compensatory strategy to decrease anxious arousal in social encounters. Differential Diagnosis Silent period in immigrant children learning a second language. Selective mutism mu...",
+      "word_count": 305
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/selective-mutism.html"
+}

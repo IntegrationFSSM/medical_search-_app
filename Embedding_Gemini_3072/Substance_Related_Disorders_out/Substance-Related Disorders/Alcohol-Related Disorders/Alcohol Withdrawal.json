@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Alcohol Withdrawal.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Alcohol-Related Disorders > Alcohol Withdrawal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Alcohol Withdrawal Diagnostic Criteria A. Cessation of (or reduction in) alcohol use that has been h"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "per day) for multiple days. However, there are large inter-individual differences, with enhanced ris"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol_Intoxication.html"
+}

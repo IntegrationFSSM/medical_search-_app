@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Inhalant Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Inhalant-Related Disorders > Inhalant Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Inhalant Intoxication\n Diagnostic Criteria\n A. Recent intended or unintended short-term, high-dose e"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Inhalant-Related Disorders/Inhalant_Intoxication.html"
+}

@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.2_Schizoid Personality Disorder.txt",
+  "original_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.2_Schizoid Personality Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Schizoid Personality Disorder Diagnostic Criteria A. A pervasive pattern of detachment from social relationships and a restricted range of expression of emotions in interpersonal settings, beginning b...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "social ostracism from the host society. Sex- and Gender-Related Diagnostic Issues While some research suggests that schizoid personality disorder may be more common in men, other research suggests tha...",
+      "word_count": 541
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section1_Cluster A Personality Disorders/Schizoid_Personality_Disorder.html"
+}

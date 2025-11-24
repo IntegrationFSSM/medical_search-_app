@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.3_Sleep-Related Hypoventilation.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.3_Sleep-Related Hypoventilation.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Sleep-Related Hypoventilation Diagnostic Criteria A. Polysomnograpy demonstrates episodes of decreased respiration associated with elevated CO2 levels. (Note: In the absence of objective measurement o...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "such as amyotrophic lateral sclerosis, spinal cord injury, diaphragmatic paralysis, myasthenia gravis, Lambert-Eaton syndrome, toxic or metabolic myopathies, postpolio syndrome, and Charcot-Marie-Toot...",
+      "word_count": 862
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Sleep_Related_Hypoventilation.html"
+}

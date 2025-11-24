@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection3_Functional Neurological Symptom Disorder (Conversion Disorder) .txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Functional Neurological Symptom Disorder (Conversion Disorder) .txt",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection3_Functional Neurological Symptom Disorder (Conversion Disorder) "
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Functional Neurological Symptom Disorder (Conversion Disorder) Diagnostic Criteria A. One or more sy"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "particularly at symptom onset or during attacks. The phenomenon of la belle indifférence (i.e., lack"
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Functional_Neurological_Symptom_Disorder.html"
+}

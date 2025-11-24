@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection5_Adjustment_Disorders.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Adjustment_Disorders.txt",
+    "location": "Trauma_Stress_Disorders_out > SubSection5_Adjustment_Disorders"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Adjustment Disorders Diagnostic Criteria A. The development of emotional or behavioral symptoms in r"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "in determining whether the adjustment response is maladaptive. Migrants and refugees may experience "
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Adjustment_Disorders.html"
+}

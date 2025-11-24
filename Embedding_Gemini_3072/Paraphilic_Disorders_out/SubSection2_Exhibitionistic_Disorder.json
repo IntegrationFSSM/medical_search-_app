@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection2_Exhibitionistic_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Exhibitionistic_Disorder.txt",
+    "location": "Paraphilic_Disorders_out > SubSection2_Exhibitionistic_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Exhibitionistic Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and in"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "or impairment from the disorder may change over time, as may a number of factors that may potentiall"
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Exhibitionistic_Disorder.html"
+}

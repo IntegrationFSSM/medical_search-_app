@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection5_Sexual_Sadism_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Sexual_Sadism_Disorder.txt",
+    "location": "Paraphilic_Disorders_out > SubSection5_Sexual_Sadism_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Sexual Sadism Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and inte"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "their teenage years. Culture-Related Diagnostic Issues The legal status of sexually sadistic behavio"
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Sexual_Sadism_Disorder.html"
+}

@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Feeding_Eating_Disorders_out/SubSection4_Anorexia_Nervosa.txt",
+  "original_path": "Feeding_Eating_Disorders_out/SubSection4_Anorexia_Nervosa.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Anorexia Nervosa Diagnostic Criteria A. Restriction of energy intake relative to requirements, leading to a significantly low body weight in the context of age, sex, developmental trajectory, and phys...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "to be significantly underweight in light of failure to maintain their expected growth trajectory. However, such individuals whose BMI nonetheless remains greater than the median BMI for age should not...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "be most prevalent in postindustrialized, high-income countries such as in the United States, many European countries, Australia, New Zealand, and Japan. Although the prevalence of anorexia nervosa is ...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "develop peripheral edema, especially during weight restoration or upon cessation of laxative and diuretic abuse. Rarely, petechiae or ecchymoses, usually on the extremities, may indicate a bleeding di...",
+      "word_count": 893
+    }
+  ],
+  "html_page": "Embedding/Feeding_Eating_Disorders_out/Anorexia_Nervosa.html"
+}

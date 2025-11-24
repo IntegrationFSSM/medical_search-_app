@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Intoxication.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Intoxication.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Other (or Unknown) Substance Intoxication\n Diagnostic Criteria\n A. The development of a reversible substance-specific syndrome attributable to\n recent ingestion of (or exposure to) a substance that is...",
+      "word_count": 998
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Intoxication.html"
+}

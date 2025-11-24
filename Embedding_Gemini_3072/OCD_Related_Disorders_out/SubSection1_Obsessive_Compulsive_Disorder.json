@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection1_Obsessive_Compulsive_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Obsessive_Compulsive_Disorder.txt",
+    "location": "OCD_Related_Disorders_out > SubSection1_Obsessive_Compulsive_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Obsessive-Compulsive Disorder Diagnostic Criteria A. Presence of obsessions, compulsions, or both: O"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "and counting compulsions); forbidden or taboo thoughts (e.g., aggressive, sexual, or religious obses"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "concordance rate of 0.57 for monozygotic vs. 0.22 for dizygotic twins). Twin studies suggest that ad"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "that is odd, irrational, or of a seemingly magical nature; moreover, compulsions are usually present"
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Obsessive_Compulsive_Disorder.html"
+}

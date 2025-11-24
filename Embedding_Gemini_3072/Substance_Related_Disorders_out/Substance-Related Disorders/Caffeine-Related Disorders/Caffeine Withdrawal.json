@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Caffeine Withdrawal.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Caffeine-Related Disorders > Caffeine Withdrawal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Caffeine Withdrawal Diagnostic Criteria A. Prolonged daily use of caffeine. B. Abrupt cessation of o"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "caffeine withdrawal. Risk and Prognostic Factors Temperamental. Heavy caffeine use has been observed"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Caffeine-Related Disorders/Caffeine_Intoxication.html"
+}

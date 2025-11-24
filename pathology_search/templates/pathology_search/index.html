@@ -231,6 +231,22 @@
             ></textarea>
         </div>
         
+        <!-- Sélection du Modèle d'Embedding -->
+        <div class="mb-4">
+            <label for="embedding_model" class="block text-sm font-medium text-gray-700 mb-2">
+                <i class="fas fa-brain mr-1"></i> Modèle d'IA pour la Recherche
+            </label>
+            <select 
+                id="embedding_model" 
+                name="embedding_model" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white"
+            >
+                <option value="openai-ada" selected>Modèle 1 </option>
+                <option value="openai-3-large">Modèle 2</option>
+                <option value="gemini">Modèle 3</option>
+            </select>
+        </div>
+        
         <!-- Options cachées avec valeurs par défaut -->
         <input type="hidden" id="top_k" name="top_k" value="5">
         <input type="hidden" id="aggregation" name="aggregation" value="max">
@@ -441,6 +457,7 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     const top_k = document.getElementById('top_k').value;
     const aggregation = document.getElementById('aggregation').value;
     const useValidation = document.getElementById('useValidation').value === 'true';
+    const embedding_model = document.getElementById('embedding_model').value;
     
     // Validation de la requête - minimum 3 caractères
     if (query.length < 3) {
@@ -466,15 +483,17 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     }
     
     // Logger si historique disponible (l'enrichissement se fait en BACKEND)
-    if (patientHistoricalSymptoms && patientHistoricalSymptoms.length > 0) {
-        console.log(`📊 Envoi de ${patientHistoricalSymptoms.length} symptômes historiques au backend`);
-    }
+    // DÉSACTIVÉ: L'enrichissement avec les antécédents est désactivé temporairement
+    // if (patientHistoricalSymptoms && patientHistoricalSymptoms.length > 0) {
+    //     console.log(`📊 Envoi de ${patientHistoricalSymptoms.length} symptômes historiques au backend`);
+    // }
     
-    // 🆕 Afficher une alerte indiquant que la recherche est en cours et inclut les antécédents
-    const hasHistoricalSymptoms = patientHistoricalSymptoms && patientHistoricalSymptoms.length > 0;
-    const alertMessage = hasHistoricalSymptoms ? 
-        `Recherche en cours...\n\nLa recherche inclut automatiquement ${patientHistoricalSymptoms.length} symptôme(s) déjà enregistré(s) dans l'historique du patient.` :
-        'Recherche en cours...';
+    // 🆕 Afficher une alerte indiquant que la recherche est en cours
+    // DÉSACTIVÉ: L'enrichissement avec les antécédents est désactivé temporairement
+    // const hasHistoricalSymptoms = patientHistoricalSymptoms && patientHistoricalSymptoms.length > 0;
+    // const alertMessage = hasHistoricalSymptoms ? 
+    //     `Recherche en cours...\n\nLa recherche inclut automatiquement ${patientHistoricalSymptoms.length} symptôme(s) déjà enregistré(s) dans l'historique du patient.` :
+    //     'Recherche en cours...';
     
     Swal.fire({
         icon: 'info',
@@ -482,9 +501,7 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
         html: `
             <div class="text-center">
                 <i class="fas fa-search fa-spin text-purple-600 text-3xl mb-3"></i>
-                <p class="text-gray-700 mb-2">${hasHistoricalSymptoms ? 
-                    `La recherche inclut automatiquement <strong>${patientHistoricalSymptoms.length} symptôme(s)</strong> déjà enregistré(s) dans l'historique du patient.` : 
-                    'Analyse des mots-clés en cours...'}</p>
+                <p class="text-gray-700 mb-2">Analyse des mots-clés en cours...</p>
                 <div class="mt-4">
                     <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
                 </div>
@@ -525,7 +542,10 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
                 aggregation,
                 use_validation: useValidation,
                 patient_id: selectedPatient.id,
-                historical_symptoms: patientHistoricalSymptoms || []
+                // DÉSACTIVÉ: L'enrichissement avec les antécédents est désactivé temporairement
+                // historical_symptoms: patientHistoricalSymptoms || [],
+                historical_symptoms: [],  // Envoyer un tableau vide
+                embedding_model: embedding_model
             })
         });
         
@@ -559,45 +579,12 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
                     confirmButtonColor: '#667eea'
                 });
             }
-            // Vérifier si c'est une erreur de similarité faible
-            else if (data.error_type === 'low_similarity') {
-                document.getElementById('loadingIndicator').classList.add('hidden');
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Correspondance Insuffisante',
-                    html: `
-                        <div class="text-left p-4">
-                            <p class="text-gray-700 mb-4">
-                                <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
-                                La description fournie ne correspond à aucune pathologie dans notre base de données.
-                            </p>
-                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
-                                <p class="text-sm text-yellow-800">
-                                    <strong>Score de correspondance :</strong> ${data.best_score ? data.best_score.toFixed(1) : 0}%
-                                    <br>
-                                    <strong>Seuil minimum requis :</strong> 60%
-                                </p>
-                            </div>
-                            <p class="text-gray-700 font-semibold mb-2">Votre description pourrait être :</p>
-                            <ul class="list-disc list-inside text-gray-600 space-y-1 ml-2">
-                                <li>❌ <strong>Incomplète</strong> : Manque de détails cliniques importants</li>
-                                <li>❌ <strong>Imprécise</strong> : Symptômes trop vagues ou généraux</li>
-                                <li>❌ <strong>Incorrecte</strong> : Ne correspond à aucune pathologie connue</li>
-                            </ul>
-                            <div class="mt-4 p-3 bg-blue-50 rounded-lg">
-                                <p class="text-sm text-blue-800">
-                                    <i class="fas fa-lightbulb mr-2"></i>
-                                    <strong>Conseil :</strong> Décrivez les symptômes de manière précise et détaillée (durée, fréquence, intensité, contexte).
-                                </p>
-                            </div>
-                        </div>
-                    `,
-                    confirmButtonText: 'Réessayer',
-                    confirmButtonColor: '#667eea',
-                    width: '600px'
-                });
+            // 🆕 Plus de popup pour similarité faible - afficher directement les résultats même si < 50%
+            // Si on a des résultats, les afficher directement
+            if (data.results && data.results.length > 0) {
+                displayResults(data);
         } else {
-            showError(data.error);
+                showError(data.error || 'Aucun résultat trouvé');
             }
         }
     } catch (error) {
@@ -610,13 +597,25 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
 function displayResults(data) {
     const { results, diagnostic_info, total_files_searched } = data;
     
+    // 🆕 Afficher les résultats même s'ils sont vides ou avec faible similarité
     if (!results || results.length === 0) {
-        showError('Aucun résultat trouvé');
+        // Afficher un message mais continuer (pas d'erreur bloquante)
+        const resultsContainer = document.getElementById('results');
+        resultsContainer.innerHTML = `
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                <p class="text-yellow-800">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Aucun résultat trouvé. Veuillez essayer avec une description plus détaillée.
+                </p>
+            </div>
+        `;
         return;
     }
     
-    // Show diagnostic summary
+    // Show diagnostic summary (seulement si disponible)
+    if (diagnostic_info) {
     displayDiagnosticSummary(diagnostic_info);
+    }
     
     // Display results
     const resultsContainer = document.getElementById('results');
@@ -643,14 +642,21 @@ function displayResults(data) {
 }
 
 function displayDiagnosticSummary(info) {
+    // 🆕 Vérifier que info existe et a les propriétés nécessaires
+    if (!info) {
+        console.warn('displayDiagnosticSummary: info is undefined');
+        return;
+    }
+    
     document.getElementById('diagnosticSummary').classList.remove('hidden');
     document.getElementById('suspectedPathology').textContent = info.suspected_pathology || 'N/A';
-    document.getElementById('confidenceText').textContent = `${info.confidence.toFixed(1)}%`;
-    document.getElementById('diagnosticMessage').textContent = info.message;
+    document.getElementById('confidenceText').textContent = `${(info.confidence || 0).toFixed(1)}%`;
+    document.getElementById('diagnosticMessage').textContent = info.message || 'Aucune information disponible';
     
     // Update confidence bar
     const bar = document.getElementById('confidenceBar');
-    bar.style.width = `${info.confidence}%`;
+    const confidence = info.confidence || 0;
+    bar.style.width = `${confidence}%`;
     
     if (info.confidence_level === 'high') {
         bar.className = 'progress-bar h-4 rounded-full bg-green-500';
@@ -705,10 +711,6 @@ function createResultCard(result, rank) {
                         ` : `
                         <h3 class="text-lg sm:text-xl font-bold text-gray-800 break-words">${pathologyName}</h3>
                         `}
-                        <p class="text-xs sm:text-sm text-gray-500 mt-1">
-                            <i class="fas fa-map-marker-alt mr-1"></i>
-                            ${result.location || 'N/A'}
-                        </p>
                     </div>
                 </div>
                 <div class="flex sm:flex-col items-center sm:items-end gap-2 sm:gap-1 justify-end sm:justify-start">

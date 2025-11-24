@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan07_Restless Legs Syndrome.txt",
+  "hierarchy": {
+    "file_name": "Orphan07_Restless Legs Syndrome.txt",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan07_Restless Legs Syndrome"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Restless Legs Syndrome Diagnostic Criteria A. An urge to move the legs, usually accompanied by or in"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "Risk and Prognostic Factors Genetic and physiological. Predisposing factors include female sex, adva"
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Restless_Legs_Syndrome.html"
+}

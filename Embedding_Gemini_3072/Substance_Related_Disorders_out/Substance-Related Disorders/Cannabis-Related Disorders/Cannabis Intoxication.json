@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Cannabis Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Cannabis-Related Disorders > Cannabis Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Cannabis Intoxication\n Diagnostic Criteria\n A. Recent use of cannabis.\n B. Clinically significant pr"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis_Intoxication.html"
+}

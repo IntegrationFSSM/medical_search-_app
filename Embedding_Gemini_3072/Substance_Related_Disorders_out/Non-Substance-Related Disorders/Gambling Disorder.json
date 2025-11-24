@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Non-Substance-Related Disorders/Gambling Disorder.txt",
+  "hierarchy": {
+    "file_name": "Gambling Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Non-Substance-Related Disorders > Gambling Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Gambling Disorder Diagnostic Criteria A. Persistent and recurrent problematic gambling behavior lead"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "12-month prevalence of DSM-5 gambling disorder varies among ethnoracial groups in the United States:"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "may be less likely than other groups to endorse being preoccupied with gambling (Criterion A4), whil"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Non-Substance-Related Disorders/Gambling_Disorder.html"
+}

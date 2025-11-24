@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.1_Language_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.1_Language_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Language Disorder Diagnostic Criteria A. Persistent difficulties in the acquisition and use of language across modalities (i.e., spoken, written, sign language, or other) due to deficits in comprehens...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "disorder needs to be distinguished from normal developmental variations, and this distinction may be difficult to make before age 4 years. Regional, social, or cultural/ethnic variations of language (...",
+      "word_count": 441
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Language_Disorder.html"
+}

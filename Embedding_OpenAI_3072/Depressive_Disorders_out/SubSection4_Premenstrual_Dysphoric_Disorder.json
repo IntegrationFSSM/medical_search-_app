@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Depressive_Disorders_out/SubSection4_Premenstrual_Dysphoric_Disorder.txt",
+  "original_path": "Depressive_Disorders_out/SubSection4_Premenstrual_Dysphoric_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Premenstrual Dysphoric Disorder Diagnostic Criteria A. In the majority of menstrual cycles, at least five symptoms must be present in the final week before the onset of menses, start to improve within...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "gender roles in particular. Genetic and physiological. No studies have examined heritability in premenstrual dysphoric disorder specifically. Estimates for heritability of premenstrual dysphoric sympt...",
+      "word_count": 897
+    }
+  ],
+  "html_page": "Embedding/Depressive_Disorders_out/Premenstrual_Dysphoric_Disorder.html"
+}

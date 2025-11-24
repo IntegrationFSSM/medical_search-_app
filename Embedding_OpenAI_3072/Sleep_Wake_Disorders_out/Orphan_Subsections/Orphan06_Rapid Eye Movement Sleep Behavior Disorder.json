@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan06_Rapid Eye Movement Sleep Behavior Disorder.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan06_Rapid Eye Movement Sleep Behavior Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Rapid Eye Movement Sleep Behavior Disorder Diagnostic Criteria A. Repeated episodes of arousal during sleep associated with vocalization and/or complex motor behaviors. B. These behaviors arise during...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "Continuous video monitoring should accompany the polysomnography. Other polysomnographic findings may include very frequent periodic and aperiodic extremity electromyography activity during non- REM (...",
+      "word_count": 800
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Rapid_Eye_Movement_Sleep_Behavior_Disorder.html"
+}

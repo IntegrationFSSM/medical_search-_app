@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Phencyclidine Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Phencyclidine Use Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Hallucinogen-Related Disorders > Phencyclidine Use Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Phencyclidine Use Disorder Diagnostic Criteria A. A pattern of phencyclidine (or a pharmacologically"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "symptoms, analgesia, nystagmus, risk of hypertension/hypotension and shock, euphoria, visual/auditor"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Hallucinogen-Related Disorders/Hallucinogen_Persisting_Perception_Disorder.html"
+}

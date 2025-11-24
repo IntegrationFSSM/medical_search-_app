@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection4_Social_Anxiety_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_Social_Anxiety_Disorder.txt",
+    "location": "Anxiety_Disorders_out > SubSection4_Social_Anxiety_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Social Anxiety Disorder Diagnostic Criteria A. Marked fear or anxiety about one or more social situa"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "threshold helps distinguish the disorder from transient social fears that are common, particularly a"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "inhibition, are strongly genetically influenced. The genetic influence is subject to gene-environmen"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "in social settings when their attachment figure is present or when they are at home, whereas those w"
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/social-anxiety-disorder.html"
+}

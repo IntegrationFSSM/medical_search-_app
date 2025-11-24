@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2.3_Childhood_Onset_Fluency_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section2_Communication_Disorders > SubSection2.3_Childhood_Onset_Fluency_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Childhood-Onset Fluency Disorder (Stuttering) Diagnostic Criteria A. Disturbances in the normal flue"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "dysfluencies resulting from attempts to learn a new language and dysfluencies that indicate a fluenc"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section2_Communication_Disorders/Childhood_Onset_Fluency_Disorder.html"
+}

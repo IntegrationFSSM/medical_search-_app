@@ -1,0 +1,36 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/SubSection5.1_Specific_Learning_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection5.1_Specific_Learning_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section5_Specific_Learning_Disorder > SubSection5.1_Specific_Learning_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Specific Learning Disorder Specific Learning Disorder Diagnostic Criteria A. Difficulties learning a"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "origin includes an interaction of genetic, epigenetic, and environmental factors, which affect the b"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "individual’s community context. Third, the learning difficulty cannot be attributed to neurological "
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "among preschool-age children include a lack of interest in playing games with language sounds (e.g.,"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "environmental factors. There is high heritability for both reading ability and reading disability in"
+    },
+    {
+      "chunk_id": 5,
+      "text_preview": "predict better mental health outcomes. Differential Diagnosis Specific learning disorder is distingu"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/Specific_Learning_Disorder.html"
+}

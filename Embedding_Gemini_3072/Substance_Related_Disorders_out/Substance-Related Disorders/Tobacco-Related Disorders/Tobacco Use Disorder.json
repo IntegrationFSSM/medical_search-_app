@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Tobacco Use Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Tobacco-Related Disorders > Tobacco Use Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Tobacco Use Disorder Diagnostic Criteria A. A problematic pattern of tobacco use leading to clinical"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "with tobacco use disorder use tobacco to relieve or to avoid withdrawal symptoms (e.g., after being "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "2014. This ratio is generally consistent across various income and educational levels. The ratio dim"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco_Use_Disorder.html"
+}

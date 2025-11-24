@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection13_NCD_Huntington.txt",
+  "original_path": "Neurocognitive_Disorders_out/SubSection13_NCD_Huntington.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Huntington’s Disease Diagnostic Criteria A. The criteria are met for major or mild neurocognitive disorder. B. There is insidious onset and gradual progres...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "have been observed in brain imaging but remain research measures. Association With Suicidal Thoughts or Behavior In Huntington’s disease, an elevated suicide risk compared with the general population ...",
+      "word_count": 485
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Huntington.html"
+}

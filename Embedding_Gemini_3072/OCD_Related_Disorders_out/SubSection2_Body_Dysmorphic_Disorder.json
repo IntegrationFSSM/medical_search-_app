@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection2_Body_Dysmorphic_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Body_Dysmorphic_Disorder.txt",
+    "location": "OCD_Related_Disorders_out > SubSection2_Body_Dysmorphic_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "body dysmorphic disorder,"
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Body_Dysmorphic_Disorder.html"
+}

@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.3_Schizotypal Personality Disorder.txt",
+  "original_path": "Personality_Disorders_out/Section1_Cluster A Personality Disorders/SubSection1.3_Schizotypal Personality Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Schizotypal Personality Disorder Diagnostic Criteria A. A pervasive pattern of social and interpersonal deficits marked by acute discomfort with, and reduced capacity for, close relationships as well ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "studies (three in the United States) found a median prevalence of 0.6%. Genetic and physiological. Other mental disorders with psychotic symptoms. Development and Course Schizotypal personality disord...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "disorders, so that making such distinctions is not always feasible. Schizotypal features during F60.2 adolescence may be reflective of transient emotional turmoil rather than an enduring personality d...",
+      "word_count": 101
+    }
+  ],
+  "html_page": "Embedding/Personality_Disorders_out/Section1_Cluster A Personality Disorders/Schizotypal_Personality_Disorder.html"
+}

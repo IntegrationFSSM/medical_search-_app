@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection6_Substance_Medication_Induced_OCD_Related_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection6_Substance_Medication_Induced_OCD_Related_Disorder.txt",
+    "location": "OCD_Related_Disorders_out > SubSection6_Substance_Medication_Induced_OCD_Related_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Substance/Medication-Induced Obsessive-Compulsive and Related Disorder Diagnostic Criteria A. Obsess"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "substance intoxication or withdrawal or after exposure to or withdrawal from a medication or toxin, "
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Substance_Medication_Induced_OCD_Related_Disorder.html"
+}

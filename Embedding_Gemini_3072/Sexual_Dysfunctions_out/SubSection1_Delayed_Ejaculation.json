@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection1_Delayed_Ejaculation.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Delayed_Ejaculation.txt",
+    "location": "Sexual_Dysfunctions_out > SubSection1_Delayed_Ejaculation"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Delayed Ejaculation Diagnostic Criteria A. Either of the following symptoms must be experienced on a"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "The prevalence of delayed ejaculation increases with age. As males age, they are more likely to have"
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Delayed_Ejaculation.html"
+}

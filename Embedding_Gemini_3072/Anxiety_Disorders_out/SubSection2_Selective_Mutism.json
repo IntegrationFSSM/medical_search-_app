@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection2_Selective_Mutism.txt",
+  "hierarchy": {
+    "file_name": "SubSection2_Selective_Mutism.txt",
+    "location": "Anxiety_Disorders_out > SubSection2_Selective_Mutism"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Selective Mutism F94.0 A. Consistent failure to speak in specific social situations in which there i"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "mutism may serve as a compensatory strategy to decrease anxious arousal in social encounters. Differ"
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/selective-mutism.html"
+}

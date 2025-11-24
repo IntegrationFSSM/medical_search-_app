@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection11_NCD_Prion.txt",
+  "hierarchy": {
+    "file_name": "SubSection11_NCD_Prion.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection11_NCD_Prion"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Prion Disease Diagnostic Criteria A. The criteria are m"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "Real-time quaking induced conversion (RT-QuIC) is another CSF diagnostic test that is able to amplif"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_Prion.html"
+}

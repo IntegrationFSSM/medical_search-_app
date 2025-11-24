@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Dissociative_Disorders_out/SubSection3_Depersonalization_Derealization_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Depersonalization_Derealization_Disorder.txt",
+    "location": "Dissociative_Disorders_out > SubSection3_Depersonalization_Derealization_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Depersonalization/Derealization Disorder Diagnostic Criteria A. The presence of persistent or recurr"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "can wax and wane considerably, others report an unwavering level of intensity that in extreme cases "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "depersonalization/derealization disorder, the symptoms are precipitated by ingestion of such substan"
+    }
+  ],
+  "html_page": "Embedding/Dissociative_Disorders_out/Depersonalization_Derealization_Disorder.html"
+}

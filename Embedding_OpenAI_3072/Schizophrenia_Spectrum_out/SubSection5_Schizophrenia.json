@@ -1,0 +1,34 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection5_Schizophrenia.txt",
+  "original_path": "Schizophrenia_Spectrum_out/SubSection5_Schizophrenia.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Schizophrenia Diagnostic Criteria A. Two (or more) of the following, each present for a significant portion of time during a 1-month period (or less if successfully treated). At least one of these mus...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "the social dysfunction described under Criterion B. There is also strong evidence for a relationship between cognitive impairment (see the section “Associated Features” for this disorder) and function...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "which was based on a range of definitions of schizophrenia, found no difference in prevalence between the sexes. Development and Course The requisite psychotic features of the schizophrenia diagnosis ...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "diagnosed with schizophrenia have no family history of psychosis. Liability is conferred by a spectrum of risk alleles, common and rare, with each allele contributing only a small fraction to the tota...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "outside of their family. Differential Diagnosis Major depressive or bipolar disorder with psychotic or catatonic features. The distinction between schizophrenia and major depressive or bipolar disorde...",
+      "word_count": 661
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Schizophrenia.html"
+}

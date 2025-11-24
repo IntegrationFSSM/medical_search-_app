@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Bipolar_and_Related_Disorders_out/SubSection3_Cyclothymic_Disorder.txt",
+  "original_path": "Bipolar_and_Related_Disorders_out/SubSection3_Cyclothymic_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Cyclothymic Disorder Diagnostic Criteria A. For at least 2 years (at least 1 year in children and adolescents) there have been numerous periods with hypomanic symptoms that do not meet criteria for a ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "are coded. For example, this would be the case if the mood symptoms are considered to be the psychological (not the physiological) consequence of having a chronic medical condition, or if there is no ...",
+      "word_count": 326
+    }
+  ],
+  "html_page": "Embedding/Bipolar_and_Related_Disorders_out/Cyclothymic_Disorder.html"
+}

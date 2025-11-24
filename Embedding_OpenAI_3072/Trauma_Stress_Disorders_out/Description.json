@@ -1,0 +1,13 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/Description.txt",
+  "original_path": "Trauma_Stress_Disorders_out/Description.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Trauma- and Stressor-Related Disorders\n Trauma- and stressor-related disorders include disorders in which\n exposure to a traumatic or stressful event is listed explicitly as a diagnostic criterion. Th...",
+      "word_count": 327
+    }
+  ]
+}

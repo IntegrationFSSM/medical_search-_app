@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection8_NCD_TBI.txt",
+  "hierarchy": {
+    "file_name": "SubSection8_NCD_TBI.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection8_NCD_TBI"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Major or Mild Neurocognitive Disorder Due to Traumatic Brain Injury Diagnostic Criteria A. The crite"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "be supported by posttraumatic epilepsy with focal onset in a location that corresponds to the anatom"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "studies (i.e., traumatic epidural or subdural hematoma, subarachnoid or intracerebral hemorrhage, ce"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "frustration, tension and anxiety, affective lability). Other specified or 712 unspecified personalit"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/NCD_TBI.html"
+}

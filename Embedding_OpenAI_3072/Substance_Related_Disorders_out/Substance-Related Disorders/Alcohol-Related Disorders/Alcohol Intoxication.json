@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Intoxication.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol Intoxication.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Alcohol Intoxication Diagnostic Criteria A. Recent ingestion of alcohol. B. Clinically significant problematic behavioral or psychological changes (e.g., inappropriate sexual or aggressive behavior, m...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "cope with stress. Culture-Related Diagnostic Issues The major issues parallel the cultural differences regarding the use of alcohol overall. For example, some college fraternities and sororities encou...",
+      "word_count": 571
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Alcohol-Related Disorders/Alcohol_Intoxication.html"
+}

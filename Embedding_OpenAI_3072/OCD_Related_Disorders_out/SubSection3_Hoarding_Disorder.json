@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection3_Hoarding_Disorder.txt",
+  "original_path": "OCD_Related_Disorders_out/SubSection3_Hoarding_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Hoarding Disorder Diagnostic Criteria A. Persistent difficulty discarding or parting with possessions, regardless of their actual value. B. This difficulty is due to a perceived need to save the items...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "for self and others (Criterion D). In some cases, particularly when there is poor insight, the individual may not report distress, and the 279 impairment may be apparent only to those around the indiv...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "discard anything. Neurodevelopmental disorders. Hoarding disorder is not diagnosed if the accumulation of objects is judged to be a direct consequence of a neurodevelopmental disorder, such as autism ...",
+      "word_count": 485
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Hoarding_Disorder.html"
+}

@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection7_Substance_Medication_Induced_Psychotic_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection7_Substance_Medication_Induced_Psychotic_Disorder.txt",
+    "location": "Schizophrenia_Spectrum_out > SubSection7_Substance_Medication_Induced_Psychotic_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Substance/Medication-Induced Psychotic Disorder Diagnostic Criteria A. Presence of one or both of th"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "should be listed separately (e.g., F12.259 severe cannabis use disorder with cannabis-induced psycho"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "the highest rate (44%) for cannabis-induced psychotic disorder. 130 Diagnostic Markers With substanc"
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Substance_Medication_Induced_Psychotic_Disorder.html"
+}

@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/OCD_Related_Disorders_out/SubSection4_Trichotillomania_Hair_Pulling_Disorder.txt",
+  "original_path": "OCD_Related_Disorders_out/SubSection4_Trichotillomania_Hair_Pulling_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Trichotillomania (Hair-Pulling Disorder) Diagnostic Criteria F63.3 A. Recurrent pulling out of one’s hair, resulting in hair loss. B. Repeated attempts to decrease or stop hair pulling. C. The hair pu...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "of trichotillomania is chronic, with some waxing and waning if the disorder is untreated. Symptoms may worsen in females premenstrually but not consistently during pregnancy. For some individuals, the...",
+      "word_count": 642
+    }
+  ],
+  "html_page": "Embedding/OCD_Related_Disorders_out/Trichotillomania_Hair_Pulling_Disorder.html"
+}

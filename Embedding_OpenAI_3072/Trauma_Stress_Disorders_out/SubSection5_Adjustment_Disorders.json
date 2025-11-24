@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Trauma_Stress_Disorders_out/SubSection5_Adjustment_Disorders.txt",
+  "original_path": "Trauma_Stress_Disorders_out/SubSection5_Adjustment_Disorders.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Adjustment Disorders Diagnostic Criteria A. The development of emotional or behavioral symptoms in response to an identifiable stressor(s) occurring within 3 months of the onset of the stressor(s). B....",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "in determining whether the adjustment response is maladaptive. Migrants and refugees may experience stressful major contextual and cultural changes that can make this assessment challenging. Suffering...",
+      "word_count": 901
+    }
+  ],
+  "html_page": "Embedding/Trauma_Stress_Disorders_out/Adjustment_Disorders.html"
+}

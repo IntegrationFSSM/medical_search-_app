@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant Intoxication.txt",
+  "hierarchy": {
+    "file_name": "Stimulant Intoxication.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Stimulant-Related Disorders > Stimulant Intoxication"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Stimulant Intoxication Diagnostic Criteria A. Recent use of an amphetamine-type substance, cocaine, "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "26 and older); 3% of men/boys and 1.4% of women/girls used cocaine in the last 12 months. Twelve-mon"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Stimulant-Related Disorders/Stimulant_Intoxication.html"
+}

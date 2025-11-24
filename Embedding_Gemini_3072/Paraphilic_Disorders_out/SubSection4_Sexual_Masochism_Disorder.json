@@ -1,0 +1,16 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection4_Sexual_Masochism_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection4_Sexual_Masochism_Disorder.txt",
+    "location": "Paraphilic_Disorders_out > SubSection4_Sexual_Masochism_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Sexual Masochism Disorder\n Diagnostic Criteria\n A. Over a period of at least 6 months, recurrent and"
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Sexual_Masochism_Disorder.html"
+}

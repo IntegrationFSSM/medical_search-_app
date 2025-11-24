@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.2_Stereotypic_Movement_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.2_Stereotypic_Movement_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Stereotypic Movement Disorder Diagnostic Criteria A. Repetitive, seemingly driven, and apparently purposeless motor behavior (e.g., hand shaking or waving, body rocking, head banging, self-biting, hit...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "between 24 and 35 months, and 8% at 36 months or older. In most typically developing children, the severity and frequency of stereotyped movements diminish over time. Onset of complex motor stereotypi...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "stereotypies. F95.2 F95.1 condition, neurodevelopmental disorder, or environmental factor, record stereotypic movement disorder associated with (name of condition, disorder, or factor) (e.g., stereoty...",
+      "word_count": 126
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Stereotypic_Movement_Disorder.html"
+}

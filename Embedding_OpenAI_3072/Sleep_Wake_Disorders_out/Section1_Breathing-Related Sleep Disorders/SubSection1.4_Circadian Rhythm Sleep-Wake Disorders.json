@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/SubSection1.4_Circadian Rhythm Sleep-Wake Disorders.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Circadian Rhythm Sleep-Wake Disorders Diagnostic Criteria A. A persistent or recurrent pattern of sleep disruption that is primarily due to an alteration of the circadian system or to a misalignment b...",
+      "word_count": 319
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Section1_Breathing-Related Sleep Disorders/Circadian_Rhythm_Sleep_Wake_Disorders.html"
+}

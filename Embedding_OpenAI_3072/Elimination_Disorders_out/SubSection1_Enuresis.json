@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Elimination_Disorders_out/SubSection1_Enuresis.txt",
+  "original_path": "Elimination_Disorders_out/SubSection1_Enuresis.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Enuresis Diagnostic Criteria A. Repeated voiding of urine into bed or clothes, whether involuntary or intentional. B. The behavior is clinically significant as manifested by either a frequency of at l...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "signal processing and the default mode network. The increased arousal thresholds do not, however, mean that these children sleep well; in fact, sleep quality of enuretic children is often poor. Noctur...",
+      "word_count": 710
+    }
+  ],
+  "html_page": "Embedding/Elimination_Disorders_out/Enuresis.html"
+}

@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection3_Brief_Psychotic_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3_Brief_Psychotic_Disorder.txt",
+    "location": "Schizophrenia_Spectrum_out > SubSection3_Brief_Psychotic_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Brief Psychotic Disorder Diagnostic Criteria A. Presence of one (or more) of the following symptoms."
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "the direct physiological consequence of a specific medical condition (e.g., Cushing’s syndrome, brai"
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Brief_Psychotic_Disorder.html"
+}

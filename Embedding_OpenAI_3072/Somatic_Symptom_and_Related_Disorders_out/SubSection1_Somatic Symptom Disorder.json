@@ -1,0 +1,29 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection1_Somatic Symptom Disorder.txt",
+  "original_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection1_Somatic Symptom Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Somatic Symptom Disorder Diagnostic Criteria A. One or more somatic symptoms that are distressing or result in significant disruption of daily life. B. Excessive thoughts, feelings, or behaviors relat...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "disorder, individuals with somatic symptom disorder typically present to general medical health services rather than mental health services. The suggestion of referral to a mental health specialist ma...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "distress” because somatic symptoms may have special meanings and shape patient-clinician interactions in the particular cultural contexts. For example, sensations of heaviness, complaints of “gas,” to...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "appropriate to consider illness anxiety disorder. In functional neurological symptom Functional neurological symptom disorder (conversion disorder). disorder, the presenting symptom is loss of functio...",
+      "word_count": 425
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Somatic_Symptom_Disorder.html"
+}

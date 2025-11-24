@@ -1,0 +1,28 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurocognitive_Disorders_out/SubSection1_Delirium.txt",
+  "hierarchy": {
+    "file_name": "SubSection1_Delirium.txt",
+    "location": "Neurocognitive_Disorders_out > SubSection1_Delirium"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Delirium Diagnostic Criteria A. A disturbance in attention (i.e., reduced ability to direct, focus, "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "into any of the classes, taken as prescribed). F05 Delirium due to another medical condition: There "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "during the course of the day, often with worsening in the evening and night when external orienting "
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "sensory impairment (e.g., vision/hearing), increasing age, illness severity or comorbidity, infectio"
+    }
+  ],
+  "html_page": "Embedding/Neurocognitive_Disorders_out/Delirium.html"
+}

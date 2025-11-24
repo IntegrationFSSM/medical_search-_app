@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection5_Sexual_Sadism_Disorder.txt",
+  "original_path": "Paraphilic_Disorders_out/SubSection5_Sexual_Sadism_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Sexual Sadism Disorder Diagnostic Criteria A. Over a period of at least 6 months, recurrent and intense sexual arousal from the physical or psychological suffering of another person, as manifested by ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "their teenage years. Culture-Related Diagnostic Issues The legal status of sexually sadistic behavior ranges across countries and societies, suggesting the potential for variation in distress (because...",
+      "word_count": 529
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Sexual_Sadism_Disorder.html"
+}

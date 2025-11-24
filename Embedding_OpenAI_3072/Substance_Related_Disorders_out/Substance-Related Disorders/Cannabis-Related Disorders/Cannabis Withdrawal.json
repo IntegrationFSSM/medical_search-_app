@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": " Cannabis Withdrawal\nDiagnostic Criteria\n A. Cessation of cannabis use that has been heavy and prolonged (i.e., usually daily\n or almost daily use over a period of at least a few months).\n B. Three (o...",
+      "word_count": 866
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Cannabis-Related Disorders/Cannabis_Intoxication.html"
+}

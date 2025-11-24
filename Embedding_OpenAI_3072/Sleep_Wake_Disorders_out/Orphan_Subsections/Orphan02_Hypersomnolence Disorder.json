@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan02_Hypersomnolence Disorder.txt",
+  "original_path": "Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan02_Hypersomnolence Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Hypersomnolence Disorder Diagnostic Criteria A. Self-reported excessive sleepiness (hypersomnolence) despite a main sleep period lasting at least 7 hours, with at least one of the following symptoms: ...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "sleep disorder clinics with complaints of daytime sleepiness are diagnosed as having hypersomnolence disorder. It is estimated that about 1% of the European and U.S. general population has episodes of...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "often reveals obesity, a small airway, and large neck diameter. Hypertension is common, and some individuals may demonstrate signs of heart failure. Polysomnographic studies can confirm the presence o...",
+      "word_count": 441
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Hypersomnolence_Disorder.html"
+}

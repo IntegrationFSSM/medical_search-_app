@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Paraphilic_Disorders_out/SubSection4_Sexual_Masochism_Disorder.txt",
+  "original_path": "Paraphilic_Disorders_out/SubSection4_Sexual_Masochism_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Sexual Masochism Disorder\n Diagnostic Criteria\n A. Over a period of at least 6 months, recurrent and intense sexual arousal from the\n act of being humiliated, beaten, bound, or otherwise made to suffe...",
+      "word_count": 876
+    }
+  ],
+  "html_page": "Embedding/Paraphilic_Disorders_out/Sexual_Masochism_Disorder.html"
+}

@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection5_Factitious Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Factitious Disorder.txt",
+    "location": "Somatic_Symptom_and_Related_Disorders_out > SubSection5_Factitious Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Factitious Disorder Diagnostic Criteria Factitious Disorder Imposed on Self A. Falsification of phys"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "other dependent. In individuals with recurrent episodes of falsification of signs and symptoms of il"
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Factitious_Disorder.html"
+}

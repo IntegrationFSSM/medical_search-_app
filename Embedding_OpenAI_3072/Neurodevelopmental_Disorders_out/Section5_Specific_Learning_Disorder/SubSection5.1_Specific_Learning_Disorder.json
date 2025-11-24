@@ -1,0 +1,39 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/SubSection5.1_Specific_Learning_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/SubSection5.1_Specific_Learning_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Specific Learning Disorder Specific Learning Disorder Diagnostic Criteria A. Difficulties learning and using academic skills, as indicated by the presence of at least one of the following symptoms tha...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "origin includes an interaction of genetic, epigenetic, and environmental factors, which affect the brain’s ability to perceive or process verbal or nonverbal information efficiently and accurately. On...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "individual’s community context. Third, the learning difficulty cannot be attributed to neurological (e.g., pediatric stroke) or motor disorders or to vision or hearing disorders, which are often assoc...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "among preschool-age children include a lack of interest in playing games with language sounds (e.g., repetition, rhyming), and they may have trouble learning nursery rhymes. Preschool children with sp...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "environmental factors. There is high heritability for both reading ability and reading disability in alphabetic and nonalphabetic languages, including high heritability for most manifestations of lear...",
+      "word_count": 1000
+    },
+    {
+      "id": 5,
+      "text_preview": "predict better mental health outcomes. Differential Diagnosis Specific learning disorder is distinguished from normal variations in academic attainment attributable to external factors (e.g., lack of ...",
+      "word_count": 556
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section5_Specific_Learning_Disorder/Specific_Learning_Disorder.html"
+}

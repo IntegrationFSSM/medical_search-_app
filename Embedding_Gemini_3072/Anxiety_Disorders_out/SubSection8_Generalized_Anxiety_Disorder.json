@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection8_Generalized_Anxiety_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection8_Generalized_Anxiety_Disorder.txt",
+    "location": "Anxiety_Disorders_out > SubSection8_Generalized_Anxiety_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Generalized Anxiety Disorder Diagnostic Criteria A. Excessive anxiety and worry (apprehensive expect"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "age at onset is spread over a very broad range and tends to be older in lower-income countries world"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "that occurs only in the context of heavy coffee consumption would be diagnosed as caffeine-induced a"
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/generalized-anxiety-disorder.html"
+}

@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section4_Attention_Deficit_Hyperactivity_Disorder/SubSection4.1_ADHD.txt",
+  "hierarchy": {
+    "file_name": "SubSection4.1_ADHD.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section4_Attention_Deficit_Hyperactivity_Disorder > SubSection4.1_ADHD"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Attention-Deficit/Hyperactivity Disorder Attention-Deficit/Hyperactivity Disorder Diagnostic Criteri"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "or development. Inattention manifests behaviorally in ADHD as wandering off task, failing to follow "
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "Large-scale genome- wide association studies (GWAS) have identified a number of loci enriched in evo"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "with ADHD may develop secondary oppositional attitudes toward such tasks and devalue their importanc"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "medication (e.g., bronchodilators, isoniazid, neuroleptics [resulting in akathisia], thyroid replace"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section4_Attention_Deficit_Hyperactivity_Disorder/ADHD.html"
+}

@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+  "hierarchy": {
+    "file_name": "Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders.txt",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan04_Non-Rapid Eye Movement Sleep Arousal Disorders"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Non–Rapid Eye Movement Sleep Arousal Disorders Diagnostic Criteria A. Recurrent episodes of incomple"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "ability to avoid or stop eating. During these episodes, inappropriate foods or even nonfood items (i"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "overlap in findings with persons who do not sleepwalk is great enough to preclude use of this indica"
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Non_Rapid_Eye_Movement_Sleep_Arousal_Disorders.html"
+}

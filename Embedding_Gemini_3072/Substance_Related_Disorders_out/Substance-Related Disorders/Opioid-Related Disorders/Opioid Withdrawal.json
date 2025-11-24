@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid Withdrawal.txt",
+  "hierarchy": {
+    "file_name": "Opioid Withdrawal.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Opioid-Related Disorders > Opioid Withdrawal"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Opioid Withdrawal Diagnostic Criteria A. Presence of either of the following: 1. Cessation of (or re"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "in hallucinogen intoxication and Opioid-induced mental disorders. stimulant intoxication. However, o"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Opioid-Related Disorders/Opioid_Intoxication.html"
+}

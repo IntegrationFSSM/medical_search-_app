@@ -1,0 +1,20 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection5_Male_Hypoactive_Sexual_Desire_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection5_Male_Hypoactive_Sexual_Desire_Disorder.txt",
+    "location": "Sexual_Dysfunctions_out > SubSection5_Male_Hypoactive_Sexual_Desire_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Male Hypoactive Sexual Desire Disorder Diagnostic Criteria A. Persistently or recurrently deficient "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "18.5% at age 50 years. Like women, men identify a variety of triggers for their sexual desire, and t"
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Male_Hypoactive_Sexual_Desire_Disorder.html"
+}

@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Other (or Unknown) Substance Withdrawal\n Diagnostic Criteria\n A. Cessation of (or reduction in) use of a substance that has been heavy and\n prolonged.\n B. The development of a substance-specific syndr...",
+      "word_count": 901
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Intoxication.html"
+}

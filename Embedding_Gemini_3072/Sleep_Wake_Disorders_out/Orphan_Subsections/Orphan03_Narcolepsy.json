@@ -1,0 +1,32 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sleep_Wake_Disorders_out/Orphan_Subsections/Orphan03_Narcolepsy.txt",
+  "hierarchy": {
+    "file_name": "Orphan03_Narcolepsy.txt",
+    "location": "Sleep_Wake_Disorders_out > Orphan_Subsections > Orphan03_Narcolepsy"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Narcolepsy Diagnostic Criteria A. Recurrent periods of an irrepressible need to sleep, lapsing into "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "minutes) naps. NT1 generally manifests with cataplexy, typically brief episodes (seconds up to 2 min"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "around 15–25 years. Onset can be abrupt or progressive, with cataplexy developing over years. It has"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "uninterpretable when the individual is severely ill with a concurrent 427 infection or head trauma o"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "develops over several seconds, but individuals with cataplexy do not have presyncopal symptoms of di"
+    }
+  ],
+  "html_page": "Embedding/Sleep_Wake_Disorders_out/Orphan_Subsections/Narcolepsy.html"
+}

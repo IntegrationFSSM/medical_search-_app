@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+  "original_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection4_Psychological Factors Affecting Other Medical Conditions.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Psychological Factors Affecting Other Medical Conditions Diagnostic Criteria A. A medical symptom or condition (other than a mental disorder) is present. B. Psychological or behavioral factors adverse...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "an individual with angina that is precipitated whenever he becomes enraged would be diagnosed as having psychological factors affecting other medical conditions, whereas an individual with angina who ...",
+      "word_count": 397
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Psychological_Factors_Affecting_Other_Medical_Conditions.html"
+}

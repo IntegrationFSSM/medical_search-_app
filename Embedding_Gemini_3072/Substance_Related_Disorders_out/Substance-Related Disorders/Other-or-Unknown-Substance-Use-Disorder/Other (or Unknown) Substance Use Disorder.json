@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other (or Unknown) Substance Use Disorder.txt",
+  "hierarchy": {
+    "file_name": "Other (or Unknown) Substance Use Disorder.txt",
+    "location": "Substance_Related_Disorders_out > Substance-Related Disorders > Other-or-Unknown-Substance-Use-Disorder > Other (or Unknown) Substance Use Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Other (or Unknown) Substance Use Disorder Diagnostic Criteria A. A problematic pattern of use of an "
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "unknown) substance category. Unknown substance–related disorders are associated with unidentified su"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "impaired control over the use of the substance, social impairment attributable to use of the substan"
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Other-or-Unknown-Substance-Use-Disorder/Other_or_Unknown_Substance_Intoxication.html"
+}

@@ -1,0 +1,40 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/SubSection3.1_Autism_Spectrum_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection3.1_Autism_Spectrum_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section3_Autism_Spectrum_Disorder > SubSection3.1_Autism_Spectrum_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Autism Spectrum Disorder Autism Spectrum Disorder Diagnostic Criteria A. Persistent deficits in soci"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "be helpful to note level of support needed for each of the two core psychopathological domains in Ta"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "Criterion B) than individuals with accompanying intellectual or language impairments and may be maki"
+    },
+    {
+      "chunk_id": 3,
+      "text_preview": "patterns). Excessive adherence to routines and restricted patterns of behavior may be manifest in re"
+    },
+    {
+      "chunk_id": 4,
+      "text_preview": "months. Prospective studies demonstrate that in most cases the onset of autism spectrum disorder is "
+    },
+    {
+      "chunk_id": 5,
+      "text_preview": "not appear to be fully penetrant (i.e., not all individuals with that same genetic abnormality will "
+    },
+    {
+      "chunk_id": 6,
+      "text_preview": "the developmental level of the individual’s nonverbal skills (e.g., fine motor skills, nonverbal pro"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/Autism_Spectrum_Disorder.html"
+}

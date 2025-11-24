@@ -1,0 +1,14 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Schizophrenia_Spectrum_out/SubSection9_Catatonia_Associated_With_Another_Mental_Disorder.txt",
+  "original_path": "Schizophrenia_Spectrum_out/SubSection9_Catatonia_Associated_With_Another_Mental_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": " Catatonia Associated With Another Mental Disorder\n (Catatonia Specifier)\n F06.1\n A. The clinical picture is dominated by three (or more) of the following symptoms:\n 1. Stupor (i.e., no psychomotor ac...",
+      "word_count": 419
+    }
+  ],
+  "html_page": "Embedding/Schizophrenia_Spectrum_out/Catatonia_Associated_With_Another_Mental_Disorder.html"
+}

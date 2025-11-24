@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Sexual_Dysfunctions_out/SubSection4_Genito_Pelvic_Pain_Penetration_Disorder.txt",
+  "original_path": "Sexual_Dysfunctions_out/SubSection4_Genito_Pelvic_Pain_Penetration_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Genito-Pelvic Pain/Penetration Disorder Diagnostic Criteria A. Persistent or recurrent difficulties with one (or more) of the following: 1. Vaginal penetration during intercourse. 2. Marked vulvovagin...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "Many females with genito-pelvic pain/penetration disorder will experience associated relationship/marital problems; they also often report that the symptoms significantly diminish their feelings of fe...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "and femininity are implicated in the experience of genito-pelvic pain/penetration disorder, including the prioritization of both penetrative sex and men’s sexual desires above women’s own needs and de...",
+      "word_count": 743
+    }
+  ],
+  "html_page": "Embedding/Sexual_Dysfunctions_out/Genito_Pelvic_Pain_Penetration_Disorder.html"
+}

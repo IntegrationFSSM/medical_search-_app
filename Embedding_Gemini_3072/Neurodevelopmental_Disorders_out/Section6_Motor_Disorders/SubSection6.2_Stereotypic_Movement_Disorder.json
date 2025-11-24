@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.2_Stereotypic_Movement_Disorder.txt",
+  "hierarchy": {
+    "file_name": "SubSection6.2_Stereotypic_Movement_Disorder.txt",
+    "location": "Neurodevelopmental_Disorders_out > Section6_Motor_Disorders > SubSection6.2_Stereotypic_Movement_Disorder"
+  },
+  "embedding_model": "models/gemini-embedding-001",
+  "embedding_dim": 3072,
+  "chunks": [
+    {
+      "chunk_id": 0,
+      "text_preview": "Stereotypic Movement Disorder Diagnostic Criteria A. Repetitive, seemingly driven, and apparently pu"
+    },
+    {
+      "chunk_id": 1,
+      "text_preview": "between 24 and 35 months, and 8% at 36 months or older. In most typically developing children, the s"
+    },
+    {
+      "chunk_id": 2,
+      "text_preview": "stereotypies. F95.2 F95.1 condition, neurodevelopmental disorder, or environmental factor, record st"
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Stereotypic_Movement_Disorder.html"
+}

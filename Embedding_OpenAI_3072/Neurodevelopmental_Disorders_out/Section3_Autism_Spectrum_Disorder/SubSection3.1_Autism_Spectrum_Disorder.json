@@ -1,0 +1,44 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/SubSection3.1_Autism_Spectrum_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/SubSection3.1_Autism_Spectrum_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Autism Spectrum Disorder Autism Spectrum Disorder Diagnostic Criteria A. Persistent deficits in social communication and social interaction across multiple contexts, as manifested by all of the follow...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "be helpful to note level of support needed for each of the two core psychopathological domains in Table 2 (e.g., “requiring very substantial support for deficits in social communication and requiring ...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "Criterion B) than individuals with accompanying intellectual or language impairments and may be making great efforts to mask these deficits. Criterion A deficits in social communication will be more s...",
+      "word_count": 1000
+    },
+    {
+      "id": 3,
+      "text_preview": "patterns). Excessive adherence to routines and restricted patterns of behavior may be manifest in resistance to change (e.g., distress at apparently small changes, such as taking an alternative route ...",
+      "word_count": 1000
+    },
+    {
+      "id": 4,
+      "text_preview": "months. Prospective studies demonstrate that in most cases the onset of autism spectrum disorder is associated with declines in critical social and communication behaviors in the first 2 years of life...",
+      "word_count": 1000
+    },
+    {
+      "id": 5,
+      "text_preview": "not appear to be fully penetrant (i.e., not all individuals with that same genetic abnormality will develop autism spectrum disorder). Risk for the majority of cases appears to be polygenic, with perh...",
+      "word_count": 1000
+    },
+    {
+      "id": 6,
+      "text_preview": "the developmental level of the individual’s nonverbal skills (e.g., fine motor skills, nonverbal problem solving). In contrast, intellectual developmental disorder is the appropriate diagnosis when th...",
+      "word_count": 889
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section3_Autism_Spectrum_Disorder/Autism_Spectrum_Disorder.html"
+}

@@ -11,51 +11,62 @@ from django.conf import settings
 class PathologySearchService:
     """Service de recherche de pathologies médicales via embeddings."""
     
-    def __init__(self, model='chatgpt-5.1'):
+    def __init__(self, model='chatgpt-5.1', embedding_model_type='openai-ada'):
         """
         Initialiser le service avec le modèle spécifié.
         
         Args:
-            model: Modèle à utiliser ('chatgpt-5.1', 'claude-4.5')
+            model: Modèle de génération de texte ('chatgpt-5.1', 'claude-4.5')
+            embedding_model_type: Modèle d'embedding ('openai-ada', 'openai-3-large', 'gemini')
         """
         self.model = model
-        self.embeddings_folder = settings.EMBEDDINGS_FOLDER
+        self.embedding_model_type = embedding_model_type
         
-        # Initialiser le client selon le modèle choisi
-        if model == 'chatgpt-5.1':
-            self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
-            self.embedding_model = settings.EMBEDDING_MODEL
-        elif model == 'claude-4.5':
+        # Définir le dossier d'embeddings selon le modèle choisi
+        if embedding_model_type == 'openai-3-large':
+            self.embeddings_folder = settings.BASE_DIR / 'Embedding_OpenAI_3072'
+            self.embedding_model_name = 'text-embedding-3-large'
+            self.embedding_dim = 3072
+        elif embedding_model_type == 'gemini':
+            self.embeddings_folder = settings.BASE_DIR / 'Embedding_Gemini_3072'
+            self.embedding_model_name = 'models/gemini-embedding-001' # Ou text-embedding-004 selon dispo
+            self.embedding_dim = 3072
+            
+            # Configurer Gemini pour les embeddings si nécessaire
+            import google.generativeai as genai
+            if not settings.GEMINI_API_KEY:
+                print("⚠️ Clé API Gemini manquante dans les settings")
+            else:
+                genai.configure(api_key=settings.GEMINI_API_KEY)
+        else:
+            # Par défaut: OpenAI ada-002
+            self.embeddings_folder = settings.EMBEDDINGS_FOLDER
+            self.embedding_model_name = settings.EMBEDDING_MODEL
+            self.embedding_dim = 1536
+            
+        # Ne pas afficher les logs d'embeddings si on ne fait que générer (pas de recherche)
+        # Les logs seront affichés uniquement lors de l'utilisation de find_best_match
+        # print(f"📂 Dossier embeddings utilisé: {self.embeddings_folder}")
+        # print(f"🧠 Modèle embedding: {self.embedding_model_type} ({self.embedding_model_name})")
+        
+        # Initialiser le client OpenAI (toujours nécessaire pour certaines fonctions ou fallback)
+        self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
+        
+        # Initialiser le client Claude si nécessaire
+        if model == 'claude-4.5':
             try:
                 from anthropic import Anthropic
                 if not settings.CLAUDE_API_KEY:
-                    raise ValueError(
-                        "CLAUDE_API_KEY n'est pas configuré dans le fichier .env. "
-                        "Ajoutez votre clé API Claude dans le fichier .env : CLAUDE_API_KEY=votre_clé_ici"
-                    )
-                if len(settings.CLAUDE_API_KEY.strip()) == 0:
-                    raise ValueError("CLAUDE_API_KEY est vide dans le fichier .env")
+                    raise ValueError("La clé API Claude n'est pas configurée dans les variables d'environnement (.env)")
                 
-                # Vérifier le format de la clé (doit commencer par sk-ant-)
-                if not settings.CLAUDE_API_KEY.startswith('sk-ant-'):
-                    print(f"⚠️ ATTENTION: La clé API Claude ne semble pas avoir le bon format (devrait commencer par 'sk-ant-')")
-                
-                # Configurer le client Claude avec un timeout de 25 secondes (sous la limite Heroku de 30s)
-                import httpx
-                self.client = Anthropic(
-                    api_key=settings.CLAUDE_API_KEY,
-                    timeout=httpx.Timeout(25.0, connect=5.0)  # 90s total, 10s pour la connexion
-                )
-                # Claude Sonnet 4.5 - modèle pour la génération de texte
-                # Par défaut: claude-sonnet-4-5-20250929 (Claude Sonnet 4.5)
+                self.claude_client = Anthropic(api_key=settings.CLAUDE_API_KEY)
                 self.claude_model = getattr(settings, 'CLAUDE_MODEL', 'claude-sonnet-4-5-20250929')
-                self.embedding_model = 'claude-sonnet-4-5-20250929'  # Modèle Claude pour embeddings (fallback OpenAI)
                 print(f"✅ Client Claude initialisé avec modèle: {self.claude_model}")
             except ImportError:
                 raise ImportError("La bibliothèque 'anthropic' n'est pas installée. Installez-la avec: pip install anthropic")
-        else:
-            raise ValueError(f"Modèle non supporté: {model}")
-    
+        
+        # 🆕 Gemini supprimé pour la génération - seulement Model 1 (ChatGPT) et Model 2 (Claude) sont disponibles
+
     def validate_medical_query(self, query):
         """
         Valider si une requête est une description médicale valide en utilisant GPT-4o.
@@ -74,30 +85,32 @@ class PathologySearchService:
         query_lower = query.lower().strip()
         medical_keywords = [
             'alcool', 'alcoolique', 'alcoolisme', 'dépendance', 'addiction',
-            'anxieux', 'anxiété', 'anxieté', 'panique', 'phobie',
-            'dépression', 'dépressif', 'déprime', 'tristesse',
-            'trouble', 'symptôme', 'symptome', 'pathologie', 'maladie',
-            'patient', 'personne', 'homme', 'femme', 'enfant',
-            'sommeil', 'insomnie', 'agressif', 'agression', 'violence',
-            'psychiatrie', 'psychologique', 'mental', 'comportement',
-            'hallucination', 'délire', 'paranoïa', 'paranoia',
-            'bipolaire', 'schizophrénie', 'schizophrenie', 'autisme',
-            'toc', 'obsession', 'compulsion', 'trauma', 'stress',
-            'suicide', 'suicidaire', 'automutilation', 'mutilation'
+            'drogue', 'cannabis', 'cocaïne', 'héroïne', 'opiacés',
+            'anxiété', 'anxieux', 'peur', 'panique', 'stress', 'phobie',
+            'dépression', 'déprimé', 'triste', 'suicide', 'humeur',
+            'bipolaire', 'manie', 'maniaque',
+            'schizophrénie', 'psychose', 'hallucination', 'délire',
+            'trouble', 'syndrome', 'maladie', 'pathologie', 'symptôme',
+            'douleur', 'fatigue', 'insomnie', 'sommeil',
+            'manger', 'appétit', 'poids', 'boulimie', 'anorexie',
+            'mémoire', 'concentration', 'attention', 'hyperactif', 'tdah',
+            'toc', 'obsession', 'compulsion',
+            'trauma', 'ptsd', 'stress post-traumatique',
+            'personnalité', 'bordeline', 'limite', 'antisocial',
+            'sexuel', 'sexuelle', 'libido', 'érection', 'éjaculation',
+            'enfant', 'adolescent', 'adulte', 'femme', 'homme',
+            'patient', 'patiente', 'sujet', 'cas',
+            'diagnostic', 'traitement', 'médicament', 'thérapie'
         ]
         
-        # Si la requête contient un mot-clé médical, accepter directement
-        if any(keyword in query_lower for keyword in medical_keywords):
-            print(f"✅ Validation préalable: requête acceptée (contient mot-clé médical)")
-            return {
-                'is_valid': True,
-                'reason': None
-            }
-        
-        # Toujours utiliser OpenAI pour la validation, indépendamment du modèle d'embedding
-        validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
-        
+        # Si la requête est très courte et contient un mot clé, on accepte
+        if len(query.split()) < 5 and any(keyword in query_lower for keyword in medical_keywords):
+            return {'is_valid': True, 'reason': 'Terme médical détecté'}
+
         try:
+            # Utiliser un client OpenAI dédié pour la validation (indépendant du modèle choisi pour le reste)
+            validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            
             prompt = f"""Tu es un validateur médical EXPERT. Analyse la requête suivante et détermine si elle contient un réel contenu médical.
 
 Requête: "{query}"
@@ -105,61 +118,39 @@ Requête: "{query}"
 RÈGLE PRINCIPALE: SOIS TRÈS PERMISSIF ! Accepte TOUTE description qui mentionne un problème de santé, un comportement, un symptôme ou une condition médicale, même de manière simple ou informelle.
 
 ACCEPTE (is_valid = true) si la requête:
-- Mentionne des symptômes, troubles, comportements ou conditions médicales (même un seul mot)
-- Décrit une situation clinique (même très simple ou courte)
-- Est liée à la santé mentale, comportementale, ou physique
-- Contient des termes médicaux, psychologiques ou psychiatriques
-- Décrit un patient, une personne avec un problème de santé
-- Exemples VALIDES (accepte TOUS ces cas):
-  * "personne trop alcoolique" ✅
-  * "homme alcoolique" ✅
-  * "alcoolique" ✅
-  * "personne alcoolique" ✅
-  * "enfant anxieux" ✅
-  * "troubles du sommeil" ✅
-  * "dépression" ✅
-  * "patient agressif" ✅
-  * "anxiété" ✅
-  * "dépendance alcool" ✅
-  * "trop alcoolique" ✅
-  * Toute description contenant "alcool", "anxieux", "dépression", "trouble", "symptôme", etc. ✅
+- Mentionne des symptômes, troubles, comportements ou conditions médicales (même vagues)
+- Décrit un état psychologique ou physique problématique
+- Raconte une histoire de patient ou un cas clinique
+- Pose une question sur une maladie ou un traitement
+- Contient des mots-clés médicaux ou psychologiques
 
-REJETTE (is_valid = false) UNIQUEMENT si:
-- Mots répétitifs sans sens: "blabla blabla", "test test test", "aaaa aaaa"
-- Uniquement des symboles: ".....", "????", "!!!!"
-- Mots aléatoires sans rapport médical: "voiture maison arbre"
-- Texte incohérent ou spam évident
-- Chaîne de caractères aléatoires: "asdfghjkl", "qwerty"
+REFUSE (is_valid = false) UNIQUEMENT si la requête est:
+- Totalement incohérente ou vide de sens (gibberish)
+- Clairement du spam ou du contenu malveillant
+- Une demande de code informatique, de recette de cuisine, ou autre sujet 100% non médical
+- Une simple salutation sans suite ("bonjour", "salut")
 
-IMPORTANT: 
-- Si la requête contient UN SEUL terme médical valide, ACCEPTE-la !
-- Les descriptions courtes sont acceptables: "alcoolique", "anxieux", "dépression"
-- Les descriptions informelles sont acceptables: "personne trop alcoolique", "trop anxieux"
-- En cas de doute, ACCEPTE plutôt que de rejeter
-
-Réponds UNIQUEMENT par un JSON valide:
+Réponds UNIQUEMENT au format JSON:
 {{
     "is_valid": true/false,
-    "reason": "Explication courte si non valide (sinon null)"
-}}"""
+    "reason": "Explication très brève (1 phrase)"
+}}
+"""
 
             response = validation_client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o",  # Utiliser un modèle rapide et performant pour la validation
                 messages=[
-                    {"role": "system", "content": "Tu es un validateur médical expert. Réponds uniquement en JSON."},
+                    {"role": "system", "content": "Tu es un assistant de validation strict qui répond uniquement en JSON."},
                     {"role": "user", "content": prompt}
                 ],
-                max_completion_tokens=200
+                temperature=0,
+                response_format={"type": "json_object"}
             )
             
-            result_text = response.choices[0].message.content.strip()
-            print(f"🔍 Validation GPT-4o response: {result_text}")
-            
-            # Extraire le JSON si le texte contient du texte avant/après
-            # json already imported at module level (line 6)
-            import re
+            result_text = response.choices[0].message.content
             
             # Essayer de trouver un JSON dans le texte
+            import re
             json_match = re.search(r'\{[^}]*"is_valid"[^}]*\}', result_text)
             if json_match:
                 result_text = json_match.group(0)
@@ -177,20 +168,13 @@ Réponds UNIQUEMENT par un JSON valide:
             }
             
         except json.JSONDecodeError as e:
-            print(f"❌ Erreur JSON parsing: {e}")
-            print(f"❌ Response text: {result_text}")
-            # En cas d'erreur de parsing, considérer comme invalide par sécurité
-            return {
-                'is_valid': False,
-                'reason': 'Erreur de validation - veuillez réessayer'
-            }
+            print(f"⚠️ Erreur de décodage JSON lors de la validation: {e}")
+            # En cas d'erreur de parsing, on est permissif
+            return {'is_valid': True, 'reason': 'Validation technique échouée (fallback)'}
         except Exception as e:
-            print(f"❌ Erreur validation GPT: {e}")
-            # En cas d'erreur API, considérer comme invalide par sécurité
-            return {
-                'is_valid': False,
-                'reason': 'Service de validation temporairement indisponible'
-            }
+            print(f"⚠️ Erreur lors de la validation médicale: {e}")
+            # En cas d'erreur API, on est permissif pour ne pas bloquer l'utilisateur
+            return {'is_valid': True, 'reason': 'Erreur de validation (fallback)'}
     
     def get_embedding(self, text):
         """
@@ -204,35 +188,42 @@ Réponds UNIQUEMENT par un JSON valide:
         """
         text = text.replace("\n", " ")
         
-        if self.model == 'chatgpt-5.1':
-            # OpenAI / ChatGPT
-            response = self.client.embeddings.create(
-                input=[text], 
-                model=self.embedding_model
-            )
-            return np.array(response.data[0].embedding)
-        
-        elif self.model == 'claude-4.5':
-            # IMPORTANT: Anthropic Claude ne supporte pas actuellement d'API d'embeddings directe
-            # Pour les embeddings, on utilise OpenAI (fallback)
-            # Mais Claude peut être utilisé directement pour la génération de texte (generate_ai_diagnosis)
-            try:
-                # Utiliser OpenAI pour les embeddings même si le modèle choisi est Claude
-                # (Claude est utilisé uniquement pour la génération de texte)
-                openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
-                response = openai_client.embeddings.create(
+        try:
+            if self.embedding_model_type == 'gemini':
+                import google.generativeai as genai
+                # Gemini Embedding
+                result = genai.embed_content(
+                    model=self.embedding_model_name,
+                    content=text,
+                    task_type="retrieval_query"
+                )
+                return np.array(result['embedding'])
+                
+            elif self.embedding_model_type == 'openai-3-large':
+                # OpenAI text-embedding-3-large
+                print(f"🔍 DEBUG - Génération embedding avec text-embedding-3-large")
+                response = self.client.embeddings.create(
                     input=[text], 
-                    model=settings.EMBEDDING_MODEL
+                    model=self.embedding_model_name
                 )
-                return np.array(response.data[0].embedding)
-            except Exception as e:
-                raise RuntimeError(
-                    f"Erreur lors de la génération de l'embedding (fallback OpenAI): {str(e)}. "
-                    f"Claude ne supporte pas les embeddings, donc OpenAI est utilisé pour cette partie."
+                embedding = np.array(response.data[0].embedding)
+                print(f"✅ Embedding généré - Dimension: {len(embedding)} (attendu: {self.embedding_dim})")
+                return embedding
+                
+            else:
+                # OpenAI text-embedding-ada-002 (Défaut)
+                print(f"🔍 DEBUG - Génération embedding avec {self.embedding_model_name}")
+                response = self.client.embeddings.create(
+                    input=[text], 
+                    model=self.embedding_model_name
                 )
-            
-        else:
-            raise ValueError(f"Modèle non supporté pour les embeddings: {self.model}")
+                embedding = np.array(response.data[0].embedding)
+                print(f"✅ Embedding généré - Dimension: {len(embedding)} (attendu: {self.embedding_dim})")
+                return embedding
+                
+        except Exception as e:
+            print(f"❌ Erreur génération embedding ({self.embedding_model_type}): {str(e)}")
+            raise
     
     def find_best_match(self, query, top_k=5, aggregation='max', model=None):
         # Note: paramètre 'model' conservé pour compatibilité mais non utilisé
@@ -250,6 +241,10 @@ Réponds UNIQUEMENT par un JSON valide:
         """
         import os
         folder_path = Path(self.embeddings_folder)
+        
+        # Afficher les informations d'embedding uniquement lors de la recherche
+        print(f"📂 Dossier embeddings utilisé: {self.embeddings_folder}")
+        print(f"🧠 Modèle embedding: {self.embedding_model_type} ({self.embedding_model_name})")
         
         # Debug: afficher les informations
         print(f"🔍 DEBUG: embeddings_folder configuré = {self.embeddings_folder}")
@@ -284,9 +279,13 @@ Réponds UNIQUEMENT par un JSON valide:
                 'results': []
             }
         
-        # Obtenir l'embedding de la requête
+        # Obtenir l'embedding de la requête avec le modèle sélectionné
         query_embedding = self.get_embedding(query)
         query_dimension = len(query_embedding)
+        
+        print(f"🔍 DEBUG - Modèle embedding sélectionné: {self.embedding_model_type}")
+        print(f"🔍 DEBUG - Dimension embedding requête: {query_dimension}")
+        print(f"🔍 DEBUG - Dimension attendue: {self.embedding_dim}")
         
         # Vérifier la dimension des embeddings stockés (prendre le premier fichier comme référence)
         stored_dimension = None
@@ -294,21 +293,29 @@ Réponds UNIQUEMENT par un JSON valide:
             sample_embeddings = np.load(npy_files[0])
             if len(sample_embeddings) > 0:
                 stored_dimension = len(sample_embeddings[0])
+                print(f"🔍 DEBUG - Dimension embeddings stockés: {stored_dimension}")
         
-        # Si les dimensions ne correspondent pas, utiliser OpenAI en fallback
+        # 🆕 Si les dimensions ne correspondent pas, c'est un problème critique
+        # Ne PAS utiliser de fallback automatique - cela masque le problème
         if stored_dimension and query_dimension != stored_dimension:
-            print(f"⚠️ Dimension incompatible: requête={query_dimension}, stocké={stored_dimension}")
-            print(f"⚠️ Utilisation d'OpenAI en fallback pour les embeddings (modèle sélectionné: {self.model})")
+            print(f"❌ ERREUR CRITIQUE: Dimension incompatible!")
+            print(f"   - Modèle sélectionné: {self.embedding_model_type} ({self.embedding_model_name})")
+            print(f"   - Dimension requête: {query_dimension}")
+            print(f"   - Dimension stockée: {stored_dimension}")
+            print(f"   - Dimension attendue: {self.embedding_dim}")
+            print(f"⚠️ Le modèle d'embedding sélectionné ne correspond pas aux embeddings stockés!")
+            print(f"⚠️ Vérifiez que le dossier {self.embeddings_folder} contient des embeddings générés avec {self.embedding_model_name}")
             
-            # Utiliser OpenAI pour les embeddings même si un autre modèle est sélectionné
-            openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
-            response = openai_client.embeddings.create(
-                input=[query], 
-                model=settings.EMBEDDING_MODEL
-            )
-            query_embedding = np.array(response.data[0].embedding)
-            query_dimension = len(query_embedding)
-            print(f"✅ Embedding OpenAI généré avec dimension: {query_dimension}")
+            # Retourner une erreur explicite au lieu d'un fallback silencieux
+            return {
+                'success': False,
+                'error': f'Dimension incompatible: le modèle {self.embedding_model_type} génère des embeddings de {query_dimension} dimensions, mais les fichiers stockés ont {stored_dimension} dimensions. Vérifiez que les embeddings ont été générés avec le bon modèle.',
+                'error_type': 'dimension_mismatch',
+                'query_dimension': query_dimension,
+                'stored_dimension': stored_dimension,
+                'embedding_model': self.embedding_model_name,
+                'results': []
+            }
         
         # Rechercher dans tous les fichiers
         file_results = {}
@@ -327,6 +334,17 @@ Réponds UNIQUEMENT par un JSON valide:
             try:
                 with open(metadata_file, 'r', encoding='utf-8') as f:
                     metadata = json.load(f)
+                
+                # 🆕 Vérifier le modèle d'embedding utilisé pour générer ces embeddings (si disponible)
+                # Les fichiers peuvent avoir 'embedding_model' ou 'model' comme clé
+                embedding_model_used = metadata.get('embedding_model') or metadata.get('model', 'unknown')
+                if embedding_model_used != 'unknown':
+                    # Vérifier si le modèle correspond au modèle sélectionné
+                    expected_model = self.embedding_model_name
+                    if embedding_model_used != expected_model:
+                        print(f"⚠️ ATTENTION - Fichier {Path(emb_file).name}: embeddings générés avec '{embedding_model_used}' mais modèle sélectionné est '{expected_model}'")
+                    else:
+                        print(f"✅ Fichier {Path(emb_file).name}: embeddings générés avec {embedding_model_used} (correspond au modèle sélectionné)")
             except:
                 continue
             
@@ -349,7 +367,12 @@ Réponds UNIQUEMENT par un JSON valide:
                 if similarity > best_similarity:
                     best_similarity = similarity
                     best_chunk_id = i
-                    best_chunk_text = metadata['chunks'][i].get('text_preview', '')
+                    # 🆕 Vérifier que 'chunks' existe dans les métadonnées
+                    chunks = metadata.get('chunks', [])
+                    if i < len(chunks) and isinstance(chunks[i], dict):
+                        best_chunk_text = chunks[i].get('text_preview', '')
+                    else:
+                        best_chunk_text = ''
             
             # Agréger les scores par fichier
             if aggregation == 'max':
@@ -363,10 +386,14 @@ Réponds UNIQUEMENT par un JSON valide:
             else:
                 file_score = max(chunk_similarities)
             
+            # 🆕 Gérer le cas où 'hierarchy' n'existe pas dans les métadonnées
+            hierarchy = metadata.get('hierarchy', {})
+            location = hierarchy.get('location', 'N/A') if isinstance(hierarchy, dict) else 'N/A'
+            
             file_results[str(emb_file)] = {
                 'file': metadata['source_file'],
                 'file_name': Path(metadata['source_file']).name,
-                'location': metadata['hierarchy'].get('location', 'N/A'),
+                'location': location,
                 'similarity': float(file_score),
                 'num_chunks': len(embeddings),
                 'best_chunk_id': best_chunk_id,
@@ -382,22 +409,18 @@ Réponds UNIQUEMENT par un JSON valide:
             reverse=True
         )[:top_k]
         
-        # Vérifier la qualité des résultats - seuil minimum de 60% (plus strict)
-        if not results or results[0]['similarity'] < 0.6:
-            return {
-                'success': False,
-                'error': 'Aucune correspondance trouvée. Veuillez vérifier que votre description est complète et précise.',
-                'error_type': 'low_similarity',
-                'best_score': results[0]['similarity'] * 100 if results else 0,
-                'results': []
-            }
-        
+        # 🆕 Afficher directement les résultats sans seuil minimum
         # Ajouter des informations diagnostiques
-        diagnostic_info = self._generate_diagnostic_info(results)
+        diagnostic_info = self._generate_diagnostic_info(results) if results else {
+            'suspected_pathology': None,
+            'confidence': 0,
+            'confidence_level': 'none',
+            'message': 'Aucun résultat trouvé'
+        }
         
         return {
             'success': True,
-            'results': results,
+            'results': results if results else [],
             'diagnostic_info': diagnostic_info,
             'total_files_searched': len(file_results)
         }
@@ -435,7 +458,7 @@ Réponds UNIQUEMENT par un JSON valide:
     
     def generate_ai_diagnosis(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
         """
-        Générer uniquement le plan de traitement avec OpenAI ou Claude
+        Générer uniquement le plan de traitement avec OpenAI (Model 1) ou Claude (Model 2)
         basé sur les données du formulaire, le texte médical et l'historique.
         
         Args:
@@ -474,6 +497,8 @@ Réponds UNIQUEMENT par un JSON valide:
             print(f"🔍 DEBUG - Longueur du medical_text: {len(medical_text) if medical_text else 0} caractères")
             print(f"🔍 DEBUG - Nombre de historical_symptoms: {len(historical_symptoms) if historical_symptoms else 0}")
             
+            treatment_plan_text = ""
+            
             # Appeler l'API selon le modèle sélectionné
             if self.model == 'chatgpt-5.1':
                 # OpenAI / ChatGPT
@@ -489,7 +514,7 @@ Réponds UNIQUEMENT par un JSON valide:
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=2000  # Limité pour éviter les timeouts Heroku (30s) avec GPT-4o�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=2000  # Limité pour éviter les timeouts Heroku (30s) avec GPT-4oduit pour des rponses plus rapides (Heroku timeout 30s)
                 )
                 # Debug: afficher la réponse complète
                 print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
@@ -526,9 +551,9 @@ Réponds UNIQUEMENT par un JSON valide:
                     print(f"🔍 Appel API Claude avec modèle: {self.claude_model}")
                     print(f"🔍 Clé API présente: {'Oui' if settings.CLAUDE_API_KEY else 'Non'}")
                     
-                    response = self.client.messages.create(
+                    response = self.claude_client.messages.create(
                         model=self.claude_model,  # Claude Sonnet 4.5
-                        max_tokens=1200,  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                        max_tokens=1200,  # Rduit pour des rponses plus rapides (Heroku timeout 30s)
                         temperature=0.4,
                         system=system_message_treatment,
                         messages=[
@@ -573,9 +598,12 @@ Réponds UNIQUEMENT par un JSON valide:
                     print(f"❌ Clé API configurée: {'Oui' if settings.CLAUDE_API_KEY else 'Non'}")
                     print(f"❌ Détails de l'erreur:\n{error_detail}")
                     raise RuntimeError(f"{error_msg}\n\nDétails: {error_detail}")
-                
+            
             else:
                 raise ValueError(f"Modèle non supporté pour la génération: {self.model}")
+            
+            if not treatment_plan_text:
+                raise ValueError("Le plan de traitement généré est vide")
             
             print(f"✅ Plan de traitement généré: {len(treatment_plan_text)} caractères")
             

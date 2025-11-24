@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection5_Factitious Disorder.txt",
+  "original_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection5_Factitious Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Factitious Disorder Diagnostic Criteria Factitious Disorder Imposed on Self A. Falsification of physical or psychological signs or symptoms, or induction of injury or disease, associated with identifi...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "other dependent. In individuals with recurrent episodes of falsification of signs and symptoms of illness and/or induction of injury, this pattern of successive deceptive contact with medical personne...",
+      "word_count": 433
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Factitious_Disorder.html"
+}

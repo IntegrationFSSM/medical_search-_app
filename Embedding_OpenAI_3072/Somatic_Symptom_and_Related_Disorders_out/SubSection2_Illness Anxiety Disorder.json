@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Somatic_Symptom_and_Related_Disorders_out/SubSection2_Illness Anxiety Disorder.txt",
+  "original_path": "Somatic_Symptom_and_Related_Disorders_out/SubSection2_Illness Anxiety Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Illness Anxiety Disorder Diagnostic Criteria A. Preoccupation with having or acquiring a serious illness. B. Somatic symptoms are not present or, if present, are only mild in intensity. If another med...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "about one-fifth of individuals reported illness anxiety. The prevalence of the disorder is similar in men and women. Development and Course The development and course of illness anxiety disorder are u...",
+      "word_count": 930
+    }
+  ],
+  "html_page": "Embedding/Somatic_Symptom_and_Related_Disorders_out/Illness_Anxiety_Disorder.html"
+}

@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative, Hypnotic, or Anxiolytic Withdrawal.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Sedative, Hypnotic, or Anxiolytic Withdrawal Diagnostic Criteria A. Cessation of (or reduction in) sedative, hypnotic, or anxiolytic use that has been prolonged. B. Two (or more) of the following, dev...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "of diazepam (or its equivalent in other benzodiazepines) when taken daily for several months. Doses of approximately 40 mg of diazepam (or its equivalent) daily are more likely to produce clinically r...",
+      "word_count": 465
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Sedative-Hypnotic-or-Anxiolytic-Use-Disorder/Sedative_Hypnotic_or_Anxiolytic_Intoxication.html"
+}

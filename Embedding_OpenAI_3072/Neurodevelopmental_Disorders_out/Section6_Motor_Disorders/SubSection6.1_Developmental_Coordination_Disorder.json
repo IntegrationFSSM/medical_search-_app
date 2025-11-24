@@ -1,0 +1,19 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.1_Developmental_Coordination_Disorder.txt",
+  "original_path": "Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/SubSection6.1_Developmental_Coordination_Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Developmental Coordination Disorder Diagnostic Criteria A. The acquisition and execution of coordinated motor skills is substantially below that expected given the individual’s chronological age and o...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "performance in the workplace. Co-occurrence with other disorders (see the section “Comorbidity” for this disorder) has an additional impact on presentation, course, and outcome. Risk and Prognostic Fa...",
+      "word_count": 715
+    }
+  ],
+  "html_page": "Embedding/Neurodevelopmental_Disorders_out/Section6_Motor_Disorders/Developmental_Coordination_Disorder.html"
+}

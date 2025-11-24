@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Use Disorder.txt",
+  "original_path": "Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco Use Disorder.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Tobacco Use Disorder Diagnostic Criteria A. A problematic pattern of tobacco use leading to clinically significant impairment or distress, as manifested by at least two of the following, occurring wit...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "with tobacco use disorder use tobacco to relieve or to avoid withdrawal symptoms (e.g., after being in a situation where use is restricted). Many individuals with tobacco use disorder have tobacco-rel...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "2014. This ratio is generally consistent across various income and educational levels. The ratio diminishes in older age groups as fewer men are smoking as age increases. The literature from several U...",
+      "word_count": 505
+    }
+  ],
+  "html_page": "Embedding/Substance_Related_Disorders_out/Substance-Related Disorders/Tobacco-Related Disorders/Tobacco_Use_Disorder.html"
+}

@@ -1,0 +1,24 @@
+{
+  "source_file": "/content/drive/MyDrive/disorders/Anxiety_Disorders_out/SubSection6_Panic_Attack_Specifier.txt",
+  "original_path": "Anxiety_Disorders_out/SubSection6_Panic_Attack_Specifier.txt",
+  "model": "text-embedding-3-large",
+  "dimension": 3072,
+  "chunks": [
+    {
+      "id": 0,
+      "text_preview": "Panic Attack Specifier Note: Symptoms are presented for the purpose of identifying a panic attack; however, panic attack is not a mental disorder and cannot be coded. Panic attacks can occur in the co...",
+      "word_count": 1000
+    },
+    {
+      "id": 1,
+      "text_preview": "weaker autonomic response to emotional states relative to younger individuals. Older individuals may be less inclined to use the word “fear” and more inclined to use the word “discomfort” to describe ...",
+      "word_count": 1000
+    },
+    {
+      "id": 2,
+      "text_preview": "supraventricular tachycardia, asthma, chronic obstructive pulmonary disease). Appropriate laboratory tests (e.g., serum calcium levels for hyperparathyroidism; Holter monitor for arrhythmias) or physi...",
+      "word_count": 218
+    }
+  ],
+  "html_page": "Embedding/Anxiety_Disorders_out/panic-attack-specifier.html"
+}
