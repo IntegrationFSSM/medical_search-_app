@@ -586,7 +586,7 @@ Réponds UNIQUEMENT au format JSON:
                     response = self.claude_client.messages.create(
                         model=self.claude_model,  # Claude Sonnet 4.5
                         max_tokens=1200,  # Rduit pour des rponses plus rapides (Heroku timeout 30s)
-                        temperature=0.4,
+                        temperature=0.0,  # Température à 0 pour des réponses déterministes et précises
                         system=system_message_treatment,
                         messages=[
                             {
