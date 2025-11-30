@@ -897,9 +897,13 @@ STRUCTURE ATTENDUE DU PLAN DE TRAITEMENT :
 - Critères d'amélioration attendus
 - Stratégies de prévention des rechutes
 
+
 IMPORTANT : 
 - **OBLIGATOIRE** : Base-toi sur la DOCUMENTATION COMPLÈTE DE LA PATHOLOGIE fournie ci-dessus
 - **OBLIGATOIRE** : Inclure TOUS les médicaments et traitements mentionnés dans la documentation DSM-5-TR
+- **CRITIQUE** : ADAPTE le plan de traitement en fonction des CRITÈRES VALIDÉS cochés ci-dessus
+- **CRITIQUE** : Le plan doit être SPÉCIFIQUE au patient en tenant compte des critères qu'il présente
+- Si certains critères sont cochés, mentionne-les explicitement dans le plan et adapte les interventions en conséquence
 - Utilise un langage médical professionnel
 - Sois précis et détaillé pour les médicaments (noms, posologies, durées)
 - Sois précis mais adapté au cas du patient
