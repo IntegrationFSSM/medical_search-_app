@@ -1,0 +1,179 @@
+Major or Mild Neurocognitive Disorder Due to HIV
+ Infection
+ Diagnostic Criteria
+ A. The criteria are met for major or mild neurocognitive disorder.
+ B. There is documented infection with human immunodeficiency virus (HIV).
+ C. The neurocognitive disorder is not better explained by non-HIV conditions,
+ including secondary brain diseases such as progressive multifocal
+ leukoencephalopathy or cryptococcal meningitis.
+ D. The neurocognitive disorder is not attributable to another medical condition and
+ is not better explained by a mental disorder.
+ Coding note (see coding table on pp. 682–683):
+ For major neurocognitive disorder due to HIV infection, with behavioral disturbance,
+ code first B20 HIV infection, followed by F02.81 major neurocognitive disorder due
+ to HIV infection, with behavioral disturbance.
+ For major neurocognitive disorder due to HIV infection, without behavioral
+ disturbance, code first B20 HIV infection, followed by F02.80 major neurocognitive
+ disorder due to HIV infection, without behavioral disturbance.
+ Note: The severity specifiers “mild,” “moderate,” and “severe” cannot be coded for
+ major neurocognitive disorder but should still be recorded.
+ For mild neurocognitive disorder due to HIV infection, code G31.84. (Note: Do not
+ use the additional code for HIV infection. “With behavioral disturbance” and “without
+ behavioral disturbance” cannot be coded but should still be recorded.)
+ 718
+ For major or mild neurocognitive disorder due to HIV infection: Use additional
+ code(s) to indicate clinically significant psychiatric symptoms due to HIV infection
+ (e.g., F06.34 bipolar and related disorder due to HIV infection, with mixed features;
+ F07.0 personality change due to traumatic brain injury, apathetic type).
+ Diagnostic Features
+ HIV disease is caused by infection with human immunodeficiency virus type-1 (HIV-1), which
+ is acquired through exposure to bodily fluids of an infected individual through injection
+ substance use, unprotected sexual contact, or accidental or iatrogenic exposure (e.g., needle
+ puncture injury to medical personnel). HIV infects several types of cells, most particularly “T
+helper” (CD4) lymphocytes and monocytes. Over time, the infection can cause severe decreases
+ in the CD4 count, resulting in severe immunocompromise, often leading to opportunistic
+ infections and neoplasms. Infected monocytes can enter the central nervous system, leading to
+ infection of macrophages and microglia. A small percentage of astrocytes may harbor productive
+HIV infection. The advanced form of HIV infection is termed acquired immune deficiency
+ syndrome (AIDS). Diagnosis of HIV is confirmed by established laboratory methods, such as the
+ reverse-transcription polymerase chain reaction (RT-PCR) assay for HIV RNA and the
+ antibody/antigen combination test. Of note, in-home self-testing for HIV is available.
+ Some individuals with HIV infection develop a neurocognitive disorder (NCD), which
+ generally shows a “subcortical pattern” with prominently impaired executive function, slowing
+ of processing speed, problems with more demanding attentional tasks, and difficulty in learning
+ new information, but fewer problems with recall of learned information. In major NCD, slowing
+ may be prominent. Language difficulties, such as aphasia, are uncommon, although reductions in
+ fluency may be observed. HIV pathogenic processes can affect any part of the brain; therefore,
+ other patterns are possible.
+ Associated Features
+ Major or mild NCD due to HIV infection is more prevalent in individuals of increasing age,
+ lower educational level, or female sex, and among those with major depressive disorder, alcohol
+ or other substance use disorders, and medical comorbidities (particularly diabetes and
+ hypertension). The NCD risk due to HIV infection is also increased with any of the following:
+ prior episodes of immunosuppression, high viral loads in the cerebrospinal fluid, and increased
+ levels of tumor necrosis factor–alpha (TNF-α), interleukin-6 (IL-6), C-reactive protein, D-dimer,
+ sCD14, sCD163, and neurofilament light chain in the peripheral blood or clinical laboratory
+ indicators of advanced HIV disease, such as a low CD4 cell nadir, anemia, and
+ hypoalbuminemia. Individuals with major NCD may show more prominent neuromotor features,
+ such as severe incoordination, ataxia, and motor slowing. These features may become more
+ prominent with NCD disease progression.
+ Prevalence
+ Depending on the clinical stage of HIV disease, approximately one-third to over one-half of
+ HIV-infected individuals have at least some evidence of a neurocognitive disturbance, but most
+ of these disturbances would not meet criteria for mild NCD and would instead represent
+ individuals with asymptomatic neurocognitive impairment (ANI), who may have substandard
+ performance on one or more tests of neurocognitive abilities but do not have any impairment in
+ functional status. Rates in North America and Western Europe have largely shown that ANI
+ accounts for the majority of neurocognitive disturbances, whereas mild NCD due to HIV
+ accounts for approximately one-quarter of individuals, and major NCD criteria are met for
+ typically less than 5% of individuals with HIV-related neurocognitive disturbances. In Germany,
+ the overall prevalence of HIV-associated NCDs among HIV
+ 719
+ clinic participants was 43%, 90% of whom were in treatment: 20% had ANI, 17% had mild
+ NCD, and 6% had HIV-associated dementia. In low- and middle-income countries, prevalence of
+ HIV-associated NCDs is higher among untreated individuals with HIV. In other parts of the
+ world, and in cohorts composed mostly of individuals infected with HIV on effective
+ antiretroviral treatment tested with comprehensive cognitive test batteries, the overall rates of
+cognitive impairment were found to be around 25%–35%.
+ In the United States, the incidence of HIV infection is higher in men than in women in every
+ ethnic group. However, evidence supports a sex difference in NCD due to HIV infection, with
+ more frequent neurocognitive impairment in women, including when sex is maintained as a risk
+ factor in a multivariate analysis. The higher rate of impairment in women may be associated with
+ differences in educational quality.
+ Development and Course
+ In the development and course of NCD due to HIV, individuals may have neurocognitive
+ impairment when the HIV infection is asymptomatic; the Centers for Disease Control and
+ Prevention classifies the underlying HIV infection in three stages: asymptomatic, early
+ symptomatic, and late symptomatic/AIDS. The course of NCD due to HIV infection can resolve,
+ improve, remain stable, slowly worsen, rapidly worsen, or have a fluctuating course. Rapid
+ progression of neurocognitive impairment is uncommon in the context of currently available
+ combination antiretroviral treatment, although it may still occur in the context of a subgroup
+ associated with older age, as well as in association with specific comorbidities promoting
+ cognitive impairment. Nevertheless, for the predominant proportion of individuals with HIV, an
+ abrupt change in mental status warrants an evaluation of other medical sources for the cognitive
+ change, including secondary infections. Because HIV infection preferentially affects subcortical
+ regions over the course of illness, including deep white matter, the progression of the disorder
+ follows a subcortical pattern. The subcortical pattern of cognitive impairment is characterized by
+ mental slowing associated with motor dysfunction, procedural learning deficits, and free recall
+ deficits, with relative sparing of recognition memory, verbal abstraction, and naming.
+ Because HIV infection can affect a variety of brain regions and the illness can take on many
+ different trajectories depending on associated comorbidities and the consequences of HIV
+ infection, the overall course of an NCD due to HIV infection has considerable heterogeneity. A
+ subcortical neurocognitive profile may interact with age over the life course, such that an
+ interaction occurs between age and clinical stage of HIV disease in the domains of episodic
+ memory and motor impairment (e.g., slowed gait). This interaction increases the overall
+ prevalence of neurocognitive impairment and the likelihood that it will be more pronounced in
+ later life.
+ Acquisition of HIV infection typically occurs in adults in high-income countries, via high
+risk behaviors (e.g., unprotected sex; injection substance use) beginning in late adolescence and
+ peaking during young and middle adulthood, with a significant contribution persisting into older
+ age. In lower-income regions, where HIV testing and antiretroviral treatments for pregnant
+ women are not readily available, perinatal transmission is common. The NCD in such infants and
+ children may manifest primarily as neurodevelopmental delay. As individuals treated for HIV
+ survive into older age, additive and interactive neurocognitive effects of HIV and aging,
+ including other NCDs (e.g., due to Alzheimer’s disease, due to Parkinson’s disease), are
+ possible. More than 50% of individuals with HIV in the United States are older than 50 years.
+ Long-term antiretroviral therapy is indicated for the ongoing control of HIV infection. However,
+ some antiretroviral therapy may be associated with inflammation, neurotoxic effects, and
+ metabolic changes that can lead to vascular compromise and indirectly increase neurocognitive
+ impairment in conjunction with aging and medical comorbidities that may worsen cognition.
+720
+ Risk and Prognostic Factors
+ Paradoxically, NCD due to HIV infection has not declined significantly with the advent of
+ effective antiretroviral therapy, although the most severe presentations (consistent with the
+ diagnosis of major NCD) have decreased sharply. Contributory factors may include inadequate
+ control of HIV in the central nervous system (CNS), the evolution of antiretroviral drug-resistant
+ viral strains, the effects of chronic long-term systemic and brain inflammation, and the effects of
+ comorbid factors such as aging, substance use disorder, hypertension, diabetes, past history of
+ CNS trauma, and co-infections, such as with the hepatitis C virus. Chronic exposure to
+ antiretroviral drugs has also been associated with neurotoxicity in its own right.
+ Diagnostic Markers
+ An HIV diagnosis may be made from a test conducted on the blood, oral fluids, or urine. In
+ addition, HIV characterization of the cerebrospinal fluid may be helpful if it reveals a
+ disproportionately high viral load in the cerebrospinal fluid versus in the plasma or if there are
+ indicators of a high level of neuroinflammation. Neuroimaging (e.g., magnetic resonance
+ imaging [MRI]) may reveal reduction in total brain volume, cortical thinning, reduction in white
+ matter volume, and patchy areas of abnormal white matter (hyperintensities). MRI of the brain or
+ lumbar puncture may be helpful to exclude a specific medical condition (e.g., cryptococcal
+ meningitis, meningoencephalitis, herpes simplex virus type 1 or type 2 encephalitis, progressive
+ multifocal leukoencephalopathy) that might contribute to CNS changes in the context of AIDS.
+ Specialized techniques such as diffusion tensor imaging may reveal damage to specific white
+ matter tracts. Arterial spin-labeling (ASL) developed as a new type of MRI (ASL-MRI) may
+ reveal regional changes in brain perfusion in 3–5 minutes without infusion of extrinsic tracers,
+ and translocator protein 18-kDa (TSPO) positron emission tomography scanning may reveal
+ neuroinflammation.
+ Functional Consequences of Major or Mild Neurocognitive Disorder
+ Due to HIV Infection
+ Functional consequences of major or mild NCD due to HIV infection are variable across
+ individuals. Thus, impaired executive functions and slowed information processing may
+ substantially interfere with adherence to the effective antiretroviral therapy regimens, although
+ these regimens have been greatly simplified since their inception. Thus, functional status must be
+ assessed and mapped directly to neurocognitive impairment in order to determine the severity of
+ the NCD. Functional status related to neurocognitive impairment due to HIV should be separated
+ from dysfunction attributable to other concomitant disorders that can affect neurocognitive
+ function.
+ Differential Diagnosis
+ In the presence of comorbidities, such as other infections (e.g., hepatitis C virus, syphilis),
+ substance use disorder (e.g., methamphetamine use disorder), prior traumatic brain injury, or
+ neurodevelopmental conditions, major or mild NCD due to HIV infection can be diagnosed
+provided there is evidence that infection with HIV has worsened any NCDs because of such
+ preexisting or comorbid conditions. Among older adults, onset of neurocognitive decline related
+ to cerebrovascular disease or primary neurodegeneration (e.g., major or mild NCD due to
+ Alzheimer’s disease) may need to be differentiated; these conditions may be suggested by a
+ relatively more progressive course of decline than is seen in NCD due to HIV. HIV infection
+ itself has been shown to increase the risk of cerebrovascular disease. Because more severe
+ immunodeficiency can result in opportunistic infections of the brain (e.g., toxoplasmosis;
+ cryptococcosis) and neoplasia (e.g., CNS lymphoma), sudden
+ 721
+ onset of an NCD or sudden worsening of an NCD demands active investigation of non-HIV
+ etiologies. Delirium is important to consider because it occurs frequently over the disease course
+ of individuals with HIV and may be due to multiple etiologies (including SARS-CoV-2 co
+infection).
+ Comorbidity
+ HIV disease is accompanied by chronic systemic and CNS inflammation and diseases that can be
+ associated with an NCD. These complications can be part of the pathogenesis of major or mild
+ NCD as well as ANI due to HIV infection. HIV frequently co-occurs with conditions such as
+ substance use disorders and other sexually transmitted infections. Both medical and psychiatric
+ comorbidities have been identified that increase the likelihood of a diagnosis of NCD due to HIV
+ infection. Women and members of underserved ethnic and racialized groups may show variation
+ in the rates of the comorbidities associated with NCD due to HIV infection.

@@ -660,6 +660,9 @@ Réponds UNIQUEMENT au format JSON:
     def _build_diagnosis_prompt(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
         """Construire le prompt pour OpenAI avec le texte médical et l'historique du patient."""
         
+        # Charger le fichier complet de la pathologie depuis le dossier disorders
+        complete_pathology_text = self._load_complete_pathology_file(pathology_name)
+        
         prompt = f"""Élabore un RÉSUMÉ DIAGNOSTIQUE (sans plan thérapeutique) pour un patient évalué selon le DSM-5-TR.
 
 Consignes obligatoires :
@@ -671,8 +674,11 @@ Informations de référence :
 • Pathologie suspectée : {pathology_name}
 • Niveau de correspondance : {similarity_score:.1f}%
 
-Extrait DSM-5-TR disponible :
-{medical_text if medical_text else "Aucun extrait supplémentaire. S'appuyer uniquement sur les critères cochés."}
+DOCUMENTATION COMPLÈTE DE LA PATHOLOGIE (DSM-5-TR) :
+{complete_pathology_text if complete_pathology_text else "Documentation complète non disponible."}
+
+Extrait DSM-5-TR disponible (extrait de recherche) :
+{medical_text if medical_text else "Aucun extrait supplémentaire. S'appuyer uniquement sur les critères cochés et la documentation complète ci-dessus."}
 
 Critères et éléments cliniques déclarés :
 """
@@ -821,12 +827,18 @@ Structure attendue (respecter EXACTEMENT ces titres) :
         """
         Construire le prompt pour générer le plan de traitement.
         """
+        # Charger le fichier complet de la pathologie depuis le dossier disorders
+        complete_pathology_text = self._load_complete_pathology_file(pathology_name)
+        
         prompt = f"""Génère un PLAN DE TRAITEMENT détaillé et structuré en français pour un patient.
 
 INFORMATIONS DU PATIENT :
 • Pathologie identifiée : {pathology_name}
 
-TEXTE MÉDICAL DE RÉFÉRENCE :
+DOCUMENTATION COMPLÈTE DE LA PATHOLOGIE (DSM-5-TR) :
+{complete_pathology_text if complete_pathology_text else "Documentation complète non disponible."}
+
+TEXTE MÉDICAL DE RÉFÉRENCE (extrait de recherche) :
 {medical_text[:1000] + "..." if medical_text and len(medical_text) > 1000 else (medical_text if medical_text else "Aucun extrait supplémentaire.")}
 
 CRITÈRES VALIDÉS :
@@ -857,31 +869,43 @@ CRITÈRES VALIDÉS :
 
 STRUCTURE ATTENDUE DU PLAN DE TRAITEMENT :
 
-## 1. Suivi Thérapeutique (Activités Thérapeutiques)
+## 1. Traitements Médicamenteux
+- **OBLIGATOIRE** : Inclure TOUS les médicaments recommandés pour cette pathologie selon la documentation DSM-5-TR
+- Pour chaque médicament : nom générique, indications, posologie recommandée (doses de départ et d'entretien)
+- Durée du traitement médicamenteux
+- Précautions et contre-indications importantes
+- Interactions médicamenteuses à surveiller
+
+## 2. Interventions Psychothérapeutiques
+- Type de psychothérapie recommandée (CBT, TCC, thérapie d'exposition, etc.)
+- Objectifs thérapeutiques spécifiques
+- Durée et fréquence des séances
+- Techniques thérapeutiques à utiliser
+
+## 3. Suivi Thérapeutique (Activités Thérapeutiques)
 - Indiquer le type de suivi recommandé (fréquence, durée)
 - Modalités de suivi (consultations, téléconsultations, etc.)
+- Points de contrôle et évaluations périodiques
 
-## 2. Prise en Charge Médicale (si nécessaire)
+## 4. Prise en Charge Médicale (si nécessaire)
 - Recommandations médicales générales
 - Suivi des comorbidités physiques si présentes
+- Examens complémentaires nécessaires
 
-## 3. Interventions Psychothérapeutiques
-- Type de psychothérapie recommandée
-- Objectifs thérapeutiques
-- Durée et fréquence
-
-## 4. Suivi à Long Terme
+## 5. Suivi à Long Terme
 - Planification du suivi sur plusieurs mois
 - Points de vigilance
 - Critères d'amélioration attendus
+- Stratégies de prévention des rechutes
 
 IMPORTANT : 
-- Base-toi uniquement sur les informations fournies
+- **OBLIGATOIRE** : Base-toi sur la DOCUMENTATION COMPLÈTE DE LA PATHOLOGIE fournie ci-dessus
+- **OBLIGATOIRE** : Inclure TOUS les médicaments et traitements mentionnés dans la documentation DSM-5-TR
 - Utilise un langage médical professionnel
-- Inclus le suivi thérapeutique (activités thérapeutiques) comme demandé
+- Sois précis et détaillé pour les médicaments (noms, posologies, durées)
 - Sois précis mais adapté au cas du patient
 - NE PAS ajouter de phrases de conclusion, de disclaimer ou de note sur l'ajustement du plan
-- Terminer directement après la section 4 sans phrase de clôture
+- Terminer directement après la section 5 sans phrase de clôture
 """
         
         return prompt
@@ -890,4 +914,60 @@ IMPORTANT :
         """Obtenir le timestamp actuel."""
         from datetime import datetime
         return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    def _load_complete_pathology_file(self, pathology_name):
+        """
+        Charger le fichier .txt complet depuis le dossier disorders.
+        
+        Args:
+            pathology_name: Nom de la pathologie (ex: "Agoraphobia", "Separation Anxiety Disorder")
+            
+        Returns:
+            str: Contenu complet du fichier .txt, ou chaîne vide si non trouvé
+        """
+        try:
+            disorders_folder = settings.BASE_DIR / 'disorders'
+            
+            if not disorders_folder.exists():
+                print(f"⚠️ Dossier disorders non trouvé: {disorders_folder}")
+                return ""
+            
+            # Nettoyer le nom de la pathologie pour la recherche
+            # Convertir en format de nom de fichier (ex: "Agoraphobia" -> "SubSection*_Agoraphobia.txt")
+            pathology_clean = pathology_name.strip()
+            
+            # Chercher dans tous les sous-dossiers
+            for txt_file in disorders_folder.rglob('*.txt'):
+                file_name = txt_file.stem  # Nom sans extension
+                
+                # Vérifier si le nom du fichier contient le nom de la pathologie
+                # ou si le nom de la pathologie correspond au début du fichier
+                if pathology_clean.lower() in file_name.lower() or file_name.lower().endswith(pathology_clean.lower().replace(' ', '_')):
+                    # Lire le contenu complet
+                    with open(txt_file, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                    print(f"✅ Fichier pathologie complet chargé: {txt_file.name} ({len(content)} caractères)")
+                    return content
+                
+                # Vérifier aussi le contenu du fichier (première ligne contient souvent le nom)
+                try:
+                    with open(txt_file, 'r', encoding='utf-8') as f:
+                        first_line = f.readline().strip()
+                        if pathology_clean.lower() in first_line.lower():
+                            # Relire tout le fichier
+                            with open(txt_file, 'r', encoding='utf-8') as f2:
+                                content = f2.read()
+                            print(f"✅ Fichier pathologie complet chargé (par première ligne): {txt_file.name} ({len(content)} caractères)")
+                            return content
+                except:
+                    continue
+            
+            print(f"⚠️ Fichier pathologie non trouvé pour: {pathology_name}")
+            return ""
+            
+        except Exception as e:
+            print(f"⚠️ Erreur lors du chargement du fichier pathologie: {e}")
+            import traceback
+            print(traceback.format_exc())
+            return ""
 

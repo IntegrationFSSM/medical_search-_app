@@ -1,0 +1,170 @@
+Adjustment Disorders
+ Diagnostic Criteria
+ A. The development of emotional or behavioral symptoms in response to an
+ identifiable stressor(s) occurring within 3 months of the onset of the stressor(s).
+ B. These symptoms or behaviors are clinically significant, as evidenced by one or
+ both of the following:
+ 1. Marked distress that is out of proportion to the severity or intensity of the
+ stressor, taking into account the external context and the cultural factors that
+ might influence symptom severity and presentation.
+ 2. Significant impairment in social, occupational, or other important areas of
+ functioning.
+ C. The stress-related disturbance does not meet the criteria for another mental
+ disorder and is not merely an exacerbation of a preexisting mental disorder.
+ D. The symptoms do not represent normal bereavement and are not better
+ explained by prolonged grief disorder.
+E. Once the stressor or its consequences have terminated, the symptoms do not
+ persist for more than an additional 6 months.
+ Specify whether:
+ F43.21 With depressed mood: Low mood, tearfulness, or feelings of
+ hopelessness are predominant.
+ F43.22 With anxiety: Nervousness, worry, jitteriness, or separation anxiety is
+ predominant.
+ F43.23 With mixed anxiety and depressed mood: A combination of
+ depression and anxiety is predominant.
+ F43.24 With disturbance of conduct: Disturbance of conduct is predominant.
+ F43.25 With mixed disturbance of emotions and conduct: Both emotional
+ symptoms (e.g., depression, anxiety) and a disturbance of conduct are
+ predominant.
+ F43.20 Unspecified: For maladaptive reactions that are not classifiable as one
+ of the specific subtypes of adjustment disorder.
+ 320
+ Specify if:
+ Acute: This specifier can be used to indicate persistence of symptoms for less
+ than 6 months.
+ Persistent (chronic): This specifier can be used to indicate persistence of
+ symptoms for 6 months or longer. By definition, symptoms cannot persist for
+ more than 6 months after the termination of the stressor or its consequences.
+ The persistent specifier therefore applies when the duration of the disturbance is
+ longer than 6 months in response to a chronic stressor or to a stressor that has
+ enduring consequences.
+ Specifiers
+ By definition, an adjustment disorder must resolve within 6 months of the termination of the
+ stressor or its consequences. However, the symptoms may persist for a prolonged period (i.e.,
+ longer than 6 months) if they occur in response to a persistent stressor (e.g., a chronic disabling
+ other medical condition) or to a stressor that has enduring consequences (e.g., the financial and
+ emotional difficulties resulting from a divorce). The duration of the symptoms of an adjustment
+ disorder can be indicated by using the acute or persistent (chronic) specifiers. The acute specifier
+ is used to indicate persistence of symptoms for less than 6 months. The persistent (chronic)
+ specifier is used to indicate persistence of symptoms for 6 months or longer. This latter specifier
+ therefore applies when the duration of the disturbance is longer than 6 months in response to a
+ persistent stressor or to a stressor that has enduring consequences.
+ Diagnostic Features
+The presence of emotional or behavioral symptoms in response to an identifiable stressor is the
+ essential feature of adjustment disorders (Criterion A). The stressor may be a single event (e.g., a
+ termination of a romantic relationship), or there may be multiple stressors (e.g., marked business
+ difficulties and marital problems). Stressors may be recurrent (e.g., associated with seasonal
+ business crises, unfulfilling sexual relationships) or continuous (e.g., a persistent painful illness
+ with increasing disability, living in a crime-ridden neighborhood). Stressors may affect a single
+ individual, an entire family, or a larger group or community (e.g., a natural disaster). Some
+ stressors may accompany specific developmental events (e.g., going to school, leaving a parental
+ home, reentering a parental home, getting married, becoming a parent, failing to attain
+ occupational goals, retirement).
+ Adjustment disorders may be diagnosed following the death of a loved one when the
+ intensity, quality, or persistence of grief reactions exceeds what normally might be expected,
+ when cultural, religious, or age-appropriate norms are taken into account and the grief reaction
+ does not meet criteria for prolonged grief disorder.
+ Prevalence
+ Adjustment disorders are common, although prevalence may vary widely as a function of the
+ population studied and the assessment methods used. The percentage of individuals in outpatient
+ mental health treatment in the United States with a principal diagnosis of an adjustment disorder
+ ranges from approximately 5% to 20%. Rates of adjustment disorder may be higher in women,
+ as noted by research in Denmark. In Australian, Canadian, Israeli, and U.S. hospital psychiatric
+ consultation settings, an adjustment disorder was often the most common diagnosis in the 1990s,
+ frequently reaching 50%.
+ Development and Course
+ By definition, the disturbance in adjustment disorders begins within 3 months of onset of a
+ stressor. If the stressor is an acute event (e.g., being fired from a job), the onset of the
+ disturbance is usually immediate (i.e., within a few days) and the duration is relatively brief
+ 321
+ (i.e., no more than a few months). If the stressor or its consequences persist, the adjustment
+ disorder may also continue to be present and become the persistent form. By definition, if
+ symptoms persist beyond 6 months after the stressor or its consequences have ceased, the
+ diagnosis of adjustment disorder would no longer apply.
+ Risk and Prognostic Factors
+ Environmental.
+ Persons from disadvantaged life circumstances experience a high rate of stressors
+ and may be at increased risk for adjustment disorders.
+ Culture-Related Diagnostic Issues
+ Because the nature, meaning, and experience of the stressors and the evaluation of the response
+ to stressors may vary across cultures, cultural context is key in determining whether the
+adjustment response is maladaptive. Migrants and refugees may experience stressful major
+ contextual and cultural changes that can make this assessment challenging. Suffering is assumed
+ to be an intrinsic aspect of normal life in some cultural contexts, such that distressful reactions to
+ stressful life events may not be viewed as maladaptive or worthy of treatment. Self-immolation is
+ also a risk associated with adjustment disorder in some cultural contexts.
+ Association With Suicidal Thoughts or Behavior
+ Adjustment disorders are associated with an increased risk of suicide attempts and suicide.
+ Among migrant populations, including Turkish migrants in Western Europe and South Asian or
+ South East Asian migrants in Gulf countries, adjustment disorder was found to be among the
+ most common diagnoses associated with suicide-related behavior.
+ Functional Consequences of Adjustment Disorders
+ The subjective distress or impairment in functioning associated with adjustment disorders is
+ frequently manifested as decreased performance at work or school and temporary changes in
+ social relationships. An adjustment disorder may complicate the course of illness in individuals
+ who have another medical condition (e.g., decreased compliance with the recommended medical
+ regimen; increased length of hospital stay).
+ Differential Diagnosis
+ Major depressive disorder.
+ If an individual has symptoms that meet criteria for a major depressive
+ Posttraumatic stress disorder and acute stress disorder.
+ disorder in response to a stressor, the diagnosis of an adjustment disorder is not applicable. The
+ symptom profile of major depressive disorder differentiates it from adjustment disorders.
+ In adjustment disorders, the stressor can be
+ of any severity rather than of the severity and type required by Criterion A of acute stress
+ disorder and posttraumatic stress disorder (PTSD). In distinguishing adjustment disorders from
+ these two posttraumatic diagnoses, there are both timing and symptom profile considerations.
+ Adjustment disorders can be diagnosed immediately and persist up to 6 months after exposure to
+ the traumatic event, whereas acute stress disorder can only occur between 3 days and 1 month of
+ exposure to the stressor, and PTSD cannot be diagnosed until at least 1 month has passed since
+ the occurrence of the traumatic stressor. The required symptom profiles for PTSD and acute
+ stress disorder differentiate them from the adjustment disorders. With regard to symptom
+ profiles, an adjustment disorder may be diagnosed following a traumatic event when an
+ individual exhibits symptoms of either acute stress disorder or PTSD that do not meet or exceed
+ the diagnostic threshold for either disorder. Because adjustment disorder cannot persist for more
+ than 6 months after termination of the stressor or its consequences, cases in which symptoms
+ occurring in response
+ 322
+ to a traumatic event that fall short of the diagnostic threshold for PTSD and that persist for
+ longer than 6 months should be diagnosed as other specified trauma- and stressor-related
+ disorder. An adjustment disorder should also be diagnosed for individuals who have not been
+ exposed to a traumatic event meeting Criterion A for PTSD, but who otherwise exhibit the full
+Personality disorders.
+ Bereavement.
+ Psychological factors affecting other medical conditions.
+ Normative stress reactions.
+ F43.8
+ symptom profile of either acute stress disorder or PTSD.
+ With regard to personality disorders, some personality features may be
+ associated with a vulnerability to situational distress that may resemble an adjustment disorder.
+ The lifetime history of personality functioning will help inform the interpretation of distressed
+ behaviors to aid in distinguishing a long-standing personality disorder from an adjustment
+ disorder. In addition to some personality disorders incurring vulnerability to distress, stressors
+ may also exacerbate personality disorder symptoms. In the presence of a personality disorder, if
+ the symptom criteria for an adjustment disorder are met, and the stress-related disturbance
+ exceeds what may be attributable to maladaptive personality disorder symptoms (i.e., Criterion C
+ is met), then the diagnosis of an adjustment disorder should be made.
+ Clinically significant acute bereavement-related distress may sometimes be
+ diagnosed as an adjustment disorder if the bereavement is judged to be out of proportion to what
+ would be expected or significantly impairs self-care and interpersonal relations. When such
+ symptoms persist for more than 12 months after the death, the diagnosis is either prolonged grief
+ disorder if full criteria are met or else other specified trauma- and stressor-related disorder.
+ In psychological factors affecting other
+ medical conditions, specific psychological entities (e.g., psychological symptoms, behaviors,
+ other factors) exacerbate a medical condition. These psychological factors can precipitate,
+ exacerbate, or put an individual at risk for medical illness, or they can worsen an existing
+ condition. In contrast, an adjustment disorder is a reaction to the stressor (e.g., having a medical
+ illness).
+ When bad things happen, most people get upset. This is not an
+ adjustment disorder. The diagnosis should only be made when the magnitude of the distress (e.g.,
+ alterations in mood, anxiety, or conduct) exceeds what would normally be expected (which may
+ vary in different cultures) or when the adverse event precipitates functional impairment.
+ Comorbidity
+ Adjustment disorders can accompany most mental disorders and any medical condition.
+ Adjustment disorders can be diagnosed in addition to another mental disorder only if the latter
+ does not explain the particular symptoms that occur in reaction to the stressor. For example, an
+ individual may develop an adjustment disorder, with depressed mood, after losing a job and at
+ the same time have a diagnosis of obsessive-compulsive disorder. Or, an individual may have a
+ depressive or bipolar disorder and an adjustment disorder as long as the criteria for both are met.
+ Adjustment disorders are common accompaniments of medical illness and may be the major
+ psychological response to a medical condition.

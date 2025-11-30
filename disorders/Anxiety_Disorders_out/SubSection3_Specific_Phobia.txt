@@ -1,0 +1,258 @@
+Specific Phobia
+ Diagnostic Criteria
+ A. Marked fear or anxiety about a specific object or situation (e.g., flying, heights,
+ animals, receiving an injection, seeing blood).
+ Note: In children, the fear or anxiety may be expressed by crying, tantrums,
+ freezing, or clinging.
+ B. The phobic object or situation almost always provokes immediate fear or anxiety.
+ C. The phobic object or situation is actively avoided or endured with intense fear or
+ anxiety.
+ D. The fear or anxiety is out of proportion to the actual danger posed by the specific
+ object or situation and to the sociocultural context.
+ E. The fear, anxiety, or avoidance is persistent, typically lasting for 6 months or
+ more.
+ F. The fear, anxiety, or avoidance causes clinically significant distress or
+ impairment in social, occupational, or other important areas of functioning.
+ G. The disturbance is not better explained by the symptoms of another mental
+ disorder, including fear, anxiety, and avoidance of situations associated with
+ panic-like symptoms or other incapacitating symptoms (as in agoraphobia);
+ objects or situations related to obsessions (as in obsessive-compulsive
+ disorder); reminders of traumatic events (as in posttraumatic stress disorder);
+ separation from home or attachment figures (as in separation anxiety disorder);
+ or social situations (as in social anxiety disorder).
+ Specify if:
+ Code based on the phobic stimulus:
+ F40.218 Animal (e.g., spiders, insects, dogs).
+ F40.228 Natural environment (e.g., heights, storms, water).
+ F40.23x Blood-injection-injury (e.g., needles, invasive medical procedures).
+ 225
+ Coding note: Select specific ICD-10-CM code as follows: F40.230 fear of
+ blood; F40.231 fear of injections and transfusions; F40.232 fear of other
+medical care; or F40.233 fear of injury.
+ F40.248 Situational (e.g., airplanes, elevators, enclosed places).
+ F40.298 Other (e.g., situations that may lead to choking or vomiting; in children,
+ e.g., loud sounds or costumed characters).
+ Coding note: When more than one phobic stimulus is present, code all ICD-10-CM
+ codes that apply (e.g., for fear of snakes and flying, F40.218 specific phobia, animal,
+ and F40.248 specific phobia, situational).
+ Specifiers
+ It is common for individuals to have multiple specific phobias. The average individual with
+ specific phobia fears three objects or situations, and approximately 75% of individuals with
+ specific phobia fear more than one situation or object. In such cases, multiple specific phobia
+ diagnoses, each with its own diagnostic code reflecting the phobic stimulus, would need to be
+ given. For example, if an individual fears thunderstorms and flying, then two diagnoses would be
+ given: specific phobia, natural environment, and specific phobia, situational.
+ Diagnostic Features
+ A key feature of this disorder is that the fear or anxiety is circumscribed to the presence of a
+ particular situation or object (Criterion A), which may be termed the phobic stimulus. The
+ categories of feared situations or objects are provided as specifiers. Many individuals fear objects
+ or situations from more than one category, or phobic stimulus. For the diagnosis of specific
+ phobia, the response must differ from normal, transient fears that commonly occur in the
+ population. To meet the criteria for a diagnosis, the fear or anxiety must be intense or severe (i.e.,
+ “marked”) (Criterion A). The amount of fear experienced may vary with proximity to the feared
+ object or situation and may occur in anticipation of or in the actual presence of the object or
+ situation. Also, the fear or anxiety may take the form of a full or limited symptom panic attack
+ (i.e., expected panic attack). Another characteristic of specific phobias is that fear or anxiety is
+ evoked nearly every time the individual comes into contact with the phobic stimulus (Criterion
+ B). Thus, an individual who becomes anxious only occasionally upon being confronted with the
+ situation or object (e.g., becomes anxious when flying only on one out of every five airplane
+ flights) would not be diagnosed with specific phobia. However, the degree of fear or anxiety
+ expressed may vary (from anticipatory anxiety to a full panic attack) across different occasions
+ of encountering the phobic object or situation because of various contextual factors such as the
+ presence of others, duration of exposure, and other threatening elements such as turbulence on a
+ flight for individuals who fear flying. Fear and anxiety are often expressed differently between
+ children and adults. Also, the fear or anxiety occurs as soon as the phobic object or situation is
+ encountered (i.e., immediately rather than being delayed).
+ The individual actively avoids the situation, or if he or she either is unable or decides not to
+ avoid it, the situation or object evokes intense fear or anxiety (Criterion C). Active avoidance
+ means the individual intentionally behaves in ways that are designed to prevent or minimize
+ contact with phobic objects or situations (e.g., takes tunnels instead of bridges on daily commute
+ to work for fear of heights; avoids entering a dark room for fear of spiders; avoids accepting a
+ job in a locale where a phobic stimulus is more common). Avoidance behaviors are often
+obvious (e.g., an individual who fears blood refusing to go to the doctor) but are sometimes less
+ obvious (e.g., an individual who fears snakes refusing to look at pictures that resemble the form
+ or shape of snakes). Many individuals with specific phobias have suffered over many years and
+ have changed their living circumstances in
+ 226
+ ways designed to avoid the phobic object or situation as much as possible (e.g., an individual
+ diagnosed with specific phobia, animal, who moves to reside in an area devoid of the particular
+ feared animal). Therefore, they no longer experience fear or anxiety in their daily life. In such
+ instances, avoidance behaviors or ongoing refusal to engage in activities that would involve
+ exposure to the phobic object or situation (e.g., repeated refusal to accept offers for work-related
+ travel because of fear of flying) may be helpful in confirming the diagnosis in the absence of
+ overt anxiety or panic.
+ The fear or anxiety is out of proportion to the actual danger that the object or situation poses,
+ or more intense than is deemed necessary (Criterion D). Although individuals with specific
+ phobia often recognize their reactions as disproportionate, they tend to overestimate the danger
+ in their feared situations, and thus the judgment of being out of proportion is made by the
+ clinician. The individual’s sociocultural context should also be considered. For example, fears of
+ the dark may be reasonable in a context of ongoing violence, and the degree of fear of insects
+ considered to be disproportionate would be higher in settings where insects are consumed in the
+ diet. The fear, anxiety, or avoidance is persistent, typically lasting for 6 months or more
+ (Criterion E), which helps distinguish the disorder from transient fears that are common in the
+ population, particularly among children. The specific phobia must cause clinically significant
+ distress or impairment in social, occupational, or other important areas of functioning in order for
+ the disorder to be diagnosed (Criterion F).
+ Associated Features
+ Individuals with specific phobia typically experience an increase in physiological arousal in
+ anticipation of or during exposure to a phobic object or situation. However, the physiological
+ response to the feared situation or object varies. Whereas individuals with situational, natural
+ environment, and animal specific phobias are likely to show sympathetic nervous system arousal,
+ individuals with blood-injection-injury specific phobia often demonstrate a vasovagal fainting or
+ near-fainting response that is marked by initial brief acceleration of heart rate and elevation of
+ blood pressure followed by a deceleration of heart rate and a drop in blood pressure.
+ Additionally, specific phobia is most consistently associated with abnormal activity in the
+ amygdala, anterior cingulate cortex, thalamus, and insula in response to the phobic
+ object/situation.
+ Prevalence
+ In the United States, the 12-month community prevalence estimate for specific phobia is
+ approximately 8%–12%. Prevalence rates in European countries are largely similar to those in
+ the United States (e.g., about 6%), but rates are generally lower in Asian, African, and Latin
+ American countries (2%–4%). Prevalence estimates in children average approximately 5%
+across various countries, with a range of 3%–9%, and are approximately 16% in adolescents ages
+ 13–17 years in the United States. Prevalence estimates are lower in older individuals (about 3%
+5%), possibly reflecting diminishing severity to subclinical levels. Women are more frequently
+ affected than men across subtypes, at a rate of approximately 2:1.
+ Development and Course
+ Specific phobia sometimes develops following a traumatic event (e.g., being attacked by an
+ animal or stuck in an elevator), observation of others going through a traumatic event (e.g.,
+ watching someone drown), an unexpected panic attack in the to be feared situation (e.g., an
+ unexpected panic attack while on the subway), or informational transmission (e.g., extensive
+ media coverage of a plane crash). However, many individuals with specific phobia are unable to
+ recall the specific reason for the onset of their phobias. Specific phobia usually develops in early
+ childhood, with the majority of cases developing prior to age 10 years. Median age at onset is
+ between 7 and 11 years, with the mean at about 10 years.
+ 227
+ Situational specific phobias tend to have a later age at onset than natural environment, animal, or
+ blood-injection-injury specific phobias. Specific phobias that develop in childhood and
+ adolescence are likely to wax and wane during that period. However, phobias that do persist into
+ adulthood are unlikely to remit for the majority of individuals.
+ When specific phobia is being diagnosed in children, two issues should be considered. First,
+ young children may express their fear and anxiety by crying, tantrums, freezing, or clinging.
+ Second, young children typically are not able to understand the concept of avoidance. Therefore,
+ the clinician should assemble additional information from parents, teachers, or others who know
+ the child well. Excessive fears are quite common in young children but are usually transitory and
+ only mildly impairing and thus considered developmentally appropriate. In such cases a
+ diagnosis of specific phobia would not be made. When the diagnosis of specific phobia is being
+ considered in a child, it is important to assess the degree of impairment and the duration of the
+ fear, anxiety, or avoidance, and whether it is typical for the child’s particular developmental
+ stage.
+ Although the prevalence of specific phobia is lower in older populations, it remains one of
+ the more commonly experienced disorders in late life. Several issues should be considered when
+ diagnosing specific phobia in older populations. First, older individuals may be more likely to
+ endorse natural environment specific phobias, as well as phobias of falling. Second, specific
+ phobia (like all anxiety disorders) tends to co-occur with medical concerns in older individuals,
+ including coronary heart disease, chronic obstructive pulmonary disease, and Parkinson’s
+ disease. Third, older individuals may be more likely to attribute the symptoms of anxiety to
+ medical conditions. Fourth, older individuals may be more likely to manifest anxiety in an
+ atypical manner (e.g., involving symptoms of both anxiety and depression) and thus be more
+ likely to warrant a diagnosis of unspecified anxiety disorder. Additionally, the presence of
+ specific phobia in older adults is associated with decreased quality of life and may serve as a risk
+ factor for major neurocognitive disorder.
+ Although most specific phobias develop in childhood and adolescence, it is possible for a
+specific phobia to develop at any age, often as the result of experiences that are traumatic. For
+ example, phobias of choking almost always follow a near-choking event at any age.
+ Risk and Prognostic Factors
+ Temperamental.
+ Environmental.
+ Genetic and physiological.
+ Temperamental risk factors for specific phobia, such as negative affectivity
+ (neuroticism) or behavioral inhibition, are risk factors for other anxiety disorders as well.
+ Environmental risk factors for specific phobias, such as parental
+ overprotectiveness, parental loss and separation, and physical and sexual abuse, tend to predict
+ other anxiety disorders as well. As noted earlier, negative or traumatic encounters with the feared
+ object or situation sometimes (but not always) precede the development of specific phobia.
+ There may be a genetic susceptibility to a certain category of specific
+ phobia (e.g., an individual with a first-degree relative with a specific phobia of animals is
+ significantly more likely to have the same type of specific phobia than any other category of
+ phobia). Twin studies have examined the heritability of individual subtypes of fears and phobias,
+ suggesting that animal phobia has approximately 32% heritability, blood-injury-injection phobia
+ has 33%, and situational phobia has 25%.
+ Culture-Related Diagnostic Issues
+ In the United States, individuals of Asian and Latinx descent report lower prevalence of specific
+ phobia than non-Latinx Whites and African Americans. The prevalence of specific phobia
+ subtypes varies cross-nationally.
+ 228
+ Sex- and Gender-Related Diagnostic Issues
+ Animal, natural environment, and situational specific phobias are predominantly experienced by
+ women, whereas blood-injection-injury phobia is experienced nearly equally among women and
+ men. The average age at onset of specific phobia during childhood does not differ between
+ girls/women and boys/men.
+ Association With Suicidal Thoughts or Behavior
+ Specific phobia is associated with both suicidal thoughts and suicide attempts based on national
+ U.S. survey data. Specific phobia is also associated with a transition from ideation to attempt.
+ For individuals in the community ages 14–24 years, a large prospective study over a 10-year
+ period in Germany found that 30% of first suicide attempts could be attributable to specific
+ phobia.
+ Functional Consequences of Specific Phobia
+ Individuals with specific phobia show similar patterns of impairment in psychosocial functioning
+ and decreased quality of life as individuals with other anxiety disorders and alcohol and
+ substance use disorders, including impairments in occupational and interpersonal functioning. In
+ older adults, impairment may be seen in caregiving duties and volunteer activities. Also, fear of
+falling in older adults can lead to reduced mobility and reduced physical and social functioning,
+ and may lead to receiving formal or informal home support. The distress and impairment caused
+ by specific phobias tend to increase with the number of feared objects and situations. Thus, an
+ individual who fears four objects or situations is likely to have more impairment in his or her
+ occupational and social roles and a lower quality of life than an individual who fears only one
+ object or situation. Individuals with blood-injection-injury specific phobia are often reluctant to
+ obtain medical care even when a medical concern is present. Additionally, fear of vomiting and
+ choking may substantially reduce dietary intake.
+ Differential Diagnosis
+ Agoraphobia.
+ Situational specific phobia may resemble agoraphobia in its clinical presentation,
+ given the overlap in feared situations (e.g., flying, enclosed places, elevators). If an individual
+ fears only one of the agoraphobic situations, then specific phobia, situational, may be diagnosed.
+ If two or more agoraphobic situations are feared, a diagnosis of agoraphobia is likely warranted.
+ For example, an individual who fears airplanes and elevators (which overlap with the “public
+ transportation” agoraphobic situation) but does not fear other agoraphobic situations would be
+ diagnosed with specific phobia, situational, whereas an individual who fears airplanes, elevators,
+ and crowds (which overlap with two agoraphobic situations, “using public transportation” and
+ “standing in line or being in a crowd”) would be diagnosed with agoraphobia. Criterion B of
+ agoraphobia (the situations are feared or avoided “because of thoughts that escape might be
+ difficult or help might not be available in the event of developing panic-like symptoms or other
+ incapacitating or embarrassing symptoms”) can also be useful in differentiating agoraphobia
+ from specific phobia. If the situations are feared for reasons other than not being able to escape
+ or get help, such as fear of being harmed directly by the object or situation (e.g., fear of the plane
+ crashing, fear of the animal biting), a specific phobia diagnosis may be more appropriate.
+ Social anxiety disorder.
+ If the situations are feared because of negative evaluation, social anxiety
+ disorder should be diagnosed instead of specific phobia.
+ Separation anxiety disorder.
+ If the situations are feared because of separation from a primary
+ caregiver or attachment figure, separation anxiety disorder should be diagnosed instead of
+ specific phobia.
+ 229
+ Panic disorder.
+ Individuals with specific phobia may experience panic attacks when confronted
+ with their feared situation or object. A diagnosis of specific phobia would be given if the panic
+ attacks only occurred in response to the specific object or situation, whereas a diagnosis of panic
+ disorder would be given if the individual also experienced panic attacks that were unexpected
+ (i.e., not in response to the specific phobia object or situation).
+ Obsessive-compulsive disorder.
+ If an individual’s primary fear or anxiety is of an object or
+ situation as a result of obsessions (e.g., fear of blood due to obsessive thoughts about
+ contamination from blood-borne pathogens [i.e., HIV]; fear of driving due to obsessive images
+ of harming others), and if other diagnostic criteria for obsessive-compulsive disorder are met,
+ then obsessive-compulsive disorder should be diagnosed.
+Trauma- and stressor-related disorders.
+ Eating disorders.
+ Schizophrenia spectrum and other psychotic disorders.
+ F40.10
+ If the phobia develops following a traumatic event,
+ posttraumatic stress disorder (PTSD) should be considered as a diagnosis. However, traumatic
+ events can precede the onset of PTSD and specific phobia. In this case, a diagnosis of specific
+ phobia would be assigned only if all of the criteria for PTSD are not met.
+ A diagnosis of specific phobia is not given if the avoidance behavior is
+ exclusively limited to avoidance of food and food-related cues, in which case a diagnosis of
+ anorexia nervosa or bulimia nervosa should be considered.
+ When the fear and avoidance are attributable
+ to delusional thinking (as in schizophrenia or other schizophrenia spectrum and other psychotic
+ disorders), a diagnosis of specific phobia is not warranted.
+ Comorbidity
+ Specific phobia is rarely seen in medical-clinical settings in the absence of other
+ psychopathology and is more frequently seen in nonmedical mental health settings. Specific
+ phobia is frequently associated with a range of other disorders. Because of early onset, specific
+ phobia is typically the temporally primary disorder. Individuals with specific phobia are at
+ increased risk for the development of other disorders, including other anxiety disorders,
+ depressive and bipolar disorders, substance-related disorders, somatic symptom and related
+ disorders, and personality disorders (particularly dependent personality disorder).

@@ -1,0 +1,192 @@
+ Major or Mild Vascular Neurocognitive Disorder
+ Diagnostic Criteria
+ A. The criteria are met for major or mild neurocognitive disorder.
+ B. The clinical features are consistent with a vascular etiology, as suggested by
+ either of the following:
+ 1. Onset of the cognitive deficits is temporally related to one or more
+ cerebrovascular events.
+ 2. Evidence for decline is prominent in complex attention (including processing
+ speed) and frontal-executive function.
+ 703
+ C. There is evidence of the presence of cerebrovascular disease from history,
+ physical examination, and/or neuroimaging considered sufficient to account for
+ the neurocognitive deficits.
+ D. The symptoms are not better explained by another brain disease or systemic
+ disorder.
+ Probable vascular neurocognitive disorder is diagnosed if one of the following is
+ present; otherwise possible vascular neurocognitive disorder should be
+ diagnosed:
+1. Clinical criteria are supported by neuroimaging evidence of significant
+ parenchymal injury attributed to cerebrovascular disease (neuroimaging
+supported).
+ 2. The neurocognitive syndrome is temporally related to one or more documented
+ cerebrovascular events.
+ 3. Both clinical and genetic (e.g., cerebral autosomal dominant arteriopathy with
+ subcortical infarcts and leukoencephalopathy) evidence of cerebrovascular
+ disease is present.
+ Possible vascular neurocognitive disorder is diagnosed if the clinical criteria are
+ met but neuroimaging is not available and the temporal relationship of the
+ neurocognitive syndrome with one or more cerebrovascular events is not
+ established.
+ Coding note (see coding table on pp. 682–683):
+ For major neurocognitive disorder probably or possibly due to vascular disease, with
+ behavioral disturbance, code F01.51.
+ For major neurocognitive disorder probably or possibly due to vascular disease,
+ without behavioral disturbance, code F01.50.
+ An additional medical code for the vascular disease is not used.
+ Note: The severity specifiers “mild,” “moderate,” and “severe” cannot be coded for
+ major neurocognitive disorder but should still be recorded.
+ For mild vascular neurocognitive disorder, code G31.84. (Note: Do not use an
+ additional code for the vascular disease. “With behavioral disturbance” and “without
+ behavioral disturbance” cannot be coded but should still be recorded.)
+ For major or mild vascular neurocognitive disorder: Use additional code(s) to
+ indicate clinically significant psychiatric symptoms due to the cerebrovascular
+ disease (e.g., F06.31 depressive disorder due to cerebrovascular disease, with
+ depressive features).
+ Diagnostic Features
+ The diagnosis of major or mild vascular neurocognitive disorder (NCD) requires the
+ establishment of an NCD (Criterion A) and the determination that cerebrovascular disease is the
+ dominant if not exclusive pathology that accounts for the cognitive deficits (Criteria B and C).
+ Vascular etiology may range from large vessel stroke to microvascular disease; the presentation
+ is therefore very heterogeneous, stemming from the types of vascular lesions and their extent and
+ location. The lesions may be focal, multifocal, or diffuse and occur in various combinations.
+ Pathogenic mechanisms responsible for brain parenchymal injury include hypoperfusion and
+ hypoxia, oxidative stress and inflammation leading to endothelial dysfunction, impairment of
+ autoregulation, and disruption of neurovascular coupling.
+ Many individuals with major or mild vascular NCD present with multiple infarctions, with an
+ acute stepwise or fluctuating decline in cognition, and intervening periods of stability and even
+ some improvement. Others may have gradual onset with slow progression, a rapid development
+ of deficits followed by relative stability, or another complex presentation. Major or mild vascular
+NCD with a gradual onset and slow progression is generally attributable to small vessel disease
+ leading to lesions in the white matter, basal ganglia, or thalamus. The gradual progression in
+ these cases is often punctuated by acute
+ 704
+ events that leave subtle neurological deficits. The cognitive deficits in these cases can be
+ attributed to disruption of cortical-subcortical circuits; complex attention, particularly speed of
+ information processing, and executive function are likely to be affected. Clinical subtypes of
+ vascular NCD have been described and include 1) poststroke NCD, manifesting immediately
+ after a stroke; 2) subcortical ischemic vascular NCD; 3) multi-infarct (cortical) NCD; and 4)
+ cortical-subcortical vascular NCD.
+ Assessing for the presence of sufficient cerebrovascular disease relies on history, physical
+ examination, and neuroimaging (Criterion C). Etiological certainty requires the demonstration of
+ abnormalities on neuroimaging. The lack of neuroimaging can result in significant diagnostic
+ inaccuracy by overlooking “silent” brain infarction and white matter lesions. However, if the
+ neurocognitive impairment is temporally associated with one or more well-documented strokes,
+ a probable diagnosis can be made in the absence of neuroimaging. Clinical evidence of
+ cerebrovascular disease includes documented history of stroke, with cognitive decline temporally
+ associated with the event, or physical signs consistent with stroke (e.g., hemiparesis;
+ pseudobulbar syndrome, visual field defect). Neuroimaging (magnetic resonance imaging [MRI]
+ or computed tomography [CT]) evidence of cerebrovascular disease comprises one or more of
+ the following: one or more large vessel infarcts or hemorrhages, a strategically placed single
+ infarct or hemorrhage (e.g., in angular gyrus, thalamus, basal forebrain), two or more lacunes
+ outside the brain stem, or extensive and confluent white matter lesions. The latter is often termed
+ small vessel disease or subcortical ischemic changes on clinical neuroimaging evaluations. MRI
+ is the preferred mode of neuroimaging, and there has been interest in using specialized MRI
+ techniques to detect cerebral microbleeds, cortical microinfarcts, dilated perivascular spaces, and
+ diffusion-based analyses of white matter tracts and network connectivity.
+ For mild vascular NCD, history of a single stroke or extensive white matter disease is
+ generally sufficient. For major vascular NCD, two or more strokes, a strategically placed stroke,
+ or a combination of white matter disease and one or more lacunes is generally necessary.
+ However, the relationship between identifiable vascular pathology in the brain on neuroimaging
+ and the cognitive symptoms is imperfect, and clinical judgment is generally needed to relate the
+ vascular lesions to the cognitive syndrome.
+ The neurocognitive symptoms must not be better explained by another medical condition or
+ mental disorder. For example, prominent memory deficit early in the course might suggest NCD
+ due to Alzheimer’s disease, early and prominent parkinsonian features would suggest NCD due
+ to Parkinson’s disease, and a close association between onset of cognitive and depressive
+ symptoms would suggest cognitive impairment as a result of depression.
+ A number of expert international groups have similarly defined and categorized the vascular
+ NCDs, with which DSM-5 criteria generally display good correspondence.
+ Associated Features
+A neurological assessment often reveals history of stroke or transient ischemic episodes, and
+ signs indicative of brain infarctions. Also commonly associated are personality and mood
+ changes, abulia, depression, and emotional lability. The development of late-onset depressive
+ symptoms accompanied by psychomotor slowing and executive dysfunction is a common
+ presentation among older adults with progressive small vessel ischemic disease (so-called
+ vascular depression).
+ Prevalence
+ Vascular disease is the second most common cause of NCD after Alzheimer’s disease. In the
+ United States, population prevalence estimates for vascular dementia are 0.98% for individuals
+ ages 71–79 years, 4.09% for those ages 80–89 years, and 6.19% for those age 90 years or older.
+ Within 3 months following stroke, 20%–30% of individuals are diagnosed with
+ 705
+ dementia. In a European autopsy series of decedents ages 60–103 years, the prevalence of pure
+ vascular dementia was 12.3%. Among those ages 60–69 years, the prevalence was higher
+ (15.0%) compared with those older than 90 years (8.7%). Mixed dementia (Alzheimer’s plus
+ vascular pathology) was present in 5.5% of the overall cohort, with a higher prevalence in those
+ older than 90 years (10.6%) compared with those ages 60–69 years (5.2%). Higher prevalence of
+ vascular dementia has been found among African Americans, Mexican Americans, and South
+ Asian Americans compared with non-Latinx Whites, possibly because of higher rates of risk
+ factors such as diabetes and cardiovascular disease. In Japan and several other Asian countries,
+ the prevalence of dementia due to Alzheimer’s disease has increased over time relative to
+ vascular dementia. Currently, the prevalence of dementia due to Alzheimer’s disease among
+ Japanese Americans is 2.6 times higher than that of vascular dementia.
+ Stroke is more common in men through age 65 years, but more common in women after age
+ 65 years. Overall, the rate of vascular NCD was higher in men in some studies.
+ Development and Course
+ Major or mild vascular NCD can occur at any age, although the prevalence increases
+ exponentially after age 65 years. In older individuals, additional pathologies are almost always
+ present and partly account for the neurocognitive deficits. The course may vary from acute onset
+ with partial improvement to stepwise decline to progressive decline, with fluctuations and
+ plateaus of varying durations. Pure subcortical major or mild vascular NCD can have a slowly
+ progressive course that simulates major or mild NCD due to Alzheimer’s disease. The risk of an
+ ischemic stroke progressing to vascular NCD within 5 years was almost twice as high among
+ African Americans as among non-Latinx Whites in the United States and occurred at younger
+ ages. This is possibly a result of the impact of higher rates of hypertension, diabetes, and adverse
+ social determinants of mental health known to worsen dementia risk, such as limited formal
+ education and low socioeconomic status.
+ Risk and Prognostic Factors
+ Environmental.
+ The neurocognitive outcomes of vascular brain injury are influenced by
+Genetic and physiological.
+ neuroplasticity factors such as education, physical exercise, and mental activity.
+ The major risk factors for major or mild vascular NCD are the same as
+ those for cerebrovascular disease and stroke, including hypertension, diabetes, smoking, obesity,
+ high cholesterol levels, high homocysteine levels, other risk factors for atherosclerosis and
+ arteriolosclerosis, atrial fibrillation, and other conditions increasing the risk of cerebral emboli.
+ Cerebral amyloid angiopathy, leading to cerebral hemorrhage, is an important risk factor in
+ which amyloid deposits occur within arterial vessels. A genetic risk factor is the hereditary
+ condition cerebral autosomal dominant arteriopathy with subcortical infarcts and
+ leukoencephalopathy, or CADASIL. Other rarer forms of genetic disorders linked to vascular
+ NCD exist, but overall the contribution of genetics is small.
+ Diagnostic Markers
+ Structural neuroimaging, using MRI or CT, has an important role in the diagnostic process.
+ There are no other established biomarkers of major or mild vascular NCD.
+ Functional Consequences of Major or Mild Vascular Neurocognitive
+ Disorder
+ Major or mild vascular NCD is commonly associated with physical deficits that cause additional
+ disability.
+ 706
+ Differential Diagnosis
+ Other neurocognitive disorders.
+ Since incidental brain infarctions and white matter lesions are
+ common in older individuals, it is important to consider other possible etiologies when an NCD
+ is present in an individual with white matter lesions. A history of memory deficit early in the
+ course, and progressive worsening of memory, language, executive function, and perceptual
+motor abilities in the absence of corresponding focal lesions on brain imaging, are suggestive of
+ Alzheimer’s disease as the primary diagnosis. Potential biomarkers currently being validated for
+ Alzheimer’s disease, such as cerebrospinal fluid levels of β-amyloid and phosphorylated tau, and
+ amyloid and tau imaging, may prove to be helpful in the differential diagnosis. NCD with Lewy
+ bodies is distinguished from major or mild vascular NCD by its core features of fluctuating
+ cognition, visual hallucinations, and spontaneous parkinsonism. While deficits in executive
+ function and language occur in major or mild vascular NCD, the insidious onset and gradual
+ progression of behavioral features or language impairment are characteristic of frontotemporal
+ NCD and are not typical of vascular etiology.
+ Other medical conditions.
+ A diagnosis of major or mild vascular NCD is not made if other
+ diseases (e.g., brain tumor, multiple sclerosis, encephalitis, toxic or metabolic disorders) are
+ present and are of sufficient severity to account for the cognitive impairment.
+ Other mental disorders.
+ A diagnosis of major or mild vascular NCD is inappropriate if the
+ symptoms can be entirely attributed to delirium, although delirium may sometimes be
+ superimposed on a preexisting major or mild vascular NCD, in which case both diagnoses can be
+ made. If the criteria for major depressive disorder are met and the cognitive impairment is
+temporally related to the likely onset of the depression, major or mild vascular NCD should not
+ be diagnosed. However, if the NCD preceded the development of the depression, or the severity
+ of the cognitive impairment is out of proportion to the severity of the depression, depressive
+ disorder due to cerebrovascular disease should be diagnosed instead of major depressive
+ disorder.
+ Comorbidity
+ Major or mild NCD due to Alzheimer’s disease commonly co-occurs with major or mild
+ vascular NCD, in which case both diagnoses should be made. Major or mild vascular NCD and
+ depression frequently co-occur.

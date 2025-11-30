@@ -1,0 +1,152 @@
+Phencyclidine Use Disorder
+ Diagnostic Criteria
+ A. A pattern of phencyclidine (or a pharmacologically similar substance) use
+ leading to clinically significant impairment or distress, as manifested by at least
+ two of the following, occurring within a 12-month period:
+ 1. Phencyclidine is often taken in larger amounts or over a longer period than
+ was intended.
+ 2. There is a persistent desire or unsuccessful efforts to cut down or control
+ phencyclidine use.
+ 3. A great deal of time is spent in activities necessary to obtain phencyclidine,
+ use the phencyclidine, or recover from its effects.
+ 4. Craving, or a strong desire or urge to use phencyclidine.
+ 5. Recurrent phencyclidine use resulting in a failure to fulfill major role
+ obligations at work, school, or home (e.g., repeated absences from work or
+ poor work performance related to phencyclidine use; phencyclidine-related
+ absences, suspensions, or expulsions from school; neglect of children or
+ household).
+ 6. Continued phencyclidine use despite having persistent or recurrent social or
+ interpersonal problems caused or exacerbated by the effects of the
+ phencyclidine (e.g., arguments with a spouse about consequences of
+ intoxication; physical fights).
+ 7. Important social, occupational, or recreational activities are given up or
+ reduced because of phencyclidine use.
+8. Recurrent phencyclidine use in situations in which it is physically hazardous
+ (e.g., driving an automobile or operating a machine when impaired by a
+ phencyclidine).
+ 9. Phencyclidine use is continued despite knowledge of having a persistent or
+ recurrent physical or psychological problem that is likely to have been caused
+ or exacerbated by the phencyclidine.
+ 10. Tolerance, as defined by either of the following:
+ a. A need for markedly increased amounts of the phencyclidine to achieve
+ intoxication or desired effect.
+ 588
+ b. A markedly diminished effect with continued use of the same amount of
+ the phencyclidine.
+ Note: Withdrawal symptoms and signs are not established for phencyclidines, and
+ so this criterion does not apply. (Withdrawal from phencyclidines has been reported
+ in animals but not documented in human users.)
+ Specify if:
+ In early remission: After full criteria for phencyclidine use disorder were
+ previously met, none of the criteria for phencyclidine use disorder have been met
+ for at least 3 months but for less than 12 months (with the exception that
+ Criterion A4, “Craving, or a strong desire or urge to use the phencyclidine,” may
+ be met).
+ In sustained remission: After full criteria for phencyclidine use disorder were
+ previously met, none of the criteria for phencyclidine use disorder have been met
+ at any time during a period of 12 months or longer (with the exception that
+ Criterion A4, “Craving, or a strong desire or urge to use the phencyclidine,” may
+ be met).
+ Specify if:
+ In a controlled environment: This additional specifier is used if the individual is
+ in an environment where access to phencyclidines is restricted.
+ Code based on current severity/remission: If a phencyclidine intoxication or
+ another phencyclidine-induced mental disorder is also present, do not use the codes
+ below for phencyclidine use disorder. Instead, the comorbid phencyclidine use
+ disorder is indicated in the 4th character of the phencyclidine-induced disorder code
+ (see the coding note for phencyclidine intoxication or a specific phencyclidine
+induced mental disorder). For example, if there is comorbid phencyclidine-induced
+ psychotic disorder, only the phencyclidine-induced psychotic disorder code is given,
+ with the 4th character indicating whether the comorbid phencyclidine use disorder is
+ mild, moderate, or severe: F16.159 for mild phencyclidine use disorder with
+ phencyclidine-induced psychotic disorder or F16.259 for a moderate or severe
+ phencyclidine use disorder with phencyclidine-induced psychotic disorder.
+Specify current severity/remission:
+ F16.10 Mild: Presence of 2–3 symptoms.
+ F16.11 Mild, In early remission
+ F16.11 Mild, In sustained remission
+ F16.20 Moderate: Presence of 4–5 symptoms.
+ F16.21 Moderate, In early remission
+ F16.21 Moderate, In sustained remission
+ F16.20 Severe: Presence of 6 or more symptoms.
+ F16.21 Severe, In early remission
+ F16.21 Severe, In sustained remission
+ Specifiers
+ “In a controlled environment” applies as a further specifier of remission if the individual is both
+ in remission and in a controlled environment (i.e., in early remission in a controlled environment
+ or in sustained remission in a controlled environment). Examples of these environments are
+ closely supervised and substance-free jails, therapeutic communities, and locked hospital units.
+ Diagnostic Features
+ The phencyclidines (or phencyclidine-like substances) include phencyclidine (e.g., PCP, “angel
+ dust”) and less potent but similarly acting compounds such as ketamine,
+ 589
+ cyclohexamine, and dizocilpine. These substances were first developed as dissociative
+ anesthetics in the 1950s and became street drugs in the 1960s. They produce feelings of
+ separation from mind and body (hence “dissociative”) in low doses, and at high doses, stupor
+ and coma can result. These substances are most commonly smoked or taken orally, but they may
+ also be snorted or injected. Although the primary psychoactive effects of phencyclidine last for a
+ few hours, the total elimination rate of this drug from the body typically extends 8 days or
+ longer. The hallucinogenic effects in vulnerable individuals may last for weeks and may
+ precipitate a persistent psychotic episode resembling schizophrenia. Ketamine has been observed
+ to have utility in the treatment of major depressive disorder. Withdrawal symptoms have not
+ been clearly established in humans, and therefore the withdrawal criterion is not included in the
+ diagnosis of phencyclidine use disorder.
+ Associated Features
+ Phencyclidine may be detected in urine for up to 8 days or even longer at very high doses. In
+ addition to laboratory tests to detect its presence, characteristic symptoms resulting from
+ intoxication with phencyclidine or related substances may aid in its diagnosis. Phencyclidine is
+ likely to produce dissociative symptoms, analgesia, nystagmus, risk of hypertension/hypotension
+ and shock, euphoria, visual/auditory hallucinations, derealization, and unusual thought content.
+Violent behavior can also occur with phencyclidine use, as intoxicated individuals may believe
+ that they are being attacked.
+ Prevalence
+ Data on the prevalence of phencyclidine use disorder are not available, but rates appear to be low
+ (based on rates of the overall category of hallucinogen use disorder, which includes
+ phencyclidine, of about 0.1% among individuals age 12 and older in the United States).
+ Furthermore, among U.S. substance use treatment facility admissions, only 0.3% of the admitted
+ individuals endorsed phencyclidine as their primary drug.
+ Risk and Prognostic Factors
+ In a general population study in Australia, ketamine users were more likely to be men and to
+ have consumed more than 11 standard drinks per day.
+ Sex- and Gender-Related Diagnostic Issues
+ The gender ratio for phencyclidine use disorder is not known, but among U.S. substance use
+ treatment facility admissions endorsing phencyclidine as the primary drug, 62% were men.
+ Diagnostic Markers
+ Laboratory testing may be useful, as phencyclidine is present in the urine in intoxicated
+ individuals up to 8 days after ingestion. The individual’s history along with certain physical
+ signs (e.g., nystagmus, analgesia, prominent hypertension) may aid in distinguishing the
+ phencyclidine clinical picture from that of other hallucinogens.
+ Functional Consequences of Phencyclidine Use Disorder
+ In individuals with phencyclidine use disorder, there may be physical evidence of injuries from
+ accidents, fights, and falls. Chronic use of phencyclidine can lead to acute and persistent
+ cognitive impairment; urinary tract and intestinal symptoms; abdominal pain, chest pain,
+ palpitations, and tachycardia; respiratory depression; sleep disorders; and depression.
+ 590
+ Differential Diagnosis
+ Other substance use disorders.
+ Distinguishing the effects of phencyclidine from those of other
+ substances may be important, because phencyclidine can be an additive to other substances (e.g.,
+ cannabis, cocaine).
+ Phencyclidine intoxication and phencyclidine-induced mental disorders.
+ Phencyclidine use disorder is
+ differentiated from phencyclidine intoxication and phencyclidine-induced mental disorders (e.g.,
+ phencyclidine-induced psychotic disorder) in that phencyclidine use disorder describes a
+ problematic pattern of phencyclidine use that involves impaired control over phencyclidine use,
+ social impairment attributable to phencyclidine use, risky phencyclidine use (e.g., driving while
+ intoxicated), and pharmacological symptoms (the development of tolerance), whereas
+Independent mental disorders.
+ phencyclidine intoxication and phencyclidine-induced mental disorders describe psychiatric
+ syndromes that occur in the context of heavy use. Phencyclidine intoxication and phencyclidine
+induced mental disorders occur frequently in individuals with phencyclidine use disorder. In
+ such cases, a diagnosis of phencyclidine intoxication or a phencyclidine-induced mental disorder
+ should be given in addition to a diagnosis of phencyclidine use disorder, the presence of which is
+ indicated in the diagnostic code.
+ Some of the effects of phencyclidine use may resemble symptoms
+ of independent mental disorders, such as psychosis (schizophrenia); low mood (major depressive
+ disorder); and violent, aggressive behaviors (conduct disorder, antisocial personality disorder).
+ Discerning whether these behaviors occurred before the intake of the drug is important in the
+ differentiation of acute drug effects from a preexisting mental disorder.
+ Comorbidity
+ Conduct disorder in adolescents and antisocial personality disorder may be associated with
+ phencyclidine use. Other substance use disorders, especially alcohol, cocaine, and amphetamine
+ use disorders, are common among those with phencyclidine use disorder.

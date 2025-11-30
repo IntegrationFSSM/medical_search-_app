@@ -1,0 +1,209 @@
+ Inhalant Use Disorder
+ Diagnostic Criteria
+ A. A problematic pattern of use of a hydrocarbon-based inhalant substance leading
+ to clinically significant impairment or distress, as manifested by at least two of
+ the following, occurring within a 12-month period:
+ 1. The inhalant substance is often taken in larger amounts or over a longer
+ period than was intended.
+ 2. There is a persistent desire or unsuccessful efforts to cut down or control use
+of the inhalant substance.
+ 3. A great deal of time is spent in activities necessary to obtain the inhalant
+ substance, use it, or recover from its effects.
+ 4. Craving, or a strong desire or urge to use the inhalant substance.
+ 5. Recurrent use of the inhalant substance resulting in a failure to fulfill major
+ role obligations at work, school, or home.
+ 6. Continued use of the inhalant substance despite having persistent or
+ recurrent social or interpersonal problems caused or exacerbated by the
+ effects of its use.
+ 7. Important social, occupational, or recreational activities are given up or
+ reduced because of use of the inhalant substance.
+ 8. Recurrent use of the inhalant substance in situations in which it is physically
+ hazardous.
+ 9. Use of the inhalant substance is continued despite knowledge of having a
+ persistent or recurrent physical or psychological problem that is likely to have
+ been caused or exacerbated by the substance.
+ 10. Tolerance, as defined by either of the following:
+ a. A need for markedly increased amounts of the inhalant substance to
+ achieve intoxication or desired effect.
+ b. A markedly diminished effect with continued use of the same amount of
+ the inhalant substance.
+ 602
+ Specify the particular inhalant: When possible, the particular substance involved
+ should be named (e.g., “solvent use disorder”).
+ Specify if:
+ In early remission: After full criteria for inhalant use disorder were previously
+ met, none of the criteria for inhalant use disorder have been met for at least 3
+ months but for less than 12 months (with the exception that Criterion A4,
+ “Craving, or a strong desire or urge to use the inhalant substance,” may be met).
+ In sustained remission: After full criteria for inhalant use disorder were
+ previously met, none of the criteria for inhalant use disorder have been met at
+ any time during a period of 12 months or longer (with the exception that Criterion
+ A4, “Craving, or a strong desire or urge to use the inhalant substance,” may be
+ met).
+ Specify if:
+ In a controlled environment: This additional specifier is used if the individual is
+ in an environment where access to inhalant substances is restricted.
+ Code based on current severity/remission: If an inhalant intoxication or another
+ inhalant-induced mental disorder is also present, do not use the codes below for
+ inhalant use disorder. Instead, the comorbid inhalant use disorder is indicated in the
+4th character of the inhalant-induced disorder code (see the coding note for inhalant
+ intoxication or a specific inhalant-induced mental disorder). For example, if there is
+ comorbid inhalant-induced depressive disorder and inhalant use disorder, only the
+ inhalant-induced depressive disorder code is given, with the 4th character indicating
+ whether the comorbid inhalant use disorder is mild, moderate, or severe: F18.14 for
+ mild inhalant use disorder with inhalant-induced depressive disorder or F18.24 for a
+ moderate or severe inhalant use disorder with inhalant-induced depressive disorder.
+ Specify current severity/remission:
+ F18.10 Mild: Presence of 2–3 symptoms.
+ F18.11 Mild, In early remission
+ F18.11 Mild, In sustained remission
+ F18.20 Moderate: Presence of 4–5 symptoms.
+ F18.21 Moderate, In early remission
+ F18.21 Moderate, In sustained remission
+ F18.20 Severe: Presence of 6 or more symptoms.
+ F18.21 Severe, In early remission
+ F18.21 Severe, In sustained remission
+ Specifiers
+ “In a controlled environment” applies as a further specifier of remission if the individual is both
+ in remission and in a controlled environment (i.e., in early remission in a controlled environment
+ or in sustained remission in a controlled environment). Examples of these environments are
+ closely supervised and substance-free jails, therapeutic communities, and locked hospital units.
+ The severity of individuals’ inhalant use disorder is assessed by the number of diagnostic
+ criteria endorsed. Changing severity of individuals’ inhalant use disorder across time is reflected
+ by reductions in the frequency (e.g., days used per month) and/or dose (e.g., tubes of glue per
+ day) used, as assessed by the individual’s self-report, report of others, clinician’s observations,
+ and biological testing (when practical).
+ Diagnostic Features
+ Examples of inhalant substances include volatile hydrocarbons, which comprise toxic gases from
+ glues, fuels, paints, and other volatile compounds. When possible, the
+ 603
+ particular substance involved should be named (e.g., “toluene use disorder”). However, most
+ compounds that are inhaled are a mixture of several substances that can produce psychoactive
+ effects, and it is often difficult to ascertain the exact substance responsible for the disorder.
+ Unless there is clear evidence that a single, unmixed substance has been used, the general term
+ inhalant should be used in recording the diagnosis. Disorders arising from inhalation of nitrous
+ oxide or of amyl-, butyl-, or isobutylnitrite are considered as other (or unknown) substance use
+disorder.
+ Features of inhalant use disorder include repeated use of an inhalant substance despite the
+ individual’s knowing that the substance is causing serious problems for the individual (Criterion
+ A9). Those problems are reflected in the diagnostic criteria.
+ Missing work or school or inability to perform typical responsibilities at work or school
+ (Criterion A5), and continued use of the inhalant substance even though it causes arguments with
+ family or friends, fights, and other social or interpersonal problems (Criterion A6), may be seen
+ in inhalant use disorder. Limiting family contact, work or school obligations, or recreational
+ activities (e.g., sports, games, hobbies) may also occur (Criterion A7). Use of inhalants when
+ driving or operating dangerous equipment (Criterion A8) is also seen.
+ Tolerance (Criterion A10) is reported by about 10% of individuals who use inhalants.
+ Because a clinically significant withdrawal syndrome has not been established with inhalant use,
+ neither a diagnosis of inhalant withdrawal nor a corresponding diagnostic criterion for
+ withdrawal complaints for inhalant use disorder is included. However, withdrawal symptoms
+ may occur among inhalant users and individuals with moderate to severe inhalant use disorder,
+ and these symptoms appear to be similar in frequency to withdrawal symptoms among those
+ with moderate to severe cocaine use disorder.
+ Associated Features
+ A diagnosis of inhalant use disorder is supported by recurring episodes of intoxication with
+ negative results in standard drug screens (which do not detect inhalants); possession, or lingering
+ odors, of inhalant substances; peri-oral or peri-nasal “glue-sniffer’s rash”; association with other
+ individuals known to use inhalants; membership in groups with prevalent inhalant use (e.g.,
+ some native or aboriginal communities, homeless children in street gangs); easy access to certain
+ inhalant substances; paraphernalia possession; presence of the disorder’s characteristic medical
+ complications (e.g., brain white matter pathology, rhabdomyolysis); and the presence of multiple
+ other substance use disorders. Individuals with inhalant use disorder may present with symptoms
+ of pernicious anemia, subacute combined degeneration of the spinal cord, major or mild
+ neurocognitive disorder, brain atrophy, leukoencephalopathy, and many other nervous system
+ disorders.
+ Prevalence
+ About 2.3% of American youth ages 12–17 years have used inhalants in the past 12 months, with
+ 0.1% having a pattern of use that meets criteria for inhalant use disorder. Among U.S. adults, age
+ 18 years and older, past 12-month prevalence of inhalant use is about 0.21%, with 0.04% having
+ a pattern of use that meets criteria for an inhalant use disorder. Among youth, the prevalence of
+ past 12-month inhalant use is highest among non-Hispanic Whites and individuals reporting
+ more than one racialized identity and lowest among American Indians/Alaska Natives. Twelve
+month prevalence rates of inhalant use and inhalant use disorder among adults are highest among
+ non-Hispanic Whites and lowest among non-Hispanic Blacks and American Indians/Alaska
+ Natives.
+ Development and Course
+The declining prevalence in the United States of inhalant use and inhalant use disorder after
+ adolescence (from 2.3% during adolescence to 0.1% in early adulthood for inhalant use and from
+ 0.1% to 0.04% for inhalant use disorder) indicates that the disorder usually
+ 604
+ remits in early adulthood. Inhalant use disorder is rare in prepubertal children, most common in
+ adolescents and young adults, and uncommon in older persons. Calls to poison-control centers
+ for “intentional abuse” of inhalants peak with calls involving individuals at age 14 years. Those
+ with inhalant use disorder extending into adulthood demonstrate earlier onset of inhalant use, use
+ of multiple inhalants, and more frequent inhalant use.
+ Risk and Prognostic Factors
+ Temperamental.
+ Environmental.
+ Predictors of inhalant use disorder include sensation seeking and impulsivity.
+ Inhalant gases are widely and legally available, increasing the risk of misuse.
+ Childhood maltreatment or trauma also is associated with youthful progression from inhalant
+ non-use to inhalant use disorder.
+ Genetic and physiological.
+ Behavioral disinhibition is a highly heritable general propensity to not
+ constrain behavior in socially acceptable ways, to break social norms and rules, and to take
+ dangerous risks, pursuing rewards excessively despite dangers of adverse consequences. Youths
+ with strong behavioral disinhibition show risk factors for inhalant use disorder: early-onset
+ substance use disorder, multiple substance involvement, and early conduct problems. Because
+ behavioral disinhibition is under strong genetic influence, youths in families with substance use
+ and antisocial behaviors are at elevated risk for inhalant use disorder.
+ Culture-Related Diagnostic Issues
+ Internationally, certain isolated Indigenous communities have experienced a high prevalence of
+ inhalant problems. Also, in some low- and middle-income countries, groups of homeless
+ children living on the streets have extensive inhalant use problems because of the effects of
+ poverty and the availability and affordability of the substances, and as a way to cope with
+ homelessness.
+ Sex- and Gender-Related Diagnostic Issues
+ Although the past 12-month prevalence of inhalant use disorder in the United States is almost
+ identical among adolescent boys and girls, the disorder is very rare among adult women.
+ Diagnostic Markers
+ Urine, breath, or saliva tests may be valuable for assessing concurrent use of non-inhalant
+ substances by individuals with inhalant use disorder. However, technical problems and the
+ considerable expense of analyses make frequent biological testing for inhalants themselves
+ impractical.
+ Association With Suicidal Thoughts or Behavior
+In the United States, adolescent and adult inhalant use and inhalant use disorder are associated
+ with suicidal thoughts and behavior, especially among individuals reporting symptoms of anxiety
+ and depression and histories of trauma.
+ Functional Consequences of Inhalant Use Disorder
+ Because of inherent toxicity, use of inhalants can be fatal. Death can occur from anoxia, cardiac
+ dysfunction, extreme allergic reaction, severe injury to the lungs, vomiting, accidents or injury,
+ or central nervous system depression. Moreover, any inhaled volatile hydrocarbons may produce
+ “sudden sniffing death” from cardiac arrhythmia. Inhalant use impairs neurobehavioral function
+ and causes various neurological, gastrointestinal, cardiovascular, and pulmonary problems.
+ 605
+ Long-term inhalant users are at increased risk for tuberculosis, HIV/AIDS, sexually
+ transmitted diseases, depression, anxiety, bronchitis, asthma, and sinusitis.
+ Differential Diagnosis
+ Inhalant exposure (unintentional) from industrial or other accidents.
+ disorder only applies if the inhalant exposure is intentional.
+ A diagnosis of inhalant use
+ Inhalant intoxication, without meeting criteria for inhalant use disorder.
+ Inhalant intoxication occurs
+ frequently during inhalant use disorder but also may occur among individuals whose use does
+ not meet criteria for inhalant use disorder.
+ Inhalant intoxication meeting criteria for inhalant use disorder, and inhalant-induced mental
+ disorders.
+ Inhalant use disorder is differentiated from inhalant intoxication and inhalant-induced mental
+ disorders (e.g., inhalant-induced depressive disorder) in that inhalant use disorder describes a
+ problematic pattern of inhalant use that involves impaired control over inhalant use, social
+ impairment attributable to inhalant use, risky inhalant use (e.g., inhalant use despite medical
+ complications), and pharmacological symptoms (the development of tolerance), whereas inhalant
+ intoxication and inhalant-induced mental disorders describe psychiatric syndromes that develop
+ in the context of heavy use. Inhalant intoxication and inhalant-induced mental disorders occur
+ frequently in individuals with inhalant use disorder. In such cases, a diagnosis of inhalant
+ intoxication or an inhalant-induced mental disorder should be given in addition to a diagnosis of
+ inhalant use disorder, the presence of which is indicated in the diagnostic code.
+ Other substance use disorders, especially those involving sedating substances (e.g., alcohol,
+ benzodiazepines, barbiturates).
+ Inhalant use disorder commonly co-occurs with other substance use disorders, and the symptoms
+ of the disorders may be similar and overlapping. To disentangle symptom patterns, it is helpful
+ to inquire about which symptoms persisted during periods when some of the substances were not
+ being used.
+ Comorbidity
+ Individuals with inhalant use disorder receiving clinical care often have numerous other
+ substance use, mood, anxiety, and personality disorders. Inhalant use disorder commonly co
+occurs with conduct disorder in adolescents and with antisocial personality disorder. Individuals
+ with inhalant use disorder may have comorbid symptoms of hepatic or renal damage,
+ rhabdomyolysis, methemoglobinemia, or symptoms of other gastrointestinal, cardiovascular, or
+ pulmonary diseases.

@@ -1,0 +1,444 @@
+Bipolar II Disorder
+ Diagnostic Criteria
+ For a diagnosis of bipolar II disorder, it is necessary to meet the following criteria for
+ a current or past hypomanic episode and the following criteria for a current or past
+ major depressive episode:
+ Hypomanic Episode
+ A. A distinct period of abnormally and persistently elevated, expansive, or irritable
+ mood and abnormally and persistently increased activity or energy, lasting at
+ least 4 consecutive days and present most of the day, nearly every day.
+ B. During the period of mood disturbance and increased energy and activity, three
+ (or more) of the following symptoms have persisted (four if the mood is only
+ irritable), represent a noticeable change from usual behavior, and have been
+ present to a significant degree:
+ 1. Inflated self-esteem or grandiosity.
+ 2. Decreased need for sleep (e.g., feels rested after only 3 hours of sleep).
+ 3. More talkative than usual or pressure to keep talking.
+ 4. Flight of ideas or subjective experience that thoughts are racing.
+151
+ 5. Distractibility (i.e., attention too easily drawn to unimportant or irrelevant
+ external stimuli), as reported or observed.
+ 6. Increase in goal-directed activity (either socially, at work or school, or
+ sexually) or psychomotor agitation.
+ 7. Excessive involvement in activities that have a high potential for painful
+ consequences (e.g., engaging in unrestrained buying sprees, sexual
+ indiscretions, or foolish business investments).
+ C. The episode is associated with an unequivocal change in functioning that is
+ uncharacteristic of the individual when not symptomatic.
+ D. The disturbance in mood and the change in functioning are observable by
+ others.
+ E. The episode is not severe enough to cause marked impairment in social or
+ occupational functioning or to necessitate hospitalization. If there are psychotic
+ features, the episode is, by definition, manic.
+ F. The episode is not attributable to the physiological effects of a substance (e.g., a
+ drug of abuse, a medication, other treatment) or another medical condition.
+ Note: A full hypomanic episode that emerges during antidepressant treatment
+ (e.g., medication, electroconvulsive therapy) but persists at a fully syndromal
+ level beyond the physiological effect of that treatment is sufficient evidence for a
+ hypomanic episode diagnosis. However, caution is indicated so that one or two
+ symptoms (particularly increased irritability, edginess, or agitation following
+ antidepressant use) are not taken as sufficient for diagnosis of a hypomanic
+ episode, nor necessarily indicative of a bipolar diathesis.
+ Major Depressive Episode
+ A. Five (or more) of the following symptoms have been present during the same 2
+week period and represent a change from previous functioning; at least one of
+ the symptoms is either (1) depressed mood or (2) loss of interest or pleasure.
+ Note: Do not include symptoms that are clearly attributable to a medical
+ condition.
+ 1. Depressed mood most of the day, nearly every day, as indicated by either
+ subjective report (e.g., feels sad, empty, or hopeless) or observation made by
+ others (e.g., appears tearful). (Note: In children and adolescents, can be
+ irritable mood.)
+ 2. Markedly diminished interest or pleasure in all, or almost all, activities most of
+ the day, nearly every day (as indicated by either subjective account or
+ observation).
+ 3. Significant weight loss when not dieting or weight gain (e.g., a change of
+ more than 5% of body weight in a month), or decrease or increase in appetite
+ nearly every day. (Note: In children, consider failure to make expected weight
+gain.)
+ 4. Insomnia or hypersomnia nearly every day.
+ 5. Psychomotor agitation or retardation nearly every day (observable by others,
+ not merely subjective feelings of restlessness or being slowed down).
+ 6. Fatigue or loss of energy nearly every day.
+ 7. Feelings of worthlessness or excessive or inappropriate guilt (which may be
+ delusional) nearly every day (not merely self-reproach or guilt about being
+ sick).
+ 8. Diminished ability to think or concentrate, or indecisiveness, nearly every day
+ (either by subjective account or as observed by others).
+ 9. Recurrent thoughts of death (not just fear of dying), recurrent suicidal ideation
+ without a specific plan, or a suicide attempt or a specific plan for committing
+ suicide.
+ B. The symptoms cause clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ C. The episode is not attributable to the physiological effects of a substance or
+ another medical condition.
+ Note: Criteria A–C constitute a major depressive episode.
+ 152
+ Note: Responses to a significant loss (e.g., bereavement, financial ruin, losses from
+ a natural disaster, a serious medical illness or disability) may include the feelings of
+ intense sadness, rumination about the loss, insomnia, poor appetite, and weight loss
+ noted in Criterion A, which may resemble a depressive episode. Although such
+ symptoms may be understandable or considered appropriate to the loss, the
+ presence of a major depressive episode in addition to the normal response to a
+ significant loss should be carefully considered. This decision inevitably requires the
+ exercise of clinical judgment based on the individual’s history and the cultural norms
+ for the expression of distress in the context of loss.1
+ Bipolar II Disorder
+ A. Criteria have been met for at least one hypomanic episode (Criteria A–F under
+ “Hypomanic Episode” above) and at least one major depressive episode (Criteria
+ A–C under “Major Depressive Episode” above).
+ B. There has never been a manic episode.
+ C. At least one hypomanic episode and at least one major depressive episode are
+ not better explained by schizoaffective disorder and are not superimposed on
+ schizophrenia, schizophreniform disorder, delusional disorder, or other specified
+ or unspecified schizophrenia spectrum and other psychotic disorder.
+ D. The symptoms of depression or the unpredictability caused by frequent
+ alternation between periods of depression and hypomania causes clinically
+ significant distress or impairment in social, occupational, or other important
+areas of functioning.
+ Coding and Recording Procedures
+ Bipolar II disorder has one diagnostic code: F31.81. Its status with respect to current
+ severity, presence of psychotic features, course, and other specifiers cannot be
+ coded but should be indicated in writing (e.g., F31.81 bipolar II disorder, current
+ episode depressed, moderate severity, with mixed features; F31.81 bipolar II
+ disorder, most recent episode depressed, in partial remission).
+ Specify current or most recent episode:
+ Hypomanic
+ Depressed
+ If current episode is hypomanic (or most recent episode if bipolar II disorder is in
+ partial or full remission):
+ 153
+ In recording the diagnosis, terms should be listed in the following order: bipolar II
+ disorder, current or most recent episode hypomanic, in partial remission/in full
+ remission (p. 175) (if full criteria for a hypomanic episode are not currently met),
+ plus any of the following hypomanic episode specifiers that are applicable. Note:
+ The specifiers “with rapid cycling” and “with seasonal pattern” describe the
+ pattern of mood episodes.
+ Specify if:
+ With anxious distress (p. 169–170)
+ With mixed features (pp. 170–171)
+ With rapid cycling (p. 171)
+ With peripartum onset (pp. 173–174)
+ With seasonal pattern (pp. 174–175)
+ If current episode is depressed (or most recent episode if bipolar II disorder is in
+ partial or full remission):
+ In recording the diagnosis, terms should be listed in the following order: bipolar II
+ disorder, current or most recent episode depressed, mild/moderate/severe (if full
+ criteria for a major depressive episode are currently met), in partial remission/in
+ full remission (if full criteria for a major depressive episode are not currently met)
+ (p. 175), plus any of the following major depressive episode specifiers that are
+ applicable. Note: The specifiers “with rapid cycling” and “with seasonal pattern”
+ describe the pattern of mood episodes.
+ Specify if:
+ With anxious distress (pp. 169–170)
+ With mixed features (pp. 170–171)
+ With rapid cycling (p. 171)
+ With melancholic features (pp. 171–172)
+With atypical features (pp. 172–173)
+ With mood-congruent psychotic features (p. 173)
+ With mood-incongruent psychotic features (p. 173)
+ With catatonia (p. 173). Coding note: Use additional code F06.1.
+ With peripartum onset (pp. 172–174)
+ With seasonal pattern (pp. 174–175)
+ Specify course if full criteria for a mood episode are not currently met:
+ In partial remission (p. 175)
+ In full remission (p. 175)
+ Specify severity if full criteria for a major depressive episode are currently met:
+ Mild (p. 175)
+ Moderate (p. 175)
+ Severe (p. 175)
+ Diagnostic Features
+ Bipolar II disorder is characterized by a clinical course of recurring mood episodes consisting of
+ one or more major depressive episodes (Criteria A–C under “Major Depressive Episode”) and at
+ least one hypomanic episode (Criteria A–F under “Hypomanic Episode”). A diagnosis of a major
+ depressive episode requires that there be a period of depressed mood, or as an alternative,
+ marked diminished interest or pleasure, for most of the day nearly every day, lasting for a
+ minimum of 2 weeks. The depressed mood or loss of interest must be accompanied by additional
+ symptoms occurring nearly every day (e.g., sleep disturbance, psychomotor agitation or
+ retardation) for a total of at least five symptoms. The diagnosis of a hypomanic episode requires
+ that there be a distinct period of
+ 154
+ abnormally and persistently elevated, expansive, or irritable mood and abnormally and
+ persistently increased activity or energy for most of the day, nearly every day, for at least 4
+ consecutive days accompanied by three (or four if mood is only irritable) additional symptoms
+ (e.g., inflated self-esteem, decreased need for sleep, distractibility) that persist and represent a
+ noticeable change from usual behavior and functioning. By definition, psychotic symptoms do
+ not occur in hypomanic episodes, and they appear to be less frequent in the major depressive
+ episodes in bipolar II disorder than in those of bipolar I disorder. The presence of a manic
+ episode during the course of illness precludes the diagnosis of bipolar II disorder (Criterion B
+ under “Bipolar II Disorder”). Moreover, for depressive and hypomanic episodes to count toward
+ the diagnosis of bipolar II disorder, at least one of the depressive episodes and at least one of the
+ hypomanic episodes must not be attributable to the physiological effects of a substance (i.e.,
+ medication, drug of abuse, or toxin exposure) or another medical condition. Note that hypomanic
+ episodes that emerge during antidepressant treatment and persist for at least 4 days at a fully
+ syndromal level beyond the physiological effects of the treatment are not considered to be
+substance-induced and do count toward the diagnosis of bipolar II disorder. In addition, at least
+ one hypomanic episode and at least one major depressive episode are not explained by a
+ diagnosis of schizoaffective disorder and are not superimposed on schizophrenia,
+ schizophreniform disorder, delusional disorder, or other specified or unspecified schizophrenia
+ spectrum or other psychotic disorder (Criterion C under “Bipolar II Disorder”). The depressive
+ episodes or the pattern of unpredictable mood changes must cause clinically significant distress
+ or impairment in social, occupational, or other important areas of functioning (Criterion D under
+ “Bipolar II Disorder”). The recurrent major depressive episodes are often more frequent and
+ lengthier than those occurring in bipolar I disorder.
+ Individuals with bipolar II disorder typically present to a clinician during a major depressive
+ episode. They are unlikely to complain initially of hypomania, because either they do not
+ recognize the symptoms of hypomania or they consider hypomania desirable. Hypomanic
+ episodes by definition do not cause significant impairment. Instead, the impairment results from
+ the major depressive episodes or from a persistent pattern of unpredictable mood changes and
+ fluctuating, unreliable interpersonal or occupational functioning. Individuals with bipolar II
+ disorder may not view the hypomanic episodes as pathological or disadvantageous, although
+ others may be troubled by the individual’s erratic behavior. Clinical information from other
+ informants, such as close friends or relatives, is often useful in establishing the diagnosis of
+ bipolar II disorder.
+ A hypomanic episode should not be confused with the several days of euthymia and restored
+ energy or activity that may follow remission of a major depressive episode. Despite the
+ substantial differences in duration and severity between a manic and hypomanic episode, bipolar
+ II disorder is not a “milder form” of bipolar I disorder. Compared to individuals with bipolar I
+ disorder, individuals with bipolar II disorder have greater chronicity of illness and spend, on
+ average, more time in the depressive phase of their illness, which can be severe and/or disabling.
+ Although the diagnostic requirements for major depressive episodes are identical whether
+ they occur in the context of bipolar II disorder or major depressive disorder, certain clinical
+ features of the episodes may hint at possible differential diagnosis. For instance, the coexistence
+ of both insomnia and hypersomnia is not uncommon in major depressive episodes in both bipolar
+ II disorder and major depressive disorder; however, both insomnia and hypersomnia are
+ overrepresented among women with bipolar II disorder. Similarly, atypical depressive symptoms
+ (hypersomnia, hyperphagia) are common in both disorders, but more so in those with bipolar II
+ disorder.
+ Depressive symptoms co-occurring with a hypomanic episode or hypomanic symptoms co
+occurring with a depressive episode are common in individuals with bipolar II disorder and are
+ overrepresented in females, particularly hypomania with mixed features.
+ 155
+ Individuals experiencing hypomania with mixed features may not label their symptoms as
+ hypomania, but instead experience them as depression with increased energy or irritability.
+ Associated Features
+ A common feature of bipolar II disorder is impulsivity, which can contribute to suicide attempts
+and substance use disorders.
+ There may be heightened levels of creativity during hypomanic episodes in some individuals
+ with a bipolar II disorder. However, that relationship may be nonlinear; that is, greater lifetime
+ creative accomplishments have been associated with milder forms of bipolar disorder, and higher
+ creativity has been found in unaffected family members. The individual’s attachment to the
+ prospect of heightened creativity during hypomanic episodes may contribute to ambivalence
+ about seeking treatment or undermine adherence to treatment.
+ Prevalence
+ The 12-month prevalence of bipolar II disorder in the United States is 0.8%. The 12-month
+ prevalence internationally is 0.3%. The prevalence rate of pediatric bipolar II disorder is difficult
+ to establish. DSM-IV bipolar I, bipolar II, and bipolar disorder not otherwise specified yield a
+ combined prevalence rate of 1.8% in U.S. and non-U.S. community samples, with higher rates
+ (2.7% inclusive) in youth age 12 years or older.
+ Development and Course
+ Although bipolar II disorder can begin in late adolescence and throughout adulthood, average
+ age at onset is the mid-20s, which is slightly later than for bipolar I disorder but earlier than for
+ major depressive disorder. Age at onset does not reliably distinguish between bipolar I and II
+ disorder. The illness most often begins with a depressive episode and is not recognized as bipolar
+ II disorder until a hypomanic episode occurs; this happens in about 12% of individuals with the
+ initial diagnosis of major depressive disorder. Anxiety, substance use, or eating disorders may
+ also precede the diagnosis, complicating its detection. Many individuals experience several
+ episodes of major depression prior to the first recognized hypomanic episode, with typically a
+ more than 10-year lag between illness onset and the diagnosis of a bipolar disorder.
+ Bipolar II disorder is a highly recurrent disorder, with over 50% of individuals experiencing
+ a new episode within a year after their first episode. Individuals with bipolar II disorder also
+ have more seasonal variation in mood compared to those with bipolar I disorder.
+ The number of lifetime episodes (both hypomanic and major depressive episodes) tends to be
+ higher for bipolar II disorder than for major depressive disorder or bipolar I disorder. However,
+ individuals with bipolar I disorder are actually more likely to experience hypomanic symptoms
+ than are individuals with bipolar II disorder. The interval between mood episodes in the course
+ of bipolar II disorder tends to decrease as the individual ages. While the hypomanic episode is
+ the feature that defines bipolar II disorder, depressive episodes are more enduring and disabling
+ over time. Despite the predominance of depression, once a hypomanic episode has occurred, the
+ diagnosis becomes bipolar II disorder and never reverts to major depressive disorder.
+ Approximately 5%–15% of individuals with bipolar II disorder have multiple (four or more)
+ mood episodes (hypomanic or major depressive) within the previous 12 months. If this pattern is
+ present, it is noted by the specifier “with rapid cycling.” Rapid cycling is more common in
+ women and may reflect an overall worsening of the bipolar disorder.
+ Switching from a depressive episode to a manic or hypomanic episode (with or without
+ mixed features) may occur, both spontaneously and during treatment for depression.
+ 156
+About 5%–15% of individuals with bipolar II disorder will ultimately develop a manic
+ episode, which changes the diagnosis to bipolar I disorder, regardless of subsequent course.
+ Making the diagnosis in children is often a challenge, especially in those with irritability and
+ hyperarousal that is nonepisodic (i.e., lacks the well-demarcated periods of altered mood).
+ Nonepisodic irritability in youth is associated with an elevated risk for anxiety disorders and
+ major depressive disorder, but not bipolar disorder, in adulthood. Persistently irritable youth
+ have lower familial rates of bipolar disorder than do youth who have bipolar disorder. For a
+ hypomanic episode to be diagnosed, the child’s symptoms must exceed what is expected in a
+ given environment and culture for the child’s developmental stage. Similar to adults, youth with
+ bipolar II disorder spend less time hypomanic compared to those with bipolar I disorder, and the
+ initial presenting episode is typically depression. Compared with adult onset of bipolar II
+ disorder, childhood or adolescent onset of the disorder may be associated with a more severe
+ lifetime course.
+ The 3-year incidence rate of first-onset bipolar II disorder in adults older than 60 years is
+ 0.34%. However, distinguishing individuals older than 60 years with bipolar II disorder by late
+ versus early age at onset does not appear to have any clinical utility. The presence of co
+occurring hypomanic symptoms during a depressive episode is more common during bipolar II
+ depressive episodes relative to depressive episodes occurring in the context of major depression
+ and may help distinguish older individuals with bipolar II disorder from those with major
+ depressive disorder. In any later life presentation of bipolar disorder, it is important to consider
+ medical factors, including possible medical and neurological causes of new symptoms.
+ Risk and Prognostic Factors
+ Genetic and physiological.
+ The risk of bipolar II disorder tends to be highest among relatives of
+ individuals with bipolar II disorder, as opposed to individuals with bipolar I disorder or major
+ depressive disorder. About a third of individuals with bipolar II disorder reported a family
+ history of bipolar disorder. There may be genetic factors influencing the age at onset for bipolar
+ disorders. Th ere is also evidence that bipolar II disorder may have a genetic architecture that is
+ at least partially distinct from bipolar I disorder and from schizophrenia.
+ Course modifiers.
+ A rapid-cycling pattern is associated with a poorer prognosis. Return to
+ previous level of social function for individuals with bipolar II disorder is more likely for
+ individuals of younger age and with less severe depression, suggesting adverse effects of
+ prolonged illness on recovery. More education, fewer years of illness, and being married are
+ independently associated with functional recovery in individuals with bipolar disorder, even after
+ diagnostic type (I vs. II), current depressive symptoms, and presence of psychiatric comorbidity
+ are taken into account.
+ Sex- and Gender-Related Diagnostic Issues
+ Whereas the gender ratio for bipolar I disorder is equal, findings on gender differences in bipolar
+ II disorder are mixed, differing by type of sample (i.e., registry, community, or clinical) and
+ country of origin. There is little to no evidence of bipolar gender differences in the general
+ population, whereas some, but not all, clinical samples suggest that bipolar II disorder is more
+ common in women than in men, which may reflect gender differences in treatment seeking or
+ other factors.
+Patterns of illness and comorbidity, however, seem to differ by sex, with females being more
+ likely than males to report hypomania with mixed depressive features and a rapid-cycling course.
+ Childbirth may also be a specific trigger for a hypomanic episode, which can occur in 10%–20%
+ of females in nonclinical populations and most typically in the early postpartum period.
+ Distinguishing hypomania from the elated mood and reduced sleep
+ 157
+ that normally accompany the birth of a child may be challenging. Postpartum hypomania
+ may foreshadow the onset of a depression that occurs in about half of females who experience
+ postpartum “highs.” The perimenopause transition can also be a time of mood instability in
+ bipolar II disorder. No major sex differences have been found in several clinical variables,
+ including rates of depressive episodes, age at and polarity of onset, symptoms, and severity of
+ the illness.
+ Association With Suicidal Thoughts or Behavior
+ Approximately one-third of individuals with bipolar II disorder report a lifetime history of
+ suicide attempt. The risk and incidence of attempted suicide in bipolar II and bipolar I disorder
+ appear to be similar. Overall there appears to be about equal rates of suicide attempts and suicide
+ deaths across individuals with bipolar II and bipolar I disorder, although overall the rates for both
+ attempts and deaths are significantly higher than in the general population. Time spent in a
+ depressive episode is associated more significantly with the diagnosis of bipolar I or bipolar II in
+ terms of suicide attempt risk. However, the lethality of attempts, as defined by a lower ratio of
+ attempts to suicide deaths, may be higher in individuals with bipolar II disorder compared to
+ individuals with bipolar I disorder. There may be an association between genetic markers and
+ increased risk for suicidal behavior in individuals with bipolar disorder, including a 6.5-fold
+ higher risk of suicide among first-degree relatives of bipolar II probands compared with first
+degree relatives of bipolar I probands.
+ Functional Consequences of Bipolar II Disorder
+ Although many individuals with bipolar II disorder return to a fully functional level between
+ mood episodes, at least 15% continue to have some interepisode dysfunction, and 20% transition
+ directly into another mood episode without interepisode recovery. Functional recovery lags
+ substantially behind recovery from symptoms of bipolar II disorder, especially in regard to
+ occupational recovery, resulting in lower socioeconomic status despite equivalent levels of
+ education with the general population. Individuals with bipolar II disorder perform more poorly
+ than healthy individuals on cognitive tests. Cognitive impairments associated with bipolar II
+ disorder may contribute to vocational difficulties. Prolonged unemployment in individuals with
+ bipolar disorder is associated with more episodes of depression, older age, increased rates of
+ current panic disorder, and lifetime history of alcohol use disorder.
+ Differential Diagnosis
+ Major depressive disorder.
+ Major depressive disorder is characterized by the absence of both
+ manic episodes and hypomanic episodes. Given that the presence of some manic or hypomanic
+symptoms (e.g., fewer symptoms or shorter duration than required for hypomania) may still be
+ compatible with a diagnosis of major depressive disorder, it is important to ascertain whether the
+ symptoms meet criteria for a hypomanic episode to determine whether it is more appropriate to
+ make the diagnosis of bipolar II disorder. Depressive episodes dominate the overall course of
+ illness for most individuals with bipolar II disorder, contributing to the decade-long lag between
+ illness onset and the diagnosis of bipolar II disorder. Because the diagnostic criteria for major
+ depressive episode are identical in major depressive disorder and bipolar II disorder, the
+ diagnosis of bipolar II disorder can be made only by eliciting information about at least one prior
+ hypomanic episode in order to distinguish the bipolar II disorder from major depressive disorder.
+ Cyclothymic disorder.
+ In cyclothymic disorder, there are numerous periods of hypomanic
+ symptoms that do not meet symptom or duration criteria for a hypomanic episode and numerous
+ periods of depressive symptoms that do not meet symptom or duration criteria for a major
+ depressive episode. Bipolar II disorder is distinguished from cyclothymic disorder by the
+ presence of one or more hypomanic episodes and one or more major depressive episodes.
+ 158
+ Schizophrenia.
+ Schizophrenia is characterized by active-phase psychotic symptoms that may be
+ accompanied by major depressive episodes. The diagnosis of schizophrenia is made if no major
+ depressive episodes have occurred concurrently with the active-phase symptoms. If they have
+ occurred concurrently, the diagnosis of schizophrenia is made if the major depressive episodes
+ have been present for only a minority of the time. The diagnosis is bipolar II disorder, with
+ psychotic features, if the psychotic symptoms have occurred exclusively during major depressive
+ episodes.
+ Schizoaffective disorder.
+ Schizoaffective disorder is characterized by periods in which depressive
+ symptoms are concurrent with the active-phase symptoms of schizophrenia and periods in which
+ delusions or hallucinations occur for at least 2 weeks in the absence of a major depressive
+ episode. The diagnosis is bipolar II disorder, with psychotic features, if the psychotic symptoms
+ have occurred exclusively during major depressive episodes.
+ Bipolar and related disorder due to another medical condition.
+ The diagnosis of bipolar and related
+ disorder due to another medical condition should be made instead of bipolar II disorder if the
+ hypomanic episodes are judged, based on history, laboratory findings, or physical examination,
+ to be the direct physiological consequence of another medical condition (e.g., Cushing’s disease,
+ multiple sclerosis).
+ Substance/medication-induced bipolar and related disorder.
+ A substance/medication-induced bipolar
+ and related disorder is distinguished from bipolar II disorder by the fact that a substance (e.g.,
+ stimulants, phencyclidine) or medication (e.g., steroids) is judged to be etiologically related to
+ the hypomanic and major depressive episodes. Because individuals with a hypomanic episode
+ have a tendency to overuse substances during an episode, it is important to determine whether
+ the substance use is a consequence of a primary hypomanic episode or whether the hypomanic
+like episode has been caused by the substance use. In some cases, a definitive diagnosis may
+ involve establishing that the hypomanic symptoms or depressive symptoms remain once the
+ individual is no longer using the substance. Note that hypomanic episodes emerging in the
+ context of treatment with an antidepressant medication but persisting at a fully syndromal level
+beyond the physiological effect of the medication warrant a diagnosis of bipolar II disorder
+ rather than substance/medication-induced bipolar and related disorder.
+ Attention-deficit/hyperactivity disorder.
+ Attention-deficit/hyperactivity disorder (ADHD) may be
+ misdiagnosed as bipolar II disorder, especially in adolescents and children. Many symptoms of
+ ADHD, such as excessive talking, distractibility, and less need for sleep, overlap with the
+ symptoms of hypomania. The double counting of symptoms toward both ADHD and bipolar II
+ disorder can be avoided if the clinician clarifies whether the symptoms represent a distinct
+ episode and if the noticeable increase over baseline required for the diagnosis of bipolar II
+ disorder is present.
+ Personality disorders.
+ The same convention as applies for ADHD also applies when evaluating an
+ individual for a personality disorder such as borderline personality disorder because mood
+ lability and impulsivity are common in both personality disorders and bipolar II disorder.
+ Symptoms must represent a distinct episode, and the noticeable increase over baseline required
+ for the diagnosis of bipolar II disorder must be present. A diagnosis of a personality disorder
+ should not be made during an untreated mood episode unless the lifetime history supports the
+ presence of a personality disorder.
+ Other bipolar disorders.
+ Diagnosis of bipolar II disorder should be differentiated from bipolar I
+ disorder by carefully considering whether there have been any past episodes of mania and from
+ other specified and unspecified bipolar and related disorders by confirming the presence of fully
+ syndromal hypomania and depression.
+ 159
+ Comorbidity
+ Bipolar II disorder is more often than not associated with one or more co-occurring mental
+ disorders, with anxiety disorders being the most common. Approximately 60% of individuals
+ with bipolar II disorder have three or more co-occurring mental disorders; 75% have an anxiety
+ disorder, most commonly social anxiety (38%), specific phobia (36%), and generalized anxiety
+ (30%). Lifetime prevalence of comorbid anxiety disorder does not differ between bipolar I and
+ bipolar II disorders but is associated with a worse course of illness. Children and adolescents
+ with bipolar II disorder have a higher rate of co-occurring anxiety disorders compared to those
+ with bipolar I disorder, and the anxiety disorder most often predates the bipolar disorder.
+ Anxiety and substance use disorders occur in individuals with bipolar II disorder at a higher
+ rate than in the general population. It should be noted that co-occurring anxiety and substance
+ use disorder do not seem to follow a course of illness that is truly independent from that of
+ bipolar II disorder, but rather have strong associations with mood states. For example, anxiety
+ disorders tend to associate most with depressive symptoms, and substance use disorders are
+ moderately associated with hypomanic symptoms.
+ The prevalence of substance use disorders appears to be similar between bipolar I and bipolar
+ II disorders, most commonly alcohol use (42%) and cannabis use (20%) disorders. Sociocultural
+ factors influence the pattern of comorbid conditions in bipolar II disorder. For example,
+ countries with cultural prohibitions against alcohol or other substance use may have a lower
+ prevalence of substance use comorbidity.
+ Individuals with bipolar II disorder appear to have lower rates of comorbid posttraumatic
+F34.0
+ stress disorder compared to individuals with bipolar I disorder.
+ Approximately 14% of individuals with bipolar II disorder have at least one lifetime eating
+ disorder, with binge-eating disorder being more common than bulimia nervosa and anorexia
+ nervosa.
+ Premenstrual syndrome and premenstrual dysphoric disorder are common in women with
+ bipolar disorder, especially in those with bipolar II disorder. Among women who have
+ premenstrual syndrome and/or premenstrual dysphoric disorder, bipolar mood symptoms and
+ lability may be more severe.
+ Individuals with bipolar II disorder also have comorbid medical conditions, which have the
+ potential to substantially complicate course and prognosis. These include cardiovascular disease,
+ migraine, and autoimmune disorders.

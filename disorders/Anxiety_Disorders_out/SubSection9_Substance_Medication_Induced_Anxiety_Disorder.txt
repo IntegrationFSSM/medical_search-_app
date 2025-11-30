@@ -1,0 +1,177 @@
+Substance/Medication-Induced Anxiety Disorder
+ Diagnostic Criteria
+ A. Panic attacks or anxiety is predominant in the clinical picture.
+ B. There is evidence from the history, physical examination, or laboratory findings
+ of both (1) and (2):
+ 1. The symptoms in Criterion A developed during or soon after substance
+ intoxication or withdrawal or after exposure to or withdrawal from a
+ medication.
+ 2. The involved substance/medication is capable of producing the symptoms in
+ Criterion A.
+ C. The disturbance is not better explained by an anxiety disorder that is not
+ substance/medication-induced. Such evidence of an independent anxiety
+ disorder could include the following:
+ The symptoms precede the onset of the substance/medication use; the
+ symptoms persist for a substantial period of time (e.g., about 1 month) after
+ the cessation of acute withdrawal or severe intoxication; or there is other
+ evidence suggesting the existence of an independent non
+substance/medication-induced anxiety disorder (e.g., a history of recurrent
+ non-substance/medication-related episodes).
+ D. The disturbance does not occur exclusively during the course of a delirium.
+E. The disturbance causes clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ Note: This diagnosis should be made instead of a diagnosis of substance
+ intoxication or substance withdrawal only when the symptoms in Criterion A
+ predominate in the clinical picture and they are sufficiently severe to warrant clinical
+ attention.
+ Coding note: The ICD-10-CM codes for the [specific substance/medication]-induced
+ anxiety disorders are indicated in the table below. Note that the ICD-10-CM code
+ depends on whether or not there is a comorbid substance use disorder present for
+ the same class of substance. In any case, an additional separate diagnosis of a
+ substance use disorder is not given. If a mild substance use disorder is comorbid
+ with the substance-induced anxiety disorder, the 4th position character is “1,” and
+ the clinician should record “mild [substance] use disorder” before the substance
+induced anxiety disorder (e.g., “mild cocaine use disorder with cocaine-induced
+ anxiety disorder”). If a moderate or severe substance use disorder is comorbid with
+ the substance-induced anxiety disorder, the 4th position character is “2,” and the
+ clinician should record “moderate [substance] use disorder” or “severe [substance]
+ use disorder,” depending on the severity of the comorbid substance use disorder. If
+ there is no comorbid substance use disorder (e.g., after a one-time heavy use of the
+ substance), then the 4th position character is “9,” and the clinician should record
+ only the substance-induced anxiety disorder.
+ 256
+ ICD-10-CM
+ With mild use
+ disorder
+ With moderate or
+ severe use disorder
+ Without use
+ disorder
+ Alcohol F10.180 F10.280 F10.980
+ Caffeine NA NA F15.980
+ Cannabis F12.180 F12.280 F12.980
+ Phencyclidine F16.180 F16.280 F16.980
+ Other hallucinogen F16.180 F16.280 F16.980
+ Inhalant F18.180 F18.280 F18.980
+ Opioid F11.188 F11.288 F11.988
+ Sedative, hypnotic, or anxiolytic F13.180 F13.280 F13.980
+ Amphetamine-type substance (or other
+ stimulant)
+ F15.180 F15.280 F15.980
+ Cocaine F14.180 F14.280 F14.980
+ Other (or unknown) substance F19.180 F19.280 F19.980
+ Specify (see Table 1 in the chapter “Substance-Related and Addictive Disorders,”
+ which indicates whether “with onset during intoxication” and/or “with onset during
+ withdrawal” applies to a given substance class; or specify “with onset after
+ medication use”):
+ With onset during intoxication: If criteria are met for intoxication with the
+substance and the symptoms develop during intoxication.
+ With onset during withdrawal: If criteria are met for withdrawal from the
+ substance and the symptoms develop during, or shortly after, withdrawal.
+ With onset after medication use: If symptoms developed at initiation of
+ medication, with a change in use of medication, or during withdrawal of
+ medication.
+ Recording Procedures
+ The name of the substance/medication-induced anxiety disorder begins with the specific
+ substance (e.g., cocaine, salbutamol) that is presumed to be causing the anxiety symptoms. The
+ diagnostic code is selected from the table included in the criteria set, which is based on the drug
+ class and presence or absence of a comorbid substance use disorder. For substances that do not
+ fit into any of the classes (e.g., salbutamol), the code for “other (or unknown) substance” should
+ be used; and in cases in which a substance is judged to be an etiological factor but the specific
+ class of substance is unknown, the same code should also be used.
+ To record the name of the disorder, the comorbid substance use disorder (if any) is listed
+ first, followed by “with substance/medication-induced anxiety disorder” (incorporating the name
+ of the specific etiological substance/medication), followed by the specification of onset (i.e.,
+ onset during intoxication, onset during withdrawal, with onset after medication use). For
+ example, in the case of anxiety symptoms occurring during withdrawal in a man with a severe
+ lorazepam use disorder, the diagnosis is F13.280 severe lorazepam use disorder with lorazepam
+induced anxiety disorder, with onset during withdrawal. A separate diagnosis of the comorbid
+ severe lorazepam use disorder is not given. If the substance-induced anxiety disorder occurs
+ without a comorbid substance use disorder (e.g., after a one-time
+ 257
+ heavy use of the substance), no accompanying substance use disorder is noted (e.g., F16.980
+ psilocybin-induced anxiety disorder, with onset during intoxication). When more than one
+ substance is judged to play a significant role in the development of anxiety symptoms, each
+ should be listed separately (e.g., F15.280 severe methylphenidate use disorder with
+ methylphenidate-induced anxiety disorder, with onset during intoxication; F19.980 salbutamol
+induced anxiety disorder, with onset after medication use).
+ Diagnostic Features
+ The essential features of substance/medication-induced anxiety disorder are prominent
+ symptoms of panic or anxiety (Criterion A) that are judged to be due to the effects of a substance
+ (e.g., a drug of abuse, a medication, or a toxin exposure). The panic or anxiety symptoms must
+ have developed during or soon after substance intoxication or withdrawal or after exposure to or
+ withdrawal from a medication, and the substances or medications must be capable of producing
+ the symptoms (Criterion B2). Substance/medication-induced anxiety disorder due to a prescribed
+ treatment for a mental disorder or another medical condition must have its onset while the
+ individual is receiving the medication (or during withdrawal, if a withdrawal is associated with
+the medication). Once the treatment is discontinued, the panic or anxiety symptoms will usually
+ improve or remit within days to several weeks to a month (depending on the half-life of the
+ substance/medication and the presence of withdrawal). The diagnosis of substance/medication
+induced anxiety disorder should not be given if the onset of the panic or anxiety symptoms
+ precedes the substance/medication intoxication or withdrawal, or if the symptoms persist for a
+ substantial period of time (i.e., usually longer than 1 month) from the time of severe intoxication
+ or withdrawal. If the panic or anxiety symptoms persist for substantial periods of time, other
+ causes for the symptoms should be considered.
+ The substance/medication-induced anxiety disorder diagnosis should be made instead of a
+ diagnosis of substance intoxication or substance withdrawal only when the symptoms in
+ Criterion A are predominant in the clinical picture and are sufficiently severe to warrant
+ independent clinical attention.
+ Associated Features
+ Panic or anxiety can occur in association with intoxication with the following classes of
+ substances: alcohol, caffeine, cannabis, phencyclidine, other hallucinogens, inhalants, stimulants
+ (including cocaine), and other (or unknown) substances. Panic or anxiety can occur in
+ association with withdrawal from the following classes of substances: alcohol; opioids;
+ sedatives, hypnotics, and anxiolytics; stimulants (including cocaine); and other (or unknown)
+ substances. Some medications that evoke anxiety symptoms include anesthetics and analgesics,
+ sympathomimetics or other bronchodilators, anticholinergics, insulin, thyroid preparations, oral
+ contraceptives, antihistamines, antiparkinsonian medications, corticosteroids, antihypertensive
+ and cardiovascular medications, anticonvulsants, lithium carbonate, antipsychotic medications,
+ and antidepressant medications. Heavy metals and toxins (e.g., organophosphate insecticide,
+ nerve gases, carbon monoxide, CO2, volatile substances such as gasoline and paint) may also
+ cause panic or anxiety symptoms.
+ Prevalence
+ The prevalence of substance/medication-induced anxiety disorder is not clear. General
+ population data suggest that it may be rare, with a 12-month prevalence in the United States of
+ approximately 0.002%. However, in clinical populations, the prevalence is likely to be higher.
+ Diagnostic Markers
+ Laboratory assessments (e.g., urine toxicology) may be useful to measure substance intoxication
+ as part of an assessment for substance/medication-induced anxiety disorder.
+ 258
+ Differential Diagnosis
+ Substance intoxication and substance withdrawal.
+ Anxiety symptoms commonly occur in substance
+ intoxication and substance withdrawal. The diagnosis of the substance-specific intoxication or
+ substance-specific withdrawal will usually suffice to categorize the symptom presentation. A
+ diagnosis of substance/medication-induced anxiety disorder either with onset during intoxication
+or with onset during withdrawal should be made instead of a diagnosis of substance intoxication
+ or substance withdrawal when the panic or anxiety symptoms are predominant in the clinical
+ picture and are sufficiently severe to warrant clinical attention. For example, panic or anxiety
+ symptoms are characteristic of alcohol withdrawal.
+ Independent anxiety disorder (i.e., not induced by a substance/medication).
+ disorder 
+co-occurring 
+An independent anxiety
+ with substance/medication use is distinguished from a
+ substance/medication-induced anxiety disorder by the fact that even though a
+ substance/medication may be taken in high enough amounts to be possibly etiologically related
+ to the anxiety symptoms, the anxiety symptoms are observed at times other than during
+ substance/medication use (i.e., preceding the onset of substance/medication use or persisting for
+ a substantial period of time after substance intoxication, substance withdrawal, or medication
+ use) and would warrant the diagnosis of an independent anxiety disorder.
+ Delirium.
+ Anxiety disorder due to another medical condition.
+ If panic or anxiety symptoms occur exclusively during the course of delirium, they are
+ considered to be an associated feature of the delirium and are not diagnosed separately.
+ If the panic or anxiety symptoms are attributed to
+ the physiological consequences of another medical condition (i.e., rather than to the medication
+ taken for the medical condition), anxiety disorder due to another medical condition should be
+ diagnosed. The history often provides the basis for such a judgment. At times, a change in the
+ treatment for the other medical condition (e.g., medication substitution or discontinuation) may
+ be needed to determine whether the medication is the causative agent (in which case the
+ symptoms may be better explained by substance/medication-induced anxiety disorder). If the
+ disturbance is attributable to both another medical condition and substance use, both diagnoses
+ (i.e., anxiety disorder due to another medical condition and substance/medication-induced
+ anxiety disorder) may be given. When there is insufficient evidence to determine whether the
+ panic or anxiety symptoms are attributable to a substance/medication or to another medical
+ condition or are primary (i.e., not attributable to either a substance or another medical condition),
+ a diagnosis of other specified or unspecified anxiety disorder would be indicated.

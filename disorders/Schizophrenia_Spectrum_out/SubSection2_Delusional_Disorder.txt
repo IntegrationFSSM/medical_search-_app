@@ -1,0 +1,195 @@
+Delusional Disorder
+ Diagnostic Criteria
+ A. The presence of one (or more) delusions with a duration of 1 month or longer.
+ B. Criterion A for schizophrenia has never been met.
+ Note: Hallucinations, if present, are not prominent and are related to the
+ delusional theme (e.g., the sensation of being infested with insects associated
+ with delusions of infestation).
+ 105
+ C. Apart from the impact of the delusion(s) or its ramifications, functioning is not
+ markedly impaired, and behavior is not obviously bizarre or odd.
+ D. If manic or major depressive episodes have occurred, these have been brief
+ relative to the duration of the delusional periods.
+ E. The disturbance is not attributable to the physiological effects of a substance or
+ another medical condition and is not better explained by another mental
+ disorder, such as body dysmorphic disorder or obsessive-compulsive disorder.
+ Specify whether:
+ Erotomanic type: This subtype applies when the central theme of the delusion
+ is that another person is in love with the individual.
+Grandiose type: This subtype applies when the central theme of the delusion is
+ the conviction of having some great (but unrecognized) talent or insight or having
+ made some important discovery.
+ Jealous type: This subtype applies when the central theme of the individual’s
+ delusion is that his or her spouse or lover is unfaithful.
+ Persecutory type: This subtype applies when the central theme of the delusion
+ involves the individual’s belief that he or she is being conspired against, cheated,
+ spied on, followed, poisoned or drugged, maliciously maligned, harassed, or
+ obstructed in the pursuit of long-term goals.
+ Somatic type: This subtype applies when the central theme of the delusion
+ involves bodily functions or sensations.
+ Mixed type: This subtype applies when no one delusional theme predominates.
+ Unspecified type: This subtype applies when the dominant delusional belief
+ cannot be clearly determined or is not described in the specific types (e.g.,
+ referential delusions without a prominent persecutory or grandiose component).
+ Specify if:
+ With bizarre content: Delusions are deemed bizarre if they are clearly
+ implausible, not understandable, and not derived from ordinary life experiences
+ (e.g., an individual’s belief that a stranger has removed his or her internal organs
+ and replaced them with someone else’s organs without leaving any wounds or
+ scars).
+ Specify if:
+ The following course specifiers are only to be used after a 1-year duration of the
+ disorder:
+ First episode, currently in acute episode: First manifestation of the disorder
+ meeting the defining diagnostic symptom and time criteria. An acute episode is a
+ time period in which the symptom criteria are fulfilled.
+ First episode, currently in partial remission: Partial remission is a time period
+ during which an improvement after a previous episode is maintained and in
+ which the defining criteria of the disorder are only partially fulfilled.
+ First episode, currently in full remission: Full remission is a period of time
+ after a previous episode during which no disorder-specific symptoms are
+ present.
+ Multiple episodes, currently in acute episode
+ Multiple episodes, currently in partial remission
+ Multiple episodes, currently in full remission
+ Continuous: Symptoms fulfilling the diagnostic symptom criteria of the disorder
+ are remaining for the majority of the illness course, with subthreshold symptom
+ periods being very brief relative to the overall course.
+ Unspecified
+Specify current severity:
+ Severity is rated by a quantitative assessment of the primary symptoms of
+ psychosis, including delusions, hallucinations, disorganized speech, abnormal
+ psychomotor
+ 106
+ behavior, and negative symptoms. Each of these symptoms may be rated for its
+ current severity (most severe in the last 7 days) on a 5-point scale ranging from
+ 0 (not present) to 4 (present and severe). (See Clinician-Rated Dimensions of
+ Psychosis Symptom Severity in the chapter “Assessment Measures.”)
+ Note: Diagnosis of delusional disorder can be made without using this severity
+ specifier.
+ Subtypes
+ In erotomanic type, the central theme of the delusion is that another person is in love with the
+ individual. The person about whom this conviction is held is usually of higher status (e.g., a
+ famous individual or a superior at work) but can be a complete stranger. Efforts to contact the
+ object of the delusion are common. In grandiose type, the central theme of the delusion is the
+ conviction of having some great talent or insight or of having made some important discovery.
+ Less commonly, the individual may have the delusion of having a special relationship with a
+ prominent individual or of being a prominent person (in which case the actual individual may be
+ regarded as an impostor). Grandiose delusions may have a religious content. In jealous type, the
+ central theme of the delusion is that of an unfaithful partner. This belief is arrived at without due
+ cause and is based on incorrect inferences supported by small bits of “evidence” (e.g., disarrayed
+ clothing). The individual with the delusion usually confronts the spouse or lover and attempts to
+ intervene in the imagined infidelity. In persecutory type, the central theme of the delusion
+ involves the individual’s belief of being conspired against, cheated, spied on, followed,
+ poisoned, maliciously maligned, harassed, or obstructed in the pursuit of long-term goals. Small
+ slights may be exaggerated and become the focus of a delusional system. The affected individual
+ may engage in repeated attempts to obtain satisfaction by legal or legislative action. Individuals
+ with persecutory delusions are often resentful and angry and may resort to violence against those
+ they believe are hurting them. In somatic type, the central theme of the delusion involves bodily
+ functions or sensations. Somatic delusions can occur in several forms. Most common is the belief
+ that the individual emits a foul odor; that there is an infestation of insects on or in the skin; that
+ there is an internal parasite; or that parts of the body are not functioning.
+ Diagnostic Features
+ The essential feature of delusional disorder is the presence of one or more delusions that persist
+ for at least 1 month (Criterion A). A diagnosis of delusional disorder is not given if the
+ individual has ever had a symptom presentation that met Criterion A for schizophrenia (Criterion
+ B). Apart from the direct impact of the delusions, impairments in psychosocial functioning may
+ be more circumscribed than those seen in other psychotic disorders such as schizophrenia, and
+ behavior is not obviously bizarre or odd (Criterion C). If mood episodes occur concurrently with
+the delusions, the total duration of these mood episodes is brief relative to the total duration of
+ the delusional periods (Criterion D). The delusions are not attributable to the physiological
+ effects of a substance (e.g., cocaine) or another medical condition (e.g., Alzheimer’s disease) and
+ are not better explained by another mental disorder, such as body dysmorphic disorder or
+ obsessive-compulsive disorder (Criterion E).
+ In addition to the delusions identified in the diagnostic criteria, the assessment of cognition,
+ depression, and mania symptom domains is vital for making critically important distinctions
+ between the various schizophrenia spectrum and other psychotic disorders. Whereas delusions
+ are a sine qua non of delusional disorder, hallucinations and negative symptoms are uncommon
+ and disorganization is rare. By definition, the presence of catatonia in conjunction with delusions
+ rules out delusional disorder, because Criterion A for schizophrenia would be met. A subset of
+ cases has prominent depressive symptoms, but cognitive impairment and mania are rarely
+ demonstrated.
+ 107
+ Associated Features
+ Social, marital, or work problems can result from the delusional beliefs of delusional disorder.
+ Individuals with delusional disorder may be able to factually describe that others view their
+ beliefs as irrational but are unable to accept this themselves (i.e., there may be “factual insight”
+ but no true insight). Many individuals develop irritable or dysphoric mood, which can sometimes
+ be understood as a reaction to their delusional beliefs. Anger and violent behavior can occur with
+ persecutory, jealous, and erotomanic types. The individual may engage in litigious or
+ antagonistic behavior (e.g., sending hundreds of letters of protest to the government). Legal
+ difficulties can occur, particularly in jealous and erotomanic types.
+ Prevalence
+ The lifetime prevalence of delusional disorder has been estimated at around 0.2% in a Finnish
+ sample, and the most frequent subtype is persecutory. Delusional disorder, jealous type, is
+ probably more common in men than in women, but there are no major sex or gender differences
+ in the overall frequency of delusional disorder or in the content of the delusions.
+ Development and Course
+ On average, global functioning is generally better than that observed in schizophrenia. Although
+ the diagnosis is generally stable, a proportion of individuals go on to develop schizophrenia.
+ Whereas about a third of individuals with delusional disorder of 1–3 months’ duration
+ subsequently receive a diagnosis of schizophrenia, the diagnosis of delusional disorder is much
+ less likely to change if the duration of the disorder is greater than 6–12 months. Although
+ delusional disorder can occur in younger age groups, it may be more prevalent in older
+ individuals.
+ Risk and Prognostic Factors
+ Genetic and physiological.
+ Delusional disorder has a significant familial relationship with both
+ schizophrenia and schizotypal personality disorder.
+Culture-Related Diagnostic Issues
+ An individual’s cultural and religious background must be taken into account in evaluating the
+ possible presence of delusional disorder; in fact, some traditional beliefs unfamiliar to Western
+ cultures may be wrongly labeled as delusional, so their context must be carefully assessed. The
+ nature and content of delusions also vary among different cultural groups.
+ Functional Consequences of Delusional Disorder
+ The functional impairment is usually more circumscribed than that seen with other psychotic
+ disorders, although in some cases, the impairment may be substantial and include poor
+ occupational functioning and social isolation. When poor psychosocial functioning is present,
+ delusional beliefs themselves often play a significant role. A common characteristic of
+ individuals with delusional disorder is the apparent normality of their behavior and appearance
+ when their delusional ideas are not being discussed or acted on. Men with delusional disorder
+ generally have more severe symptoms and worse functional outcomes compared with women.
+ Differential Diagnosis
+ Obsessive-compulsive and related disorders.
+ If an individual with obsessive-compulsive disorder is
+ completely convinced that his or her obsessive-compulsive disorder beliefs are true, then the
+ diagnosis of obsessive-compulsive disorder, with absent insight/delusional
+ 108
+ beliefs specifier, should be given rather than a diagnosis of delusional disorder. Similarly, if an
+ individual with body dysmorphic disorder is completely convinced that his or her body
+ dysmorphic disorder beliefs are true, then the diagnosis of body dysmorphic disorder, with
+ absent insight/delusional beliefs specifier, should be given rather than a diagnosis of delusional
+ disorder.
+ Delirium, major neurocognitive disorder, and psychotic disorder due to another medical
+ condition.
+ Individuals with these disorders may present with symptoms that suggest delusional disorder.
+ For example, simple persecutory delusions in the context of major neurocognitive disorder
+ would be diagnosed as major neurocognitive disorder, with behavioral disturbance.
+ Substance/medication-induced psychotic disorder.
+ A substance/medication-induced 
+psychotic
+ disorder cross-sectionally may be identical in symptomatology to delusional disorder but can be
+ distinguished by the chronological relationship of substance use to the onset and remission of the
+ delusional beliefs.
+ Schizophrenia and schizophreniform disorder.
+ Delusional disorder can be distinguished from
+ schizophrenia and schizophreniform disorder by the absence of the other characteristic
+ symptoms of the active phase of schizophrenia. Furthermore, the quality of delusions can help
+ distinguish between schizophrenia and delusional disorder. In schizophrenia, delusions show
+ greater disorganization (the degree to which delusions are internally consistent, logical, and
+ systematized), whereas in delusional disorder, they show greater conviction (the degree to which
+ the individual is convinced of the reality of the delusion), greater extension (the degree to which
+ the delusion involves various areas of the individual’s life), and greater pressure (the degree to
+Depressive and bipolar disorders and schizoaffective disorder.
+ F23
+ which the individual is preoccupied and concerned with the expressed delusion).
+ These disorders may be distinguished
+ from delusional disorder by the temporal relationship between the mood disturbance and the
+ delusions and by the severity of the mood symptoms. If delusions occur exclusively during mood
+ episodes, the diagnosis is major depressive or bipolar disorder, with psychotic features. Mood
+ symptoms that meet full criteria for a mood episode can be superimposed on delusional disorder.
+ Delusional disorder can be diagnosed only if the total duration of all mood episodes remains
+ brief relative to the total duration of the delusional disturbance. If not, then a diagnosis of other
+ specified or unspecified schizophrenia spectrum and other psychotic disorder accompanied by
+ other specified depressive disorder, unspecified depressive disorder, other specified bipolar and
+ related disorder, or unspecified bipolar and related disorder is appropriate.

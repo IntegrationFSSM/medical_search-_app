@@ -1,0 +1,191 @@
+Other (or Unknown) Substance Use Disorder
+ Diagnostic Criteria
+ A. A problematic pattern of use of an intoxicating substance not able to be
+ classified within the alcohol; caffeine; cannabis; hallucinogen (phencyclidine and
+ others); inhalant; opioid; sedative, hypnotic, or anxiolytic; stimulant; or tobacco
+ categories and leading to clinically significant impairment or distress, as
+ manifested by at least two of the following, occurring within a 12-month period:
+ 1. The substance is often taken in larger amounts or over a longer period than
+ was intended.
+ 2. There is a persistent desire or unsuccessful efforts to cut down or control use
+ of the substance.
+ 3. A great deal of time is spent in activities necessary to obtain the substance,
+ use the substance, or recover from its effects.
+ 4. Craving, or a strong desire or urge to use the substance.
+ 5. Recurrent use of the substance resulting in a failure to fulfill major role
+ obligations at work, school, or home.
+6. Continued use of the substance despite having persistent or recurrent social
+ or interpersonal problems caused or exacerbated by the effects of its use.
+ 7. Important social, occupational, or recreational activities are given up or
+ reduced because of use of the substance.
+ 8. Recurrent use of the substance in situations in which it is physically
+ hazardous.
+ 9. Use of the substance is continued despite knowledge of having a persistent
+ or recurrent physical or psychological problem that is likely to have been
+ caused or exacerbated by the substance.
+ 10. Tolerance, as defined by either of the following:
+ a. A need for markedly increased amounts of the substance to achieve
+ intoxication or desired effect.
+ b. A markedly diminished effect with continued use of the same amount of
+ the substance.
+ 11. Withdrawal, as manifested by either of the following:
+ a. The characteristic withdrawal syndrome for other (or unknown) substance
+ (refer to Criteria A and B of the criteria sets for other [or unknown]
+ substance withdrawal).
+ 653
+ b. The substance (or a closely related substance) is taken to relieve or avoid
+ withdrawal symptoms.
+ Specify if:
+ In early remission: After full criteria for other (or unknown) substance use
+ disorder were previously met, none of the criteria for other (or unknown)
+ substance use disorder have been met for at least 3 months but for less than 12
+ months (with the exception that Criterion A4, “Craving, or a strong desire or urge
+ to use the substance,” may be met).
+ In sustained remission: After full criteria for other (or unknown) substance use
+ disorder were previously met, none of the criteria for other (or unknown)
+ substance use disorder have been met at any time during a period of 12 months
+ or longer (with the exception that Criterion A4, “Craving, or a strong desire or
+ urge to use the substance,” may be met).
+ Specify if:
+ In a controlled environment: This additional specifier is used if the individual is
+ in an environment where access to the substance is restricted.
+ Code based on current severity/remission: If an other (or unknown) substance
+ intoxication, other (or unknown) substance withdrawal, or other (or unknown)
+ substance–induced mental disorder is present, do not use the codes below for other
+ (or unknown) substance use disorder. Instead, the comorbid other (or unknown)
+ substance use disorder is indicated in the 4th character of the other (or unknown)
+substance–induced disorder code (see the coding note for other [or unknown]
+ substance intoxication, other [or unknown] substance withdrawal, or specific other
+ [or unknown] substance–induced mental disorder). For example, if there is comorbid
+ other (or unknown) substance–induced depressive disorder and other (or unknown)
+ substance use disorder, only the other (or unknown) substance–induced depressive
+ disorder code is given, with the 4th character indicating whether the comorbid other
+ (or unknown) substance use disorder is mild, moderate, or severe: F19.14 for other
+ (or unknown) substance use disorder with other (or unknown) substance–induced
+ depressive disorder or F19.24 for a moderate or severe other (or unknown)
+ substance use disorder with other (or unknown) substance–induced depressive
+ disorder.
+ Specify current severity/remission:
+ F19.10 Mild: Presence of 2–3 symptoms.
+ F19.11 Mild, In early remission
+ F19.11 Mild, In sustained remission
+ F19.20 Moderate: Presence of 4–5 symptoms.
+ F19.21 Moderate, In early remission
+ F19.21 Moderate, In sustained remission
+ F19.20 Severe: Presence of 6 or more symptoms.
+ F19.21 Severe, In early remission
+ F19.21 Severe, In sustained remission
+ Specifiers
+ “In a controlled environment” applies as a further specifier of remission if the individual is both
+ in remission and in a controlled environment (i.e., in early remission in a controlled environment
+ or in sustained remission in a controlled environment). Examples of these environments are
+ closely supervised and substance-free jails, therapeutic communities, and locked hospital units.
+ 654
+ Diagnostic Features
+ The diagnostic class other (or unknown) substance–related disorders applies to substances that
+ are not included within any of the nine substance classes presented earlier in this chapter (i.e., to
+ alcohol; caffeine; cannabis; hallucinogens [phencyclidine and others]; inhalants; opioids;
+ sedatives, hypnotics, or anxiolytics; stimulants; or tobacco). Such substances include anabolic
+ steroids; nonsteroidal anti-inflammatory drugs; corticosteroids; antiparkinsonian medications;
+ antihistamines; nitrous oxide; amyl-, butyl-, or isobutyl-nitrites; betel nut, which is chewed in
+ many geographic regions to produce mild euphoria and a floating sensation; and kava (from a
+ South Pacific pepper plant), which produces mild euphoria, sedation, incoordination, and weight
+ loss, as well as health effects (e.g., mild hepatitis, lung abnormalities). Note that gaseous
+ substances are included with the inhalant category only if they are hydrocarbon agents; other
+gaseous substances (including nitrous oxide mentioned above) are included in the other (or
+ unknown) substance category. Unknown substance–related disorders are associated with
+ unidentified substances, such as intoxications in which the individual cannot identify the
+ ingested drug, or substance use disorders involving either new, black market drugs not yet
+ identified or familiar drugs illegally sold under false names.
+ Note that substances included within the scope of one of the substance classes should be
+ coded within that respective substance class and are inappropriate to include in the “other
+ substance” category. For example, the following substances are explicitly included in specific
+ substance classes and should not be included in the “other substance” category: synthetic
+ cannabinoids are included in the cannabis category; propofol is included in the sedative,
+ hypnotic, or anxiolytic category; and cathinones (including khât plant agents and synthetic
+ chemical derivatives) are included in the stimulant category.
+ Other (or unknown) substance use disorder is a mental disorder in which repeated use of an
+ other or unknown substance typically continues, despite the individual’s knowing that the
+ substance is causing serious problems for the individual. Those problems are reflected in the
+ diagnostic criteria. When the substance is known but does not fit within any of the other nine
+ substance classes, it should be reflected when recording and coding the name of the disorder
+ (e.g., “nitrous oxide use disorder,” using the applicable code for other [or unknown] substance
+ use disorder).
+ Associated Features
+ A diagnosis of other (or unknown) substance use disorder is supported by any of the following:
+ the individual’s reported use of a substance that is not among the nine classes listed in this
+ chapter; recurring episodes of intoxication with negative results in standard drug screens, which
+ may not detect new or rarely used substances; and the presence of symptoms characteristic of an
+ unidentified substance that has newly appeared in the individual’s community.
+ Because of access to nitrous oxide (“laughing gas”), membership in certain populations may
+ be associated with frequent use of the substance and possibly with a diagnosis of nitrous oxide
+ use disorder. The role of this gas as an anesthetic agent leads to misuse by some medical and
+ dental professionals, and its use as a propellant for commercial products (e.g., whipped cream
+ dispensers) contributes to misuse by food service workers. Nitrous oxide misuse by adolescents
+ and young adults is significant, and some individuals with very frequent use may present with
+ serious medical complications and mental conditions, including myeloneuropathy, spinal cord
+ subacute combined degeneration, peripheral neuropathy, and psychosis.
+ Use of amyl-, butyl-, and isobutyl (and similar) nitrite gases is prevalent among homosexual
+ men and some adolescents, especially those with conduct disorder.
+ Substance use disorders generally are associated with elevated risks of suicide, but there is no
+ evidence of unique risk factors for suicide with other (or unknown) substance use disorder.
+ 655
+ Prevalence
+ Based on extremely limited data, the prevalence of most other (or unknown) substance use
+ disorders is likely lower than that of use disorders involving the nine substance classes in this
+chapter. For certain gaseous substances, prevalence of use is not rare (lifetime prevalence in the
+ U.S. household population for individuals age 12 and older is estimated at 4.6% for nitrous oxide
+ and 2.5% for nitrites), but how often the patterns of use qualify for a use disorder is unknown.
+ Development and Course
+ No single pattern of development or course characterizes the pharmacologically varied other (or
+ unknown) substance use disorders. Often unknown substance use disorders will be reclassified
+ when the unknown substance eventually is identified.
+ Risk and Prognostic Factors
+ Risk and prognostic factors for other (or unknown) substance use disorders are thought to be
+ similar to those for most substance use disorders and include the presence of any other substance
+ use disorders, conduct disorder, or antisocial personality disorder in the individual or the
+ individual’s family; early onset of substance problems; easy availability of the substance in the
+ individual’s environment; childhood maltreatment or trauma; and evidence of limited early self
+control and behavioral disinhibition.
+ Culture-Related Diagnostic Issues
+ Certain cultures may be associated with other (or unknown) substance use disorders involving
+ specific indigenous substances within the cultural region, such as betel nut.
+ Diagnostic Markers
+ Urine, breath, or saliva tests may correctly identify a commonly used substance falsely sold as a
+ novel product. However, routine clinical tests usually cannot identify truly unusual or new
+ substances, which may require testing in specialized laboratories.
+ Differential Diagnosis
+ Use of other or unknown substances without meeting criteria for other (or unknown) substance
+ use disorder.
+ Use of unknown substances is not rare among adolescents, but most use does not meet the
+ diagnostic standard of two or more criteria for other (or unknown) substance use disorder in a
+ 12-month period.
+ Substance use disorders.
+ Other (or unknown) substance use disorder may co-occur with various
+ substance use disorders that involve any of the nine substance classes presented earlier in this
+ chapter, and the symptoms of the disorders may be similar and overlapping. To disentangle
+ symptom patterns, it is helpful to inquire about which symptoms persisted during periods when
+ some of the substances were not being used.
+ Other (or unknown) substance intoxication, other (or unknown) substance withdrawal, and
+ other (or unknown) substance–induced mental disorders.
+ Other (or unknown) substance use disorder is differentiated from other (or unknown) substance
+ intoxication, other (or unknown) substance withdrawal, and other-(or unknown) substance
+induced mental disorders (e.g., corticosteroid-induced bipolar and related disorder) in that other
+ (or unknown) substance use disorder describes a problematic pattern of use of the other (or
+ unknown) substance that involves impaired control over the use of the substance, social
+impairment attributable to use of the substance, risky use of the substance (e.g., continued use
+ despite medical complications), and pharmacological symptoms (the development of
+ 656
+ tolerance or withdrawal), whereas other (or unknown) substance intoxication, other (or
+ unknown) substance withdrawal, and other (or unknown) substance-induced mental disorders
+ describe psychiatric syndromes that occur in the context of heavy use. Other (or unknown)
+ substance intoxication, other (or unknown) substance withdrawal, and other (or unknown)
+ substance–induced mental disorders may occur in individuals with other (or unknown) substance
+ use disorder. In such cases, a diagnosis of other (or unknown) substance intoxication, other (or
+ unknown) substance withdrawal, or other (or unknown) substance–induced mental disorder
+ should be given in addition to a diagnosis of other (or unknown) substance use disorder, the
+ presence of which is indicated in the diagnostic code.
+ Comorbidity
+ Substance use disorders, including other (or unknown) substance use disorder, are commonly
+ comorbid with one another, with conduct disorder in adolescence, and with antisocial personality
+ disorder.

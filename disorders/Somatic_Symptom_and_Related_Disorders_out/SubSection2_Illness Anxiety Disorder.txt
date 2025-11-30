@@ -1,0 +1,170 @@
+ Illness Anxiety Disorder
+ Diagnostic Criteria
+ A. Preoccupation with having or acquiring a serious illness.
+ B. Somatic symptoms are not present or, if present, are only mild in intensity. If
+ another medical condition is present or there is a high risk for developing a
+ medical condition (e.g., strong family history is present), the preoccupation is
+ clearly excessive or disproportionate.
+ C. There is a high level of anxiety about health, and the individual is easily alarmed
+ about personal health status.
+ D. The individual performs excessive health-related behaviors (e.g., repeatedly
+ checks his or her body for signs of illness) or exhibits maladaptive avoidance
+ (e.g., avoids doctor appointments and hospitals).
+ E. Illness preoccupation has been present for at least 6 months, but the specific
+ illness that is feared may change over that period of time.
+ F. The illness-related preoccupation is not better explained by another mental
+ disorder, such as somatic symptom disorder, panic disorder, generalized anxiety
+ disorder, body dysmorphic disorder, obsessive-compulsive disorder, or
+ delusional disorder, somatic type.
+ Specify whether:
+Care-seeking type: Medical care, including physician visits or undergoing tests
+ and procedures, is frequently used.
+ Care-avoidant type: Medical care is rarely used.
+ Diagnostic Features
+ Most individuals who previously would have been diagnosed with hypochondriasis in DSM-IV
+ (preoccupation with having a serious disease based on the individual’s misinterpretation of
+ bodily symptoms) are now classified as having somatic symptom disorder; however, in one-third
+ of cases, the diagnosis of illness anxiety disorder applies instead.
+ Illness anxiety disorder entails a preoccupation with having or acquiring a serious,
+ undiagnosed medical illness (Criterion A). Somatic symptoms are not present or, if present, are
+ only mild in intensity (Criterion B). A thorough evaluation fails to identify a serious medical
+ condition that accounts for the individual’s concerns. While the concern may be derived from a
+ nonpathological physical sign or sensation, the individual’s distress emanates not primarily from
+ the physical complaint itself but rather from his or her anxiety about the meaning, significance,
+ or cause of the complaint (i.e., the suspected medical diagnosis). If a physical sign or symptom is
+ present, it is often a normal physiological sensation (e.g., orthostatic dizziness), a benign and
+ self-limited dysfunction (e.g., transient tinnitus), or a bodily discomfort not generally considered
+ indicative of disease (e.g., belching). If a diagnosable medical condition is present, the
+ individual’s anxiety and preoccupation are clearly excessive and disproportionate to the severity
+ of the condition (Criterion B). Most empirical evidence and existing literature pertain to
+ previously defined DSM hypochondriasis and health anxiety, and it is unclear to what extent and
+ how precisely they apply to the description of this new diagnosis.
+ The preoccupation with the idea that one is sick is accompanied by substantial anxiety about
+ health and disease (Criterion C). Individuals with illness anxiety disorder are easily alarmed
+ about illness, such as by hearing about someone else falling ill or reading a health-related news
+ story. Their concerns about undiagnosed disease do not respond to appropriate medical
+ reassurance, negative diagnostic tests, or benign course. The physician’s attempts at reassurance
+ and symptom palliation generally do not alleviate the individual’s
+ 358
+ concerns and may heighten them. Illness concerns assume a prominent place in the
+ individual’s life, affecting daily activities, and may even result in invalidism. Illness becomes a
+ central feature of the individual’s identity and self-image, a frequent topic of social discourse,
+ and a characteristic response to stressful life events. Individuals with the disorder often examine
+ themselves repeatedly (e.g., examining one’s throat in the mirror) (Criterion D). They research
+ their suspected disease excessively (e.g., on the Internet) and repeatedly seek reassurance from
+ family, friends, or physicians. This incessant worrying often becomes frustrating for othe rs and
+ may result in considerable strain within the family. In some cases, the anxiety leads to
+ maladaptive avoidance of situations (e.g., visiting sick family members) or activities (e.g.,
+ exercise) that these individuals fear might jeopardize their health.
+Associated Features
+ Because they believe they are medically ill, individuals with illness anxiety disorder are
+ encountered far more frequently in medical than in mental health settings. The majority of
+ individuals with illness anxiety disorder have extensive yet unsatisfactory medical care. They
+ generally have elevated rates of utilization of medical and mental health services compared with
+ the general population. In a minority of cases of illness anxiety disorder, individuals are too
+ anxious to seek medical attention and avoid medical health care.
+ They often consult multiple physicians for the same problem and obtain repeatedly negative
+ diagnostic test results. At times, medical attention leads to a paradoxical exacerbation of anxiety
+ or to iatrogenic complications from diagnostic tests and procedures. Individuals with the disorder
+ are generally dissatisfied with their medical care and find it unhelpful, often feeling they are not
+ being taken seriously by physicians. At times, these concerns may be justified, since physicians
+ sometimes are dismissive or respond with frustration or hostility. This response can occasionally
+ result in a failure to diagnose a medical condition that is present.
+ Prevalence
+ Prevalence estimates of illness anxiety disorder are based on estimates of the DSM-III and DSM
+IV diagnosis hypochondriasis and health anxiety. The 1- to 2-year prevalence of health anxiety
+ and/or disease conviction in community surveys and population-based samples from high
+income countries such as the United States and Germany ranges from 1.3% to 10%. In
+ ambulatory medical populations, the 6-month/1-year prevalence rates are between 2.2% and 8%
+ across a range of countries, with weighted mean prevalence rates of 3%. By contrast, in a study
+ of patients in specialty clinics, about one-fifth of individuals reported illness anxiety. The
+ prevalence of the disorder is similar in men and women.
+ Development and Course
+ The development and course of illness anxiety disorder are unclear. Illness anxiety disorder is
+ generally thought to be a chronic, episodic, and relapsing condition with an age at onset in early
+ and middle adulthood. The disorder is thought to be rare in children, although the onset of
+ health-related anxieties can occur in childhood or adolescence. In some population-based
+ samples, health-related anxiety increases with age, but in others, health anxiety peaks in middle
+ age, before declining in older age. The ages of individuals with high health anxiety in medical
+ settings do not appear to differ from those of other individuals in those settings. In older
+ individuals, health-related anxiety often focuses on memory loss and sensory loss.
+ Risk and Prognostic Factors
+ Environmental.
+ Illness anxiety disorder may sometimes be precipitated by a major life stress or a
+ serious but ultimately benign threat to the individual’s health. A history of
+ 359
+ childhood abuse or of a serious childhood illness, serious illness in a parent, or death of an ill
+ parent during childhood may predispose to development of the disorder in adulthood.
+Course modifiers.
+ Approximately one-third to one-half of individuals with illness anxiety
+ disorder have a transient form, which is associated with less psychiatric comorbidity, more
+ medical comorbidity, and less severe illness anxiety disorder.
+ Culture-Related Diagnostic Issues
+ The diagnosis should be made with caution in individuals whose ideas about disease are
+ congruent with widely held cultural beliefs. The prevalence appears to be similar across different
+ countries, although little is known about the cross-cultural variation in phenomenology.
+ Functional Consequences of Illness Anxiety Disorder
+ Illness anxiety disorder causes substantial role impairment and decrements in physical function
+ and health-related quality of life. Health concerns often interfere with interpersonal relationships,
+ disrupt family life, and damage occupational performance.
+ Differential Diagnosis
+ Other medical conditions.
+ The first differential diagnostic consideration is an underlying medical
+ condition, including neurological or endocrine conditions, occult malignancies, and other
+ diseases that affect multiple body systems. The presence of a medical condition does not rule out
+ the possibility of coexisting illness anxiety disorder. If a medical condition is present, the health
+related anxiety and disease concerns are clearly disproportionate to its seriousness. Transient
+ preoccupations related to a medical condition do not constitute illness anxiety disorder.
+ Adjustment disorders.
+ Health-related anxiety is a normal response to serious illness and is not a
+ mental disorder. Such nonpathological health anxiety is clearly related to the medical condition
+ and is typically time-limited. If the health anxiety is severe enough to cause clinically significant
+ distress or impairment in one or more important areas of functioning, an adjustment disorder
+ may be diagnosed. However, if disproportionate health-related anxiety persists for longer than 6
+ months, a diagnosis of illness anxiety disorder may apply.
+ Somatic symptom disorder.
+ Both somatic symptom disorder and illness anxiety disorder may be
+ characterized by a high level of anxiety about health and excessive health-related behaviors.
+ They are differentiated by the fact that somatic symptom disorder requires the presence of
+ somatic symptoms that are distressing or result in significant disruption of daily life, whereas in
+ illness anxiety disorder, somatic symptoms either are not present or, if present, are only mild in
+ intensity.
+ Anxiety disorders.
+ In generalized anxiety disorder, individuals worry about multiple events,
+ situations, or activities, only one of which may involve health. In panic disorder, the individual
+ may be concerned that the panic attacks reflect the presence of a medical illness; however,
+ although these individuals may have health anxiety, their anxiety is typically very acute and
+ episodic. In illness anxiety disorder, the health anxiety and fears are more persistent and
+ enduring. Individuals with illness anxiety disorder may experience panic attacks that are
+ triggered by their illness concerns.
+ Obsessive-compulsive and related disorders.
+ Individuals with illness anxiety disorder may have
+ intrusive thoughts about having a disease and also may have associated compulsive behaviors
+Major depressive disorder.
+ Psychotic disorders.
+ (e.g., seeking reassurance). However, in illness anxiety disorder, the preoccupations are usually
+ focused on having a disease, whereas in obsessive-compulsive disorder (OCD), the thoughts are
+ intrusive and are usually focused on fears of getting a disease in the future. Most individuals with
+ OCD have obsessions or compulsions
+ 360
+ involving other concerns in addition to fears about contracting disease. In body dysmorphic
+ disorder, concerns are limited to the individual’s physical appearance, which is viewed as
+ defective or flawed.
+ Some individuals with a major depressive episode ruminate about their
+ health and worry excessively about illness. A separate diagnosis of illness anxiety disorder is not
+ made if these concerns occur only during major depressive episodes. However, if excessive
+ illness worry persists after remission of an episode of major depressive disorder, the diagnosis of
+ illness anxiety disorder should be considered.
+ Individuals with illness anxiety disorder are not delusional and can
+ acknowledge the possibility that the feared disease is not present. Their ideas do not attain the
+ rigidity and intensity seen in the somatic delusions occurring in psychotic disorders (e.g.,
+ schizophrenia; delusional disorder, somatic type; major depressive disorder, with psychotic
+ features). True somatic delusions are generally more bizarre (e.g., that an organ is rotting or
+ dead) than the concerns seen in illness anxiety disorder. The concerns seen in illness anxiety
+ disorder, though not founded in reality, are plausible.
+ Comorbidity
+ Illness anxiety disorder co-occurs with anxiety disorders (in particular, generalized anxiety
+ disorder and panic disorder), OCD, and depressive disorders. Approximately two-thirds of
+ individuals with illness anxiety disorder are likely to have at least one other comorbid major
+ mental disorder. Individuals with illness anxiety disorder may have an elevated risk for
+ personality disorders.

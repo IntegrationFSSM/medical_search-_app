@@ -1,0 +1,124 @@
+Alcohol Withdrawal
+ Diagnostic Criteria
+ A. Cessation of (or reduction in) alcohol use that has been heavy and prolonged.
+ B. Two (or more) of the following, developing within several hours to a few days
+ after the cessation of (or reduction in) alcohol use described in Criterion A:
+ 1. Autonomic hyperactivity (e.g., sweating or pulse rate greater than 100 bpm).
+ 2. Increased hand tremor.
+ 3. Insomnia.
+ 4. Nausea or vomiting.
+ 5. Transient visual, tactile, or auditory hallucinations or illusions.
+ 6. Psychomotor agitation.
+ 7. Anxiety.
+ 8. Generalized tonic-clonic seizures.
+ C. The signs or symptoms in Criterion B cause clinically significant distress or
+ impairment in social, occupational, or other important areas of functioning.
+ 565
+ D. The signs or symptoms are not attributable to another medical condition and are
+ not better explained by another mental disorder, including intoxication or
+ withdrawal from another substance.
+ Specify if:
+ With perceptual disturbances: This specifier applies in the rare instance when
+ hallucinations (usually visual or tactile) occur with intact reality testing, or
+ auditory, visual, or tactile illusions occur in the absence of a delirium.
+ Coding note: The ICD-10-CM code depends on whether or not there is a comorbid
+ alcohol use disorder and whether or not there are perceptual disturbances.
+ For alcohol withdrawal, without perceptual disturbances: If a mild alcohol
+ use disorder is comorbid, the ICD-10-CM code is F10.130, and if a moderate or
+ severe alcohol use disorder is comorbid, the ICD-10-CM code is F10.230. If
+ there is no comorbid alcohol use disorder, then the ICD-10-CM code is F10.930.
+ For alcohol withdrawal, with perceptual disturbances: If a mild alcohol use
+ disorder is comorbid, the ICD-10-CM code is F10.132, and if a moderate or
+ severe alcohol use disorder is comorbid, the ICD-10-CM code is F10.232. If
+ there is no comorbid alcohol use disorder, then the ICD-10-CM code is F10.932.
+ Specifiers
+When hallucinations occur in the absence of delirium (i.e., in a clear sensorium), a diagnosis of
+ substance/medication-induced psychotic disorder should be considered.
+ Diagnostic Features
+ The essential feature of alcohol withdrawal is the presence of a characteristic withdrawal
+ syndrome that develops within several hours to a few days after the cessation of (or reduction in)
+ heavy and prolonged alcohol use (Criteria A and B). The withdrawal syndrome includes two or
+ more of the symptoms reflecting autonomic hyperactivity and anxiety listed in Criterion B, along
+ with gastrointestinal symptoms.
+ Withdrawal symptoms cause clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning (Criterion C). The symptoms must not be
+ attributable to another medical condition and are not better explained by another mental disorder
+ (e.g., generalized anxiety disorder), including intoxication or withdrawal from another substance
+ (e.g., sedative, hypnotic, or anxiolytic withdrawal) (Criterion D).
+ Symptoms can be relieved by administering alcohol or benzodiazepines (e.g., diazepam). The
+ withdrawal symptoms typically begin when blood concentrations of alcohol decline sharply (i.e.,
+ within 4–12 hours) after alcohol use has been stopped or reduced. Reflecting the relatively fast
+ metabolism of alcohol, symptoms of alcohol withdrawal usually peak in intensity during the
+ second day of abstinence and are likely to improve markedly by the fourth or fifth day.
+ Following acute withdrawal, however, symptoms of anxiety, insomnia, and autonomic
+ dysfunction may persist for up to 3–6 months at lower levels of intensity.
+ Fewer than 10% of individuals who develop alcohol withdrawal will ever develop dramatic
+ symptoms (e.g., severe autonomic hyperactivity, tremors, alcohol withdrawal delirium). Tonic
+clonic seizures occur in fewer than 3% of individuals.
+ Associated Features
+ Although confusion and changes in consciousness are not core criteria for alcohol withdrawal,
+ alcohol withdrawal delirium (see “Delirium” in the chapter “Neurocognitive Disorders”) may
+ occur in the context of withdrawal. As is true for any agitated, confused state, regardless of the
+ cause, in addition to a disturbance of consciousness and cognition, withdrawal delirium can
+ include visual, tactile, or (rarely) auditory hallucinations
+ 566
+ (delirium tremens). When alcohol withdrawal delirium develops, it is likely that a clinically
+ relevant medical condition may be present (e.g., liver failure, pneumonia, gastrointestinal
+ bleeding, sequelae of head trauma, hypoglycemia, an electrolyte imbalance, postoperative
+ status).
+ Prevalence
+ It is estimated that approximately 50% of middle-class, highly functional individuals with
+ alcohol use disorder in the United States have ever experienced a full alcohol withdrawal
+ syndrome. Among individuals with alcohol use disorder who are hospitalized or homeless, the
+ rate of alcohol withdrawal may be greater than 80%. Less than 10% of individuals in withdrawal
+ever demonstrate alcohol withdrawal delirium or withdrawal seizures. The prevalence of alcohol
+ withdrawal symptoms does not seem to vary across U.S. ethnoracial groups.
+ Development and Course
+ Acute alcohol withdrawal occurs as an episode usually lasting 4–5 days and only after extended
+ periods of heavy drinking. Withdrawal is relatively rare in individuals younger than 30 years,
+ and the risk and severity increase with increasing age.
+ Risk and Prognostic Factors
+ Alcohol withdrawal is more likely to occur with heavier alcohol intake, and that might be most
+ often observed in individuals with conduct disorder and antisocial personality disorder.
+ Withdrawal states are also more severe in individuals who are also dependent on other
+ depressant drugs (sedative-hypnotics) and individuals who have had more alcohol withdrawal
+ experiences in the past. Predictors of severe alcohol withdrawal include alcohol withdrawal
+ delirium, prior histories of severe withdrawal syndromes, low blood potassium levels, decreased
+ platelet counts, and systolic hypertension.
+ Environmental.
+ The probability of developing alcohol withdrawal increases with the quantity and
+ frequency of alcohol consumption. Most individuals with this condition are drinking daily,
+ consuming large amounts (approximately more than eight drinks per day) for multiple days.
+ However, there are large inter-individual differences, with enhanced risks for individuals with
+ concurrent medical conditions, those with family histories of alcohol withdrawal (i.e., a genetic
+ component), those with prior withdrawals, and individuals who consume sedative, hypnotic, or
+ anxiolytic drugs.
+ Diagnostic Markers
+ Autonomic hyperactivity in the context of moderately high but falling blood alcohol levels and a
+ history of prolonged, heavy drinking indicate a likelihood of alcohol withdrawal.
+ Functional Consequences of Alcohol Withdrawal
+ Symptoms of withdrawal may serve to perpetuate drinking behaviors and contribute to relapse,
+ resulting in persistently impaired social and occupational functioning. Symptoms requiring
+ medically supervised detoxification result in hospital utilization and loss of work productivity.
+ Overall, the presence of withdrawal is associated with greater functional impairment and poor
+ prognosis among individuals with alcohol use disorder.
+ Differential Diagnosis
+ Other medical conditions.
+ The symptoms of alcohol withdrawal can also be mimicked by some
+ medical conditions (e.g., hypoglycemia and diabetic ketoacidosis). Essential tremor,
+ 567
+ a disorder that frequently runs in families, may erroneously suggest the tremulousness associated
+ with alcohol withdrawal.
+Alcohol-induced mental disorders.
+ Alcohol withdrawal is distinguished from alcohol-induced
+ mental disorders (e.g., alcohol-induced anxiety disorder, with onset during withdrawal) because
+ the symptoms (e.g., anxiety) in these latter disorders are in excess of those usually associated
+ with alcohol withdrawal, predominate in the clinical presentation, and are severe enough to
+ warrant clinical attention.
+ Sedative, hypnotic, or anxiolytic withdrawal.
+ Sedative, hypnotic, or anxiolytic withdrawal produces a
+ syndrome very similar to that of alcohol withdrawal.
+ Comorbidity
+ Given the typical overlap of alcohol withdrawal with alcohol use disorder, see “Comorbidity”
+ under Alcohol Use Disorder for more details about co-occurring conditions that are likely to be
+ encountered.

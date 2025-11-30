@@ -1,0 +1,389 @@
+Schizophrenia
+ Diagnostic Criteria
+ A. Two (or more) of the following, each present for a significant portion of time
+ during a 1-month period (or less if successfully treated). At least one of these
+ must be (1), (2), or (3):
+ 1. Delusions.
+ 2. Hallucinations.
+ 3. Disorganized speech (e.g., frequent derailment or incoherence).
+ 114
+ 4. Grossly disorganized or catatonic behavior.
+ 5. Negative symptoms (i.e., diminished emotional expression or avolition).
+ B. For a significant portion of the time since the onset of the disturbance, level of
+ functioning in one or more major areas, such as work, interpersonal relations, or
+ self-care, is markedly below the level achieved prior to the onset (or when the
+ onset is in childhood or adolescence, there is failure to achieve expected level of
+ interpersonal, academic, or occupational functioning).
+C. Continuous signs of the disturbance persist for at least 6 months. This 6-month
+ period must include at least 1 month of symptoms (or less if successfully treated)
+ that meet Criterion A (i.e., active-phase symptoms) and may include periods of
+ prodromal or residual symptoms. During these prodromal or residual periods, the
+ signs of the disturbance may be manifested by only negative symptoms or by
+ two or more symptoms listed in Criterion A present in an attenuated form (e.g.,
+ odd beliefs, unusual perceptual experiences).
+ D. Schizoaffective disorder and depressive or bipolar disorder with psychotic
+ features have been ruled out because either 1) no major depressive or manic
+ episodes have occurred concurrently with the active-phase symptoms, or 2) if
+ mood episodes have occurred during active-phase symptoms, they have been
+ present for a minority of the total duration of the active and residual periods of
+ the illness.
+ E. The disturbance is not attributable to the physiological effects of a substance
+ (e.g., a drug of abuse, a medication) or another medical condition.
+ F. If there is a history of autism spectrum disorder or a communication disorder of
+ childhood onset, the additional diagnosis of schizophrenia is made only if
+ prominent delusions or hallucinations, in addition to the other required symptoms
+ of schizophrenia, are also present for at least 1 month (or less if successfully
+ treated).
+ Specify if:
+ The following course specifiers are only to be used after a 1-year duration of the
+ disorder and if they are not in contradiction to the diagnostic course criteria.
+ First episode, currently in acute episode: First manifestation of the disorder
+ meeting the defining diagnostic symptom and time criteria. An acute episode is a
+ time period in which the symptom criteria are fulfilled.
+ First episode, currently in partial remission: Partial remission is a period of
+ time during which an improvement after a previous episode is maintained and in
+ which the defining criteria of the disorder are only partially fulfilled.
+ First episode, currently in full remission: Full remission is a period of time
+ after a previous episode during which no disorder-specific symptoms are
+ present.
+ Multiple episodes, currently in acute episode: Multiple episodes may be
+ determined after a minimum of two episodes (i.e., after a first episode, a
+ remission and a minimum of one relapse).
+ Multiple episodes, currently in partial remission
+ Multiple episodes, currently in full remission
+ Continuous: Symptoms fulfilling the diagnostic symptom criteria of the disorder
+ are remaining for the majority of the illness course, with subthreshold symptom
+ periods being very brief relative to the overall course.
+ Unspecified
+Specify if:
+ With catatonia (refer to the criteria for catatonia associated with another mental
+ disorder, p. 135, for definition).
+ Coding note: Use additional code F06.1 catatonia associated with
+ schizophrenia to indicate the presence of the comorbid catatonia.
+ 115
+ Specify current severity:
+ Severity is rated by a quantitative assessment of the primary symptoms of
+ psychosis, including delusions, hallucinations, disorganized speech, abnormal
+ psychomotor behavior, and negative symptoms. Each of these symptoms may
+ be rated for its current severity (most severe in the last 7 days) on a 5-point
+ scale ranging from 0 (not present) to 4 (present and severe). (See Clinician
+Rated Dimensions of Psychosis Symptom Severity in the chapter “Assessment
+ Measures.”)
+ Note: Diagnosis of schizophrenia can be made without using this severity
+ specifier.
+ Diagnostic Features
+ The characteristic symptoms of schizophrenia involve a range of cognitive, behavioral, and
+ emotional dysfunctions, but no single symptom is pathognomonic of the disorder. The diagnosis
+ involves the recognition of a constellation of signs and symptoms associated with impaired
+ occupational or social functioning. Individuals with the disorder will vary substantially on most
+ features, as schizophrenia is a heterogeneous clinical syndrome.
+ At least two Criterion A symptoms must be present for a significant portion of time during a
+ 1-month period or longer. At least one of these symptoms must be the clear presence of
+ delusions (Criterion A1), hallucinations (Criterion A2), or disorganized speech (Criterion A3).
+ Grossly disorganized or catatonic behavior (Criterion A4) and negative symptoms (Criterion A5)
+ may also be present. In those situations in which the active-phase symptoms remit within a
+ month in response to treatment, Criterion A is still met if the clinician estimates that they would
+ have persisted in the absence of treatment.
+ Schizophrenia involves impairment in one or more major areas of functioning (Criterion B).
+ If the disturbance begins in childhood or adolescence, the expected level of function is not
+ attained. Comparing the individual with unaffected siblings may be helpful. The dysfunction
+ persists for a substantial period during the course of the disorder and does not appear to be a
+ direct result of any single feature. Avolition (i.e., reduced drive to pursue goal-directed behavior;
+ Criterion A5) is linked to the social dysfunction described under Criterion B. There is also strong
+ evidence for a relationship between cognitive impairment (see the section “Associated Features”
+ for this disorder) and functional impairment in individuals with schizophrenia.
+ Some signs of the disturbance must persist for a continuous period of at least 6 months
+ (Criterion C). Prodromal symptoms often precede the active phase, and residual symptoms may
+ follow it, characterized by mild or subthreshold forms of hallucinations or delusions. Individuals
+may express a variety of unusual or odd beliefs that are not of delusional proportions (e.g., ideas
+ of reference or magical thinking); they may have unusual perceptual experiences (e.g., sensing
+ the presence of an unseen person); their speech may be generally understandable but vague; and
+ their behavior may be unusual but not grossly disorganized (e.g., mumbling in public). Negative
+ symptoms are common in the prodromal and residual phases and can be severe. Individuals who
+ had been socially active may become withdrawn from previous routines. Such behaviors are
+ often the first sign of a disorder.
+ Mood symptoms and full mood episodes are common in schizophrenia and may be
+ concurrent with active-phase symptomatology. However, as distinct from a psychotic mood
+ disorder, a schizophrenia diagnosis requires the presence of delusions or hallucinations in the
+ absence of mood episodes. In addition, mood episodes, taken in total, should be present for only
+ a minority of the total duration of the active and residual periods of the illness.
+ In addition to the five symptom domain areas identified in the diagnostic criteria, the
+ assessment of cognition, depression, and mania symptom domains is vital for making critically
+ important distinctions between the various schizophrenia spectrum and other psychotic disorders.
+ 116
+ Associated Features
+ Individuals with schizophrenia may display inappropriate affect (e.g., laughing in the absence of
+ an appropriate stimulus); a dysphoric mood that can take the form of depression, anxiety, or
+ anger; a disturbed sleep pattern (e.g., daytime sleeping and nighttime activity); and a lack of
+ interest in eating or food refusal. Depersonalization, derealization, and somatic concerns may
+ occur and sometimes reach delusional proportions. Anxiety and phobias are common. Cognitive
+ deficits in schizophrenia are common and are strongly linked to vocational and functional
+ impairments. These deficits can include decrements in declarative memory, working memory,
+ language function, and other executive functions, as well as slower processing speed.
+ Abnormalities in sensory processing and inhibitory capacity, as well as reductions in attention,
+ are also found. Some individuals with schizophrenia show social cognition deficits, including
+ deficits in the ability to infer the intentions of other people (theory of mind), and may attend to
+ and then interpret irrelevant events or stimuli as meaningful, perhaps leading to the generation of
+ explanatory delusions. These impairments frequently persist during symptomatic remission.
+ Some individuals with psychosis may lack insight or awareness of their disorder (i.e.,
+ anosognosia). This lack of “insight” includes unawareness of symptoms of schizophrenia and
+ may be present throughout the entire course of the illness. Unawareness of illness is typically a
+ symptom of schizophrenia itself rather than a coping strategy. It is comparable to the lack of
+ awareness of neurological deficits following brain damage, termed anosognosia. This symptom
+ is the most common predictor of nonadherence to treatment, and it predicts higher relapse rates,
+ increased number of involuntary treatments, poorer psychosocial functioning, aggression, and a
+ poorer course of illness.
+ Hostility and aggression can be associated with schizophrenia, although spontaneous or
+ random assault is uncommon. Aggression is more frequent for younger males and for individuals
+ with a past history of violence, nonadherence to treatment, substance abuse, and impulsivity. It
+ should be noted that the vast majority of persons with schizophrenia are not aggressive and are
+more frequently victimized than are individuals in the general population.
+ Currently, there are no radiological, laboratory, or psychometric tests for the disorder.
+ Differences are evident in multiple brain regions between groups of healthy individuals and
+ persons with schizophrenia, including evidence from neuroimaging, neuropathological, and
+ neurophysiological studies. Differences are also evident in cellular architecture, white matter
+ connectivity, and gray matter volume in a variety of regions such as the prefrontal and temporal
+ cortices. Reduced overall brain volume has been observed, as well as increased brain volume
+ reduction with age. Brain volume reductions with age are more pronounced in individuals with
+ schizophrenia than in healthy individuals. Finally, individuals with schizophrenia appear to differ
+ from individuals without the disorder in eye-tracking and electrophysiological indices.
+ Neurological soft signs common in individuals with schizophrenia include impairments in
+ motor coordination, sensory integration, and motor sequencing of complex movements; left-right
+ confusion; and disinhibition of associated movements. In addition, minor physical anomalies of
+ the face and limbs may occur.
+ Prevalence
+ The estimated lifetime prevalence of schizophrenia is approximately 0.3%–0.7%, with variation
+ over a fivefold range in meta-analyses of nationally representative surveys. Studies have shown
+ increased prevalence and incidence of schizophrenia for some groups based on migration and
+ refugee status, urbanicity, and the economic status and latitude of the country. It is important to
+ note that the reported prevalence and incidence of schizophrenia may be affected by the fact that
+ some groups are more likely to be misdiagnosed or overdiagnosed.
+ 117
+ The sex ratio differs across samples and populations: for example, presentations with
+ prominent negative symptoms and longer duration of disorder (associated with poorer outcome)
+ show higher incidence rates for men, whereas definitions allowing for the inclusion of more
+ mood symptoms and brief presentations (associated with better outcome) show equivalent risks
+ for both sexes. A large worldwide study, which was based on a range of definitions of
+ schizophrenia, found no difference in prevalence between the sexes.
+ Development and Course
+ The requisite psychotic features of the schizophrenia diagnosis typically emerge between the late
+ teens and the mid-30s; onset prior to adolescence is rare. The peak onset age occurs in the early
+to mid-20s for men and in the late-20s for women. The onset may be abrupt or insidious, but the
+ majority of individuals manifest a slow and gradual development of a variety of clinically
+ significant signs and symptoms, particularly social withdrawal, emo-tional changes, and
+ cognitive changes producing a deterioration in role functioning. Half of these individuals display
+ depressive symptoms. Prognosis is influenced both by dura-tion and by severity of illness and
+ gender. Men, especially those with long duration of psychosis before treatment and lower
+ premorbid adjustment, have more prominent negative symptoms, cognitive impairment, and
+ generally worse functional outcomes than women. Sociocognitive deficits may manifest during
+ development and precede the emergence of psychosis, taking the form of stable impairments
+ during adulthood, refractory to antipsychotic medications.
+Course and outcome in schizophrenia are heterogeneous, and prognosis is uncertain at the
+ onset of psychosis. Although most individuals with schizophrenia remain vulnerable to
+ exacerbation of psychotic symptoms and a chronic course defined by symptoms and functional
+ impairment is common, many individuals experience periods of remission and even recovery.
+ According to a meta-analysis of 79 longitudinal studies of first-episode psychosis with more than
+ 1 year of follow-up, the pooled remission rate (qualitatively defined as mild or absent symptoms
+ for at least 6 months) for first-episode schizophrenia was 56% and the pooled recovery rate
+ (qualitatively defined as symptomatic and functional improvement for greater than 2 years) was
+ 30%. A different meta-analysis of 50 studies of individuals with broadly defined schizophrenia
+ (i.e., schizophrenia, schizophreniform, schizoaffective, or delusional disorder) found that the
+ median proportion of individuals who met recovery criteria (at most mild symptoms and
+ improvements in social and/or occupational functioning persisting for at least 2 years) was
+ 13.5%. There is a tendency for reduced psychotic experiences during late life. In addition to
+ psychosis, cognitive impairment and negative symptom pathology are core features of
+ schizophrenia, and the course for these characteristic features is different from that of positive
+ psychotic symptoms. Cognition tends to decline during development prior to full psychosis and
+ is relatively stable over the longer term. Negative symptoms, if present during development, also
+ tend to be relatively stable traits over time. Negative symptoms that begin after psychosis onset
+ are more variable and may reflect secondary causes. A degree of chronicity is required for a
+ diagnosis of schizophrenia, and long-term course reflects a need for mental health care and living
+ support in many individuals. While schizophrenia is generally not a progressive
+ neurodegenerative disorder, life challenges, changing lifestyle, and persistent symptoms may
+ lead to progressive dysfunction in more severe chronic cases.
+ The essential features of schizophrenia are the same in childhood, but it is more difficult to
+ make the diagnosis. In children, delusions and hallucinations may be less elaborate than in
+ adults, and visual hallucinations are more common and should be distinguished from normal
+ fantasy play. Disorganized speech occurs in many disorders with childhood onset (e.g., autism
+ spectrum disorder), as does disorganized behavior (e.g., attention-deficit/hyperactivity disorder).
+ These symptoms should not be attributed to schizophrenia
+ 118
+ without due consideration of the more common disorders of childhood. Childhood-onset
+ cases tend to resemble poor-outcome adult cases, with gradual onset and prominent negative
+ symptoms. Children who later receive the diagnosis of schizophrenia are more likely to have
+ experienced nonspecific emotional-behavioral disturbances and psychopathology, intellectual
+ and language alterations, and subtle motor delays.
+ Late-onset cases (i.e., onset after age 40 years) are overrepresented by women, who may
+ have married. Often, the course is characterized by a predominance of psychotic symptoms with
+ preservation of affect and social functioning. Such late-onset cases can still meet the diagnostic
+ criteria for schizophrenia, but it is not yet clear whether this is the same condition as
+ schizophrenia diagnosed prior to midlife (e.g., prior to age 55 years).
+ Risk and Prognostic Factors
+ Environmental.
+ Season of birth has been linked to the incidence of schizophrenia, including late
+winter/early spring in some locations and summer for the deficit form of the disease. The
+ incidence of schizophrenia and related disorders may be higher for children growing up in an
+ urban environment, for refugees, for some migrant groups, and for socially oppressed groups
+ facing discrimination. There is evidence that social deprivation, social adversity, and
+ socioeconomic factors may be associated with increased rates of this disorder. Among
+ individuals with schizophrenia and other psychotic disorders, the severity of positive and
+ negative symptoms appears to be correlated with the severity of adverse childhood experiences,
+ such as trauma and neglect. Higher rates of schizophrenia for some ethnic and racialized groups
+ have been documented when they live in areas with lower proportions of people from the same
+ ethnicity or racialized group. The reasons for this are not completely clear but appear related to
+ several factors, including the following: 1) higher levels of discrimination or fear of
+ discrimination; 2) less social support and more stigmatization of those with schizophrenia; 3)
+ higher social isolation; and 4) decreased availability of and access to normalizing explanations of
+ perceptual experiences and abnormal beliefs reported by individuals at high risk for developing
+ schizophrenia.
+ Genetic and physiological.
+ There is a strong contribution for genetic factors in determining risk for
+ schizophrenia, although most individuals who have been diagnosed with schizophrenia have no
+ family history of psychosis. Liability is conferred by a spectrum of risk alleles, common and
+ rare, with each allele contributing only a small fraction to the total population variance. The risk
+ alleles identified to date are also associated with other mental disorders, including bipolar
+ disorder, depression, and autism spectrum disorder.
+ Pregnancy and birth complications with hypoxia and greater paternal age are associated with
+ a higher risk of schizophrenia for the developing fetus. In addition, other prenatal and perinatal
+ adversities, including stress, infection, malnutrition, maternal diabetes, and other medical
+ conditions, have been linked with schizophrenia. However, the vast majority of offspring with
+ these risk factors do not develop schizophrenia.
+ Culture-Related Diagnostic Issues
+ The form and content of schizophrenia symptoms can vary cross-culturally, including the
+ following ways: the relative proportion of visual and auditory hallucinations (e.g., while auditory
+ hallucinations tend to be more common than visual hallucinations around the world, the relative
+ proportion of visual hallucinations may be particularly higher in some regions compared with
+ others); the specific content of the delusions (e.g., persecutory, grandiose, somatic) and
+ hallucinations (e.g., command, abusive, religious); and the level of fear associated with them.
+ Cultural and socioeconomic factors must be considered, particularly when the individual and the
+ clinician do not share the same cultural and socioeconomic background. Ideas that appear to be
+ delusional in one cultural context (e.g., evil eye, causing illness through curses, influences of
+ spirits) may be commonly held in others.
+ 119
+ In some cultural contexts, visual or auditory hallucinations with a religious content (e.g., hearing
+ God’s voice) are a normal part of religious experience. In addition, the assessment of
+ disorganized speech may be made difficult by linguistic variation in narrative styles across
+ cultures. The assessment of affect requires sensitivity to differences in styles of emotional
+expression, eye contact, and body language, which vary across cultures. If the assessment is
+ conducted in a language that is different from the individual’s primary language, care must be
+ taken to ensure that alogia is not related to linguistic barriers. In certain cultures, distress may
+ take the form of hallucinations or pseudo-hallucinations and overvalued ideas that may present
+ clinically similar to true psychosis but are normative to the individual’s subgroup. Misdiagnosis
+ of schizophrenia in individuals with mood disorders with psychotic features or with other
+ psychiatric disorders is more likely to occur in members of underserved ethnic and racialized
+ groups (in the United States, especially among African Americans). This may be attributable to
+ clinical bias, racism, or discrimination leading to limited quality of information and potential
+ misinterpretation of symptoms.
+ Sex- and Gender-Related Diagnostic Issues
+ A number of features distinguish the clinical expression of schizophrenia in women and men.
+ The age at onset is later in women, with a second midlife peak. Symptoms tend to be more
+ affect-laden among women, and there are more psychotic symptoms, as well as a greater
+ propensity for psychotic symptoms to worsen in later life. Other symptom differences include
+ less frequent negative symptoms and disorganization. Finally, social functioning tends to remain
+ better preserved in women. There are, however, frequent exceptions to these general caveats.
+ Psychotic symptoms have been observed to worsen during the premenstrual time period
+ when estrogen levels are dropping; consequently, increased psychiatric admission rates are seen
+ in women with schizophrenia just before and during menses. Lower estrogen levels resulting
+ from menopause may be another factor associated with the second peak of onset in women in
+ midlife. Similarly, psychotic symptoms appear to improve during pregnancy when estrogen
+ levels are high and worsen again postpartum when estrogen levels precipitously drop.
+ Association With Suicidal Thoughts or Behavior
+ Approximately 5%–6% of individuals with schizophrenia die by suicide, about 20% attempt
+ suicide on one or more occasions, and many more have significant suicidal ideation. Suicidal
+ behavior is sometimes in response to command hallucinations to harm oneself or others. Suicide
+ risk remains high over the whole lifespan for men and women, although it may be especially
+ high for younger men with comorbid substance use. Other risk factors include depressive
+ symptoms, hopelessness, being unemployed, the period after a psychotic episode or hospital
+ discharge, number of psychiatric admissions, closeness to onset of illness, and older age at
+ illness onset. A systematic review and meta-analysis of longitudinal studies found that the odds
+ of suicidal behavior during follow-up after first-episode psychosis were higher among
+ individuals with depressive symptoms during first-episode psychosis compared with those
+ without. A meta-analysis of a large number of studies of the relationship of schizophrenia with
+ suicidal behavior found that alcohol, tobacco, and drug abuse; depression; number of
+ hospitalizations; physical comorbidity; and family history of depression and suicidal behavior
+ increased the risk of suicide attempt. Risk factors for suicide included male sex, being younger,
+ having a higher IQ, history of attempts, hopelessness, and poor adherence to treatment.
+ Functional Consequences of Schizophrenia
+ Schizophrenia is associated with significant social and occupational dysfunction. Among
+individuals with schizophrenia, deficits in reading ability are more severe than what would
+ 120
+ be predicted by the general cognitive impairments associated with the disorder. Such deficits can
+ be conceptualized as a secondary or acquired dyslexia that underlies the academic impairment
+ observed in schizophrenia. Making educational progress and maintaining employment are
+ frequently impaired by avolition or other disorder manifestations, even when the cognitive skills
+ are sufficient for the tasks at hand. Most individuals are employed at a lower level than their
+ parents, and most, particularly men, do not marry or have limited social contacts outside of their
+ family.
+ Differential Diagnosis
+ Major depressive or bipolar disorder with psychotic or catatonic features.
+ The distinction between
+ schizophrenia and major depressive or bipolar disorder with psychotic features or with catatonia
+ depends on the temporal relationship between the mood disturbance and the psychosis, and on
+ the severity of the depressive or manic symptoms. If delusions or hallucinations occur
+ exclusively during a major depressive or manic episode, the diagnosis is depressive or bipolar
+ disorder with psychotic features.
+ Schizoaffective disorder.
+ A diagnosis of schizoaffective disorder requires that a major depressive
+ or manic episode occur concurrently with the active-phase symptoms and that the mood
+ symptoms be present for a majority of the total duration of the active periods.
+ Schizophreniform disorder and brief psychotic disorder.
+ These disorders are of shorter duration than
+ schizophrenia as specified in Criterion C, which requires 6 months of symptoms. In
+ schizophreniform disorder, the disturbance is present less than 6 months, and in brief psychotic
+ disorder, symptoms are present at least 1 day but less than 1 month.
+ Delusional disorder.
+ Delusional disorder can be distinguished from schizophrenia by the absence
+ of the other symptoms characteristic of schizophrenia (e.g., delusions, prominent auditory or
+ visual hallucinations, disorganized speech, grossly disorganized or catatonic behavior, negative
+ symptoms).
+ Schizotypal personality disorder.
+ Schizotypal personality disorder may be distinguished from
+ schizophrenia by subthreshold symptoms that are associated with persistent personality features.
+ Individuals 
+Obsessive-compulsive disorder and body dysmorphic disorder.
+ with 
+obsessive
+compulsive disorder and body dysmorphic disorder may present with poor or absent insight, and
+ the preoccupations may reach delusional proportions. But these disorders are distinguished from
+ schizophrenia by their prominent obsessions, compulsions, preoccupations with appearance or
+ body odor, hoarding, or body-focused repetitive behaviors.
+ Posttraumatic stress disorder.
+ Posttraumatic stress disorder may include flashbacks that have a
+ hallucinatory quality, and hypervigilance may reach paranoid proportions. But a traumatic event
+ and characteristic symptom features relating to reliving or reacting to the event are required to
+ make the diagnosis of posttraumatic stress disorder.
+ Autism spectrum disorder or communication disorders.
+ These disorders may also have symptoms
+ resembling a psychotic episode but are distinguished by their respective deficits in social
+Other mental disorders associated with a psychotic episode.
+ Substance/medication-induced psychotic disorder.
+ interaction with repetitive and restricted behaviors and other cognitive and communication
+ deficits. An individual with autism spectrum disorder or communication disorder must have
+ symptoms that meet full criteria for schizophrenia, with prominent hallucinations or delusions
+ for at least 1 month, in order to be diagnosed with schizophrenia as a comorbid condition.
+ The diagnosis of schizophrenia is made
+ only when the psychotic episode is persistent and not attributable to the physiological effects of a
+ substance or another medical condition. Individuals with a delirium or major or minor
+ neurocognitive disorder may present with psychotic symptoms,
+ 121
+ but these would have a temporal relationship to the onset of cognitive changes consistent with
+ those disorders.
+ Individuals with substance/medication-induced
+ psychotic disorder may present with symptoms characteristic of Criterion A for schizophrenia,
+ but the substance/medication-induced psychotic disorder can usually be distinguished by the
+ chronological relationship of substance use to the onset and remission of the psychosis in the
+ absence of substance use.
+ Comorbidity
+ Rates of comorbidity with substance-related disorders are high in schizophrenia. Over half of
+ individuals with schizophrenia have tobacco use disorder and smoke cigarettes regularly.
+ Comorbidity with anxiety disorders is increasingly recognized in schizophrenia. Rates of
+ obsessive-compulsive disorder and panic disorder are elevated in individuals with schizophrenia
+ compared with the general population. Schizotypal or paranoid personality disorder may
+ sometimes precede the onset of schizophrenia.
+ Life expectancy is reduced in individuals with schizophrenia because of associated medical
+ conditions. Weight gain, diabetes, metabolic syndrome, and cardiovascular and pulmonary
+ disease are more common in schizophrenia than in the general population. Poor engagement in
+ health maintenance behaviors (e.g., cancer screening, exercise) increases the risk of chronic
+ disease, but other disorder factors, including medications, lifestyle, cigarette smoking, and diet,
+ may also play a role. A shared vulnerability for psychosis and medical conditions may explain
+ some of the medical comorbidity of schizophrenia

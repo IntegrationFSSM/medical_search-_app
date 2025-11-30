@@ -1,0 +1,156 @@
+Major or Mild Neurocognitive Disorder With Lewy Bodies
+ Diagnostic Criteria
+ A. The criteria are met for major or mild neurocognitive disorder.
+ B. The disorder has an insidious onset and gradual progression.
+ C. The disorder meets a combination of core diagnostic features and suggestive
+ diagnostic features for either probable or possible neurocognitive disorder with
+ Lewy bodies.
+ For probable major or mild neurocognitive disorder with Lewy bodies, the
+ individual has two core features, or one suggestive feature with one or more core
+ features. For possible major or mild neurocognitive disorder with Lewy
+ bodies, the individual has only one core feature, or one or more suggestive
+ features.
+ 1. Core diagnostic features:
+ a. Fluctuating cognition with pronounced variations in attention and
+ alertness.
+ b. Recurrent visual hallucinations that are well formed and detailed.
+ c. Spontaneous features of parkinsonism, with onset subsequent to the
+ development of cognitive decline.
+ 2. Suggestive diagnostic features:
+ a. Meets criteria for rapid eye movement sleep behavior disorder.
+b. Severe neuroleptic sensitivity.
+ D. The disturbance is not better explained by cerebrovascular disease, another
+ neurodegenerative disease, the effects of a substance, or another mental,
+ neurological, or systemic disorder.
+ Coding note (see coding table on pp. 682–683):
+ For major neurocognitive disorder with probable or possible Lewy bodies, with
+ behavioral disturbance, code first G31.83 Lewy body disease, followed by F02.81.
+ 700
+ For major neurocognitive disorder with probable or possible Lewy bodies, without
+ behavioral disturbance, code first G31.83 Lewy body disease, followed by F02.80.
+ Note: The severity specifiers “mild,” “moderate,” and “severe” cannot be coded for
+ major neurocognitive disorder but should still be recorded.
+ For mild neurocognitive disorder with Lewy bodies, code G31.84. (Note: Do not use
+ the additional code for Lewy body disease. “With behavioral disturbance” and
+ “without behavioral disturbance” cannot be coded but should still be recorded.)
+ For major or mild neurocognitive disorder with Lewy bodies: Use additional code(s)
+ to indicate clinically significant psychiatric symptoms due to Lewy body disease (e.g.,
+ F06.0 psychotic disorder due to Lewy body disease, with hallucinations; F06.31
+ depressive disorder due to Lewy body disease, with depressive features).
+ Diagnostic Features
+ Major neurocognitive disorder with Lewy bodies corresponds to the condition known as
+ dementia with Lewy bodies (DLB). The overall major or mild neurocognitive disorder with
+ Lewy bodies (NCDLB) category includes not only progressive cognitive impairment (with early
+ changes in attention, executive function, and visuoperceptual ability, rather than learning and
+ memory) but also recurrent, complex, visual hallucinations; and concurrent symptoms of rapid
+ eye movement (REM) sleep behavior disorder (which can be a very early manifestation); as well
+ as hallucinations in other sensory modalities, apathy, anxiety, depression, and delusions. The
+ cognitive symptoms may fluctuate in a pattern that can resemble a delirium, for which an
+ adequate precipitating factor may or may not be found. The variable presentation of NCDLB
+ symptoms reduces the likelihood of all symptoms being observed in a brief clinic visit and
+ necessitates a thorough assessment, including caregiver observations. The use of assessment
+ scales specifically designed to assess fluctuation may aid in diagnosis. Another core feature is
+ spontaneous parkinsonism; this can often be relatively mild, and the degree of response to
+ levodopa therapy is variable. Up to 25% of individuals with probable NCDLB may never
+ develop extrapyramidal signs, and they are not essential for diagnosis. The parkinsonism must be
+ distinguished from neuroleptic-induced extrapyramidal signs. Accurate diagnosis is essential to
+ safe treatment planning, as up to 50% of individuals with NCDLB have severe sensitivity to
+ neuroleptic drugs, and these medications should be used with extreme caution in individuals
+ suspected of having an NCDLB diagnosis.
+ The diagnosis of mild NCDLB is appropriate for individuals who present with the core
+clinical features at a stage when cognitive or functional impairments are not of sufficient severity
+ to fulfill criteria for major NCD, particularly if nonamnestic cognitive deficits are prominent.
+ However, as for all mild NCDs, there will often be insufficient evidence to justify any single
+ etiology, and use of the unspecified diagnosis may be more appropriate.
+ Associated Features
+ Individuals with NCDLB frequently experience repeated falls, syncope, or other transient
+ episodes of unresponsiveness. Autonomic dysfunction may be observed, including orthostatic
+ hypotension, constipation, and urinary incontinence; hypersomnia and hyposmia may also be
+ observed.
+ Prevalence
+ Limited data from several high-income and low- and middle-income countries show that the
+ population-based prevalence estimates for NCDLB range from 0% to 1.2% of the general elderly
+ population, and from 0% to 9.7% of all dementia cases. The mean prevalence of major NCDLB
+ was 4.2% of all dementias in the community, and in clinic-based studies this increased to 7.5%
+ of all dementias. The clinical prevalence of major NCDLB among
+ 701
+ individuals with dementia does not appear to be significantly affected by either age or sex. In
+ studies from the United States and United Kingdom, the pathological lesions known as Lewy
+ bodies are present in 20%–35% of cases of dementia. In a population-based study in Minnesota
+ that relied on medical records, the incidence of NCDLB was approximately three times higher in
+ men than in women age 65 or older.
+ Development and Course
+ NCDLB is a gradually progressive disorder with insidious onset. However, there is often a
+ prodromal history of confusional episodes (delirium) of acute onset, which may be precipitated
+ by illness or surgery. The distinction between NCDLB, in which Lewy bodies are primarily
+ limbic in location (with or without neocortical involvement), and major or mild NCD due to
+ Parkinson’s disease, which starts in the brain stem, is the order in which the cognitive and motor
+ symptoms emerge. In NCDLB, the cognitive decline is manifested early in the course of illness
+ (see the section “Differential Diagnosis” for this disorder).
+ Onset of symptoms is typically observed in individuals ages 50–89, with most cases having
+ onset in individuals in the mid-70s. Disease course may be characterized by occasional plateaus
+ but eventually progresses through severe dementia to death. Average duration of survival is 5.5
+7.7 years from the onset of cognitive decline.
+ Risk and Prognostic Factors
+ Genetic and physiological.
+ Familial aggregation may occur, and several risk genes have been
+ identified; but in most cases of NCDLB, there is no family history. The available studies suggest
+ that genetic risk factors are as important in NCDLB as in Alzheimer’s disease or Parkinson’s
+disease.
+ Diagnostic Markers
+ Biomarkers indicative of NCDLB may be considered to carry diagnostic weight equivalent to
+ core clinical features; these include low striatal dopamine transporter uptake on single photon
+ emission computed tomography (SPECT) or positron emission tomography (PET) scan,
+ abnormal (low uptake) (MIBG) myocardial scintigraphy suggesting cardiac sympathetic
+ denervation, and polysomnographic confirmation of REM sleep without atonia. The associated
+ condition REM sleep behavior disorder may be diagnosed through a formal sleep study or
+ identified by questioning the individual or informant about relevant symptoms. The underlying
+ neurodegenerative disease is primarily associated with misfolding and aggregation of α
+synuclein, which may be confirmed via postmortem histopathological examination.
+ Neuropsychological testing beyond the use of a brief screening instrument may be necessary to
+ define cognitive deficits clearly. Assessment scales developed to measure fluctuation can be
+ useful.
+ Biomarkers supportive of NCDLB but with more limited evidence of diagnostic value
+ include the following: preservation of medial temporal volume relative to Alzheimer’s disease on
+ magnetic resonance imaging (MRI), generalized low uptake on SPECT/PET perfusion scan with
+ reduced occipital activity with or without the cingulate island sign (sparing of the posterior
+ cingulate cortex relative to the precuneus plus cuneus on fluorodeoxyglucose-PET imaging), and
+ prominent slow-wave activity on electroencephalogram with periodic fluctuations in the pre
+alpha/theta range.
+ Functional Consequences of Major or Mild Neurocognitive Disorder
+ With Lewy Bodies
+ Individuals with NCDLB are more functionally impaired than would be expected for their
+ cognitive deficits when contrasted to individuals with other neurodegenerative diseases,
+ 702
+ such as Alzheimer’s disease. This is largely a result of motor and autonomic impairments, which
+ cause problems with toileting, transferring, and eating. Sleep disorders and prominent psychiatric
+ symptoms may also add to functional difficulties. Consequently, the quality of life of individuals
+ with NCDLB is often significantly worse than that of individuals with Alzheimer’s disease.
+ Differential Diagnosis
+ Major or mild neurocognitive disorder due to Parkinson’s disease.
+ The distinction between NCDLB
+ and NCD due to Parkinson’s disease is based on the timing and sequence of motor symptoms
+ and cognitive symptoms. Consensus criteria for DLB separate NCDLB from NCD due to
+ Parkinson’s disease by specifying that for dementia to be attributed to Parkinson’s disease, the
+ Parkinson’s disease diagnosis is present for at least 1 year before cognitive decline has reached
+ the level of major NCD, whereas for NCDLB, the cognitive symptoms may begin before, with,
+ or in the absence of parkinsonism. By contrast, expert consensus criteria for Parkinson’s disease
+ propose that if cognitive decline occurs prior to a motor diagnosis, the diagnosis of Parkinson’s
+disease may still be made; therefore, a clinician may attribute the cognitive decline to the
+ Parkinson’s disease and diagnose NCD due to Parkinson’s disease. Consequently, the clinician
+ may choose to diagnose NCD due to Parkinson’s disease or NCDLB for individuals with major
+ NCD that starts either before or within 12 months of Parkinson’s disease. In such circumstances,
+ the clinician decides which diagnosis is more appropriate. If Parkinson’s disease has been
+ diagnosed for at least 1 year prior to the onset of cognitive symptoms, then both expert criteria
+ agree that NCD due to Parkinson’s disease would typically be the appropriate diagnosis. The
+ timing and sequence of parkinsonism and mild NCD may be particularly difficult to determine,
+ and unspecified NCD may need to be diagnosed until the order of clinical progression becomes
+ evident.
+ Comorbidity
+ Lewy body pathology frequently coexists with Alzheimer’s disease, transactive response DNA
+binding protein 43 (TDP‐43)–related pathology, and cerebrovascular disease pathology,
+ particularly in the oldest age groups. TDP-43 is a protein that has been identified as a source of
+ the proteinopathies across a range of neurodegenerative disorders, including amyotrophic lateral
+ sclerosis and frontotemporal degeneration. The presence of multiple pathological lesions has
+ implications for disease prognosis and may be associated with a more rapid cognitive decline and
+ shorter survival time.

@@ -1,0 +1,296 @@
+Major or Mild Neurocognitive Disorder Due to Traumatic
+ Brain Injury
+ Diagnostic Criteria
+ A. The criteria are met for major or mild neurocognitive disorder.
+ B. There is evidence of a traumatic brain injury—that is, an impact to the head or
+ other mechanisms of rapid movement or displacement of the brain within the
+ skull, with one or more of the following:
+ 1. Loss of consciousness.
+ 2. Posttraumatic amnesia.
+ 3. Disorientation and confusion.
+ 4. Neurological signs (e.g., neuroimaging demonstrating injury; visual field cuts;
+ anosmia; hemiparesis; hemisensory loss; cortical blindness; aphasia; apraxia;
+ weakness;
+ 707
+ loss of balance; other sensory loss that cannot be accounted for by peripheral
+ or other causes).
+ C. The neurocognitive disorder presents immediately after the occurrence of the
+ traumatic brain injury or immediately after recovery of consciousness and
+ persists past the acute post-injury period.
+ Coding note (see coding table on pp. 682–683):
+ For major neurocognitive disorder due to traumatic brain injury, with behavioral
+ disturbance: code first S06.2X9S diffuse traumatic brain injury with loss of
+ consciousness of unspecified duration, sequela; followed by F02.81 major
+ neurocognitive disorder due to traumatic brain injury, with behavioral disturbance.
+ For major neurocognitive disorder due to traumatic brain injury, without behavioral
+disturbance: code first S06.2X9S diffuse traumatic brain injury with loss of
+ consciousness of unspecified duration, sequela; followed by F02.80 major
+ neurocognitive disorder due to traumatic brain injury, without behavioral disturbance.
+ Note: The severity specifiers “mild,” “moderate,” and “severe” cannot be coded for
+ major neurocognitive disorder but should still be recorded.
+ For mild neurocognitive disorder due to traumatic brain injury, code G31.84. (Note:
+ Do not use the additional code for traumatic brain injury. “With behavioral
+ disturbance” and “without behavioral disturbance” cannot be coded but should still
+ be recorded.)
+ For major or mild neurocognitive disorder due to traumatic brain injury: Use
+ additional code(s) to indicate clinically significant psychiatric symptoms due to the
+ traumatic brain injury (e.g., F06.34 bipolar and related disorder due to traumatic
+ brain injury, with mixed features; F07.0 personality change due to traumatic brain
+ injury, apathetic type).
+ Specifiers
+ Rate the severity of the neurocognitive disorder (NCD), not the underlying traumatic brain injury
+ (see the section “Development and Course” for this disorder).
+ Diagnostic Features
+ Major or mild NCD due to traumatic brain injury (TBI) denotes an acquired and persistent
+ disorder of cognition resulting from a traumatic brain injury. Traumatic brain injury is defined as
+ disruption of brain structure and/or function resulting from the application of biomechanical
+ forces (including acceleration/deceleration forces and blast-related forces), as manifested
+ immediately by one or more of the following clinical signs: loss of consciousness, loss of
+ memory for events immediately before or after the injury (posttraumatic amnesia), alteration in
+ mental state (e.g., confusion, disorientation, slowed thinking), or focal neurological signs (e.g.,
+ hemiparesis, hemisensory loss, cortical blindness, aphasia, apraxia, weakness, loss of balance,
+ other sensory loss that cannot be accounted for by peripheral or other causes) (Criterion B).
+ These manifestations of TBI must not be due to alcohol or other drugs or medications, other
+ injuries or treatment(s) for other injuries (e.g., facial injuries, intubation, or bodily/systemic
+ injuries), or psychological trauma, language barrier, or coexisting medical conditions.
+ The severity of a TBI is classified as mild, complicated mild, moderate, or severe according
+ to the thresholds in Table 2. An individual whose injury phenomenologically meets criteria for
+ mild TBI but whose computed tomographic or magnetic resonance imaging in the acute period
+ after TBI reveals traumatic intracranial abnormalities (i.e., traumatic epidural or subdural
+ hematoma, subarachnoid or intracerebral hemorrhage, cerebral contusions or laceration) is
+ classified as complicated mild TBI. Outcomes of individuals with complicated mild TBI are
+ more like those with moderate TBI than those with uncomplicated mild TBI.
+ 708
+ TABLE 2 Classification of traumatic brain injury (TBI) severity
+TBI severity
+ Mild TBI
+ Complicated
+ mild TBI
+ Moderate TBI Severe TBI
+ Loss of consciousness duration
+ Posttraumatic amnesia duration (densely
+ impaired new learning)
+ Alteration of consciousness duration (e.g.,
+ confusion, disorientation, slowed thinking)
+ Glasgow Coma Scale score (30 minutes after
+ the event)
+ Computed tomography or magnetic
+ resonance imaging of the brain
+ ≤ 30 minutes
+ ≤ 1 day
+ ≤ 1 day
+ 13–15
+ Normal
+ ≤ 30 minutes
+ ≤ 1 day
+ ≤ 1 day
+ 13–15
+ Abnormal
+ > 30 minutes to
+ < 24 hours
+ > 1 day to < 7
+ days
+ > 1 day to < 7
+ days
+ 9–12
+ Normal or
+ abnormal
+ ≥ 24 hours
+ ≥ 7 days
+ ≥ 7 days
+ 3–8
+ Normal or
+ abnormal
+ To be attributable to TBI, the NCD must manifest either immediately after the brain injury
+ occurs or immediately after the individual recovers consciousness after the injury, and persist
+ past the acute postinjury period (Criterion C).
+ While the specific cognitive impairments associated with major or mild NCD due to TBI are
+ variable, impairments in complex attention, processing speed, learning and memory, and
+ executive function are common, as are disturbances in social cognition. In more severe TBI in
+ which there is brain contusion, intracranial hemorrhage, or penetrating injury, there may be
+ additional neurocognitive impairments associated with the affected region of the brain and the
+ volume of brain tissue lost (e.g., aphasia, apraxia, disturbances in perceptual-motor function).
+ Associated Features
+ The diagnosis may also be supported by subtle neurological signs (e.g., multiple primitive
+ reflexes such as glabellar sign, snout response, palmomental reflex) or deficits in saccades and
+ smooth-pursuit eye movements co-occurring with frontally mediated cognitive impairments such
+ as complex attention problems, slow processing speed, impaired memory retrieval, or executive
+ dysfunction. Particularly in some cases of penetrating TBI, the diagnosis of NCD due to TBI
+ may be supported by posttraumatic epilepsy with focal onset in a location that corresponds to the
+ anatomy of a cognitive domain in which an individual demonstrates impairment (e.g., medial
+ temporal lobe–onset seizures and episodic memory impairment; frontal lobe seizures and
+ executive dysfunction or social cognitive impairment).
+ Prevalence
+ The prevalence of major and mild NCD due to TBI varies with injury severity and time since
+ injury, with the highest frequencies among individuals with more severe injury and during the
+ acute/subacute post-injury period. In the United States, more than 2.87 million TBIs occur
+ annually, including more than 837,000 TBIs in children. These TBIs account for 2.5 million
+ emergency department visits, 288,000 hospitalizations, and more than 56,000
+ 709
+ deaths annually. Among individuals presenting to an emergency department with TBI, the rates
+ for men are 547.6 per 100,000 and for women are 385.9 per 100,000. The TBI rate is higher for
+ men than women in every age group up to age 75 years, after which the rates of TBI between
+men and women approach parity. The leading causes of TBI in the United States are falls (178.4
+ per 100,000), collision with a moving or stationary object (termed “struck by/against” events)
+ (92.7 per 100,000), motor vehicle crashes (74.7 per 100,000), and assaults (50.6 per 100,000
+ persons). Concussion in sport is increasingly recognized as a cause of mild TBI.
+ Men are approximately 40% more likely to experience a TBI compared with women in the
+ young and adult populations; however, women may have higher risk of TBI after age 65 years. It
+ has been suggested that men with moderate or severe TBI may have a worse prognosis than
+ women with the same level of severity; however, the findings have been mixed. The cause of
+ TBI also differs by sex and gender. Men are more likely to experience injuries at work, in motor
+ vehicle accidents, and during military activities, whereas women are more likely to experience
+ injuries from assault and domestic violence.
+ Development and Course
+ The course of recovery from TBI is variable, depending not only on the specifics of the injury
+ but also on pre-injury and postinjury factors. These factors may favor or impede recovery and
+ include age; prior history of TBI; neurological, psychiatric, and substance use comorbidities and
+ complications; genetics; the timeliness and effectiveness of medical and rehabilitative
+ interventions; and psychosocial support, among others.
+ Neurocognitive impairments are most severe in the acute period following the TBI and may
+ be accompanied by disturbances of emotion and behavior. Across the spectrum of TBI severity,
+ substantial improvement in neurocognitive and associated psychiatric and neurological
+ symptoms and signs is expected. The extent of recovery and the variability in neurocognitive
+ outcomes tend to reflect the severity of TBI, with complete recovery being typical after mild TBI
+ and more variable, and often incomplete, recovery following more severe TBI.
+ Neurocognitive impairments associated with mild TBI typically resolve within days to weeks
+ after the injury, with complete resolution within 3–12 months post-injury. Other symptoms (e.g.,
+ depression, irritability, fatigue, headache, photosensitivity, sleep disturbance) that may
+ potentially co-occur with the neurocognitive symptoms also tend to resolve in the weeks
+ following mild TBI. Persistent symptoms after mild TBI or subsequent neurocognitive
+ deterioration should trigger consideration of other potential causes of neurocognitive symptoms
+ and functional limitations, including major depressive disorder, posttraumatic stress disorder
+ (PTSD), anxiety disorders, substance use disorders, sleep disturbances, negative injury
+ perceptions, and poor expectations for recovery. When neurocognitive symptoms and functional
+ limitations persist after mild TBI (including repetitive mild TBI) despite treatment of their other
+ potential causes, diagnosis of an NCD due to TBI may be appropriate.
+ Neurocognitive impairments and associated functional limitations produced by moderate and
+ severe TBI typically improve over weeks to months after the injury, although long-term
+ neurocognitive recovery is often incomplete among individuals with more severe injuries.
+ Nonetheless, neurocognitive and functional improvement may continue for years after moderate
+ or severe TBI, with more individuals cognitively improving than declining during the first 5
+ years postinjury. With moderate and severe TBI, in addition to persistence of neurocognitive
+ deficits, there may be associated neurological, medical, emotional, and behavioral complications.
+ These include seizures (particularly in the first year), photosensitivity, hyperacusis, irritability,
+ aggression, depression, sleep disturbance, fatigue, apathy, inability to resume occupational and
+social functioning at preinjury level, and deterioration in interpersonal relationships. Moderate
+ and severe TBI have been
+ 710
+ associated with increased risk of depression, aggression, and possibly neurodegenerative
+ diseases such as Alzheimer’s disease, Lewy body disease, and frontotemporal degeneration.
+ The features of persisting major or mild NCD due to TBI will vary by age, specifics of the
+ injury, and cofactors. Persisting TBI-related impairment in an infant or child may be reflected in
+ delays in reaching developmental milestones (e.g., language acquisition), worse academic
+ performance, and possibly impaired social development. Among older teenagers and adults,
+ persisting symptoms may include various neurocognitive deficits, irritability, hypersensitivity to
+ light and sound, easy fatigability, and mood changes, including depression, anxiety, hostility, or
+ apathy. In older individuals, mild TBI may produce neurocognitive outcomes like those
+ associated with moderate or severe TBI in younger adults.
+ Risk and Prognostic Factors
+ Risk factors for adverse cognitive outcomes after TBI include age older than 40 years, lower pre
+injury cognitive abilities (especially as indexed by education or academic competence), preinjury
+ depressive symptoms, possibly pre-injury unemployment, and injury severity. Other risk factors
+ for adverse cognitive outcomes include a longer duration of posttraumatic amnesia, evidence of
+ traumatic intracranial abnormalities on early computed tomography or magnetic resonance
+ imaging (MRI) studies (i.e., traumatic epidural or subdural hematoma, subarachnoid or
+ intracerebral hemorrhage, cerebral contusions or laceration, diffuse axonal injury) and
+ neurogenetic profile (e.g., APOE*E4 allele carrier status, catechol-O-methyltransferase
+ genotype, ANKK1 Taq1A allele status). Pre-injury alcohol or substance use disorders increase
+ the risk of sustaining a TBI as well as the risk of adverse cognitive outcomes, including memory
+ impairment and executive dysfunction.
+ Diagnostic Markers
+ The diagnosis of major or mild NCD due to TBI may be supported by contemporaneous
+ computed tomographic or MRI findings (e.g., focal atrophy, encephalomalacia, gliosis, white
+ matter abormalities) in brain areas or networks subserving specific cognitive domains in which
+ an individual demonstrates impairment. The diagnosis may also be supported by subtle
+ neurological signs (e.g., multiple primitive reflexes such as glabellar sign, snout response,
+ palmomental reflex) or deficits in saccades and smooth-pursuit eye movements co-occurring
+ with frontally mediated cognitive impairments such as complex attention problems, slow
+ processing speed, impaired memory retrieval, or executive dysfunction. Particularly in some
+ cases of penetrating TBI, the diagnosis of NCD due to TBI may be supported by posttraumatic
+ epilepsy with focal onset in a location that corresponds to the anatomy of a cognitive domain in
+ which an individual demonstrates impairment (e.g., medial temporal lobe–onset seizures and
+ episodic memory impairment; frontal lobe seizures and executive dysfunction or social cognitive
+ impairment).
+ Performance on commonly used general cognitive screening measures, particularly when
+interpreted using large-scale, population-based normative data, may usefully identify individuals
+ in need of further neurodiagnostic assessment. However, the diagnosis of major or mild NCD
+ due to TBI rests on performance on domain-specific cognitive assessment interpreted in light of
+ the individual’s prior performance (e.g., neuropsychological estimates of pre-injury cognitive
+ ability or appropriate norms) and assessment of functional status.
+ While neuroimaging and other clinical assessments (e.g., subtle neurological signs) may
+ provide supportive information, they cannot independently diagnose NCD due to TBI. At
+ present, there are no other established biomarkers of major or mild NCD due to TBI.
+ Association With Suicidal Thoughts or Behavior
+ Individuals with TBI, including moderate or severe TBI, are at increased long-term risk for
+ suicide. While depression is a substantial contributor to this risk, it does not fully account for it.
+ Rates of suicidal ideation are as high as 10%, and rates of suicide attempt are 0.8%–1.7%
+ 711
+ over the first 20 years after TBI. The development of depression and/or suicidal behavior at 1
+year post-injury is associated with consistently elevated rates of depression and suicidal behavior
+ 5 years after TBI. While the relationship between cognitive impairments and suicide risk after
+ TBI is complex, assessing suicide risk is an important element in the evaluation of individuals
+ with major or mild NCD due to TBI.
+ Youth who have had concussions may be at higher risk for suicidal behavior. There is an
+ increased risk of suicide among both veteran and civilian cohorts with TBI, and individuals
+ seeking mental health care may have a history of TBI. Individuals seeking rehabilitative services
+ for TBI are also at heightened risk for suicidal thoughts and behavior.
+ Functional Consequences of Major or Mild Neurocognitive Disorder
+ Due to Traumatic Brain Injury
+ Approximately 3.17 million individuals in the United States (approximately 1.1% of the
+ population) live with a TBI-related disability, including neurocognitive impairments that
+ compromise the ability to work or perform daily activities and that are associated with the need
+ for ongoing medical care, rehabilitation, support, and services. Cognitive impairments interfere
+ with functional independence, productive employment, and community participation and may
+ reduce satisfaction with life. The influence of cognitive impairments on functional status varies
+ with the type and severity of those impairments; with the presence and severity of co-occurring
+ psychiatric, substance use, neurological, and medical conditions; and with family, other
+ psychosocial, and medical support.
+ With mild NCD due to TBI, individuals may report reduced cognitive efficiency, difficulty
+ concentrating, and lessened ability to perform usual activities. With major NCD due to TBI, an
+ individual may have difficulty in independent living and self-care. Prominent neuromotor
+ features, such as severe incoordination, ataxia, and motor slowing, may be present in major NCD
+ due to TBI and may add to functional difficulties.
+ Individuals with TBI histories report more depressive and anxious symptoms, and these can
+ amplify cognitive complaints and worsen functional outcome. Additionally, loss of emotional
+control, including aggressive or inappropriate affect and apathy, may be present after more
+ severe TBI with greater neurocognitive impairment. These features may compound difficulties
+ with functional independence and self-care.
+ Differential Diagnosis
+ Other mental disorders and medical conditions.
+ Mental disorders (e.g., major depressive disorder,
+ anxiety disorders, PTSD, alcohol and other substance use disorders, sleep disturbances),
+ prescribed medications (e.g., typical antipsychotics, benzodiazepines, drugs with anticholinergic
+ properties, antiepileptic drugs), and other medical conditions may contribute to or account for
+ cognitive impairments among individuals with TBI, and need to be considered in the differential
+ diagnosis of major or mild NCD due to TBI.
+ Factitious disorder and malingering.
+ Alternative explanations for neurocognitive symptoms should
+ be considered when the severity of neurocognitive symptoms and functional limitations are
+ inconsistent with the cognitive outcomes expected after TBI—and particularly mild TBI—and
+ when neuropsychological assessment reveals poor effort or is otherwise not valid for
+ interpretation. In such circumstances, the possibility of factitious disorder or malingering
+ (especially in situations in which there might be external incentives such as obtaining financial
+ compensation) should be considered.
+ Comorbidity
+ Major or mild NCD due to TBI may be accompanied by other specified or unspecified
+ depressive or anxiety disorders characterized by disturbances in emotional function (e.g.,
+ irritability, easy frustration, tension and anxiety, affective lability). Other specified or
+ 712
+ unspecified personality disorders may also occur as a result of symptoms such as disinhibition,
+ apathy, suspiciousness, or aggression. Medical comorbidities may occur with neurological and
+ physical disturbances characterized by headache, fatigue, sleep disorders, vertigo or dizziness,
+ tinnitus or hyperacusis, photosensitivity, anosmia, reduced tolerance to psychotropic
+ medications, and, particularly in more severe TBI, neurological symptoms and signs (e.g.,
+ seizures, hemiparesis, visual disturbances, cranial nerve deficits) and evidence of orthopedic
+ injuries. The most common medical and psychiatric comorbidities associated with moderate-to
+severe TBI are (in order of frequency) back pain, depression, hypertension, anxiety, fractures,
+ high blood cholesterol, sleep disorders, panic attacks, osteoarthritis, and diabetes.
+ Among individuals with substance use disorders, the neurocognitive effects of the substance
+ contribute to or compound the TBI-associated cognitive disturbances, particularly among
+ individuals with two or more TBIs.
+ PTSD can co-occur with TBI in civilian, military, and veterans populations. TBI and PTSD
+ produce similar neurocognitive symptoms (e.g., disturbances of complex attention, processing
+ speed, learning and memory, and executive function), and either or both conditions, as well as
+ co-occurring depression and sleep disturbances, may explain neurocognitive symptoms in
+ individuals with such comorbidities.

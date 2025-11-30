@@ -1,0 +1,100 @@
+Inhalant Intoxication
+ Diagnostic Criteria
+ A. Recent intended or unintended short-term, high-dose exposure to inhalant
+ substances, including volatile hydrocarbons such as toluene or gasoline.
+ B. Clinically significant problematic behavioral or psychological changes (e.g.,
+ belligerence, assaultiveness, apathy, impaired judgment) that developed during,
+ or shortly after, exposure to inhalants.
+ C. Two (or more) of the following signs or symptoms developing during, or shortly
+ after, inhalant use or exposure:
+ 1. Dizziness.
+ 2. Nystagmus.
+ 3. Incoordination.
+ 606
+ 4. Slurred speech.
+ 5. Unsteady gait.
+ 6. Lethargy.
+ 7. Depressed reflexes.
+ 8. Psychomotor retardation.
+ 9. Tremor.
+ 10. Generalized muscle weakness.
+ 11. Blurred vision or diplopia.
+ 12. Stupor or coma.
+ 13. Euphoria.
+ D. The signs or symptoms are not attributable to another medical condition and are
+ not better explained by another mental disorder, including intoxication with
+ another substance.
+ Coding note: The ICD-10-CM code depends on whether there is a comorbid
+ inhalant use disorder. If a mild inhalant use disorder is comorbid, the ICD-10-CM
+ code is F18.120, and if a moderate or severe inhalant use disorder is comorbid, the
+ ICD-10-CM code is F18.220. If there is no comorbid inhalant use disorder, then the
+ ICD-10-CM code is F18.920.
+Note: For information on Development and Course, Risk and Prognostic Factors,
+ Culture-Related Diagnostic Issues, and Diagnostic Markers, see the corresponding
+ sections in Inhalant Use Disorder.
+ Diagnostic Features
+ The essential feature of inhalant intoxication is the presence of clinically significant problematic
+ behavioral or psychological changes that develop during, or immediately after, intended or
+ unintended inhalation of a volatile hydrocarbon substance. When possible, the particular
+ substance involved should be named (e.g., toluene intoxication). Intoxication clears within a few
+ minutes to a few hours after the exposure ends. Thus, inhalant intoxication usually occurs in
+ brief episodes that may recur with further inhalant use.
+ Associated Features
+ Inhalant intoxication may be indicated by evidence of possession, or lingering odors, of inhalant
+ substances (e.g., glue, paint thinner, gasoline, butane lighters); other features may include
+ euphoria, relaxation, headache, rapid heartbeat, confusion, talkativeness, blurred vision, amnesia,
+ slurred speech, irritability, nausea, fatigue, burning in eyes or throat, grandiosity, chest pain,
+ auditory or visual hallucinations, and dissociation.
+ Prevalence
+ The prevalence of actual episodes of inhalant intoxication in the general population is unknown,
+ but it is probable that a majority of inhalant users would at some time exhibit behavioral or
+ psychological changes and symptoms that would meet criteria for inhalant intoxication.
+ Therefore, the prevalence of inhalant use and the prevalence of inhalant intoxication are likely
+ similar. In 2017, inhalant use in the past year was reported by 0.6% of all Americans older than
+ 12 years; the prevalence was highest in younger age groups (2.3% for individuals ages 12 –17
+ years, 1.6% for individuals ages 18–25 years, and 0.3% for individuals age 26 and older).
+ Sex- and Gender-Related Diagnostic Issues
+ Gender differences in the prevalence of inhalant intoxication in the general population are
+ unknown. Regarding gender differences in the prevalence of inhalant use in the United
+ 607
+ States, 0.8% of boys/men older than 12 years and 0.5% of girls/women older than 12 years have
+ used inhalants in the previous year, but in the younger age groups differences are minimal or
+ girls may have slightly higher prevalence (e.g., among adolescents ages 12–17 years, 2.4% of
+ girls and 2.2% of boys have used inhalants in the past year).
+ Functional Consequences of Inhalant Intoxication
+ Use of inhaled substances in a closed container, such as a plastic bag over the head, may lead to
+ unconsciousness, anoxia, and death. Separately, “sudden sniffing death,” likely from cardiac
+ arrhythmia or arrest, may occur with various volatile inhalants. The enhanced toxicity of certain
+volatile inhalants, such as butane or propane, also causes fatalities. Although inhalant
+ intoxication itself is of short duration, it may produce persisting medical and neurological
+ problems, especially if the intoxications are frequent. Clinically significant correlates of inhalant
+ intoxication include reckless behaviors (e.g., taking foolish risks, getting into fights, having
+ unprotected sex), antisocial behaviors (cruelty, damaging property, arrests), and having serious
+ accidents.
+ Differential Diagnosis
+ Intoxication from other substances, especially from sedating substances (e.g., alcohol,
+ benzodiazepines, barbiturates).
+ These disorders may have similar signs and symptoms, but intoxication attributable to other
+ intoxicants may be identified via a toxicology screen. Differentiating the source of the
+ intoxication may involve discerning evidence of inhalant exposure as described for inhalant use
+ disorder. A diagnosis of inhalant intoxication may be suggested by possession or lingering odors
+ of inhalant substances (e.g., glue, paint thinner, gasoline, butane lighters); paraphernalia
+ possession (e.g., rags or bags for concentrating glue fumes); perioral or perinasal “glue-sniffer’s
+ rash”; reports from family or friends that the intoxicated individual possesses or uses inhalants;
+ or apparent intoxication despite negative results on standard drug screens (which usually fail to
+ identify inhalants).
+ Inhalant-induced mental disorders.
+ Inhalant intoxication is distinguished from inhalant-induced
+ mental disorders (e.g., inhalant-induced anxiety disorder, with onset during intoxication) because
+ the symptoms (e.g., anxiety) in these latter disorders are in excess of those usually associated
+ with inhalant intoxication, predominate in the clinical presentation, and are severe enough to
+ warrant independent clinical attention.
+ Other toxic, metabolic, traumatic, neoplastic, or infectious disorders that impair brain function
+ and cognition.
+ Numerous neurological and other medical conditions may produce the clinically significant
+ behavioral or psychological changes (e.g., belligerence, assaultiveness, apathy, impaired
+ judgment) that also characterize inhalant intoxication.
+ Comorbidity
+ Given the typical overlap of inhalant intoxication with inhalant use disorder, see “Comorbidity”
+ under Inhalant Use Disorder for more details about co-occurring conditions that are likely to be
+ encountered.

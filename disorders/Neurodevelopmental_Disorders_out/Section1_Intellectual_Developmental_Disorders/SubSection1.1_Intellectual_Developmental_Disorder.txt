@@ -1,0 +1,527 @@
+Intellectual Developmental Disorder (Intellectual
+Disability)
+Diagnostic Criteria
+Intellectual developmental disorder (intellectual disability) is a disorder with onset
+during the developmental period that includes both intellectual and adaptive
+functioning deficits in conceptual, social, and practical domains. The following three
+criteria must be met:
+A. Deficits in intellectual functions, such as reasoning, problem solving, planning,
+abstract thinking, judgment, academic learning, and learning from experience,
+confirmed by both clinical assessment and individualized, standardized
+intelligence testing.
+B. Deficits in adaptive functioning that result in failure to meet developmental and
+sociocultural standards for personal independence and social responsibility.
+Without ongoing support, the adaptive deficits limit functioning in one or more
+activities of daily life, such as communication, social participation, and
+independent living, across multiple environments, such as home, school, work,
+and community.
+C. Onset of intellectual and adaptive deficits during the developmental period.
+38
+Note: The term intellectual developmental disorder is used to clarify its relationship
+with the WHO ICD-11 classification system, which uses the term Disorders of
+Intellectual Development. The equivalent term intellectual disability is placed in
+parentheses for continued use. The medical and research literature use both terms,
+while intellectual disability is the term in common use by educational and other
+professions, advocacy groups, and the lay public. In the United States, Public Law
+111-256 (Rosa’s Law) changed all references to “mental retardation” in federal laws
+to “intellectual disability.”
+Specify current severity (see Table 1):
+F70 Mild
+F71 Moderate
+F72 Severe
+F73 Profound
+39
+TABLE 1  Severity levels for intellectual developmental disorder (intellectual
+disability)
+Severity
+level
+Conceptual domain
+Social domain
+Practical domain
+Mild
+For preschool children, there may be
+Compared with typically developing
+The individual may function age-
+no obvious conceptual differences.
+For school-age children and adults,
+there are difficulties in learning
+academic skills involving reading,
+writing, arithmetic, time, or
+money, with support needed in one
+or more areas to meet age-related
+expectations. In adults, abstract
+thinking, executive function (i.e.,
+planning, strategizing, priority
+setting, and cognitive flexibility),
+and short-term memory, as well as
+functional use of academic skills
+(e.g., reading, money
+management), are impaired. There
+is a somewhat concrete approach
+to problems and solutions
+compared with age-mates.
+age-mates, the individual is
+immature in social interactions.
+For example, there may be
+difficulty in accurately perceiving
+peers’ social cues.
+Communication, conversation, and
+language are more concrete or
+immature than expected for age.
+There may be difficulties
+regulating emotion and behavior in
+age-appropriate fashion; these
+difficulties are noticed by peers in
+social situations. There is limited
+understanding of risk in social
+situations; social judgment is
+immature for age, and the person
+is at risk of being manipulated by
+others (gullibility).
+appropriately in personal care.
+Individuals need some support
+with complex daily living tasks in
+comparison to peers. In adulthood,
+supports typically involve grocery
+shopping, transportation, home
+and child-care organizing,
+nutritious food preparation, and
+banking and money management.
+Recreational skills resemble those
+of age-mates, although judgment
+related to well-being and
+organization around recreation
+requires support. In adulthood,
+competitive employment is often
+seen in jobs that do not emphasize
+conceptual skills. Individuals
+generally need support to make
+health care decisions and legal
+decisions, and to learn to perform
+a skilled vocation competently.
+Support is typically needed to raise
+a family.
+40
+Moderate
+All through development, the
+individual’s conceptual skills lag
+markedly behind those of peers.
+For preschoolers, language and
+preacademic skills develop slowly.
+For school-age children, progress
+in reading, writing, mathematics,
+and understanding of time and
+money occurs slowly across the
+school years and is markedly
+limited compared with that of
+peers. For adults, academic skill
+development is typically at an
+elementary level, and support is
+required for all use of academic
+skills in work and personal life.
+Ongoing assistance on a daily
+basis is needed to complete
+conceptual tasks of day-to-day life,
+and others may take over these
+responsibilities fully for the
+individual.
+The individual shows marked
+differences from peers in social
+and communicative behavior
+across development. Spoken
+language is typically a primary
+tool for social communication but
+is much less complex than that of
+peers. Capacity for relationships is
+evident in ties to family and
+friends, and the individual may
+have successful friendships across
+life and sometimes romantic
+relations in adulthood. However,
+individuals may not perceive or
+interpret social cues accurately.
+Social judgment and decision-
+making abilities are limited, and
+caretakers must assist the person
+with life decisions. Friendships
+with typically developing peers are
+often affected by communication
+or social limitations. Significant
+social and communicative support
+is needed in work settings for
+success.
+The individual can care for personal
+needs involving eating, dressing,
+elimination, and hygiene as an
+adult, although an extended period
+of teaching and time is needed for
+the individual to become
+independent in these areas, and
+reminders may be needed.
+Similarly, participation in all
+household tasks can be achieved
+by adulthood, although an
+extended period of teaching is
+needed, and ongoing supports will
+typically occur for adult-level
+performance. Independent
+employment in jobs that require
+limited conceptual and
+communication skills can be
+achieved, but considerable support
+from coworkers, supervisors, and
+others is needed to manage social
+expectations, job complexities, and
+ancillary responsibilities such as
+scheduling, transportation, health
+benefits, and money management.
+A variety of recreational skills can
+be developed. These typically
+require additional supports and
+learning opportunities over an
+extended period of time.
+Maladaptive behavior is present in
+a significant minority and causes
+social problems.
+41
+Severe
+Attainment of conceptual skills is
+limited. The individual generally
+has little understanding of written
+language or of concepts involving
+numbers, quantity, time, and
+Spoken language is quite limited in
+terms of vocabulary and grammar.
+Speech may be single words or
+phrases and may be supplemented
+through augmentative means.
+The individual requires support for
+all activities of daily living,
+including meals, dressing, bathing,
+and elimination. The individual
+requires supervision at all times.
+money. Caretakers provide
+extensive supports for problem
+solving throughout life.
+Speech and communication are
+focused on the here and now
+within everyday events. Language
+is used for social communication
+more than for explication.
+Individuals understand simple
+speech and gestural
+communication. Relationships
+with family members and familiar
+others are a source of pleasure and
+help.
+The individual cannot make
+responsible decisions regarding
+well-being of self or others. In
+adulthood, participation in tasks at
+home, recreation, and work
+requires ongoing support and
+assistance. Skill acquisition in all
+domains involves long-term
+teaching and ongoing support.
+Maladaptive behavior, including
+self-injury, is present in a
+significant minority.
+Profound
+Conceptual skills generally involve
+the physical world rather than
+symbolic processes. The individual
+may use objects in goal-directed
+fashion for self-care, work, and
+recreation. Certain visuospatial
+skills, such as matching and
+sorting based on physical
+characteristics, may be acquired.
+However, co-occurring motor and
+sensory impairments may prevent
+functional use of objects.
+The individual has very limited
+understanding of symbolic
+communication in speech or
+gesture. He or she may understand
+some simple instructions or
+gestures. The individual expresses
+his or her own desires and
+emotions largely through
+nonverbal, nonsymbolic
+communication. The individual
+enjoys relationships with well-
+known family members,
+caretakers, and familiar others, and
+initiates and responds to social
+interactions through gestural and
+emotional cues. Co-occurring
+sensory and physical impairments
+may prevent many social
+activities.
+The individual is dependent on others
+for all aspects of daily physical
+care, health, and safety, although
+he or she may be able to
+participate in some of these
+activities as well. Individuals
+without severe physical
+impairments may assist with some
+daily work tasks at home, like
+carrying dishes to the table. Simple
+actions with objects may be the
+basis of participation in some
+vocational activities with high
+levels of ongoing support.
+Recreational activities may
+involve, for example, enjoyment in
+listening to music, watching
+movies, going out for walks, or
+participating in water activities, all
+with the support of others. Co-
+occurring physical and sensory
+impairments are frequent barriers
+to participation (beyond watching)
+in home, recreational, and
+vocational activities. Maladaptive
+behavior is present in a significant
+minority.
+Specifiers
+The various levels of severity are defined on the basis of adaptive functioning, and not IQ scores,
+because it is adaptive functioning that determines the level of supports required. Moreover, IQ
+measures are less valid in the lower end of the IQ range.
+Diagnostic Features
+The essential features of intellectual developmental disorder (intellectual disability) are deficits
+in general mental abilities (Criterion A) and impairment in everyday adaptive functioning, in
+comparison to an individual’s age-, gender-, and socioculturally matched peers (Criterion B).
+Onset is during the developmental period (Criterion C). The diagnosis of intellectual
+developmental disorder is based on both clinical assessment and standardized testing of
+intellectual functions, standardized neuropsychological tests, and standardized tests of adaptive
+functioning.
+Criterion A refers to intellectual functions that involve reasoning, problem solving, planning,
+abstract thinking, judgment, learning from instruction and experience, and practical
+understanding. Critical components include verbal comprehension, working memory, perceptual
+reasoning, quantitative reasoning, abstract thought, and cognitive efficacy. Intellectual
+functioning is typically measured with individually administered and psychometrically valid,
+comprehensive, and culturally appropriate tests of intelligence. Individuals with intellectual
+developmental disorder have scores of approximately two standard deviations or more below the
+population mean, including a margin for measurement error (generally ± 5 points). On tests with
+a standard deviation of 15 and a mean of 100, this involves a score of 65–75 (70 ± 5). Clinical
+training and judgment are required to interpret test results and assess intellectual performance.
+Factors that may affect test scores include practice effects (i.e., learning from repeated
+testing) and the “Flynn effect” (i.e., overly high scores due to out-of-date test norms). Invalid
+scores may result from the use of brief intelligence screening tests or group tests; highly
+discrepant individual subtest scores may make an overall IQ score invalid. Instruments must be
+normed for the individual’s sociocultural background and native language. Co-occurring
+disorders that affect communication, language, and/or motor or sensory function may affect test
+scores. Individual cognitive profiles based on neuropsychological testing as well as cross-battery
+intellectual assessment (using multiple IQ or other cognitive tests to create a profile) are more
+useful for understanding intellectual abilities than a single IQ score.
+42
+Such testing may identify areas of relative strengths and weaknesses, an assessment
+important for academic and vocational planning. IQ test scores are approximations of conceptual
+functioning but may be insufficient to assess reasoning in real-life situations and mastery of
+practical tasks. For example, a person with deficits in intellectual functioning whose IQ score is
+somewhat above 65–75 may nevertheless have such substantial adaptive behavior problems in
+social judgment or other areas of adaptive functioning that the person’s actual functioning is
+clinically comparable to that of individuals with a lower IQ score. Thus, clinical judgment is
+important in interpreting the results of IQ tests, and using them as the sole criteria for the
+diagnosis of an intellectual developmental disorder is insufficient.
+Deficits in adaptive functioning (Criterion B) refer to how well a person meets community
+standards of personal independence and social responsibility, in comparison to others of similar
+age and sociocultural background. Adaptive functioning involves adaptive reasoning in three
+domains: conceptual, social, and practical. The conceptual (academic) domain involves
+competence in memory, language, reading, writing, math reasoning, acquisition of practical
+knowledge, problem solving, and judgment in novel situations, among others. The social domain
+involves awareness of others’ thoughts, feelings, and experiences; empathy; interpersonal
+communication skills; friendship abilities; and social judgment, among others. The practical
+domain involves learning and self-management across life settings, including personal care, job
+responsibilities, money management, recreation, self-management of behavior, and school and
+work task organization, among others. Intellectual capacity, education, motivation, socialization,
+personality features, vocational opportunity, cultural experience, and coexisting other medical
+conditions or mental disorders influence adaptive functioning.
+Adaptive functioning is assessed using both clinical evaluation and individualized, culturally
+appropriate, psychometrically sound measures. Standardized measures are used with
+knowledgeable informants (e.g., parent or other family member; teacher; counselor; care
+provider) and the individual to the extent possible. Additional sources of information include
+educational, developmental, medical, and mental health evaluations. Scores from standardized
+measures and interview sources must be interpreted using clinical judgment. When standardized
+testing is difficult or impossible, because of a variety of factors (e.g., sensory impairment, severe
+problem behavior), the individual may be diagnosed with unspecified intellectual developmental
+disorder. Adaptive functioning may be difficult to assess in a controlled setting (e.g., prisons,
+detention centers); if possible, corroborative information reflecting functioning outside those
+settings should be obtained.
+Criterion B is met when at least one domain of adaptive functioning—conceptual, social, or
+practical—is sufficiently impaired that ongoing support is needed in order for the person to
+perform adequately across multiple environments, such as home, school, work, and community.
+Criterion C, onset during the developmental period, refers to recognition that intellectual and
+adaptive deficits are present during childhood or adolescence.
+A comprehensive evaluation includes an assessment of intellectual capacity and adaptive
+functioning; identification of genetic and nongenetic etiologies; evaluation for associated
+medical conditions (e.g., cerebral palsy, seizure disorder); and evaluation for co-occurring
+mental, emotional, and behavioral disorders. Components of the evaluation may include basic
+pre- and perinatal medical history, three-generational family pedigree, physical examination,
+genetic evaluation (e.g., karyotype or chromosomal microarray analysis and testing for specific
+genetic syndromes), and metabolic screening and neuroimaging assessment.
+Associated Features
+Intellectual developmental disorder is a heterogeneous condition with multiple causes. There
+may be associated difficulties with social judgment; assessment of risk; self-management of
+behavior, emotions, or interpersonal relationships; or motivation in school or
+43
+work environments. Because of a lack of awareness of risk and danger, accidental injury rates
+may be increased. Lack of communication skills may predispose to disruptive and aggressive
+behaviors. Gullibility is often a feature, involving naiveté in social situations and a tendency for
+being easily led by others. Gullibility and lack of awareness of risk may result in exploitation by
+others and possible victimization, fraud, unintentional criminal involvement, false confessions,
+and risk for physical and sexual abuse. These associated features can be important in criminal
+cases, including Atkins-type hearings involving the death penalty.
+Beyond deficits in adaptive functioning, individuals also can become distressed about their
+intellectual limitations. While such distress may not always be seen as having an impact on
+functioning, distress can represent an important feature of the clinical scenario.
+Prevalence
+Intellectual developmental disorder has an overall general population prevalence of
+approximately 10 per 1,000; however, the global prevalence varies by country and level of
+development, being approximately 16 per 1,000 in middle-income countries and 9 per 1,000 in
+high-income countries. The prevalence also varies by age, being higher in youth than in adults.
+In the United States, prevalence per 1,000 population does not vary significantly by ethnoracial
+groups.
+Development and Course
+Onset of intellectual developmental disorder is in the developmental period. The age and
+characteristic features at onset depend on the etiology and severity of brain dysfunction. Delayed
+motor, language, and social milestones may be identifiable within the first 2 years of life among
+those with more severe intellectual developmental disorder, while mild levels may not be
+identifiable until school age when difficulty with academic learning becomes apparent. All
+criteria (including Criterion C) must be fulfilled by history or current presentation. Some
+children younger than 5 years whose presentation will eventually meet criteria for intellectual
+developmental disorder have deficits that meet criteria for global developmental delay.
+When intellectual developmental disorder is associated with a genetic syndrome, there may
+be a characteristic physical appearance (e.g., as in Down syndrome). Some syndromes have a
+behavioral phenotype, which refers to specific behaviors that are characteristic of particular
+genetic disorder (e.g., Lesch-Nyhan syndrome). In acquired forms, the onset may be abrupt
+following an illness such as meningitis or encephalitis or head trauma occurring during the
+developmental period. When intellectual developmental disorder results from a loss of
+previously acquired cognitive skills, as in severe traumatic brain injury, the diagnoses of
+intellectual developmental disorder and of a neurocognitive disorder may both be assigned.
+Although intellectual developmental disorder is generally nonprogressive, in certain genetic
+disorders (e.g., Rett syndrome) there are periods of worsening, followed by stabilization, and in
+others (e.g., Sanfilippo syndrome, Down syndrome) progressive worsening of intellectual
+function in varying degrees. In some cases, the progressive worsening of intellectual functioning
+may represent the overlay of neurocognitive disorder that develops in adulthood (i.e., persons
+with Down syndrome being at high risk for developing neurocognitive disorder due to
+Alzheimer’s disease in adulthood). In this situation, both diagnoses, intellectual developmental
+disorder and neurocognitive disorder, are given.
+The disorder is generally lifelong, although severity levels may change over time. The course
+may be influenced by underlying medical or genetic conditions and co-occurring conditions
+(e.g., hearing or visual impairments, epilepsy). Early and ongoing interventions may improve
+adaptive functioning throughout childhood and adulthood. In some cases, these result in
+significant improvement of intellectual functioning, such that the
+44
+diagnosis of intellectual developmental disorder is no longer appropriate. Thus, it is common
+practice when assessing infants and young children to delay diagnosis of intellectual
+developmental disorder until after an appropriate course of intervention is provided. For older
+children and adults, the extent of support provided may allow for full participation in all
+activities of daily living and improved adaptive function. Diagnostic assessments must determine
+whether improved adaptive skills are the result of a stable, generalized new skill acquisition (in
+which case the diagnosis of intellectual developmental disorder may no longer be appropriate) or
+whether the improvement is contingent on the presence of supports and ongoing interventions (in
+which case the diagnosis of intellectual developmental disorder may still be appropriate).
+Risk and Prognostic Factors
+Genetic and physiological. Prenatal etiologies include genetic syndromes (e.g., sequence variations
+or copy number variants involving one or more genes; chromosomal disorders), inborn errors of
+metabolism, brain malformations, maternal disease (including placental disease), and
+environmental influences (e.g., alcohol, other drugs, toxins, teratogens). Perinatal causes include
+a variety of labor and delivery–related events leading to neonatal encephalopathy. Postnatal
+causes include hypoxic ischemic injury, traumatic brain injury, infections, demyelinating
+disorders, seizure disorders (e.g., infantile spasms), severe and chronic social deprivation, and
+toxic metabolic syndromes and intoxications (e.g., lead, mercury).
+Culture-Related Diagnostic Issues
+Intellectual developmental disorder occurs across ethnoracial groups. Prevalence differences
+across social and cultural contexts may be due to variation in environmental risks (e.g., perinatal
+injury, chronic social deprivation) for the disorder that are associated with socioeconomic status
+and access to quality health care. For example, in Western Australia, the population prevalence
+of intellectual developmental disorder among Aboriginal children is 39 per 1,000 people, as
+opposed to 16 per 1,000 for the more affluent non-Aboriginal youth population. Cultural
+sensitivity and knowledge of sociostructural conditions are needed during assessment, and the
+individual’s socioeconomic, ethnic, cultural, and linguistic background; available experiences;
+and adaptive functioning within his or her community and cultural setting must be considered.
+Cultural explanations for intellectual developmental disorder vary and may include cultural
+beliefs about supernatural influences and punishment for presumed or actual wrongdoing by the
+mother or parents, which can be associated with shame and underreporting of the disorder.
+Sex- and Gender-Related Diagnostic Issues
+Overall, males are more likely than females to be diagnosed with both mild (average male:female
+ratio 1.6:1) and severe (average male:female ratio 1.2:1) forms of intellectual developmental
+disorder. However, sex ratios vary widely in reported studies. Sex-linked genetic factors, sex
+differences in other genetic factors such as specific copy number variants, and male vulnerability
+to brain insult may account for some of the sex differences.
+Association With Suicidal Thoughts or Behavior
+Individuals with intellectual developmental disorder can be at risk for suicide associated with
+comorbid mental disorder, higher intellectual and adaptive function, and immediate past
+stressors. Comorbid mental disorder may manifest atypically in intellectual developmental
+disorder; thus, recognizing comorbidity and screening for suicidal thoughts is important in the
+assessment process, with particular attention to change in behavior of the individual.
+45
+Differential Diagnosis
+The diagnosis of intellectual developmental disorder should be made whenever Criteria A, B,
+and C are met. A diagnosis of intellectual developmental disorder should not be assumed
+because of a particular genetic or medical condition. A genetic syndrome linked to intellectual
+developmental disorder should be noted as a concurrent diagnosis with the intellectual
+Major and mild neurocognitive disorders.
+Communication disorders and specific learning disorder.
+Autism spectrum disorder.
+developmental disorder.
+Intellectual developmental disorder is categorized as a
+neurodevelopmental disorder and is distinct from the neurocognitive disorders, which are
+characterized by a loss of cognitive functioning. Major neurocognitive disorder may co-occur
+with intellectual developmental disorder (e.g., an individual with Down syndrome who develops
+Alzheimer’s disease, or an individual with intellectual developmental disorder who loses further
+cognitive capacity following a head injury). In such cases, the diagnoses of intellectual
+developmental disorder and neurocognitive disorder may both be given. Moreover, when there is
+stabilization of cognitive functioning following traumatic or nontraumatic brain injury with onset
+in the developmental period (childhood and adolescence), and there is no continuing cognitive
+decline, both neurocognitive disorder and intellectual developmental disorder diagnoses can be
+used if diagnostic criteria are met for intellectual developmental disorder.
+These neurodevelopmental disorders are
+specific to the communication and learning domains and do not show deficits in intellectual and
+adaptive behavior. They may co-occur with intellectual developmental disorder. Both diagnoses
+are made if full criteria are met for intellectual developmental disorder and a communication
+disorder or specific learning disorder.
+Intellectual developmental disorder is common among individuals with
+autism spectrum disorder. Assessment of intellectual ability may be complicated by social-
+communication and behavior deficits inherent to autism spectrum disorder, which may interfere
+with understanding and complying with test procedures. Appropriate assessment of intellectual
+functioning in autism spectrum disorder is essential, with reassessment across the developmental
+period, because IQ scores in autism spectrum disorder may be unstable, particularly in early
+childhood.
+Comorbidity
+Co-occurring neurodevelopmental and other mental and medical conditions are frequent in
+intellectual developmental disorder, with rates of some conditions (e.g., mental disorders,
+cerebral palsy, and epilepsy) three to four times higher than in the general population. The
+prognosis and outcome of co-occurring diagnoses may be influenced by the presence of
+intellectual developmental disorder. Assessment procedures may require modifications because
+of associated disorders, including communication disorders, autism spectrum disorder, and
+motor, sensory, or other disorders. Knowledgeable informants are essential for identifying
+symptoms such as irritability, mood dysregulation, aggression, eating problems, and sleep
+problems, and for assessing adaptive functioning in various community settings.
+The most common co-occurring neurodevelopmental and other mental disorders are
+attention-deficit/hyperactivity disorder; depressive and bipolar disorders; anxiety disorders;
+autism spectrum disorder; stereotypic movement disorder (with or without self-injurious
+behavior); impulse-control disorders; and major neurocognitive disorder. Major depressive
+disorder may occur throughout the range of severity of intellectual developmental disorder. Self-
+injurious behavior requires prompt diagnostic attention and may warrant a separate diagnosis of
+stereotypic movement disorder. Individuals with intellectual developmental disorder, particularly
+those with more severe intellectual developmental disorder, may also exhibit aggression and
+disruptive behaviors, including harm of others or property destruction.
+46
+Individuals with intellectual developmental disorder disproportionately have more health
+problems, including obesity, than the general population. Frequently they cannot verbalize
+physical symptoms they are experiencing. This may lead to health problems being undiagnosed
+and untreated.
+Relationship to Other Classifications
+ICD-11 uses the term disorders of intellectual development to indicate that these are disorders
+that involve impaired brain functioning early in life. These disorders are described in ICD-11 as
+a metasyndrome occurring in the developmental period analogous to dementia or major
+neurocognitive disorder in later life. There are four subtypes of disorders of intellectual
+development in ICD-11: mild, moderate, severe, and profound.
+The American Association on Intellectual and Developmental Disabilities (AAIDD) uses the
+term intellectual disability. The AAIDD’s classification is multidimensional rather than
+categorical and is based on the disability construct. Rather than listing severity specifiers as is
+done in DSM-5, the AAIDD emphasizes a profile of supports based on severity.

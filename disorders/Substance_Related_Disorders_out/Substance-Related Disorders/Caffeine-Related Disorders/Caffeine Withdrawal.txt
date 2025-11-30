@@ -1,0 +1,137 @@
+ Caffeine Withdrawal
+ Diagnostic Criteria
+ A. Prolonged daily use of caffeine.
+ B. Abrupt cessation of or reduction in caffeine use, followed within 24 hours by
+ three (or more) of the following signs or symptoms:
+ 1. Headache.
+ 2. Marked fatigue or drowsiness.
+ 3. Dysphoric mood, depressed mood, or irritability.
+ 4. Difficulty concentrating.
+ 5. Flu-like symptoms (nausea, vomiting, or muscle pain/stiffness).
+ 572
+ C. The signs or symptoms in Criterion B cause clinically significant distress or
+ impairment in social, occupational, or other important areas of functioning.
+ D. The signs or symptoms are not associated with the physiological effects of
+ another medical condition (e.g., migraine, viral illness) and are not better
+ explained by another mental disorder, including intoxication or withdrawal from
+ another substance.
+Diagnostic Features
+ The essential feature of caffeine withdrawal is the presence of a characteristic withdrawal
+ syndrome that develops after the abrupt cessation of (or substantial reduction in) prolonged daily
+ caffeine ingestion (Criterion B). Because individuals may be unaware of the wide array of
+ sources of caffeine beyond coffee, colas, and energy drinks (e.g., over-the-counter analgesics and
+ cold remedies, weight loss aids, chocolate), they may not connect ingestion of these substances
+ with symptoms of caffeine withdrawal. The caffeine withdrawal syndrome is indicated by three
+ or more of the following (Criterion B): headache; marked fatigue or drowsiness; dysphoric
+ mood, depressed mood, or irritability; difficulty concentrating; and flu-like symptoms (nausea,
+ vomiting, or muscle pain/stiffness). The withdrawal syndrome causes clinically significant
+ distress or impairment in social, occupational, or other important areas of functioning (Criterion
+ C). The symptoms must not be associated with the physiological effects of another medical
+ condition and are not better explained by another mental disorder (Criterion D).
+ Headache is the hallmark feature of caffeine withdrawal and may be diffuse, gradual in
+ development, throbbing, severe, and sensitive to movement. However, other symptoms of
+ caffeine withdrawal can occur in the absence of headache. Caffeine is the most widely used
+ behaviorally active drug in the world and is present in many different types of beverages (e.g.,
+ coffee, tea, mate, soft drinks, energy drinks), foods, energy aids, medications, and dietary
+ supplements. Because caffeine ingestion is often integrated into social customs and daily rituals
+ (e.g., coffee break, tea time), some caffeine consumers may be unaware of their physical
+ dependence on caffeine. Thus, caffeine withdrawal symptoms could be unexpected and
+ misattributed to other causes (e.g., the flu, migraine). Furthermore, caffeine withdrawal
+ symptoms may occur when individuals are required to abstain from foods and beverages prior to
+ medical procedures or when a usual caffeine dose is missed because of a change in routine (e.g.,
+ during travel, weekends).
+ The probability and severity of caffeine withdrawal generally increase as a function of usual
+ daily caffeine dose. However, there is large variability among individuals and within individuals
+ across different episodes in the incidence, severity, and time course of withdrawal symptoms.
+ Caffeine withdrawal symptoms may occur after abrupt cessation of relatively low chronic daily
+ doses of caffeine (i.e., 100 mg).
+ Associated Features
+ Caffeine abstinence has been shown to be associated with impaired behavioral and cognitive
+ performance (e.g., sustained attention), as well as with increased total sleep time, sleep
+ efficiency, and slow-wave sleep. Electroencephalographic studies have shown that caffeine
+ withdrawal symptoms are significantly associated with increases in theta power and decreases in
+ beta-2 power. Decreased motivation to work and decreased sociability have also been reported
+ during caffeine withdrawal. Increased analgesic use during caffeine withdrawal has been
+ documented.
+ Prevalence
+ More than 85% of adults and children in the United States regularly consume caffeine, with adult
+ caffeine consumers ingesting about 280 mg/day on average. The incidence and prevalence of the
+caffeine withdrawal syndrome in the general population are unclear. In the United States,
+ headache may occur in approximately 50% of cases of caffeine abstinence.
+ 573
+ In attempts to permanently stop caffeine use, more than 70% of individuals in a U.S.
+ metropolitan county reported at least one caffeine withdrawal symptom (47% experienced
+ headache), and 24% experienced headache plus one or more other symptoms as well as
+ functional impairment due to withdrawal. Among individuals who abstained from caffeine for at
+ least 24 hours but were not trying to permanently stop caffeine use, 11% experienced headache
+ plus one or more other symptoms as well as functional impairment. Caffeine consumers can
+ decrease the incidence of caffeine withdrawal by using caffeine daily or only infrequently (e.g.,
+ no more than 2 consecutive days). Gradual reduction in caffeine over a period of days or weeks
+ may decrease the incidence and severity of caffeine withdrawal.
+ Development and Course
+ Symptoms usually begin 12–24 hours after the last caffeine dose and peak after 1–2 days of
+ abstinence. Caffeine withdrawal symptoms last for 2–9 days, with the possibility of withdrawal
+ headaches occurring for up to 21 days. Symptoms usually remit rapidly (within 30–60 minutes)
+ after re-ingestion of caffeine. Doses of caffeine significantly less than the individual’s usual daily
+ dose may be sufficient to prevent or attenuate caffeine withdrawal symptoms (e.g., consumption
+ of 25 mg by an individual who typically consumes 300 mg).
+ Caffeine is unique in that it is a behaviorally active drug that is consumed by individuals of
+ nearly all ages, with rates of caffeine consumption and overall level of caffeine consumption
+ increasing with age. Although caffeine withdrawal among children and adolescents has been
+ documented, relatively little is known about risk factors for caffeine withdrawal among this age
+ group. The use of highly caffeinated energy drinks is increasing in young people, which could
+ increase the risk for caffeine withdrawal.
+ Risk and Prognostic Factors
+ Temperamental.
+ Heavy caffeine use has been observed among individuals with mental disorders,
+ including eating disorders and alcohol and other substance use disorders, as well as among
+ individuals who smoke cigarettes and those who are incarcerated. Thus, these individuals could
+ be at higher risk for caffeine withdrawal upon acute caffeine abstinence.
+ Environmental.
+ The unavailability of caffeine is an environmental risk factor for incipient
+ withdrawal symptoms. While caffeine is legal and usually widely available, there are conditions
+ in which caffeine use may be restricted, such as during medical procedures, pregnancy,
+ hospitalizations, religious observances, wartime, travel, and research participation. These
+ external environmental circumstances may precipitate a withdrawal syndrome in vulnerable
+ individuals.
+ Genetic and physiological.
+ Genetic factors appear to increase vulnerability to caffeine withdrawal,
+ but no specific genes have been identified.
+ Culture-Related Diagnostic Issues
+Habitual caffeine consumers who fast for religious reasons may be at increased risk for caffeine
+ withdrawal.
+ Sex- and Gender-Related Diagnostic Issues
+ Metabolism of caffeine is slower in females who use oral contraceptives and in the luteal phase
+ of the menstrual cycle, and caffeine metabolism becomes progressively slower in the second and
+ third trimesters of pregnancy compared with the first trimester and the nonpregnant state. These
+ features reduce the rate of clearance and may diminish withdrawal, although they can also
+ lengthen the duration of caffeine-associated adverse symptoms. It is unlikely that doses < 300
+ mg/day are associated with adverse reproductive outcomes in pregnancy.
+ 574
+ Functional Consequences of Caffeine Withdrawal
+ Caffeine withdrawal symptoms can vary from mild to extreme, at times causing functional
+ impairment in normal daily activities. Rates of functional impairment in studies conducted
+ largely in the United States range from 10% to 55% (median 13%), with rates as high as 73%
+ found among individuals who also show other problematic features of caffeine use. Examples of
+ functional impairment include being unable to work, exercise, or care for children; staying in bed
+ all day; missing religious services; ending a vacation early; and canceling a social gathering.
+ Caffeine withdrawal headaches may be described by individuals as “the worst headaches” ever
+ experienced. Decrements in cognitive and motor performance have also been observed.
+ Differential Diagnosis
+ Other medical conditions and medication side effects.
+ Caffeine withdrawal can mimic migraine and
+ other headache disorders, viral illnesses, sinus conditions, tension, other drug withdrawal states
+ (e.g., from amphetamines, cocaine), and medication side effects. The final determination of
+ caffeine withdrawal should rest on a determination of the pattern and amount consumed, the time
+ interval between caffeine abstinence and onset of symptoms, and the particular clinical features
+ presented by the individual. A challenge dose of caffeine followed by symptom remission may
+ be used to confirm the diagnosis.
+ Caffeine-induced sleep disorder.
+ Caffeine withdrawal is distinguished from caffeine-induced sleep
+ disorder (e.g., caffeine-induced sleep disorder, insomnia type, with onset during withdrawal)
+ because the sleep symptoms are in excess of those usually associated caffeine withdrawal,
+ predominate in the clinical presentation, and are severe enough to warrant clinical attention.
+ Comorbidity
+ Caffeine withdrawal may be associated with major depressive disorder, generalized anxiety
+ disorder, panic disorder, antisocial personality disorder, moderate to severe alcohol use disorder,
+ and cannabis and cocaine use.

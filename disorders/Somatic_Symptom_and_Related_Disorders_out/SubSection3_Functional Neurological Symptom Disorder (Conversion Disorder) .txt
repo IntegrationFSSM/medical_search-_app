@@ -1,0 +1,195 @@
+Functional Neurological Symptom Disorder (Conversion
+ Disorder)
+ Diagnostic Criteria
+ A. One or more symptoms of altered voluntary motor or sensory function.
+ B. Clinical findings provide evidence of incompatibility between the symptom and
+ recognized neurological or medical conditions.
+ C. The symptom or deficit is not better explained by another medical or mental
+ disorder.
+ D. The symptom or deficit causes clinically significant distress or impairment in
+social, occupational, or other important areas of functioning or warrants medical
+ evaluation.
+ Coding note: The ICD-10-CM code depends on the symptom type (see below).
+ Specify symptom type:
+ F44.4 With weakness or paralysis
+ F44.4 With abnormal movement (e.g., tremor, dystonia, myoclonus, gait
+ disorder)
+ F44.4 With swallowing symptoms
+ F44.4 With speech symptom (e.g., dysphonia, slurred speech)
+ F44.5 With attacks or seizures
+ F44.6 With anesthesia or sensory loss
+ F44.6 With special sensory symptom (e.g., visual, olfactory, or hearing
+ disturbance)
+ F44.7 With mixed symptoms
+ Specify if:
+ Acute episode: Symptoms present for less than 6 months.
+ Persistent: Symptoms occurring for 6 months or more.
+ 361
+ Specify if:
+ With psychological stressor (specify stressor)
+ Without psychological stressor
+ Diagnostic Features
+ In functional neurological symptom disorder (conversion disorder), there may be one or more
+ neurological symptoms of various types. Motor symptoms include weakness or paralysis;
+ abnormal movements, such as tremor, jerks, or dystonic movements; and gait abnormalities.
+ Sensory symptoms include altered, reduced, or absent skin sensation, vision, or hearing.
+ Episodes of apparent unresponsiveness with or without limb movements may resemble epileptic
+ seizures, syncope, or coma (also called dissociative, psychogenic, or nonepileptic seizures or
+ attacks). Other symptoms include reduced or absent speech volume (dysphonia/aphonia); altered
+ speech articulation, prosody, or fluency; a sensation of a lump in the throat (globus); and
+ diplopia. This disorder has been called “conversion disorder” in prior editions of DSM as well as
+ in much of the psychiatric research literature. The term “conversion” originated in
+ psychoanalytic theory, which proposes that unconscious psychic conflict is “converted” into
+ physical symptoms.
+ The diagnosis rests on clinical findings that show clear evidence of incompatibility with
+ recognized neurological disease. These should usually be elicited and interpreted in the context
+ of the whole clinical picture by a health care professional with expertise in the diagnosis of
+neurological conditions. The diagnosis is not one of exclusion and can be made in individuals
+ who also have neurological diseases like epilepsy or multiple sclerosis. The diagnosis should not
+ be made simply because results from investigations are normal or because the symptom is
+ “bizarre.” Internal inconsistency during examination is one way to demonstrate incompatibility
+ (i.e., demonstrating that physical signs elicited through one examination method are no longer
+ present when tested a different way). There are dozens of examples of such “positive”
+ examination findings. Examples of examination findings that indicate incompatibility with
+ recognized neurological disease include the following:
+ For functional limb weakness or paralysis: Hoover’s sign, in which weakness of hip extension returns to normal strength
+ with contralateral hip flexion against resistance; the hip abductor sign, in which weakness of thigh abduction returns to
+ normal with contralateral hip abduction against resistance; or a discrepancy between on-the-bed performance (e.g., weakness
+ of ankle plantar flexion) compared with another task (e.g., ability to walk on tiptoes).
+ For functional tremor: the tremor entrainment test, in which a tremor changes when the individual is distracted by copying
+ the examiner in making a rhythmical movement with the contralateral hand or foot. The test is positive when the tremor
+ “entrains” the rhythm of the unaffected hand or foot, the tremor is suppressed, or the individual cannot copy simple
+ rhythmical movements. Other features of functional limb tremor include variability in frequency or direction of the tremor.
+ For functional dystonia: individuals typically present with fixed inverted position of the ankle, a clenched fist, or unilateral
+ contraction of platysma, often with sudden onset.
+ For attacks resembling epileptic seizures or syncope (also called functional or dissociative [nonepileptic] seizures): features
+ suggestive of functional neurological symptom disorder include persistent eye closure sometimes with resistance to opening,
+ bilateral motor movements with preserved awareness, or a duration longer than 5 minutes. Clinical features usually need to
+ be combined and may be supported with a normal simultaneous ictal electroencephalogram (although this alone does not
+ exclude all forms of epilepsy or syncope.
+ 362
+ For functional speech symptoms: internal inconsistencies in speech articulation and phonation.
+ For functional visual symptoms: a tubular visual field (i.e., tunnel vision) and tests that indicate internal inconsistency in
+ visual acuity, such as the “fogging test” (i.e., while the individual views the eye chart with both eyes open, the “good” eye is
+ subtly fogged so that any useful binocular vision must be a result of “bad” eye function).
+ It is important to note that the diagnosis of functional neurological symptom disorder should
+ be based on the overall clinical picture and not on a single clinical finding.
+ Associated Features
+ Several associated features can support the diagnosis of functional neurological symptom
+ disorder, although none are specific. There may be a history of other functional somatic
+ symptoms or disorders, especially involving pain and fatigue. Onset may be associated with
+ stress or trauma, either psychological or physical in nature. The potential etiological relevance of
+ this stress or trauma may be suggested by a close temporal relationship. However, while
+ assessment for stress and trauma is important, it may be absent in up to 50% of individuals, and
+ the diagnosis should not be withheld if none is found.
+ Functional neurological symptom disorder is often associated with dissociative symptoms,
+such as depersonalization, derealization, and dissociative amnesia, particularly at symptom onset
+ or during attacks.
+ The phenomenon of la belle indifférence (i.e., lack of concern about the nature or
+ implications of the symptom) has been associated with functional neurological symptom
+ disorder, but it is not specific and should not be used to make the diagnosis. Similarly, the
+ concept of secondary gain (i.e., when individuals derive external benefits such as money or
+ release from responsibilities) is also not specific to functional neurological symptom disorder.
+ Prevalence
+ Transient functional neurological symptoms are common, but the precise prevalence of the
+ disorder is unknown. Based on research in the United States and northern Europe, the incidence
+ of individual persistent functional neurological symptoms is estimated to be 4–12/100,000 per
+ year. Prevalence in specialty clinics appears to be higher, although data are limited. For example,
+ 5% of outpatients ages 9–17 in a Japanese psychiatric clinic and 6% of adult and adolescent
+ admissions to an inpatient psychiatric hospital in Oman received a diagnosis consistent with
+ functional neurological symptom disorder. In neurology clinics, around 5%–15% of individuals
+ have a diagnosis of functional neurological symptom disorder in studies from Scotland and
+ Australia.
+ Development and Course
+ Onset has been reported throughout the life course. The mean onset of nonepileptic attacks peaks
+ at ages 20–29 years, and motor symptoms have their mean onset at ages 30–39 years. The
+ symptoms can be transient or persistent. The prognosis may be better in younger children than in
+ adolescents and adults.
+ Risk and Prognostic Factors
+ Temperamental.
+ Maladaptive personality traits, especially emotional instability, are commonly
+ associated with functional neurological symptom disorder.
+ Environmental.
+ There may be a history of childhood abuse and neglect. Stressful life events
+ including physical injury are common but not universal triggering factors.
+ 363
+ Genetic and physiological.
+ The presence of neurological disease that causes similar symptoms is a
+ risk factor (e.g., around one in five individuals with functional [nonepileptic] seizures also have
+ epilepsy).
+ Course modifiers.
+ Short duration of symptoms and agreement with the diagnosis are positive
+ prognostic factors. Maladaptive personality traits, the presence of comorbid physical disease, and
+ the receipt of disability benefits appear to be negative prognostic factors.
+ Culture-Related Diagnostic Issues
+ Episodes of unresponsiveness (including seizures) and motor symptoms are the most common
+ functional neurological symptoms across cultural contexts. High comorbidity between functional
+neurological and dissociative symptoms is common cross-culturally, especially in individuals
+ with nonepileptic seizures. Changes resembling functional neurological (and dissociative)
+ symptoms are common in certain culturally sanctioned rituals. If the symptoms are fully
+ explained within the particular cultural context and do not result in clinically significant distress
+ or disability, then the diagnosis of functional neurological symptom disorder is not made.
+ Sex- and Gender-Related Diagnostic Issues
+ Functional neurological symptom disorder is two to three times more common in women for
+ most symptom presentations. One large clinical study found higher rates of cognitive impairment
+ and weakness in men and increased past sexual and physical trauma in women.
+ Association With Suicidal Thoughts or Behavior
+ Cohort studies of functional neurological symptom disorder mostly show higher rates of suicidal
+ thoughts and attempts. Individuals with functional symptoms in a neurology clinic have a higher
+ rate of suicidal thoughts than individuals with recognized neurological disease. A study in
+ Turkey of 100 consecutive psychiatric outpatients with functional neurological symptom
+ disorder found that a history of suicide attempt was associated with risky use of alcohol, a
+ history of childhood maltreatment, and greater severity of dissociative symptoms as compared
+ with those who did not attempt suicide.
+ Functional Consequences of Functional Neurological Symptom
+ Disorder
+ Individuals with functional neurological symptom disorder may have substantial physical
+ disability. The severity of disability can be similar to that experienced by individuals with
+ comparable recognized medical conditions.
+ Differential Diagnosis
+ Recognized neurological disease.
+ The main differential diagnosis is recognized neurological
+ disease that might better explain the symptoms. After a thorough neurological assessment, an
+ unexpected neurological disease cause for the symptoms is rarely found at follow-up. However,
+ reassessment may be required if the symptoms appear to be progressive. Functional neurological
+ symptom disorder commonly coexists with recognized neurological disease and may be part of
+ the prodromal state of some progressive neurological diseases.
+ Somatic symptom disorder.
+ Functional neurological symptom disorder may be diagnosed in
+ addition to somatic symptom disorder. Most of the somatic symptoms
+ 364
+ encountered in somatic symptom disorder cannot be demonstrated to be clearly incompatible
+ with recognized neurological or medical disease, whereas in functional neurological symptom
+ disorder, such incompatibility is required for the diagnosis.
+ Factitious disorder and malingering.
+ Functional neurological symptom disorder describes genuinely
+ experienced symptoms that are not intentionally produced (i.e., not feigned). However, definite
+Dissociative disorders.
+ Body dysmorphic disorder.
+ Depressive disorders.
+ Panic disorder.
+ F54
+ evidence of feigning (e.g., marked discrepancy between reported and observed activities of daily
+ living) would suggest malingering if the individual’s apparent aim is to obtain an obvious
+ external reward, or factitious disorder in the absence of such reward.
+ Dissociative symptoms are common in individuals with functional
+ neurological symptom disorder. If both functional neurological symptom disorder and a
+ dissociative disorder are present, both diagnoses should be made.
+ Individuals with body dysmorphic disorder are excessively concerned
+ about a perceived defect in their physical appearance but do not complain of symptoms of
+ sensory or motor functioning in the affected body part.
+ In depressive disorders, individuals may report general heaviness of their
+ limbs, whereas the weakness of functional neurological symptom disorder is more focal and
+ prominent. Depressive disorders are also differentiated by the presence of core depressive
+ symptoms.
+ Episodic neurological symptoms (e.g., tremor and paresthesia) can occur in both
+ functional neurological symptom disorder and panic attacks. In panic attacks, the neurological
+ symptoms are typically associated with characteristic cardiorespiratory symptoms and retained
+ awareness. Loss of awareness with amnesia for the attack occurs in functional seizures but not in
+ panic attacks.
+ Comorbidity
+ Anxiety disorders, especially panic disorder, and depressive disorders commonly co-occur with
+ functional neurological symptom disorder. Somatic symptom disorder may co-occur as well.
+ Personality disorders are more common in individuals with functional neurological symptom
+ disorder than in the general population. Neurological or other medical conditions commonly
+ coexist with functional neurological symptom disorder as well.

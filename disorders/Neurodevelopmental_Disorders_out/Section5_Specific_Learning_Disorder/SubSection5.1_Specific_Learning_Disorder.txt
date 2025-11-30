@@ -1,0 +1,485 @@
+Specific Learning Disorder
+Specific Learning Disorder
+Diagnostic Criteria
+A. Difficulties learning and using academic skills, as indicated by the presence of at
+least one of the following symptoms that have persisted for at least 6 months,
+despite the provision of interventions that target those difficulties:
+1. Inaccurate or slow and effortful word reading (e.g., reads single words aloud
+incorrectly or slowly and hesitantly, frequently guesses words, has difficulty
+sounding out words).
+2. Difficulty understanding the meaning of what is read (e.g., may read text
+accurately but not understand the sequence, relationships, inferences, or
+deeper meanings of what is read).
+3. Difficulties with spelling (e.g., may add, omit, or substitute vowels or
+consonants).
+77
+4. Difficulties with written expression (e.g., makes multiple grammatical or
+punctuation errors within sentences; employs poor paragraph organization;
+written expression of ideas lacks clarity).
+5. Difficulties mastering number sense, number facts, or calculation (e.g., has
+poor understanding of numbers, their magnitude, and relationships; counts on
+fingers to add single-digit numbers instead of recalling the math fact as peers
+do; gets lost in the midst of arithmetic computation and may switch
+procedures).
+6. Difficulties with mathematical reasoning (e.g., has severe difficulty applying
+mathematical concepts, facts, or procedures to solve quantitative problems).
+B. The affected academic skills are substantially and quantifiably below those
+expected for the individual’s chronological age, and cause significant
+interference with academic or occupational performance, or with activities of
+daily living, as confirmed by individually administered standardized achievement
+measures and comprehensive clinical assessment. For individuals age 17 years
+and older, a documented history of impairing learning difficulties may be
+substituted for the standardized assessment.
+C. The learning difficulties begin during school-age years but may not become fully
+manifest until the demands for those affected academic skills exceed the
+individual’s limited capacities (e.g., as in timed tests, reading or writing lengthy
+complex reports for a tight deadline, excessively heavy academic loads).
+D. The learning difficulties are not better accounted for by intellectual disabilities,
+uncorrected visual or auditory acuity, other mental or neurological disorders,
+psychosocial adversity, lack of proficiency in the language of academic
+instruction, or inadequate educational instruction.
+Note: The four diagnostic criteria are to be met based on a clinical synthesis of the
+individual’s history (developmental, medical, family, educational), school reports, and
+psychoeducational assessment.
+Coding note: Specify all academic domains and subskills that are impaired. When
+more than one domain is impaired, each one should be coded individually according
+to the following specifiers.
+Specify if:
+F81.0 With impairment in reading:
+Word reading accuracy
+Reading rate or fluency
+Reading comprehension
+78
+Note: Dyslexia is an alternative term used to refer to a pattern of learning
+difficulties characterized by problems with accurate or fluent word recognition,
+poor decoding, and poor spelling abilities. If dyslexia is used to specify this
+particular pattern of difficulties, it is important also to specify any additional
+difficulties that are present, such as difficulties with reading comprehension or
+math reasoning.
+F81.81 With impairment in written expression:
+Spelling accuracy
+Grammar and punctuation accuracy
+Clarity or organization of written expression
+F81.2 With impairment in mathematics:
+Number sense
+Memorization of arithmetic facts
+Accurate or fluent calculation
+Accurate math reasoning
+Note: Dyscalculia is an alternative term used to refer to a pattern of difficulties
+characterized by problems processing numerical information, learning
+arithmetic facts, and performing accurate or fluent calculations. If dyscalculia is
+used to specify this particular pattern of mathematic difficulties, it is important
+also to specify any additional difficulties that are present, such as difficulties
+with math reasoning or word reasoning accuracy.
+Specify current severity:
+Mild: Some difficulties learning skills in one or two academic domains, but of
+mild enough severity that the individual may be able to compensate or function
+well when provided with appropriate accommodations or support services,
+especially during the school years.
+Moderate: Marked difficulties learning skills in one or more academic domains,
+so that the individual is unlikely to become proficient without some intervals of
+intensive 
+and 
+specialized 
+teaching 
+during 
+the 
+school 
+years. 
+Some
+accommodations or supportive services at least part of the day at school, in the
+workplace, or at home may be needed to complete activities accurately and
+efficiently.
+Severe: Severe difficulties learning skills, affecting several academic domains,
+so that the individual is unlikely to learn those skills without ongoing intensive
+individualized and specialized teaching for most of the school years. Even with
+an array of appropriate accommodations or services at home, at school, or in the
+workplace, the individual may not be able to complete all activities efficiently.
+Recording Procedures
+Each impaired academic domain and subskill of specific learning disorder should be recorded.
+Because of ICD coding requirements, impairments in reading, impairments in written expression,
+and impairments in mathematics, with their corresponding impairments in subskills, must be
+coded and recorded separately. For example, impairments in reading and mathematics and
+impairments in the subskills of reading rate or fluency, reading comprehension, accurate or
+fluent calculation, and accurate math reasoning would be coded and recorded as F81.0 specific
+learning disorder with impairment in reading, with impairment in reading rate or fluency, and
+impairment in reading comprehension; F81.2 specific learning disorder with impairment in
+mathematics, with impairment in accurate or fluent calculation and impairment in accurate math
+reasoning.
+Diagnostic Features
+Specific learning disorder is a neurodevelopmental disorder with a biological origin that is the
+basis for abnormalities at a cognitive level that are associated with the behavioral signs of the
+disorder. The biological origin includes an interaction of genetic, epigenetic, and environmental
+factors, which affect the brain’s ability to perceive or process verbal or nonverbal information
+efficiently and accurately.
+One essential feature of specific learning disorder is persistent difficulties learning keystone
+academic skills (Criterion A), with onset during the years of formal schooling (i.e., the
+developmental period). Key academic skills include reading of single words accurately and
+fluently, reading comprehension, written expression and spelling, arithmetic calculation, and
+mathematical reasoning (solving mathematical problems). In contrast to talking or walking,
+which are acquired developmental milestones that emerge with brain maturation, academic skills
+(e.g., reading, spelling, writing, mathematics) have to be taught and learned explicitly. Specific
+learning disorder disrupts the normal pattern of learning academic skills; it is not simply a
+consequence of lack of opportunity of learning or inadequate instruction. Difficulties mastering
+these key academic skills may also impede learning in other academic subjects (e.g., history,
+science, social studies), but those problems are attributable to difficulties learning the underlying
+academic skills.
+79
+Difficulties learning to map letters with the sounds of one’s language—to read printed words
+(often called dyslexia [specific learning disorder with impairment in reading])—is one of the
+most common manifestations of specific learning disorder. The learning difficulties manifest as a
+range of observable, descriptive behaviors or symptoms (as listed in Criteria A1–A6). These
+clinical symptoms may be observed, probed by means of the clinical interview, or ascertained
+from school reports, rating scales, or descriptions in previous educational or psychological
+assessments. The learning difficulties are persistent, not transitory. In children and adolescents,
+persistence is defined as restricted progress in learning (i.e., no evidence that the individual is
+catching up with classmates) for at least 6 months despite the provision of extra help at home or
+school. For example, difficulties learning to read single words that do not fully or rapidly remit
+with the provision of instruction in phonological skills or word identification strategies may
+indicate a specific learning disorder. Evidence of persistent learning difficulties may be derived
+from cumulative school reports, portfolios of the child’s evaluated work, curriculum-based
+measures, or clinical interview. In adults, persistent difficulty refers to ongoing difficulties in
+literacy or numeracy skills that manifest during childhood or adolescence, as indicated by
+cumulative evidence from school reports, evaluated portfolios of work, or previous assessments.
+A second key feature is that the individual’s performance of the affected academic skills is
+well below expected for age (Criterion B). One robust clinical indicator of difficulties learning
+academic skills is low academic achievement for age or average achievement that is sustainable
+only by extraordinarily high levels of effort or support. In children, the low academic skills cause
+significant interference in school performance (as indicated by school reports and teacher’s
+grades or ratings). Another clinical indicator, particularly in adults, is avoidance of activities that
+require the academic skills. Also in adulthood, low academic skills interfere with occupational
+performance or everyday activities requiring those skills (as indicated by self-report or report by
+others). However, this criterion also requires psychometric evidence from an individually
+administered, psychometrically sound and culturally appropriate test of academic achievement
+that is norm-referenced or criterion-referenced. Academic skills are distributed along a
+continuum, so there is no natural cutpoint that can be used to differentiate individuals with and
+without specific learning disorder. Thus, any threshold used to specify what constitutes
+significantly low academic achievement (e.g., academic skills well below age expectation) is to a
+large extent arbitrary. Low achievement scores on one or more standardized tests or subtests
+within an academic domain (i.e., at least 1.5 standard deviations [SD] below the population mean
+for age, which translates to a standard score of 78 or less, which is below the 7th percentile) are
+needed for the greatest diagnostic certainty. However, precise scores will vary according to the
+particular standardized tests that are used. On the basis of clinical judgment, a more lenient
+threshold may be used (e.g., 1.0 SD below the population mean for age), when learning
+difficulties are supported by converging evidence from clinical assessment, academic history,
+school reports, or test scores. Moreover, since standardized tests are not available in all
+languages, the diagnosis may then be based in part on clinical judgment of scores on available
+test measures.
+A third core feature is that the learning difficulties are readily apparent in the early school
+years in most individuals (Criterion C). However, in others, the learning difficulties may not
+manifest fully until later school years, by which time learning demands have increased and
+exceed the individual’s limited capacities.
+Another key diagnostic feature is that the learning difficulties are considered “specific” for
+four reasons. First, they are not better explained by intellectual developmental disorders
+(intellectual developmental disorder [intellectual disability]; global developmental delay);
+hearing or vision disorders; or neurological or motor disorders (Criterion D). Specific learning
+disorder affects learning in individuals who otherwise demonstrate normal levels of intellectual
+functioning (generally estimated by an IQ score of greater than about 70 [± 5 points allowing for
+measurement error]). The phrase “unexpected academic
+80
+underachievement” is often cited as the defining characteristic of specific learning disorder in
+that the specific learning disabilities are not part of a more general learning difficulty as
+manifested in intellectual developmental disorder or global developmental delay.
+Second, the learning difficulty cannot be attributed to more general external factors, such as
+economic or environmental disadvantage, chronic absenteeism, or lack of education as typically
+provided in the individual’s community context. Third, the learning difficulty cannot be
+attributed to neurological (e.g., pediatric stroke) or motor disorders or to vision or hearing
+disorders, which are often associated with problems learning academic skills but are
+distinguishable by presence of neurological signs. Finally, the learning difficulty may be
+restricted to one academic skill or domain (e.g., reading single words, retrieving or calculating
+number facts).
+Specific learning disorder may also occur in individuals identified as intellectually “gifted.”
+These individuals may be able to sustain apparently adequate academic functioning by using
+compensatory strategies, extraordinarily high effort, or support, until the learning demands or
+assessment procedures (e.g., timed tests) pose barriers to their demonstrating their learning or
+accomplishing required tasks. In these cases, the individual’s achievement scores will be low
+relative to ability level or achievement in other domains, rather than to the population mean for
+achievement.
+Comprehensive assessment is required. Specific learning disorder can only be diagnosed
+after formal education starts but can be diagnosed at any point afterward in children, adolescents,
+or adults, providing there is evidence of onset during the years of formal schooling (i.e., the
+developmental period). No single data source is sufficient for a diagnosis of specific learning
+disorder. Rather, specific learning disorder is a clinical diagnosis based on a synthesis of the
+individual’s medical, developmental, educational, and family history; the history of the learning
+difficulty, including its previous and current manifestation; the impact of the difficulty on
+academic, occupational, or social functioning; previous or current school reports; portfolios of
+work requiring academic skills; curriculum-based assessments; and previous or current scores
+from individual standardized tests of academic achievement. If an intellectual, sensory,
+neurological, or motor disorder is suspected, then the clinical assessment for specific learning
+disorder should also include methods appropriate for these disorders. Thus, comprehensive
+assessment will involve professionals with expertise in specific learning disorder and
+psychological/cognitive assessment. Since specific learning disorder typically persists into
+adulthood, reassessment is rarely necessary, unless indicated by marked changes in the learning
+difficulties (amelioration or worsening) or requested for specific purposes.
+Associated Features
+The symptoms of specific learning disorder (difficulty with aspects of reading, writing, or
+mathematics) frequently co-occur. An uneven profile of abilities is common, such as a
+combination of above-average abilities in drawing, design, and other visuospatial abilities, and
+slow, effortful, and inaccurate reading and poor reading comprehension and written expression.
+Specific learning disorder is frequently but not invariably preceded, in preschool years, by delays
+in attention, language, or motor skills that may persist and co-occur with specific learning
+disorder.
+Individuals with specific learning disorder typically (but not invariably) exhibit poor
+performance on psychological tests of cognitive processing. However, it remains unclear
+whether these cognitive abnormalities are the cause, correlate, or consequence of the learning
+difficulties. Cognitive deficits associated with difficulties learning to read words are well
+documented, and there is a burgeoning understanding of the cognitive deficits associated with
+difficulty acquiring mathematics skills, but cognitive deficits associated with other
+manifestations of specific learning disorder (e.g., reading comprehension, written expression) are
+underspecified.
+81
+Although individual cognitive deficits particularly contribute to each specific learning
+disorder symptom, some cognitive deficits are shared across different specific learning disorder
+subtypes (e.g., processing speed) and may contribute to co-occurring symptoms of specific
+learning disorder. The co-occurring nature of the symptoms of specific learning disorder and the
+shared cognitive deficits across the specific learning disorder subtypes suggest shared underlying
+biological mechanisms.
+Thus, individuals with similar behavioral symptoms or test scores are found to have a variety
+of cognitive deficits, and many of these processing deficits are also found in other
+neurodevelopmental disorders (e.g., attention-deficit/hyperactivity disorder [ADHD], autistic
+spectrum disorder, communication disorders, developmental coordination disorder).
+As a group, individuals with the disorder show circumscribed alterations in cognitive
+processing and brain structure and function. Genetic differences are also evident at the group
+level. However, cognitive testing, neuroimaging, or genetic testing are not useful for diagnosis at
+this time, and assessment of cognitive processing deficits is not required for diagnostic
+assessment.
+Prevalence
+The prevalence of specific learning disorder across the academic domains of reading, writing,
+and mathematics is 5%–15% among school-age children in Brazil, Northern Ireland, and the
+United States. Prevalence in adults is unknown.
+Development and Course
+Onset, recognition, and diagnosis of specific learning disorder usually occur during the
+elementary school years when children are required to learn to read, spell, write, and learn
+mathematics. However, precursors such as language delays or deficits, difficulties in rhyming or
+counting, or difficulties with fine motor skills required for writing commonly occur in early
+childhood before the start of formal schooling.
+Manifestations may be behavioral (e.g., a reluctance to engage in learning; oppositional
+behavior). Specific learning disorder is lifelong, but the course and clinical expression are
+variable, in part depending on the interactions among the task demands of the environment, the
+range and severity of the individual’s learning difficulties, the individual’s learning abilities,
+comorbidity, and the available support systems and intervention. Nonetheless, problems with
+reading fluency and comprehension, spelling, written expression, and numeracy skills in
+everyday life typically persist into adulthood.
+Changes in manifestation of symptoms occur with age, so that an individual may have a
+persistent or shifting array of learning difficulties across the lifespan. Adults with specific
+learning disorder appear to experience limitations and restrictions in activity and participation in
+domains of communication, interpersonal interactions and community, and social and civic life.
+Examples of symptoms that may be observed among preschool-age children include a lack of
+interest in playing games with language sounds (e.g., repetition, rhyming), and they may have
+trouble learning nursery rhymes. Preschool children with specific learning disorder may
+frequently use baby talk, mispronounce words, and have trouble remembering names of letters,
+numbers, or days of the week. They may fail to recognize letters in their own names and have
+trouble learning to count. Kindergarten-age children with specific learning disorder may be
+unable to recognize and write letters, may be unable to write their own names, or may have
+persistent use of invented spelling beyond developmentally typical time frames.
+They may have trouble breaking down spoken words into syllables (e.g., “cowboy” into
+“cow” and “boy”) and trouble recognizing words that rhyme (e.g., cat, bat, hat). Kindergarten-
+age children also may have trouble connecting letters with their sounds (e.g., letter b makes the
+sound /b/) and may be unable to recognize phonemes (e.g., do not know which in a set of words
+[e.g., dog, man, car] starts with the same sound as “cat”).
+Specific learning disorder in elementary school–age children typically manifests as marked
+difficulty learning letter-sound correspondence (particularly in English-speaking children),
+82
+fluent word decoding, spelling, or math facts; reading aloud is slow, inaccurate, and effortful,
+and some children struggle to understand the magnitude that a spoken or written number
+represents. Children in primary grades (grades 1–3) may continue to have problems recognizing
+and manipulating phonemes, be unable to read common one-syllable words (such as mat or top),
+and be unable recognize common irregularly spelled words (e.g., said, two). They may commit
+reading errors that indicate problems in connecting sounds and letters (e.g., “big” for “got”) and
+have difficulty sequencing numbers and letters. Children in grades 1–3 also may have difficulty
+remembering number facts or arithmetic procedures for adding, subtracting, and so forth, and
+may complain that reading or arithmetic is hard and avoid doing it. Children with specific
+learning disorder in the middle grades (grades 4–6) may mispronounce or skip parts of long,
+multisyllable words (e.g., say “conible” for “convertible,” “aminal” for “animal”) and confuse
+words that sound alike (e.g., “tornado” for “volcano”). They may have trouble remembering
+dates, names, and telephone numbers and may have trouble completing homework or tests on
+time. Children in the middle grades also may have poor comprehension with or without slow,
+effortful, and inaccurate reading, and they may have trouble reading small function words (e.g.,
+that, the, an, in). They may have very poor spelling and poor written work. They may get the first
+part of a word correctly, then guess wildly (e.g., read “clover” as “clock”), and may express fear
+of reading aloud or refuse to read aloud.
+By contrast, adolescents may have mastered word decoding, but reading remains slow and
+effortful, and they are likely to show marked problems in reading comprehension and written
+expression (including poor spelling) and poor mastery of math facts or mathematical problem
+solving. During adolescence and into adulthood, individuals with specific learning disorder may
+continue to make numerous spelling mistakes and read single words and connected text slowly
+and with much effort, with trouble pronouncing multisyllable words. They may frequently need
+to reread material to understand or get the main point and have trouble making inferences from
+written text. Adolescents and adults may avoid activities that demand reading or arithmetic
+(reading for pleasure, reading instructions). Adults with specific learning disorder have ongoing
+spelling problems, slow and effortful reading, or problems making important inferences from
+numerical information in work-related written documents. They may avoid both leisure and
+work-related activities that demand reading or writing or use alternative approaches to access
+print (e.g., text-to-speech/speech-to-text software, audiobooks, audiovisual media).
+An alternative clinical expression is that of circumscribed learning difficulties that persist
+across the lifespan, such as an inability to master the basic sense of number (e.g., to know which
+of a pair of numbers or dots represents the larger magnitude), or lack of proficiency in word
+identification or spelling. Avoidance of or reluctance to engage in activities requiring academic
+skills is common in children, adolescents, and adults. Individuals with poor reading and math
+skills are more likely to report socioemotional distress (e.g., sadness, loneliness) as they advance
+across elementary grade levels.
+Episodes of severe anxiety or anxiety disorders, including somatic complaints or panic
+attacks, are common across the lifespan and accompany both the circumscribed and the broader
+Environmental.
+Genetic and physiological.
+Course modifiers.
+expression of learning difficulties.
+Risk and Prognostic Factors
+Environmental 
+factors, 
+including 
+socioeconomic 
+conditions 
+(e.g., 
+low
+socioeconomic status) and exposure to neurotoxicants, increase the risk for specific learning
+disorder or difficulties in reading and mathematics. Risks for specific learning disorder or
+difficulties in reading and mathematics include prenatal or early-life exposure to any of the
+following: air pollution, nicotine, polybrominated diphenyl ethers or polychlorinated biphenyls
+(flame retardants), lead, or manganese.
+Specific learning disorder appears to aggregate in families, particularly
+when affecting reading, mathematics, and spelling. The relative risk of specific
+83
+learning disorder in reading or mathematics is substantially higher (e.g., 4–8 times and 5–10
+times higher, respectively) in first-degree relatives of individuals with these learning difficulties
+compared with those without them. Notably, rates vary depending on method of ascertainment
+(objective testing or self-report) of parent diagnostic status. Family history of reading difficulties
+(dyslexia) and parental literacy skills predict literacy problems or specific learning disorder in
+offspring, indicating the combined role of genetic and environmental factors.
+There is high heritability for both reading ability and reading disability in alphabetic and
+nonalphabetic languages, including high heritability for most manifestations of learning abilities
+and disabilities (e.g., heritability estimate values greater than 0.6). Covariation between various
+manifestations of learning difficulties is high, suggesting that genes related to one presentation
+are highly correlated with genes related to another manifestation.
+Preterm delivery or very low birthweight is a risk for specific learning disorder. In
+individuals with neurofibromatosis type 1, risk of specific learning disorder is high, with up to
+75% of individuals demonstrating a learning disorder.
+Marked problems with inattentive, internalizing, and externalizing behaviors in
+preschool years are predictive of later difficulties in reading and mathematics (but not necessarily
+specific learning disorder) and nonresponse to effective academic interventions. Language
+impairment in preschool years is strongly associated with later impairment in reading (e.g., word
+reading, reading comprehension). For example, delay or disorders in speech or language, or
+impaired cognitive processing (e.g., phonological awareness, working memory, rapid serial
+naming), may predict later specific learning disorder in reading and in written expression.
+Additionally, a diagnosis of ADHD in childhood is associated with underachievement in reading
+and math in adulthood. Comorbidity with ADHD is predictive of worse mental health outcome
+than that associated with specific learning disorder without ADHD. Systematic, intensive,
+individualized instruction, using evidence-based interventions, may improve or ameliorate the
+learning difficulties in some individuals or promote the use of compensatory strategies in others,
+thereby mitigating the otherwise poor outcomes.
+Culture-Related Diagnostic Issues
+Specific learning disorder occurs across linguistic and ethnoracial backgrounds and across
+cultural and socioeconomic contexts but may vary in its manifestation according to the nature of
+the spoken and written symbol systems and cultural and educational practices. For example, the
+cognitive processing requirements of reading and of working with numbers vary greatly across
+orthographies. In the English language, the observable hallmark clinical symptom of difficulties
+learning to read is inaccurate and slow reading of single words; in other alphabetic languages
+that have more direct mapping between sounds and letters (e.g., Spanish, German) and in
+nonalphabetic languages (e.g., Chinese, Japanese), the hallmark feature is slow but accurate
+reading. In English-language learners, assessment should include consideration of whether the
+source of reading difficulties is a limited proficiency with English or a specific learning disorder.
+Risk factors for specific learning disorder in English-language learners include a family history
+of specific learning disorder or language delay in the native language, as well as learning
+difficulties and deficits in phonological memory in English and failure to catch up with peers. If
+there is suspicion of cultural or language differences (e.g., that an English-language learner is
+influenced by limited English proficiency), the assessment needs to take into account the
+individual’s language proficiency in his or her first or native language as well as in the second
+language (in this example, English). Importantly, children who speak a language at home that
+differs phonologically from the language of academic instruction are not more likely to have
+phonological deficits than their peers who speak the same language at home and at school.
+Comorbid reading difficulties may vary with different languages; for example, reading
+difficulties are less frequent among Chinese-reading children with developmental coordination
+disorder in Taiwan compared
+84
+with children in English-speaking countries, possibly because of the characteristics of the two
+written languages (logographic vs. alphabetic). Considerations in assessment may include the
+linguistic and cultural context in which the individual is living, as well as his or her educational
+and learning history in the original linguistic and cultural context. Risk factors for learning
+problems among refugee and migrant children include teacher stereotyping and low expectations,
+bullying, ethnic and racialized discrimination, parental misunderstandings about educational
+styles and expectations, trauma, and postmigration stressors.
+Sex- and Gender-Related Diagnostic Issues
+Specific learning disorder is more common in males than in females (ratios range from about 2:1
+to 3:1) and cannot be attributed to factors such as ascertainment bias, definitional or
+measurement variation, language, ethnoracial background, or socioeconomic status. Sex
+differences in dyslexia (specific learning disorder with impairment in reading) may be partially
+mediated by processing speed.
+Association With Suicidal Thoughts or Behavior
+In U.S. adolescents age 15 years in public school, poor reading ability was associated with
+suicidal thoughts and behavior compared with adolescents with typical reading scores, even
+when controlling for sociodemographic and psychiatric variables. In a population-based study of
+adults in Canada, prevalence of lifetime suicide attempts among those with specific learning
+disorder was higher than that among those without a specific learning disorder, even after
+Normal variations in academic attainment.
+Intellectual developmental disorder (intellectual disability).
+Learning difficulties due to neurological or sensory disorders.
+Neurocognitive disorders.
+Attention-deficit/hyperactivity disorder.
+adjustment for childhood adversities, history of mental illness and substance use, and
+sociodemographic factors. Among those with specific learning disorder, a history of witnessing
+chronic parental domestic violence and ever having had a major depressive disorder were
+associated with increased risk for suicidal behavior.
+Functional Consequences of Specific Learning Disorder
+Specific learning disorder can have negative functional consequences across the lifespan,
+including lower academic attainment, higher rates of high school dropout, lower rates of
+postsecondary education, high levels of psychological distress and poorer overall mental health,
+higher rates of unemployment and underemployment, and lower incomes. School dropout and
+co-occurring depressive symptoms increase the risk for poor mental health outcomes, including
+suicidal thoughts or behavior, whereas high levels of social or emotional support predict better
+mental health outcomes.
+Differential Diagnosis
+Specific learning disorder is distinguished from normal
+variations in academic attainment attributable to external factors (e.g., lack of educational
+opportunity, consistently poor instruction, learning in a second language), because the learning
+difficulties persist in the presence of adequate educational opportunity and exposure to the same
+instruction as the peer group, and competency in the language of instruction, even when it is
+different from one’s primary spoken language.
+Specific learning disorder differs from
+general learning difficulties associated with intellectual developmental disorder, because the
+learning difficulties occur in the presence of normal levels of intellectual functioning (i.e., IQ
+score of at least 70 ± 5). If intellectual developmental disorder is present, specific learning
+disorder can be diagnosed only when the learning difficulties are in excess of those usually
+associated with the intellectual developmental disorder.
+Specific 
+learning 
+disorder 
+is
+distinguished from learning difficulties due to neurological or sensory disorders
+85
+(e.g., pediatric stroke, traumatic brain injury, hearing impairment, vision impairment), because in
+these cases there are abnormal findings on neurological examination.
+Specific learning disorder is distinguished from learning problems
+associated with neurodegenerative cognitive disorders. In specific learning disorder, the clinical
+expression of specific learning difficulties occurs during the developmental period, which
+sometimes only becomes evident when learning demands have increased and exceed the
+individual’s limited capacities (as may occur in adulthood), and the difficulties do not manifest
+as a marked decline from a former state.
+Specific learning disorder is distinguished from the poor
+academic performance associated with ADHD, because in the latter condition the problems may
+not necessarily reflect specific difficulties in learning academic skills but rather may reflect
+difficulties in performing those skills. However, the co-occurrence of specific learning disorder
+Psychotic disorders.
+F82
+and ADHD is more frequent than expected by chance. If criteria for both disorders are met, both
+diagnoses can be given.
+Specific learning disorder is distinguished from the cognitive-processing
+difficulties associated with schizophrenia or other psychotic disorders, because with these
+disorders there is a decline (often rapid) in these functional domains. However, deficits in
+reading ability are more severe in specific learning disorder than what would be predicted by the
+general cognitive impairments associated with schizophrenia. If criteria for both disorders are
+met, both diagnoses can be given.
+Comorbidity
+The different types of specific learning disorder commonly co-occur with one another (e.g.,
+specific learning disorder with impairment in mathematics and with impairment in reading) and
+with other neurodevelopmental disorders (e.g., ADHD, communication disorders, developmental
+coordination disorder, autism spectrum disorder) or other mental disorders (e.g., anxiety and
+depressive disorders) or behavioral problems. Notably, estimates of the comorbidity of math and
+reading difficulties vary depending on the tests used to define the math difficulty, likely because
+the same symptom (e.g., arithmetic problems) can be associated with different cognitive deficits
+(e.g., a deficit in language skills or a deficit in number processing). These comorbidities do not
+necessarily exclude the diagnosis of specific learning disorder but may make testing and
+differential diagnosis more difficult, because each of the co-occurring disorders independently
+interferes with the execution of activities of daily living, including learning. Thus, clinical
+judgment is required to attribute such impairment to learning difficulties. If there is an indication
+that another diagnosis could account for the difficulties learning keystone academic skills
+described in Criterion A, specific learning disorder should not be diagnosed.

@@ -1,0 +1,254 @@
+ Substance/Medication-Induced Depressive Disorder
+ Diagnostic Criteria
+ A. A prominent and persistent disturbance in mood that predominates in the clinical
+ picture and is characterized by depressed mood or markedly diminished interest
+ or pleasure in all, or almost all, activities.
+ B. There is evidence from the history, physical examination, or laboratory findings
+ of both (1) and (2):
+ 1. The symptoms in Criterion A developed during or soon after substance
+ intoxication or withdrawal or after exposure to or withdrawal from a
+ medication.
+ 2. The involved substance/medication is capable of producing the symptoms in
+ Criterion A.
+ C. The disturbance is not better explained by a depressive disorder that is not
+ substance/medication-induced. Such evidence of an independent depressive
+ disorder could include the following:
+ The symptoms preceded the onset of the substance/medication use; the
+ symptoms persist for a substantial period of time (e.g., about 1 month) after the
+ cessation of acute withdrawal or severe intoxication; or there is other evidence
+ suggesting the existence of an independent non-substance/medication-induced
+ depressive disorder (e.g., a history of recurrent non-substance/medication
+related episodes).
+ D. The disturbance does not occur exclusively during the course of a delirium.
+ E. The disturbance causes clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ Note: This diagnosis should be made instead of a diagnosis of substance
+ intoxication or substance withdrawal only when the symptoms in Criterion A
+ predominate in the clinical picture and when they are sufficiently severe to warrant
+clinical attention.
+ Coding note: The ICD-10-CM codes for the [specific substance/medication]-induced
+ depressive disorders are indicated in the table below. Note that the ICD-10-CM code
+ depends on whether or not there is a comorbid substance use disorder present for
+ the same class of substance. In any case, an additional separate diagnosis of a
+ substance use disorder is not given. If a mild substance use disorder is comorbid
+ with the substance-induced depressive disorder, the 4th position character is “1,”
+ and the clinician should record “mild [substance] use disorder” before the substance
+induced depressive disorder (e.g., “mild cocaine use disorder with cocaine-induced
+ depressive disorder”). If a moderate or severe substance use disorder is comorbid
+ with the substance-induced depressive disorder, the 4th position character is “2,”
+ and the clinician should record “moderate [substance] use disorder” or “severe
+ [substance] use disorder,” depending on the severity of the comorbid substance use
+ disorder. If there is no comorbid substance use disorder (e.g., after a one-time heavy
+ use of the substance), then the 4th position character is “9,” and the clinician should
+ record only the substance-induced depressive disorder.
+ 202
+ ICD-10-CM
+ With mild use
+ disorder
+ With moderate or
+ severe use
+ disorder
+ Without use
+ disorder
+ Alcohol F10.14 F10.24 F10.94
+ Phencyclidine F16.14 F16.24 F16.94
+ Other hallucinogen F16.14 F16.24 F16.94
+ Inhalant F18.14 F18.24 F18.94
+ Opioid F11.14 F11.24 F11.94
+ Sedative, hypnotic, or anxiolytic F13.14 F13.24 F13.94
+ Amphetamine-type substance (or other
+ stimulant)
+ F15.14 F15.24 F15.94
+ Cocaine F14.14 F14.24 F14.94
+ Other (or unknown) substance F19.14 F19.24 F19.94
+ Specify (see Table 1 in the chapter “Substance-Related and Addictive Disorders,”
+ which indicates whether “with onset during intoxication” and/or “with onset during
+ withdrawal” applies to a given substance class; or specify “with onset after
+ medication use”):
+ With onset during intoxication: If criteria are met for intoxication with the
+ substance and the symptoms develop during intoxication.
+ With onset during withdrawal: If criteria are met for withdrawal from the
+ substance and the symptoms develop during, or shortly after, withdrawal.
+ With onset after medication use: If symptoms developed at initiation of
+ medication, with a change in use of medication, or during withdrawal of
+medication.
+ Recording Procedures
+ The name of the substance/medication-induced depressive disorder begins with the specific
+ substance (e.g., cocaine, dexamethasone) that is presumed to be causing the depressive
+ symptoms. The diagnostic code is selected from the table included in the criteria set, which is
+ based on the drug class and presence or absence of a comorbid substance use disorder. For
+ substances that do not fit into any of the classes (e.g., dexamethasone), the code for “other (or
+ unknown) substance” should be used; and in cases in which a substance is judged to be an
+ etiological factor but the specific class of substance is unknown, the same code should also be
+ used.
+ When recording the name of the disorder, the comorbid substance use disorder (if any) is
+ listed first, followed by the word “with,” followed by the name of the substance-induced
+ depressive disorder, followed by the specification of onset (i.e., onset during intoxication, onset
+ during withdrawal). For example, in the case of depressive symptoms occurring during
+ withdrawal in a man with a severe cocaine use disorder, the diagnosis is F14.24 severe cocaine
+ use disorder with cocaine-induced depressive disorder, with onset during withdrawal. A separate
+ diagnosis of the comorbid severe cocaine use disorder is not given. If the substance-induced
+ depressive disorder occurs without a comorbid substance use disorder (e.g., after a one-time
+ heavy use of the substance), no accompanying substance use disorder is noted (e.g., F16.94
+ phencyclidine-induced depressive disorder, with onset during intoxication). When more than one
+ substance is judged to play a significant role in the development of depressive
+ 203
+ mood symptoms, each should be listed separately (e.g., F15.24 severe methylphenidate use
+ disorder with methylphenidate-induced depressive disorder, with onset during withdrawal;
+ F19.94 dexamethasone-induced depressive disorder, with onset during intoxication).
+ Diagnostic Features
+ The essential feature of substance/medication-induced depressive disorder is a prominent and
+ persistent disturbance in mood that predominates in the clinical picture and is characterized by
+ depressed mood or markedly diminished interest or pleasure in all, or almost all, activities
+ (Criterion A) that is due to the direct physiological effects of a substance (e.g., a drug of abuse, a
+ medication, or a toxin exposure) (Criterion B). In order to meet criteria for the diagnosis, the
+ depressive symptoms must have developed during or soon after substance intoxication or
+ withdrawal or after exposure to or withdrawal from a medication, as evidenced by clinical
+ history, physical examination, or laboratory findings (Criterion B1), and the involved
+ substance/medication must be capable of producing the depressive symptoms (Criterion B2). In
+ addition, the depressed symptoms are not better explained by a non-substance/medication
+induced depressive disorder.
+ Evidence of an independent depressive disorder includes the observation that the depressive
+ symptoms preceded the onset of substance/medication use, the depressive symptoms persist
+ beyond a substantial period of time after the cessation of acute withdrawal or severe intoxication,
+or there is other evidence that suggests the existence of an independent non
+substance/medication-induced depressive disorder (Criterion C), such as a history of recurrent
+ non-substance-induced depressive episodes. This diagnosis should not be made when symptoms
+ occur exclusively during the course of a delirium (Criterion D). Finally, the diagnosis requires
+ that the substance/medication-induced depressive symptoms cause clinically significant distress
+ or impairment in social, occupational, or other important areas of functioning (Criterion E). The
+ substance-induced depressive disorder diagnosis should be made instead of a diagnosis of
+ substance intoxication or substance withdrawal only when the symptoms in Criterion A
+ predominate in the clinical picture and are sufficiently severe to warrant independent clinical
+ attention.
+ The two categories of drugs of abuse most likely to cause a substance/medication-induced
+ depressive disorder are depressants (e.g., intoxication with alcohol, benzodiazepines and other
+ sedative, hypnotic, or anxiolytic drugs) and stimulants (e.g., withdrawal from amphetamine-type
+ substances and cocaine). Some medications (e.g., steroids; antihypertensive medications such as
+ clonidine, guanethidine, methyldopoa, and reserpine; interferon; L-dopa) are especially likely to
+ cause substance/medication-induced depressive syndromes. Substances implicated in
+ medication-induced depressive disorder, with varying degrees of evidence, include antibiotics,
+ antiviral agents (efavirenz), cardiovascular agents (beta-blockers and calcium channel blockers,
+ retinoic acid derivatives (isotretinoin), antidepressants, anticonvulsants, antimigraine agents
+ (triptans), antipsychotics, hormonal agents (corticosteroids, oral contraceptives, gonadotropin
+releasing hormone agonists, tamoxifen), chemotherapeutic drugs, and smoking cessation agents
+ (varenicline). This list is likely to grow as new compounds are synthesized.
+ Clear clinical histories and careful judgment are essential in determining whether the
+ substance of abuse or medication is truly associated with induced depressive symptoms or
+ whether the symptoms are better understood as constituting an independent depressive disorder.
+ A diagnosis of a substance/medication-induced depressive disorder is most likely if the
+ individual was taking high doses of a relevant drug of abuse or medication and there is no past
+ history of independent depressive episodes. For example, a depressive episode that developed in
+ the context of heavy use of a relevant substance of abuse or within the first several weeks of
+ beginning alpha-methyldopa (an antihypertensive agent) in an individual with no history of
+ major depressive disorder would qualify for the diagnosis of a substance- or medication-induced
+ depressive disorder. In some cases, a previously established condition (e.g., major depressive
+ disorder, recurrent) can recur while the individual is
+ 204
+ coincidentally taking a drug or medication that has the capacity to cause depressive
+ symptoms (e.g., alcohol and/or stimulants in context of heavy use, L-dopa, oral contraceptives).
+ In all of these cases, the clinician must make a judgment as to whether the medication is
+ causative in this particular situation.
+ A substance/medication-induced depressive disorder is distinguished from an independent
+ depressive disorder by the onset or course, or by other factors associated with the substance or
+ medication use. There must be evidence from the history, physical examination, or laboratory
+ findings of use of a drug of abuse or a medication that is capable of producing depressive
+ symptoms after exposure to, withdrawal from, or intoxication with that substance prior to the
+onset of the depressive disorder. The neurochemical changes associated with intoxication and
+ withdrawal states for some substances can be relatively protracted, and thus intense depressive
+ symptoms can last for a longer period after the cessation of substance use and still be consistent
+ with a diagnosis of a substance/medication-induced depressive disorder.
+ Prevalence
+ The lifetime rate of alcohol- and stimulant-induced depressive episodes has been reported to be
+ 40% or higher among individuals with relevant substance use disorders. However, in a nationally
+ representative U.S. adult population, the lifetime prevalence of substance/medication-induced
+ depressive disorder in the absence of a lifetime history of non-substance-induced depressive
+ disorder was only 0.26%. These data indicate that special care must be taken to search for and
+ address substance-induced conditions in individuals with alcohol and stimulant use disorders.
+ Development and Course
+ A depressive disorder associated with the use of substances (e.g., alcohol, amphetamine-type
+ substances and/or cocaine, or a prescribed treatment for medical conditions) must have its onset
+ while the individual is using the substance or during withdrawal, if there is a withdrawal
+ syndrome associated with the substance. Most often, the depressive disorder has its onset within
+ the first few weeks or 1 month of heavy use of the substance. Once the substance is discontinued,
+ the depressive symptoms usually remit within days to several weeks, depending on the half-life
+ of the substance/medication and the presence of a withdrawal syndrome. If symptoms persist 4
+ weeks beyond the expected time course of withdrawal of a particular substance/medication, other
+ causes for the depressive mood symptoms should be considered.
+ There are several prospective controlled trials examining the association of depressive
+ symptoms with use of a prescribed medication, but most reports on this topic involve
+ retrospective series of individuals entering treatment, or participants in large cross-sectional
+ studies. More studies exist regarding the clinical course of alcohol- and illicit drug–induced
+ depressions, and most support the contention that the substance-induced conditions are very
+ likely to fade away within a relatively short time after abstinence. Equally important are
+ indications that individuals with significant residual depressive symptoms following treatment
+ for substance use disorders have a greater likelihood of relapse into their substance use.
+ Risk and Prognostic Factors
+ Risk factors for substance-induced depressive disorder include a history of antisocial personality
+ disorder, schizophrenia, and bipolar disorder; a history of stressful life events in the past 12
+ months; a history of prior drug-induced depressions; and a family history of substance use
+ disorders. In addition, neurochemical changes associated with alcohol and other drugs of abuse
+ often contribute to depressive and anxiety symptoms during withdrawal that subsequently
+ influence ongoing substance use and reduce the likelihood of remission of substance use
+ disorders. The course of substance-induced depressive disorder may be worsened by social
+structural adversity associated with poverty, racism, and marginalization.
+ 205
+Sex- and Gender-Related Diagnostic Issues
+ Among individuals with a substance use disorder, the risk for developing a substance-induced
+ depressive disorder appears to be similar in men and women.
+ Diagnostic Markers
+ Laboratory assays of the suspected substance in the blood or urine are of limited value in
+ identifying substance-induced depressive disorder because blood and urine levels are often
+ negative when an individual comes for evaluation, reflecting the fact that substance-induced
+ depressions can last for up to 4 weeks after use of the drug of abuse or medication has ceased.
+ Therefore, a positive test value only means that an individual has had recent experience with a
+ substance but by itself does not establish a time course or other characteristics that are likely to
+ be associated with substance-induced depressive disorder. However, as is true of most mental
+ disorders, the most important data in diagnosing these conditions come from a detailed clinical
+ history and the mental status examination.
+ Association With Suicidal Thoughts or Behavior
+ The risk of suicide attempts is higher among individuals with possible alcohol use disorder
+ experiencing depressive episodes, whether substance induced or independent of substances, as
+ compared with control subjects.
+ Differential Diagnosis
+ Substance intoxication and withdrawal.
+ Depressive symptoms occur commonly in substance
+ intoxication and substance withdrawal. A diagnosis of substance-induced depressive disorder
+ should be made instead of a diagnosis of substance intoxication or substance withdrawal when
+ the mood symptoms are sufficiently severe to warrant independent clinical attention. For
+ example, dysphoric mood is a characteristic feature of cocaine withdrawal. Substance-induced
+ depressive disorder with onset during withdrawal should be diagnosed instead of cocaine
+ withdrawal only if the mood disturbance in Criterion A predominates in the clinical picture and
+ is sufficiently severe to be a separate focus of attention and treatment.
+ Independent depressive disorder.
+ A substance/medication-induced depressive disorder is
+ distinguished from an independent depressive disorder by the fact that even though a substance is
+ taken in high enough amounts to be possibly etiologically related to the symptoms, if the
+ depressive syndrome is observed at times other than when the substance or medication is being
+ used, it should be diagnosed as an independent depressive disorder.
+ Depressive disorder due to another medical condition.
+ Because individuals with medical conditions
+ often take medications for those conditions, the clinician must consider the possibility that the
+ mood symptoms are caused by the physiological consequences of the medical condition rather
+ than the medication, in which case depressive disorder due to another medical condition is
+ diagnosed. The history often provides the primary basis for such a judgment. At times, a change
+ in the treatment for the medical condition (e.g., medication substitution or discontinuation) may
+ be needed to determine empirically whether the medication is the causative agent. If the clinician
+ has ascertained that the disturbance is a function of both another medical condition and substance
+ use or withdrawal, then both diagnoses (i.e., depressive disorder due to another medical
+condition and substance/medication-induced depressive disorder) may be given. When there is
+ insufficient evidence to determine whether the depressive symptoms are associated with
+ substance (including a medication) ingestion or withdrawal or with another medical condition or
+ are independent (i.e., not a function of either a substance or another medical condition), a
+ diagnosis of other specified depressive disorder or unspecified depressive disorder is indicated.
+ 206
+ Comorbidity
+ In one study using DSM-IV, comparing individuals with independent major depressive disorder
+ and no comorbid substance use disorder and individuals with substance/medication-induced
+ depressive disorder, those with substance/medication-induced depressive disorder had higher
+ rates of comorbidity with any DSM-IV mental disorder; were more likely to have specific
+ disorders of tobacco use disorder, gambling disorder, and antisocial personality disorder; and
+ were less likely to have persistent depressive disorder. Compared with individuals with major
+ depressive disorder and a comorbid substance use disorder, individuals with
+ substance/medication-induced depressive disorder are more likely to have alcohol or other
+ substance use disorder; however, they are less likely to have persistent depressive disorder.

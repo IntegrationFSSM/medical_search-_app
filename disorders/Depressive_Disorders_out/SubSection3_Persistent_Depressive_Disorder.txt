@@ -1,0 +1,207 @@
+ Persistent Depressive Disorder
+ Diagnostic Criteria
+ This disorder represents a consolidation of DSM-IV-defined chronic major
+ depressive disorder and dysthymic disorder.
+ A. Depressed mood for most of the day, for more days than not, as indicated by
+ either subjective account or observation by others, for at least 2 years.
+ Note: In children and adolescents, mood can be irritable and duration must be at
+ least 1 year.
+ B. Presence, while depressed, of two (or more) of the following:
+1. Poor appetite or overeating.
+ 2. Insomnia or hypersomnia.
+ 3. Low energy or fatigue.
+ 4. Low self-esteem.
+ 5. Poor concentration or difficulty making decisions.
+ 6. Feelings of hopelessness.
+ C. During the 2-year period (1 year for children or adolescents) of the disturbance,
+ the individual has never been without the symptoms in Criteria A and B for more
+ than 2 months at a time.
+ D. Criteria for a major depressive disorder may be continuously present for 2 years.
+ E. There has never been a manic episode or a hypomanic episode.
+ F. The disturbance is not better explained by a persistent schizoaffective disorder,
+ schizophrenia, delusional disorder, or other specified or unspecified
+ schizophrenia spectrum and other psychotic disorder.
+ G. The symptoms are not attributable to the physiological effects of a substance
+ (e.g., a drug of abuse, a medication) or another medical condition (e.g.,
+ hypothyroidism).
+ H. The symptoms cause clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ Note: If criteria are sufficient for a diagnosis of a major depressive episode at any
+ time during the 2-year period of depressed mood, then a separate diagnosis of major
+ depression should be made in addition to the diagnosis of persistent depressive
+ disorder along with the relevant specifier (e.g., with intermittent major depressive
+ episodes, with current episode).
+ Specify if:
+ With anxious distress (pp. 210–211)
+ With atypical features (p. 212)
+ Specify if:
+ In partial remission (p. 214)
+ In full remission (p. 214)
+ Specify if:
+ Early onset: If onset is before age 21 years.
+ Late onset: If onset is at age 21 years or older.
+ Specify if (for most recent 2 years of persistent depressive disorder):
+ With pure dysthymic syndrome: Full criteria for a major depressive episode
+ have not been met in at least the preceding 2 years.
+ With persistent major depressive episode: Full criteria for a major depressive
+ episode have been met throughout the preceding 2-year period.
+ 194
+With intermittent major depressive episodes, with current episode: Full
+ criteria for a major depressive episode are currently met, but there have been
+ periods of at least 8 weeks in at least the preceding 2 years with symptoms
+ below the threshold for a full major depressive episode.
+ With intermittent major depressive episodes, without current episode: Full
+ criteria for a major depressive episode are not currently met, but there has been
+ one or more major depressive episodes in at least the preceding 2 years.
+ Specify current severity:
+ Mild (p. 214)
+ Moderate (p. 214)
+ Severe (p. 214)
+ Diagnostic Features
+ The essential feature of persistent depressive disorder is a depressed mood that occurs for most
+ of the day, for more days than not, for at least 2 years, or at least 1 year for children and
+ adolescents (Criterion A). This disorder represents a consolidation of DSM-IV-defined chronic
+ major depressive disorder and dysthymic disorder. Major depression may precede persistent
+ depressive disorder, and major depressive episodes may occur during persistent depressive
+ disorder. Individuals whose symptoms meet major depressive disorder criteria for 2 years should
+ be given a diagnosis of persistent depressive disorder as well as major depressive disorder.
+ Individuals with persistent depressive disorder describe their mood as sad or “down in the
+ dumps.” During periods of depressed mood, at least two of the six symptoms from Criterion B
+ are present. Because these symptoms have become a part of the individual’s day-to-day
+ experience, particularly in the case of early onset (e.g., “I’ve always been this way”), they may
+ not be reported unless the individual is directly prompted. During the 2-year period (1 year for
+ children or adolescents), any symptom-free intervals that have occurred have lasted no longer
+ than 2 months (Criterion C).
+ Prevalence
+ Persistent depressive disorder is effectively an amalgam of DSM-IV dysthymic disorder and
+ chronic major depressive episode. The 12-month prevalence in the United States is
+ approximately 0.5% for dysthymic disorder and 1.5% for chronic major depressive disorder,
+ with prevalence among women approximately 1.5 and 2 times higher than prevalence among
+ men for each of these diagnoses, respectively. Based on studies using comparable ascertainment
+ procedures, the lifetime and 12-month estimates of DSM-IV dysthymia may be higher in high
+income than in low- and middle-income countries. However, the disorder is associated with
+ elevated risk of suicidal outcomes and comparable levels of disability wherever it occurs.
+ Development and Course
+ Persistent depressive disorder often has an early and insidious onset (i.e., in childhood,
+ adolescence, or early adult life) and, by definition, a chronic course. Borderline personality
+ disorder is a particularly robust risk factor for persistent depressive disorder. When persistent
+depressive disorder and borderline personality disorder coexist, the covariance of the
+ corresponding features over time suggests the operation of a common mechanism. Early onset
+ (i.e., before age 21 years) is associated with a higher likelihood of comorbid personality
+ disorders and substance use disorders.
+ When symptoms rise to the level of a major depressive episode, they are likely to
+ subsequently revert to a lower level. However, depressive symptoms are much less likely to
+ resolve fully in a given period of time in the context of persistent depressive disorder than they
+ are in a nonchronic major depressive episode.
+ 195
+ Risk and Prognostic Factors
+ Temperamental.
+ Factors predictive of poorer long-term outcome include higher levels of negative
+ affectivity (neuroticism), greater symptom severity, poorer global functioning, and presence of
+ anxiety disorders or conduct disorder.
+ Environmental.
+ adversity.
+ Childhood risk factors include parental loss or separation and childhood
+ Genetic and physiological.
+ There are no clear differences in illness development, course, or family
+ history between DSM-IV dysthymic disorder and chronic major depressive disorder. Earlier
+ findings pertaining to either disorder are therefore likely to apply to persistent depressive
+ disorder. It is thus likely that individuals with persistent depressive disorder will have a higher
+ proportion of first-degree relatives with persistent depressive disorder than do individuals with
+ nonchronic major depressive disorder, and more depressive disorders in general.
+ A number of brain regions (e.g., prefrontal cortex, anterior cingulate, amygdala,
+ hippocampus) have been implicated in persistent depressive disorder. Possible
+ polysomnographic abnormalities exist as well.
+ Culture-Related Diagnostic Issues
+ The perceived abnormality or tolerance of chronic depressive symptoms may vary across
+ cultures, affecting symptom detection and treatment acceptability. For example, some social
+ groups or age cohorts may consider long-standing depressive symptoms to be normal reactions
+ to adversity.
+ Association With Suicidal Thoughts or Behavior
+ Persistent depressive disorder is associated with elevated risk of suicidal outcomes and
+ comparable levels of disability, whether the disorder occurs in high-, middle-, or low-income
+ countries.
+ Functional Consequences of Persistent Depressive Disorder
+ The degree to which persistent depressive disorder impacts social and occupational functioning
+ is likely to vary widely, but effects can be as great as or greater than those of major depressive
+ disorder.
+Differential Diagnosis
+ Major depressive disorder.
+ If there is a depressed mood for more days than not plus two or more
+ persistent depressive disorder Criterion B symptoms for 2 years or more, then the diagnosis of
+ persistent depressive disorder is made. If the symptom criteria are sufficient for a diagnosis of a
+ major depressive episode at any time during this period, then the additional diagnosis of major
+ depression should be made. The comorbid presence of major depressive episodes during this
+ period should also be noted by assigning the appropriate course specifier to the persistent
+ depressive disorder diagnosis as follows: If the individual’s symptoms currently meet full criteria
+ for a major depressive episode, and there have been periods of at least 8 weeks in at least the
+ preceding 2 years with symptoms below the threshold for a full major depressive episode, then
+ the specifier “with intermittent major depressive episodes, with current episode” would be
+ assigned. If full criteria for a major depressive episode are not currently met but there has been
+ one or more major depressive episodes in at least the preceding 2 years, then the specifier “with
+ intermittent major depressive episodes, without current episode” is assigned. If a major
+ depressive episode
+ 196
+ has persisted for at least a 2-year duration and remains present, then the specifier “with persistent
+ major depressive episode” is used. If the individual has not experienced an episode of major
+ depression in the last 2 years, then the specifier “with pure dysthymic syndrome” is used.
+ Other specified depressive disorder.
+ Because the criteria for a major depressive episode include
+ symptoms (i.e., markedly diminished interest or pleasure in activities; psychomotor agitation or
+ retardation; recurrent thoughts of death, suicidal ideation, suicide attempt or plan) that are absent
+ from the symptom list for persistent depressive disorder (i.e., depressed mood and two out of six
+ Criterion B symptoms), a very limited number of individuals will have depressive symptoms that
+ have persisted longer than 2 years but that do not meet criteria for persistent depressive disorder.
+ If full criteria for a major depressive episode have been met at some point during the current
+ episode of illness, a diagnosis of major depressive disorder would apply. Otherwise, a diagnosis
+ of other specified depressive disorder or unspecified depressive disorder should be given.
+ Bipolar I and bipolar II disorders.
+ A history of a manic or hypomanic episode precludes the
+ diagnosis of persistent depressive disorder. A history of manic episodes (with or without
+ hypomanic episodes) indicates a diagnosis of bipolar I disorder. A history of hypomanic episodes
+ (without any history of manic episodes in individuals with persistent depressive presentations
+ during which criteria have been met for a major depressive episode) warrants a diagnosis of
+ bipolar II disorder. Other specified bipolar disorder applies to individuals whose presentations
+ include a history of hypomanic episodes along with persistent depressive presentation that has
+ never met full criteria for a major depressive episode.
+ Cyclothymic disorder.
+ A diagnosis of cyclothymic disorder precludes the diagnosis of persistent
+ depressive disorder. Thus, if during the period lasting at least 2 years of depressed mood for most
+ of the day, for more days than not, 1) there are numerous periods with hypomanic symptoms that
+ do not meet criteria for a hypomanic episode, 2) there have not been any symptom-free periods
+ of more than 2 months at a time, and 3) criteria have never been met for a major depressive,
+ manic, or hypomanic episode, then the diag-nosis would be cyclothymic disorder instead of
+Psychotic disorders.
+ Depressive or bipolar and related disorder due to another medical condition.
+ Substance/medication-induced depressive or bipolar and related disorder.
+ Personality disorders.
+ F32.81
+ persistent depressive disorder.
+ Depressive symptoms are a common associated feature of chronic psychotic
+ disorders (e.g., schizoaffective disorder, schizophrenia, delusional disorder). A separate
+ diagnosis of persistent depressive disorder is not made if the symptoms occur only during the
+ course of the psychotic disorder (including residual phases).
+ Persistent depressive
+ disorder must be distinguished from a depressive or bipolar and related disorder due to another
+ medical condition. The diagnosis is depressive or bipolar and related disorder due to another
+ medical condition if the mood disturbance is judged, based on history, physical examination, or
+ laboratory findings, to be attributable to the direct pathophysiological effects of a specific,
+ usually chronic, medical condition (e.g., multiple sclerosis). If it is judged that the depressive
+ symptoms are not attributable to the physiological effects of another medical condition, then the
+ primary mental disorder (e.g., persistent depressive disorder) is recorded, and the medical
+ condition is noted as a concomitant medical condition (e.g., diabetes mellitus).
+ A substance/medication
+induced depressive or bipolar and related disorder is distinguished from persistent depressive
+ disorder when a substance (e.g., a drug of abuse, a medication, a toxin) is judged to be
+ etiologically related to the mood disturbance.
+ A personality disorder is characterized by an enduring pattern of inner
+ experience and behavior that deviates markedly from the expectations of the
+ 197
+ individual’s culture, with onset by adolescence or early adulthood. Personality disorders
+ commonly co-occur with persistent depressive disorder. If criteria are met for persistent
+ depressive disorder and a personality disorder, both may be diagnosed.
+ Comorbidity
+ In comparison to individuals with major depressive disorder, those with persistent depressive
+ disorder are at higher risk for psychiatric comorbidity in general, and for anxiety disorders,
+ substance use disorders, and personality disorders in particular. Early-onset persistent depressive
+ disorder is strongly associated with DSM-5 Cluster B and C personality disorders.

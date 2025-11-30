@@ -1,0 +1,175 @@
+Psychotic Disorder Due to Another Medical Condition
+ Diagnostic Criteria
+ A. Prominent hallucinations or delusions.
+ B. There is evidence from the history, physical examination, or laboratory findings
+ that the disturbance is the direct pathophysiological consequence of another
+ medical condition.
+ C. The disturbance is not better explained by another mental disorder.
+ D. The disturbance does not occur exclusively during the course of a delirium.
+ E. The disturbance causes clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ Specify whether:
+ Code based on predominant symptom:
+ F06.2 With delusions: If delusions are the predominant symptom.
+ F06.0 With hallucinations: If hallucinations are the predominant symptom.
+ Coding note: Include the name of the other medical condition in the name of the
+ mental disorder (e.g., F06.2 psychotic disorder due to malignant lung neoplasm, with
+ delusions). The other medical condition should be coded and listed separately
+ immediately before the psychotic disorder due to the medical condition (e.g., C34.90
+ malignant lung neoplasm; F06.2 psychotic disorder due to malignant lung neoplasm,
+ with delusions).
+ Specify current severity:
+ Severity is rated by a quantitative assessment of the primary symptoms of
+ psychosis, including delusions, hallucinations, abnormal psychomotor behavior,
+ and negative symptoms. Each of these symptoms may be rated for its current
+ severity (most severe in the last 7 days) on a 5-point scale ranging from 0 (not
+ present) to 4 (present and severe). (See Clinician-Rated Dimensions of
+ Psychosis Symptom Severity in the chapter “Assessment Measures.”)
+ Note: Diagnosis of psychotic disorder due to another medical condition can be
+ made without using this severity specifier.
+ Specifiers
+ In addition to the symptom domain areas identified in the diagnostic criteria, the assessment of
+ cognition, depression, and mania symptom domains is vital for making critically important
+ distinctions between the various schizophrenia spectrum and other psychotic disorders.
+Diagnostic Features
+ The essential features of psychotic disorder due to another medical condition are prominent
+ delusions or hallucinations that are judged to be attributable to the physiological effects of
+ another medical condition and are not better explained by another mental disorder (e.g., the
+ symptoms are not a psychologically mediated response to a severe medical condition, in which
+ case a diagnosis of brief psychotic disorder, with marked stressor, would be appropriate).
+ 132
+ Hallucinations can occur in any sensory modality (i.e., visual, olfactory, gustatory, tactile, or
+ auditory), but certain etiological factors are likely to evoke specific hallucinatory phenomena.
+ Olfactory hallucinations are suggestive of temporal lobe epilepsy, for example. Hallucinations
+ may vary from simple and unformed to highly complex and organized, depending on etiological
+ and environmental factors. Psychotic disorder due to another medical condition is generally not
+ diagnosed if the individual maintains reality testing for the hallucinations and appreciates that
+ they result from the medical condition. Delusions may have a variety of themes, including
+ somatic, grandiose, religious, and, most commonly, persecutory. On the whole, however,
+ associations between delusions and particular medical conditions appear to be less specific than
+ is the case for hallucinations.
+ Although there are no infallible guidelines to determine whether the psychotic disturbance is
+ etiologically attributable to another medical condition, three considerations can provide some
+ guidance: biological plausibility, temporality, and typicality. First, the presence of a medical
+ condition that has the potential to cause psychotic symptoms through a putative physiological
+ mechanism (e.g., severe, generalized infection; porphyria; lupus; temporal lobe epilepsy) must
+ be identified (biological plausibility). The second consideration is whether there is a temporal
+ association between the onset, exacerbation, or remission of the medical condition and that of the
+ psychotic disturbance (temporality). The third consideration in favor of a medical etiology of the
+ psychotic symptoms is the presence of features that would be atypical for an independent
+ psychotic disorder (e.g., atypical age at onset, presence of visual or olfactory hallucinations)
+ (typicality). Finally, causes of psychotic symptoms other than the physiological effects of a
+ medical condition need to be considered and ruled out (e.g., substance/medication-induced
+ psychotic disorder, psychotic symptoms occurring as side effects of the treatment of the medical
+ condition).
+ The temporal association of the onset or exacerbation of the medical condition offers the
+ greatest diagnostic certainty that the delusions or hallucinations are attributable to a medical
+ condition. Additional factors may include concomitant treatments for the underlying medical
+ condition that confer a risk for psychosis independently, such as steroid treatment for
+ autoimmune disorders.
+ The diagnosis of psychotic disorder due to another medical condition depends on the clinical
+ condition of each individual, and the diagnostic tests will vary according to that condition. A
+ wide variety of medical conditions may cause psychotic symptoms. These include neurological
+ conditions (e.g., neoplasms, cerebrovascular disease, Huntington’s disease, Parkinson’s disease,
+ multiple sclerosis, epilepsy, auditory or visual nerve injury or impairment, deafness, migraine,
+ central nervous system infections), endocrine conditions (e.g., hyper- and hypothyroidism,
+hyper- and hypoparathyroidism, hyper- and hypoadrenocorticism), metabolic conditions (e.g.,
+ hypoxia, hypercarbia, hypoglycemia), vitamin B12 deficiency, fluid or electrolyte imbalances,
+ hepatic or renal diseases, and autoimmune disorders with central nervous system involvement
+ (e.g., systemic lupus erythematosus, N-methyl-D-aspartate [NMDA] receptor autoimmune
+ encephalitis). The associated physical examination findings, laboratory findings, and patterns of
+ prevalence or onset reflect the etiological medical condition.
+ Prevalence
+ Prevalence rates for psychotic disorder due to another medical condition are difficult to estimate
+ given the wide variety of underlying medical etiologies. Lifetime prevalence has been estimated
+ to range from 0.21% to 0.54% in studies in Sweden and Finland. When the prevalence findings
+ are stratified by age group, individuals older than 65 years have a significantly greater prevalence
+ of 0.74% compared with those in younger age groups in Finland. Rates of psychosis also vary
+ according to the underlying medical condition; conditions most commonly associated with
+ psychosis include untreated endocrine and metabolic disorders, autoimmune disorders (e.g.,
+ systemic lupus erythematosus, NMDA receptor autoimmune encephalitis), or temporal lobe
+ epilepsy. Psychosis attributable to epilepsy
+ 133
+ has been further differentiated into ictal, postictal, and interictal psychosis. The most common of
+ these is postictal psychosis, observed in 2%–7.8% of individuals with epilepsy. Among older
+ individuals, there may be a higher prevalence of the disorder in women, although additional sex
+or gender-related features are not clear and vary considerably with the sex and gender
+ distributions of the underlying medical conditions. An estimated 60% of older individuals with
+ new-onset psychosis have a medical etiology for their psychotic symptoms.
+ Development and Course
+ Psychotic disorder due to another medical condition may be a single transient state or it may be
+ recurrent, cycling with exacerbations and remissions of the underlying medical condition.
+ Although treatment of the underlying medical condition often results in a resolution of the
+ psychosis, this is not always the case, and psychotic symptoms may persist long after the medical
+ event (e.g., psychotic disorder due to focal brain injury). In the context of chronic conditions
+ such as multiple sclerosis or chronic interictal psychosis of epilepsy, the psychosis may assume a
+ long-term course.
+ The expression of psychotic disorder due to another medical condition does not differ
+ substantially in phenomenology depending on age at occurrence. However, older age groups
+ have a higher prevalence of the disorder, which is most likely due to the increasing medical
+ burden associated with advanced age and the cumulative effects of deleterious exposures and
+ age-related processes (e.g., atherosclerosis). The nature of the underlying medical conditions is
+ likely to change across the lifespan, with younger age groups more affected by epilepsy, head
+ trauma, autoimmune, and neoplastic diseases of early to midlife, and older age groups more
+ affected by a neurodegenerative disease (e.g., Alzheimer’s), stroke disease, anoxic events, and
+ multiple system comorbidities. Underlying factors with increasing age, such as preexisting
+ cognitive impairment as well as vision and hearing impairments, may incur a greater risk for
+psychosis, possibly by serving to lower the threshold for experiencing psychosis.
+ Risk and Prognostic Factors
+ Course modifiers.
+ Identification and treatment of the underlying medical condition has the
+ greatest impact on course, although preexisting central nervous system injury may confer a
+ worse course outcome (e.g., head trauma, cerebrovascular disease).
+ Association With Suicidal Thoughts or Behavior
+ Suicide risk in the context of psychotic disorder due to another medical condition is not clearly
+ delineated, although certain conditions such as epilepsy and multiple sclerosis are associated
+ with increased rates of suicide, which may be further increased in the presence of psychosis.
+ Functional Consequences of Psychotic Disorder Due to Another
+ Medical Condition
+ Functional disability is typically severe in the context of psychotic disorder due to another
+ medical condition but will vary considerably by the type of condition and likely improve with
+ successful resolution of the condition.
+ Differential Diagnosis
+ Delirium and major or mild neurocognitive disorder.
+ Hallucinations and delusions commonly occur in
+ the context of a delirium; a separate diagnosis of psychotic disorder due to
+ 134
+ another medical condition is not given if the delusions and/or hallucinations occur exclusively
+ during the course of a delirium. On the other hand, a diagnosis of psychotic disorder due to
+ another medical condition may be given in addition to a diagnosis of major or mild
+ neurocognitive disorder if the delusions or hallucinations are judged to be a physiological
+ consequence of the pathological process causing the neurocognitive disorder (e.g., psychotic
+ disorder due to Lewy body disease, with delusions).
+ Substance/medication-induced psychotic disorder.
+ If there is evidence of recent or prolonged
+ substance use (including medications with psychoactive effects), withdrawal from a substance or
+ medication that can cause psychotic symptoms on withdrawal, or exposure to a toxin (e.g., LSD
+ [lysergic acid diethylamide] intoxication, alcohol withdrawal), a substance/medication-induced
+ psychotic disorder should be considered. Symptoms that occur during or shortly after (i.e., within
+ 4 weeks) of substance intoxication or withdrawal or after medication use may be especially
+ indicative of a substance-induced psychotic disorder, depending on the character, duration, or
+ amount of the substance used. If the clinician has ascertained that the disturbance is due to both a
+ medical condition and substance use, both diagnoses (i.e., psychotic disorder due to another
+ medical condition and substance/medication-induced psychotic disorder) can be given.
+ Psychotic disorder.
+ Psychotic disorder due to another medical condition must be distinguished
+ from a psychotic disorder that is not due to another medical condition (e.g., schizophrenia,
+ delusional disorder, schizoaffective disorder) or a major depressive or bipolar disorder, with
+ psychotic features. In psychotic disorders and in depressive or bipolar disorders, with psychotic
+features, no specific and direct causative physiological mechanisms associated with a medical
+ condition can be demonstrated. Late age at onset and the absence of a personal or family history
+ of schizophrenia or delusional disorder suggest the need for a thorough assessment to rule out the
+ diagnosis of psychotic disorder due to another medical condition. Auditory hallucinations that
+ involve voices speaking complex sentences are more characteristic of schizophrenia than of
+ psychotic disorder due to a medical condition. While certain symptoms suggest a medical or
+ toxic etiology (e.g., visual or olfactory hallucinations, dreamlike quality of delusions [individual
+ as uninvolved observer]), there are no pathognomonic signs or symptoms that unequivocally
+ point clinicians either way. Visual hallucinations are not uncommon in schizophrenia or bipolar
+ disorder, and olfactory hallucinations (e.g., unpleasant smells) are also consistent with a
+ diagnosis of schizophrenia. Thus, clinicians should not give undue weight to any one particular
+ hallucination alone when deciding between a psychiatric and a medical cause for
+ psychopathology.
+ Comorbidity
+ Psychotic disorder due to another medical condition in individuals older than 80 years is
+ associated with concurrent major neurocognitive disorder (dementia). Alzheimer’s disease is
+ commonly accompanied by psychosis, and psychosis is a defining feature in Lewy body disease.

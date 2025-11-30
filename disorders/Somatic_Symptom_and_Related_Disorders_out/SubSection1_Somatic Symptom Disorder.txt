@@ -1,0 +1,288 @@
+Somatic Symptom Disorder
+ Diagnostic Criteria
+ A. One or more somatic symptoms that are distressing or result in significant
+ disruption of daily life.
+ B. Excessive thoughts, feelings, or behaviors related to the somatic symptoms or
+ associated health concerns as manifested by at least one of the following:
+ 1. Disproportionate and persistent thoughts about the seriousness of one’s
+ symptoms.
+ 2. Persistently high level of anxiety about health or symptoms.
+ 3. Excessive time and energy devoted to these symptoms or health concerns.
+ C. Although any one somatic symptom may not be continuously present, the state
+ of being symptomatic is persistent (typically more than 6 months).
+ Specify if:
+ With predominant pain (previously pain disorder): This specifier is for
+ individuals whose somatic symptoms predominantly involve pain.
+Specify if:
+ Persistent: A persistent course is characterized by severe symptoms, marked
+ impairment, and long duration (more than 6 months).
+ Specify current severity:
+ Mild: Only one of the symptoms specified in Criterion B is fulfilled.
+ Moderate: Two or more of the symptoms specified in Criterion B are fulfilled.
+ Severe: Two or more of the symptoms specified in Criterion B are fulfilled, plus
+ there are multiple somatic complaints (or one very severe somatic symptom).
+ Diagnostic Features
+ Individuals with somatic symptom disorder typically have multiple, current, somatic symptoms
+ that are distressing or result in significant disruption of daily life (Criterion A), although
+ sometimes only one severe symptom, most commonly pain, is present. Symptoms may be
+ specific (e.g., localized pain) or relatively nonspecific (e.g., fatigue). The symptoms sometimes
+ represent normal bodily sensations or discomfort that does not generally signify serious disease.
+ Somatic symptoms without an evident medical explanation are not sufficient to make this
+ diagnosis. The individual’s suffering is authentic, whether or not it is medically explained.
+ The symptoms may or may not be associated with another medical condition. The diagnoses
+ of somatic symptom disorder and a concurrent medical illness are not mutually exclusive, and
+ these frequently occur together. For example, an individual may become seriously disabled by
+ symptoms of somatic symptom disorder after an uncomplicated myocardial infarction even if the
+ myocardial infarction itself did not result in any disability. If another medical condition or high
+ risk for developing one is present (e.g., strong family history), the thoughts, feelings, and
+ behaviors associated with this condition are excessive (Criterion B).
+ 352
+ Individuals with somatic symptom disorder tend to have very high levels of worry about
+ illness (Criterion B). They appraise their bodily symptoms as unduly threatening, harmful, or
+ troublesome and often think the worst about their health. Even when there is evidence to the
+ contrary, some individuals still fear the medical seriousness of their symptoms. In severe somatic
+ symptom disorder, health concerns may assume a central role in the individual’s life, becoming a
+ feature of his or her identity and dominating interpersonal relationships.
+ Individuals typically experience distress that is principally focused on somatic symptoms and
+ their significance. When asked directly about their distress, some individuals describe it in
+ relation to other aspects of their lives, while others deny any source of distress other than the
+ somatic symptoms. Health-related quality of life is often impaired, both physically and mentally.
+ The diagnosis can further be specified by stating whether complaints predominantly involve pain
+ and/or if complaints are marked by a persistent course.
+ Additionally, severity of somatic symptom disorder can be specified by the number of
+ fulfilled B criteria. Mild forms of somatic symptom disorder (one symptom as specified in
+ Criterion B is fulfilled) are more prevalent, while moderate (two or more B criteria are present)
+ and severe cases (two or more symptoms as specified in Criterion B are fulfilled in combination
+with multiple somatic complaints or one very severe somatic symptom) are marked by higher
+ levels of impairment. In severe somatic symptom disorder, the impairment is marked, and when
+ persistent, the disorder can lead to invalidism.
+ There is often a high level of medical care utilization, which rarely alleviates the individual’s
+ concerns. Consequently, the individual may seek care from multiple doctors for the same
+ symptoms. These individuals often seem unresponsive to medical interventions, and new
+ interventions may only exacerbate the presenting symptoms. Some individuals with the disorder
+ seem unusually sensitive to medication side effects. Some feel that their medical assessment and
+ treatment have been inadequate.
+ The criteria for somatic symptom disorder appear suitable for use in children and
+ adolescents, but they have been less studied in youth than among adults.
+ Associated Features
+ Cognitive features include attention focused on somatic symptoms, attribution of normal bodily
+ sensations to physical illness (possibly with catastrophic interpretations), worry about illness, a
+ self-concept of bodily weakness, and intolerance of bodily complaints. Besides health anxiety,
+ emotional features may include negative affectivity, desperation, and demoralization related to
+ somatic symptoms. The relevant associated behavioral features may include repeated bodily
+ checking for abnormalities, repeated seeking of medical help and reassurance, and avoidance of
+ physical activity. These behavioral features are most pronounced in severe, persistent somatic
+ symptom disorder. These features are usually associated with frequent requests for medical help
+ for different somatic symptoms. This may lead to medical consultations in which individuals are
+ so focused on their concerns about somatic symptom(s) that they cannot be redirected to other
+ matters. Any reassurance by the doctor that the symptoms are not indicative of serious physical
+ illness tends to be short-lived and/or is experienced by the individuals as the doctor not taking
+ their symptoms with due seriousness. As the focus on somatic symptoms is a primary feature of
+ the disorder, individuals with somatic symptom disorder typically present to general medical
+ health services rather than mental health services. The suggestion of referral to a mental health
+ specialist may be met with surprise or even frank refusal by individuals with somatic symptom
+ disorder.
+ Prevalence
+ The prevalence of somatic symptom disorder is unclear. Estimates about the prevalence of
+ somatic symptom disorder come from the limited epidemiological literature on
+ 353
+ DSM-IV-TR somatoform disorders. However, the prevalence of somatic symptom disorder is
+ expected to be higher than that of the more restrictive DSM-IV-TR somatization disorder (<1%)
+ but lower than that of undifferentiated somatoform disorder (approximately 19%). More recent
+ population-based studies with a questionnaire-based strategy using DSM-5 diagnostic criteria for
+ somatic symptom disorder in adult and adolescent samples report prevalence rates between 6.7%
+ and 17.4%. Based on research conducted in Europe and North America, the prevalence of
+ somatic symptom disorder in the general adult population can be approximated as 4%–6%.
+Somatic symptom disorder has a higher frequency in primary care patients than in the general
+ population. Based on reviews and meta-analyses of studies from multiple countries that had still
+ used DSM-IV or ICD-10 criteria, a 12-month prevalence of somatic symptom disorder and
+ related conditions in primary care patients between 10% and 20% appears plausible. Prevalence
+ rates are higher in clinical settings that specialize in psychosomatic or functional disorders, with
+ reported frequencies of somatic symptom disorder between 40% and 60%.
+ Women tend to report more somatic symptoms than do men, and the prevalence of somatic
+ symptom disorder is consequently likely to be higher in women.
+ Development and Course
+ In a study of Danish children ages 5–7 years, functional somatic symptoms were common health
+ complaints, which for a significant minority (roughly one-fifth) of those with complaints were
+ severe enough to cause distress, impairment, school absences, or medical help-seeking. Age at
+ onset does not seem to affect the duration of untreated illness.
+ The course of somatic symptom disorder is likely to be chronic and fluctuating and
+ influenced by the number of symptoms, individual’s age, level of impairment, and any
+ comorbidity. The course is also influenced by personality traits, with less harm avoidance and
+ greater cooperativeness associated with a shorter time to remission.
+ In children, the most common symptoms are recurrent abdominal pain, headache, fatigue,
+ and nausea. A single prominent symptom is more common in children than in adults. When the
+ diagnosis is being made in younger individuals, it is important to obtain patient, family, and
+ other assessments (e.g., school) of symptom presentation. Patient and caregiver engagement
+ during evaluation and management is fundamental because parents’ interpretation of and
+ response to symptoms may determine the level of associated distress, the demands for medical
+ investigations and interventions, and time away from school.
+ In older individuals, pain localized in several body regions appears to be the most common
+ symptom. Somatic symptoms and concurrent medical illnesses are common as multimorbidity
+ increases with age. Prevalence rates of somatic symptom disorder seem to be stable until age 65
+ years and might decrease thereafter. For making the diagnosis in older individuals, a focus on the
+ requirement for excessive thoughts, feelings, or behaviors related to the somatic symptoms or
+ associated health concerns (Criterion B) is crucial. Somatic symptom disorder may be
+ underdiagnosed in older adults either because certain somatic symptoms (e.g., pain, fatigue) are
+ considered part of normal aging or because illness worry is considered “understandable” in older
+ adults who have more general medical illnesses and medications than do younger people.
+ Risk and Prognostic Factors
+ Temperamental.
+ The personality trait of negative affectivity (neuroticism) has been identified as
+ an independent correlate/risk factor of a high number of somatic symptoms. Comorbid anxiety or
+ depression is common and may exacerbate symptoms and impairment.
+ 354
+ Environmental.
+ Somatic symptom disorder is more frequent in individuals with few years of
+ education and low socioeconomic status, and in those who have recently experienced stressful or
+health-related life events. Early lifetime adversity such as childhood sexual abuse is also likely a
+ risk factor for somatic symptom disorder in adults.
+ Course modifiers.
+ Persistent somatic symptoms are associated with demographic features
+ (women, older age, fewer years of education, lower socioeconomic status, unemployment), a
+ reported history of sexual abuse or other childhood adversity, concurrent chronic physical illness
+ or mental disorder (depression, anxiety, persistent depressive disorder, panic), social stress, and
+ reinforcing social factors such as illness benefits. Total somatic symptom severity is probably
+ associated with female gender, anxiety, depression and general medical illness. Cognitive factors
+ that affect clinical course include sensitization to pain, heightened attention to bodily sensations,
+ and attribution of bodily symptoms to a possible medical illness rather than recognizing them as
+ a normal phenomenon or psychological stress.
+ Culture-Related Diagnostic Issues
+ High numbers of somatic symptoms are found in population-based and primary care studies
+ around the world, with a similar pattern of the most commonly reported somatic symptoms,
+ impairment, and treatment seeking. The relationship between number of somatic symptoms and
+ illness worry is similar in different cultural contexts, and marked illness worry is associated with
+ impairment and greater treatment seeking cross-culturally. In many cultural contexts, individuals
+ with depression commonly present with somatic symptoms.
+ Despite these similarities, there are differences in somatic symptoms across cultural contexts
+ and ethnoracial groups. Sociocultural factors, particularly stigma related to mental disorders,
+ may explain differences in somatic symptom reporting across cultural contexts. The description
+ of somatic symptoms varies with linguistic and other local cultural factors. These somatic
+ presentations have been described as “idioms of distress” because somatic symptoms may have
+ special meanings and shape patient-clinician interactions in the particular cultural contexts. For
+ example, sensations of heaviness, complaints of “gas,” too much heat in the body, or burning in
+ the head are common in some cultures or ethnic groups but rare in others. Cultural explanations
+ also vary, and somatic symptoms may be attributed variously to particular family, work (e.g.,
+ burnout), or other environmental stresses; general medical illness; the suppression of feelings of
+ anger and resentment; or certain culturally specific attributions, such as semen loss. Certain
+ somatic symptoms may be part of specific explanatory models in a given cultural context; for
+ example, traditional understandings of shenjing shuairuo in China link concepts of “weakness of
+ nerves” (neurasthenia) and hot-cold imbalance with prominent symptoms such as fatigue and
+ low energy. There may also be differences in medical treatment seeking and utilization of
+ nonmedical, traditional, alternative and complementary healing practices among cultural groups,
+ in addition to differences due to variable access to medical care services. Cultural beliefs,
+ previous illnesses, insurance status, health literacy, and health care experiences can influence
+ individuals’ perception of somatic symptoms and health care use. Seeking treatment for multiple
+ somatic symptoms in general medical clinics is a worldwide phenomenon.
+ Sex- and Gender-Related Diagnostic Issues
+ In population-based studies, women report more somatic symptoms than men, and in one study
+ of primary care patients with chronic pain, women reported more severe somatic symptoms than
+ men. While exposure to sexual trauma, intimate partner violence, and a childhood trauma history
+is associated with increased somatic symptom expression in
+ 355
+ both women and men, a childhood history of multiple adverse childhood experiences is
+ especially likely to increase somatic symptom expression in women.
+ In women, gender is associated with an increased likelihood of developing persistent
+ symptoms of somatic symptom disorder. There appears to be no evidence that gender is
+ associated with the duration of untreated illness and response to psychological or
+ pharmacological treatment.
+ Association With Suicidal Thoughts or Behavior
+ Somatic symptom disorder is associated with suicidal thoughts and suicide attempts. It is likely
+ that suicidal thoughts and behaviors are partly explained by the diagnostic overlap and frequent
+ comorbidity of somatic symptom disorder and depressive disorders. In addition, dysfunctional
+ illness perceptions and the severity of somatic symptoms appear to be independently associated
+ with an increased risk of suicidal ideation.
+ Functional Consequences of Somatic Symptom Disorder
+ The disorder is associated with marked impairment of health status and high psychological
+ distress. Many individuals with severe somatic symptom disorder are likely to have impaired
+ health status scores more than 2 standard deviations below population norms. Health status is
+ particularly impaired in the presence of multiple or severe symptoms.
+ Differential Diagnosis
+ If the somatic symptoms are consistent with another mental disorder (e.g., panic disorder), and
+ the diagnostic criteria for that disorder are fulfilled, then that mental disorder should be
+ considered as an alternative or additional diagnosis. If, as commonly occurs, the criteria for both
+ somatic symptom disorder and another mental disorder diagnosis are fulfilled, then both should
+ be diagnosed, as both may require treatment.
+ Other medical conditions.
+ The presence of somatic symptoms of unclear etiology is not in itself
+ sufficient to make the diagnosis of somatic symptom disorder. The symptoms of many
+ individuals with disorders like irritable bowel syndrome or fibromyalgia would not satisfy the
+ criterion necessary to diagnose somatic symptom disorder (Criterion B). Conversely, the
+ presence of somatic symptoms of an established medical condition (e.g., diabetes or heart
+ disease) does not exclude the diagnosis of somatic symptom disorder if the criteria are otherwise
+ met. Factors that distinguish individuals with somatic symptom disorder from individuals with
+ general medical conditions alone include the ineffectiveness of analgesics, a history of mental
+ disorders, unclear provocative or palliative factors, persistence without cessation, and stress.
+ Psychological factors affecting other medical conditions.
+ The diagnosis of somatic symptom disorder
+ requires distressing or impairing somatic symptoms that may or may not be associated with
+ another medical condition but must be accompanied by excessive or disproportionate thoughts,
+ feelings, or behaviors related to the somatic symptoms or associated health concerns. In contrast,
+the diagnosis of psychological factors affecting other medical conditions requires the presence of
+ a medical condition, as well as psychological factors that adversely affect its course or interfere
+ with its treatment.
+ Panic disorder.
+ In panic disorder, somatic symptoms and anxiety about health tend to occur in
+ acute episodes, whereas in somatic symptom disorder, anxiety and somatic symptoms are more
+ persistent.
+ Generalized anxiety disorder.
+ Individuals with generalized anxiety disorder worry about multiple
+ events, situations, or activities, only one of which may involve their health. The main focus is not
+ usually somatic symptoms or fear of illness as it is in somatic symptom disorder.
+ 356
+ Depressive disorders.
+ Depressive disorders are commonly accompanied by somatic symptoms
+ such as fatigue, headaches, or joint, abdominal, or other pains. However, depressive disorders are
+ differentiated from somatic symptom disorder by the requirement of the presence of depressed
+ mood or, in the case of major depressive disorder, either depressed mood or decreased interest or
+ pleasure in activities. In some cultural contexts, these core symptoms of depression may be
+ initially denied or deemphasized by individuals whose presentations would otherwise meet
+ criteria for a depressive disorder. Such individuals might instead emphasize somatic symptoms
+ that may be idiomatic (e.g., heavy heart) and unfamiliar to clinicians.
+ Illness anxiety disorder.
+ If the individual has extensive worries about health but no or minimal
+ somatic symptoms, it may be more appropriate to consider illness anxiety disorder.
+ In functional neurological symptom
+ Functional neurological symptom disorder (conversion disorder).
+ disorder, the presenting symptom is loss of function (e.g., of a limb), whereas in somatic
+ symptom disorder, the focus is on the distress that particular symptoms cause. The features listed
+ under Criterion B of somatic symptom disorder may be helpful in differentiating the two
+ disorders.
+ Delusional disorder.
+ In somatic symptom disorder, the individual’s beliefs that somatic symptoms
+ might reflect serious underlying physical illness are not held with delusional intensity.
+ Nonetheless, the individual’s beliefs concerning the somatic symptoms can be firmly held. In
+ contrast, in delusional disorder, somatic type, the individual’s conviction that the somatic
+ symptoms are indicative of having a serious underlying illness is stronger than that found in
+ somatic symptom disorder.
+ Body dysmorphic disorder.
+ In body dysmorphic disorder, the individual is excessively concerned
+ about, and preoccupied by, a perceived defect in his or her physical appearance. In contrast, in
+ somatic symptom disorder, the concern about somatic symptoms reflects fear of underlying
+ illness, not of a defect in appearance.
+ Obsessive-compulsive disorder.
+ In somatic symptom disorder, the recurrent ideas about somatic
+ symptoms or illness are less intrusive, and individuals with this disorder do not exhibit the
+ associated repetitive behaviors aimed at reducing anxiety that occur in obsessive-compulsive
+ disorder.
+ Factitious disorder and malingering.
+ In factitious disorder and malingering, individuals present
+ themselves as ill or impaired but have falsified presenting physical signs and symptoms with the
+F45.21
+ intent to deceive. In contrast, the symptoms of somatic symptom disorder are not simulated or
+ self-induced, and these individuals suffer authentically and seriously from their somatic
+ complaints.
+ Comorbidity
+ Somatic symptom disorder is associated with high rates of comorbidity with other mental
+ disorders as well as general medical conditions. The most relevant co-occurring mental disorders
+ are anxiety and depressive disorders, each of which occurs in up to 50% of cases of somatic
+ symptom disorders and significantly contributes to overall functional impairment and poorer
+ quality of life. Other mental disorders that have been found to co-occur with somatic symptom
+ disorder are posttraumatic stress disorder and obsessive-compulsive disorder. Other evidence
+ indicates an association with sexual dysfunction in men.
+ Elevated levels of the psychological features (Criterion B) of somatic symptom disorder have
+ been found in several general medical conditions. When a concurrent general medical condition
+ is present, the degree of impairment is more marked than would be expected from the physical
+ illness alone. Moreover, somatization in medical illness has been shown to worsen disease and
+ treatment outcomes, adherence, and quality of life and to increase health care utilization.
+ 357

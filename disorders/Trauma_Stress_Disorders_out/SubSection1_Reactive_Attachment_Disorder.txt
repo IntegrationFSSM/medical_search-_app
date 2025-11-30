@@ -1,0 +1,146 @@
+Reactive Attachment Disorder
+ Diagnostic Criteria
+ A. A consistent pattern of inhibited, emotionally withdrawn behavior toward adult
+ caregivers, manifested by both of the following:
+ 1. The child rarely or minimally seeks comfort when distressed.
+ 2. The child rarely or minimally responds to comfort when distressed.
+B. A persistent social and emotional disturbance characterized by at least two of
+ the following:
+ 1. Minimal social and emotional responsiveness to others.
+ 2. Limited positive affect.
+ 296
+ 3. Episodes of unexplained irritability, sadness, or fearfulness that are evident
+ even during nonthreatening interactions with adult caregivers.
+ C. The child has experienced a pattern of extremes of insufficient care as
+ evidenced by at least one of the following:
+ 1. Social neglect or deprivation in the form of persistent lack of having basic
+ emotional needs for comfort, stimulation, and affection met by caregiving
+ adults.
+ 2. Repeated changes of primary caregivers that limit opportunities to form stable
+ attachments (e.g., frequent changes in foster care).
+ 3. Rearing in unusual settings that severely limit opportunities to form selective
+ attachments (e.g., institutions with high child-to-caregiver ratios).
+ D. The care in Criterion C is presumed to be responsible for the disturbed behavior
+ in Criterion A (e.g., the disturbances in Criterion A began following the lack of
+ adequate care in Criterion C).
+ E. The criteria are not met for autism spectrum disorder.
+ F. The disturbance is evident before age 5 years.
+ G. The child has a developmental age of at least 9 months.
+ Specify if:
+ Persistent: The disorder has been present for more than 12 months.
+ Specify current severity:
+ Reactive attachment disorder is specified as severe when a child exhibits all
+ symptoms of the disorder, with each symptom manifesting at relatively high
+ levels.
+ Diagnostic Features
+ Reactive attachment disorder is characterized by a pattern of markedly disturbed and
+ developmentally inappropriate attachment behaviors, in which a child rarely or minimally turns
+ preferentially to an attachment figure for comfort, support, protection, and nurturance. The
+ essential feature is absent or grossly underdeveloped attachment between the child and putative
+ caregiving adults. Children with reactive attachment disorder are believed to have the capacity to
+ form selective attachments. However, because of limited opportunities during early development,
+ they fail to show the behavioral manifestations of selective attachments. That is, when distressed,
+ they show no consistent effort to obtain comfort, support, nurturance, or protection from
+ caregivers. Furthermore, when distressed, children with this disorder do not respond more than
+minimally to comforting efforts of caregivers. Thus, the disorder is associated with the absence
+ of expected comfort seeking and response to comforting behaviors. As such, children with
+ reactive attachment disorder show diminished or absent expression of positive emotions during
+ routine interactions with caregivers. In addition, their emotion regulation capacity is
+ compromised, and they display episodes of negative emotions of fear, sadness, or irritability that
+ are not readily explained. A diagnosis of reactive attachment disorder should not be made in
+ children who are developmentally unable to form selective attachments. For this reason, the child
+ must have a developmental age of at least 9 months. Diagnostic assessment is enhanced by
+ multiple sources of input, supporting that the symptoms are apparent across contexts.
+ Associated Features
+ Because of the shared etiological association with social neglect, reactive attachment disorder
+ often co-occurs with developmental delays, especially in delays in cognition and language. Other
+ associated features include stereotypies and other signs of severe neglect (e.g., malnutrition or
+ signs of poor care).
+ 297
+ Prevalence
+ The prevalence of reactive attachment disorder is unknown, but the disorder is seen relatively
+ rarely in clinical settings. The disorder has been found in young children exposed to severe
+ neglect before being placed in foster care or raised in institutions. The disorder is uncommon,
+ usually occurring in less than 10% of neglected children, even in cases of severe neglect.
+ Development and Course
+ Conditions of social neglect are often present in the first months of life in children diagnosed
+ with reactive attachment disorder, even before the disorder is diagnosed. The clinical features of
+ the disorder manifest in a similar fashion between the ages of 9 months and 5 years. That is,
+ signs of absent-to-minimal attachment behaviors and associated emotionally aberrant behaviors
+ are evident in children throughout this age range, although differing cognitive and motor abilities
+ may affect how these behaviors are expressed. Remediation and symptomatic recovery may
+ occur through normative caregiving environments; however, in the absence of enhanced
+ caregiving, the signs of the disorder may persist, at least for several years. Persistent signs of
+ reactive attachment disorder in early adolescence may be associated with problems in social
+ functioning. Less is known about the clinical presentation of reactive attachment disorder in
+ older children, and the diagnosis should be made with caution in children older than 5 years.
+ Risk and Prognostic Factors
+ Environmental.
+ Serious social neglect is a diagnostic requirement for reactive attachment disorder
+ and is also the only known risk factor for the disorder. However, the majority of severely
+ neglected children do not develop the disorder. Prognosis for children with the disorder appears
+ to depend on the quality of the caregiving environment following serious neglect.
+Culture-Related Diagnostic Issues
+ There is limited information on reactive attachment behavior in young children from diverse
+ cultural backgrounds around the world. Cultural expectations of attachment behaviors and
+ caregiving practices may influence development of and concern about these patterns of behaviors
+ and their presentations in different settings. Caution should be exercised in making the diagnosis
+ of reactive attachment disorder in cultural contexts in which attachment has not been studied.
+ Symptoms of reactive attachment disorder may be more common in situations where attachment
+ figures have experienced extensive trauma, such as war-zone settings; attachment styles may also
+ vary among migrant and refugee children during the resettlement period. Variations in nurturing
+ care practices may influence risk of reactive attachment disorder.
+ Functional Consequences of Reactive Attachment Disorder
+ Reactive attachment disorder significantly impairs young children’s abilities to relate
+ interpersonally to adults or peers and is associated with functional impairment across many
+ domains of early childhood.
+ Differential Diagnosis
+ Autism spectrum disorder.
+ Aberrant social behaviors manifest in young children with reactive
+ attachment disorder, but they also are key features of autism spectrum disorder. Specifically,
+ young children with either condition can manifest dampened expression of positive emotions,
+ cognitive and language delays, and impairments in social reciprocity. As a result, reactive
+ attachment disorder must be differentiated from autism spectrum disorder. These
+ 298
+ two disorders can be distinguished based on differential histories of neglect and on the presence
+ of restricted interests or ritualized behaviors, specific deficit in social communication, and
+ selective attachment behaviors. Children with reactive attachment disorder have experienced a
+ history of severe social neglect, although it is not always possible to obtain detailed histories
+ about the precise nature of their experiences, especially in initial evaluations. Children with
+ autism spectrum disorder will only rarely have a history of social neglect. The restricted interests
+ and repetitive behaviors characteristic of autism spectrum disorder are not a feature of reactive
+ attachment disorder. These clinical features manifest as excessive adherence to rituals and
+ routines; restricted, fixated interests; and unusual sensory reactions. However, it is important to
+ note that children with either condition can exhibit stereotypic behaviors such as rocking or
+ flapping. Children with either disorder also may exhibit a range of intellectual functioning, but
+ only children with autism spectrum disorder exhibit selective impairments in social
+ communicative behaviors, such as intentional communication (i.e., impairment in
+ communication that is deliberate, goal-directed, and aimed at influencing the behavior of the
+ recipient). Children with reactive attachment disorder show social communicative functioning
+ comparable to their overall level of intellectual functioning. Finally, children with autism
+ spectrum disorder regularly show attachment behavior typical for their developmental level. In
+ contrast, children with reactive attachment disorder do so only rarely or inconsistently, if at all.
+ Structured observations can help discriminate between the two disorders.
+Intellectual developmental disorder (intellectual disability).
+ Depressive disorders.
+ F94.2
+ Developmental delays often accompany
+ reactive attachment disorder, but they should not be confused with the disorder. Children with
+ intellectual developmental disorder should exhibit social and emotional skills comparable to their
+ cognitive skills and do not demonstrate the profound reduction in positive affect and emotion
+ regulation difficulties evident in children with reactive attachment disorder. In addition,
+ developmentally delayed children who have reached a cognitive age of 7–9 months should
+ demonstrate selective attachments regardless of their chronological age. In contrast, children
+ with reactive attachment disorder show lack of preferred attachment despite having attained a
+ developmental age of at least 9 months.
+ Depression in young children is also associated with reductions in positive
+ affect. There is limited evidence, however, to suggest that children with depressive disorders
+ have impairments in attachment. That is, young children who have been diagnosed with
+ depressive disorders still should seek and respond to comforting efforts by caregivers.
+ Comorbidity
+ Conditions associated with neglect, including cognitive delays, language delays, and
+ stereotypies, often co-occur with reactive attachment disorder. Medical conditions, such as
+ severe malnutrition, may accompany signs of the disorder. Internalizing symptoms also may co
+occur with reactive attachment disorder. A relationship between reactive attachment disorder and
+ externalizing behavior problems or attention-deficit/hyperactivity disorder (ADHD) has been
+ suggested but not clearly established.

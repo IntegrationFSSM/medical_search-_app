@@ -1,0 +1,363 @@
+ Narcolepsy
+ Diagnostic Criteria
+ A. Recurrent periods of an irrepressible need to sleep, lapsing into sleep, or
+ napping occurring within the same day. These must have been occurring at least
+ three times per week over the past 3 months.
+ B. The presence of at least one of the following:
+1. Episodes of cataplexy, defined as either (a) or (b), occurring at least a few
+ times per month:
+ a. In individuals with long-standing disease, brief (seconds to minutes)
+ episodes of sudden bilateral loss of muscle tone with maintained
+ consciousness that are precipitated by laughter or joking.
+ b. In children or in individuals within 6 months of onset, spontaneous
+ grimaces or jaw-opening episodes with tongue thrusting or a global
+ hypotonia, without any obvious emotional triggers.
+ 2. Hypocretin deficiency, as measured using cerebrospinal fluid (CSF)
+ hypocretin-1 immunoreactivity values (less than or equal to one-third of
+ values obtained in healthy subjects tested using the same assay, or less than
+ or equal to 110 pg/mL). Low CSF levels of hypocretin-1 must not be observed
+ in the context of acute brain injury, inflammation, or infection.
+ 3. Nocturnal sleep polysomnography showing rapid eye movement (REM) sleep
+ latency less than or equal to 15 minutes, or a multiple sleep latency test
+ showing a mean sleep latency less than or equal to 8 minutes and two or
+ more sleep-onset REM periods.
+ Specify whether:
+ G47.411 Narcolepsy with cataplexy or hypocretin deficiency (type 1):
+ Criterion B1 (episodes of cataplexy) or Criterion B2 (low CSF hypocretin-1
+ levels) is met.
+ G47.419 Narcolepsy without cataplexy and either without hypocretin
+ deficiency or hypocretin unmeasured (type 2): Criterion B3 (positive
+ polysomnography/multiple sleep latency test) is met, but Criterion B1 is not met
+ (i.e., no cataplexy is present) and Criterion B2 is not met (i.e., CSF hypocretin-1
+ levels are not low or have not been measured).
+ G47.421 Narcolepsy with cataplexy or hypocretin deficiency due to a
+ medical condition
+ G47.429 Narcolepsy without cataplexy and without hypocretin deficiency
+ due to a medical condition
+ Coding note: For the subtype narcolepsy with cataplexy or hypocretin deficiency
+ due to a medical condition and the subtype narcolepsy without cataplexy and without
+ hypocretin deficiency due to a medical condition, code first the underlying medical
+ condition (e.g., G71.11 myotonic dystrophy; G47.429 narcolepsy without cataplexy
+ and without hypocretin deficiency due to myotonic dystrophy).
+ Specify current severity:
+ Mild: Need for naps only once or twice per day. Sleep disturbance, if present, is
+ mild. Cataplexy, when present, is infrequent (occurring less than once per week).
+ Moderate: Need for multiple naps daily. Sleep may be moderately disturbed.
+ Cataplexy, when present, occurs daily or every few days.
+ 423
+Severe: Nearly constant sleepiness and, often, highly disturbed nocturnal sleep
+ (which may include excessive body movement and vivid dreams). Cataplexy,
+ when present, is drug-resistant, with multiple attacks daily.
+ Subtypes
+ A diagnosis of narcolepsy, type 1 (NT1; i.e., with cataplexy or hypocretin deficiency) is most
+ often based on the presence of recurrent sleepiness and cataplexy (given the limited use of
+ cerebrospinal fluid [CSF] hypocretin determinations). However, cataplexy can emerge years
+ following onset of sleepiness. Therefore, some individuals may be initially assigned a diagnosis
+ of narcolepsy, type 2 (NT2; i.e., without cataplexy and either without hypocretin deficiency or
+ with hypocretin unmeasured), based on sleepiness and positive multiple sleep latency test
+ (MSLT) findings, only to be reassigned to a diagnosis of NT1 following emergence of cataplexy.
+ NT1 established by demonstration of low CSF hypocretin levels may manifest without evidence
+ of clear cataplexy. Other explanations for excessive daytime sleepiness (e.g., sleep deprivation,
+ shift work, other sleep disorders) and episodes of sudden loss of muscle tone (e.g., seizures, falls
+ of other origin, functional neurological symptom disorder [conversion disorder]) should be ruled
+ out. NT2 is established on the basis of chronic sleepiness and characteristic nocturnal sleep
+ polysomnography findings (e.g., short REM sleep latency) or MSLT findings showing short
+ mean sleep latency and two or more sleep-onset REM periods (SOREMPs).
+ NT1 and NT2 can result from other neurological, infectious, metabolic, and genetic
+ conditions. Inherited disorders, tumors, and head trauma are the most common causes of
+ secondary narcolepsy. In other cases, the destruction of hypocretin neurons may be secondary to
+ trauma or hypothalamic surgery. Head trauma or infections of the central nervous system can,
+ however, produce transitory decreases in CSF hypocretin-1 levels without hypocretin cell loss,
+ complicating the diagnosis.
+ Other etiologies include inflammatory lesions due to multiple sclerosis and acute
+ disseminated encephalomyelitis, vascular disorders such as stroke, and encephalitis. Autosomal
+ dominant cerebellar ataxia, deafness, and narcolepsy, or ADCA DN, is a familial degenerative
+ disorder due to missense mutations of the DNA methyltransferase (DNMT1) gene. Cataplexy
+ with some degree of sleepiness can be caused by other neurological conditions, including Prader
+Willi syndrome, Niemann-Pick disease type C, Möbius syndrome, and Norrie disease.
+ Hypocretin deficiency has been reported in Parkinson’s disease as well. NT2-like physiology has
+ been reported in myotonic dystrophy and Prader-Willi syndrome.
+ Diagnostic Features
+ The essential features of narcolepsy are recurrent daytime naps or lapses into sleep that occur
+ typically daily but that must occur at a minimum of three times a week for at least 3 months
+ (Criterion A), and are accompanied by one or more of the following: cataplexy (Criterion B1),
+ hypocretin deficiency (Criterion B2), or characteristic abnormalities on a nocturnal
+ polysomnogram or on the MSLT (Criterion B3). In most individuals with NT1, the first
+ symptom to manifest is sleepiness or increased sleep need, followed by cataplexy. Sleepiness is
+ worse in sedentary circumstances and typically is relieved by brief (10–20 minutes) naps.
+ NT1 generally manifests with cataplexy, typically brief episodes (seconds up to 2 minutes) of
+sudden, bilateral loss of muscle tone precipitated by emotions. A range of positive emotions can
+ trigger cataplexy, including those associated with laughter, anticipation, or surprise. Less
+ commonly, cataplexy can be triggered by negative emotions such as anger and embarrassment.
+ Muscles affected include those of the neck, jaw, arms, legs, or whole body, resulting in head
+ bobbing, jaw dropping, or complete falls. Individuals are awake and aware during cataplexy.
+ Cataplexy should not be confused with “weakness” occurring in
+ 424
+ the context of athletic activities (physiological) or exclusively after unusual emotional
+ triggers such as stress or anxiety (suggesting possible psychopathology).
+ In children and rarely in adults with acute NT1 symptom onset, cataplexy may manifest as
+ continuous hypotonia rather than episodic bouts of weakness triggered by strong emotions. This
+ continuous hypotonia may result in gait instability, ptosis, and slack jaw. Superimposed on this
+ muscle weakness, some individuals may demonstrate phenomena such as tongue protrusion and
+ grimacing. This static cataplexy is most common within 6 months of a rapid onset.
+ NT1 is caused by loss of hypothalamic neurons that produce the hypocretin (orexin)
+ neuropeptides, and CSF hypocretin levels are typically less than one-third of control values (< 
+110 pg/mL in most laboratories). Individuals with cataplexy have been shown to have low CSF
+ hypocretin levels in 85%–90% of cases. In contrast, most individuals with NT2 have normal or
+ intermediate levels of CSF hypocretin. Thus, hypocretin deficiency is a sufficient diagnostic test
+ for NT1 (Criterion B2). If CSF hypocretin is measured and not low, an NT2 diagnosis is based
+ on clinical symptoms (Criterion A) and sleep study data outlined in Criterion B3.
+ A nocturnal polysomnogram followed by an MSLT is the conventional method for
+ confirming the diagnosis of both NT1 (if hypocretin testing is unavailable or not feasible) and
+ NT2 (Criterion B3). These tests must be performed after the individual has stopped all
+ psychotropic medications (for a duration based on elimination half-life) and obtained adequate
+ sleep time on a normal sleep-wake schedule (as documented with sleep diaries or, preferably,
+ actigraphy), ideally for 2 weeks. Notably, the abrupt discontinuation of antidepressants, α
+adrenergic agonist medications, or stimulants or use of these medications during testing can alter
+ REM sleep physiology.
+ The MSLT result must be positive for a diagnosis of NT2, showing a mean sleep latency of
+ ≤ 8 minutes plus at least two SOREMPs; specifically, REM sleep must occur in at least two of
+ the five nap opportunities. Alternatively, a nocturnal sleep-onset REM period (nSOREMP; REM
+ sleep-onset latency ≤ 15 minutes) during polysomnography is sufficient to confirm the diagnosis
+ and meets Criterion B3. An nSOREMP is highly specific to NT1 (95%–97%) but only
+ moderately sensitive (54%–57%). False positive findings of SOREMPs can occur with shift
+ work, circadian rhythm sleep-wake disorders, severe obstructive sleep apnea, medication effects,
+ and insufficient sleep disorder.
+ The nocturnal polysomnogram and MSLT are diagnostically limited, especially in NT2.
+ While reliability of diagnostic MSLT testing is relatively high at 85%–95% for NT1, reliability
+ for the NT2 diagnosis is poorer. Test-retest reliability may be < 50%. This poor reliability may
+ be due to day-to-day variability in NT2 physiology and technical aspects of the polysomnogram
+ and MSLT testing, especially inadequate attention to prior sleep time/schedule and
+ medication/drug use.
+Normal or intermediate CSF hypocretin levels among individuals with cataplexy symptoms
+ can decline to undetectable levels over time.
+ Associated Features
+ When sleepiness is severe, automatic behaviors may occur, with the individual continuing his or
+ her activities in a semiautomatic, hazelike fashion without memory or consciousness.
+ Approximately 20%–60% of individuals experience vivid hypnagogic hallucinations before or
+ upon falling asleep or hypnopompic hallucinations just after awakening. These hallucinations are
+ typically visual or auditory, and sometimes tactile. They are distinct from the less vivid,
+ nonhallucinatory dream-like mentation at sleep onset that occurs in persons with normal sleep.
+ Approximately 20%–60% of affected individuals experience sleep paralysis upon falling
+ asleep or awakening, leaving them awake but unable to move or speak. However, many normal
+ sleepers also report occasional sleep paralysis, especially with stress or sleep
+ 425
+ deprivation. Individuals with narcolepsy can have a range of nocturnal sleep symptoms,
+ including disrupted nighttime sleep (frequent, brief awakenings), vivid and realistic dreams,
+ periodic limb movements of sleep, and REM sleep behavior disorder. Nocturnal eating may
+ occur. Obesity is common. Individuals may appear sleepy or fall asleep in the waiting area or
+ during clinical examination. During cataplexy, individuals may slump in a chair and have slurred
+ speech or drooping eyelids. If the clinician is able to check reflexes during cataplexy (most
+ attacks are < 10 seconds), reflexes are abolished during whole body cataplexy—an important
+ finding distinguishing genuine cataplexy from functional neurological symptom disorder
+ (conversion disorder).
+ Although IQ testing is generally normal in individuals with narcolepsy, impairments in
+ working memory and executive functioning have been reported.
+ Prevalence
+ Narcolepsy-cataplexy (NT1) affects 0.02%–0.05% of the adult general population worldwide
+ and has an incidence of 0.74 per 100,000 person-years in the United States. Some prevalence
+ variation has been reported, including lower rates in Israel and higher rates in Japan than in
+ Europe and the United States. The true prevalence of NT2 is unknown in part because of
+ diagnostic variability. Narcolepsy affects both genders fairly equally, but this may vary among
+ different populations.
+ Development and Course
+ Onset occurs most often in childhood and adolescence or young adulthood but rarely in old age.
+ Peak age at onset is around 15–25 years. Onset can be abrupt or progressive, with cataplexy
+ developing over years. It has been reported that children presenting with abrupt onset of NT1
+ symptoms have the highest disease severity but that disease severity in these cases tends to
+ partially improve in the first few years after onset. Abrupt onset in young, prepubescent children
+ can be associated with obesity and premature puberty. About 50% of individuals with narcolepsy
+ diagnosed in adulthood recall symptom onset in childhood or adolescence, highlighting problems
+of diagnostic delays for this condition. Once the disorder has manifested, the course is persistent
+ and lifelong.
+ In 90% of cases, the first symptom to manifest is sleepiness or increased sleep, followed by
+ cataplexy (within 1 year in 50% of cases, within 3 years in 85%). Sleepiness, hypnagogic
+ hallucinations, vivid dreaming, and REM sleep behavior disorder (vocalizations or complex
+ motor behavior during REM sleep) are early symptoms. Excessive sleep rapidly progresses to an
+ inability to stay awake during the day, and to maintain good sleep at night, without a clear
+ increase in total 24-hour sleep time. In the first months, cataplexy may be atypical, especially in
+ children, manifesting with a generalized hypotonia rather than with episodic emotionally
+ triggered weakness. In general, narcolepsy symptoms remain fairly stable but may fluctuate with
+ life events such as pregnancy and stressors. Exacerbations of symptoms suggest lack of
+ compliance with medications or development of a concurrent sleep disorder, notably sleep apnea,
+ which has been identified in about a quarter of individuals with narcolepsy.
+ Young children and adolescents with narcolepsy often develop aggression or behavioral
+ problems secondary to sleepiness and/or nighttime sleep disruption. Workload and social
+ pressure increase through high school and college, reducing available sleep time at night.
+ Pregnancy does not seem to modify symptoms consistently. After retirement, individuals
+ typically have more opportunity for napping, reducing the need for stimulants. Maintaining a
+ regular schedule benefits individuals at all ages.
+ Risk and Prognostic Factors
+ Temperamental.
+ Individuals with narcolepsy commonly report that they need more sleep than
+ other family members.
+ 426
+ Environmental.
+ Group A streptococcal throat infection, influenza (notably pandemic H1N1
+ 2009), or other winter infections, as well as vaccinations (specifically Pandemrix H1N1
+ vaccination), may trigger an autoimmune process in some individuals, producing narcolepsy a
+ few months later. Head trauma and abrupt changes in sleep-wake patterns (e.g., job changes,
+ stress) may be additional triggers.
+ Genetic and physiological.
+ Monozygotic twins are 25%–32% concordant for narcolepsy. The
+ prevalence of narcolepsy is 1%–2% in first-degree relatives (a 10- to 40-fold increase overall).
+ Narcolepsy is strongly associated with HLA DQB1*06:02 (see “Diagnostic Markers”).
+ DQB1*03:01 increases, while DQB1*05:01, DQB1*06:01, and DQB1*06:03 reduce risk in the
+ presence of DQB1*06:02, but the effect is small. Polymorphisms within the T-cell receptor alpha
+ gene and other immune-modulating genes also modulate risk slightly.
+ Culture-Related Diagnostic Issues
+ Narcolepsy has been described in many ethnoracial groups and cultural contexts. One study of
+ 1,097 treatment-seeking individuals suggested that among African Americans, more cases may
+ manifest without cataplexy or with atypical cataplexy (although CSF hypocretin is low), and
+ with earlier onset compared with non-Latinx Whites. Diagnosis may be further complicated by
+ the higher presence of obesity and obstructive sleep apnea in this population, which can be
+related to differential exposure to social determinants of health, including food insecurity, food
+ deserts, and limited access to safe and affordable places for physical activity. Individuals with
+ narcolepsy often experience sleep paralysis, which may be attributed to supernatural forces (e.g.,
+ frightening spirit is sitting on the sleeper’s chest) in some cultural contexts, contributing to the
+ perceived dangerousness of the condition and to help-seeking decisions.
+ Diagnostic Markers
+ Nocturnal polysomnography followed by an MSLT is used to confirm the diagnosis of
+ narcolepsy, especially when the disorder is first being diagnosed and before treatment has begun.
+ In the presence of clear-cut cataplexy, the polysomnography and MSLT are confirmatory for
+ NT1. In the absence of cataplexy and hypocretin deficiency (if measured), the MSLT is
+ diagnostic of NT2. Drug or medication effects (e.g., REM-inhibiting antidepressants or sedating
+ medications), stimulant withdrawal, prior sleep deprivation, shift work, or severe depression may
+ result in an inaccurate MSLT result and must be ruled out prior to performance of the MSLT. In
+ particular, chronically insufficient sleep is common and must be considered.
+ An nSOREMP is highly specific (approximately 1% positive in control subjects) but
+ moderately sensitive (approximately 50%) for NT1. In contrast, an nSOREMP was only found in
+ 10%–23% of NT2 persons with normal hypocretin levels, suggesting even lower sensitivity in
+ this subtype. The MSLT result is considered positive for narcolepsy if it displays an average
+ sleep latency of ≤ 8 minutes and SOREMPs in two or more naps on a four- or five-nap test. The
+ MSLT result is positive in 90%–95% of individuals with NT1 versus 2%–4% of control subjects
+ or individuals with other sleep disorders. As noted, poor test-retest reliability for NT2 precludes
+ determination of comparable data for NT2. Additional polysomnographic findings among
+ individuals with narcolepsy often include frequent arousals, decreased sleep efficiency, and
+ increased stage 1 sleep. Periodic limb movements (found in about 40% of individuals with NT1)
+ and sleep apnea are often noted.
+ Hypocretin deficiency is demonstrated by measuring CSF hypocretin-1 levels. The test is
+ particularly useful in individuals with suspected pseudocataplexy and those without typical
+ cataplexy, or in treatment-refractory cases. The diagnostic value of the test is not affected by
+ medications, sleep deprivation, or the time of day or night when it is collected, but the findings
+ are uninterpretable when the individual is severely ill with a concurrent
+ 427
+ infection or head trauma or is comatose. CSF cytology, protein, and glucose are within
+ normal range even when sampled within weeks of rapid onset of the disorder. When measured in
+ individuals with typical cataplexy symptoms, CSF hypocretin-1 is often already very diminished
+ or undetectable.
+ About 85%–95% of individuals with NT1 are positive for the HLA DQB1*06:02 haplotype.
+ This gene influences immune system antigen presentation, supporting an underlying autoimmune
+ pathophysiology of NT1. Outbreaks of NT1 after specific vaccinations and infections further
+ support an autoimmune etiology. In contrast to NT1, there are no biomarkers of NT2. Only about
+ 40%–50% of individuals with NT2 are positive for DQB1*06:02. As 12%–38% of the general
+ population is DQB1*06:02 positive, testing for this allele is not very helpful for diagnosing NT2
+but can be helpful for screening of NT1.
+ Functional Consequences of Narcolepsy
+ School performance, driving, work, or other activities that require sustained attention are
+ impaired, and individuals with narcolepsy should avoid jobs that place themselves (e.g., working
+ with machinery) or others (e.g., bus driver, pilot) in danger. Once the narcolepsy is controlled
+ with therapy, individuals can usually drive, although rarely long distances alone. Untreated
+ individuals are also at risk for social isolation and accidental injury to themselves or others.
+ Social relations may suffer as these individuals strive to avert cataplexy by exerting control over
+ emotions or stimuli that cause emotions.
+ Differential Diagnosis
+ Other hypersomnias.
+ Hypersomnolence disorder (also known as idiopathic hypersomnia) and
+ narcolepsy are similar with respect to the presence of chronic daytime sleepiness, age at onset
+ (typically adolescence or early adulthood), and stable course over time, but can be distinguished
+ based on distinctive clinical and laboratory features. Individuals with hypersomnolence disorder
+ typically have longer and less disrupted nocturnal sleep, greater difficulty awakening, more
+ persistent daytime sleepiness (as opposed to more discrete “sleep attacks” in narcolepsy), longer
+ and less refreshing daytime sleep episodes, and little or no dreaming during daytime naps. By
+ contrast, individuals with NT1 generally have cataplexy. Those with NT1 or NT2 may
+ demonstrate recurrent intrusions of elements of REM sleep into the transition between sleep and
+ wakefulness (e.g., sleep-related hallucinations and sleep paralysis). The MSLT typically
+ demonstrates shorter sleep latencies (i.e., greater physiological sleepiness) as well as the
+ presence of multiple SOREMPs in individuals with narcolepsy.
+ Sleep deprivation and insufficient nocturnal sleep.
+ Sleep deprivation and insufficient nocturnal sleep
+ are common in adolescents and shift workers. In adolescents, difficulties falling asleep at night
+ are common, causing sleep deprivation. The MSLT result may be falsely positive if conducted
+ while the individual is sleep deprived or while his or her sleep is phase delayed.
+ Sleep apnea syndromes.
+ Obstructive sleep apnea is common in the general population and can be
+ present in individuals with narcolepsy due to obesity. Because obstructive sleep apnea is more
+ frequent than narcolepsy, cataplexy may be overlooked (or absent). Narcolepsy should be
+ considered in individuals with persistent sleepiness despite treatment of their sleep apnea.
+ Insomnia disorder.
+ Individuals with narcolepsy may focus on the presence of nocturnal sleep
+ disruption and incorrectly attribute daytime sleepiness to insomnia disorder. Although
+ individuals with narcolepsy, like those with insomnia disorder, may experience frequent
+ awakenings during the night, individuals with narcolepsy typically have no difficulty initiating
+ sleep or returning to sleep in contrast to those with insomnia disorder.
+ 428
+ Moreover, insomnia disorder is not typically associated with the severity of daytime sleepiness
+ observed in narcolepsy.
+ Major depressive disorder.
+ Excessive daytime sleepiness is a common complaint of both
+individuals with major depression and individuals with narcolepsy. The presence of cataplexy
+ (which is not a feature of major depressive disorder) along with the severity of excessive daytime
+ sleepiness indicates a diagnosis of NT1 rather than major depressive disorder. Moreover, in
+ individuals with major depression, MSLT results are most often normal, and there is dissociation
+ between subjective and objective sleepiness, as measured by the mean sleep latency during the
+ MSLT. In a meta-analysis of individuals with psychiatric disorders evaluated for sleepiness,
+ while 25% had a mean sleep latency of < 8 minutes on the MSLT, only rarely were two or more
+ SOREMPs noted on the MSLT, highlighting the more specific REM sleep dysfunction of
+ narcolepsy.
+ Functional neurological symptom disorder (conversion disorder; pseudocataplexy).
+ Individuals 
+with
+ functional neurological symptom disorder can present with weakness that may raise questions of
+ cataplexy. However, in functional neurological symptom disorder, the weakness is often long
+lasting, has unusual triggers, and can result in frequent falls. Individuals may report sleeping and
+ dreaming during MSLT naps, yet the MSLT does not show the characteristic SOREMP. Home
+ video recordings and video during sleep studies can be helpful to distinguish this condition from
+ true cataplexy. The weakness is usually generalized in pseudocataplexy, without partial attacks.
+ Full-blown, long-lasting pseudocataplexy may occur during consultation, allowing the
+ examining physician enough time to verify reflexes, which remain intact.
+ Attention-deficit/hyperactivity disorder or other behavioral problems.
+ In children and adolescents,
+ sleepiness can cause behavioral problems, including aggressiveness and inattention, leading to a
+ misdiagnosis of attention-deficit/hyperactivity disorder (ADHD).
+ Atonic seizures.
+ Atonic seizures, a type of seizure that causes sudden loss of muscle strength,
+ must be distinguished from cataplexy. Atonic seizures are not commonly triggered by emotions
+ and tend to manifest as abrupt falls rather than the slower “melting” quality of cataplexy. Atonic
+ seizures usually occur in individuals with additional seizure types and have distinct signatures on
+ the electroencephalogram.
+ Syncope.
+ Chorea and motor disorders.
+ Like syncope, cataplexy usually develops over several seconds, but individuals with
+ cataplexy do not have presyncopal symptoms of dizziness, tunnel vision, and auditory changes.
+ In young children, cataplexy can be misdiagnosed as chorea or
+ pediatric autoimmune neuropsychiatric disorders associated with streptococcal infections
+ (PANDAS), especially in the context of a strep throat infection and high antistreptolysin O
+ antibody levels. Some children may have an overlapping motor disorder close to onset of the
+ cataplexy.
+ Schizophrenia.
+ In the presence of florid and vivid hypnagogic hallucinations, individuals with
+ narcolepsy may think these experiences are real—a feature that suggests the presence of a true
+ hallucination characteristic of schizophrenia. However, clear differences have been described in
+ the pattern of hallucinatory experiences in narcolepsy compared with schizophrenia. Individuals
+ with narcolepsy tend to report sleep-related multisensory “holistic” hallucinations (visual,
+ auditory, tactile) rather than the predominantly verbal-auditory sensory mode of individuals with
+ schizophrenia. Moreover, high-dose stimulant treatment of individuals with narcolepsy may
+ result in the development of persecutory delusions. If cataplexy is present with hallucinations or
+ delusions, the first clinical supposition would be that these symptoms are secondary to
+ narcolepsy before consideration of a co-occurring diagnosis of schizophrenia.
+429
+ Comorbidity
+ Medical and psychiatric comorbidities are common among individuals with narcolepsy and
+ include obesity, bruxism, enuresis, precocious puberty (among individuals with pediatric-onset
+ narcolepsy), mood disorders, and ADHD. Rapid weight gain is common in young children with a
+ sudden disease onset. Parasomnias (e.g., sleepwalking, REM sleep behavior disorder),
+ obstructive sleep apnea, restless legs syndrome, and periodic limb movements are common in
+ individuals who develop narcolepsy. Comorbid sleep apnea should be considered if there is a
+ sudden aggravation of preexisting narcolepsy.
+ Relationship to International Classification of Sleep Disorders
+ The International Classification of Sleep Disorders, 3rd Edition (ICSD-3), differentiates two
+ subtypes of narcolepsy: NT1 (narcolepsy with cataplexy or hypocretin deficiency) and NT2
+ (narcolepsy without cataplexy or hypocretin deficiency). NT1 secondary to another medical
+ condition (G47.421) and NT2 secondary to another medical condition (G47.429) are reported in
+ ICSD-3 as secondary narcolepsy subtypes

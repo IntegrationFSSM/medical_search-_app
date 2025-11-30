@@ -1,0 +1,250 @@
+Disruptive Mood Dysregulation Disorder
+ Diagnostic Criteria
+ A. Severe recurrent temper outbursts manifested verbally (e.g., verbal rages)
+ and/or behaviorally (e.g., physical aggression toward people or property) that are
+ grossly out of proportion in intensity or duration to the situation or provocation.
+ B. The temper outbursts are inconsistent with developmental level.
+ C. The temper outbursts occur, on average, three or more times per week.
+ D. The mood between temper outbursts is persistently irritable or angry most of the
+ day, nearly every day, and is observable by others (e.g., parents, teachers,
+ peers).
+ E. Criteria A–D have been present for 12 or more months. Throughout that time,
+ the individual has not had a period lasting 3 or more consecutive months without
+ all of the symptoms in Criteria A–D.
+ F. Criteria A and D are present in at least two of three settings (i.e., at home, at
+ school, with peers) and are severe in at least one of these.
+ G. The diagnosis should not be made for the first time before age 6 years or after
+ age 18 years.
+ H. By history or observation, the age at onset of Criteria A–E is before 10 years.
+ I. There has never been a distinct period lasting more than 1 day during which the
+ full symptom criteria, except duration, for a manic or hypomanic episode have
+ been met.
+ Note: Developmentally appropriate mood elevation, such as occurs in the
+ context of a highly positive event or its anticipation, should not be considered as
+ a symptom of mania or hypomania.
+ J. The behaviors do not occur exclusively during an episode of major depressive
+ disorder and are not better explained by another mental disorder (e.g., autism
+ spectrum disorder, posttraumatic stress disorder, separation anxiety disorder,
+ persistent depressive disorder).
+ Note: This diagnosis cannot coexist with oppositional defiant disorder,
+ intermittent explosive disorder, or bipolar disorder, though it can coexist with
+ others, including major depressive disorder, attention-deficit/hyperactivity
+ disorder, conduct disorder, and substance use disorders. Individuals whose
+ symptoms meet criteria for both disruptive mood dysregulation disorder and
+oppositional defiant disorder should only be given the diagnosis of disruptive
+ mood dysregulation disorder. If an individual has ever experienced a manic or
+ hypomanic episode, the diagnosis of disruptive mood dysregulation disorder
+ should not be assigned.
+ K. The symptoms are not attributable to the physiological effects of a substance or
+ another medical or neurological condition.
+ Diagnostic Features
+ The core feature of disruptive mood dysregulation disorder is chronic severe, persistent
+ irritability. This severe irritability has two prominent clinical manifestations, the first of which is
+ frequent temper outbursts. These outbursts typically occur in response to frustration and can be
+ verbal or behavioral (the latter in the form of aggression against property, self, or others). They
+ must occur frequently (i.e., on average, three or more times per week) (Criterion C) over at least
+ 1 year in at least two settings (Criteria E and F), such as in the home and at school, and they must
+ be developmentally inappropriate (Criterion B). The second manifestation of severe irritability
+ consists of chronic, persistently irritable or angry mood that is present between the severe temper
+ outbursts. This irritable or angry mood must be characteristic of the child, being present most of
+ the day, nearly every day, and noticeable by others in the child’s environment (Criterion D).
+ 179
+ The clinical presentation of disruptive mood dysregulation disorder must be carefully
+ distinguished from presentations of other, related conditions, particularly pediatric bipolar
+ disorder. In fact, disruptive mood dysregulation disorder was added to DSM-5 to address the
+ considerable concern about the appropriate classification and treatment of children who present
+ with chronic, persistent irritability relative to children who present with classic (i.e., episodic)
+ bipolar disorder.
+ Some researchers view severe, nonepisodic irritability as characteristic of bipolar disorder in
+ children, although both DSM-IV and DSM-5 require that both children and adults have distinct
+ episodes of mania or hypomania to qualify for the diagnosis of bipolar I disorder. During the
+ latter decades of the twentieth century, this contention by researchers that severe, nonepisodic
+ irritability is a manifestation of pediatric mania coincided with an upsurge in the rates at which
+ clinicians assigned the diagnosis of bipolar disorder to their pediatric patients. This sharp
+ increase in rates appears to be attributable to clinicians combining at least two clinical
+ presentations into a single category. That is, both classic, episodic presentations of mania and
+ nonepisodic presentations of severe irritability have been labeled as bipolar disorder in children.
+ In DSM-5, the term bipolar disorder is explicitly reserved for episodic presentations of bipolar
+ symptoms. DSM-IV did not include a diagnosis designed to capture youths whose hallmark
+ symptoms consisted of very severe, nonepisodic irritability, whereas DSM-5, with the inclusion
+ of disruptive mood dysregulation disorder, provides a distinct category for such presentations.
+ Prevalence
+ Disruptive mood dysregulation disorder is common among children presenting to pediatric
+mental health clinics. Prevalence estimates of the disorder in the community are unclear. In a
+ population-based cohort study of Brazilian 11-year-olds that used a specific module for
+ disruptive mood dysregulation disorder, the prevalence was 2.5%.
+ Consistent gender differences in prevalence have not been reported in population samples,
+ although clinic samples report a male preponderance. For example, up to 80% of children
+ presenting to clinics in Turkey with features of disruptive mood dysregulation disorder in a chart
+ review were boys. Data suggest that the diagnosis may be more common in younger age groups
+ (e.g., 8.2% in a community sample of 6-year-olds in the United States).
+ Development and Course
+ The onset of disruptive mood dysregulation disorder must be before age 10 years, and the
+ diagnosis should not be applied to children with a developmental age of younger than 6 years. It
+ is unknown whether the condition presents only in this age-delimited fashion. Because the
+ symptoms of disruptive mood dysregulation disorder are likely to change as children mature, use
+ of the diagnosis should be restricted to age groups similar to those in which validity has been
+ established (6–18 years). Approximately half of children with disruptive mood dysregulation
+ disorder living in a predominantly rural area in a large U.S. study continue to have symptoms
+ that meet criteria for the condition 1 year later, although those children whose symptoms no
+ longer meet the threshold for the diagnosis often have persistent, clinically impairing irritability.
+ Rates of conversion from severe, nonepisodic irritability to bipolar disorder are very low.
+ Instead, children with disruptive mood dysregulation disorder are at increased risk to develop
+ unipolar depressive and/or anxiety disorders in adulthood.
+ Risk and Prognostic Factors
+ Temperamental.
+ Children with chronic irritability typically exhibit complicated psychiatric
+ histories. In such children, a relatively extensive history of chronic irritability is common,
+ typically manifesting before full criteria for the syndrome are met. Such prediagnostic
+ presentations may have qualified for a diagnosis of oppositional defiant
+ 180
+ disorder. Many children with disruptive mood dysregulation disorder have symptoms that also
+ meet criteria for attention-deficit/hyperactivity disorder (ADHD) and for an anxiety disorder,
+ with such diagnoses often being present from a relatively early age. For some children, the
+ criteria for major depressive disorder may also be met.
+ Environmental.
+ Factors associated with disrupted family life, such as psychological abuse or
+ neglect, parental psychiatric disorder, limited parental education, single-parent household, early
+ trauma, death of a parent, parental grief, divorce, and malnutrition (e.g., vitamin deficiency), are
+ associated with the core behaviors of disruptive mood dysregulation disorder.
+ Genetic and physiological.
+ Data suggest that a family history of depression may be a risk factor for
+ disruptive mood dysregulation disorder. Consistent with this, twin data suggest that the
+ association between early irritability and later unipolar depression and anxiety may be, in part,
+ genetically mediated.
+ Compared with children with pediatric bipolar disorder or other mental illnesses, those with
+disruptive mood dysregulation disorder exhibit both commonalities and differences in
+ information-processing deficits. For example, face-emotion labeling deficits, as well as perturbed
+ decision-making and cognitive control, are present in children with bipolar disorder as well as
+ those with disruptive mood dysregulation disorder. Importantly, however, the same behavioral
+ deficit may be associated with different patterns of neural dysfunction. There is also evidence for
+ disorder-specific dysfunction, such as during tasks assessing attention deployment in response to
+ emotional stimuli, which has demonstrated unique signs of dysfunction in children with chronic
+ irritability.
+ Culture-Related Diagnostic Issues
+ Culture-related data on disruptive mood dysregulation disorder are limited. However,
+ sociocultural factors affect the presentation of core psychological features of the disorder,
+ including impulsivity as well as emotion, reward, threat, and behavior dysregulation, especially
+ in settings characterized by severe social disruption, such as postconflict zones or communities
+ affected by long-standing racism and discrimination. It is important to distinguish disruptive
+ mood dysregulation disorder from adaptive responses to adversity that are context-dependent and
+ transitory.
+ Sex- and Gender-Related Diagnostic Issues
+ There is some evidence from twin studies that while irritability has a strong genetic component
+ in both sexes, patterns differ for boys and girls. For boys, genetic factors appear to account for an
+ increasing amount of the variance of the phenotype of irritability throughout childhood. While
+ genetic factors account for a large proportion of the variance of the irritability phenotype in
+ school-age girls, this decreases into adolescence and young adulthood, with environmental
+ influences playing a greater role. How this genetic risk for irritability translates into risk and
+ prognosis for disruptive mood dysregulation disorder, per se, is not yet known.
+ Functional Consequences of Disruptive Mood Dysregulation Disorder
+ Chronic, severe irritability, such as is seen in disruptive mood dysregulation disorder, is
+ associated with marked disruption in a child’s family and peer relationships, as well as in school
+ performance. Because of their extremely low frustration tolerance, such children generally have
+ difficulty succeeding in school; they are often unable to participate in the activities typically
+ enjoyed by healthy children; their family life is severely disrupted by their outbursts and
+ irritability; and they have trouble initiating or sustaining friendships. Levels of dysfunction in
+ children with bipolar disorder and disruptive mood
+ 181
+ dysregulation disorder are generally comparable. Both conditions cause severe disruption in the
+ lives of the affected individual and his or her family. In both disruptive mood dysregulation
+ disorder and pediatric bipolar disorder, aggression and psychiatric hospitalization are common.
+ Differential Diagnosis
+Because chronically irritable children and adolescents typically present with complex histories,
+ the diagnosis of disruptive mood dysregulation disorder must be made while considering the
+ presence or absence of multiple other conditions. Despite the need to consider many other
+ syndromes, differentiation of disruptive mood dysregulation disorder from bipolar disorder and
+ oppositional defiant disorder requires particularly careful assessment.
+ Bipolar disorders.
+ The central feature differentiating disruptive mood dysregulation disorder and
+ bipolar disorders in children involves the longitudinal course of the core symptoms. In children,
+ as in adults, bipolar I disorder and bipolar II disorder manifest as an episodic illness with discrete
+ episodes of mood perturbation that can be differentiated from the child’s typical presentation.
+ The mood perturbation that occurs during a manic episode is distinctly different from the child’s
+ usual mood. In addition, during a manic episode, the change in mood must be accompanied by
+ the onset, or worsening, of associated cognitive, behavioral, and physical symptoms (e.g.,
+ distractibility, increased goal-directed activity), which are also present to a degree that is
+ distinctly different from the child’s usual baseline. Thus, in the case of a manic episode, parents
+ (and, depending on developmental level, children) should be able to identify a distinct time
+ period during which the child’s mood and behavior were markedly different from usual. In
+ contrast, the irritability of disruptive mood dysregulation disorder is persistent and is present
+ over many months; while it may wax and wane to a certain degree, severe irritability is
+ characteristic of the child with disruptive mood dysregulation disorder. Thus, while bipolar
+ disorders are episodic conditions, disruptive mood dysregulation disorder is not. In fact, the
+ diagnosis of disruptive mood dysregulation disorder cannot be assigned to a child who has ever
+ experienced a full-duration hypomanic or manic episode (irritable or euphoric) or who has ever
+ had a manic or hypomanic episode lasting more than 1 day. Another central differentiating
+ feature between bipolar disorders and disruptive mood dysregulation disorder is the presence of
+ elevated or expansive mood and grandiosity. These symptoms are common features of mania but
+ are not characteristic of disruptive mood dysregulation disorder.
+ Oppositional defiant disorder.
+ While symptoms of oppositional defiant disorder typically do occur
+ in children with disruptive mood dysregulation disorder, mood symptoms of disruptive mood
+ dysregulation disorder are relatively rare in children with oppositional defiant disorder. The key
+ features that warrant the diagnosis of disruptive mood dysregulation disorder in children whose
+ symptoms also meet criteria for oppositional defiant disorder are the presence of severe and
+ frequently recurrent outbursts and a persistent disruption in mood between outbursts. In addition,
+ the diagnosis of disruptive mood dysregulation disorder requires severe impairment in at least
+ one setting (i.e., home, school, or among peers) and mild to moderate impairment in a second
+ setting. For this reason, while most children whose symptoms meet criteria for disruptive mood
+ dysregulation disorder will also have a presentation that meets criteria for oppositional defiant
+ disorder, the reverse is not the case. That is, in only approximately 15% of individuals with
+ oppositional defiant disorder would criteria for disruptive mood dysregulation disorder be met.
+ Moreover, even for children in whom criteria for both disorders are met, only the diagnosis of
+ disruptive mood dysregulation disorder should be made. Finally, both the prominent mood
+ symptoms in disruptive mood dysregulation disorder and the high risk for depressive and anxiety
+ disorders in follow-up studies justify placement of disruptive mood dysregulation disorder
+ among the depressive disorders in DSM-5. (Oppositional defiant disorder is included in the
+ chapter “Disruptive, Impulse-Control, and Conduct
+182
+ Disorders.”) This reflects the more prominent mood component among individuals with
+ disruptive mood dysregulation disorder, as compared with individuals with oppositional defiant
+ disorder. Nevertheless, it also should be noted that disruptive mood dysregulation disorder
+ appears to carry a high risk for behavioral problems as well as mood problems.
+ Attention-deficit/hyperactivity disorder, major depressive disorder, anxiety disorders, and
+ autism spectrum disorder.
+ Unlike children diagnosed with bipolar disorder or oppositional defiant disorder—for whom a
+ diagnosis of disruptive mood dysregulation disorder cannot be given even if the symptoms meet
+ diagnostic criteria for that disorder—children whose symptoms meet criteria for disruptive mood
+ dysregulation disorder also can receive a comorbid diagnosis of ADHD, major depressive
+ disorder, and/or anxiety disorder. However, children whose irritability is present only in the
+ context of a major depressive episode or persistent depressive disorder should receive one of
+ those diagnoses rather than disruptive mood dysregulation disorder. Children with disruptive
+ mood dysregulation disorder may have symptoms that also meet criteria for an anxiety disorder
+ and can receive both diagnoses, but children whose irritability is manifest only in the context of
+ exacerbation of an anxiety disorder should receive the relevant anxiety disorder diagnosis rather
+ than disruptive mood dysregulation disorder. In addition, children with autism spectrum
+ disorders frequently present with temper outbursts when, for example, their routines are
+ disturbed. In that instance, the temper outbursts would be considered secondary to the autism
+ spectrum disorder, and the child should not receive the diagnosis of disruptive mood
+ dysregulation disorder.
+ Intermittent explosive disorder.
+ Children with symptoms suggestive of intermittent explosive
+ disorder present with instances of severe temper outbursts, much like children with disruptive
+ mood dysregulation disorder. However, unlike disruptive mood dysregulation disorder,
+ intermittent explosive disorder does not require the individual’s mood to be persistently irritable
+ or angry between outbursts. In addition, a diagnosis of intermittent explosive disorder involving
+ verbal aggression or physical aggression that does not result in damage to property or physical
+ injury to animals or other individuals occurring at least twice weekly can be made after only 3
+ months of symptoms, in contrast to the 12-month requirement for disruptive mood dysregulation
+ disorder. Thus, these two diagnoses should not be made in the same child. For children with
+ outbursts and intercurrent, persistent irritability, only the diagnosis of disruptive mood
+ dysregulation disorder should be made.
+ Comorbidity
+ Rates of comorbidity in disruptive mood dysregulation disorder are extremely high. It is rare to
+ find individuals whose symptoms meet criteria for disruptive mood dysregulation disorder alone.
+ Comorbidity between disruptive mood dysregulation disorder and other DSM-defined
+ syndromes appears higher than for many other pediatric mental illnesses; the strongest overlap is
+ with oppositional defiant disorder. Not only is the overall rate of comorbidity high in disruptive
+ mood dysregulation disorder, but also the range of comorbid illnesses appears particularly
+ diverse. These children typically present to the clinic with a wide range of disruptive behavior,
+ mood, anxiety, and even autism spectrum symptoms and diagnoses. However, children with
+disruptive mood dysregulation disorder should not have symptoms that meet criteria for bipolar
+ disorder, as in that context, only the bipolar disorder diagnosis should be made. If children have
+ symptoms that meet criteria for oppositional defiant disorder or intermittent explosive disorder
+ and disruptive mood dysregulation disorder, only the diagnosis of disruptive mood dysregulation
+ disorder should be assigned. Also, as noted earlier, the diagnosis of disruptive mood
+ dysregulation disorder should not be assigned if the symptoms occur only in an anxiety
+provoking context, when the routines of a child with autism spectrum disorder or obsessive
+compulsive disorder are disturbed, or in the context of a major depressive episode.
+ 183

@@ -1,0 +1,247 @@
+Substance/Medication-Induced Psychotic Disorder
+ Diagnostic Criteria
+ A. Presence of one or both of the following symptoms:
+ 1. Delusions.
+ 2. Hallucinations.
+ B. There is evidence from the history, physical examination, or laboratory findings
+ of both (1) and (2):
+ 1. The symptoms in Criterion A developed during or soon after substance
+ intoxication or withdrawal or after exposure to or withdrawal from a
+ medication.
+ 2. The involved substance/medication is capable of producing the symptoms in
+ Criterion A.
+ C. The disturbance is not better explained by a psychotic disorder that is not
+ substance/medication-induced. Such evidence of an independent psychotic
+ disorder could include the following:
+ The symptoms preceded the onset of the substance/medication use; the
+ symptoms persist for a substantial period of time (e.g., about 1 month) after
+ the cessation of acute withdrawal or severe intoxication; or there is other
+ evidence of an independent non-substance/medication-induced psychotic
+ disorder (e.g., a history of recurrent non-substance/medication-related
+ episodes).
+ D. The disturbance does not occur exclusively during the course of a delirium.
+ E. The disturbance causes clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ Note: This diagnosis should be made instead of a diagnosis of substance
+ intoxication or substance withdrawal only when the symptoms in Criterion A
+ predominate in the clinical picture and when they are sufficiently severe to warrant
+ clinical attention.
+Coding note: The ICD-10-CM codes for the [specific substance/medication]-induced
+ psychotic disorders are indicated in the table below. Note that the ICD-10-CM code
+ depends on whether or not there is a comorbid substance use disorder present for
+ the same class of substance. In any case, an additional separate diagnosis of a
+ substance use disorder is not given. If a mild substance use disorder is comorbid
+ with the substance-induced psychotic disorder, the 4th position character is “1,” and
+ the clinician should record “mild [substance] use disorder” before the substance
+induced psychotic disorder (e.g., “mild cocaine use disorder with cocaine-induced
+ psychotic disorder”). If a moderate or severe substance use disorder is comorbid
+ with the substance-induced psychotic disorder, the 4th position character is “2,” and
+ the clinician should record “moderate [substance] use disorder” or “severe
+ [substance] use disorder,” depending on the severity of the comorbid substance use
+ disorder. If there is no comorbid substance use disorder (e.g., after a one-time heavy
+ use of the substance), then the 4th position character is “9,” and the clinician should
+ record only the substance-induced psychotic disorder.
+ 127
+ ICD-10-CM
+ With mild use
+ disorder
+ With moderate or
+ severe use disorder
+ Without use
+ disorder
+ Alcohol F10.159 F10.259 F10.959
+ Cannabis F12.159 F12.259 F12.959
+ Phencyclidine F16.159 F16.259 F16.959
+ Other hallucinogen F16.159 F16.259 F16.959
+ Inhalant F18.159 F18.259 F18.959
+ Sedative, hypnotic, or anxiolytic F13.159 F13.259 F13.959
+ Amphetamine-type substance (or other
+ stimulant)
+ F15.159 F15.259 F15.959
+ Cocaine F14.159 F14.259 F14.959
+ Other (or unknown) substance F19.159 F19.259 F19.959
+ Specify (see Table 1 in the chapter “Substance-Related and Addictive Disorders,”
+ which indicates whether “with onset during intoxication” and/or “with onset during
+ withdrawal” applies to a given substance class; or specify “with onset after
+ medication use”):
+ With onset during intoxication: If criteria are met for intoxication with the
+ substance and the symptoms develop during intoxication.
+ With onset during withdrawal: If criteria are met for withdrawal from the
+ substance and the symptoms develop during, or shortly after, withdrawal.
+ With onset after medication use: If symptoms developed at initiation of
+ medication, with a change in use of medication, or during withdrawal of
+ medication.
+Specify current severity:
+ Severity is rated by a quantitative assessment of the primary symptoms of
+ psychosis, including delusions, hallucinations, abnormal psychomotor behavior,
+ and negative symptoms. Each of these symptoms may be rated for its current
+ severity (most severe in the last 7 days) on a 5-point scale ranging from 0 (not
+ present) to 4 (present and severe). (See Clinician-Rated Dimensions of
+ Psychosis Symptom Severity in the chapter “Assessment Measures.”)
+ Note: Diagnosis of substance/medication-induced psychotic disorder can be
+ made without using this severity specifier.
+ Recording Procedures
+ The name of the substance/medication-induced psychotic disorder begins with the specific
+ substance (e.g., cocaine, dexamethasone) that is presumed to be causing the delusions or
+ hallucinations. The diagnostic code is selected from the table included in the criteria set, which is
+ based on the drug class and presence or absence of a comorbid substance use disorder. For
+ substances that do not fit into any of the classes (e.g., dexamethasone), the code for “other (or
+ unknown) substance” should be used; and in cases in which a substance is judged to be an
+ etiological factor but the specific class of substance is unknown, the same code should also be
+ used.
+ 128
+ When recording the name of the disorder, the comorbid substance use disorder (if any) is
+ listed first, followed by the word “with,” followed by the name of the substance-induced
+ psychotic disorder, followed by the specification of onset (i.e., onset during intoxication, onset
+ during withdrawal). For example, in the case of delusions occurring during intoxication in a man
+ with a severe cocaine use disorder, the diagnosis is F14.259 severe cocaine use disorder with
+ cocaine-induced psychotic disorder, with onset during intoxication. A separate diagnosis of the
+ comorbid severe cocaine use disorder is not given. If the substance-induced psychotic disorder
+ occurs without a comorbid substance use disorder (e.g., after a one-time heavy use of the
+ substance), no accompanying substance use disorder is noted (e.g., F16.959 phencyclidine
+induced psychotic disorder, with onset during intoxication). When more than one substance is
+ judged to play a significant role in the development of psychotic symptoms, each should be listed
+ separately (e.g., F12.259 severe cannabis use disorder with cannabis-induced psychotic disorder,
+ with onset during intoxication; F16.159 mild phencyclidine use disorder with phencyclidine
+induced psychotic disorder, with onset during intoxication).
+ Diagnostic Features
+ The essential features of substance/medication-induced psychotic disorder are prominent
+ delusions and/or hallucinations (Criterion A) that are judged to be due to the physiological
+ effects of a substance/medication (i.e., a drug of abuse, a medication, or a toxin exposure)
+ (Criterion B). Hallucinations that the individual realizes are substance/medication-induced are
+ not included here and instead would be diagnosed as substance intoxication or substance
+ withdrawal with the accompanying specifier “with perceptual disturbances” (applies to alcohol
+withdrawal; cannabis intoxication; sedative, hypnotic, or anxiolytic withdrawal; and stimulant
+ intoxication).
+ A substance/medication-induced psychotic disorder is distinguished from an independent
+ psychotic disorder by considering the onset, course, and other factors. For drugs of abuse, there
+ must be evidence from the history, physical examination, or laboratory findings of substance use,
+ intoxication, or withdrawal. Substance/medication-induced psychotic disorders arise during or
+ soon after exposure to or withdrawal from a medication or after substance intoxication or
+ withdrawal but can persist for weeks, whereas independent psychotic disorders may precede the
+ onset of substance/medication use or may occur during times of sustained abstinence. Once
+ initiated, the psychotic symptoms may continue as long as the substance/medication use
+ continues. Another consideration is the presence of features that are atypical of an independent
+ psychotic disorder (e.g., atypical age at onset or course). For example, the appearance of
+ delusions de novo in a male person older than 35 years without a known history of an
+ independent psychotic disorder should suggest the possibility of a substance/medication-induced
+ psychotic disorder. Even a prior history of an independent psychotic disorder does not rule out
+ the possibility of a substance/medication-induced psychotic disorder. In contrast, factors that
+ suggest that the psychotic symptoms are better accounted for by an independent psychotic
+ disorder include persistence of psychotic symptoms for a substantial period of time (i.e., a month
+ or more) after the end of substance intoxication or acute substance withdrawal or after cessation
+ of medication use; or a history of prior recurrent independent psychotic disorders. Other causes
+ of psychotic symptoms must be considered even in an individual with substance intoxication or
+ withdrawal, because substance use problems are not uncommon among individuals with non
+substance/medication-induced psychotic disorders.
+ In addition to the two symptom domain areas identified in the diagnostic criteria (i.e.,
+ delusions and hallucinations), the assessment of cognition, depression, and mania symptom
+ domains is vital for making critically important distinctions between the various schizophrenia
+ spectrum and other psychotic disorders.
+ 129
+ Associated Features
+ Psychotic disorders can occur in association with intoxication with the following classes of
+ substances: alcohol; cannabis; hallucinogens, including phencyclidine and related substances;
+ inhalants; sedatives, hypnotics, and anxiolytics; stimulants (including cocaine); and other (or
+ unknown) substances. Psychotic disorders can occur in association with withdrawal from the
+ following classes of substances: alcohol; sedatives, hypnotics, and anxiolytics; and other (or
+ unknown) substances.
+ Some of the medications reported to evoke psychotic symptoms include anesthetics and
+ analgesics, anticholinergic agents, anticonvulsants, antihistamines, antihypertensive and
+ cardiovascular medications, antimicrobial medications, antiparkinsonian medications,
+ chemotherapeutic agents (e.g., cyclosporine, procarbazine), corticosteroids, gastrointestinal
+ medications, muscle relaxants, nonsteroidal anti-inflammatory medications, other over-the
+counter medications (e.g., phenylephrine, pseudoephedrine), antidepressant medication, and
+ disulfiram. Toxins reported to induce psychotic symptoms include anticholinesterase,
+organophosphate insecticides, sarin and other nerve gases, carbon monoxide, carbon dioxide, and
+ volatile substances such as fuel or paint.
+ Prevalence
+ Prevalence of substance/medication-induced psychotic disorder in the general population is
+ unknown. Between 7% and 25% of individuals presenting with a first episode of psychosis in
+ different settings are reported to have substance/medication-induced psychotic disorder.
+ Development and Course
+ The initiation of the psychotic symptoms may vary considerably with the substance. For
+ example, smoking a high dose of cocaine may produce psychosis within minutes, whereas days
+ or weeks of high-dose alcohol or sedative use may be required to produce psychosis. Alcohol
+induced psychotic disorder, with hallucinations, usually occurs only after prolonged, heavy
+ ingestion of alcohol in individuals who have moderate to severe alcohol use disorder, and the
+ hallucinations are generally auditory in nature.
+ Psychotic disorders induced by amphetamine-type substances and cocaine share similar
+ clinical features. Persecutory delusions may rapidly develop shortly after use of amphetamine or
+ a similarly acting sympathomimetic. The hallucination of bugs or vermin crawling in or under
+ the skin (formication) can lead to scratching and extensive skin excoriations. Cannabis-induced
+ psychotic disorder may develop shortly after high-dose cannabis use and usually involves
+ persecutory delusions, marked anxiety, emotional lability, and depersonalization. The disorder
+ usually remits within a day but in some cases may persist longer.
+ Substance/medication-induced psychotic disorder may at times persist when the offending
+ agent is removed, such that it may be difficult initially to distinguish it from an independent
+ psychotic disorder. Agents such as amphetamine-type substances, phencyclidine, and cocaine
+ have been reported to evoke temporary psychotic states that can sometimes persist for weeks or
+ longer despite removal of the agent and treatment with neuroleptic medication. In later life,
+ polypharmacy for medical conditions and exposure to medications for parkinsonism,
+ cardiovascular disease, and other medical disorders may be associated with a greater likelihood
+ of psychosis induced by prescription medications as opposed to substances of abuse.
+ According to data from a Danish registry study that followed cases of substance-induced
+ psychosis longitudinally over 20 years, roughly one-third (32%) of individuals with substance
+induced psychosis are later diagnosed with a schizophrenia spectrum disorder (26%) or a bipolar
+ disorder (8%), with the highest rate (44%) for cannabis-induced psychotic disorder.
+ 130
+ Diagnostic Markers
+ With substances for which relevant blood levels are available (e.g., blood alcohol level, other
+ quantifiable blood levels such as digoxin), the presence of a level consistent with toxicity may
+ increase diagnostic certainty.
+ Functional Consequences of Substance/Medication-Induced Psychotic
+ Disorder
+Substance/medication-induced psychotic disorder is typically severely disabling and
+ consequently is observed most frequently in emergency departments, as individuals are often
+ brought to the acute-care setting when it occurs. However, the disability is typically self-limited
+ and resolves upon removal of the offending agent.
+ Differential Diagnosis
+ Substance intoxication or substance withdrawal.
+ Individuals intoxicated with stimulants, cannabis,
+ the opioid meperidine, or phencyclidine, or those withdrawing from alcohol or sedatives, may
+ experience altered perceptions that they recognize as drug effects. If reality testing for these
+ experiences remains intact (i.e., the individual recognizes that the perception is substance
+ induced and neither believes in nor acts on it), the diagnosis is not substance/medication-induced
+ psychotic disorder. Instead, substance intoxication or substance withdrawal, with perceptual
+ disturbances, is diagnosed (e.g., cocaine intoxication, with perceptual disturbances). “Flashback”
+ hallucinations that can occur long after the use of hallucinogens has stopped are diagnosed as
+ hallucinogen persisting perception disorder. If substance/medication-induced psychotic
+ symptoms occur exclusively during the course of a delirium, as in severe forms of alcohol
+ withdrawal, the psychotic symptoms are considered to be an associated feature of the delirium
+ and are not diagnosed separately. Delusions in the context of a major or mild neurocognitive
+ disorder would be diagnosed as major or mild neurocognitive disorder, with behavioral
+ disturbance.
+ Independent psychotic disorder.
+ A substance/medication-induced 
+psychotic 
+disorder 
+is
+ distinguished from an independent psychotic disorder, such as schizophrenia, schizoaffective
+ disorder, delusional disorder, brief psychotic disorder, other specified schizophrenia spectrum
+ and other psychotic disorder, or unspecified schizophrenia spectrum and other psychotic
+ disorder, by the fact that a substance is judged to be etiologically related to the symptoms.
+ Psychotic disorder due to another medical condition.
+ A substance/medication-induced psychotic
+ disorder due to a prescribed treatment for a mental disorder or medical condition must have its
+ onset while the individual is receiving the medication (or during withdrawal, if there is a
+ withdrawal syndrome associated with the medication). Because individuals with medical
+ conditions often take medications for those conditions, the clinician must consider the possibility
+ that the psychotic symptoms are caused by the physiological consequences of the medical
+ condition itself rather than the medication, in which case psychotic disorder due to another
+ medical condition is diagnosed. The history often provides the primary basis for such a
+ judgment. At times, a change in the treatment for the medical condition (e.g., medication
+ substitution or discontinuation) may be needed to determine empirically for that individual
+ whether the medication is the causative agent. If the clinician has ascertained that the disturbance
+ is attributable to both a medical condition and substance/medication use, both diagnoses (i.e.,
+ psychotic disorder due to another medical condition and substance/medication-induced psychotic
+ disorder) may be given.
+ Other specified or unspecified schizophrenia spectrum and other psychotic disorder.
+ The 
+psychotic
+ symptoms included in the diagnosis of substance/medication-induced psy-chotic disorder are
+ limited to either delusions or hallucinations. Individuals with other
+ 131
+substance-induced psychotic symptoms (e.g., disorganized or catatonic behavior; disorganized
+ speech; incoherence or irrational content) should be classified in the category other specified or
+ unspecified schizophrenia spectrum and other psychotic disorder.

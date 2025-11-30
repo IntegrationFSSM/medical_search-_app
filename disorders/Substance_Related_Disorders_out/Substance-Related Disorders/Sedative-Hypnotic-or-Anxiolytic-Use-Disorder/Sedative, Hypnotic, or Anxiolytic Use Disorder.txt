@@ -1,0 +1,324 @@
+Sedative, Hypnotic, or Anxiolytic Use Disorder
+ Diagnostic Criteria
+A. A problematic pattern of sedative, hypnotic, or anxiolytic use leading to clinically
+ significant impairment or distress, as manifested by at least two of the following,
+ occurring within a 12-month period:
+ 1. Sedatives, hypnotics, or anxiolytics are often taken in larger amounts or over
+ a longer period than was intended.
+ 2. There is a persistent desire or unsuccessful efforts to cut down or control
+ sedative, hypnotic, or anxiolytic use.
+ 3. A great deal of time is spent in activities necessary to obtain the sedative,
+ hypnotic, or anxiolytic; use the sedative, hypnotic, or anxiolytic; or recover
+ from its effects.
+ 4. Craving, or a strong desire or urge to use the sedative, hypnotic, or anxiolytic.
+ 5. Recurrent sedative, hypnotic, or anxiolytic use resulting in a failure to fulfill
+ major role obligations at work, school, or home (e.g., repeated absences from
+ work or poor work performance related to sedative, hypnotic, or anxiolytic
+ use; sedative-, hypnotic-, or anxiolytic-related absences, suspensions, or
+ expulsions from school; neglect of children or household).
+ 6. Continued sedative, hypnotic, or anxiolytic use despite having persistent or
+ recurrent social or interpersonal problems caused or exacerbated by the
+ effects of sedatives, hypnotics, or anxiolytics (e.g., arguments with a spouse
+ about consequences of intoxication; physical fights).
+ 7. Important social, occupational, or recreational activities are given up or
+ reduced because of sedative, hypnotic, or anxiolytic use.
+ 8. Recurrent sedative, hypnotic, or anxiolytic use in situations in which it is
+ physically hazardous (e.g., driving an automobile or operating a machine
+ when impaired by sedative, hypnotic, or anxiolytic use).
+ 9. Sedative, hypnotic, or anxiolytic use is continued despite knowledge of having
+ a persistent or recurrent physical or psychological problem that is likely to
+ have been caused or exacerbated by the sedative, hypnotic, or anxiolytic.
+ 10. Tolerance, as defined by either of the following:
+ a. A need for markedly increased amounts of the sedative, hypnotic, or
+ anxiolytic to achieve intoxication or desired effect.
+ b. A markedly diminished effect with continued use of the same amount of
+ the sedative, hypnotic, or anxiolytic.
+ 621
+ Note: This criterion is not considered to be met for individuals taking
+ sedatives, hypnotics, or anxiolytics under medical supervision.
+ 11. Withdrawal, as manifested by either of the following:
+ a. The characteristic withdrawal syndrome for sedatives, hypnotics, or
+ anxiolytics (refer to Criteria A and B of the criteria set for sedative,
+ hypnotic, or anxiolytic withdrawal).
+b. Sedatives, hypnotics, or anxiolytics (or a closely related substance, such
+ as alcohol) are taken to relieve or avoid withdrawal symptoms.
+ Note: This criterion is not considered to be met for individuals taking
+ sedatives, hypnotics, or anxiolytics under medical supervision.
+ Specify if:
+ In early remission: After full criteria for sedative, hypnotic, or anxiolytic use
+ disorder were previously met, none of the criteria for sedative, hypnotic, or
+ anxiolytic use disorder have been met for at least 3 months but for less than 12
+ months (with the exception that Criterion A4, “Craving, or a strong desire or urge
+ to use the sedative, hypnotic, or anxiolytic,” may be met).
+ In sustained remission: After full criteria for sedative, hypnotic, or anxiolytic
+ use disorder were previously met, none of the criteria for sedative, hypnotic, or
+ anxiolytic use disorder have been met at any time during a period of 12 months
+ or longer (with the exception that Criterion A4, “Craving, or a strong desire or
+ urge to use the sedative, hypnotic, or anxiolytic,” may be met).
+ Specify if:
+ In a controlled environment: This additional specifier is used if the individual is
+ in an environment where access to sedatives, hypnotics, or anxiolytics is
+ restricted.
+ Code based on current severity/remission: If a sedative, hypnotic, or anxiolytic
+ intoxication; sedative, hypnotic, or anxiolytic withdrawal; or another sedative-,
+ hypnotic-, or anxiolytic-induced mental disorder is also present, do not use the codes
+ below for sedative, hypnotic, or anxiolytic use disorder. Instead, the comorbid
+ sedative, hypnotic, or anxiolytic use disorder is indicated in the 4th character of the
+ sedative-, hypnotic-, or anxiolytic-induced disorder (see the coding note for sedative,
+ hypnotic, or anxiolytic intoxication; sedative, hypnotic, or anxiolytic withdrawal; or
+ specific sedative-, hypnotic-, or anxiolytic-induced mental disorder). For example, if
+ there is comorbid sedative-, hypnotic-, or anxiolytic-induced depressive disorder and
+ sedative, hypnotic, or anxiolytic use disorder, only the sedative-, hypnotic-, or
+ anxiolytic-induced depressive disorder code is given, with the 4th character
+ indicating whether the comorbid sedative, hypnotic, or anxiolytic use disorder is mild,
+ moderate, or severe: F13.14 for mild sedative, hypnotic, or anxiolytic use disorder
+ with sedative-, hypnotic-, or anxiolytic-induced depressive disorder or F13.24 for a
+ moderate or severe sedative, hypnotic, or anxiolytic use disorder with sedative-,
+ hypnotic-, or anxiolytic-induced depressive disorder.
+ Specify current severity/remission:
+ F13.10 Mild: Presence of 2–3 symptoms.
+ F13.11 Mild, In early remission
+ F13.11 Mild, In sustained remission
+ F13.20 Moderate: Presence of 4–5 symptoms.
+ F13.21 Moderate, In early remission
+F13.21 Moderate, In sustained remission
+ F13.20 Severe: Presence of 6 or more symptoms.
+ F13.21 Severe, In early remission
+ F13.21 Severe, In sustained remission
+ 622
+ Specifiers
+ “In a controlled environment” applies as a further specifier of remission if the individual is both
+ in remission and in a controlled environment (i.e., in early remission in a controlled environment
+ or in sustained remission in a controlled environment). Examples of these environments are
+ closely supervised and substance-free jails, therapeutic communities, and locked hospital units.
+ Diagnostic Features
+ Sedative, hypnotic, or anxiolytic substances include benzodiazepines, benzodiazepine-like drugs
+ (e.g., zolpidem, zaleplon), carbamates (e.g., glutethimide, meprobamate), barbiturates (e.g.,
+ secobarbital), and barbiturate-like hypnotics (e.g., glutethimide, methaqualone, propofol). This
+ class of substances includes most prescription sleeping medications and most prescription
+ antianxiety medications. Nonbenzodiazepine antianxiety agents (e.g., buspirone, gepirone) are
+ not included in this class because they do not appear to be associated with significant misuse.
+ Like alcohol, these agents are brain depressants and can produce similar
+ substance/medication-induced and substance use disorders. Sedative, hypnotic, or anxiolytic
+ substances are available both by prescription and illegally. Some individuals who obtain these
+ substances by prescription will develop a sedative, hypnotic, or anxiolytic use disorder, while
+ others who misuse these substances or use them for intoxication will not develop a use disorder.
+ In particular, sedatives, hypnotics, or anxiolytics with rapid onset or short to intermediate lengths
+ of action may be taken for intoxication purposes, although longer-acting substances in this class
+ may be taken for intoxication as well.
+ Craving (Criterion A4), either during periods of active use or during periods of abstinence, is
+ a typical feature of sedative, hypnotic, or anxiolytic use disorder. Misuse of substances from this
+ class may occur in conjunction with use of other substances. For example, individuals may use
+ intoxicating doses of sedatives or benzodiazepines to “come down” from cocaine or
+ amphetamines or use high doses of benzodiazepines in combination with methadone to “boost”
+ its effects.
+ Repeated absences or poor work performance, school absences, suspensions or expulsions,
+ and neglect of children or household (Criterion A5) may be related to sedative, hypnotic, or
+ anxiolytic use disorder; the continued use of the substances despite arguments with a spouse
+ about consequences of intoxication or despite physical fights (Criterion A6) may also occur.
+ Limiting contact with family or friends, avoiding work or school, or stopping participation in
+ hobbies, sports, or games (Criterion A7) and recurrent sedative, hypnotic, or anxiolytic use when
+ driving an automobile or operating machinery when impaired by such use (Criterion A8) are also
+ seen in sedative, hypnotic, or anxiolytic use disorder.
+ Very significant levels of tolerance and withdrawal can develop to sedative, hypnotic, or
+anxiolytic substances. There may be evidence of tolerance and withdrawal in the absence of a
+ diagnosis of a sedative, hypnotic, or anxiolytic use disorder in an individual who has abruptly
+ discontinued use of benzodiazepines that were taken for long periods of time at prescribed and
+ therapeutic doses. In these cases, an additional diagnosis of sedative, hypnotic, or anxiolytic use
+ disorder is made only if other criteria are met. That is, sedative, hypnotic, or anxiolytic
+ medications may be prescribed for appropriate medical purposes, and depending on the dose
+ regimen, these drugs may then produce tolerance and withdrawal. If these drugs are prescribed or
+ recommended for appropriate medical purposes, and if they are used as prescribed, the resulting
+ tolerance or withdrawal does not count toward the diagnosis of a substance use disorder.
+ However, it is necessary to determine whether the drugs were inappropriately prescribed and
+ used (e.g., falsifying medical symptoms to obtain the medication; using more medication than
+ prescribed; obtaining the medication from several doctors without informing them).
+ Given the unidimensional nature of the symptoms of sedative, hypnotic, or anxiolytic use
+ disorder, severity is based on the number of criteria endorsed.
+ 623
+ Associated Features
+ Research with nationally representative samples of the U.S. population has found that sedative,
+ hypnotic, or anxiolytic use disorder is often associated with other substance use disorders (e.g.,
+ alcohol, cannabis, opioid, stimulant use disorders). Sedatives are often used to alleviate the
+ unwanted effects of these other substances. With repeated use of the sedative, hypnotic, or
+ anxiolytic, tolerance develops to the sedative effects, and a progressively higher dose is used.
+ However, tolerance to brain stem depressant effects develops much more slowly, and as the
+ individual takes more substance to achieve euphoria or other desired effects, there may be a
+ sudden onset of respiratory depression and hypotension, which may result in death. Intense or
+ repeated sedative, hypnotic, or anxiolytic intoxication may be associated with severe depression
+ that although temporary can lead to suicide attempt and suicide.
+ Prevalence
+ The 12-month prevalence of DSM-IV sedative, hypnotic, or anxiolytic use disorder in the United
+ States is estimated to be 0.3% among adolescents ages 12–17 years and adults age 18 years and
+ older, and this prevalence has remained stable nationally despite increases in rates of prescription
+ of these medications. Rates of DSM-IV sedative, hypnotic, or anxiolytic use disorder in the
+ United States have not been shown to vary consistently by gender, but data from other countries
+ have generally found higher rates among girls and women than boys and men. The 12-month
+ prevalence of DSM-IV sedative, hypnotic, or anxiolytic use disorder in the United States
+ decreases as a function of age and is greatest among individuals ages 18–29 years (0.5%) and
+ lowest among individuals 65 years and older (0.04%).
+ Twelve-month prevalence of sedative, hypnotic, or anxiolytic use, misuse (e.g., use without a
+ prescription), or disorder varies across U.S. ethnoracial groups. For instance, 12-month
+ prevalence estimates for sedative, hypnotic, or anxiolytic misuse across ethnoracial groups range
+ from 0.6% to 2.5% for adolescents ages 12–17 years and 0.7% to 10.1% for adults.
+Development and Course
+ The usual course of sedative, hypnotic, or anxiolytic use disorder involves individuals in their
+ teens or 20s who escalate their occasional use of sedative, hypnotic, or anxiolytic agents to the
+ point at which they develop problems that meet criteria for a diagnosis. This pattern may be
+ especially likely among individuals who have other substance use disorders (e.g., alcohol,
+ opioids, stimulants). An initial pattern of intermittent use socially (e.g., at parties) can lead to
+ daily use and high levels of tolerance. Once this occurs, an increasing level of interpersonal
+ difficulties can be expected, as well as increasingly severe episodes of cognitive dysfunction and
+ physiological withdrawal.
+ The second and less frequently observed clinical course begins with an individual who
+ originally obtained the medication by prescription from a physician, usually for the treatment of
+ anxiety, insomnia, or somatic complaints. As either tolerance or a need for higher doses of the
+ medication develops, there is a gradual increase in the dose and frequency of self-administration.
+ The individual is likely to continue to justify use on the basis of original anxiety or insomnia
+ symptoms, but substance-seeking behavior becomes more prominent, and the individual may
+ seek out multiple physicians to obtain sufficient supplies of the medication. Tolerance can reach
+ high levels, and withdrawal (including seizures and withdrawal delirium) may occur.
+ As with many substance use disorders, sedative, hypnotic, or anxiolytic use disorder
+ generally has an onset during adolescence or early adult life. Although the risk for misuse and
+ use disorder decreases with age after about age 30, side effects associated with psychoactive
+ substances may increase as individuals age. In particular, cognitive impairment increases as a
+ side effect with age, and the metabolism of sedatives, hypnotics, or
+ 624
+ anxiolytics decreases with age among older individuals. Both acute and chronic toxic effects
+ of these substances, especially effects on cognition, memory, and motor coordination, are likely
+ to increase with age as a consequence of pharmacodynamic and pharmacokinetic age-related
+ changes. Individuals with major neurocognitive disorder are more likely to develop intoxication
+ and impaired physiological functioning at lower doses. Because sedatives, hypnotics, and
+ anxiolytics are often used in combination with other psychoactive substances, it can be difficult
+ to ascertain whether the functional consequences are attributable to a single substance (e.g.,
+ sedative) or to the use of multiple substances.
+ Deliberate intoxication to achieve a “high” is most likely to be observed in teenagers and
+ individuals in their 20s. Problems associated with sedatives, hypnotics, or anxiolytics are also
+ seen in individuals in their 40s and older who escalate the dose of prescribed medications. In
+ older individuals, intoxication can resemble a progressive major neurocognitive disorder.
+ Risk and Prognostic Factors
+ Temperamental.
+ Impulsivity and novelty seeking are individual temperaments that relate to the
+ propensity to develop a substance use disorder but may themselves be genetically determined.
+ Personality disorders can also increase the risk of sedative, hypnotic, or anxiolytic misuse or use
+ disorder.
+ Environmental.
+ Because sedatives, hypnotics, or anxiolytics are all medications, a key risk factor
+relates to availability of the substances, both through an individual’s own prescriptions and from
+ prescriptions dispensed to family and friends. In the United States, the historical patterns of
+ sedative, hypnotic, or anxiolytic misuse relate to broad prescribing patterns. For instance, a
+ marked decrease in prescription of barbiturates was associated with an increase in
+ benzodiazepine prescriptions. Peer factors may relate to genetic predisposition in terms of how
+ individuals select their environment. Other individuals at heightened risk might include those
+ with alcohol use disorder who may receive repeated prescriptions in response to their complaints
+ of alcohol-related anxiety or insomnia.
+ Genetic and physiological.
+ As with other substance use disorders, the risk for sedative, hypnotic,
+ or anxiolytic use disorder has been found in U.S.-based twin registry studies to be related to
+ individual, family, peer, social, and environmental factors. Within these domains, genetic factors
+ play a particularly important role both directly and indirectly. Overall, across development,
+ genetic factors seem to play a larger role in the onset of sedative, hypnotic, or anxiolytic use
+ disorder as individuals age through puberty into adult life.
+ Course modifiers.
+ In nationally representative U.S. studies, early onset of use is associated with
+ greater likelihood for developing a sedative, hypnotic, or anxiolytic use disorder.
+ Culture-Related Diagnostic Issues
+ Prescription patterns (and availability) of this class of substances vary across countries and
+ populations, which may lead to variations in prevalence of sedative, hypnotic, or anxiolytic use
+ disorder. In the United States, use of benzodiazepines has been more frequently reported by non
+Latinx Whites than Latinx or African Americans. However, risk of the disorder may vary within
+ populations exposed to these substances. For example, the 12-month prevalence of DSM-IV
+ benzodiazepine use disorder among U.S. individuals who used benzodiazepines was higher
+ among African Americans (3.0%) and non-Latinx “others” (2.6%) than among non-Latinx
+ Whites (1.3%).
+ Sex- and Gender-Related Diagnostic Issues
+ Although estimates from individual studies vary, there appear to be no gender differences in the
+ prevalence of sedative, hypnotic, or anxiolytic use disorder.
+ 625
+ Diagnostic Markers
+ Almost all sedative, hypnotic, or anxiolytic substances can be identified through laboratory
+ evaluations of urine or blood (the latter of which can quantify the amounts of these agents in the
+ body). Urine test results are likely to remain positive for up to approximately 1 week after the
+ use of long-acting substances, such as diazepam or flurazepam.
+ Association With Suicidal Thoughts or Behavior
+ U.S. epidemiological studies show that hypnotics are associated with suicide, but it is unclear if
+ this association is attributable to underlying psychiatric conditions such as depression and
+ insomnia, which are themselves risk factors for suicide.
+Functional Consequences of Sedative, Hypnotic, or Anxiolytic Use
+ Disorder
+ The social and interpersonal consequences of sedative, hypnotic, or anxiolytic use disorder
+ mimic those of alcohol in terms of the potential for disinhibited behavior. Accidents,
+ interpersonal difficulties, and interference with work or school performance are common
+ outcomes. The disinhibiting effects of these agents, like alcohol, may potentially contribute to
+ overly aggressive behavior and arguments or fights, with subsequent interpersonal and legal
+ problems. Physical examination is likely to reveal evidence of a mild decrease in most aspects of
+ autonomic nervous system functioning, including a slower pulse, a slightly decreased respiratory
+ rate, and a slight drop in blood pressure (most likely to occur with postural changes).
+ Acute intoxication can result in accidental injuries and automobile accidents. There may be
+ consequences of trauma (e.g., internal bleeding, a subdural hematoma) from accidents that occur
+ while intoxicated. For elderly individuals, even short-term use of these sedating medications at
+ prescribed doses may be associated with an increased risk for cognitive problems and falls. The
+ association of sedative, hypnotic, or anxiolytic medications with increased risk of major
+ neurocognitive disorder remains unclear.
+ At high doses, sedative, hypnotic, or anxiolytic substances can be lethal, particularly when
+ mixed with other central nervous system depressants, such as opioids or alcohol, although the
+ lethal dosage varies considerably among the specific substances. Intravenous use of these
+ substances can result in medical complications related to the use of contaminated needles (e.g.,
+ hepatitis, HIV).
+ Accidental or deliberate overdoses, similar to those observed for alcohol use disorder or
+ repeated alcohol intoxication, can occur. Overdoses may be associated with a deterioration in
+ vital signs that signals an impending medical emergency (e.g., respiratory arrest from
+ barbiturates). In contrast to their wide margin of safety when used alone, benzodiazepines taken
+ in combination with opioids and alcohol can be particularly dangerous, and accidental overdoses
+ are reported commonly in U.S. data. Accidental overdoses have also been reported in individuals
+ who deliberately misuse barbiturates and other nonbenzodiazepine sedatives (e.g.,
+ methaqualone), but because these agents are much less available than the benzodiazepines, the
+ frequency of overdosing is low in most settings.
+ Differential Diagnosis
+ Sedative, hypnotic, or anxiolytic intoxication; sedative, hypnotic, or anxiolytic withdrawal; and
+ sedative-, hypnotic-, or anxiolytic-induced mental disorders.
+ Sedative, hypnotic, or anxiolytic use disorder is differentiated from sedative, hypnotic, or
+ anxiolytic intoxication; sedative, hypnotic, or anxiolytic withdrawal; and sedative-, hypnotic-, or
+ anxiolytic-induced mental disorders (e.g., sedative-, hypnotic-, or anxiolytic-induced depressive
+ disorder) in that sedative, hypnotic, or anxiolytic use disorder describes a problematic pattern
+ 626
+ of sedative, hypnotic, or anxiolytic use that involves impaired control over such use; social
+ impairment attributable to this use; risky sedative, hypnotic, or anxiolytic use (e.g., driving while
+ intoxicated); and pharmacological symptoms (the development of tolerance or withdrawal);
+ whereas sedative, hypnotic, or anxiolytic intoxication; sedative, hypnotic, or anxiolytic
+Other medical conditions.
+ Alcohol use disorder.
+ Clinically appropriate use of sedative, hypnotic, or anxiolytic medications.
+ withdrawal; and sedative-, hypnotic-, or anxiolytic-induced mental disorders describe psychiatric
+ syndromes that occur in the context of heavy use. Sedative, hypnotic, or anxiolytic intoxication;
+ sedative, hypnotic, or anxiolytic withdrawal; and sedative-, hypnotic-, or anxiolytic-induced
+ mental disorders occur frequently in individuals with sedative, hypnotic, or anxiolytic use
+ disorder. In such cases, a diagnosis of sedative, hypnotic, or anxiolytic intoxication; sedative,
+ hypnotic, or anxiolytic withdrawal; or a sedative-, hypnotic-, or anxiolytic-induced mental
+ disorder should be given in addition to a diagnosis of sedative, hypnotic, and anxiolytic use
+ disorder, the presence of which is indicated in the diagnostic code.
+ The slurred speech, incoordination, and other associated features
+ characteristic of sedative, hypnotic, or anxiolytic intoxication could be the result of another
+ medical condition (e.g., multiple sclerosis) or of a prior head trauma (e.g., a subdural hematoma).
+ Sedative, hypnotic, or anxiolytic use disorder must be differentiated from
+ alcohol use disorder. The differential diagnosis is determined mostly through clinical history,
+ although liver damage and other potential signs of chronic alcohol toxicity (e.g.,
+ cardiomyopathy) can also be more suggestive of alcohol use disorder than of sedative, hypnotic,
+ or anxiolytic use disorder.
+ Individuals may continue to
+ take benzodiazepine medication according to a physician’s direction for a legitimate medical
+ indication over extended periods of time. Even if physiological signs of tolerance or withdrawal
+ are manifested, many of these individuals do not develop symptoms that meet the criteria for
+ sedative, hypnotic, or anxiolytic use disorder because they are not preoccupied with obtaining
+ the substance and its use does not interfere with their performance of usual social or occupational
+ roles.
+ Comorbidity
+ Nonmedical use of sedative, hypnotic, or anxiolytic agents is associated with alcohol use
+ disorder, tobacco use disorder, and, generally, illicit drug use. There may also be an overlap
+ between sedative, hypnotic, or anxiolytic use disorder and antisocial personality disorder;
+ depressive, bipolar, and anxiety disorders; and other substance use disorders, such as alcohol use
+ disorder and illicit drug use disorders. Antisocial behavior and antisocial personality disorder are
+ especially associated with sedative, hypnotic, or anxiolytic use disorder when the substances are
+ obtained illegally. Comorbidity with other substance use disorders and other psychiatric
+ disorders increases the risk of transition from sedative, hypnotic, or anxiolytic use to use disorder
+ and decreases the probability of remission.

@@ -1,0 +1,354 @@
+Substance/Medication-Induced Sleep Disorder
+ Diagnostic Criteria
+ A. A prominent and severe disturbance in sleep.
+ B. There is evidence from the history, physical examination, or laboratory findings
+ of both (1) and (2):
+ 1. The symptoms in Criterion A developed during or soon after substance
+ intoxication or withdrawal or after exposure to or withdrawal from a
+ medication.
+ 2. The involved substance/medication is capable of producing the symptoms in
+ Criterion A.
+ C. The disturbance is not better explained by a sleep disorder that is not
+ substance/medication-induced. Such evidence of an independent sleep disorder
+ could include the following:
+ The symptoms precede the onset of the substance/medication use; the
+ symptoms persist for a substantial period of time (e.g., about 1 month) after
+ the cessation of acute withdrawal or severe intoxication; or there is other
+ evidence suggesting the existence of an independent non
+substance/medication-induced sleep disorder (e.g., a history of recurrent non
+substance/medication-related episodes).
+ D. The disturbance does not occur exclusively during the course of a delirium.
+ E. The disturbance causes clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ Note: This diagnosis should be made instead of a diagnosis of substance
+ intoxication or substance withdrawal only when the symptoms in Criterion A
+ predominate in the clinical picture and when they are sufficiently severe to warrant
+ clinical attention.
+Coding note: The ICD-10-CM codes for the [specific substance/medication]-induced
+ sleep disorders are indicated in the table below. Note that the ICD-10-CM code
+ depends on whether or not there is a comorbid substance use disorder present for
+ the same class of substance. In any case, an additional separate diagnosis of a
+ substance use disorder is not given. If a mild substance use disorder is comorbid
+ with the substance-induced sleep disorder, the 4th position character is “1,” and the
+ clinician should record “mild [substance] use disorder” before the substance-induced
+ sleep disorder (e.g., “mild cocaine use disorder with cocaine-induced sleep
+ disorder”). If a moderate or severe substance use disorder is comorbid with the
+ substance-induced sleep disorder, the 4th position character is “2,” and the clinician
+ should record “moderate [substance] use disorder” or “severe [substance] use
+ disorder,” depending on the severity of the comorbid substance use disorder. If there
+ is no comorbid substance use disorder (e.g., after a one-time heavy use of the
+ substance), then the 4th position character is “9,” and the clinician should record
+ only the substance-induced sleep disorder.
+ There are two exceptions to this coding convention as it applies to caffeine- and
+ tobacco-induced sleep disorders. Because caffeine use disorder is not an official
+ DSM-5 category,
+ 469
+ there is only a single ICD-10-CM code for caffeine-induced sleep disorder: F15.982.
+ Moreover, because ICD-10-CM assumes that tobacco-induced sleep disorder can
+ only occur in the context of moderate or severe tobacco use disorder, the ICD-10
+CM code for tobacco-induced sleep disorder is F17.208.
+ ICD-10-CM
+ With mild use
+ disorder
+ With moderate or
+ severe use disorder
+ Without use
+ disorder
+ Alcohol F10.182 F10.282 F10.982
+ Caffeine NA NA F15.982
+ Cannabis F12.188 F12.288 F12.988
+ Opioid F11.182 F11.282 F11.982
+ Sedative, hypnotic, or anxiolytic F13.182 F13.282 F13.982
+ Amphetamine-type substance (or other
+ stimulant)
+ F15.182 F15.282 F15.982
+ Cocaine F14.182 F14.282 F14.982
+ Tobacco NA F17.208 NA
+ Other (or unknown) substance F19.182 F19.282 F19.982
+ Specify whether:
+ Insomnia type: Characterized by difficulty falling asleep or maintaining sleep,
+ frequent nocturnal awakenings, or nonrestorative sleep.
+ Daytime sleepiness type: Characterized by predominant complaint of
+excessive sleepiness/fatigue during waking hours or, less commonly, a long
+ sleep period.
+ Parasomnia type: Characterized by abnormal behavioral events during sleep.
+ Mixed type: Characterized by a substance/medication-induced sleep problem
+ characterized by multiple types of sleep symptoms, but no symptom clearly
+ predominates.
+ Specify (see Table 1 in the chapter “Substance-Related and Addictive Disorders,”
+ which indicates whether “with onset during intoxication” and/or “with onset during
+ withdrawal” applies to a given substance class; or specify “with onset after
+ medication use”):
+ With onset during intoxication: If criteria are met for intoxication with the
+ substance and the symptoms develop during the intoxication.
+ With onset during withdrawal: If criteria are met for withdrawal from the
+ substance and the symptoms develop during, or shortly after, withdrawal.
+ With onset after medication use: If symptoms developed at initiation of
+ medication, with a change in use of medication, or during withdrawal of
+ medication.
+ Recording Procedures
+ The name of the substance/medication-induced sleep disorder begins with the specific substance
+ (e.g., alcohol) that is presumed to be causing the sleep disturbance. The ICD-10-CM code that
+ corresponds to the applicable drug class is selected from the table included in the criteria set. For
+ substances that do not fit into any of the classes (e.g., fluoxetine), the ICD-10-CM code for the
+ other (or unknown) substance class should be used and the name
+ 470
+ of the specific substance recorded (e.g., F19.982 fluoxetine-induced sleep disorder, insomnia
+ type). In cases in which a substance is judged to be an etiological factor but the specific
+ substance is unknown, the ICD-10-CM code for the other (or unknown) substance class is used
+ and the fact that the substance is unknown is recorded (e.g., F19.982 unknown substance
+induced sleep disorder, hypersomnia type).
+ To record the name of the disorder, the comorbid substance use disorder (if any) is listed
+ first, followed by “with substance/medication-induced sleep disorder” (incorporating the name of
+ the specific etiological substance/medication), followed by the specification of onset (i.e., with
+ onset during intoxication, with onset during withdrawal, with onset after medication use),
+ followed by the subtype designation (i.e., insomnia type, daytime sleepiness type, parasomnia
+ type, mixed type). For example, in the case of insomnia occurring during withdrawal in a man
+ with a severe lorazepam use disorder, the diagnosis is F13.282 severe lorazepam use disorder
+ with lorazepam-induced sleep disorder, with onset during withdrawal, insomnia type. A separate
+ diagnosis of the comorbid severe lorazepam use disorder is not given. If the substance-induced
+ sleep disorder occurs without a comorbid substance use disorder (e.g., with medication use as
+prescribed), no accompanying substance use disorder is noted (e.g., F19.982 bupropion-induced
+ sleep disorder, with onset during medication use, insomnia type). When more than one substance
+ is judged to play a significant role in the development of the sleep disturbance, each should be
+ listed separately (e.g., F10.282 severe alcohol use disorder with alcohol-induced sleep disorder,
+ with onset during intoxication, insomnia type; F14.282 severe cocaine use disorder with cocaine
+induced sleep disorder, with onset during intoxication, insomnia type).
+ Specifiers
+ Depending on the substance involved, one of four types of sleep disturbances is indicated.
+ Insomnia type and daytime sleepiness type are most common, whereas parasomnia type is seen
+ less often. The mixed type is noted when more than one type of sleep disturbance–related
+ symptom is present and none predominates.
+ Diagnostic Features
+ The essential feature of substance/medication-induced sleep disorder is a prominent sleep
+ disturbance that is sufficiently severe to warrant independent clinical attention (Criterion A). The
+ sleep disturbance may be characterized by insomnia, daytime sleepiness, a parasomnia, or some
+ combination of these. The sleep disturbance is judged to be primarily associated with the
+ pharmacological effects of a substance (i.e., a drug of abuse, a medication, toxin exposure)
+ (Criterion B). The disturbance must not be better explained by another sleep disorder that is not
+ substance/medication-induced (Criterion C). A substance/medication-induced sleep disorder is
+ distinguished from insomnia disorder or a disorder associated with excessive daytime sleepiness
+ by considering onset and course. For drugs of abuse, there must be evidence of intoxication or
+ withdrawal 
+from the history, physical examination, or laboratory findings.
+ Substance/medication-induced sleep disorder arises only in association with intoxication or
+ discontinuation/withdrawal states, whereas other sleep disorders may precede the onset of
+ substance use or occur during times of sustained abstinence. As discontinuation/withdrawal
+ states for some substances can be protracted, onset of the sleep disturbance can occur 4 weeks
+ after cessation of substance use, and the disturbance may have features atypical of other sleep
+ disorders (e.g., atypical age at onset or course). The diagnosis is not made if the sleep
+ disturbance occurs only during a delirium (Criterion D). The symptoms must cause clinically
+ significant distress or impairment in social, occupational, or other important areas of functioning
+ (Criterion E). This diagnosis should be made instead of a diagnosis of substance intoxication or
+ substance withdrawal only when the symptoms in Criterion A predominate in the clinical picture
+ and when the symptoms warrant independent clinical attention.
+ 471
+ Associated Features
+ During periods of substance/medication use, intoxication, or withdrawal, individuals frequently
+ complain of dysphoric mood, including depression and anxiety, irritability, cognitive
+ impairment, inability to concentrate, and fatigue.
+ Prominent and severe sleep disturbances can occur in association with intoxication with the
+ following classes of substances: alcohol; caffeine; cannabis; opioids; sedatives, hypnotics, or
+anxiolytics; stimulants (including cocaine); and other (or unknown) substances. Prominent and
+ severe sleep disturbances can occur in association with withdrawal from the following classes of
+ substances: alcohol; caffeine; cannabis; opioids; sedatives, hypnotics, or anxiolytics; stimulants
+ (including cocaine); tobacco; and other (or unknown) substances. Medications that invoke sleep
+ disturbances include adrenergic agonists and antagonists, dopamine agonists and antagonists,
+ cholinergic agonists and antagonists, serotonergic agonists and antagonists, antihistamines, and
+ corticosteroids.
+ Alcohol.
+ Alcohol-induced sleep disorder typically occurs as insomnia type. During acute
+ intoxication with doses > 1 g/kg, alcohol produces an immediate sedative effect depending on
+ dose, accompanied by a reduction in sleep latency, increased non–rapid eye movement (NREM)
+ sleep stages 2 and 3 (N2 and N3), and reduced rapid eye movement (REM) sleep. Following
+ these initial effects, there may be increased wakefulness, restless sleep, and vivid and anxiety
+laden dreams for the remaining sleep period. In parallel, N2 and N3 are reduced, and
+ wakefulness and REM sleep are increased during the latter portion of the night. With habitual
+ use, alcohol continues to show a short-lived sedative effect in the first half of the night, followed
+ by sleep continuity disruption in the second half. During acute alcohol withdrawal, there is
+ extremely disrupted sleep continuity, and an increased amount and intensity of REM sleep,
+ associated frequently with vivid dreaming, which in extreme form constitutes part of alcohol
+ withdrawal delirium. After acute withdrawal, chronic alcohol users may continue to complain of
+ light, fragmented sleep for months to years associated with a persistent prolongation of sleep
+ latency and deficit in slow-wave sleep. Alcohol also aggravates breathing-related sleep disorder,
+ including obstructive sleep apnea and sleep-related hypoventilation.
+ Caffeine.
+ Caffeine consumed in low to moderate doses during the morning hours typically
+ produces no significant effect on nighttime sleep in normal sleepers or those with insomnia.
+ Caffeine may produce insomnia in a dose- and timing–dependent manner, particularly when
+ larger doses are consumed later in the day or during evening hours. Prolongation of sleep
+ latency, reduction of slow-wave sleep, increased nocturnal awakening, and reduced sleep
+ duration are reported. Some individuals, particularly high consumers, may present with daytime
+ sleepiness and performance impairments related to withdrawal.
+ Cannabis.
+ Acute administration of cannabis may shorten sleep latency, though arousing effects
+ with increments in sleep latency also occur. Cannabis enhances slow-wave sleep and suppresses
+ REM sleep after acute administration. In chronic users, tolerance to the sleep-inducing and slow
+wave sleep–enhancing effects develops. Upon withdrawal, sleep difficulties and unpleasant
+ dreams have been reported lasting for several weeks. Polysomnographic studies demonstrate
+ reduced slow-wave sleep and increased REM sleep during this phase.
+ Opioids.
+ Opioids may produce an increase in sleepiness and in subjective depth of sleep, and
+ reduced REM and slow-wave sleep, during acute short-term use. With continued administration,
+ tolerance to the sedative effects of opioids develops and there are complaints of insomnia.
+ Polysomnographic studies demonstrate reduced sleep efficiency and total sleep time, with
+ reduction of slow-wave sleep and possibly REM sleep. Consistent with their respiratory
+ depressant effects, opioids exacerbate obstructive sleep apnea. Emergence of central sleep apnea
+ is also observed, especially with chronic use of longer-acting opioids.
+ 472
+Sedative, hypnotic, or anxiolytic substances.
+ hypnotics, 
+and 
+anxiolytics 
+(e.g.,
+ Sedatives, 
+barbiturates, benzodiazepine receptor agonists, meprobamate, glutethimide, methyprylon) have
+ similar effects as opioids on sleep. During acute intoxication, sedative-hypnotic drugs produce
+ the expected increase in sleepiness and decrease in wakefulness. Daytime sleepiness may occur,
+ primarily with longer-acting agents. Chronic benzodiazepine use may be associated with
+ development of tolerance, rebound insomnia, and potentially serious withdrawal effects. Newer
+ benzodiazepine receptor agonists such as zolpidem and eszopiclone have been shown to maintain
+ efficacy over periods of 6 months to 2 years, without evidence of dosage escalation or major
+ withdrawal effects. Newer hypnotic agents such as ramelteon, low-dose doxepin, and suvorexant
+ do not appear to have significant abuse potential, respiratory depression, or major withdrawal
+ syndromes. Sedative, hypnotic, or anxiolytic drugs with short durations of action are most likely
+ to produce complaints of rebound insomnia. Some sedative-hypnotic drugs may increase the
+ frequency and severity of obstructive sleep apnea events, although neither benzodiazepines nor
+ benzodiazepine receptor agonists have been found to definitively worsen obstructive sleep apnea.
+ Hypoventilation may worsen in susceptible individuals. Parasomnias (sleepwalking and sleep
+related eating) have been associated with use of benzodiazepine receptor agonists, especially
+ when these medications are taken at higher doses and when they are combined with other
+ sedative drugs.
+ Amphetamine-type substances, other stimulants, and MDMA.
+ Sleep 
+disorders 
+induced 
+by
+ amphetamine-type substances and other stimulants are characterized by insomnia during
+ intoxication and excessive sleepiness during withdrawal. During acute intoxication, stimulants
+ reduce the total amount of sleep, increase sleep latency and sleep continuity disturbances, and
+ decrease REM sleep. Slow-wave sleep tends to be reduced. During withdrawal from chronic
+ stimulant use, there is both prolonged nocturnal sleep duration and excessive daytime sleepiness.
+ Multiple sleep latency tests may show increased daytime sleepiness during the withdrawal phase.
+ Drugs like 3,4-methylenedioxymethamphetamine (MDMA; “ecstasy”) and related substances
+ lead to restless and disturbed sleep within 48 hours of intake; frequent use of these compounds is
+ associated with persisting symptoms of anxiety, depression, and sleep disturbances, even during
+ longer-term abstinence. There is also evidence that suggests an increased frequency of
+ obstructive sleep apnea in young MDMA users, even after a period of abstention from the drug.
+ Tobacco.
+ Chronic tobacco use is associated primarily with symptoms of insomnia, decreased
+ slow-wave sleep with a reduction of sleep efficiency, and increased daytime sleepiness.
+ Withdrawal from tobacco can lead to impaired sleep. Individuals who smoke heavily may
+ experience regular nocturnal awakenings caused by tobacco craving.
+ Other or unknown substances/medications.
+ Other substances/medications may produce sleep
+ disturbances, particularly medications that affect the central or autonomic nervous systems (e.g.,
+ adrenergic agonists and antagonists, dopamine agonists and antagonists, cholinergic agonists and
+ antagonists, serotonergic agonists and antagonists, antihistamines, corticosteroids).
+ Development and Course
+ Insomnia in children can be identified by either a parent or the child. Often the child has a clear
+ sleep disturbance associated with initiation of a medication but may not report symptoms,
+ although parents observe the sleep disturbances. The use of some recreational substances (e.g.,
+cannabis, ecstasy) is prevalent in adolescence and early adulthood. Insomnia or any other sleep
+ disturbance encountered in this age group should prompt careful consideration of whether the
+ sleep disturbance is attributable to consumption of these substances. Help-seeking behavior for
+ the sleep disturbance in these age groups is limited, and
+ 473
+ thus corroborative report may be elicited from a parent, caregiver, or teacher. Older individuals
+ take more medications and are at increased risk for developing a substance/medication-induced
+ sleep disorder. They may interpret sleep disturbance as part of normal aging and fail to report
+ symptoms. Individuals with major neurocognitive disorder (e.g., dementia) are at risk for
+ substance/medication-induced sleep disorders but may not report symptoms, making
+ corroborative report from caregiver(s) particularly important.
+ Risk and Prognostic Factors
+ Risk and prognostic factors involved in substance or medication use are normative for certain
+ age groups. They are relevant for, and likely applicable to, the type of sleep disturbance
+ encountered (see the chapter “Substance-Related and Addictive Disorders” for descriptions of
+ respective substance use disorders).
+ Temperamental.
+ Substance use generally precipitates or accompanies insomnia in vulnerable
+ individuals. Thus, presence of insomnia in response to stress or change in sleep environment or
+ timing can represent a risk for developing substance/medication-induced sleep disorder. A
+ similar risk may be present for individuals with other sleep disorders (e.g., individuals with
+ hypersomnia who use stimulants).
+ Sex- and Gender-Related Diagnostic Issues
+ The same amount and duration of consumption of a given substance may lead to highly different
+ sleep-related outcomes in males and females based on, for example, sex-specific differences in
+ hepatic functioning.
+ Diagnostic Markers
+ Each of the substance/medication-induced sleep disorders produces electroencephalographic
+ sleep patterns that are associated with, but cannot be considered diagnostic of, other disorders.
+ The electroencephalographic sleep profile for each substance is related to the stage of use and
+ whether it is in the context of intake/intoxication, chronic use, or withdrawal following
+ discontinuation of the substance. All-night polysomnography can help define the severity of
+ insomnia complaints, while the multiple sleep latency test provides information about the
+ severity of daytime sleepiness. Monitoring of nocturnal respiration and periodic limb movements
+ with polysomnography may verify a substance’s impact on nocturnal breathing and motor
+ behavior. Sleep diaries for 2 weeks and actigraphy are considered helpful in confirming the
+ presence of substance/medication-induced sleep disorder, especially in the case of suspected
+ insomnia type. Drug screening can be of use when the individual is not aware or unwilling to
+ relate information about substance intake.
+Functional Consequences of Substance/Medication-Induced Sleep
+ Disorder
+ While there are many functional consequences associated with sleep disorders, the only unique
+ consequence for substance/medication-induced sleep disorder is increased risk for relapse. For
+ example, the degree of sleep disturbance during alcohol withdrawal (e.g., REM sleep rebound)
+ predicts risk of relapse of drinking. Monitoring of sleep quality and daytime sleepiness during
+ and after withdrawal may provide clinically meaningful information on whether an individual is
+ at increased risk for relapse.
+ Differential Diagnosis
+ Substance intoxication and substance withdrawal.
+ Sleep disturbances are commonly encountered in
+ the context of substance intoxication and substance withdrawal. A diagnosis of
+ substance/medication-induced sleep disorder should be made instead of a
+ 474
+ diagnosis of substance intoxication or substance withdrawal only when the sleep disturbance is
+ predominant in the clinical picture and is sufficiently severe to warrant independent clinical
+ attention.
+ Delirium.
+ If the substance/medication-induced sleep disturbance occurs exclusively during the
+ course of a delirium, it is not diagnosed separately.
+ Other sleep disorders.
+ A substance/medication-induced sleep disorder is distinguished from
+ another sleep disorder if a substance/medication is judged to be etiologically related to the
+ symptoms. A substance/medication-induced sleep disorder attributed to a prescribed medication
+ for a mental disorder or medical condition must have its onset while the individual is receiving
+ the medication or during discontinuation, if there is a discontinuation/withdrawal syndrome
+ associated with the medication. Once treatment is discontinued, the sleep disturbance will
+ usually remit within days to several weeks. If symptoms persist beyond 4 weeks, other causes for
+ the sleep disturbance–related symptoms should be considered. Not infrequently, individuals with
+ another sleep disorder use medications or drugs of abuse to self-medicate their symptoms (e.g.,
+ alcohol for management of insomnia). If the substance/medication is judged to play a significant
+ role in the exacerbation of the sleep disturbance, an additional diagnosis of a
+ substance/medication-induced sleep disorder may be warranted.
+ Sleep disorder associated with medical condition.
+ Substance/medication-induced sleep disorder and
+ sleep disorders with a medical condition (i.e., insomnia disorder, hypersomnolence disorder, and
+ nightmare disorder) may produce similar symptoms of insomnia, daytime sleepiness, or
+ nightmares, respectively. Many medical conditions that cause sleep disturbance are treated with
+ medications that may also cause sleep disturbances. The chronology of symptoms is the most
+ important factor in distinguishing between these two sources of sleep symptoms. Difficulties
+ with sleep in an individual with a comorbid medical condition that clearly preceded the use of
+ any medication for treatment of that medical condition would suggest a diagnosis of insomnia
+ disorder, hypersomnolence disorder, or nightmare disorder with the specifier “with [specific
+ medical condition]” applicable to the diagnosis. Conversely, sleep symptoms that appear only
+after the initiation of a particular substance/medication suggest a substance/medication-induced
+ sleep disorder. If the sleep disturbance is comorbid with another medical condition and is also
+ exacerbated by substance use, both diagnoses are given (i.e., insomnia disorder,
+ hypersomnolence disorder, or nightmare disorder, “with [specific medical condition]”
+ respectively; and [specific substance/medication]-induced sleep disorder). When there is
+ insufficient evidence to determine whether the sleep disturbance is attributable to a
+ substance/medication or a medical condition, or independent (i.e., not attributable to either a
+ substance/medication or a medical condition), a diagnosis of unspecified sleep-wake disorder is
+ indicated.
+ Comorbidity
+ See the “Comorbidity” sections for other sleep disorders in this chapter, including insomnia
+ disorder, hypersomnolence disorder, central sleep apnea, sleep-related hypoventilation, and
+ circadian rhythm sleep-wake disorders, shift work type.
+ Relationship to International Classification of Sleep Disorders
+ The International Classification of Sleep Disorders, 3rd Edition (ICSD-3), lists sleep disorders
+ “due to a medication or substance” under their respective phenotypes (e.g., hypersomnia,
+ movement disorder, parasomnia). ICSD-3 does not identify a separate diagnosis for “insomnia
+ due to a medication or substance” based on evidence that the reliability of distinguishing
+ specific, single etiological factors for chronic insomnia is poor.
+ 475

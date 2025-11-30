@@ -1,0 +1,130 @@
+Brief Psychotic Disorder
+ Diagnostic Criteria
+ A. Presence of one (or more) of the following symptoms. At least one of these must
+ be (1), (2), or (3):
+ 1. Delusions.
+ 2. Hallucinations.
+ 3. Disorganized speech (e.g., frequent derailment or incoherence).
+ 4. Grossly disorganized or catatonic behavior.
+ Note: Do not include a symptom if it is a culturally sanctioned response.
+ B. Duration of an episode of the disturbance is at least 1 day but less than 1 month,
+ with eventual full return to premorbid level of functioning.
+ 109
+ C. The disturbance is not better explained by major depressive or bipolar disorder
+ with psychotic features or another psychotic disorder such as schizophrenia or
+ catatonia, and is not attributable to the physiological effects of a substance (e.g.,
+ a drug of abuse, a medication) or another medical condition.
+ Specify if:
+ With marked stressor(s) (brief reactive psychosis): If symptoms occur in
+ response to events that, singly or together, would be markedly stressful to
+ almost anyone in similar circumstances in the individual’s culture.
+ Without marked stressor(s): If symptoms do not occur in response to events
+ that, singly or together, would be markedly stressful to almost anyone in similar
+ circumstances in the individual’s culture.
+ With peripartum onset: If onset is during pregnancy or within 4 weeks
+postpartum.
+ Specify if:
+ With catatonia (refer to the criteria for catatonia associated with another mental
+ disorder, p. 135, for definition).
+ Coding note: Use additional code F06.1 catatonia associated with brief
+ psychotic disorder to indicate the presence of the comorbid catatonia.
+ Specify current severity:
+ Severity is rated by a quantitative assessment of the primary symptoms of
+ psychosis, including delusions, hallucinations, disorganized speech, abnormal
+ psychomotor behavior, and negative symptoms. Each of these symptoms may
+ be rated for its current severity (most severe in the last 7 days) on a 5-point
+ scale ranging from 0 (not present) to 4 (present and severe). (See Clinician
+Rated Dimensions of Psychosis Symptom Severity in the chapter “Assessment
+ Measures.”)
+ Note: Diagnosis of brief psychotic disorder can be made without using this
+ severity specifier.
+ Diagnostic Features
+ The essential feature of brief psychotic disorder is a disturbance that involves at least one of the
+ following positive psychotic symptoms: delusions, hallucinations, disorganized speech (e.g.,
+ frequent derailment or incoherence), or grossly abnormal psychomotor behavior, including
+ catatonia (Criterion A). An episode of the disturbance lasts at least 1 day but less than 1 month,
+ and the individual eventually has a full return to the premorbid level of functioning (Criterion B).
+ The disturbance is not better explained by a depressive or bipolar disorder with psychotic
+ features, by schizoaffective disorder, or by schizophrenia and is not attributable to the
+ physiological effects of a substance (e.g., a hallucinogen) or another medical condition (e.g.,
+ subdural hematoma) (Criterion C).
+ In addition to the four symptom domain areas identified in the diagnostic criteria, the
+ assessment of cognition, depression, and mania symptom domains is vital for making critically
+ important distinctions between the various schizophrenia spectrum and other psychotic disorders.
+ Associated Features
+ Individuals with brief psychotic disorder typically experience emotional turmoil or
+ overwhelming confusion. They may have rapid shifts from one intense affect to another.
+ Although the disturbance is brief, the level of impairment may be severe, and supervision may be
+ required to ensure that nutritional and hygienic needs are met and that the individual is protected
+ from the consequences of poor judgment, cognitive impairment, or acting on the basis of
+ delusions. There appears to be an increased risk of suicidal behavior, particularly during the
+ acute episode.
+ 110
+ Prevalence
+Brief psychotic disorder may account for 2%–7% of cases of first-onset psychosis in several
+ countries.
+ Development and Course
+ Brief psychotic disorder may appear in adolescence or early adulthood, and onset can occur
+ across the life span, with the average age at onset being the mid 30s. By definition, a diagnosis of
+ brief psychotic disorder requires a full remission of all symptoms and an eventual full return to
+ the premorbid level of functioning within 1 month of the onset of the disturbance. In some
+ individuals, the duration of psychotic symptoms may be quite brief (e.g., a few days).
+ Although brief psychotic disorder by definition reaches a full remission within 1 month,
+ subsequently more than 50% of the individuals experience a relapse. Despite the possibility of
+ relapse, for most individuals, outcome is favorable in terms of social functioning and
+ symptomatology.
+ In less than half of cases diagnosed with DSM-IV brief psychotic disorder or ICD-10 acute
+ and transient psychotic disorder, the diagnosis changes—more often to schizophrenia spectrum
+ disorders and less often to affective disorders or to other psychotic disorders.
+ Culture-Related Diagnostic Issues
+ It is important to distinguish symptoms of brief psychotic disorder from culturally sanctioned
+ response patterns. For example, in some religious ceremonies, an individual may report hearing
+ voices, but these do not generally persist and are not perceived as abnormal by most members of
+ the individual’s community. In a wide range of cultural contexts, it would be common or
+ expected for bereaved relatives to hear, see, or interact with the spirit of a recently deceased
+ loved one without notable pathological sequelae. In addition, cultural and religious background
+ must be taken into account when considering whether beliefs are delusional.
+ Differential Diagnosis
+ Other medical conditions.
+ A variety of medical conditions can manifest with psychotic symptoms
+ of short duration. Psychotic disorder due to another medical condition or a delirium is diagnosed
+ when there is evidence from the history, physical examination, or laboratory tests that the
+ delusions or hallucinations are the direct physiological consequence of a specific medical
+ condition (e.g., Cushing’s syndrome, brain tumor) (see “Psychotic Disorder Due to Another
+ Medical Condition” later in this chapter).
+ Substance-related disorders.
+ Substance/medication-induced psychotic disorder, substance-induced
+ delirium, and substance intoxication are distinguished from brief psychotic disorder by the fact
+ that a substance (e.g., a drug of abuse, a medication, exposure to a toxin) is judged to be
+ etiologically related to the psychotic symptoms (see “Substance/Medication-Induced Psychotic
+ Disorder” later in this chapter). Laboratory tests, such as a urine drug screen or a blood alcohol
+ level, may be helpful in making this determination, as may a careful history of substance use
+ with attention to temporal relationships between substance intake and onset of the symptoms and
+ to the nature of the substance being used.
+ Depressive and bipolar disorders.
+ The diagnosis of brief psychotic disorder cannot be made if the
+ psychotic symptoms are better explained by a mood episode (i.e., the psychotic symptoms occur
+ exclusively during a full major depressive, manic, or mixed episode).
+Other psychotic disorders.
+ Malingering and factitious disorders.
+ Personality disorders.
+ F20.81
+ If the psychotic symptoms persist for 1 month or longer, the diagnosis
+ is either schizophreniform disorder, delusional disorder, depressive disorder with psychotic
+ features, bipolar disorder with psychotic features, or other specified or
+ 111
+ unspecified schizophrenia spectrum and other psychotic disorder, depending on the other
+ symptoms in the presentation. The differential diagnosis between brief psychotic disorder and
+ schizophreniform disorder is difficult when the psychotic symptoms have remitted before 1
+ month in response to successful treatment with medication. Careful attention should be given to
+ the possibility that a recurrent disorder (e.g., bipolar disorder, recurrent acute exacerbations of
+ schizophrenia) may be responsible for any recurring psychotic episodes.
+ An episode of factitious disorder with predominantly
+ psychological signs and symptoms may have the appearance of brief psychotic disorder, but in
+ such cases there is evidence that the symptoms are intentionally produced. When malingering
+ involves apparently psychotic symptoms, there is usually evidence that the illness is being
+ feigned for an understandable goal.
+ In certain individuals with personality disorders, psychosocial stressors
+ may precipitate brief periods of psychotic symptoms. These symptoms are usually transient and
+ do not warrant a separate diagnosis. If psychotic symptoms persist for at least 1 day, an
+ additional diagnosis of brief psychotic disorder may be appropriate.

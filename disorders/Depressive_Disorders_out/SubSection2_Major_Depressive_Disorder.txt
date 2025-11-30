@@ -1,0 +1,488 @@
+Major Depressive Disorder
+ Diagnostic Criteria
+ A. Five (or more) of the following symptoms have been present during the same 2
+week period and represent a change from previous functioning; at least one of
+ the symptoms is either (1) depressed mood or (2) loss of interest or pleasure.
+ Note: Do not include symptoms that are clearly attributable to another medical
+ condition.
+ 1. Depressed mood most of the day, nearly every day, as indicated by either
+ subjective report (e.g., feels sad, empty, hopeless) or observation made by
+ others (e.g., appears tearful). (Note: In children and adolescents, can be
+ irritable mood.)
+ 2. Markedly diminished interest or pleasure in all, or almost all, activities most of
+ the day, nearly every day (as indicated by either subjective account or
+ observation).
+ 3. Significant weight loss when not dieting or weight gain (e.g., a change of
+ more than 5% of body weight in a month), or decrease or increase in appetite
+ nearly every day. (Note: In children, consider failure to make expected weight
+ gain.)
+ 4. Insomnia or hypersomnia nearly every day.
+ 5. Psychomotor agitation or retardation nearly every day (observable by others,
+ not merely subjective feelings of restlessness or being slowed down).
+ 6. Fatigue or loss of energy nearly every day.
+ 7. Feelings of worthlessness or excessive or inappropriate guilt (which may be
+ delusional) nearly every day (not merely self-reproach or guilt about being
+ sick).
+ 8. Diminished ability to think or concentrate, or indecisiveness, nearly every day
+ (either by subjective account or as observed by others).
+ 9. Recurrent thoughts of death (not just fear of dying), recurrent suicidal ideation
+without a specific plan, or a suicide attempt or a specific plan for committing
+ suicide.
+ B. The symptoms cause clinically significant distress or impairment in social,
+ occupational, or other important areas of functioning.
+ C. The episode is not attributable to the physiological effects of a substance or
+ another medical condition.
+ Note: Criteria A–C represent a major depressive episode.
+ Note: Responses to a significant loss (e.g., bereavement, financial ruin, losses
+ from a natural disaster, a serious medical illness or disability) may include the
+ feelings of intense sadness, rumination about the loss, insomnia, poor appetite,
+ and weight loss noted in Criterion A, which may resemble a depressive episode.
+ Although such symptoms may be understandable or considered appropriate to
+ the loss, the presence of a major depressive episode in addition to the normal
+ response to a significant loss should also be carefully considered. This decision
+ inevitably requires the exercise of clinical judgment based on the individual’s
+ history and the cultural norms for the expression of distress in the context of
+ loss.1
+ D. At least one major depressive episode is not better explained by schizoaffective
+ disorder and is not superimposed on schizophrenia, schizophreniform disorder,
+ delusional disorder, or other specified and unspecified schizophrenia spectrum
+ and other psychotic disorders.
+ E. There has never been a manic episode or a hypomanic episode.
+ Note: This exclusion does not apply if all of the manic-like or hypomanic-like
+ episodes are substance-induced or are attributable to the physiological effects of
+ another medical condition.
+ 184
+ Coding and Recording Procedures
+ The diagnostic code for major depressive disorder is based on whether this is a
+ single or recurrent episode, current severity, presence of psychotic features, and
+ remission status. Current severity and psychotic features are only indicated if full
+ criteria are currently met for a major depressive episode. Remission specifiers are
+ only indicated if the full criteria are not currently met for a major depressive episode.
+ Codes are as follows:
+ Severity/course specifier Single episode
+ Recurrent
+ episode*
+ Mild (p. 214) F32.0 F33.0
+ Moderate (p. 214) F32.1 F33.1
+ Severe (p. 214) F32.2 F33.2
+ With psychotic features** (pp. 212–213) F32.3 F33.3
+ In partial remission (p. 214) F32.4 F33.41
+In full remission (p. 214)
+ Unspecified
+ F32.5
+ F32.9
+ F33.42
+ F33.9
+ *For an episode to be considered recurrent, there must be an interval of at least 2 consecutive months between
+ separate episodes in which criteria are not met for a major depressive episode. The definitions of specifiers are
+ found on the indicated pages.
+ **If psychotic features are present, code the “with psychotic features” specifier irrespective of episode severity.
+ In recording the name of a diagnosis, terms should be listed in the following order:
+ major depressive disorder, single or recurrent episode, severity/psychotic/remission
+ specifiers, followed by as many of the following specifiers without codes that apply to
+ the current episode (or the most recent episode if the major depressive disorder is in
+ partial or full remission). Note: The specifier “with seasonal pattern” describes the
+ pattern of recurrent major depressive episodes.
+ Specify if:
+ With anxious distress (pp. 210–211)
+ With mixed features (p. 211)
+ With melancholic features (pp. 211–212)
+ 185
+ With atypical features (p. 212)
+ With mood-congruent psychotic features (p. 213)
+ With mood-incongruent psychotic features (p. 213)
+ With catatonia (p. 213). Coding note: Use additional code F06.1.
+ With peripartum onset (p. 213)
+ With seasonal pattern (applies to pattern of recurrent major depressive
+ episodes) (p. 214)
+ Diagnostic Features
+ Major depressive disorder is defined by the presence of at least one major depressive episode
+ occurring in the absence of a history of manic or hypomanic episodes. The essential feature of a
+ major depressive episode is a period lasting at least 2 weeks during which there is either
+ depressed mood or the loss of interest or pleasure in all or nearly all activities for most of the day
+ nearly every day (Criterion A). The individual must also experience at least four additional
+ symptoms during the same 2-week period, drawn from a list that includes changes in appetite or
+ weight, sleep, and psychomotor activity; decreased energy; feelings of worthlessness or guilt;
+ difficulty thinking, concentrating, or making decisions; or thoughts of death, suicidal ideation, a
+ suicide attempt, or a specific plan for suicidal behavior. To count toward a diagnosis of a major
+ depressive episode, a symptom must either be newly present or have clearly worsened compared
+ with the individual’s pre-episode status. Moreover, the symptoms must occur nearly every day,
+ for at least 2 consecutive weeks, with the exception of thoughts of death and suicidal ideation,
+ which must be recurrent, and attempting suicide or making a specific plan, which only needs to
+occur once. The episode must be accompanied by clinically significant distress or impairment in
+ social, occupational, or other important areas of functioning. For some individuals with milder
+ episodes, functioning may appear to be normal but requires markedly increased effort. The
+ presenting complaint is often insomnia or fatigue rather than depressed mood or loss of interest;
+ thus, the failure to probe for accompanying depressive symptoms can result in underdiagnosis.
+ Fatigue and sleep disturbance are present in a high proportion of cases; psychomotor
+ disturbances are much less common but are indicative of greater overall severity, as is the
+ presence of delusional or near-delusional guilt.
+ The mood in a major depressive episode is often described by the individual as depressed,
+ sad, hopeless, discouraged, or “down in the dumps” (Criterion A1). In some cases, sadness may
+ be denied at first but may subsequently be elicited by interview (e.g., by pointing out that the
+ individual looks as if he or she is about to cry). In some individuals who complain of feeling
+ “blah,” having no feelings, or feeling anxious, the presence of a depressed mood can be inferred
+ from the individual’s facial expression and demeanor. Some individuals emphasize somatic
+ complaints (e.g., bodily aches and pains) rather than reporting feelings of sadness. Many
+ individuals report or exhibit increased irritability (e.g., persistent anger, a tendency to respond to
+ events with angry outbursts or blaming others, an exaggerated sense of frustration over minor
+ matters). In children and adolescents, an irritable or cranky mood may develop rather than a sad
+ or dejected mood. This presentation should be differentiated from a pattern of irritability when
+ frustrated.
+ Diminished interest or pleasure in usual activities is nearly always present, at least to some
+ degree. Individuals may report feeling less interested in hobbies, “not caring anymore,” or not
+ feeling any enjoyment in activities that were previously considered pleasurable (Criterion A2).
+ Family members often notice social withdrawal or neglect of pleasurable avocations (e.g., a
+ formerly avid golfer no longer plays, a child who used to enjoy soccer finds excuses not to
+ practice). In some individuals, there is a significant reduction from previous levels of sexual
+ interest or desire.
+ 186
+ Appetite change may involve either a reduction or an increase. Some depressed individuals
+ report that they have to force themselves to eat. Others may eat more and may crave specific
+ foods (e.g., sweets or other carbohydrates). When appetite changes are severe (in either
+ direction), there may be a significant loss or gain in weight, or, in children, a failure to make
+ expected weight gains may be noted (Criterion A3).
+ Sleep disturbance may take the form of either difficulty sleeping or sleeping excessively
+ (Criterion A4). When insomnia is present, it typically takes the form of middle insomnia (i.e.,
+ waking up during the night and then having difficulty returning to sleep) or terminal insomnia
+ (i.e., waking too early and being unable to return to sleep). Initial insomnia (i.e., difficulty falling
+ asleep) may also occur. Individuals who present with oversleeping (hypersomnia) may
+ experience prolonged sleep episodes at night or increased daytime sleep. Sometimes the reason
+ that the individual seeks treatment is for the disturbed sleep.
+ Psychomotor changes include agitation (e.g., the inability to sit still, pacing, hand-wringing;
+ or pulling or rubbing of the skin, clothing, or other objects) or retardation (e.g., slowed speech,
+ thinking, and body movements; increased pauses before answering; speech that is decreased in
+volume, inflection, amount, or variety of content, or muteness) (Criterion A5). The psychomotor
+ agitation or retardation must be severe enough to be observable by others and not represent
+ merely subjective feelings. Individuals who display either psychomotor disturbance (i.e.,
+ psychomotor agitation or retardation) are likely to have histories of the other.
+ Decreased energy, tiredness, and fatigue are common (Criterion A6). An individual may
+ report sustained fatigue without physical exertion. Even the smallest tasks seem to require
+ substantial effort. The efficiency with which tasks are accomplished may be reduced. For
+ example, an individual may complain that washing and dressing in the morning are exhausting
+ and take twice as long as usual. This symptom accounts for much of the impairment resulting
+ from major depressive disorder, both during acute episodes and when remission is incomplete.
+ The sense of worthlessness or guilt associated with a major depressive episode may include
+ unrealistic negative evaluations of one’s worth or guilty preoccupations or ruminations over
+ minor past failings (Criterion A7). Such individuals often misinterpret neutral or trivial day-to
+day events as evidence of personal defects and have an exaggerated sense of responsibility for
+ untoward events. The sense of worthlessness or guilt may be of delusional proportions (e.g., an
+ individual who is convinced that he or she is personally responsible for world poverty). Blaming
+ oneself for being sick and for failing to meet occupational or interpersonal responsibilities as a
+ result of the depression is very common and, unless delusional, is not considered sufficient to
+ meet this criterion.
+ Many individuals report impaired ability to think, concentrate, or make even minor decisions
+ (Criterion A8). They may appear easily distracted or complain of memory difficulties. Those
+ engaged in cognitively demanding pursuits are often unable to function. In children, a
+ precipitous drop in grades may reflect poor concentration. In elderly individuals, memory
+ difficulties may be the chief complaint and may be mistaken for early signs of a dementia
+ (“pseudodementia”). When the major depressive episode is successfully treated, the memory
+ problems often fully abate. However, in some individuals, particularly elderly persons, a major
+ depressive episode may sometimes be the initial presentation of an irreversible dementia.
+ Thoughts of death, suicidal ideation, or suicide attempts (Criterion A9) are common. They
+ may range from a passive wish not to awaken in the morning or a belief that others would be
+ better off if the individual were dead, to transient but recurrent thoughts of dying by suicide, to a
+ specific suicide plan. More severely suicidal individuals may have put their affairs in order (e.g.,
+ updated wills, settled debts), acquired needed materials (e.g., a rope or a gun), and chosen a
+ location and time to accomplish the suicide. Motivations for suicide may include a desire to give
+ up in the face of perceived insurmountable obstacles,
+ 187
+ an intense wish to end what is perceived as an unending and excruciatingly painful emotional
+ state, an inability to foresee any enjoyment in life, or the wish to not be a burden to others. The
+ resolution of such thinking may be a more meaningful measure of diminished suicide risk than
+ denial of further plans for suicide.
+ The degree of impairment associated with a major depressive episode varies, but even in
+ milder cases, there must be either clinically significant distress or some interference in social,
+ occupational, or other important areas of functioning (Criterion B). If impairment is severe, the
+ individual may lose the ability to function socially or occupationally. In extreme cases, the
+individual may be unable to perform minimal self-care (e.g., feeding and clothing self) or to
+ maintain minimal personal hygiene.
+ The individual’s report of symptoms may be compromised by difficulties in concentrating,
+ impaired memory, or a tendency to deny, discount, or explain away symptoms. Information from
+ additional informants can be especially helpful in clarifying the course of current or prior major
+ depressive episodes and in assessing whether there have been any manic or hypomanic episodes.
+ Because major depressive episodes can begin gradually, a review of clinical information that
+ focuses on the worst part of the current episode may be most likely to detect the presence of
+ symptoms.
+ The evaluation of the symptoms of a major depressive episode is especially difficult when
+ they occur in an individual who also has another medical condition (e.g., cancer, stroke,
+ myocardial infarction, diabetes, pregnancy). Some of the criterion signs and symptoms of a
+ major depressive episode are identical to those of another medical condition (e.g., weight loss
+ with untreated diabetes; fatigue with cancer; hypersomnia early in pregnancy; insomnia later in
+ pregnancy or the postpartum). Such symptoms count toward a major depressive diagnosis except
+ when they are clearly and fully attributable to another medical condition. Nonvegetative
+ symptoms of dysphoria, anhedonia, guilt or worthlessness, impaired concentration or indecision,
+ and suicidal thoughts should be assessed with particular care in such cases. Definitions of major
+ depressive episodes that have been modified to include only these nonvegetative symptoms
+ appear to identify nearly the same individuals as do the full criteria.
+ Associated Features
+ Major depressive disorder is associated with high mortality, much of which is accounted for by
+ suicide; however, it is not the only cause. For example, depressed individuals admitted to nursing
+ homes have a markedly increased likelihood of death in the first year. Individuals frequently
+ present with tearfulness, irritability, brooding, obsessive rumination, anxiety, phobias, excessive
+ worry over physical health, and complaints of pain (e.g., headaches; joint, abdominal, or other
+ pains). In children, separation anxiety may occur.
+ Although an extensive literature exists describing neuroanatomical, neuroendocrinological,
+ and neurophysiological correlates of major depressive disorder, no laboratory test has yielded
+ results of sufficient sensitivity and specificity to be used as a diagnostic tool for this disorder.
+ Until recently, hypothalamic-pituitary-adrenal axis hyperactivity had been the most extensively
+ investigated abnormality associated with major depressive episodes, and it appears to be
+ associated with melancholia (a particularly severe type of depression), psychotic features, and
+ risks for eventual suicide. Molecular studies have also implicated peripheral factors, including
+ genetic variants in neurotrophic factors and pro-inflammatory cytokines. Additionally,
+ volumetric and functional magnetic resonance imaging studies provide evidence for
+ abnormalities in specific neural systems supporting emotion processing, reward seeking, and
+ emotion regulation in adults with major depression.
+ Prevalence
+ Twelve-month prevalence of major depressive disorder in the United States is approximately
+ 7%, with marked differences by age group such that the prevalence in 18- to 29-year-old
+188
+ individuals is threefold higher than the prevalence in individuals age 60 years or older. The most
+ reproducible finding in the epidemiology of major depressive disorder has been a higher
+ prevalence in females, an effect that peaks in adolescence and then stabilizes. Women experience
+ approximately twofold higher rates than men, especially between menarche and menopause.
+ Women report more atypical symptoms of depression characterized by hypersomnia, increased
+ appetite, and leaden paralysis compared with men.
+ Systematic reviews show that the 12-month and point prevalence of major depressive
+ disorder vary eight- to ninefold across global geographic regions. In the United States,
+ prevalence increased from 2005 to 2015, with steeper rates of increase for youth compared with
+ older groups. After stratification by ethnoracial groups, non-Hispanic Whites showed a
+ significant increase in prevalence after adjustment for demographic characteristics, whereas no
+ significant change in rate of depression was observed among non-Hispanic Blacks or Hispanics.
+ Development and Course
+ Major depressive disorder may first appear at any age, but the likelihood of onset increases
+ markedly with puberty. In the United States, incidence appears to peak in the 20s; however, first
+ onset in late life is not uncommon.
+ The course of major depressive disorder is quite variable, such that some individuals rarely,
+ if ever, experience remission (a period of 2 or more months with no symptoms, or only one or
+ two symptoms to no more than a mild degree), while others experience many years with few or
+ no symptoms between discrete episodes. The course of depression may reflect social-structural
+ adversity associated with poverty, racism, and marginalization.
+ It is important to distinguish individuals who present for treatment during an exacerbation of
+ a chronic depressive illness from those whose symptoms developed recently. Chronicity of
+ depressive symptoms substantially increases the likelihood of underlying personality, anxiety,
+ and substance use disorders and decreases the likelihood that treatment will be followed by full
+ symptom resolution. It is therefore useful to ask individuals presenting with depressive
+ symptoms to identify the last period of at least 2 months during which they were entirely free of
+ depressive symptoms. Cases in which depressive symptoms are present for more days than not
+ might warrant an additional diagnosis of persistent depressive disorder.
+ Recovery from a major depressive episode begins within 3 months of onset for 40% of
+ individuals with major depression and within 1 year for 80% of individuals. Recency of onset is
+ a strong determinant of the likelihood of near-term recovery, and many individuals who have
+ been depressed for only several months can be expected to recover spontaneously. Features
+ associated with lower recovery rates, other than current episode duration, include psychotic
+ features, prominent anxiety, personality disorders, and symptom severity.
+ The risk of recurrence becomes progressively lower over time as the duration of remission
+ increases. The risk is higher in individuals whose preceding episode was severe, in younger
+ individuals, and in individuals who have already experienced multiple episodes. The persistence
+ of even mild depressive symptoms during remission is a powerful predictor of recurrence.
+ Many bipolar illnesses begin with one or more depressive episodes, and a substantial
+ proportion of individuals who initially appear to have major depressive disorder will prove, in
+time, to instead have a bipolar disorder. This is more likely in individuals with onset of the
+ illness in adolescence, those with psychotic features, and those with a family history of bipolar
+ illness. The presence of a “with mixed features” specifier also increases the risk for future manic
+ or hypomanic diagnosis. Major depressive disorder, particularly with psychotic features, may
+ also transition into schizophrenia, a change that is much more frequent than the reverse.
+ 189
+ There are no clear effects of current age on the course or treatment response of major
+ depressive disorder. Some symptom differences exist, though, such that hypersomnia and
+ hyperphagia are more likely in younger individuals, and melancholic symptoms, particularly
+ psychomotor disturbances, are more common in older individuals. Depressions with earlier ages
+ at onset are more familial and more likely to involve personality disturbances. The course of
+ major depressive disorder within individuals does not generally change with aging. Mean times
+ to recovery do not change over multiple episodes, and the likelihood of being in an episode does
+ not generally increase or decrease with time.
+ Risk and Prognostic Factors
+ Temperamental.
+ Negative affectivity (neuroticism) is a well-established risk factor for the onset
+ of major depressive disorder, and high levels appear to render individuals more likely to develop
+ depressive episodes in response to stressful life events.
+ Environmental.
+ Adverse childhood experiences, particularly when they are multiple and of
+ diverse types, constitute a set of potent risk factors for major depressive disorder. Women may
+ be disproportionately at risk for adverse childhood experiences, including sexual abuse, that may
+ contribute to the increased prevalence of depression in this group. Other social determinants of
+ mental health, such as low income, limited formal education, racism, and other forms of
+ discrimination, are associated with higher risk of major depressive disorder. Stressful life events
+ are well recognized as precipitants of major depressive episodes, but the presence or absence of
+ adverse life events near the onset of episodes does not appear to provide a useful guide to
+ prognosis or treatment selection. Etiologically, women are disproportionately affected by major
+ risk factors for depression across the life span, including interpersonal trauma.
+ Genetic and physiological.
+ First-degree family members of individuals with major depressive
+ disorder have a risk for major depressive disorder two- to fourfold higher than that of the general
+ population. Relative risks appear to be higher for early-onset and recurrent forms. Heritability is
+ approximately 40%, and the personality trait neuroticism accounts for a substantial portion of
+ this genetic liability.
+ Course modifiers.
+ Women may also be at risk for depressive disorders in relation to specific reproductive life
+ stages, including in the premenstrual period, postpartum, and in perimenopause.
+ Essentially all major nonmood disorders (i.e., anxiety, substance use, trauma
+and stressor-related, feeding and eating, and obsessive-compulsive and related disorders)
+ increase the risk of an individual developing depression. Major depressive episodes that develop
+ against the background of another disorder often follow a more refractory course. Substance use,
+ anxiety, and borderline personality disorders are among the most common of these, and the
+ presenting depressive symptoms may obscure and delay their recognition. However, sustained
+clinical improvement in depressive symptoms may depend on the appropriate treatment of
+ underlying illnesses. Chronic or disabling medical conditions also increase risks for major
+ depressive episodes. Prevalent illnesses such as diabetes, morbid obesity, and cardiovascular
+ disease are often complicated by depressive episodes, and these episodes are more likely to
+ become chronic than are depressive episodes in medically healthy individuals.
+ Culture-Related Diagnostic Issues
+ Although there is substantial cross-cultural variation in the prevalence, course, and
+ symptomatology of depression, a syndrome similar to major depressive disorder can be
+ identified across diverse cultural contexts. Symptoms commonly associated with depression
+ across cultural contexts, not listed in the DSM criteria, include social isolation or loneliness,
+ anger, crying, and diffuse pain. A wide range of other somatic complaints are
+ 190
+ common and vary by cultural context. Understanding the significance of these symptoms
+ requires exploring their meaning in local social contexts.
+ Symptoms of major depressive disorder may be underdetected or underreported, potentially
+ leading to misdiagnosis, including overdiagnosis of schizophrenia spectrum disorders in some
+ ethnic and racialized groups facing discrimination. Cross-nationally, higher levels of income
+ inequality in a society are associated with higher prevalence of major depressive disorder. In the
+ United States, the chronicity of major depressive disorder appears to be higher among African
+ Americans and Caribbean Blacks compared with non-Latinx Whites, possibly because of the
+ impact of racism, discrimination, greater sociostructural adversity, and lack of access to quality
+ mental health care.
+ Sex- and Gender-Related Diagnostic Issues
+ There are no clear differences between genders in treatment response or functional
+ consequences. There is some evidence for sex and gender differences in phenomenology and
+ course of illness. Women tend to experience more disturbances in appetite and sleep, including
+ atypical features such as hyperphagia and hypersomnia, and are more likely to experience
+ interpersonal sensitivity and gastrointestinal symptoms. Men with depression, however, may be
+ more likely than depressed women to report greater frequencies and intensities of maladaptive
+ self-coping and problem-solving strategies, including alcohol or other drug misuse, risk taking,
+ and poor impulse control.
+ Association With Suicidal Thoughts or Behavior
+ Age-adjusted rates of suicide in the United States have increased from 10.5 to 14.0 per 100,000
+ over the past two decades. An earlier review of the literature indicated that individuals with
+ depressive illness have a 17-fold increased risk for suicide over the age- and sex-adjusted general
+ population rate. The likelihood of suicide attempts lessens in middle and late life, although the
+ risk of death by suicide does not. The possibility of suicidal behavior exists at all times during
+ major depressive episodes. The most consistently described risk factor is a past history of suicide
+ attempts or threats, but it should be remembered that most deaths by suicide are not preceded by
+nonfatal attempts. Anhedonia has a particularly strong association with suicidal ideation. Other
+ features associated with an increased risk for death by suicide include being single, living alone,
+ social disconnectedness, early life adversity, availability of lethal methods such as a firearm,
+ sleep disturbance, cognitive and decision-making deficits, and having prominent feelings of
+ hopelessness. Women attempt suicide at a higher rate than men, while men are more likely to
+ complete suicide. The difference in suicide rate between men and women with depressive
+ disorders is smaller than in the population as a whole, however. Comorbidities, including
+ aggressive-impulsive traits, borderline personality disorder, substance use disorder, anxiety,
+ other medical conditions, and functional impairment, increase risk for future suicidal behavior.
+ Functional Consequences of Major Depressive Disorder
+ Many of the functional consequences of major depressive disorder derive from individual
+ symptoms. Impairment can be very mild, such that many of those who interact with the affected
+ individual are unaware of depressive symptoms. Impairment may, however, range to complete
+ incapacity such that the depressed individual is unable to attend to basic self-care needs or is
+ mute or catatonic. For individuals seen in general medical settings, those with major depressive
+ disorder have more pain and physical illness and greater decreases in physical, social, and role
+ functioning. Depressed women report greater functional impairment in their relationships than
+ men.
+ 191
+ Differential Diagnosis
+ Manic episodes with irritable mood or with mixed features.
+ Major depressive episodes with prominent
+ irritable mood may be difficult to distinguish from manic episodes with irritable mood or with
+ mixed features. This distinction requires a careful clinical evaluation of the presence of sufficient
+ manic symptoms to meet threshold criteria (i.e., three if mood is manic, four if mood is irritable
+ but not manic).
+ Bipolar I disorder, bipolar II disorder, or other specified bipolar and related disorder.
+ Major 
+depressive
+ episodes along with a history of a manic or hypomanic episode preclude the diagnosis of major
+ depressive disorder. Major depressive episodes with a history of hypomanic episodes and
+ without a history of manic episodes indicate a diagnosis of bipolar II disorder, whereas major
+ depressive episodes with a history of manic episodes (with or without hypomanic episodes)
+ indicate a diagnosis of bipolar I disorder. On the other hand, presentations of major depressive
+ episodes with a history of periods of hypomania that do not meet criteria for a hypomanic
+ episode may be diagnosed as either other specified bipolar and related disorder or major
+ depressive disorder depending on where the clinician judges the presentation to best fall. For
+ example, the presentation may be best considered other specified bipolar and related disorder
+ because of the clinical significance of the subthreshold hypomanic symptoms, or the presentation
+ may be best considered a case of major depressive disorder with some subthreshold hypomanic
+ symptoms in between episodes.
+ Depressive disorder due to another medical condition.
+ A diagnosis of depressive disorder due to
+ another medical condition requires the presence of an etiological medical condition. Major
+depressive disorder is not diagnosed if the major depressive–like episodes are all attributable to
+ the direct pathophysiological consequence of a specific medical condition (e.g., multiple
+ sclerosis, stroke, hypothyroidism).
+ Substance/medication-induced depressive disorder.
+ This disorder is distinguished from major
+ depressive disorder by the fact that a substance (e.g., a drug of abuse, a medication, a toxin)
+ appears to be etiologically related to the mood disturbance. For example, depressed mood that
+ occurs only in the context of withdrawal from cocaine would be diagnosed as cocaine-induced
+ depressive disorder.
+ Persistent depressive disorder.
+ Persistent depressive disorder is characterized by depressed mood,
+ more days than not, for at least 2 years. If criteria are met for both major depressive disorder and
+ persistent depressive disorder, both can be diagnosed.
+ Premenstrual dysphoric disorder.
+ Premenstrual dysphoric disorder is characterized by dysphoric
+ mood that is present in the final week before the onset of menses, that starts to improve within a
+ few days after the onset of menses, and that becomes minimal or absent in the week postmenses.
+ By contrast, the episodes of major depressive disorder are not temporally connected to the
+ menstrual cycle.
+ Disruptive mood dysregulation disorder.
+ Disruptive mood dysregulation disorder is characterized by
+ severe, recurrent temper outbursts manifested verbally and/or behaviorally, accompanied by
+ persistent or labile mood, most of the day, nearly every day, in between the outbursts. In
+ contrast, in major depressive disorder, irritability is confined to the major depressive episodes.
+ Major depressive episodes superimposed on schizophrenia, delusional disorder,
+ schizophreniform disorder, or other specified or unspecified schizophrenia spectrum and other
+ psychotic disorder.
+ Depressive symptoms may be present during schizophrenia, delusional disorder,
+ schizophreniform disorder, or other specified or unspecified schizophrenia spectrum and other
+ psychotic disorder. Most commonly, such depressive symptoms can be considered associated
+ features of these disorders and do not merit a
+ 192
+ separate diagnosis. However, when the depressive symptoms meet full criteria for a major
+ depressive episode, a diagnosis of other specified depressive disorder may be made in addition to
+ the diagnosis of the psychotic disorder.
+ Schizoaffective disorder.
+ Schizoaffective disorder differs from major depressive disorder, with
+ Attention-deficit/hyperactivity disorder.
+ psychotic features, by the requirement that in schizoaffective disorder, delusions or
+ hallucinations are present for at least 2 weeks in the absence of a major depressive episode.
+ Distractibility and low frustration tolerance can occur in
+ both attention-deficit/hyperactivity disorder (ADHD) and a major depressive episode; if the
+ criteria are met for both, ADHD may be diagnosed in addition to the mood disorder. However,
+ the clinician must be cautious not to overdiagnose a major depressive episode in children with
+ ADHD whose disturbance in mood is characterized by irritability rather than by sadness or loss
+ of interest.
+ Adjustment disorder with depressed mood.
+ A major depressive episode that occurs in response to a
+ psychosocial stressor is distinguished from adjustment disorder, with depressed mood, by the
+Bereavement.
+ Sadness.
+ F34.1
+ fact that the full criteria for a major depressive episode are not met in adjustment disorder.
+ Bereavement is the experience of losing a loved one to death. It generally triggers
+ a grief response that may be intense and may involve many features that overlap with symptoms
+ characteristic of a major depressive episode, such as sadness, difficulty sleeping, and poor
+ concentration. Features that help differentiate a bereavement-related grief response from a major
+ depressive episode include the following: the predominant affects in grief are feelings of
+ emptiness and loss, whereas in a major depressive episode they are persistent depressed mood
+ and a diminished ability to experience pleasure. Moreover, the dysphoric mood of grief is likely
+ to decrease in intensity over days to weeks and occurs in waves that tend to be associated with
+ thoughts or reminders of the deceased, whereas the depressed mood in a major depressive
+ episode is more persistent and not tied to specific thoughts or preoccupations. It is important to
+ note that in a vulnerable individual (e.g., someone with a past history of major depressive
+ disorder), bereavement may trigger not only a grief response but also the development of an
+ episode of depression or the worsening of an existing episode.
+ Finally, periods of sadness are inherent aspects of the human experience. These
+ periods should not be diagnosed as a major depressive episode unless criteria are met for severity
+ (i.e., five out of nine symptoms), duration (i.e., most of the day, nearly every day for at least 2
+ weeks), and clinically significant distress or impairment. The diagnosis other specified
+ depressive disorder may be appropriate for presentations of depressed mood with clinically
+ significant impairment that do not meet criteria for duration or severity.
+ Comorbidity
+ Other disorders with which major depressive disorder frequently co-occurs are substance-related
+ disorders, panic disorder, generalized anxiety disorder, posttraumatic stress disorder, obsessive
+compulsive disorder, anorexia nervosa, bulimia nervosa, and borderline personality disorder.
+ While women are more likely than men to report comorbid anxiety disorders, bulimia
+ nervosa, and somatoform disorder (somatic symptom and related disorders), men are more likely
+ to report comorbid alcohol and substance abuse.
+ 193

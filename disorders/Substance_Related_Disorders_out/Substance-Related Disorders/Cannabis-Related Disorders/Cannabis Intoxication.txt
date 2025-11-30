@@ -1,0 +1,93 @@
+Cannabis Intoxication
+ Diagnostic Criteria
+ A. Recent use of cannabis.
+ B. Clinically significant problematic behavioral or psychological changes (e.g.,
+ impaired motor coordination, euphoria, anxiety, sensation of slowed time,
+ impaired judgment, social withdrawal) that developed during, or shortly after,
+ cannabis use.
+ C. Two (or more) of the following signs or symptoms developing within 2 hours of
+ cannabis use:
+ 1. Conjunctival injection.
+ 2. Increased appetite.
+ 3. Dry mouth.
+ 4. Tachycardia.
+ D. The signs or symptoms are not attributable to another medical condition and are
+ not better explained by another mental disorder, including intoxication with
+ another substance.
+ Specify if:
+With perceptual disturbances: Hallucinations with intact reality testing or
+ auditory, visual, or tactile illusions occur in the absence of a delirium.
+ Coding note: The ICD-10-CM code depends on whether or not there is a comorbid
+ cannabis use disorder and whether or not there are perceptual disturbances.
+ 583
+ For cannabis intoxication, without perceptual disturbances: If a mild
+ cannabis use disorder is comorbid, the ICD-10-CM code is F12.120, and if a
+ moderate or severe cannabis use disorder is comorbid, the ICD-10-CM code is
+ F12.220. If there is no comorbid cannabis use disorder, then the ICD-10-CM
+ code is F12.920.
+ For cannabis intoxication, with perceptual disturbances: If a mild cannabis
+ use disorder is comorbid, the ICD-10-CM code is F12.122, and if a moderate or
+ severe cannabis use disorder is comorbid, the ICD-10-CM code is F12.222. If
+ there is no comorbid cannabis use disorder, then the ICD-10-CM code is
+ F12.922.
+ Specifiers
+ When hallucinations occur in the absence of intact reality testing, a diagnosis of
+ substance/medication-induced psychotic disorder should be considered.
+ Diagnostic Features
+ The essential feature of cannabis intoxication is the presence of clinically significant problematic
+ behavioral or psychological changes that develop during, or shortly after, cannabis use (Criterion
+ B). Intoxication typically begins with a “high” feeling followed by symptoms that include
+ euphoria with inappropriate laughter and grandiosity, sedation, lethargy, impairment in short
+term memory, difficulty carrying out complex mental processes, impaired judgment, distorted
+ sensory perceptions, impaired motor performance, and the sensation that time is passing slowly.
+ Occasionally, anxiety (which can be severe), dysphoria, or social withdrawal occurs. These
+ psychoactive effects are accompanied by two or more of the following signs, developing within
+ 2 hours of cannabis use: conjunctival injection, increased appetite, dry mouth, and tachycardia
+ (Criterion C).
+ Intoxication develops within minutes if plant cannabis is smoked, and may take a few hours
+ to develop when the cannabis is ingested orally. The effects usually last 3–4 hours, with duration
+ longer when the substance is ingested orally. The magnitude of the behavioral and physiological
+ changes depends on the dose, the method of administration, and the characteristics of the
+ individual using the substance, such as rate of absorption, tolerance, and sensitivity to the effects
+ of the substance. Because most cannabinoids, including delta-9-tetrahydrocannabinol (delta-9
+THC), are fat soluble, the effects of cannabis or hashish may occasionally persist or reoccur for
+ 12–24 hours because of the slow release of psychoactive substances from fatty tissue or to
+ enterohepatic circulation.
+ Synthetic cannabinoids (e.g., Spice), whose use has become more common in recent years,
+also produce rapid effects, including euphoria, talkativeness, feelings of joy and laughter, and
+ relaxation. In terms of psychoactive effects, low doses of synthetic cannabinoids and other
+ cannabis products are similar. At higher doses of synthetic cannabinoids, delusional and
+ hallucinatory symptoms are more likely to occur.
+ Prevalence
+ The prevalence of episodes of cannabis intoxication in the general population is unknown.
+ However, it is probable that most individuals using cannabis would at some time experience
+ symptoms that meet criteria for cannabis intoxication. Given this, the prevalence of individuals
+ using cannabis and the prevalence of individuals experiencing cannabis intoxication are likely
+ similar.
+ Functional Consequences of Cannabis Intoxication
+ Impairment from cannabis intoxication may have serious consequences, including dysfunction at
+ work or school, social indiscretions, failure to fulfill role obligations, traffic accidents, and
+ having unprotected sex. In rare cases, cannabis intoxication may precipitate a psychosis that may
+ vary in duration.
+ 584
+ Differential Diagnosis
+ Other substance intoxication.
+ Note that if the clinical presentation includes hallucinations in the absence of intact reality
+ testing, a diagnosis of substance/medication-induced psychotic disorder should be considered.
+ Cannabis intoxication may resemble intoxication with other types of
+ substances. However, in contrast to cannabis intoxication, alcohol intoxication and sedative,
+ hypnotic, or anxiolytic intoxication frequently decrease appetite, increase aggressive behavior,
+ and produce nystagmus or ataxia. Hallucinogens in low doses may cause a clinical picture that
+ resembles cannabis intoxication. Phencyclidine, like cannabis, can be smoked and also causes
+ perceptual changes, but phencyclidine intoxication is much more likely to cause ataxia and
+ aggressive behavior.
+ Cannabis-induced mental disorders.
+ Cannabis intoxication is distinguished from cannabis-induced
+ mental disorders (e.g., cannabis-induced anxiety disorder, with onset during intoxication)
+ because the symptoms (e.g., anxiety) in these latter disorders are in excess of those usually
+ associated with cannabis intoxication, predominate in the clinical presentation, and are severe
+ enough to warrant independent clinical attention.
+ Comorbidity
+ Given the typical overlap of cannabis intoxication with cannabis use disorder, see “Comorbidity”
+ under Cannabis Use Disorder for more details about co-occurring conditions that are likely to be
+ encountered.
