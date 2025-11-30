@@ -868,6 +868,9 @@ CRITÈRES VALIDÉS :
 
 STRUCTURE ATTENDUE DU PLAN DE TRAITEMENT :
 
+**IMPORTANT** : Commence DIRECTEMENT par "## 1. Traitements Médicamenteux" sans titre, sans en-tête, sans introduction.
+**IMPORTANT** : Sois CONCIS pour couvrir les 5 sections en 1200 tokens maximum.
+
 ## 1. Traitements Médicamenteux
 - **OBLIGATOIRE** : Inclure TOUS les médicaments recommandés pour cette pathologie selon la documentation DSM-5-TR
 - Pour chaque médicament : nom générique, indications, posologie recommandée (doses de départ et d'entretien)
