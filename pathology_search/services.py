@@ -585,7 +585,7 @@ Réponds UNIQUEMENT au format JSON:
                     
                     response = self.claude_client.messages.create(
                         model=self.claude_model,  # Claude Sonnet 4.5
-                        max_tokens=2000,  # Identique à GPT-4o pour comparaison équitable
+                        max_tokens=1200,  # Réduit pour éviter timeout Heroku (30s) - Claude prend ~30s avec 2000 tokens
                         system=system_message_treatment,
                         messages=[
                             {
