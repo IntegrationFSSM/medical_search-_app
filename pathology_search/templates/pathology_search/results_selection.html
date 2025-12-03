@@ -43,20 +43,50 @@
         
         <div class="flex items-start justify-between mb-4">
             <div class="flex-1">
-                <div class="flex items-center mb-2 flex-wrap gap-2">
+                <div class="flex items-center mb-3 flex-wrap gap-2">
                     <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">
                         #{{ result.index|add:1 }}
                     </span>
                     <h3 class="text-xl font-bold text-gray-800">
                         {{ result.pathology_name }}
                     </h3>
-                    <div class="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-full">
-                        <i class="fas fa-percentage text-purple-600 text-sm"></i>
-                        <span class="text-purple-700 font-bold text-sm">{{ result.similarity_percent }}%</span>
+                </div>
+                
+                <!-- Score de correspondance avec barre de progression et badge -->
+                <div class="mt-3 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-gray-700">Score de correspondance</span>
+                        <span class="text-lg font-bold 
+                            {% if result.similarity_percent >= 75 %}text-green-600
+                            {% elif result.similarity_percent >= 60 %}text-yellow-600
+                            {% else %}text-red-600{% endif %}">
+                            {{ result.similarity_percent }}%
+                        </span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div class="h-3 rounded-full transition-all duration-300 
+                            {% if result.similarity_percent >= 75 %}bg-green-500
+                            {% elif result.similarity_percent >= 60 %}bg-yellow-500
+                            {% else %}bg-red-500{% endif %}" 
+                            style="width: {{ result.similarity_percent }}%"></div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="px-3 py-1 rounded-lg border text-xs font-semibold flex items-center gap-1
+                            {% if result.similarity_percent >= 75 %}bg-green-100 text-green-800 border-green-300
+                            {% elif result.similarity_percent >= 60 %}bg-yellow-100 text-yellow-800 border-yellow-300
+                            {% else %}bg-red-100 text-red-800 border-red-300{% endif %}">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Correspondance 
+                                {% if result.similarity_percent >= 75 %}forte
+                                {% elif result.similarity_percent >= 60 %}modérée
+                                {% else %}faible{% endif %}
+                            </span>
+                        </div>
                     </div>
                 </div>
+                
                 {% if result.location %}
-                <p class="text-sm text-gray-500 mt-1 mb-3">
+                <p class="text-sm text-gray-500 mt-3 mb-3">
                     <i class="fas fa-map-marker-alt mr-1"></i>
                     {{ result.location }}
                 </p>
