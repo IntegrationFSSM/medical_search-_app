@@ -43,13 +43,17 @@
         
         <div class="flex items-start justify-between mb-4">
             <div class="flex-1">
-                <div class="flex items-center mb-2">
-                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full mr-3">
+                <div class="flex items-center mb-2 flex-wrap gap-2">
+                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">
                         #{{ result.index|add:1 }}
                     </span>
                     <h3 class="text-xl font-bold text-gray-800">
                         {{ result.pathology_name }}
                     </h3>
+                    <div class="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-full">
+                        <i class="fas fa-percentage text-purple-600 text-sm"></i>
+                        <span class="text-purple-700 font-bold text-sm">{{ result.similarity_percent }}%</span>
+                    </div>
                 </div>
                 {% if result.location %}
                 <p class="text-sm text-gray-500 mt-1 mb-3">

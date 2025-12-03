@@ -347,6 +347,12 @@ Réponds UNIQUEMENT au format JSON:
             aggregation=aggregation
         )
         
+        # Ajouter similarity_percent à chaque résultat pour l'affichage
+        if search_results.get('success') and search_results.get('results'):
+            for result in search_results['results']:
+                similarity = result.get('similarity', 0)
+                result['similarity_percent'] = round(similarity * 100, 1)
+        
         # Si mode validation, sauvegarder dans la session
         if use_validation and search_results.get('success'):
             request.session['search_results'] = search_results['results']
@@ -394,7 +400,7 @@ def results_selection(request):
             
         pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
         similarity = result.get('similarity', 0)
-        similarity_percent = int(similarity * 100)
+        similarity_percent = round(similarity * 100, 1)
         
         prepared_results.append({
             'index': i,

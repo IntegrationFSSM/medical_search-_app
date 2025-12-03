@@ -671,6 +671,11 @@ function createResultCard(result, rank) {
     const pathologyName = result.file_name.replace('.txt', '').replace(/_/g, ' ');
     const preview = result.best_chunk_text.substring(0, 300) + (result.best_chunk_text.length > 300 ? '...' : '');
     
+    // Calculer le pourcentage de similarité
+    const similarityPercent = result.similarity_percent !== undefined 
+        ? result.similarity_percent 
+        : (result.similarity ? Math.round(result.similarity * 100 * 10) / 10 : 0);
+    
     // Créer le lien vers la page HTML si disponible
     const htmlLink = result.html_page ? `/pathology/${result.html_page}` : '#';
     const hasHtmlPage = result.html_page && result.html_page !== '';
@@ -683,16 +688,24 @@ function createResultCard(result, rank) {
                     ${rank}
                 </div>
                 <div class="flex-1 min-w-0">
-                    ${hasHtmlPage ? `
-                    <a href="${htmlLink}" target="_blank" class="group">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors flex items-center flex-wrap break-words">
-                            <span class="break-words mr-2">${pathologyName}</span>
-                            <i class="fas fa-external-link-alt text-xs sm:text-sm text-purple-500 group-hover:text-purple-700 flex-shrink-0"></i>
-                        </h3>
-                    </a>
-                    ` : `
-                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 break-words">${pathologyName}</h3>
-                    `}
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex-1 min-w-0">
+                            ${hasHtmlPage ? `
+                            <a href="${htmlLink}" target="_blank" class="group">
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors flex items-center flex-wrap break-words">
+                                    <span class="break-words mr-2">${pathologyName}</span>
+                                    <i class="fas fa-external-link-alt text-xs sm:text-sm text-purple-500 group-hover:text-purple-700 flex-shrink-0"></i>
+                                </h3>
+                            </a>
+                            ` : `
+                            <h3 class="text-lg sm:text-xl font-bold text-gray-800 break-words">${pathologyName}</h3>
+                            `}
+                        </div>
+                        <div class="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-full">
+                            <i class="fas fa-percentage text-purple-600 text-sm"></i>
+                            <span class="text-purple-700 font-bold text-sm sm:text-base">${similarityPercent}%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
