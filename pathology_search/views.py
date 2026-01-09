@@ -332,87 +332,77 @@ def create_patient_page(request):
     return render(request, 'pathology_search/create_patient.html')
 
 
+def _generate_patient_identifier():
+    """Generate unique patient identifier."""
+    last_patient = Patient.objects.order_by('-id').first()
+    if last_patient and last_patient.patient_identifier and last_patient.patient_identifier.startswith('EE-2025-'):
+        try:
+            last_num = int(last_patient.patient_identifier.split('-')[-1])
+            return f'EE-2025-{last_num + 1:03d}'
+        except (ValueError, IndexError):
+            pass
+    return 'EE-2025-001'
+
+
+def _parse_birth_date(date_str):
+    """Parse birth date string to date object."""
+    if not date_str:
+        return None
+    try:
+        return datetime.strptime(date_str, '%Y-%m-%d').date()
+    except (ValueError, TypeError):
+        return None
+
+
+def _extract_patient_data(data):
+    """Extract and prepare patient data from request."""
+    birth_date = _parse_birth_date(data.get('birth_date'))
+    has_insurance = data.get('has_insurance') in (True, 'true')
+    
+    return {
+        'patient_identifier': data.get('patient_identifier', '').strip() or _generate_patient_identifier(),
+        'cin': data.get('cin', '').strip() or None,
+        'passport_number': data.get('passport_number', '').strip() or None,
+        'last_name': data.get('last_name', '').strip().upper() or None,
+        'first_name': data.get('first_name', '').strip().capitalize() or None,
+        'gender': data.get('gender', '') or None,
+        'birth_date': birth_date,
+        'nationality': data.get('nationality', 'MA').strip() or 'MA',
+        'profession': data.get('profession', '').strip() or '',
+        'city': data.get('city', '').strip() or '',
+        'email': data.get('email', '').strip() or '',
+        'phone': data.get('phone', '').strip() or '',
+        'mobile_number': data.get('mobile_number', '').strip() or '',
+        'spouse_name': data.get('spouse_name', '').strip() or '',
+        'treating_physician': data.get('treating_physician', '').strip() or None,
+        'referring_physician': data.get('referring_physician', '').strip() or None,
+        'disease_speciality': data.get('disease_speciality', '').strip() or None,
+        'has_insurance': has_insurance,
+        'insurance_number': data.get('insurance_number', '').strip() or None,
+        'affiliation_number': data.get('affiliation_number', '').strip() or None,
+        'nom': data.get('last_name', '').strip().upper() or None,
+        'prenom': data.get('first_name', '').strip().capitalize() or None,
+        'date_naissance': birth_date,
+        'numero_dossier': data.get('patient_identifier', '').strip() or _generate_patient_identifier(),
+        'telephone': data.get('mobile_number', '').strip() or data.get('phone', '').strip() or ''
+    }
+
+
 @require_http_methods(["POST"])
 def create_patient_submit(request):
-    
-    
-    
     try:
-        if request.content_type == 'application/json':
-            data = json.loads(request.body)
-        else:
-            data = request.POST.dict()
+        data = json.loads(request.body) if request.content_type == 'application/json' else request.POST.dict()
         
-        # Générer un identifiant patient unique si non fourni
-        patient_identifier = data.get('patient_identifier', '').strip()
-        if not patient_identifier:
-            last_patient = Patient.objects.order_by('-id').first()
-            if last_patient and last_patient.patient_identifier and last_patient.patient_identifier.startswith('EE-2025-'):
-                try:
-                    last_num = int(last_patient.patient_identifier.split('-')[-1])
-                    new_num = last_num + 1
-                except:
-                    new_num = 1
-            else:
-                new_num = 1
-            patient_identifier = f'EE-2025-{new_num:03d}'
+        patient_data = _extract_patient_data(data)
+        patient_identifier = patient_data['patient_identifier']
         
-        # Vérifier l'unicité
         if Patient.objects.filter(patient_identifier=patient_identifier).exists():
             return JsonResponse({
                 'success': False,
                 'error': f'L\'identifiant patient {patient_identifier} existe déjà'
             }, status=400)
         
-        # Convertir la date de naissance
-        birth_date = None
-        if data.get('birth_date'):
-            try:
-                birth_date = datetime.strptime(data['birth_date'], '%Y-%m-%d').date()
-            except:
-                pass
-        
-        # Créer le patient avec tous les champs
-        patient = Patient.objects.create(
-            # Identifiants
-            patient_identifier=patient_identifier,
-            cin=data.get('cin', '').strip() or None,
-            passport_number=data.get('passport_number', '').strip() or None,
-            
-            # Informations personnelles
-            last_name=data.get('last_name', '').strip().upper() or None,
-            first_name=data.get('first_name', '').strip().capitalize() or None,
-            gender=data.get('gender', '') or None,
-            birth_date=birth_date,
-            nationality=data.get('nationality', 'MA').strip() or 'MA',
-            profession=data.get('profession', '').strip() or '',
-            city=data.get('city', '').strip() or '',
-            
-            # Contact
-            email=data.get('email', '').strip() or '',
-            phone=data.get('phone', '').strip() or '',
-            mobile_number=data.get('mobile_number', '').strip() or '',
-            
-            # Informations familiales
-            spouse_name=data.get('spouse_name', '').strip() or '',
-            
-            # Informations médicales
-            treating_physician=data.get('treating_physician', '').strip() or None,
-            referring_physician=data.get('referring_physician', '').strip() or None,
-            disease_speciality=data.get('disease_speciality', '').strip() or None,
-            
-            # Assurance
-            has_insurance=data.get('has_insurance', False) == True or data.get('has_insurance') == 'true',
-            insurance_number=data.get('insurance_number', '').strip() or None,
-            affiliation_number=data.get('affiliation_number', '').strip() or None,
-            
-            # Compatibilité (anciens champs)
-            nom=data.get('last_name', '').strip().upper() or None,
-            prenom=data.get('first_name', '').strip().capitalize() or None,
-            date_naissance=birth_date,
-            numero_dossier=patient_identifier,
-            telephone=data.get('mobile_number', '').strip() or data.get('phone', '').strip() or ''
-        )
+        patient = Patient.objects.create(**patient_data)
         
         return JsonResponse({
             'success': True,
@@ -427,12 +417,10 @@ def create_patient_submit(request):
             }
         })
     except Exception as e:
-        
-        error_detail = traceback.format_exc()
         return JsonResponse({
             'success': False,
             'error': f'Erreur lors de la création du patient: {str(e)}',
-            'detail': error_detail
+            'detail': traceback.format_exc()
         }, status=500)
 
 
