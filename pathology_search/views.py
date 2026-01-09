@@ -795,12 +795,12 @@ def view_pathology(request, html_path):
         with open(full_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
         
-        # TOUJOURS injecter les boutons (pour déboguer)
+        # Déterminer si on doit injecter les boutons de validation
         mode_validation = request.GET.get('mode') == 'validation'
         has_validate_referer = 'validate' in request.META.get('HTTP_REFERER', '')
-    
         
-        if True:  # Forcer à True pour tester
+        # Injecter les boutons de validation si en mode validation
+        if mode_validation or has_validate_referer:
             top_buttons_html = """
             <!-- Charger Font Awesome pour les icônes -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
