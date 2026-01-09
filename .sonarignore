@@ -1,0 +1,23 @@
+# Ignore all Embedding directories and files
+Embedding/
+Embedding_*/
+**/Embedding/**
+**/Embedding_*/**
+
+# Ignore Python cache and migrations
+**/__pycache__/
+**/migrations/
+**/*.pyc
+
+# Ignore virtual environments
+venv/
+.venv/
+env/
+
+# Ignore database
+db.sqlite3
+*.sqlite3
+
+# Ignore static files
+static/
+staticfiles/
