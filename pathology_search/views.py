@@ -1,17 +1,28 @@
-"""
-Vues pour l'application de recherche de pathologies
-"""
-from django.shortcuts import render
-from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods
-from django.views.decorators.clickjacking import xframe_options_exempt
-from .services import PathologySearchService
 import json
+import logging
+import os
 import re
+import traceback
+import urllib.parse
+import uuid
+from datetime import datetime
+from pathlib import Path
+from django.conf import settings
+from django.http import Http404, HttpResponse, JsonResponse
+from django.shortcuts import render
+from django.template.loader import render_to_string
+from django.utils import timezone
+from django.views.decorators.clickjacking import xframe_options_exempt
+from django.views.decorators.http import require_http_methods
+
+from openai import OpenAI
+from weasyprint import HTML
+
+from .models import Consultation, Medecin, Patient
+from .services import PathologySearchService
 
 
 def clean_pathology_name(text):
-    """Nettoyer le nom de la pathologie en enlevant les préfixes Section/SubSection"""
     if not text:
         return text
     text = str(text)
@@ -45,7 +56,6 @@ def clean_pathology_name(text):
 
 
 def clean_text_for_pdf(text):
-    """Nettoyer le texte simple (pour critères)"""
     if not text:
         return text
     text = str(text)
@@ -61,7 +71,6 @@ def clean_text_for_pdf(text):
 
 
 def format_plan_traitement_html(text):
-    """Formater le plan de traitement avec HTML sophistiqué"""
     if not text:
         return text
     text = str(text)
@@ -94,27 +103,23 @@ def format_plan_traitement_html(text):
 
 
 def index(request):
-    """Page d'accueil avec le formulaire de recherche."""
     return render(request, 'pathology_search/index.html')
 
 
 @require_http_methods(["POST"])
 def search(request):
-    """
-    Endpoint de recherche pour les requêtes cliniques.
-    """
     try:
-        # Récupérer les données de la requête
+       
         data = json.loads(request.body)
         query = data.get('query', '').strip()
         top_k = int(data.get('top_k', 5))
         aggregation = data.get('aggregation', 'max')
-        use_validation = data.get('use_validation', False)  # Mode validation ou affichage normal
-        patient_id = data.get('patient_id')  # Récupérer l'ID du patient
-        medecin_id = data.get('medecin_id')  # Récupérer l'ID du médecin
-        historical_symptoms = data.get('historical_symptoms', [])  # 🆕 Symptômes historiques
+        use_validation = data.get('use_validation', False)  
+        patient_id = data.get('patient_id') 
+        medecin_id = data.get('medecin_id') 
+        historical_symptoms = data.get('historical_symptoms', [])  
         
-        embedding_model = data.get('embedding_model', 'openai-ada')  # 🆕 Modèle d'embedding choisi
+        embedding_model = data.get('embedding_model', 'openai-ada')  
         
         if not query:
             return JsonResponse({
@@ -122,135 +127,42 @@ def search(request):
                 'error': 'La requête ne peut pas être vide'
             }, status=400)
         
-        # Sauvegarder l'ID du patient, du médecin et les symptômes historiques dans la session
+        
         if patient_id:
             request.session['current_patient_id'] = patient_id
         if medecin_id:
             request.session['current_medecin_id'] = medecin_id
         
-        # Fonction pour nettoyer et valider un symptôme
+        
         def clean_and_validate_symptom(symptom_text):
-            """Nettoyer et valider un symptôme avant de l'ajouter à l'historique"""
             if not symptom_text:
                 return None
             
             symptom_text = str(symptom_text).strip()
             
-            # Ignorer les chaînes trop courtes (moins de 2 caractères)
             if len(symptom_text) < 2:
                 return None
             
-            # Ignorer les chaînes qui ne contiennent que des symboles
+            
             if not re.search(r'[a-zA-ZÀ-ÿ]', symptom_text):
                 return None
             
-            # Ignorer les chaînes répétitives (comme "aaaa", "test test test")
+            
             words = symptom_text.split()
             if len(words) > 1 and len(set(words)) == 1:
                 return None
             
-            # Ignorer les chaînes qui sont clairement des métadonnées
+            
             if symptom_text.lower().startswith('_metadata') or symptom_text.lower() == '_metadata':
                 return None
             
             return symptom_text
         
-        # 🆕 Récupérer automatiquement TOUS les antécédents du patient depuis la base de données
-        # DÉSACTIVÉ: L'enrichissement avec les antécédents est désactivé temporairement
-        # TODO: Réactiver plus tard si nécessaire
         all_historical_symptoms = []
-        # Code commenté pour désactiver la récupération des antécédents
-        # if patient_id:
-        #     try:
-        #         from .models import Patient, Consultation
-        #         patient = Patient.objects.get(id=patient_id)
-        #         consultations = Consultation.objects.filter(patient=patient).order_by('-date_consultation')
-        #         
-        #         # Collecter TOUS les symptômes/critères de toutes les consultations
-        #         for consultation in consultations:
-        #             if consultation.criteres_valides:
-        #                 for key, value in consultation.criteres_valides.items():
-        #                     # Ignorer les métadonnées
-        #                     if key == '_metadata':
-        #                         continue
-        #                     # Extraire les symptômes selon le type de valeur
-        #                     if isinstance(value, list):
-        #                         # Si c'est une liste, ajouter tous les éléments non vides
-        #                         for item in value:
-        #                             cleaned = clean_and_validate_symptom(item)
-        #                             if cleaned:
-        #                                 all_historical_symptoms.append(cleaned)
-        #                     elif isinstance(value, dict):
-        #                         # Si c'est un dictionnaire, extraire les valeurs
-        #                         for sub_key, sub_value in value.items():
-        #                             cleaned = clean_and_validate_symptom(sub_value)
-        #                             if cleaned:
-        #                                 all_historical_symptoms.append(cleaned)
-        #                     else:
-        #                         cleaned = clean_and_validate_symptom(value)
-        #                         if cleaned:
-        #                             all_historical_symptoms.append(cleaned)
-        #                 
-        #                 # Aussi extraire la description clinique comme contexte (si valide)
-        #                 if consultation.description_clinique:
-        #                     cleaned = clean_and_validate_symptom(consultation.description_clinique)
-        #                     if cleaned:
-        #                         all_historical_symptoms.append(cleaned)
-        #         
-        #         # Dédupliquer les symptômes
-        #         all_historical_symptoms = list(set(all_historical_symptoms))
-        #         
-        #         # Si des symptômes ont été envoyés depuis le frontend, les fusionner (après nettoyage)
-        #         if historical_symptoms:
-        #             cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
-        #             cleaned_historical = [s for s in cleaned_historical if s]  # Enlever les None
-        #             all_historical_symptoms.extend(cleaned_historical)
-        #             all_historical_symptoms = list(set(all_historical_symptoms))
-        #         
-        #         # Sauvegarder dans la session
-        #         request.session['patient_historical_symptoms'] = all_historical_symptoms
-        #         print(f"📊 {len(all_historical_symptoms)} antécédents récupérés automatiquement depuis la base de données (après nettoyage)")
-        #     except Exception as e:
-        #         print(f"⚠️ Erreur lors de la récupération de l'historique: {e}")
-        #         # Utiliser les symptômes envoyés depuis le frontend si disponibles (après nettoyage)
-        #         if historical_symptoms:
-        #             cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
-        #             all_historical_symptoms = [s for s in cleaned_historical if s]
-        #             request.session['patient_historical_symptoms'] = all_historical_symptoms
-        # elif historical_symptoms:
-        #     # Si pas de patient_id mais des symptômes envoyés (après nettoyage)
-        #     cleaned_historical = [clean_and_validate_symptom(s) for s in historical_symptoms]
-        #     all_historical_symptoms = [s for s in cleaned_historical if s]
-        #     request.session['patient_historical_symptoms'] = all_historical_symptoms
         
         request.session.modified = True
-        
-        # 🆕 ÉTAPE 1: ENRICHIR LA REQUÊTE AVEC LES ANTÉCÉDENTS DU PATIENT (DÉSACTIVÉ TEMPORAIREMENT)
-        # Code commenté pour désactiver l'enrichissement avec les antécédents
-        # TODO: Réactiver plus tard si nécessaire
-        # enriched_query = query
-        # if all_historical_symptoms and len(all_historical_symptoms) > 0:
-        #     # 🆕 Limiter à 10 antécédents les plus pertinents pour éviter de diluer la requête
-        #     # Les antécédents sont déjà triés par ordre de pertinence (les plus récents en premier)
-        #     limited_symptoms = all_historical_symptoms[:10]
-        #     symptoms_text = ', '.join(limited_symptoms)
-        #     enriched_query = f"{query}. Antécédents pertinents: {symptoms_text}"
-        #     if len(all_historical_symptoms) > 10:
-        #         print(f"🔍 Requête enrichie avec {len(limited_symptoms)} antécédents (sur {len(all_historical_symptoms)} disponibles): {enriched_query[:200]}...")
-        #     else:
-        #         print(f"🔍 Requête enrichie avec {len(all_historical_symptoms)} antécédents: {enriched_query[:200]}...")
-        
-        # 🆕 Utiliser la requête originale sans enrichissement
         enriched_query = query
-        
-        # ÉTAPE 2: Valider la requête ORIGINALE avec GPT-4o
-        # Pour la validation, on utilise toujours OpenAI (ChatGPT) - PAS besoin d'embeddings
-        # Créer un client OpenAI directement pour la validation (sans initialiser les embeddings)
-        from openai import OpenAI
-        from django.conf import settings
         validation_client = OpenAI(api_key=settings.OPENAI_API_KEY)
-        
-        # Validation simple avec mots-clés médicaux
         query_lower = query.lower().strip()
         medical_keywords = [
             'alcool', 'alcoolique', 'alcoolisme', 'dépendance', 'addiction',
@@ -324,10 +236,7 @@ Réponds UNIQUEMENT au format JSON:
                     'is_valid': result.get('is_valid', False),
                     'reason': result.get('reason', 'Requête invalide')
                 }
-                print(f"✅ Validation result: is_valid={validation_result['is_valid']}, reason={validation_result['reason']}")
             except Exception as e:
-                print(f"⚠️ Erreur lors de la validation médicale: {e}")
-                # En cas d'erreur, on est permissif pour ne pas bloquer l'utilisateur
                 validation_result = {'is_valid': True, 'reason': 'Erreur de validation (fallback)'}
         
         if not validation_result['is_valid']:
@@ -337,9 +246,7 @@ Réponds UNIQUEMENT au format JSON:
                 'error_type': 'invalid_query',
                 'reason': validation_result['reason']
             })
-        
-        # ÉTAPE 3: Effectuer la recherche avec la REQUÊTE ORIGINALE (sans enrichissement)
-        # Toujours utiliser OpenAI pour les embeddings (similarité)
+    
         service = PathologySearchService(model='chatgpt-5.1', embedding_model_type=embedding_model)
         search_results = service.find_best_match(
             query=enriched_query,  # Utiliser la requête originale (sans antécédents)
@@ -347,17 +254,16 @@ Réponds UNIQUEMENT au format JSON:
             aggregation=aggregation
         )
         
-        # Ajouter similarity_percent à chaque résultat pour l'affichage
         if search_results.get('success') and search_results.get('results'):
             for result in search_results['results']:
                 similarity = result.get('similarity', 0)
                 result['similarity_percent'] = round(similarity * 100, 1)
         
-        # Si mode validation, sauvegarder dans la session
+        
         if use_validation and search_results.get('success'):
             request.session['search_results'] = search_results['results']
             request.session['search_query'] = query
-            # Réinitialiser la liste des indices visités pour une nouvelle recherche
+            
             request.session['visited_diagnostic_indices'] = []
             request.session.modified = True
             return JsonResponse({
@@ -376,10 +282,6 @@ Réponds UNIQUEMENT au format JSON:
 
 
 def results_selection(request):
-    """
-    Afficher les 5 résultats de recherche pour que le médecin choisisse lequel valider.
-    Affiche seulement les diagnostics non visités.
-    """
     results = request.session.get('search_results', [])
     query = request.session.get('search_query', '')
     
@@ -388,13 +290,11 @@ def results_selection(request):
             'error': 'Aucun résultat trouvé. Veuillez effectuer une nouvelle recherche.'
         })
     
-    # Récupérer les indices visités depuis la session
+
     visited_indices = set(request.session.get('visited_diagnostic_indices', []))
-    
-    # Préparer les résultats pour l'affichage (seulement les non visités)
+
     prepared_results = []
     for i, result in enumerate(results):
-        # Ne pas afficher si déjà visité
         if i in visited_indices:
             continue
             
@@ -411,10 +311,7 @@ def results_selection(request):
             'html_page': result.get('html_page', '')
         })
     
-    # Si tous les diagnostics ont été visités, retourner à la page principale
     if len(visited_indices) >= len(results):
-        # Sauvegarder les symptômes avant de retourner
-        # Les symptômes sont déjà sauvegardés dans les consultations
         return render(request, 'pathology_search/index.html', {
             'message': 'Tous les diagnostics ont été évalués. Retour à la page principale.'
         })
@@ -430,22 +327,15 @@ def results_selection(request):
     return render(request, 'pathology_search/results_selection.html', context)
 
 
-def about(request):
-    """Page À propos."""
-    return render(request, 'pathology_search/about.html')
-
-
 def create_patient_page(request):
-    """Page dédiée pour créer un nouveau patient."""
+
     return render(request, 'pathology_search/create_patient.html')
 
 
 @require_http_methods(["POST"])
 def create_patient_submit(request):
-    """Traiter la soumission du formulaire de création de patient."""
-    from .models import Patient
-    from datetime import datetime
-    # json already imported at module level (line 9)
+    
+    
     
     try:
         if request.content_type == 'application/json':
@@ -537,7 +427,7 @@ def create_patient_submit(request):
             }
         })
     except Exception as e:
-        import traceback
+        
         error_detail = traceback.format_exc()
         return JsonResponse({
             'success': False,
@@ -547,15 +437,8 @@ def create_patient_submit(request):
 
 
 def print_report(request, consultation_id):
-    """
-    Générer un rapport PDF de la consultation avec en-tête CLINIQUE LA VALLÉE.
-    """
     try:
-        from .models import Consultation
-        from django.utils import timezone
-        from django.template.loader import render_to_string
-        from django.http import HttpResponse
-        import logging
+        
         
         logger = logging.getLogger(__name__)
         
@@ -563,11 +446,9 @@ def print_report(request, consultation_id):
         
         logger.info(f"Generating PDF for consultation {consultation_id}")
         
-        # S'assurer que les données sont présentes
         if not consultation.criteres_valides:
             consultation.criteres_valides = {}
         
-        # 🆕 Récupérer le modèle utilisé depuis les métadonnées
         model_used = 'chatgpt-5.1'  # Par défaut
         model_display_name = 'Model 1'
         if consultation.criteres_valides and '_metadata' in consultation.criteres_valides:
@@ -580,18 +461,12 @@ def print_report(request, consultation_id):
             }
             model_display_name = model_names.get(model_used, metadata.get('model_display_name', 'Model 1'))
         
-        # 🆕 Utiliser le plan validé par le médecin pour le rapport
-        # Priorité: plan_traitement_valide (version validée) > plan_traitement (version modifiée mais pas encore validée)
-        # Le rapport doit toujours utiliser la version validée si disponible
         plan_traitement_a_utiliser = consultation.plan_traitement_valide if consultation.plan_traitement_valide else consultation.plan_traitement
         
-        # Formater le plan de traitement de manière sophistiquée
         plan_traitement_clean = format_plan_traitement_html(plan_traitement_a_utiliser)
         
-        # Nettoyer le nom de la pathologie (enlever sections/sous-sections)
         pathologie_clean = clean_pathology_name(consultation.pathologie_identifiee)
         
-        # Nettoyer les critères validés (exclure les métadonnées)
         criteres_valides_clean = {}
         for key, value in consultation.criteres_valides.items():
             if key == '_metadata':  # Exclure les métadonnées de l'affichage
@@ -600,10 +475,8 @@ def print_report(request, consultation_id):
             clean_value = clean_text_for_pdf(value)
             criteres_valides_clean[clean_key] = clean_value
         
-        # 🆕 Récupérer les notes du médecin
         notes_medecin_clean = consultation.notes_medecin if consultation.notes_medecin else ''
         
-        # 🆕 Détecter si c'est un accès direct (description commence par "Accès direct")
         is_direct_access = consultation.description_clinique.startswith('Accès direct à la pathologie')
         
         context = {
@@ -630,7 +503,7 @@ def print_report(request, consultation_id):
         
         # Créer le PDF avec WeasyPrint
         try:
-            from weasyprint import HTML
+            
             
             # Générer le PDF
             pdf_file = HTML(string=html).write_pdf()
@@ -651,18 +524,16 @@ def print_report(request, consultation_id):
             'error': 'Consultation non trouvée.'
         })
     except Exception as e:
-        import logging
+        
         logger = logging.getLogger(__name__)
         logger.error(f"Unexpected error in print_report: {str(e)}")
         return HttpResponse(f'Erreur inattendue: {str(e)}', status=500)
 
 
 def patient_history(request, patient_id):
-    """
-    Afficher l'historique des consultations d'un patient.
-    """
+
     try:
-        from .models import Patient, Consultation
+        
         
         patient = Patient.objects.get(id=patient_id)
         consultations = Consultation.objects.filter(patient=patient).order_by('-date_consultation')
@@ -682,8 +553,7 @@ def patient_history(request, patient_id):
 
 @require_http_methods(["GET"])
 def get_patients(request):
-    """Récupérer la liste de tous les patients"""
-    from .models import Patient
+    
     
     try:
         patients = Patient.objects.all()
@@ -709,8 +579,8 @@ def get_patients(request):
 
 
 def get_patient_history(request, patient_id):
-    """Récupérer l'historique des consultations d'un patient avec tous les symptômes"""
-    from .models import Patient, Consultation
+   
+    
     
     try:
         patient = Patient.objects.get(id=patient_id)
@@ -775,9 +645,7 @@ def get_patient_history(request, patient_id):
 
 @require_http_methods(["POST"])
 def create_patient(request):
-    """Créer un nouveau patient"""
-    from .models import Patient
-    from datetime import datetime
+    
     
     try:
         data = json.loads(request.body)
@@ -833,8 +701,7 @@ def create_patient(request):
 
 
 def get_medecins(request):
-    """Récupérer la liste de tous les médecins"""
-    from .models import Medecin
+    
     
     try:
         medecins = Medecin.objects.all()
@@ -860,8 +727,7 @@ def get_medecins(request):
 
 
 def create_medecin(request):
-    """Créer un nouveau médecin"""
-    from .models import Medecin
+    
     
     try:
         data = json.loads(request.body)
@@ -910,19 +776,8 @@ def create_medecin(request):
 
 @xframe_options_exempt
 def view_pathology(request, html_path):
-    """
-    Afficher le contenu HTML d'une pathologie.
-    Autorise l'affichage dans une iframe.
-    """
-    print("="*80)
-    print(f"🎯 view_pathology APPELÉE !")
-    print(f"📄 HTML path: {html_path}")
-    print(f"🔗 Full URL: {request.build_absolute_uri()}")
-    print("="*80)
     
-    from django.conf import settings
-    from django.http import HttpResponse, Http404
-    import os
+    
     
     try:
         # Construire le chemin complet vers le fichier HTML
@@ -943,16 +798,9 @@ def view_pathology(request, html_path):
         # TOUJOURS injecter les boutons (pour déboguer)
         mode_validation = request.GET.get('mode') == 'validation'
         has_validate_referer = 'validate' in request.META.get('HTTP_REFERER', '')
+    
         
-        print(f"🔍 view_pathology appelé pour: {html_path}")
-        print(f"🔍 mode GET parameter: {request.GET.get('mode')}")
-        print(f"🔍 HTTP_REFERER: {request.META.get('HTTP_REFERER', 'NONE')}")
-        print(f"🔍 Injection prévue: {mode_validation or has_validate_referer}")
-        
-        # TEMPORAIRE: Toujours injecter pour tester
         if True:  # Forcer à True pour tester
-            print("🚀 INJECTION FORCÉE DES BOUTONS POUR TEST")
-            # 🆕 Boutons VALIDER et NON VALIDER en haut (sticky) - VERSION AMÉLIORÉE
             top_buttons_html = """
             <!-- Charger Font Awesome pour les icônes -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1024,8 +872,8 @@ def view_pathology(request, html_path):
             </style>
             
             <script>
-            console.log('🎨 Boutons de validation sticky injectés !');
-            console.log('📍 Position: En haut de l\'iframe, sticky');
+            console.log('Boutons de validation sticky injectés !');
+            console.log('Position: En haut de l\'iframe, sticky');
             </script>
             
             <div id="topValidationButtons">
@@ -1040,59 +888,52 @@ def view_pathology(request, html_path):
             </div>
             """
             
-            print(f"✅ Boutons injectés dans le HTML pour {html_path}")
-            
-            # Injecter les boutons juste après l'ouverture du <body>
-            import re
+
             body_match = re.search(r'<body[^>]*>', html_content, re.IGNORECASE)
             if body_match:
                 insert_position = body_match.end()
-                print(f"✅ Balise <body> trouvée à la position {insert_position}")
                 html_content = html_content[:insert_position] + top_buttons_html + html_content[insert_position:]
-                print(f"✅ Boutons injectés ! Longueur ajoutée: {len(top_buttons_html)} caractères")
             else:
-                print("⚠️ Pas de balise <body> trouvée, injection au début")
-                # Si pas de balise body, injecter au début
                 html_content = top_buttons_html + html_content
             
-            # Vérifier que l'injection a réussi
+
             if 'topValidationButtons' in html_content:
-                print("✅✅✅ CONFIRMATION: topValidationButtons présent dans le HTML final !")
+                print("CONFIRMATION: topValidationButtons présent dans le HTML final !")
             else:
-                print("❌❌❌ ERREUR: topValidationButtons NON présent dans le HTML final !")
+                print("ERREUR: topValidationButtons NON présent dans le HTML final !")
             
             # Script pour REMPLACER les fonctions de validation et communiquer avec la page parent
             communication_script = """
             <script>
             // REMPLACER complètement les fonctions de validation pour communiquer avec la page parent
-            console.log('🔧 Injection du script de communication parent-iframe');
+            console.log('Injection du script de communication parent-iframe');
             
             // Forcer le remplacement des fonctions
             window.validerFormulaire = function() {
-                console.log('✅ VALIDER cliqué dans iframe - envoi message au parent');
+                console.log('VALIDER cliqué dans iframe - envoi message au parent');
                 // Envoyer message à la page parent
                 if (window.parent && window.parent !== window) {
                     window.parent.postMessage({action: 'validate', source: 'pathology'}, '*');
-                    console.log('📤 Message "validate" envoyé au parent');
+                    console.log('Message "validate" envoyé au parent');
                 } else {
-                    console.warn('⚠️ Pas de parent window détecté');
+                    console.warn('Pas de parent window détecté');
                     alert('Formulaire validé (mode standalone)');
                 }
             };
             
             window.nonValiderFormulaire = function() {
-                console.log('❌ NON VALIDER cliqué dans iframe - envoi message au parent');
+                console.log('NON VALIDER cliqué dans iframe - envoi message au parent');
                 // Envoyer message à la page parent
                 if (window.parent && window.parent !== window) {
                     window.parent.postMessage({action: 'not_validate', source: 'pathology'}, '*');
-                    console.log('📤 Message "not_validate" envoyé au parent');
+                    console.log('Message "not_validate" envoyé au parent');
                 } else {
-                    console.warn('⚠️ Pas de parent window détecté');
+                    console.warn('Pas de parent window détecté');
                     alert('Formulaire non validé (mode standalone)');
                 }
             };
             
-            console.log('✅ Fonctions de validation remplacées avec succès');
+            console.log(' Fonctions de validation remplacées avec succès');
             </script>
             """
             # Injecter le script juste avant la fermeture du body (après tous les autres scripts)
@@ -1105,18 +946,7 @@ def view_pathology(request, html_path):
 
 
 def validate_results(request):
-    """
-    Page de validation des résultats avec navigation étape par étape.
-    Affiche le formulaire HTML directement dans la page (même structure que direct_access.html).
-    """
-    print("="*80)
-    print("🎯 validate_results APPELÉE !")
-    print(f"Index: {request.GET.get('index', 0)}")
-    print("="*80)
     
-    from django.conf import settings
-    from django.http import Http404
-    import os
     
     # Récupérer les résultats depuis la session
     results = request.session.get('search_results', [])
@@ -1125,10 +955,7 @@ def validate_results(request):
     patient_id = request.session.get('current_patient_id')
     medecin_id = request.session.get('current_medecin_id')
     
-    print(f"🔍 Nombre de résultats: {len(results)}")
-    print(f"📊 Index actuel: {current_index}")
-    print(f"🔎 Query: {query}")
-    print(f"👤 Patient ID: {patient_id}")
+    
     
     # Marquer cet index comme visité
     if 'visited_diagnostic_indices' not in request.session:
@@ -1136,21 +963,16 @@ def validate_results(request):
     if current_index not in request.session['visited_diagnostic_indices']:
         request.session['visited_diagnostic_indices'].append(current_index)
         request.session.modified = True
-        print(f"✅ Index {current_index} marqué comme visité")
     
     # Récupérer les informations du patient
     patient = None
     if patient_id:
-        from .models import Patient
         try:
             patient = Patient.objects.get(id=patient_id)
-            print(f"✅ Patient trouvé: {patient.nom} {patient.prenom}")
         except Patient.DoesNotExist:
-            print("❌ Patient non trouvé")
             pass
     
     if not results or current_index >= len(results):
-        print("⚠️ Aucun résultat ou index hors limites")
         return render(request, 'pathology_search/index.html', {
             'error': 'Aucun résultat à valider. Veuillez effectuer une nouvelle recherche.'
         })
@@ -1158,25 +980,16 @@ def validate_results(request):
     current_result = results[current_index]
     is_last = current_index >= len(results) - 1
     
-    print(f"📄 Résultat actuel: {current_result.get('file_name', 'N/A')}")
-    print(f"🏁 Est dernier: {is_last}")
-    print(f"🔍 DEBUG - current_result keys: {list(current_result.keys())}")
-    print(f"🔍 DEBUG - html_page dans résultat: {current_result.get('html_page', 'VIDE')}")
+   
     
     # Charger le contenu HTML de la pathologie
     html_path = current_result.get('html_page', '')
     html_content = ''
     pathology_info = {}
-    
-    # 🆕 Si html_page est vide, essayer de le construire depuis file_name
     if not html_path and current_result.get('file_name'):
-        # Essayer de construire le chemin HTML depuis le nom du fichier
         file_name = current_result.get('file_name', '').replace('.txt', '')
-        # Chercher dans les métadonnées JSON pour trouver le html_page
         try:
-            from pathlib import Path
-            # json est déjà importé au niveau du module, pas besoin de le réimporter
-            # Chercher tous les fichiers JSON dans le dossier embeddings
+            
             embeddings_folder = Path(settings.EMBEDDINGS_FOLDER)
             for json_file in embeddings_folder.rglob('*.json'):
                 try:
@@ -1187,42 +1000,27 @@ def validate_results(request):
                             html_page = data.get('html_page', '')
                             if html_page:
                                 html_path = html_page
-                                print(f"✅ html_page trouvé depuis JSON: {html_path}")
                                 break
                 except:
                     continue
         except Exception as e:
-            print(f"⚠️ Erreur lors de la recherche de html_page: {e}")
-    
+            pass
     if html_path:
         try:
-            from pathlib import Path
-            # 🆕 Nettoyer html_path pour enlever le préfixe Embedding/ s'il est présent
+            
             html_path_clean = html_path.lstrip('/')
-            # Si html_path commence par EMBEDDINGS_FOLDER, l'enlever
             if html_path_clean.startswith(settings.EMBEDDINGS_FOLDER + '/'):
                 html_path_clean = html_path_clean[len(settings.EMBEDDINGS_FOLDER) + 1:]
             elif html_path_clean.startswith(settings.EMBEDDINGS_FOLDER + '\\'):
                 html_path_clean = html_path_clean[len(settings.EMBEDDINGS_FOLDER) + 1:]
             
             full_path = Path(settings.EMBEDDINGS_FOLDER) / html_path_clean
-            
-            print(f"🔍 DEBUG - html_path original: {html_path}")
-            print(f"🔍 DEBUG - html_path_clean: {html_path_clean}")
-            print(f"🔍 DEBUG - full_path: {full_path}")
-            print(f"🔍 DEBUG - full_path existe: {full_path.exists()}")
-            print(f"🔍 DEBUG - EMBEDDINGS_FOLDER: {settings.EMBEDDINGS_FOLDER}")
-            
             if full_path.exists():
-                # Lire le contenu HTML
                 with open(full_path, 'r', encoding='utf-8') as f:
                     html_content = f.read()
-                print(f"✅ HTML lu - Longueur: {len(html_content)} caractères")
                 
                 # Récupérer les informations de la pathologie depuis le JSON
                 json_path = full_path.with_suffix('.json')
-                print(f"🔍 DEBUG - json_path: {json_path}")
-                print(f"🔍 DEBUG - json_path existe: {json_path.exists()}")
                 
                 if json_path.exists():
                     with open(json_path, 'r', encoding='utf-8') as f:
@@ -1235,28 +1033,19 @@ def validate_results(request):
                             'html_page': html_path,
                             'similarity': current_result.get('similarity', 0)
                         }
-                    print(f"✅ Pathologie info: {pathology_info.get('name', 'N/A')}")
                 else:
-                    print(f"⚠️ JSON non trouvé: {json_path}")
-                    # Utiliser les informations du résultat actuel si JSON non trouvé
                     pathology_info = {
                         'name': clean_pathology_name(current_result.get('file_name', '').replace('.txt', '')),
                         'location': current_result.get('location', ''),
                         'html_page': html_path,
                         'similarity': current_result.get('similarity', 0)
                     }
-                print(f"✅ HTML chargé: {html_path}")
-            else:
-                print(f"❌ Fichier HTML non trouvé: {full_path}")
+                
         except Exception as e:
-            print(f"❌ Erreur chargement HTML: {e}")
-            import traceback
             print(f"Traceback: {traceback.format_exc()}")
-            pass
     else:
-        print(f"⚠️ html_path est vide - impossible de charger le HTML")
+        print(f"html_path est vide - impossible de charger le HTML")
     
-    # Préparer le contexte pour le template
     context = {
         'html_content': html_content,
         'pathology_info': pathology_info,
@@ -1275,68 +1064,51 @@ def validate_results(request):
 
 @require_http_methods(["POST"])
 def validate_action(request):
-    """
-    Gérer les actions de validation (valider ou ne pas valider).
-    """
+    
     try:
         data = json.loads(request.body)
-        action = data.get('action')  # 'validate' ou 'skip'
+        action = data.get('action')  
         current_index = int(data.get('current_index', 0))
-        form_data = data.get('form_data', {})  # Données du formulaire
+        form_data = data.get('form_data', {})  
         is_direct_access = data.get('direct_access', False)
         
         results = request.session.get('search_results', [])
         
         if action == 'validate':
-            # Marquer l'index comme visité lors de la validation
+
             if not is_direct_access and current_index < len(results):
                 if 'visited_diagnostic_indices' not in request.session:
                     request.session['visited_diagnostic_indices'] = []
                 if current_index not in request.session['visited_diagnostic_indices']:
                     request.session['visited_diagnostic_indices'].append(current_index)
                     request.session.modified = True
-                    print(f"✅ Index {current_index} marqué comme visité (validation)")
             
-            # Gérer l'accès direct (sans recherche préalable)
+
             if is_direct_access:
                 pathology_name_raw = data.get('pathology_name', '')
-                # 🆕 Nettoyer le nom de la pathologie pour l'accès direct
                 pathology_name = clean_pathology_name(pathology_name_raw) if pathology_name_raw else ''
                 html_page = data.get('html_page', '')
                 
-                # 🆕 Si html_page est vide, essayer de le récupérer depuis l'URL de la requête
                 if not html_page:
                     referer = request.META.get('HTTP_REFERER', '')
                     if 'html_page=' in referer:
-                        import urllib.parse
+                        
                         parsed = urllib.parse.urlparse(referer)
                         params = urllib.parse.parse_qs(parsed.query)
-                        if 'html_page' in params:
-                            html_page = params['html_page'][0]
-                            print(f"🔍 html_page récupéré depuis le referer: {html_page}")
-                
-                print(f"🔍 DEBUG accès direct - pathology_name: {pathology_name}")
-                print(f"🔍 DEBUG accès direct - html_page: {html_page}")
-                print(f"🔍 DEBUG accès direct - data complet: {data}")
                 similarity_score = 100  # Score de 100% pour accès direct
                 
-                # Charger le texte médical depuis le fichier .npy correspondant
-                from django.conf import settings
-                from pathlib import Path
                 
                 best_chunk_text = ''
                 try:
                     # Construire le chemin vers le fichier JSON
                     if html_page:
-                        # S'assurer que html_page est un chemin relatif, pas absolu
                         html_page_clean = html_page.lstrip('/')
                         # Corriger les problèmes d'encodage URL (décode %2F en /)
-                        import urllib.parse
                         html_page_clean = urllib.parse.unquote(html_page_clean)
                         # Remplacer .html par .json
                         json_path = Path(settings.EMBEDDINGS_FOLDER) / html_page_clean.replace('.html', '.json')
-                        print(f"🔍 DEBUG - html_page_clean: {html_page_clean}")
-                        print(f"🔍 DEBUG - json_path: {json_path}")
+                        print(f"DEBUG - html_page_clean: {html_page_clean}")
+                        print(f"DEBUG - json_path: {json_path}")
                         
                         # Vérifier que c'est un fichier, pas un répertoire
                         if json_path.exists() and json_path.is_file():
@@ -1346,12 +1118,11 @@ def validate_action(request):
                                 if json_data.get('chunks') and len(json_data['chunks']) > 0:
                                     best_chunk_text = json_data['chunks'][0].get('text_preview', '')
                         else:
-                            print(f"⚠️ Fichier JSON non trouvé ou est un répertoire: {json_path}")
+                            print(f"Fichier JSON non trouvé ou est un répertoire: {json_path}")
                     else:
-                        print(f"⚠️ html_page est vide")
+                        print(f" html_page est vide")
                 except Exception as e:
                     print(f"Erreur lors de la lecture du texte médical: {e}")
-                    import traceback
                     print(f"Traceback: {traceback.format_exc()}")
                 
                 # Créer un résultat factice pour l'accès direct
@@ -1367,23 +1138,14 @@ def validate_action(request):
                 pathology_name = clean_pathology_name(result.get('file_name', '').replace('.txt', ''))
                 similarity_score = result.get('similarity', 0) * 100
                 
-                # Extraire le texte médical du meilleur chunk
                 best_chunk_text = result.get('best_chunk_text', '')
             
-            # 🆕 Récupérer le modèle choisi par l'utilisateur (pour la génération du diagnostic)
+           
             selected_model = data.get('model', 'chatgpt-5.1')
-            
-            # Générer le diagnostic IA avec le modèle choisi en incluant le texte médical ET l'historique
-            from .services import PathologySearchService
+        
             
             try:
-                # Pour la génération de plan de traitement, on n'a pas besoin d'embeddings
-                # Mais on doit quand même initialiser le service avec un embedding_model_type
-                # On utilise 'openai-ada' par défaut car on ne fait pas de recherche ici
-                # (les embeddings ne sont utilisés que pour la recherche, pas pour la génération)
                 service = PathologySearchService(model=selected_model, embedding_model_type='openai-ada')
-                
-                # 🆕 Récupérer les symptômes historiques depuis la session
                 historical_symptoms = request.session.get('patient_historical_symptoms', [])
                 
                 diagnosis_result = service.generate_ai_diagnosis(
@@ -1391,15 +1153,13 @@ def validate_action(request):
                     form_data=form_data,
                     similarity_score=similarity_score,
                     medical_text=best_chunk_text,
-                    historical_symptoms=historical_symptoms  # 🆕 Inclure l'historique
+                    historical_symptoms=historical_symptoms  
                 )
             except Exception as e:
                 # Gérer les erreurs de l'API (Claude, ChatGPT, etc.) et retourner du JSON
-                import traceback
                 error_detail = str(e)
                 error_traceback = traceback.format_exc()
-                print(f"❌ Erreur lors de la génération du diagnostic avec {selected_model}: {error_detail}")
-                print(f"❌ Traceback complet:\n{error_traceback}")
+                print(f"Erreur lors de la génération du diagnostic avec {selected_model}: {error_detail}")
                 
                 # Retourner une erreur JSON au lieu d'une page HTML
                 return JsonResponse({
@@ -1408,9 +1168,6 @@ def validate_action(request):
                     'error_type': 'api_error',
                     'model': selected_model
                 }, status=500)
-            
-            # Sauvegarder le diagnostic en session
-            import uuid
             diagnosis_id = str(uuid.uuid4())
             
             if 'diagnoses' not in request.session:
@@ -1420,15 +1177,10 @@ def validate_action(request):
                 'diagnosis': diagnosis_result,
                 'result': result,
                 'form_data': form_data,
-                'model_used': selected_model  # 🆕 Sauvegarder le modèle utilisé
+                'model_used': selected_model  
             }
             request.session.modified = True
-            
-            # Sauvegarder la consultation dans la base de données PostgreSQL
             try:
-                from .models import Patient, Consultation
-                
-                # Récupérer l'ID du patient depuis la session
                 patient_id = request.session.get('current_patient_id')
                 medecin_id = request.session.get('current_medecin_id')
                 query = request.session.get('search_query', '')
@@ -1440,14 +1192,7 @@ def validate_action(request):
                 if patient_id:
                     patient = Patient.objects.get(id=patient_id)
                     
-                    # Le nom du médecin est directement dans patient.treating_physician (champ texte)
-                    # Le champ medecin dans Consultation est une ForeignKey optionnelle, on la laisse à None
-                    # car le nom du médecin est déjà stocké dans le patient
                     medecin = None
-                    if patient.treating_physician:
-                        print(f"✅ Médecin principal du patient: {patient.treating_physician}")
-                    
-                    # 🆕 Stocker le modèle utilisé dans les critères validés (métadonnées)
                     form_data_with_model = form_data.copy() if form_data else {}
                     form_data_with_model['_metadata'] = {
                         'model_used': selected_model,
@@ -1457,7 +1202,7 @@ def validate_action(request):
                         }.get(selected_model, selected_model)
                     }
                     
-                    # 🆕 Récupérer uniquement le plan de traitement (pas de diagnostic summary)
+                    # Récupérer uniquement le plan de traitement (pas de diagnostic summary)
                     treatment_plan = diagnosis_result.get('treatment_plan', '')
                     
                     # Créer la consultation
@@ -1488,21 +1233,17 @@ def validate_action(request):
             })
         
         elif action == 'skip':
-            # IMPORTANT: Même si NON VALIDE, sauvegarder les critères cochés pour les antécédents
             
-            # 🆕 Marquer l'index comme visité pour l'exclure des résultats suivants
             if not is_direct_access and current_index < len(results):
                 if 'visited_diagnostic_indices' not in request.session:
                     request.session['visited_diagnostic_indices'] = []
                 if current_index not in request.session['visited_diagnostic_indices']:
                     request.session['visited_diagnostic_indices'].append(current_index)
                     request.session.modified = True
-                    print(f"✅ Index {current_index} marqué comme visité (non validé) - sera exclu des résultats")
+                   
             
-            # Gérer l'accès direct vs recherche normale
             if is_direct_access:
                 pathology_name_raw = data.get('pathology_name', '')
-                # 🆕 Nettoyer le nom de la pathologie pour l'accès direct
                 pathology_name = clean_pathology_name(pathology_name_raw) if pathology_name_raw else ''
                 html_page = data.get('html_page', '')
                 similarity_score = 100
@@ -1525,7 +1266,6 @@ def validate_action(request):
             
             # Sauvegarder la consultation NON VALIDÉE dans la base de données
             try:
-                from .models import Patient, Consultation
                 
                 patient_id = request.session.get('current_patient_id')
                 medecin_id = request.session.get('current_medecin_id')
@@ -1622,11 +1362,11 @@ def validate_action(request):
                     # Dédupliquer l'historique complet
                     request.session['patient_historical_symptoms'] = list(set(request.session['patient_historical_symptoms']))
                     request.session.modified = True
-                    print(f"📊 {len(symptoms)} symptômes (critères cochés) ajoutés à l'historique du patient: {symptoms[:5]}...")
+                    print(f" {len(symptoms)} symptômes (critères cochés) ajoutés à l'historique du patient: {symptoms[:5]}...")
             except Exception as e:
-                print(f"❌ Erreur lors de la sauvegarde de la consultation non validée: {e}")
+                print(f"Erreur lors de la sauvegarde de la consultation non validée: {e}")
             
-            # 🆕 Retourner aux résultats (excluant celui non validé) ou à la page principale si tous sont consommés
+            #  Retourner aux résultats (excluant celui non validé) ou à la page principale si tous sont consommés
             visited_indices = set(request.session.get('visited_diagnostic_indices', []))
             total_results = len(results) if not is_direct_access else 0
             
@@ -1653,8 +1393,6 @@ def validate_action(request):
             }, status=400)
     
     except Exception as global_error:
-        # Gérer TOUTES les erreurs non capturées (timeout, erreurs système, etc.)
-        import traceback
         error_detail = str(global_error)
         error_traceback = traceback.format_exc()
         print(f"❌ Erreur globale dans validate_action: {error_detail}")
@@ -1686,20 +1424,19 @@ def show_diagnosis(request, diagnosis_id):
     form_data = diagnosis_data['form_data']
     model_used = diagnosis_data.get('model_used', 'chatgpt-5.1')  # 🆕 Récupérer le modèle utilisé
     
-    # 🆕 Récupérer uniquement le plan de traitement (pas de diagnostic summary)
+    # Récupérer uniquement le plan de traitement (pas de diagnostic summary)
     treatment_plan = diagnosis_result.get('treatment_plan', '')
     
     # Récupérer l'ID de consultation et du patient depuis la session
     consultation_id = diagnosis_data.get('consultation_id')
     patient_id = request.session.get('current_patient_id')
     
-    # 🆕 Récupérer les informations du patient
+    # Récupérer les informations du patient
     patient_nom = ''
     patient_prenom = ''
     patient_identite = ''
     if consultation_id:
         try:
-            from .models import Consultation
             consultation = Consultation.objects.select_related('patient').get(id=consultation_id)
             patient = consultation.patient
             patient_nom = patient.last_name or patient.nom or ''
@@ -1709,7 +1446,6 @@ def show_diagnosis(request, diagnosis_id):
             print(f"Erreur lors de la récupération du patient depuis la consultation: {e}")
     elif patient_id:
         try:
-            from .models import Patient
             patient = Patient.objects.get(id=patient_id)
             patient_nom = patient.last_name or patient.nom or ''
             patient_prenom = patient.first_name or patient.prenom or ''
@@ -1717,20 +1453,19 @@ def show_diagnosis(request, diagnosis_id):
         except Exception as e:
             print(f"Erreur lors de la récupération du patient: {e}")
     
-    # 🆕 Nom du modèle formaté pour l'affichage
+    # Nom du modèle formaté pour l'affichage
     model_names = {
         'chatgpt-5.1': 'Model 1',
         'claude-4.5': 'Model 2'
     }
     model_display_name = model_names.get(model_used, model_used)
-    
-    # 🆕 Récupérer le statut de la consultation, le plan validé et les notes
+
+    # Récupérer le statut de la consultation, le plan validé et les notes
     consultation_statut = 'en_cours'
     plan_valide = ''
     notes_medecin = ''  # Initialiser par défaut
     if consultation_id:
         try:
-            from .models import Consultation
             consultation = Consultation.objects.get(id=consultation_id)
             consultation_statut = consultation.statut
             plan_valide = consultation.plan_traitement_valide if consultation.plan_traitement_valide else ''
@@ -1742,7 +1477,7 @@ def show_diagnosis(request, diagnosis_id):
     context = {
         'diagnosis_id': diagnosis_id,
         'diagnosis': '',  # Pas de diagnostic summary
-        'treatment_plan': treatment_plan,  # 🆕 Uniquement le plan de traitement
+        'treatment_plan': treatment_plan,  # Uniquement le plan de traitement
         'pathology_name': diagnosis_result.get('pathology', ''),
         'confidence': diagnosis_result.get('confidence', 0),
         'timestamp': diagnosis_result.get('timestamp', ''),
@@ -1751,15 +1486,15 @@ def show_diagnosis(request, diagnosis_id):
         'success': diagnosis_result.get('success', False),
         'consultation_id': consultation_id,
         'patient_id': patient_id,
-        'patient_nom': patient_nom,  # 🆕 Nom du patient
-        'patient_prenom': patient_prenom,  # 🆕 Prénom du patient
-        'patient_identite': patient_identite,  # 🆕 Identité du patient
-        'model_used': model_used,  # 🆕 Modèle utilisé
-        'model_display_name': model_display_name,  # 🆕 Nom formaté pour affichage
-        'diagnosis_result': diagnosis_result,  # 🆕 Pour accéder à error et error_detail
-        'consultation_statut': consultation_statut,  # 🆕 Statut de la consultation
-        'plan_valide': plan_valide,  # 🆕 Plan validé
-        'notes_medecin': notes_medecin  # 🆕 Notes du médecin
+        'patient_nom': patient_nom,  # Nom du patient
+        'patient_prenom': patient_prenom,  #  Prénom du patient
+        'patient_identite': patient_identite,  #  Identité du patient
+        'model_used': model_used,  # Modèle utilisé
+        'model_display_name': model_display_name,  # Nom formaté pour affichage
+        'diagnosis_result': diagnosis_result,  # Pour accéder à error et error_detail
+        'consultation_statut': consultation_statut,  # Statut de la consultation
+        'plan_valide': plan_valide,  # Plan validé
+        'notes_medecin': notes_medecin  # Notes du médecin
     }
     
     return render(request, 'pathology_search/diagnosis.html', context)
@@ -1767,12 +1502,8 @@ def show_diagnosis(request, diagnosis_id):
 
 @require_http_methods(["POST"])
 def validate_treatment_plan(request, consultation_id):
-    """
-    Valider le plan de traitement - sauvegarder la version validée (modifiée par le médecin).
-    """
     try:
-        import json
-        from .models import Consultation
+
         data = json.loads(request.body)
         notes_medecin = data.get('notes_medecin', '')
         plan_traitement_modifie = data.get('plan_traitement', '')  # 🆕 Récupérer le plan modifié depuis l'interface
@@ -1812,12 +1543,7 @@ def validate_treatment_plan(request, consultation_id):
 
 @require_http_methods(["POST"])
 def modify_treatment_plan(request, consultation_id):
-    """
-    Modifier le plan de traitement et les notes du médecin.
-    """
     try:
-        import json
-        from .models import Consultation
         data = json.loads(request.body)
         new_plan = data.get('plan_traitement', '')
         notes_medecin = data.get('notes_medecin', '')
@@ -1846,11 +1572,7 @@ def modify_treatment_plan(request, consultation_id):
 
 @require_http_methods(["POST"])
 def delete_consultation(request, consultation_id):
-    """
-    Supprimer la consultation.
-    """
     try:
-        from .models import Consultation
         consultation = Consultation.objects.get(id=consultation_id)
         consultation.delete()
         
@@ -1871,12 +1593,7 @@ def delete_consultation(request, consultation_id):
 
 
 def direct_pathology_access(request):
-    """
-    Accès direct à une pathologie avec validation intégrée.
-    """
-    from django.conf import settings
-    from django.http import Http404
-    from pathlib import Path
+    
     
     html_path = request.GET.get('html_page', '')
     patient_id = request.GET.get('patient_id')
@@ -1909,8 +1626,6 @@ def direct_pathology_access(request):
         with open(full_path, 'r', encoding='utf-8') as f:
             html_content = f.read()
         
-        # Récupérer les informations du patient pour le header
-        from .models import Patient
         patient = None
         if patient_id:
             try:
@@ -1951,12 +1666,7 @@ def direct_pathology_access(request):
 
 
 def get_all_pathologies(request):
-    """
-    Récupérer la liste de toutes les pathologies disponibles avec leurs pages HTML.
-    """
-    from pathlib import Path
-    from django.conf import settings
-    import os
+    
     
     try:
         embeddings_folder = settings.EMBEDDINGS_FOLDER

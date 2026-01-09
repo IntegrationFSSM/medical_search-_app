@@ -5,7 +5,7 @@ import uuid
 
 
 class Medecin(models.Model):
-    """Modèle pour stocker les informations des médecins"""
+    
     nom = models.CharField(max_length=100, verbose_name="Nom")
     prenom = models.CharField(max_length=100, verbose_name="Prénom")
     specialite = models.CharField(max_length=100, verbose_name="Spécialité")
@@ -28,7 +28,7 @@ class Medecin(models.Model):
 
 
 class Patient(models.Model):
-    """Modèle pour stocker les informations des patients"""
+    
     
     # Identifiants
     patient_identifier = models.CharField(
@@ -206,7 +206,7 @@ class Patient(models.Model):
 
 
 class Consultation(models.Model):
-    """Modèle pour stocker les consultations"""
+    
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='consultations')
     medecin = models.ForeignKey(Medecin, on_delete=models.SET_NULL, null=True, related_name='consultations', verbose_name="Médecin")

@@ -4,11 +4,8 @@ numpy==1.26.4
 python-dotenv==1.0.1
 WeasyPrint==62.3
 
-# AI/ML APIs for embeddings
 anthropic>=0.34.0  # Claude API
 google-generativeai>=0.8.0  # Gemini API
-
-# Heroku deployment
 gunicorn==21.2.0
 whitenoise==6.6.0
 psycopg2-binary==2.9.9

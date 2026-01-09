@@ -9,16 +9,8 @@ from django.conf import settings
 
 
 class PathologySearchService:
-    """Service de recherche de pathologies médicales via embeddings."""
     
     def __init__(self, model='chatgpt-5.1', embedding_model_type='openai-ada'):
-        """
-        Initialiser le service avec le modèle spécifié.
-        
-        Args:
-            model: Modèle de génération de texte ('chatgpt-5.1', 'claude-4.5')
-            embedding_model_type: Modèle d'embedding ('openai-ada', 'openai-3-large', 'gemini')
-        """
         self.model = model
         self.embedding_model_type = embedding_model_type
         
@@ -29,13 +21,13 @@ class PathologySearchService:
             self.embedding_dim = 3072
         elif embedding_model_type == 'gemini':
             self.embeddings_folder = settings.BASE_DIR / 'Embedding_Gemini_3072'
-            self.embedding_model_name = 'models/gemini-embedding-001' # Ou text-embedding-004 selon dispo
+            self.embedding_model_name = 'models/gemini-embedding-001'
             self.embedding_dim = 3072
             
             # Configurer Gemini pour les embeddings si nécessaire
             import google.generativeai as genai
             if not settings.GEMINI_API_KEY:
-                print("⚠️ Clé API Gemini manquante dans les settings")
+                print("Clé API Gemini manquante dans les settings")
             else:
                 genai.configure(api_key=settings.GEMINI_API_KEY)
         else:
@@ -44,15 +36,9 @@ class PathologySearchService:
             self.embedding_model_name = settings.EMBEDDING_MODEL
             self.embedding_dim = 1536
             
-        # Ne pas afficher les logs d'embeddings si on ne fait que générer (pas de recherche)
-        # Les logs seront affichés uniquement lors de l'utilisation de find_best_match
-        # print(f"📂 Dossier embeddings utilisé: {self.embeddings_folder}")
-        # print(f"🧠 Modèle embedding: {self.embedding_model_type} ({self.embedding_model_name})")
         
-        # Initialiser le client OpenAI (toujours nécessaire pour certaines fonctions ou fallback)
         self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
         
-        # Initialiser le client Claude si nécessaire
         if model == 'claude-4.5':
             try:
                 from anthropic import Anthropic
@@ -61,27 +47,12 @@ class PathologySearchService:
                 
                 self.claude_client = Anthropic(api_key=settings.CLAUDE_API_KEY)
                 self.claude_model = getattr(settings, 'CLAUDE_MODEL', 'claude-sonnet-4-5-20250929')
-                print(f"✅ Client Claude initialisé avec modèle: {self.claude_model}")
             except ImportError:
-                raise ImportError("La bibliothèque 'anthropic' n'est pas installée. Installez-la avec: pip install anthropic")
+                raise ImportError("La bibliothèque 'anthropic' n'est pas installée.")
         
-        # 🆕 Gemini supprimé pour la génération - seulement Model 1 (ChatGPT) et Model 2 (Claude) sont disponibles
+        
 
     def validate_medical_query(self, query):
-        """
-        Valider si une requête est une description médicale valide en utilisant GPT-4o.
-        Note: La validation utilise toujours OpenAI (ChatGPT) pour des raisons de cohérence.
-        
-        Args:
-            query: Texte de la requête à valider
-            
-        Returns:
-            dict: {
-                'is_valid': bool,
-                'reason': str (si non valide)
-            }
-        """
-        # Validation préalable simple pour les termes médicaux courants
         query_lower = query.lower().strip()
         medical_keywords = [
             'alcool', 'alcoolique', 'alcoolisme', 'dépendance', 'addiction',
@@ -149,7 +120,6 @@ Réponds UNIQUEMENT au format JSON:
             
             result_text = response.choices[0].message.content
             
-            # Essayer de trouver un JSON dans le texte
             import re
             json_match = re.search(r'\{[^}]*"is_valid"[^}]*\}', result_text)
             if json_match:
@@ -168,24 +138,15 @@ Réponds UNIQUEMENT au format JSON:
             }
             
         except json.JSONDecodeError as e:
-            print(f"⚠️ Erreur de décodage JSON lors de la validation: {e}")
+            print(f" Erreur de décodage JSON lors de la validation: {e}")
             # En cas d'erreur de parsing, on est permissif
             return {'is_valid': True, 'reason': 'Validation technique échouée (fallback)'}
         except Exception as e:
-            print(f"⚠️ Erreur lors de la validation médicale: {e}")
+            print(f"Erreur lors de la validation médicale: {e}")
             # En cas d'erreur API, on est permissif pour ne pas bloquer l'utilisateur
             return {'is_valid': True, 'reason': 'Erreur de validation (fallback)'}
     
     def get_embedding(self, text):
-        """
-        Obtenir l'embedding d'un texte via l'API du modèle sélectionné.
-        
-        Args:
-            text: Texte à convertir en embedding
-            
-        Returns:
-            np.array: Vecteur d'embedding
-        """
         text = text.replace("\n", " ")
         
         try:
@@ -200,67 +161,37 @@ Réponds UNIQUEMENT au format JSON:
                 return np.array(result['embedding'])
                 
             elif self.embedding_model_type == 'openai-3-large':
-                # OpenAI text-embedding-3-large
-                print(f"🔍 DEBUG - Génération embedding avec text-embedding-3-large")
+                
                 response = self.client.embeddings.create(
                     input=[text], 
                     model=self.embedding_model_name
                 )
                 embedding = np.array(response.data[0].embedding)
-                print(f"✅ Embedding généré - Dimension: {len(embedding)} (attendu: {self.embedding_dim})")
                 return embedding
                 
             else:
-                # OpenAI text-embedding-ada-002 (Défaut)
-                print(f"🔍 DEBUG - Génération embedding avec {self.embedding_model_name}")
                 response = self.client.embeddings.create(
                     input=[text], 
                     model=self.embedding_model_name
                 )
                 embedding = np.array(response.data[0].embedding)
-                print(f"✅ Embedding généré - Dimension: {len(embedding)} (attendu: {self.embedding_dim})")
                 return embedding
                 
         except Exception as e:
-            print(f"❌ Erreur génération embedding ({self.embedding_model_type}): {str(e)}")
+            print(f" Erreur génération embedding ({self.embedding_model_type}): {str(e)}")
             raise
     
     def find_best_match(self, query, top_k=5, aggregation='max', model=None):
-        # Note: paramètre 'model' conservé pour compatibilité mais non utilisé
-        # (le modèle est déjà défini dans __init__)
-        """
-        Trouver les meilleurs fichiers correspondant à une requête.
-        
-        Args:
-            query: Requête texte
-            top_k: Nombre de résultats à retourner
-            aggregation: Méthode d'agrégation ('max', 'mean', 'weighted_mean')
-        
-        Returns:
-            Liste des meilleurs résultats avec scores de similarité
-        """
+       
         import os
         folder_path = Path(self.embeddings_folder)
-        
-        # Afficher les informations d'embedding uniquement lors de la recherche
-        print(f"📂 Dossier embeddings utilisé: {self.embeddings_folder}")
-        print(f"🧠 Modèle embedding: {self.embedding_model_type} ({self.embedding_model_name})")
-        
-        # Debug: afficher les informations
-        print(f"🔍 DEBUG: embeddings_folder configuré = {self.embeddings_folder}")
-        print(f"🔍 DEBUG: folder_path = {folder_path}")
-        print(f"🔍 DEBUG: folder_path absolu = {folder_path.absolute()}")
-        print(f"🔍 DEBUG: folder_path existe? = {folder_path.exists()}")
-        print(f"🔍 DEBUG: répertoire courant = {os.getcwd()}")
-        
-        # Lister le contenu du répertoire parent
+
         try:
             parent = folder_path.parent
-            print(f"🔍 DEBUG: contenu de {parent}:")
             for item in os.listdir(parent):
                 print(f"  - {item}")
         except Exception as e:
-            print(f"❌ DEBUG: Erreur lors du listage: {e}")
+            print(f"DEBUG: Erreur lors du listage: {e}")
         
         if not folder_path.exists():
             return {
@@ -269,7 +200,6 @@ Réponds UNIQUEMENT au format JSON:
                 'results': []
             }
         
-        # Rechercher les fichiers .npy
         npy_files = list(folder_path.rglob("*.npy"))
         
         if len(npy_files) == 0:
@@ -283,30 +213,15 @@ Réponds UNIQUEMENT au format JSON:
         query_embedding = self.get_embedding(query)
         query_dimension = len(query_embedding)
         
-        print(f"🔍 DEBUG - Modèle embedding sélectionné: {self.embedding_model_type}")
-        print(f"🔍 DEBUG - Dimension embedding requête: {query_dimension}")
-        print(f"🔍 DEBUG - Dimension attendue: {self.embedding_dim}")
-        
         # Vérifier la dimension des embeddings stockés (prendre le premier fichier comme référence)
         stored_dimension = None
         if len(npy_files) > 0:
             sample_embeddings = np.load(npy_files[0])
             if len(sample_embeddings) > 0:
                 stored_dimension = len(sample_embeddings[0])
-                print(f"🔍 DEBUG - Dimension embeddings stockés: {stored_dimension}")
         
-        # 🆕 Si les dimensions ne correspondent pas, c'est un problème critique
         # Ne PAS utiliser de fallback automatique - cela masque le problème
         if stored_dimension and query_dimension != stored_dimension:
-            print(f"❌ ERREUR CRITIQUE: Dimension incompatible!")
-            print(f"   - Modèle sélectionné: {self.embedding_model_type} ({self.embedding_model_name})")
-            print(f"   - Dimension requête: {query_dimension}")
-            print(f"   - Dimension stockée: {stored_dimension}")
-            print(f"   - Dimension attendue: {self.embedding_dim}")
-            print(f"⚠️ Le modèle d'embedding sélectionné ne correspond pas aux embeddings stockés!")
-            print(f"⚠️ Vérifiez que le dossier {self.embeddings_folder} contient des embeddings générés avec {self.embedding_model_name}")
-            
-            # Retourner une erreur explicite au lieu d'un fallback silencieux
             return {
                 'success': False,
                 'error': f'Dimension incompatible: le modèle {self.embedding_model_type} génère des embeddings de {query_dimension} dimensions, mais les fichiers stockés ont {stored_dimension} dimensions. Vérifiez que les embeddings ont été générés avec le bon modèle.',
@@ -326,7 +241,6 @@ Réponds UNIQUEMENT au format JSON:
             
             # Vérifier que la dimension correspond toujours
             if len(embeddings) > 0 and len(embeddings[0]) != query_dimension:
-                print(f"⚠️ Fichier {emb_file} ignoré: dimension {len(embeddings[0])} != {query_dimension}")
                 continue
             
             # Charger les métadonnées
@@ -334,21 +248,18 @@ Réponds UNIQUEMENT au format JSON:
             try:
                 with open(metadata_file, 'r', encoding='utf-8') as f:
                     metadata = json.load(f)
-                
-                # 🆕 Vérifier le modèle d'embedding utilisé pour générer ces embeddings (si disponible)
-                # Les fichiers peuvent avoir 'embedding_model' ou 'model' comme clé
+            
                 embedding_model_used = metadata.get('embedding_model') or metadata.get('model', 'unknown')
                 if embedding_model_used != 'unknown':
                     # Vérifier si le modèle correspond au modèle sélectionné
                     expected_model = self.embedding_model_name
                     if embedding_model_used != expected_model:
-                        print(f"⚠️ ATTENTION - Fichier {Path(emb_file).name}: embeddings générés avec '{embedding_model_used}' mais modèle sélectionné est '{expected_model}'")
+                        print(f"ATTENTION - Fichier {Path(emb_file).name}: embeddings générés avec '{embedding_model_used}' mais modèle sélectionné est '{expected_model}'")
                     else:
-                        print(f"✅ Fichier {Path(emb_file).name}: embeddings générés avec {embedding_model_used} (correspond au modèle sélectionné)")
+                        print(f"Fichier {Path(emb_file).name}: embeddings générés avec {embedding_model_used} (correspond au modèle sélectionné)")
             except:
                 continue
             
-            # Calculer la similarité cosinus pour chaque chunk
             chunk_similarities = []
             best_chunk_id = 0
             best_chunk_text = ""
@@ -386,7 +297,6 @@ Réponds UNIQUEMENT au format JSON:
             else:
                 file_score = max(chunk_similarities)
             
-            # 🆕 Gérer le cas où 'hierarchy' n'existe pas dans les métadonnées
             hierarchy = metadata.get('hierarchy', {})
             location = None
             
@@ -407,10 +317,7 @@ Réponds UNIQUEMENT au format JSON:
                     except ValueError:
                         # Si le fichier n'est pas dans le dossier embeddings, utiliser le nom du fichier
                         relative_path = emb_file_path.name
-                    
-                    # Construire le location à partir du chemin relatif
-                    # Exemple: "Anxiety_Disorders_out/SubSection1_Separation_Anxiety_Disorder.json" 
-                    # -> "Anxiety_Disorders_out > SubSection1_Separation_Anxiety_Disorder"
+                
                     path_parts = relative_path.parts[:-1]  # Exclure le nom du fichier
                     file_stem = relative_path.stem  # Nom sans extension
                     
@@ -441,7 +348,6 @@ Réponds UNIQUEMENT au format JSON:
             reverse=True
         )[:top_k]
         
-        # 🆕 Afficher directement les résultats sans seuil minimum
         # Ajouter des informations diagnostiques
         diagnostic_info = self._generate_diagnostic_info(results) if results else {
             'suspected_pathology': None,
@@ -458,7 +364,6 @@ Réponds UNIQUEMENT au format JSON:
         }
     
     def _generate_diagnostic_info(self, results):
-        """Générer des informations diagnostiques basées sur les résultats."""
         if not results:
             return {
                 'suspected_pathology': None,
@@ -489,20 +394,7 @@ Réponds UNIQUEMENT au format JSON:
         }
     
     def generate_ai_diagnosis(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
-        """
-        Générer uniquement le plan de traitement avec OpenAI (Model 1) ou Claude (Model 2)
-        basé sur les données du formulaire, le texte médical et l'historique.
-        
-        Args:
-            pathology_name: Nom de la pathologie validée
-            historical_symptoms: Liste des symptômes/critères des consultations précédentes (optionnel)
-            form_data: Données du formulaire (dict avec tous les critères cochés)
-            similarity_score: Score de similarité de la recherche
-            medical_text: Texte médical extrait du fichier source (documentation DSM-5-TR)
-        
-        Returns:
-            dict: Plan de traitement généré par l'IA
-        """
+
         try:
             # Message système pour le PLAN DE TRAITEMENT
             system_message_treatment = (
@@ -523,11 +415,6 @@ Réponds UNIQUEMENT au format JSON:
                 historical_symptoms
             )
             
-            # 🆕 GÉNÉRER UNIQUEMENT LE PLAN DE TRAITEMENT
-            print("🔄 Génération du plan de traitement...")
-            print(f"🔍 DEBUG - Longueur du prompt: {len(treatment_prompt)} caractères")
-            print(f"🔍 DEBUG - Longueur du medical_text: {len(medical_text) if medical_text else 0} caractères")
-            print(f"🔍 DEBUG - Nombre de historical_symptoms: {len(historical_symptoms) if historical_symptoms else 0}")
             
             treatment_plan_text = ""
             
@@ -548,30 +435,25 @@ Réponds UNIQUEMENT au format JSON:
                     ],
                     max_completion_tokens=2000  # Limité pour éviter les timeouts Heroku (30s) avec GPT-4oduit pour des rponses plus rapides (Heroku timeout 30s)
                 )
-                # Debug: afficher la réponse complète
-                print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
-                print(f"🔍 DEBUG ChatGPT response.choices: {response.choices if hasattr(response, 'choices') else 'N/A'}")
                 if hasattr(response, 'choices') and response.choices:
-                    print(f"🔍 DEBUG ChatGPT response.choices[0]: {response.choices[0]}")
+                    print(f"DEBUG ChatGPT response.choices[0]: {response.choices[0]}")
                     if hasattr(response.choices[0], 'message'):
-                        print(f"🔍 DEBUG ChatGPT response.choices[0].message: {response.choices[0].message}")
+                        print(f"DEBUG ChatGPT response.choices[0].message: {response.choices[0].message}")
                         if hasattr(response.choices[0].message, 'content'):
-                            print(f"🔍 DEBUG ChatGPT content type: {type(response.choices[0].message.content)}")
-                            print(f"🔍 DEBUG ChatGPT content length: {len(response.choices[0].message.content) if response.choices[0].message.content else 0}")
+                            print(f" DEBUG ChatGPT content type: {type(response.choices[0].message.content)}")
+                            print(f" DEBUG ChatGPT content length: {len(response.choices[0].message.content) if response.choices[0].message.content else 0}")
                 
                 # Extraire le contenu de la réponse
                 if response.choices and len(response.choices) > 0:
                     treatment_plan_text = response.choices[0].message.content
                     if not treatment_plan_text:
                         treatment_plan_text = ""
-                        print(f"⚠️ Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
-                        # Afficher plus de détails pour le débogage
-                        print(f"🔍 DEBUG - response.choices[0].message: {response.choices[0].message}")
-                        print(f"🔍 DEBUG - response.choices[0].finish_reason: {response.choices[0].finish_reason if hasattr(response.choices[0], 'finish_reason') else 'N/A'}")
+                        print(f"Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
+                        
                 else:
                     treatment_plan_text = ""
-                    print(f"⚠️ Réponse ChatGPT sans choix - response.choices est vide")
-                    print(f"🔍 DEBUG - response complet: {response}")
+                    print(f"Réponse ChatGPT sans choix - response.choices est vide")
+                    print(f"DEBUG - response complet: {response}")
                 
             elif self.model == 'claude-4.5':
                 # Claude Sonnet 4.5 - utilisation directe (sans embeddings)
@@ -580,12 +462,10 @@ Réponds UNIQUEMENT au format JSON:
                     if not settings.CLAUDE_API_KEY:
                         raise ValueError("CLAUDE_API_KEY n'est pas configuré dans le fichier .env")
                     
-                    print(f"🔍 Appel API Claude avec modèle: {self.claude_model}")
-                    print(f"🔍 Clé API présente: {'Oui' if settings.CLAUDE_API_KEY else 'Non'}")
                     
                     response = self.claude_client.messages.create(
-                        model=self.claude_model,  # Claude Sonnet 4.5
-                        max_tokens=1200,  # Réduit pour éviter timeout Heroku (30s) - Claude prend ~30s avec 2000 tokens
+                        model=self.claude_model,  
+                        max_tokens=1200,  
                         system=system_message_treatment,
                         messages=[
                             {
@@ -595,39 +475,28 @@ Réponds UNIQUEMENT au format JSON:
                         ]
                     )
                     
-                    print(f"✅ Réponse Claude reçue: type={type(response)}")
-                    print(f"✅ Response.content: {response.content if hasattr(response, 'content') else 'N/A'}")
                     
-                    # Claude retourne response.content qui est une liste de TextBlock
-                    # Le premier bloc contient le texte (format: TextBlock avec attribut .text)
                     if hasattr(response, 'content') and response.content and len(response.content) > 0:
                         first_content = response.content[0]
                         
                         # Claude SDK retourne un objet TextBlock avec attribut .text
                         if hasattr(first_content, 'text'):
                             treatment_plan_text = first_content.text
-                            print(f"✅ Plan de traitement extrait: {len(treatment_plan_text)} caractères")
                         else:
                             # Fallback si format différent
                             treatment_plan_text = str(first_content)
-                            print(f"⚠️ Format inattendu, conversion en string: {len(treatment_plan_text)} caractères")
                     else:
                         error_msg = f"Réponse Claude vide - response.content: {getattr(response, 'content', 'N/A')}"
-                        print(f"❌ {error_msg}")
+                        print(f"{error_msg}")
                         raise ValueError(error_msg)
                     
                     if not treatment_plan_text or len(treatment_plan_text.strip()) == 0:
                         raise ValueError("Le plan de traitement généré par Claude est vide")
                     
                 except Exception as claude_error:
-                    # Afficher l'erreur détaillée pour le débogage
                     import traceback
                     error_detail = traceback.format_exc()
                     error_msg = f"Erreur API Claude: {str(claude_error)}"
-                    print(f"❌ {error_msg}")
-                    print(f"❌ Modèle utilisé: {self.claude_model}")
-                    print(f"❌ Clé API configurée: {'Oui' if settings.CLAUDE_API_KEY else 'Non'}")
-                    print(f"❌ Détails de l'erreur:\n{error_detail}")
                     raise RuntimeError(f"{error_msg}\n\nDétails: {error_detail}")
             
             else:
@@ -636,7 +505,6 @@ Réponds UNIQUEMENT au format JSON:
             if not treatment_plan_text:
                 raise ValueError("Le plan de traitement généré est vide")
             
-            print(f"✅ Plan de traitement généré: {len(treatment_plan_text)} caractères")
             
             return {
                 'success': True,
@@ -657,7 +525,6 @@ Réponds UNIQUEMENT au format JSON:
             }
     
     def _build_diagnosis_prompt(self, pathology_name, form_data, similarity_score, medical_text="", historical_symptoms=None):
-        """Construire le prompt pour OpenAI avec le texte médical et l'historique du patient."""
         
         # Charger le fichier complet de la pathologie depuis le dossier disorders
         complete_pathology_text = self._load_complete_pathology_file(pathology_name)
@@ -682,15 +549,15 @@ Extrait DSM-5-TR disponible (extrait de recherche) :
 Critères et éléments cliniques déclarés :
 """
         
-        # 🆕 AJOUTER L'HISTORIQUE MÉDICAL
+        
         if historical_symptoms and len(historical_symptoms) > 0:
-            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX DU PATIENT ({len(historical_symptoms)} symptômes enregistrés):**\n"
+            prompt += f"\nANTÉCÉDENTS MÉDICAUX DU PATIENT ({len(historical_symptoms)} symptômes enregistrés):\n"
             prompt += "Le patient présente également les antécédents cliniques suivants, issus de consultations précédentes:\n"
-            for i, symptom in enumerate(historical_symptoms[:15], 1):  # Limiter à 15 pour ne pas surcharger
+            for i, symptom in enumerate(historical_symptoms[:15], 1):
                 prompt += f"  • {symptom}\n"
             if len(historical_symptoms) > 15:
                 prompt += f"  • ... et {len(historical_symptoms) - 15} autres symptômes enregistrés\n"
-            prompt += "\n**⚠️ IMPORTANT : Intégrer ces antécédents dans l'analyse diagnostique.**\n\n"
+            prompt += "\n**IMPORTANT : Intégrer ces antécédents dans l'analyse diagnostique.**\n\n"
         
         prompt += """
 """
@@ -730,20 +597,7 @@ Structure attendue (respecter EXACTEMENT ces titres) :
         return prompt
     
     def _generate_treatment_plan(self, pathology_name, form_data, diagnosis_text, medical_text="", historical_symptoms=None, system_message=None):
-        """
-        Générer un plan de traitement détaillé pour le patient.
-        
-        Args:
-            pathology_name: Nom de la pathologie
-            form_data: Données du formulaire
-            diagnosis_text: Texte du diagnostic généré
-            medical_text: Texte médical extrait
-            historical_symptoms: Historique des symptômes
-            system_message: Message système pour le plan de traitement
-            
-        Returns:
-            str: Plan de traitement généré
-        """
+    
         try:
             # Construire le prompt pour le plan de traitement
             treatment_prompt = self._build_treatment_prompt(
@@ -768,37 +622,30 @@ Structure attendue (respecter EXACTEMENT ces titres) :
                             "content": treatment_prompt
                         }
                     ],
-                    max_completion_tokens=2000  # Limité pour éviter les timeouts Heroku (30s) avec GPT-4o�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_completion_tokens=2000
                 )
-                # Debug: afficher la réponse complète
-                print(f"🔍 DEBUG ChatGPT response type: {type(response)}")
-                print(f"🔍 DEBUG ChatGPT response.choices: {response.choices if hasattr(response, 'choices') else 'N/A'}")
                 if hasattr(response, 'choices') and response.choices:
-                    print(f"🔍 DEBUG ChatGPT response.choices[0]: {response.choices[0]}")
+                    print(f"DEBUG ChatGPT response.choices[0]: {response.choices[0]}")
                     if hasattr(response.choices[0], 'message'):
-                        print(f"🔍 DEBUG ChatGPT response.choices[0].message: {response.choices[0].message}")
+                        print(f"DEBUG ChatGPT response.choices[0].message: {response.choices[0].message}")
                         if hasattr(response.choices[0].message, 'content'):
-                            print(f"🔍 DEBUG ChatGPT content type: {type(response.choices[0].message.content)}")
-                            print(f"🔍 DEBUG ChatGPT content length: {len(response.choices[0].message.content) if response.choices[0].message.content else 0}")
+                            print(f"DEBUG ChatGPT content type: {type(response.choices[0].message.content)}")
+                            print(f"DEBUG ChatGPT content length: {len(response.choices[0].message.content) if response.choices[0].message.content else 0}")
                 
                 # Extraire le contenu de la réponse
                 if response.choices and len(response.choices) > 0:
                     treatment_plan_text = response.choices[0].message.content
                     if not treatment_plan_text:
                         treatment_plan_text = ""
-                        print(f"⚠️ Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
-                        # Afficher plus de détails pour le débogage
-                        print(f"🔍 DEBUG - response.choices[0].message: {response.choices[0].message}")
-                        print(f"🔍 DEBUG - response.choices[0].finish_reason: {response.choices[0].finish_reason if hasattr(response.choices[0], 'finish_reason') else 'N/A'}")
-                else:
+                        print(f" Réponse ChatGPT vide - response.choices[0].message.content est None ou vide")
+                        
                     treatment_plan_text = ""
-                    print(f"⚠️ Réponse ChatGPT sans choix - response.choices est vide")
-                    print(f"🔍 DEBUG - response complet: {response}")
+                    print(f"Réponse ChatGPT sans choix - response.choices est vide")
                 
             elif self.model == 'claude-4.5':
                 response = self.client.messages.create(
                     model=self.claude_model,
-                    max_tokens=1200,  # R�duit pour des r�ponses plus rapides (Heroku timeout 30s)
+                    max_tokens=1200,  
                     temperature=0.4,
                     system=system_message,
                     messages=[
@@ -815,17 +662,14 @@ Structure attendue (respecter EXACTEMENT ces titres) :
             else:
                 raise ValueError(f"Modèle non supporté pour le plan de traitement: {self.model}")
             
-            print(f"✅ Plan de traitement généré: {len(treatment_plan_text)} caractères")
             return treatment_plan_text
             
         except Exception as e:
-            print(f"⚠️ Erreur lors de la génération du plan de traitement: {str(e)}")
+            print(f"Erreur lors de la génération du plan de traitement: {str(e)}")
             return f"Erreur lors de la génération du plan de traitement: {str(e)}"
     
     def _build_treatment_prompt(self, pathology_name, form_data, diagnosis_text="", medical_text="", historical_symptoms=None):
-        """
-        Construire le prompt pour générer le plan de traitement.
-        """
+        
         # Charger le fichier complet de la pathologie depuis le dossier disorders
         complete_pathology_text = self._load_complete_pathology_file(pathology_name)
         
@@ -858,7 +702,7 @@ CRITÈRES VALIDÉS :
         if historical_symptoms and len(historical_symptoms) > 0:
             # Limiter à 3 symptômes les plus récents pour éviter les prompts trop longs avec GPT-5
             limited_symptoms = historical_symptoms[:3]
-            prompt += f"\n📋 **ANTÉCÉDENTS MÉDICAUX (3 symptômes les plus récents sur {len(historical_symptoms)}):**\n"
+            prompt += f"\nANTÉCÉDENTS MÉDICAUX (3 symptômes les plus récents sur {len(historical_symptoms)}):\n"
             for symptom in limited_symptoms:
                 # Limiter la longueur de chaque symptôme à 50 caractères pour GPT-5
                 symptom_short = symptom[:50] + "..." if len(symptom) > 50 else symptom
@@ -917,42 +761,27 @@ IMPORTANT :
         return prompt
     
     def _get_timestamp(self):
-        """Obtenir le timestamp actuel."""
         from datetime import datetime
         return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
     def _load_complete_pathology_file(self, pathology_name):
-        """
-        Charger le fichier .txt complet depuis le dossier disorders.
         
-        Args:
-            pathology_name: Nom de la pathologie (ex: "Agoraphobia", "Separation Anxiety Disorder")
-            
-        Returns:
-            str: Contenu complet du fichier .txt, ou chaîne vide si non trouvé
-        """
         try:
             disorders_folder = settings.BASE_DIR / 'disorders'
             
             if not disorders_folder.exists():
-                print(f"⚠️ Dossier disorders non trouvé: {disorders_folder}")
                 return ""
             
-            # Nettoyer le nom de la pathologie pour la recherche
-            # Convertir en format de nom de fichier (ex: "Agoraphobia" -> "SubSection*_Agoraphobia.txt")
             pathology_clean = pathology_name.strip()
             
             # Chercher dans tous les sous-dossiers
             for txt_file in disorders_folder.rglob('*.txt'):
                 file_name = txt_file.stem  # Nom sans extension
                 
-                # Vérifier si le nom du fichier contient le nom de la pathologie
-                # ou si le nom de la pathologie correspond au début du fichier
                 if pathology_clean.lower() in file_name.lower() or file_name.lower().endswith(pathology_clean.lower().replace(' ', '_')):
                     # Lire le contenu complet
                     with open(txt_file, 'r', encoding='utf-8') as f:
                         content = f.read()
-                    print(f"✅ Fichier pathologie complet chargé: {txt_file.name} ({len(content)} caractères)")
                     return content
                 
                 # Vérifier aussi le contenu du fichier (première ligne contient souvent le nom)
@@ -963,16 +792,13 @@ IMPORTANT :
                             # Relire tout le fichier
                             with open(txt_file, 'r', encoding='utf-8') as f2:
                                 content = f2.read()
-                            print(f"✅ Fichier pathologie complet chargé (par première ligne): {txt_file.name} ({len(content)} caractères)")
                             return content
                 except:
                     continue
             
-            print(f"⚠️ Fichier pathologie non trouvé pour: {pathology_name}")
             return ""
             
         except Exception as e:
-            print(f"⚠️ Erreur lors du chargement du fichier pathologie: {e}")
             import traceback
             print(traceback.format_exc())
             return ""

@@ -1,6 +1,4 @@
-"""
-URLs pour l'application pathology_search
-"""
+
 from django.urls import path
 from . import views
 
@@ -11,7 +9,6 @@ urlpatterns = [
     path('patient/new/', views.create_patient_page, name='create_patient_page'),
     path('patient/create/', views.create_patient_submit, name='create_patient_submit'),
     path('search/', views.search, name='search'),
-    path('about/', views.about, name='about'),
     path('results-selection/', views.results_selection, name='results_selection'),
     path('validate/', views.validate_results, name='validate_results'),
     path('validate/action/', views.validate_action, name='validate_action'),
