@@ -80,20 +80,20 @@ def format_plan_traitement_html(text):
     text = re.sub(r'[\u2600-\u26FF]', '', text)
     text = re.sub(r'[\u2700-\u27BF]', '', text)
     
-    # Convertir les titres markdown en HTML avec styles
-    text = re.sub(r'^# (.+)$', r'<div class="plan-h1">\1</div>', text, flags=re.MULTILINE)
-    text = re.sub(r'^## (.+)$', r'<div class="plan-h2">\1</div>', text, flags=re.MULTILINE)
-    text = re.sub(r'^### (.+)$', r'<div class="plan-h3">\1</div>', text, flags=re.MULTILINE)
+    # Convertir les titres markdown en HTML avec styles (non-gourmand pour éviter ReDoS)
+    text = re.sub(r'^# (.+?)$', r'<div class="plan-h1">\1</div>', text, flags=re.MULTILINE)
+    text = re.sub(r'^## (.+?)$', r'<div class="plan-h2">\1</div>', text, flags=re.MULTILINE)
+    text = re.sub(r'^### (.+?)$', r'<div class="plan-h3">\1</div>', text, flags=re.MULTILINE)
     
-    # Convertir le gras **texte** en <strong>
+    # Convertir le gras **texte** en <strong> (déjà sécurisé avec [^\*]+)
     text = re.sub(r'\*\*([^\*]+)\*\*', r'<strong>\1</strong>', text)
     
-    # Convertir les listes à puces
-    text = re.sub(r'^\- (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
-    text = re.sub(r'^\* (.+)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
+    # Convertir les listes à puces (non-gourmand pour éviter ReDoS)
+    text = re.sub(r'^\- (.+?)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
+    text = re.sub(r'^\* (.+?)$', r'<div class="plan-bullet">• \1</div>', text, flags=re.MULTILINE)
     
-    # Convertir les numéros de liste
-    text = re.sub(r'^\d+\.\s+(.+)$', r'<div class="plan-number">\1</div>', text, flags=re.MULTILINE)
+    # Convertir les numéros de liste (non-gourmand pour éviter ReDoS)
+    text = re.sub(r'^\d+\.\s+(.+?)$', r'<div class="plan-number">\1</div>', text, flags=re.MULTILINE)
     
     # Convertir les sauts de ligne en <br>
     text = text.replace('\n\n', '<br><br>')
