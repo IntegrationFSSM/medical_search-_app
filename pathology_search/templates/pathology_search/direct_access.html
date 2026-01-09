@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self';">
     <title>Accès Direct - {{ pathology_info.name|default:"Pathologie" }}</title>
     
     <!-- Tailwind CSS CDN -->
@@ -167,9 +168,13 @@
         </div>
     </div>
 
+    <!-- Données sécurisées pour JavaScript -->
+    {{ pathology_info_json|json_script:"pathology-info-data" }}
+    
     <script>
-    // Variables globales
-    const pathologyInfo = {{ pathology_info_json|safe }};
+    // Variables globales - Sécurisées
+    const pathologyInfoElement = document.getElementById('pathology-info-data');
+    const pathologyInfo = pathologyInfoElement ? JSON.parse(pathologyInfoElement.textContent) : {};
     const patientId = {{ patient_id|default:"null" }};
 
     // Fonction pour obtenir le cookie CSRF
@@ -343,11 +348,11 @@
                 body: JSON.stringify({
                     action: 'validate',
                     form_data: formData,
-                    pathology_name: pathologyInfo.name || '{{ pathology_info.name }}',
+                    pathology_name: pathologyInfo.name || '',
                     patient_id: patientId,
                     direct_access: true,
-                    html_page: pathologyInfo.html_page || '{{ pathology_info.html_page }}',
-                    model: selectedModel  // 🆕 Modèle choisi par l'utilisateur
+                    html_page: pathologyInfo.html_page || '',
+                    model: selectedModel
                 })
             });
             
@@ -425,8 +430,8 @@
                     current_index: 0,
                     form_data: formData,
                     direct_access: true,
-                    pathology_name: '{{ pathology_info.name }}',
-                    html_page: '{{ pathology_info.html_page }}'
+                    pathology_name: pathologyInfo.name || '',
+                    html_page: pathologyInfo.html_page || ''
                 })
             });
             
