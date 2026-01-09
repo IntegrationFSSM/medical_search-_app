@@ -4,6 +4,10 @@ Embedding_*/
 **/Embedding/**
 **/Embedding_*/**
 
+# Ignore templates with high duplication (data display templates)
+pathology_search/templates/pathology_search/direct_access.html
+pathology_search/templates/pathology_search/validate.html
+
 # Ignore Python cache and migrations
 **/__pycache__/
 **/migrations/
